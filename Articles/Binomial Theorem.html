@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!DOCTYPE html> <html>
+	<head>
+	
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		<link rel="stylesheet" href="../CSS/DigitalClock.css">
+		<style> header {position: absolute; top: 18px; right: 18px;}
+		p{font-size: 26px;}
+		  
+		body.AnalogScreen img{
+		filter: invert(1);
+		}
+		
+		body.dark img{
+		filter: invert(1);
+		}
+		</style>
+		
+	</head>
+	<body> <header>Official Lightweb Site</header>
+		<h1>Binomial Theorem</h1>
+		<h2>Introduction</h2>
+		The Binomial Theorem is a formula used to find the product of a binomial by itself...
+		<p>(-4x + 2) * (-4x + 2) * (-4x + 2)</p>
+		You see, we can't just multiply these together like numbers because every term would have to get multiplied by something. This is where the binomial theorem comes into play...
+		
+		<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <msup>
+      <mrow>
+        <mo>(</mo>
+        <mi>a</mi>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mo>)</mo>
+      </mrow>
+      <mi>n</mi>
+    </msup>
+    <mo>=</mo>
+    <munderover>
+      <mo>&#x2211;</mo>
+      <mrow>
+        <mi>k</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mrow>
+	  <mrow>
+        <mi>n</mi>
+      </mrow>
+    </munderover>
+    <msup>
+      <mi>a</mi>
+      <mrow>
+        <mi>n</mi>
+        <mo>&#x2212;</mo>
+        <mi>k</mi>
+      </mrow>
+    </msup>
+    <msup>
+      <mi>b</mi>
+      <mi>k</mi>
+    </msup>
+    <mo>&#x2062;</mo>
+    <mrow>
+      <mo>(</mo>
+      <mtable>
+        <mtr><mtd><mi>n</mi></mtd></mtr>
+        <mtr><mtd><mi>k</mi></mtd></mtr>
+      </mtable>
+      <mo>)</mo>
+    </mrow>
+  </mrow>
+</math>
+This formula is called The Binomial Theorem and can be used to find the product of binomials as previously mentioned. Heres an example of the Binomial Theorem...
+<p>(a+b)<sup>0</sup> = 1
+<p>(a+b)<sup>1</sup> = a + b
+<p>(a+b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup>
+<p>(a+b)<sup>3</sup> = a<sup>3</sup> + 3a<sup>2</sup>b + 3ab<sup>2</sup> + b<sup>3</sup></p>
+Notice how the exponents of the first a variable and the last b variable both are equal to the exponent of  (a + b)...
+<p>(a+b)<sup>3</sup> = a<sup>3</sup>... + ... b<sup>3</sup></p>
+This is because of the formula...
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <msup>
+      <mrow>
+        <mo>(</mo>
+        <mi>a</mi>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mo>)</mo>
+      </mrow>
+      <mi>3</mi>
+    </msup>
+    <mo>=</mo>
+    <munderover>
+      <mo>&#x2211;</mo>
+      <mrow>
+        <mi>k</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mrow>
+	  <mrow>
+        <mi>n</mi>
+      </mrow>
+    </munderover>
+    <msup>
+      <mi>a</mi>
+      <mrow>
+        <mi>n</mi>
+        <mo>&#x2212;</mo>
+        <mi>k</mi>
+      </mrow>
+    </msup>
+    <msup>
+      <mi>b</mi>
+      <mi>k</mi>
+    </msup>
+    <mo>&#x2062;</mo>
+    <mo>=</mo>
+  </mrow>
+</math>
+<p> = a<sup>3</sup>b<sup>0</sup> +  +  +</p>
+<p> = a<sup>3</sup> + a<sup>2</sup>b<sup>1</sup> +  +</p>
+<p> = a<sup>3</sup> + a<sup>2</sup>b + a<sup>1</sup>b<sup>2</sup> +</p>
+<p> = a<sup>3</sup> + a<sup>2</sup>b + ab<sup>2</sup> + a<sup>0</sup>b<sup>3</sup></p>
+<p> = a<sup>3</sup> + a<sup>2</sup>b + ab<sup>2</sup> + b<sup>3</sup></p>
+This is the pattern that occurs when binomials are multiplied by themselves. The only thing missing are the coefficents for each varaible...
+<p> = a<sup>3</sup> + 3a<sup>2</sup>b + 3ab<sup>2</sup> + b<sup>3</sup></p>
+If we look at the coefficents very closely, we can see that they form the Pascal Triangle...
+<img src="../Images/PascalTriangle.png">
+This is very important since every individual coefficent is equal to each number on this triangle...
+<p>(a + b)<sup>0</sup> = 1</p>
+<p>(a + b)<sup>1</sup> = 1a + 1b</p>
+<p>(a + b)<sup>2</sup> = 1a<sup>2</sup> + 2ab + 1b<sup>2</sup></p>
+<p>(a + b)<sup>3</sup> = 1a<sup>3</sup> + 3a<sup>2</sup>b + 3ab<sup>2</sup> + 1b<sup>3</sup></p>
+<p>(a + b)<sup>4</sup> = 1a<sup>4</sup> + 4a<sup>2</sup>b + 6a<sup>2</sup>b<sup>2</sup> + 4ab<sup>2</sup> + 1b<sup>4</sup></p>
+We can see that the coefficents of each "a" and "b" are equal to their respective number on the Pascal Triangle.
+
+<br><br>
+The semantic form of finding the exponents of a, "a<sup>?</sup>b<sup>?</sup>" is...
+<p>a<sup>n-k</sup>b<sup>k</sup></p>
+<br>
+But there is another formula of finding the Binomial Coefficent of a term...
+<br>
+<math display="block">
+<mrow>
+      <mo>(</mo>
+      <mtable>
+        <mtr><mtd><mi>n</mi></mtd></mtr>
+        <mtr><mtd><mi>k</mi></mtd></mtr>
+      </mtable>
+      <mo>)</mo>
+	  <mo>=</mo>
+	  <mfrac>
+	  <mrow>
+	  <mn>n!</mn>
+	  </mrow>
+	  <mrow>
+	  <mn>k!(n - k)!</mn>
+	  </mrow>
+	  </mfrac>
+    </mrow>
+</math>
+This formula is used to find Binomial Coefficients. The semantic (word) form of this is "N chooses K". So for example, lets solve the third number in the sixth row...
+<br><br><math display="block">
+<mrow>
+      <mo>(</mo>
+      <mtable>
+        <mtr><mtd><mi>6</mi></mtd></mtr>
+        <mtr><mtd><mi>3</mi></mtd></mtr>
+      </mtable>
+      <mo>)</mo>
+	  <mo>=</mo>
+	  <mfrac>
+	  <mrow>
+	  <mn>6!</mn>
+	  </mrow>
+	  <mrow>
+	  <mn>3!(6 - 3)!</mn>
+	  </mrow>
+	  </mfrac>
+    </mrow>
+</math><br><br>
+<math display="block">
+<mrow>
+      <mo>(</mo>
+      <mtable>
+        <mtr><mtd><mi>6</mi></mtd></mtr>
+        <mtr><mtd><mi>3</mi></mtd></mtr>
+      </mtable>
+      <mo>)</mo>
+	  <mo>=</mo>
+	  <mfrac>
+	  <mrow>
+	  <mn>6!</mn>
+	  </mrow>
+	  <mrow>
+	  <mn>3!3!</mn>
+	  </mrow>
+	  </mfrac>
+    </mrow>
+</math>
+<math display="block">
+<mrow>
+      <mo>(</mo>
+      <mtable>
+        <mtr><mtd><mi>6</mi></mtd></mtr>
+        <mtr><mtd><mi>3</mi></mtd></mtr>
+      </mtable>
+      <mo>)</mo>
+	  <mo>=</mo>
+	  <mfrac>
+	  <mrow>
+	  <mn>720</mn>
+	  </mrow>
+	  <mrow>
+	  <mn>36</mn>
+	  </mrow>
+	  </mfrac>
+    </mrow>
+</math>
+<math display="block">
+<mrow>
+      <mo>(</mo>
+      <mtable>
+        <mtr><mtd><mi>6</mi></mtd></mtr>
+        <mtr><mtd><mi>3</mi></mtd></mtr>
+      </mtable>
+      <mo>)</mo>
+	  <mo>=</mo>
+	  <mo>=</mo>
+    </mrow>
+</math>
+Lets see if that's correct...
+<img src="../Images/BinomTheo.img1.png">
+Looks like the third number in the sixth row is 20, meaning that the formula is correct.
+<br><br>
+
+So lets go back to the original binomial at the start...
+<p>(-4x + 2)<sup>3</sup></p>
+Lets first use the Binomial Theorem to expand the product...
+<p>(-4x + 2)<sup>3</sup> = x<sup>3</sup> + x<sup>2</sup>(2) + x(2)<sup>2</sup> + y<sup>3</sup></p>
+<p>= x<sup>3</sup> + x<sup>2</sup>(2) + x(2)<sup>2</sup> + y<sup>3</sup></p>
+	<h2>Done? Here are other Links</h2>
+		<a href="../MainPages/Lightweb%20MainPage.html">Back to Main Page</a><br><br>
+		<a href="../MainPages/Informational.html">Back to Informational</a>
+
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div><div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
+ <script src="../CSS/DigitalClock.js"></script>
+	</body>
+</html>

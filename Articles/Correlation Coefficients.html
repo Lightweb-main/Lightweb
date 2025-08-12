@@ -1,0 +1,118 @@
+<!DOCTYPE html> <html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		<link rel="stylesheet" href="../CSS/DigitalClock.css"> <style> header {position: absolute; top: 18px; right: 18px;}</style>
+		<style> header {position: absolute; top: 18px; right: 18px;}
+		table, tr, td{
+		border: 2px solid black;
+		font-size: 25;
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		}
+		table{
+		width:  500px;
+		}
+		</style>
+	<head>
+	<body> <header>Official Lightweb Site</header>
+	<h1>Correlation Coefficients</h1>
+	<h2>Introduction</h2>
+	Correlation Coefficients are the numbers that range from -1 to 1 that quantifies the strength and direction (linear relationship) between a variable
+	and another with 1 being a perfect correlation and zero being no correlation at all. Correlation Coefficients are often disrupted by outliers (numb
+	ers significantly out of range or an unusual number).
+
+	<h2>Pearson's Correlation Coefficient</h2>
+	Pearson’s Correlation Coefficient is a way to calculate the linear relationship between two continuous variables…
+	
+	<table>
+	<tr>
+	<th>X</th>
+	<th>Y</th>
+	</tr>
+	<tr>
+	<td>4</td>
+	<td>0</td>
+	</tr>
+	<tr>
+	<td>9</td>
+	<td>1</td>
+	</tr>
+	<tr>
+	<td>19</td>
+	<td>5</td>
+	</tr>
+	<tr>
+	<td>29</td>
+	<td>7</td>
+	</tr>
+	<tr>
+	<td>44</td>
+	<td>10</td>
+	</tr>
+	<tr>
+	<td>58</td>
+	<td>12</td>
+	</tr>
+	<tr>
+	<td>75</td>
+	<td>14</td>
+	</tr>
+	</table>
+
+
+The formula is a lot but here it is…
+<p>&Sigma;(xi - x)(yi - y) / &radic;[(x<sub>i</sub> - x)&sup2;][(y<sub>i</sub> -  y)&sup2;]</p>
+
+<p>(xi-x) - Every x value in a sample subtracted by the mean.</p>
+<p>(yi- y) - Every y value in a sample is subtracted by the mean.</p>
+So we take all the values for x and y and find the mean of both variables…
+<p>X= 238/7 = 34</p>
+<p>Y = 49/7 = 7</p>
+<p>-30 - 25 - 15 - 5 + 10 + 24 + 41 = 0 </p>
+<p>-7 - 6 - 2 + 0 + 3 + 5 + 7 = 0 </p>
+Quick note: If the value is equal to zero like (x - the mean of x) = 0, that means (HAHAHA) that the value of (variable - the mean of the variable) is its mean…
+<p>(xi - x)(yi - y)</p>
+<p>-30 * -7 = 210</p>
+<p>-25 * -6 = 150</p>
+<p>-15 * -2 = 30</p>
+<p>-5 * 0 = 0</p>
+<p>10 * 3 = 30</p>
+<p>24 * 5 = 120</p>
+<p>41 * 7 = 287</p> 
+
+
+<p>210 + 150 + 30 + 0 + 30 + 120 + 287 = 827</p>
+ 
+<p>827[(xi - x)&sup2;][(yi - y)&sup2;]</p>
+Now finding the squared versions of all the numbers…
+<p>(-30)2 = 900</p> 
+<p>(-25)2 = 625</p> 
+<p>(-15)2 = 225</p> 
+<p>(-5)2 = 25</p> 
+<p>102 = 100</p> 
+<p>242 = 576</p> 
+<p>412 = 1681</p> 
+<p>900 + 625 + 225 + 25 + 100 + 576 + 1681 = 4132</p> 
+
+<p>(-7)2 = 49</p> 
+<p>(-6)2 = 36</p> 
+<p>(-2)2 = 4</p> 
+<p>02 = 0</p> 
+<p>(3)2 = 9</p> 
+<p>(5)2 = 25</p> 
+<p>(7)2 = 49 </p> 
+
+<p>49 + 36 + 4 + 0 + 9 + 25 + 49 = 172</p> 
+<p>4132 * 172 = 710704<p>
+
+<p>827 / &radic;710704 = 827 / 843= 0.981</p> 
+The correlation coefficient between x and y is 0.981, signifying a very strong covariance between the two variables.<br><br>
+
+
+<a href="../MainPages/Informational.html">Back to Informational</a>
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div><div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
+  <script src="../CSS/DigitalClock.js"></script>
+	</body>
+</html>

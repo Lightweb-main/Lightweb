@@ -1,0 +1,103 @@
+<!DOCTYPE html> <html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.articles.css">
+		<link rel="stylesheet" href="../CSS/DigitalClock.css"> <style> header {position: absolute; top: 18px; right: 18px;}</style>
+		
+	</head>
+	<body> <header>Official Lightweb Site</header>	
+		<h1>Mean Absolute Deviation & Standard Deviation</h1>
+		<h2>Introduction</h2>
+Mean Absolute Deviation (also abbreviated as MAD) and Standard Deviation are both measurements related to mean/average as a way to figure out the differences of value between every value in a set of numbers. Both MAD and Standard Deviation use the mean of a set of numbers to find out their values.
+<h2>Mean Absolute Deviation (MAD)</h2>
+Mean Absolute Deviation is the average distance between every value with the mean of the set of numbers. Let's say we had one…
+<p>2, 5, 10, 21, 47</p>
+We would first find the mean which is every number added up and divided by the amount of numbers so…
+<p>2 + 5 = 7</p>
+<p>7 + 10 = 17</p>
+<p>17 + 21 = 38</p>
+<p>38 + 45 = 85</p>
+And 85 over 5 equals 17. Now that we have the average of the set, we would have to find the differences for every number to the average. So…
+<p>17 - 2 = 15</p>
+<p>15 - 5 = 10</p>
+<p>15 - 10 = 5</p>
+<p>21 - 15 = 6</p>
+<p>47 - 15 = 32</p>
+And now we would have to add up all the numbers so…
+<p>15 + 10 = 25</p>
+<p>25 + 5 = 30</p>
+<p>30 + 6 = 36</p>
+<p>36 + 32 = 68</p>
+And now that we have our final number, we would have to divide the number by the amount of numbers in the set again…
+<p>68 / 5 = 13.6</p>
+So the MAD for this set of numbers is 13.6.
+
+The formula for Mean Absolute Deviation is the average of the numbers. The sum of the difference between those numbers. Then you divide the final number by the amount of numbers in the set.
+
+<h2>Standard Deviation (SD)</h2>
+Standard Deviation (also written as σ) is the variation between the values in a set. Standard Deviation is known to be much harder than figuring out Mean Absolute Deviation. And Standard Deviation is known to give answers that are complicated decimal numbers followed with more than 9 digits of number behind the decimal sign. Let's say we had a set of numbers…
+<p>1, 5, 7, 10, 12</p>
+First we would </p>have to find the mean of the set of numbers so…
+<p>1 + 5 = 6</p>
+<p>6 + 7 = 13</p>
+<p>13 + 10 = 23</p>
+<p>23 + 12 = 35</p>
+<p>35 / 5 = 7</p>
+So seven is the mean of the set of numbers. Here's where it gets complicated, we would have to put in every number minus the mean squared…
+<p>&radic;(1 - 7)<sup>2</sup>... (12 - 7)<sup>2</sup></p>
+<p>1 - 7 = -6</p>
+<p>-62 = 36</p>
+<p>5 - 7 = -2</p>
+<p>-22 = 4</p>
+<p>7 - 7 = 0</p>
+<p>10 - 7 = 3</p>
+<p>32 = 9</p>
+<p>12 - 7 = 5</p>
+<p>52 = 25</p>
+<p>36 + 4 = 40</p>
+<p>40 + 9 = 49</p>
+<p>49 + 25 = 74</p>
+After the final number. We would have to divide 74 by 5 since there are five numbers. 
+<p>74 / 5 = 14.8</p>
+<p>σ<sup>2</sup> = 14.8</p>
+And the final answer is the square root of 14.8…
+<p>σ  = &radic;14.8</p>
+Here is the formula for standard deviation…
+<math display="block">
+  <mrow>
+    <mi>&#x03C3;</mi>
+    <mo>=</mo>
+    <msqrt>
+      <mfrac>
+        <mrow>
+          <munderover>
+            <mo>&#x2211;</mo> 
+            <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
+            <mi>n</mi>
+          </munderover>
+          <mfenced>
+            <msup>
+              <mrow>
+                <msub><mi>(x</mi><mi>i</mi></msub>
+                <mo>&#x2212;</mo>
+                <mi>&#x03BC;)</mi> 
+              </mrow>
+              <mn>2</mn>
+            </msup>
+          </mfenced>
+        </mrow>
+        <mi>n</mi>
+      </mfrac>
+    </msqrt>
+  </mrow>
+</math>
+
+		
+		
+		<h2>Done? Here are other Links</h2>
+		<a href="../MainPages/Lightweb%20MainPage.html">Back to Main Page</a><br><br>
+		<a href="../MainPages/Informational.html">Back to Informational</a>
+
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div><div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
+ <script src="../CSS/DigitalClock.js"></script>
+	</body>
+</html>
