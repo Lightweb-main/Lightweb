@@ -1,0 +1,304 @@
+
+p{
+text-align: center;
+font-size: 25px;
+}
+
+header{
+position: absolute;
+top: 18px;
+right: 18px;
+font-weight: bold;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.95; }
+}
+
+@keyframes scanlines-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 24px;
+  }
+}
+body.AnalogScreen::before{
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 4px,
+    transparent 8px
+  );
+  background-size: 100% 12px; 
+  animation: scanlines-move 1s linear infinite;
+  
+}
+body.CRTBLUEScreen::before{
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 4px,
+    transparent 8px
+  );
+  background-size: 100% 12px; 
+  animation: scanlines-move 1s linear infinite;
+  
+}
+#DigitalClock{
+position: absolute;
+top: -40px;
+left: -40px;
+font-size: 50px;
+width: 250px;
+border: 4px solid var(--DigitalClockBackground);
+border-radius: 15px;
+font-weight: var(--FontWeight);
+}
+
+#DigitalCalendar{
+position: absolute;
+text-align: center;
+top: 15px;
+left: -40px;
+font-size: 25px;
+width: 265px;
+border: 2px solid var(--DigitalClockBackground);
+border-radius: 15px; 
+font-weight: var(--FontWeight)
+}
+
+h1{
+text-align: center;
+font-size: 70px;
+font-weight: bold;
+}
+
+#searchInput {
+background-color: var(--SearchArticlesColor);
+font-weight: var(--FontWeight);
+     width: 100%;
+     max-width: 600px;
+    	  	display: block;
+		margin-bottom: 20px;
+      		padding: 15px;
+  	    	font-size: 18px;
+      		border: 1px solid #ccc;
+     		 border-radius: 8px;
+		transition: 0.3 ease
+    }
+
+		    #searchInput:focus {
+    		  border-color: var(--SearchArticlesColor)
+   		   box-shadow: 0 0 5px rgba(0,123,255,0.3);
+   		   outline: none;
+    }
+
+
+
+
+body.militaryTime{
+--militaryTimeButton: #13ff0d;
+}
+
+
+
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --border: #474747;
+  --tableborder: #dbdbdb;
+  --screenToggleButton: #7ae5ff;
+  --SearchArticlesColor: #646464;
+  --DigitalClockBackground: #e9e9e9;
+}
+
+body.AnalogScreen {
+  --bg: #002b01;
+  --text: #16ff9c;
+  --border: #007102;
+  --tableborder: #16ff9c;
+  --AnalogScreenButton: #16ff9c;
+  --SearchArticlesColor: #00ad0a;
+  --DigitalClockBackground: #16ff9c;
+  --FontWeight: 900;
+  animation: flicker 0.15s infinite;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px #0f0,
+    0 0 80px #0f0;
+}
+
+body.CRTBLUEScreen {
+  --bg: #0011aa;
+  --text: #d0d0d0;
+  --border: #000d7f;
+  --tableborder: #d0d0d0;
+  --CRTBlueScreenButton: #16ff9c;
+  --SearchArticlesColor: #0011aa;
+  --DigitalClockBackground:  #d0d0d0;
+  --FontWeight: 900;
+  animation: flicker 0.15s infinite;
+  text-shadow: none;
+  
+}
+:root {
+  --bg: #eceff1;
+  --text: #121212;
+  --border: #e9e8e8;
+  --tableborder: #000000;
+  --screenToggleButton: #006b86;
+  --militaryTimeButton: #037f00;
+  --AnalogScreenButton: #037f00;
+  --CRTBlueScreenButton: #037f00;
+  --SearchArticlesColor: #fdfdfd;
+  --DigitalClockBackground: #000000;
+  --FontWeight: 400;
+ 
+}
+
+table, tr, td, iframe{
+border: 2px solid var(--tableborder);
+}
+
+
+p, h1{
+  color: var(--text);
+  font-weight: var(--FontWeight)
+}
+
+
+body.dark img {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+
+a{
+color: var(--text);
+font-size: 25px;
+font-weight: bold;
+border: 12px solid var(--border);
+border-radius: 10px;
+text-decoration: none;
+border-color: var(--border);
+background-color: var(--border);
+font-weight: var(--FontWeight)
+
+}
+
+a:hover{
+color: red;
+}
+
+example{
+text-align: center;
+font-size: 25px;
+}
+
+#screen-toggle{
+color: var(--text);
+background: var(--screenToggleButton);
+  color: white;
+  border: 1px white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 1em;
+  position: absolute;
+  top: 50%
+  left: 50%
+}
+
+#millitary-time-button{
+color: var(--text);
+background: var(--militaryTimeButton);
+  color: white;
+  border: 1px white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 1em;
+  position: absolute;
+  top: 50%
+  left: 50%
+}
+
+#analog-screen-button{
+color: var(--text);
+background: var(--AnalogScreenButton);
+  color: white;
+  border: 1px white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 1em;
+  position: absolute;
+  top: 50%
+  left: 50%
+}
+
+#CRTBLUE-screen-button{
+color: var(--text);
+background: var(--CRTBlueScreenButton);
+  color: white;
+  border: 1px white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 1em;
+  position: absolute;
+  top: 50%
+  left: 50%
+}
+
+.settingbutton1{
+margin: 0;
+position: absolute;
+top: 16%;
+left: 5%;
+text-align: center;
+width=200%
+}
+
+.settingbutton2{
+margin: 0;
+position: absolute;
+top: 24%;
+left: 5%;
+text-align: center;
+width=200%
+}
+
+.settingbutton3{
+margin: 0;
+position: absolute;
+top: 32%;
+left: 5%;
+text-align: center;
+width=200%
+}
+
+.settingbutton4{
+margin: 0;
+position: absolute;
+top: 40%;
+left: 5%;
+text-align: center;
+width=200%
+}

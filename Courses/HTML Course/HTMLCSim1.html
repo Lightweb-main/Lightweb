@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+
+	</head>
+	<style>
+	body {
+      margin: 0;
+      font-family: sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2 {
+      padding: 10px;
+      margin: 0;
+    }
+
+    #container {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    #output {
+      flex: 2;
+      border: 2px solid black;
+      width: 100%;
+    }
+
+    #editor {
+      flex: 1.2;
+      display: flex; 
+      flex-direction: column;
+      border-left: 2px solid #ccc;
+    }
+
+    textarea {
+      flex: 1;
+      width: 100%;
+      font-family: monospace;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 5px;
+      font-size: 16px;
+      width: 100%;
+      border: none;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+	
+	.highlight {
+    color: red;
+    font-weight: bold;
+  }
+
+	</style>
+	<body>
+  <h2>HTML Code Editor</h2>
+  <div id="container">
+    <iframe id="output"></iframe>
+
+    <div id="editor">
+	<button onclick="runCode()">Run Code</button>
+      <textarea id="codeInput" contenteditable="true" placeholder="Type your HTML here..."></textarea>
+	  <button onclick="Done()">Done?</button>
+    </div>
+  </div>
+
+  <script>
+  alert("Prompt: Try to type in some text")
+const textarea = document.getElementById("codeInput");
+
+  textarea.addEventListener("keydown", (event) => {
+    if (event.key === '>') {
+      setTimeout(() => {
+        const cursor = textarea.selectionStart;
+        const value = textarea.value;
+
+        const before = value.slice(0, cursor);
+        const after = value.slice(cursor);
+
+        const tagMatch = before.match(/<(\w+)>$/);
+
+        if (tagMatch) {
+          const tagName = tagMatch[1];
+          const voidTags = ['br', 'hr', 'img', 'meta', 'input', 'link'];
+
+          if (!voidTags.includes(tagName.toLowerCase())) {
+            const closingTag = `</${tagName}>`;
+
+            if (!after.startsWith(closingTag)) {
+              textarea.value = before + closingTag + after;
+
+              const newCursor = before.length;
+              textarea.setSelectionRange(newCursor, newCursor);
+            }
+          }
+        }
+      }, 0);
+    }
+  });
+    function runCode() {
+      const userCode = document.getElementById("codeInput").value;
+      const outputFrame = document.getElementById("output");
+      const outputDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+	  
+	  
+      outputDoc.open();
+      outputDoc.write(userCode);
+      outputDoc.close();
+    }
+	
+	function Done(){
+	document.location = "HTMLCourse4.html"
+	}
+  </script>
+</body>
+</html>
+		

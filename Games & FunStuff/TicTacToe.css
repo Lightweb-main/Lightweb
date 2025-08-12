@@ -1,0 +1,115 @@
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.95; }
+}
+* {
+  box-sizing: border-box;
+}
+
+@keyframes scanlines-move {
+  0% {
+    background-position: 0 0px;
+  }
+  100% {
+    background-position: 0 24px;
+  }
+}
+html.AnalogScreen::before{
+  content: '';
+  position: fixed;
+  top: 0px; left: 0px; right: 0px; bottom: 0px;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 4px,
+    transparent 8px
+  );
+  background-size: 100% 12px; 
+  animation: scanlines-move 1s linear infinite;
+  
+}
+html:root {
+  --bg: #eceff1;
+  --text: #121212;
+  --border: #e9e8e8;
+  --TileColor: #000000;
+  --TileBorder: #ffffff;
+}
+
+html.dark {
+   --bg: #121212;
+  --text: #ffffff;
+  --border: #000000;
+  --TileColor: #ffffff;
+  --TileBorder: #ffffff;
+}
+}
+
+html.AnalogScreen {
+  --bg: #002b01;
+  --text: #ffffff;
+  --border: #000000;
+  --TileColor: #ffffff;
+  --TileBorder: #ffffff;
+}
+
+
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #TicTacToeGame {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 5px;
+    }
+
+    .cell {
+      background-color: var(--TileColor);
+      color: #00ff99;
+      font-size: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 2px solid var(--TileBorder);
+	  border-color: var(--TileBorder);
+      user-select: none;
+    }
+
+    .cell:hover {
+      background-color: #333;
+    }
+
+    #GameState {
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #00ff99;
+      color: black;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #00cc77;
+    }

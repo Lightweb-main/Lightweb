@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='../CSS/Lightweb.css'>
+<link rel='stylesheet' href='CivilCreat.css'>
+
+</head>
+<body>
+<p style='position: absolute; top: -10px; left:10px;'>Civiliation Creation</p>
+<div id='ConfineStatistics'>
+<h2 id="Title1">Confine Statistics</h2>
+<p id='Population'>Population</p>
+<p id='Wealth'>Wealth</p>
+</div>
+<div id='ControlStatistics'>
+<h2 id="Title2">Reputation Statistics</h2>
+<p id='Corruption'>Corruption</p>
+<p id='Stability'>Stability</p>
+<p id='Unrest'>Unrest</p>
+</div>
+<button id='Start' style="visibility:  ;">Start a New Civilization, A New Empire.</button>
+<script src='../CSS/DigitalClock.js'></script>
+<script src='CivilCreat.js'></script>
+<script>
+Start.addEventListener('click', function() {
+  if (population == 0) {
+    population = 1;
+	document.getElementById('Start').style.display = "none";
+  }
+});
+</script>
+</body>
+</html>

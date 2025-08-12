@@ -1,0 +1,65 @@
+#Population{
+position: absolute;
+top: 75px; 
+left: 200px; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+#Title1{
+position: absolute;
+top: 35px; 
+left: 180px; 
+font-size: 30px;
+}
+	
+
+
+#Title2{
+position: absolute;
+top: 35px; 
+left: 840px; 
+font-size: 30px;
+}
+#Wealth{
+position: absolute;
+top: 135px; 
+left: 200px; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+
+#Corruption{
+position: absolute;
+top: 135px; 
+left: 840px; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+#Stability{
+position: absolute;
+top: 75px; 
+left: 840px; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+
+}
+#Unrest{
+position: absolute;
+top: 195px; 
+left: 840px; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+#Start{
+position: absolute;
+top: 800px; 
+left: 840px; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
