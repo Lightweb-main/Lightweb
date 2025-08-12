@@ -1,0 +1,56 @@
+<!DOCTYPE html> <html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.css">
+		<link rel="stylesheet" href="../CSS/DigitalClock.css">
+		
+		<style>
+		a, h1, h2, header{
+	 font-weight: 550;
+	 }
+	 ul{
+	 margin: 0px;
+	 padding: 0px;
+	 }
+		</style>
+	</head>
+	
+	<body>	
+		<header>Official Lightweb Site</header>
+		<title>Lightweb: Noninformational</title>
+		<h1>Noninformational</h1>
+		<h2 style="text-align: center;">Home to ficticious content.</h2>
+		<input type="text" id="searchInput" placeholder="Search Articles..." />
+		<ul id="search">
+		<li>
+		<a href="../NoninformationalArticles/SuperpowersAbilitiesRating.html">Superpowers and Abilities Ranked</a><br><br><br>
+		<a href="../NoninformationalArticles/The%20Smile%20Tapes.html">The Smile Tapes - By  Patorikku</a><br><br><br>
+		<a href="Lightweb%20MainPage.html">Exit</a><br><br><br>
+		</li>
+		</ul>
+	<script>
+    const searchInput = document.getElementById('searchInput');
+    const listItems = document.querySelectorAll('#search ')
+    const noQuizzes = document.getElementById('noQuizzes');
+
+
+    searchInput.addEventListener('input', function () {
+      const searchTerm = this.value.toLowerCase();
+      let visibleCount = 0;
+
+      listItems.forEach((li) => {
+         const text = li.textContent.toLowerCase();
+        const isVisible = text.includes(searchTerm);
+        li.style.display = isVisible ? '' : 'none';
+        if (isVisible) visibleCount++;
+      });
+
+      noQuizzes.style.display = visibleCount === 0 ? 'block' : 'none';
+    });	
+  </script>
+
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
+<div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
+     <script src="../CSS/DigitalClock.js"></script>
+</body>
+</html>
+		
