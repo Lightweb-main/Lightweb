@@ -1,7 +1,13 @@
 <!DOCTYPE html> <html>
 	<head>
 		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
-		<link rel="stylesheet" href="../CSS/DigitalClock.css"> <style> header {position: absolute; top: 18px; right: 18px;}</style>
+		<link rel="stylesheet" href="../CSS/DigitalClock.css"> 
+		<style>
+			header {position: absolute; top: 18px; right: 18px;}
+			body.dark, body.AnalogScreen img{
+			filter: invert(1);
+			}
+		</style>
 		
 	</head>
 	<body> <header>Official Lightweb Site</header>	
@@ -67,4 +73,5 @@ The first root of the cubic equation is -2 because the x + 2 = 0 so x = -2, and 
 <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div><div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
  <script src="../CSS/DigitalClock.js"></script>
 	</body>
+
 </html>
