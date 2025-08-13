@@ -14,13 +14,15 @@
 		background-color: #935c00;
 		}
 		
-		body.dark #text-change{
+		body.dark, body.AnalogScreen #text-change{
 		color: #ffb840;
+		text-shadow: none;
 		h1{
 		color: #ffb840;
+		text-shadow: none;
 		}
 		}
-		body.dark{
+		body.dark, body.AnalogScreen{
 		background-color: #6e4500;
 		}
 		a{
@@ -28,7 +30,12 @@
 		background-color: #e58f00; 
 		border-color: #e58f00;
 		}
-		
+		body.AnalogScreen{
+		color: var(--text);
+		background-color: var(--bg);
+		border-color: var(--border);
+		text-shadow: none;
+		}
 		body.dark a{
 		color: #ffbb45;
 		background-color: #603d00; 
@@ -73,4 +80,5 @@ Metamorphic rocks are formed when other types of rocks are exposed to extreme he
 <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div><div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
  <script src="../CSS/DigitalClock.js"></script>
 	</body>
+
 </html>
