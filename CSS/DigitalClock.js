@@ -134,10 +134,13 @@ function remove(){
 	}
 }
 
-const htmlContent = `
-  <link rel="icon" type="image/png" href="../Images/Lightweb.icon.png">
-`;
-document.getElementById("container").innerHTML = htmlContent;
+const iconthingy = document.createElement('link');
+iconthingy.rel = 'icon'; 
+iconthingy.type = 'image/png'; 
+iconthingy.href = '../Images/Lightweb.icon.png';
+
+document.head.appendChild(favicon);
+
 
 
 
