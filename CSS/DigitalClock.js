@@ -139,7 +139,8 @@ iconthingy.rel = 'icon';
 iconthingy.type = 'image/png'; 
 iconthingy.href = '../Images/Lightweb.icon.png';
 
-document.head.appendChild(favicon);
+document.head.appendChild(iconthingy);
+
 
 
 
