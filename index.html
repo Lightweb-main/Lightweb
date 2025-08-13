@@ -9,6 +9,13 @@
       margin: 0 auto;
       border: 1px solid black;
       }
+      button1{
+      display: block;
+      }
+      
+      button2, button3, button4, button5{
+      display: none;
+      }
     </style>
   </head>
   <body>
@@ -17,11 +24,16 @@
     1. No altering the original code (however downloading a copy and modifying it is okay and creating extensions or original articles are welcome).<br><br>
     2. NEVER USE LIGHTWEB WHEN GOGUARDIAN IS ACTIVE. (VERY VERY VERY IMPORTANT).<br><br>
     3. NEVER ALLOW ANY PERSONS THAT CAN BLOCK THIS SITE TO SEE LIGHTWEB (other students can be invited to the google doc link).<br><br>
-    <button style="display: flex; justify-content: center;" onclick="proceed();">I agree to the terms and whatever and just take me to the site already.</button>
+    <button id="button1" style="display: flex; justify-content: center;" onclick="proceed1();">I agree to the terms and whatever and just take me to the site already.</button>
+    <button id="button2" style="display: flex; justify-content: center;" onclick="proceed2();">I don't really believe you. Click me again.</button>
+    <button id="button3" style="display: flex; justify-content: center;" onclick="proceed3();">I still don't really believe you. Click me again again.</button>
+    <button id="button4" style="display: flex; justify-content: center;" onclick="proceed4();">Click me again.</button>
+    <button id="button5" style="display: flex; justify-content: center;" onclick="proceed5();">Alright click me again to go to Lightweb.</button>
     </div>
     <script>
-      function proceed(){
-      document.location = "MainPages/Lightweb%20MainPage.html"
+      function proceed1(){
+      button1 = document.getElementById("button1") 
+      button1.style.display = "none"
       }
     </script>
   </body>
