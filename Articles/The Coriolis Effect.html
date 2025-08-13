@@ -7,14 +7,20 @@
 		body{
 		background-color: #a6f0ff;
 		}
-		
-		body.dark #text-change{
+
+		body.AnalogScreen{
+		text-shadow: none;
+		border-color: var(--border);
+		background-color: var(--bg);
+		color: var(--text);
+		}
+		body.dark, body.AnalogScreen #text-change{
 		color: #7fd4ff;
 		h1{
 		color: #7fd4ff;
 		}
 		}
-		body.dark{
+		body.dark, body.AnalogScreen{
 		background-color: #004263;
 		}
 		a{
@@ -56,4 +62,5 @@ The Coriolis effect impacts Earth’s climate significantly. For example, Hurric
 <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div><div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
  <script src="../CSS/DigitalClock.js"></script>
 	</body>
+
 </html>
