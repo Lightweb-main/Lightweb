@@ -135,11 +135,12 @@ function remove(){
 }
 
 const iconthingy = document.createElement('link');
-iconthingy.rel = 'shortcut icon'; 
+iconthingy.rel = 'icon'; 
 iconthingy.type = 'image/png'; 
 iconthingy.href = '../Images/Lightweb.icon.png';
 
 document.head.appendChild(iconthingy);
+
 
 
 
