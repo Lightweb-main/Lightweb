@@ -1,3 +1,4 @@
+let faviconNum = 0
 setInterval(update, 100);
 
 (function setInitialTheme() {
@@ -15,6 +16,7 @@ setInterval(update, 100);
 })();
 
 function update() {
+	faviconNum += 1
     const time = new Date();
     let hour = time.getHours();
     let min = time.getMinutes();
@@ -137,10 +139,11 @@ function remove(){
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
 iconthingy.type = 'image/png'; 
-iconthingy.href = '../Images/Lightweb.icon.png?v=' + new Date().getTime();
+iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
 
 
 document.head.appendChild(iconthingy);
+
 
 
 
