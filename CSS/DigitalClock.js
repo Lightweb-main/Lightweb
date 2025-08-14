@@ -137,9 +137,11 @@ function remove(){
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
 iconthingy.type = 'image/png'; 
-iconthingy.href = '../Images/Lightweb.icon.png';
+iconthingy.href = '../Images/Lightweb.icon.png?v=' + new Date().getTime();
+
 
 document.head.appendChild(iconthingy);
+
 
 
 
