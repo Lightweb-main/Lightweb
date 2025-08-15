@@ -30,6 +30,13 @@ html.AnalogScreen::before{
   animation: scanlines-move 1s linear infinite;
   
 }
+#PlayerX.score{
+position: absolute;
+top: 10px;
+left: 10px;
+border: 2px solid var(--border);
+border-radius: 10px;
+}
 html:root {
   --bg: #eceff1;
   --text: #121212;
@@ -114,5 +121,6 @@ body {
       background-color: #00cc77;
 
     }
+
 
 
