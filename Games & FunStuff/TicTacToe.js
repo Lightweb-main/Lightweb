@@ -26,10 +26,10 @@ function makeMove(index) {
     TextyToo.textContent = `Player ${currentPlayerTurn} wins!`;
     gameState = true;
     if(currentPlayerTurn == "X"){
-    PlayerXScore += 1
+    PlayerXScoreA += 1
     PlayerXScoreBoard.textContent = "Player X Score: "+PlayerXScoreA;
     } else {
-    PlayerOScore += 1
+    PlayerOScoreA += 1
     PlayerOScoreBoard.textContent = "Player O Score: "+PlayerOScoreA;
     }
     
@@ -67,6 +67,7 @@ function exitTicTacToe() {
 }
 
 drawBoard();
+
 
 
 
