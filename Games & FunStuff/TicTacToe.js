@@ -27,10 +27,11 @@ function makeMove(index) {
     gameState = true;
     if(currentPlayerTurn == "X"){
     PlayerXScore += 1
-      PlayerXScore.textcontent = "Player X S"
+    document.getElementById('PlayerXScore').textContent = "Player X Score: "+PlayerXScore;
     }
     if(currentPlayerTurn == "O"){
     PlayerOSCore += 1
+    document.getElementById('PlayerOScore').textContent = "Player O Score: "+PlayerOScore;
     }
     
   } else if (TicTacToeBoard.every(cell => cell !== "")) {
@@ -67,4 +68,5 @@ function exitTicTacToe() {
 }
 
 drawBoard();
+
 
