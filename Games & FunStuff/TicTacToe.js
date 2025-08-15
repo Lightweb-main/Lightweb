@@ -23,12 +23,10 @@ function makeMove(index) {
     TextyToo.textContent = `Player ${currentPlayerTurn} wins!`;
     gameState = true;
     if (currentPlayerTurn === "X") {
-  playerXScoreA += 1;
-  localStorage.setItem("playerXScore", playerXScore);
+  PlayerXScoreA += 1;
   PlayerXScoreBoard.textContent = "Player X Score: " + playerXScore;
 } else {
-  playerOScoreA += 1;
-  localStorage.setItem("playerOScore", playerOScore);
+  PlayerOScoreA += 1;
   PlayerOScoreBoard.textContent = "Player O Score: " + playerOScore;
     
   } else if (TicTacToeBoard.every(cell => cell !== "")) {
@@ -69,6 +67,7 @@ PlayerXScore = 0;
 PlayerOScore = 0;
 }
 drawBoard();
+
 
 
 
