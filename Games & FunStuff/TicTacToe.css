@@ -32,7 +32,7 @@ html.AnalogScreen::before{
 }
 #PlayerXScore{
 position: fixed;
-top: 250px;
+top: 10px;
 left: 250px
 font-size: 50px;
 width: 250px;
@@ -123,6 +123,7 @@ body {
       background-color: #00cc77;
 
     }
+
 
 
 
