@@ -1,5 +1,5 @@
-let PlayerXScoreA = 0;
-let PlayerOScoreA = 0;
+let PlayerXScore = parseInt(localStorage.getItem("playerXScore")) || 0;
+let PlayerOScore = parseInt(localStorage.getItem("playerOScore")) || 0;
 const TicTacTacGaGoo = document.getElementById('TicTacToeGame');
 const TextyToo = document.getElementById('GameState');
 const PlayerXScoreBoard = document.getElementById('PlayerXScore');
@@ -7,7 +7,8 @@ const PlayerOScoreBoard = document.getElementById('PlayerOScore');
 let TicTacToeBoard = Array(9).fill("");
 let currentPlayerTurn = "X";
 let gameState = false;
-
+PlayerXScoreBoard.textContent = "Player X Score: " + playerXScore;
+PlayerOScoreBoard.textContent = "Player O Score: " + playerOScore;
 function drawBoard() {
   TicTacTacGaGoo.innerHTML = "";
   TicTacToeBoard.forEach((cell, index) => {
@@ -25,13 +26,14 @@ function makeMove(index) {
   if (checkWinner(currentPlayerTurn)) {
     TextyToo.textContent = `Player ${currentPlayerTurn} wins!`;
     gameState = true;
-    if(currentPlayerTurn == "X"){
-    PlayerXScoreA += 1
-    PlayerXScoreBoard.textContent = "Player X Score: "+PlayerXScoreA;
-    } else {
-    PlayerOScoreA += 1
-    PlayerOScoreBoard.textContent = "Player O Score: "+PlayerOScoreA;
-    }
+    if (currentPlayerTurn === "X") {
+  playerXScore += 1;
+  localStorage.setItem("playerXScore", playerXScore);
+  PlayerXScoreBoard.textContent = "Player X Score: " + playerXScore;
+} else {
+  playerOScore += 1;
+  localStorage.setItem("playerOScore", playerOScore);
+  PlayerOScoreBoard.textContent = "Player O Score: " + playerOScore;
     
   } else if (TicTacToeBoard.every(cell => cell !== "")) {
     TextyToo.textContent = "It's a draw!";
@@ -67,6 +69,7 @@ function exitTicTacToe() {
 }
 
 drawBoard();
+
 
 
 
