@@ -9,17 +9,13 @@ let currentPlayerTurn = "X";
 let gameState = false;
 PlayerXScoreBoard.textContent = "Player X Score: " + playerXScore;
 PlayerOScoreBoard.textContent = "Player O Score: " + playerOScore;
-function drawBoard() {
-  TicTacTacGaGoo.innerHTML = "";
-  TicTacToeBoard.forEach((cell, index) => {
-    const div = document.createElement("div");
-    div.className = "cell";
-    div.textContent = cell;
-    div.addEventListener("click", () => makeMove(index));
-    TicTacTacGaGoo.appendChild(div);
-  });
-}
-
+function drawBoard(){ 
+TicTacTacGaGoo.innerHTML = ""; 
+TicTacToeBoard.forEach((cell, index) => { 
+const div = document.createElement("div"); 
+div.className = "cell"; div.textContent = cell; 
+div.addEventListener("click", () => makeMove(index)); 
+TicTacTacGaGoo.appendChild(div); }); }
 function makeMove(index) {
   if (TicTacToeBoard[index] !== "" || gameState) return;
   TicTacToeBoard[index] = currentPlayerTurn;
@@ -73,6 +69,7 @@ PlayerXScore = 0;
 PlayerOScore = 0;
 }
 drawBoard();
+
 
 
 
