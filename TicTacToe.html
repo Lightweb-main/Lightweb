@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="TicTacToe.css">
+  <style>
+    body.AnalogScreen, body.dark, body.CRTBlueScreen{
+    background-color: var(--bg);
+    color: var(--text);
+    border-color: var(--border);
+      
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tic Tac Toe</h1>
+  <div id="TicTacToeGame"></div>
+  <div id="GameState">Player X's turn</div>
+  <div id="PlayerXScore">Player X Score: </div>
+  <div id="PlayerOScore">Player O Score: </div>
+  <button onclick="resetGame()">Restart</button>
+  <button onclick="exitTicTacToe();">Exit</button>
+  <script src="TicTacToe.js"></script>
+  <script src="../CSS/DigitalClock.js"></script>
+</body>
+
+</html>
+
+
+
+
