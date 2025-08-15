@@ -90,10 +90,10 @@ body {
 
     #TicTacToeGame {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
-  grid-template-rows: repeat(3, 200px);
-  gap: 10px;
-  margin: 40px auto;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(3, 300px);
+  gap: 15px;
+  margin: 60px auto;
 }
 
 .cell {
@@ -129,6 +129,7 @@ body {
       background-color: #00cc77;
 
     }
+
 
 
 
