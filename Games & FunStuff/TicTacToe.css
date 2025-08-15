@@ -32,10 +32,9 @@ html.AnalogScreen::before{
 }
 #PlayerX.Score{
 position: absolute;
-top: -60px;
-left: -60px;
-border: 2px solid var(--border);
-border-radius: 10px;
+top: 0;
+left: 0;
+
 	
 }
 html:root {
@@ -122,6 +121,7 @@ body {
       background-color: #00cc77;
 
     }
+
 
 
 
