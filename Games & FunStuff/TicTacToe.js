@@ -29,7 +29,7 @@ function makeMove(index) {
     PlayerXScore += 1
     document.getElementById('PlayerXScore').textContent = "Player X Score: "+PlayerXScore;
     } else {
-    PlayerOSCore += 1
+    PlayerOScore += 1
     document.getElementById('PlayerOScore').textContent = "Player O Score: "+PlayerOScore;
     }
     
@@ -67,6 +67,7 @@ function exitTicTacToe() {
 }
 
 drawBoard();
+
 
 
 
