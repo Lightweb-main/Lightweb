@@ -1,5 +1,9 @@
+let PlayerXScore = 0;
+let PlayerOScore = 0;
 const TicTacTacGaGoo = document.getElementById('TicTacToeGame');
 const TextyToo = document.getElementById('GameState');
+const PlayerXScoreBoard = document.getElementById('PlayerXScore');
+const PlayerOScoreBoard = document.getElementById('PlayerOScore');
 let TicTacToeBoard = Array(9).fill("");
 let currentPlayerTurn = "X";
 let gameState = false;
@@ -21,6 +25,14 @@ function makeMove(index) {
   if (checkWinner(currentPlayerTurn)) {
     TextyToo.textContent = `Player ${currentPlayerTurn} wins!`;
     gameState = true;
+    if(currentPlayerTurn == "X"){
+    PlayerXScore += 1
+      PlayerXScore.textcontent = "Player X S"
+    }
+    if(currentPlayerTurn == "O"){
+    PlayerOSCore += 1
+    }
+    
   } else if (TicTacToeBoard.every(cell => cell !== "")) {
     TextyToo.textContent = "It's a draw!";
     gameState = true;
@@ -38,7 +50,7 @@ function checkWinner(player) {
     [0,4,8], [2,4,6]
   ];
   return winCombos.some(combo =>
-    combo.every(index => TicTacToeBoard[index] === player)
+    combo.every(index => TicTacToeBoard[index] === player) 
   );
 }
 
@@ -55,3 +67,4 @@ function exitTicTacToe() {
 }
 
 drawBoard();
+
