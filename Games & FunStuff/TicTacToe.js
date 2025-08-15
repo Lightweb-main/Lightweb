@@ -1,5 +1,5 @@
-let PlayerXScore = 0;
-let PlayerOScore = 0;
+let PlayerXScoreA = 0;
+let PlayerOScoreA = 0;
 const TicTacTacGaGoo = document.getElementById('TicTacToeGame');
 const TextyToo = document.getElementById('GameState');
 const PlayerXScoreBoard = document.getElementById('PlayerXScore');
@@ -27,10 +27,10 @@ function makeMove(index) {
     gameState = true;
     if(currentPlayerTurn == "X"){
     PlayerXScore += 1
-    document.getElementById('PlayerXScore').textContent = "Player X Score: "+PlayerXScore;
+    PlayerXScoreBoard.textContent = "Player X Score: "+PlayerXScoreA;
     } else {
     PlayerOScore += 1
-    document.getElementById('PlayerOScore').textContent = "Player O Score: "+PlayerOScore;
+    PlayerOScoreBoard.textContent = "Player O Score: "+PlayerOScoreA;
     }
     
   } else if (TicTacToeBoard.every(cell => cell !== "")) {
@@ -67,6 +67,7 @@ function exitTicTacToe() {
 }
 
 drawBoard();
+
 
 
 
