@@ -1,34 +1,38 @@
-let PlayerXScoreA = 0;
-let PlayerOScoreA = 0;
+let PlayerXScore = 0;
+let PlayerOScore = 0;
 const TicTacTacGaGoo = document.getElementById('TicTacToeGame');
 const TextyToo = document.getElementById('GameState');
-const PlayerXScoreBoard = document.getElementById('PlayerXScore');
-const PlayerOScoreBoard = document.getElementById('PlayerOScore');
+const PlayerXScoreBoardA = document.getElementById('PlayerXScoreBoard')
+const PlayerOScoreBoardA = document.getElementById('PlayerOScoreBoard')
 let TicTacToeBoard = Array(9).fill("");
 let currentPlayerTurn = "X";
 let gameState = false;
-PlayerXScoreBoard.textContent = "Player X Score: " + playerXScore;
-PlayerOScoreBoard.textContent = "Player O Score: " + playerOScore;
-function drawBoard(){ 
-TicTacTacGaGoo.innerHTML = ""; 
-TicTacToeBoard.forEach((cell, index) => { 
-const div = document.createElement("div"); 
-div.className = "cell"; div.textContent = cell; 
-div.addEventListener("click", () => makeMove(index)); 
-TicTacTacGaGoo.appendChild(div); }); }
+
+function drawBoard() {
+  TicTacTacGaGoo.innerHTML = "";
+  TicTacToeBoard.forEach((cell, index) => {
+    const div = document.createElement("div");
+    div.className = "cell";
+    div.textContent = cell;
+    div.addEventListener("click", () => makeMove(index));
+    TicTacTacGaGoo.appendChild(div);
+  });
+}
+
 function makeMove(index) {
   if (TicTacToeBoard[index] !== "" || gameState) return;
   TicTacToeBoard[index] = currentPlayerTurn;
+  if(currentPlayerTurn == "X"){
+  PlayerXScore += 1;
+  PlayerXScoreBoardA.textContent = "PlayerX Score: "+PlayerXScore;
+  }
+  if(currentPlayerTurn == "O"){
+  PlayerOScore += 1;
+  PlayerOScoreBoardA.textContent = "PlayerO Score: "+PlayerOScore;
+  }
   if (checkWinner(currentPlayerTurn)) {
     TextyToo.textContent = `Player ${currentPlayerTurn} wins!`;
     gameState = true;
-    if (currentPlayerTurn === "X") {
-  PlayerXScoreA += 1;
-  PlayerXScoreBoard.textContent = "Player X Score: " + playerXScore;
-} else {
-  PlayerOScoreA += 1;
-  PlayerOScoreBoard.textContent = "Player O Score: " + playerOScore;
-    
   } else if (TicTacToeBoard.every(cell => cell !== "")) {
     TextyToo.textContent = "It's a draw!";
     gameState = true;
@@ -46,7 +50,7 @@ function checkWinner(player) {
     [0,4,8], [2,4,6]
   ];
   return winCombos.some(combo =>
-    combo.every(index => TicTacToeBoard[index] === player) 
+    combo.every(index => TicTacToeBoard[index] === player)
   );
 }
 
@@ -62,21 +66,6 @@ function exitTicTacToe() {
   document.location = "../MainPages/Games%20&%20FunStuff.html"
 }
 
-function resetScore(){
-PlayerXScoreA = 0;
-PlayerOScoreA = 0;
-}
 drawBoard();
-
-
-
-
-
-
-
-
-
-
-
 
 
