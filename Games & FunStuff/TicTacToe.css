@@ -30,7 +30,7 @@ html.AnalogScreen::before{
   animation: scanlines-move 1s linear infinite;
   
 }
-#PlayerX.Score{
+#PlayerXScore{
 position: absolute;
 top: -40px;
 left: -40px;
@@ -124,6 +124,7 @@ body {
       background-color: #00cc77;
 
     }
+
 
 
 
