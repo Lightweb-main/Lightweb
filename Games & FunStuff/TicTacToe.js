@@ -1,5 +1,5 @@
-let PlayerXScore = parseInt(localStorage.getItem("playerXScore")) || 0;
-let PlayerOScore = parseInt(localStorage.getItem("playerOScore")) || 0;
+let PlayerXScore = 0;
+let PlayerOScore = 0;
 const TicTacTacGaGoo = document.getElementById('TicTacToeGame');
 const TextyToo = document.getElementById('GameState');
 const PlayerXScoreBoard = document.getElementById('PlayerXScore');
@@ -73,6 +73,7 @@ PlayerXScore = 0;
 PlayerOScore = 0;
 }
 drawBoard();
+
 
 
 
