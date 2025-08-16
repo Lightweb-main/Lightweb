@@ -34,10 +34,10 @@
 
   <h1>Lightweb: Notes</h1>
   <textarea id="noteArea" placeholder="Start typing..."></textarea>
-	<a href="../MainPages/Games%20&%20FunStuff.html">Exit</a>
   <br>
   <button onclick="saveState()">Save</button>
   <button onclick="clearState()">Clear</button>
+  <button onclick="exit()">Exit</button>
 
   <script>
     const noteArea = document.getElementById('noteArea');
@@ -59,6 +59,9 @@
         localStorage.removeItem('myNote');
 		alert("Note has been cleared");
     }
+	function exit(){
+	document.location = "../MainPages/Games%20&%20FunStuff.html"
+	}
   </script>
 
 </body>
