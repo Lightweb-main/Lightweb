@@ -32,7 +32,7 @@
 </head>
 <body>
 
-  <h1>📝 My Notepad</h1>
+  <h1>Lightweb: Notes</h1>
   <textarea id="noteArea" placeholder="Start typing..."></textarea>
 	<a href="../MainPages/Games%20&%20FunStuff.html">Exit</a>
   <br>
@@ -42,7 +42,6 @@
   <script>
     const noteArea = document.getElementById('noteArea');
 
-    // Load saved note on page load
     window.onload = () => {
       const savedNote = localStorage.getItem('myNote');
       if (savedNote) {
@@ -50,18 +49,15 @@
       }
     };
 
-    // Save note to localStorage
     function saveNote() {
       localStorage.setItem('myNote', noteArea.value);
-      alert('Note saved!');
+		alert("Note has been saved");
     }
 
-    // Clear note and localStorage
     function clearNote() {
-      if (confirm('Are you sure you want to clear the note?')) {
         noteArea.value = '';
         localStorage.removeItem('myNote');
-      }
+		alert("Note has been cleared");
     }
   </script>
 
