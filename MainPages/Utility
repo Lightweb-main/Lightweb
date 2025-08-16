@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.css">
+		<link rel="stylesheet" href="../CSS/DigitalClock.css">
+		
+		<style>
+		a, h1, h2, header{
+	 font-weight: 550;
+	 }
+		</style>
+	</head>
+	
+	<body>	
+		<header>Official Lightweb Site</header>
+		<title>Lightweb: Utility</title>
+		<h1>Utility</h1>
+		<h2 style="text-align: center;">Pretty much where all the utility thing are.</h2>
+		<a style="font-size: 45;" href="../Games%20&%20FunStuff/Notes.html">Notes</a><br><br><br>
+		<a style="font-size: 45;" href="../Games%20&%20FunStuff/UnitConverter.html">Unit Converter</a><br><br><br>
+		<a style="font-size: 45;" href="Lightweb%20MainPage.html">Exit</a>
+	<script>
+    const searchInput = document.getElementById('searchInput');
+    const listItems = document.querySelectorAll('#search li')
+    const noQuizzes = document.getElementById('noQuizzes');
+
+
+    searchInput.addEventListener('input', function () {
+      const searchTerm = this.value.toLowerCase();
+      let visibleCount = 0;
+
+      listItems.forEach((li) => {
+         const text = li.textContent.toLowerCase();
+        const isVisible = text.includes(searchTerm);
+        li.style.display = isVisible ? '' : 'none';
+        if (isVisible) visibleCount++;
+      });
+
+      noQuizzes.style.display = visibleCount === 0 ? 'block' : 'none';
+    });	
+  </script>
+
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
+<div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
+     <script src="../CSS/DigitalClock.js"></script>
+</body>
+</html>
+		
+	</body>
+
+</html>
+
