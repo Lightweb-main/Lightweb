@@ -36,8 +36,8 @@
   <textarea id="noteArea" placeholder="Start typing..."></textarea>
 	<a href="../MainPages/Games%20&%20FunStuff.html">Exit</a>
   <br>
-  <button onclick="saveNote()">💾 Save</button>
-  <button onclick="clearNote()">🗑️ Clear</button>
+  <button onclick="saveState()">Save</button>
+  <button onclick="clearState()">Clear</button>
 
   <script>
     const noteArea = document.getElementById('noteArea');
@@ -49,12 +49,12 @@
       }
     };
 
-    function saveNote() {
+    function saveState() {
       localStorage.setItem('myNote', noteArea.value);
 		alert("Note has been saved");
     }
 
-    function clearNote() {
+    function clearState() {
         noteArea.value = '';
         localStorage.removeItem('myNote');
 		alert("Note has been cleared");
