@@ -5,22 +5,22 @@ document.getElementById("decimalAmount").addEventListener("change", convert);
 
 
 const conversionRates = {
-    quectometer: 10^30,
-    rontometer: 10^27,
-    yoctometer: 10^24,
-    zeptometer: 10^21,
-    attometer: 10^18,
-    femtometer: 10^15,
-    picometer: 10^12,
-    nanometer: 10^9,
-    micrometer: 10^6,
-    millimeter: 10^3,
-    centimeter: 10^2,
-    decimeter: 10^1,
-    meter: 10^0,
-    dekameter: 10^-1,
-    hectometer: 10^-2,
-    kilometer: 10^-3
+    quectometer: 10**30,
+    rontometer: 10**27,
+    yoctometer: 10**24,
+    zeptometer: 10**21,
+    attometer: 10**18,
+    femtometer: 10**15,
+    picometer: 10**12,
+    nanometer: 10**9,
+    micrometer: 10**6,
+    millimeter: 10**3,
+    centimeter: 10**2,
+    decimeter: 10**1,
+    meter: 10**0,
+    dekameter: 10**-1,
+    hectometer: 10**-2,
+    kilometer: 10**-3
   };
 
 function getDecimalPlaces(num) {
@@ -50,6 +50,7 @@ function convert() {
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces);
 }
+
 
 
 
