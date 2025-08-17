@@ -32,6 +32,7 @@ const conversionRates = {
     marathon: 0.0000236994972,
     megameter: 10**-6,
     gigameter: 10**-9,
+    astronomicalUnit: 0.0000000000066846,
     terameter: 10**-12,
     petameter: 10**-15,
     exameter: 10**-18,
@@ -70,6 +71,7 @@ function convert() {
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
+
 
 
 
