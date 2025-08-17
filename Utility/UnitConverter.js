@@ -30,7 +30,8 @@ function convert() {
   const valueInMeters = value / conversionRates[from];
   const convertedValue = valueInMeters * conversionRates[to];
 
-  document.getElementById("result").value = `${convertedValue.toFixed(decimalPlaces)} `;
+  document.getElementById("result").value = convertedValue.toFixed(decimalPlaces);
 }
+
 
 
