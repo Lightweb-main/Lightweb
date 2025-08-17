@@ -29,13 +29,14 @@ function convert() {
     return;
   }
 
-  const decimalPlaces = getDecimalPlaces(input);
+  const decimalPlaces = getDecimalPlaces(value);
 
   const valueInMeters = value / conversionRates[from];
   const convertedValue = valueInMeters * conversionRates[to];
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces);
 }
+
 
 
 
