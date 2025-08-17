@@ -1,9 +1,9 @@
-document.getElementById("inputValue").addEventListener("input", convert);
-document.getElementById("fromUnit").addEventListener("change", convert);
-document.getElementById("toUnit").addEventListener("change", convert);
-document.getElementById("decimalAmount").addEventListener("change", convert);
+document.getElementById("inputValue1").addEventListener("input", convert);
+document.getElementById("fromUnit1").addEventListener("change", convert);
+document.getElementById("toUnit1").addEventListener("change", convert);
+document.getElementById("decimalAmount1").addEventListener("change", convert);
 
-document.getElementById("fromUnit").value = "meter"
+document.getElementById("fromUnit1").value = "meter"
 
 const conversionRates = {
     quectometer: 10**30,
@@ -62,7 +62,7 @@ const conversionRates = {
   };
 
 function getDecimalPlaces(num) {
-  const decimalAmo = parseInt(document.getElementById("decimalAmount").value);
+  const decimalAmo = parseInt(document.getElementById("decimalAmount1").value);
   const numStr = String(num);
   const parts = numStr.split('.');
   const actualPlaces = parts[1] ? parts[1].length : 0;
@@ -70,14 +70,14 @@ function getDecimalPlaces(num) {
 }
 
 function convert() {
-  const input = document.getElementById("inputValue").value;
+  const input = document.getElementById("inputValue1").value;
   const value = parseFloat(input);
-  const from = document.getElementById("fromUnit").value;
-  const to = document.getElementById("toUnit").value;
+  const from = document.getElementById("fromUnit1").value;
+  const to = document.getElementById("toUnit1").value;
 
 
   if (Number.isNaN(value)) {
-    document.getElementById("result").value = "";
+    document.getElementById("result1").value = "";
     return;
   }
 
@@ -87,9 +87,10 @@ function convert() {
   const convertedValue = valueInMeters * conversionRates[to];
 
 
-  document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
-  document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
+  document.getElementById("result1").value = convertedValue.toFixed(decimalPlaces); 
+  document.getElementById("resultSciNot1").value = convertedValue.toExponential(2);
 }
+
 
 
 
