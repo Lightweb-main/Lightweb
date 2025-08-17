@@ -5,12 +5,12 @@ document.getElementById("decimalAmount").addEventListener("change", convert);
 
 
 const conversionRates = {
-    centimeter: 100,
-    decimeter: 10,
-    meter: 1,
-    dekameter: 0.1,
-    hectometer: 0.01,
-    kilometer: 0.001
+    centimeter: 10^2,
+    decimeter: 10^1,
+    meter: 10^0,
+    dekameter: 10^-1,
+    hectometer: 10^-2,
+    kilometer: 10^-3
   };
 
 function getDecimalPlaces(num) {
@@ -40,6 +40,7 @@ function convert() {
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces);
 }
+
 
 
 
