@@ -1,4 +1,8 @@
-setInterval(convert, 200);
+document.getElementById("inputValue").addEventListener("input", convert);
+document.getElementById("fromUnit").addEventListener("change", convert);
+document.getElementById("toUnit").addEventListener("change", convert);
+document.getElementById("decimalAmount").addEventListener("change", convert);
+
 
 const conversionRates = {
     centimeter: 100,
@@ -36,6 +40,7 @@ function convert() {
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces);
 }
+
 
 
 
