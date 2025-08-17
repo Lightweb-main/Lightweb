@@ -48,8 +48,14 @@ function convert() {
   const valueInMeters = value / conversionRates[from];
   const convertedValue = valueInMeters * conversionRates[to];
 
-  document.getElementById("result").value = convertedValue.toFixed(decimalPlaces);
+  const formattedValue =
+    Math.abs(convertedValue) < 0.0001 || Math.abs(convertedValue) > 1e6
+      ? convertedValue.toExponential(decimalPlaces)
+      : convertedValue.toFixed(decimalPlaces);
+
+  document.getElementById("result").value = formattedValue;
 }
+
 
 
 
