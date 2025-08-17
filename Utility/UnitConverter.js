@@ -4,7 +4,9 @@ document.getElementById("toUnit1").addEventListener("change", convert);
 document.getElementById("decimalAmount1").addEventListener("change", convert);
 
 document.getElementById("fromUnit1").value = "meter"
-
+document.getElementById("toUnit1").value = "kilometer"
+document.getElementById("inputValue1").value = 1000;
+document.getElementById("decimalAmount1").value = "2 -- Default"
 const conversionRates = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -90,6 +92,7 @@ function convert() {
   document.getElementById("result1").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot1").value = convertedValue.toExponential(2);
 }
+
 
 
 
