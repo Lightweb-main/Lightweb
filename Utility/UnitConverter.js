@@ -38,6 +38,7 @@ const conversionRates = {
     terameter: 10**-12,
     milliparsec: 0.000000000000032408,
     petameter: 10**-15,
+    lightYear: 0.00000000000000010570,
     parsec: 0.000000000000000032408,
     exameter: 10**-18,
     kiloparsec: 0.000000000000000000032408,
@@ -79,6 +80,7 @@ function convert() {
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
+
 
 
 
