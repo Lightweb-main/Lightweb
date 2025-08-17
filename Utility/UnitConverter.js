@@ -20,7 +20,16 @@ const conversionRates = {
     meter: 10**-0,
     dekameter:10**-1,
     hectometer:10**-2,
-    kilometer: 10**-3
+    kilometer: 10**-3,
+    megameter: 10**-6,
+    gigameter: 10**-9,
+    terameter: 10**-12,
+    petameter: 10**-15,
+    exameter: 10**-18,
+    zettameter: 10**-21,
+    yottameter: 10**-24,
+    ronnameter: 10**-27,
+    quettameter: 10**-30,
   };
 
 function getDecimalPlaces(num) {
@@ -51,6 +60,7 @@ function convert() {
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
 }
+
 
 
 
