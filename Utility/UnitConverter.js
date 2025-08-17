@@ -59,7 +59,7 @@ function convert() {
 
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
-  document.getElementById("resultSciNot").value = (convertedValue.toExponential(2));
+  document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
 
 
