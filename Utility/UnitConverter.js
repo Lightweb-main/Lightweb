@@ -27,6 +27,8 @@ const conversionRates = {
     kilometer: 10**-3,
     mile: 0.000621371192,
     nauticalMile: 0.000539956803456,
+    halfMarathon: 0.0000474,
+    marathon: 0.0000237,
     megameter: 10**-6,
     gigameter: 10**-9,
     terameter: 10**-12,
@@ -67,6 +69,7 @@ function convert() {
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
+
 
 
 
