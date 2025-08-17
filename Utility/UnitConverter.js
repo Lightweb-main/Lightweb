@@ -15,7 +15,7 @@ const conversionRates = {
     picometer: 10**12,
     angstrom: 10**10,
     nanometer: 10**9,
-    beardSecond: 0.000000005,
+    beardSecond: 200000000,
     micrometer: 10**6,
     millimeter: 10**3,
     centimeter: 10**2,
@@ -90,6 +90,7 @@ function convert() {
   document.getElementById("result1").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot1").value = convertedValue.toExponential(2);
 }
+
 
 
 
