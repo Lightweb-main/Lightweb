@@ -30,15 +30,23 @@ const conversionRates = {
     nauticalMile: 0.000539956803456,
     halfMarathon: 0.0000473989944,
     marathon: 0.0000236994972,
+    Picoparsec: 0.00003241,
     megameter: 10**-6,
+    nanoparsec: 0.000000032408,
     gigameter: 10**-9,
     astronomicalUnit: 0.0000000000066846,
     terameter: 10**-12,
+    milliparsec: 0.000000000000032408,
     petameter: 10**-15,
+    parsec: 0.000000000000000032408,
     exameter: 10**-18,
+    kiloparsec: 0.000000000000000000032408,
     zettameter: 10**-21,
+    megaparsec: 0.000000000000000000000032408,
     yottameter: 10**-24,
+    gigaparsec: 0.000000000000000000000000032408,
     ronnameter: 10**-27,
+    teraparsec: 0.000000000000000000000000000032408,
     quettameter: 10**-30,
   };
 
@@ -71,6 +79,7 @@ function convert() {
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
+
 
 
 
