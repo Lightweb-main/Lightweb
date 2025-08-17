@@ -1,9 +1,12 @@
 setInterval(convert, 200);
 
-function getDecimalPlaces(numStr) {
+function getDecimalPlaces(num) {
+  const numStr = String(num);
   const parts = numStr.split('.');
-  return parts[1] ? parts[1].length : 0;
+  const actualPlaces = parts[1] ? parts[1].length : 0;
+  return Math.max(2, actualPlaces);
 }
+
 
 function convert() {
   const input = document.getElementById("inputValue").value;
@@ -32,6 +35,7 @@ function convert() {
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces);
 }
+
 
 
 
