@@ -3,6 +3,7 @@ document.getElementById("fromUnit").addEventListener("change", convert);
 document.getElementById("toUnit").addEventListener("change", convert);
 document.getElementById("decimalAmount").addEventListener("change", convert);
 
+document.getElementById("fromUnit").value = "meter"
 
 const conversionRates = {
     quectometer: 10**30,
@@ -69,6 +70,7 @@ function convert() {
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
+
 
 
 
