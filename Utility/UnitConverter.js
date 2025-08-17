@@ -23,6 +23,7 @@ const conversionRates = {
     meter: 10**-0,
     dekameter:10**-1,
     hectometer:10**-2,
+    li: 0.002,
     kilometer: 10**-3,
     mile: 0.000621371192,
     nauticalMile: 0.000539956803456,
@@ -66,6 +67,7 @@ function convert() {
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
+
 
 
 
