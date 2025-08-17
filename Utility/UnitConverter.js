@@ -1,5 +1,5 @@
 setInterval(convert, 200);
-const decimalAmo = document.getElementById("decimalAmount").value;
+
 const conversionRates = {
     centimeter: 100,
     decimeter: 10,
@@ -10,12 +10,12 @@ const conversionRates = {
   };
 
 function getDecimalPlaces(num) {
+  const decimalAmo = parseInt(document.getElementById("decimalAmount").value);
   const numStr = String(num);
   const parts = numStr.split('.');
   const actualPlaces = parts[1] ? parts[1].length : 0;
   return Math.max(decimalAmo, actualPlaces);
 }
-
 
 function convert() {
   const input = document.getElementById("inputValue").value;
@@ -36,6 +36,7 @@ function convert() {
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces);
 }
+
 
 
 
