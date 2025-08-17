@@ -30,7 +30,7 @@ const conversionRates = {
     nauticalMile: 0.000539956803456,
     halfMarathon: 0.0000473989944,
     marathon: 0.0000236994972,
-    Picoparsec: 0.00003241,
+    picoparsec: 0.00003241,
     megameter: 10**-6,
     nanoparsec: 0.000000032408,
     gigameter: 10**-9,
@@ -79,6 +79,7 @@ function convert() {
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
+
 
 
 
