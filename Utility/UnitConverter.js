@@ -1,10 +1,19 @@
 setInterval(convert, 200);
+const decimalAmo = document.getElementById("decimalAmount").value;
+const conversionRates = {
+    centimeter: 100,
+    decimeter: 10,
+    meter: 1,
+    dekameter: 0.1,
+    hectometer: 0.01,
+    kilometer: 0.001
+  };
 
 function getDecimalPlaces(num) {
   const numStr = String(num);
   const parts = numStr.split('.');
   const actualPlaces = parts[1] ? parts[1].length : 0;
-  return Math.max(2, actualPlaces);
+  return Math.max(decimalAmo, actualPlaces);
 }
 
 
@@ -14,14 +23,6 @@ function convert() {
   const from = document.getElementById("fromUnit").value;
   const to = document.getElementById("toUnit").value;
 
-  const conversionRates = {
-    centimeter: 100,
-    decimeter: 10,
-    meter: 1,
-    dekameter: 0.1,
-    hectometer: 0.01,
-    kilometer: 0.001
-  };
 
   if (Number.isNaN(value)) {
     document.getElementById("result").value = "";
@@ -35,6 +36,7 @@ function convert() {
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces);
 }
+
 
 
 
