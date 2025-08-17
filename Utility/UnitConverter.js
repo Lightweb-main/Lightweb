@@ -49,12 +49,13 @@ function convert() {
   const convertedValue = valueInMeters * conversionRates[to];
 
   const formattedValue =
-    Math.abs(convertedValue) < 0.0001 || Math.abs(convertedValue) > 1e6
+    Math.abs(convertedValue) < 0.0001 || Math.abs(convertedValue) > 1e6 && document.getElementById("decimalAmount").value == "Scientific Notation"
       ? convertedValue.toExponential(decimalPlaces)
       : convertedValue.toFixed(decimalPlaces);
 
   document.getElementById("result").value = formattedValue;
 }
+
 
 
 
