@@ -18,6 +18,7 @@ const conversionRates = {
     centimeter: 10**2,
     inch: 39.3700787,
     decimeter: 10**1,
+    yard: 1.0936133,
     foot: 39.3700787 / 12,
     meter: 10**-0,
     dekameter:10**-1,
@@ -63,6 +64,7 @@ function convert() {
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
+
 
 
 
