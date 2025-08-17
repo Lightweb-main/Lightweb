@@ -5,21 +5,21 @@ document.getElementById("decimalAmount").addEventListener("change", convert);
 
 
 const conversionRates = {
-    quectometer: Math.pow(10, 30)
-    rontometer: Math.pow(10, 27)
-    yoctometer: Math.pow(10, 24)
-    zeptometer: Math.pow(10, 21)
-    attometer: Math.pow(10, 18)
-    femtometer: Math.pow(10, 15)
-    picometer: Math.pow(10, 12)
-    nanometer: Math.pow(10, 9)
-    micrometer: Math.pow(10, 6)
-    millimeter: Math.pow(10, 3)
-    centimeter: Math.pow(10, 2)
-    decimeter: Math.pow(10, 1)
-    meter: Math.pow(10, 0)
-    dekameter: Math.pow(10, -1)
-    hectometer: Math.pow(10, -2)
+    quectometer: Math.pow(10, 30),
+    rontometer: Math.pow(10, 27),
+    yoctometer: Math.pow(10, 24),
+    zeptometer: Math.pow(10, 21),
+    attometer: Math.pow(10, 18),
+    femtometer: Math.pow(10, 15),
+    picometer: Math.pow(10, 12),
+    nanometer: Math.pow(10, 9),
+    micrometer: Math.pow(10, 6),
+    millimeter: Math.pow(10, 3),
+    centimeter: Math.pow(10, 2),
+    decimeter: Math.pow(10, 1),
+    meter: Math.pow(10, 0),
+    dekameter: Math.pow(10, -1),
+    hectometer: Math.pow(10, -2),
     kilometer: Math.pow(10, -3)
   };
 
@@ -51,6 +51,7 @@ function convert() {
 
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
 }
+
 
 
 
