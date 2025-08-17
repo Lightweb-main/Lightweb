@@ -21,7 +21,7 @@ function convert() {
   };
 
   if (Number.isNaN(value)) {
-    document.getElementById("result").textContent = "";
+    document.getElementById("result").value = "";
     return;
   }
 
@@ -32,3 +32,4 @@ function convert() {
 
   document.getElementById("result").textContent = `${convertedValue.toFixed(decimalPlaces)} `;
 }
+
