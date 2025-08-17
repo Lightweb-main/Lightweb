@@ -13,7 +13,9 @@ const conversionRates = {
     attometer: 10**18,
     femtometer: 10**15,
     picometer: 10**12,
+    angstrom: 10**10,
     nanometer: 10**9,
+    beardSecond: 0.000000005,
     micrometer: 10**6,
     millimeter: 10**3,
     centimeter: 10**2,
@@ -21,18 +23,26 @@ const conversionRates = {
     decimeter: 10**1,
     yard: 1.0936133,
     foot: 39.3700787 / 12,
+    cubit: 2.1872266,
     meter: 10**-0,
+    smoot: 0.587613116,
+    fathom: 0.546806649,
+    rod: 0.198838782,
     dekameter:10**-1,
+    chain: 0.0497096954,
     hectometer:10**-2,
+    furlong: 0.00497096954,
     li: 0.002,
     kilometer: 10**-3,
     mile: 0.000621371192,
     nauticalMile: 0.000539956803456,
+    league: 0.000179985601,
     halfMarathon: 0.0000473989944,
     marathon: 0.0000236994972,
     picoparsec: 0.00003241,
     megameter: 10**-6,
     nanoparsec: 0.000000032408,
+    megafurlong: 0.00000000497096954,
     gigameter: 10**-9,
     astronomicalUnit: 0.0000000000066846,
     terameter: 10**-12,
@@ -80,6 +90,7 @@ function convert() {
   document.getElementById("result").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot").value = convertedValue.toExponential(2);
 }
+
 
 
 
