@@ -84,17 +84,19 @@ const conversionRates1 = {
     quettameter: 10**-30,
   };
 
+
+const conversionRates2{
+seconds: 1,
+minutes: 0.01666667,
+}
+
+
 function getDecimalPlaces(num, decimalInputId) {
   const decimalAmo = parseInt(document.getElementById(decimalInputId).value);
   const numStr = String(num);
   const parts = numStr.split('.');
   const actualPlaces = parts[1] ? parts[1].length : 0;
   return Math.max(decimalAmo, actualPlaces);
-}
-
-const conversionRates2{
-seconds: 1,
-minutes: 0.01666667
 }
 
 function convert() {
@@ -189,6 +191,7 @@ function convert3() {
   document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces3); 
   document.getElementById("resultSciNot3").value = convertedValue.toExponential(2);
 }
+
 
 
 
