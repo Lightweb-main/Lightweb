@@ -19,12 +19,15 @@ document.getElementById("inputValue1").value = 1000;
 document.getElementById("fromUnit2").value = "celsius";
 document.getElementById("toUnit2").value = "fahrenheit";
 document.getElementById("inputValue2").value = 100;
-
+document.getElementById("fromUnit2").value = "second";
+document.getElementById("toUnit2").value = "minute";
+document.getElementById("inputValue2").value = 60;
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
-
+document.getElementById("decimalAmount3").value = "2"
 convert();
 convert2();
+convert3();
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -186,6 +189,7 @@ function convert3() {
   document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces3); 
   document.getElementById("resultSciNot3").value = convertedValue.toExponential(2);
 }
+
 
 
 
