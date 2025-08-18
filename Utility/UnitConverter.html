@@ -25,7 +25,7 @@
 <body>
   <h1>Lightweb: Unit Converter</h1>
   <h2>Length Unit Converter</h2>
- <div style="display: flex; align-item: center;">
+ <div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue1" placeholder="Enter value">
   <select id="fromUnit1">
    <option value="quectometer">Quectometer</option>
@@ -156,17 +156,19 @@
 </select>
 </div>
 	<h2>Temperature Unit Converter</h2>
-	<div style="display: flex; align-item: center;">
+	<div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue2" placeholder="Enter value">
   <select id="fromUnit2">
-  <option value="Celsius">Celsius&deg;</option>
+  <option value="Celsius">Celsius&deg;</option> 
   <option value="Fahrenheit">Fahrenheit&deg;</option>
+  <option value="Kelvin">Kelvin</option>
   </select>
  <input id="result2" readonly>
  <input id="resultSciNot2" readonly>
   <select id="toUnit2">
    <option value="Celsius">Celsius&deg;</option>
-  <option value="Fahrenheit">Fahrenheit&deg;</option>
+   <option value="Fahrenheit">Fahrenheit&deg;</option>
+   <option value="Kelvin">Kelvin</option>
   </select>
 	 <select id="decimalAmount2">
 	<option value="0">0</option>
