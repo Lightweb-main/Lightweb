@@ -137,7 +137,7 @@ switch (to) {
   case "celsius": convertedValue2 = celsius; break;
   case "fahrenheit": convertedValue2 = (celsius * 9/5) + 32; break;
   case "kelvin": convertedValue2 = celsius + 273.15; break;
-  case "newton": celsius = celsius * 0.33; break;
+  case "newton": convertedValue2 = celsius * 0.33; break;
   case "rankine": convertedValue2 = (celsius + 273.15) * 9/5; break;
   case "romer": convertedValue2 = (celsius * 21/40) + 7.5; break;
   case "réaumur": convertedValue2 = celsius * 0.8; break;
@@ -146,6 +146,7 @@ switch (to) {
     document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
