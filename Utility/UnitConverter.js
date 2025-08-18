@@ -18,16 +18,11 @@ document.getElementById("fromUnit2").value = "celsius";
 document.getElementById("toUnit2").value = "fahrenheit";
 document.getElementById("inputValue2").value = 100;
 
-document.getElementById("fromUnit3").value = "second";
-document.getElementById("toUnit3").value = "minute";
-document.getElementById("inputValue3").value = 60;
-
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
 document.getElementById("decimalAmount3").value = "2"
 
-convert();
-convert2();
+
 
 const conversionRates1 = {
     quectometer: 10**30,
@@ -170,6 +165,7 @@ function convert2() {
   document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
