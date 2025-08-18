@@ -123,25 +123,25 @@ function convert() {
 }
 
 function convert2() {
-  const input = document.getElementById("inputValue2").value;
-  const value = parseFloat(input);
-  const from = document.getElementById("fromUnit2").value.toLowerCase();
-  const to = document.getElementById("toUnit2").value.toLowerCase();
+  const input2 = document.getElementById("inputValue2").value;
+  const value2 = parseFloat(input2);
+  const from2 = document.getElementById("fromUnit2").value.toLowerCase();
+  const to2 = document.getElementById("toUnit2").value.toLowerCase();
 
-  if (Number.isNaN(value)) {
+  if (Number.isNaN(value2)) {
     document.getElementById("result2").value = "";
     document.getElementById("resultSciNot2").value = "";
     return;
   }
 
-  const decimalPlaces2 = getDecimalPlaces(input, "decimalAmount2");
+  const decimalPlaces2 = getDecimalPlaces(input2, "decimalAmount2");
 
 
   let convertedValue2;
 
   let celsius; 
     
-  switch (from) {
+  switch (from2) {
     case "celsius": celsius = value; break;
     case "delisle": celsius = 100 - value * 2/3; break;
     case "fahrenheit": celsius = (value - 32) * 5/9; break;
@@ -153,7 +153,7 @@ function convert2() {
     case "réaumur": celsius = value * 1.25; break;
     default: celsius = NaN;
   }
-switch (to) {
+switch (to2) {
   case "celsius": convertedValue2 = celsius; break;
   case "delisle": convertedValue2 = (100 - celsius) * 3/2; break;
   case "fahrenheit": convertedValue2 = (celsius * 9/5) + 32; break;
@@ -170,27 +170,28 @@ switch (to) {
 }
 
 function convert3() {
-  const input = document.getElementById("inputValue3").value;
-  const value = parseFloat(input);
-  const from = document.getElementById("fromUnit3").value;
-  const to = document.getElementById("toUnit3").value;
+  const input3 = document.getElementById("inputValue3").value;
+  const value3 = parseFloat(input3);
+  const from3 = document.getElementById("fromUnit3").value;
+  const to3 = document.getElementById("toUnit3").value;
 
 
-  if (Number.isNaN(value)) {
+  if (Number.isNaN(value3)) {
     document.getElementById("result3").value = "";
     document.getElementById("resultSciNot3").value = "";
     return;
   }
 
-  const decimalPlaces = getDecimalPlaces(input, "decimalAmount3");
+  const decimalPlaces = getDecimalPlaces(input3, "decimalAmount3");
 
-  const valueInMeters = value / conversionRates2[from];
+  const valueInMeters = value3 / conversionRates2[from];
   const convertedValue = valueInMeters * conversionRates2[to];
 
 
   document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces3); 
   document.getElementById("resultSciNot3").value = convertedValue.toExponential(2);
 }
+
 
 
 
