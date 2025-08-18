@@ -129,7 +129,7 @@ function convert2() {
     case "kelvin": celsius = value - 273.15; break;
     case "rankine": celsius = (value - 491.67) / 1.8; break;
     case "romer": celsius = (value - 7.5) * 40/21; break;
-    case "réaumur": celsius = value * 1.25 break;
+    case "réaumur": celsius = value * 1.25; break;
     default: celsius = NaN;
   }
 switch (to) {
@@ -138,12 +138,13 @@ switch (to) {
     case "kelvin": convertedValue2 = celsius + 273.15; break;
     case "rankine": convertedValue2 = (celsius + 273.15) * 9/5; break;
     case "romer": convertedValue2 = (value * 40/21) + 7.5; break;
-    case "réaumur": convertedValue2 = value / 1.25 break;
+    case "réaumur": convertedValue2 = value / 1.25; break;
     default: convertedValue2 = NaN;
   }
     document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
