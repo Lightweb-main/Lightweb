@@ -29,7 +29,9 @@ document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
 document.getElementById("decimalAmount3").value = "2"
 
-
+convert();
+convert2();
+convert3(); 
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -138,37 +140,38 @@ function convert2() {
 
   const decimalPlaces2 = getDecimalPlaces(input2, "decimalAmount2");
 
+  let celsius;
+
+  switch (from2) {
+    case "celsius": celsius = value2; break;
+    case "delisle": celsius = 100 - value2 * 2/3; break;
+    case "fahrenheit": celsius = (value2 - 32) * 5/9; break;
+    case "kelvin": celsius = value2 - 273.15; break;
+    case "leiden": celsius = value2 - 253; break;
+    case "newton": celsius = value2 / 0.33; break;
+    case "rankine": celsius = (value2 - 491.67) / 1.8; break;
+    case "romer": celsius = (value2 - 7.5) * 40/21; break;
+    case "réaumur": celsius = value2 * 1.25; break;
+    default: celsius = NaN;
+  }
 
   let convertedValue2;
 
-  let celsius; 
-    
-  switch (from2) {
-    case "celsius": celsius = value; break;
-    case "delisle": celsius = 100 - value * 2/3; break;
-    case "fahrenheit": celsius = (value - 32) * 5/9; break;
-    case "kelvin": celsius = value - 273.15; break;
-    case "leiden": celsius = value - 253; break;
-    case "newton": celsius = value / 0.33; break;
-    case "rankine": celsius = (value - 491.67) / 1.8; break;
-    case "romer": celsius = (value - 7.5) * 40/21; break;
-    case "réaumur": celsius = value * 1.25; break;
-    default: celsius = NaN;
+  switch (to2) {
+    case "celsius": convertedValue2 = celsius; break;
+    case "delisle": convertedValue2 = (100 - celsius) * 3/2; break;
+    case "fahrenheit": convertedValue2 = (celsius * 9/5) + 32; break;
+    case "kelvin": convertedValue2 = celsius + 273.15; break;
+    case "leiden": convertedValue2 = celsius + 253; break;
+    case "newton": convertedValue2 = celsius * 0.33; break;
+    case "rankine": convertedValue2 = (celsius + 273.15) * 9/5; break;
+    case "romer": convertedValue2 = (celsius * 21/40) + 7.5; break;
+    case "réaumur": convertedValue2 = celsius * 0.8; break;
+    default: convertedValue2 = NaN;
   }
-switch (to2) {
-  case "celsius": convertedValue2 = celsius; break;
-  case "delisle": convertedValue2 = (100 - celsius) * 3/2; break;
-  case "fahrenheit": convertedValue2 = (celsius * 9/5) + 32; break;
-  case "kelvin": convertedValue2 = celsius + 273.15; break;
-  case "leiden": convertedValue2 = celsius + 253; break;
-  case "newton": convertedValue2 = celsius * 0.33; break;
-  case "rankine": convertedValue2 = (celsius + 273.15) * 9/5; break;
-  case "romer": convertedValue2 = (celsius * 21/40) + 7.5; break;
-  case "réaumur": convertedValue2 = celsius * 0.8; break;
-  default: convertedValue2 = NaN;
-}
-    document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
-    document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
+
+  document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
+  document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
 
 function convert3() {
@@ -191,6 +194,7 @@ function convert3() {
   document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces);
   document.getElementById("resultSciNot3").value = convertedValue.toExponential(2);
 }
+
 
 
 
