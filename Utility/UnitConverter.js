@@ -11,7 +11,7 @@ document.getElementById("decimalAmount2").addEventListener("change", convert2);
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
 document.getElementById("inputValue1").value = 1000;
-document.getElementById("decimalAmount1").value = "2 -- Default"
+document.getElementById("decimalAmount1").value = "2"
 
 const conversionRates1 = {
     quectometer: 10**30,
@@ -144,6 +144,7 @@ function convert2() {
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
   }
 }
+
 
 
 
