@@ -116,33 +116,24 @@ function convert2() {
 
   let convertedValue2;
 
-  // 🌡️ Temperature conversion logic
-  if (from === to) {
-    convertedValue2 = value;
-  } else if (from === "celsius" && to === "fahrenheit") {
-    convertedValue2 = (value * 9/5) + 32;
-  } else if (from === "fahrenheit" && to === "celsius") {
-    convertedValue2 = (value - 32) * 5/9;
-  } else if (from === "celsius" && to === "kelvin") {
-    convertedValue2 = value + 273.15;
-  } else if (from === "kelvin" && to === "celsius") {
-    convertedValue2 = value - 273.15;
-  } else if (from === "fahrenheit" && to === "kelvin") {
-    convertedValue2 = (value - 32) * 5/9 + 273.15;
-  } else if (from === "kelvin" && to === "fahrenheit") {
-    convertedValue2 = (value - 273.15) * 9/5 + 32;
-  } else {
-    convertedValue2 = NaN;
+  let celsius; 
+    
+  switch (from) {
+    case "celsius": celsius = value; break;
+    case "fahrenheit": celsius = (value - 32) * 5/9; break;
+    case "kelvin": celsius = value - 273.15; break;
+    default: celsius = NaN;
   }
-
-  if (Number.isNaN(convertedValue2)) {
-    document.getElementById("result2").value = "Invalid conversion";
-    document.getElementById("resultSciNot2").value = "";
-  } else {
+switch (to) {
+    case "celsius": convertedValue2 = celsius; break;
+    case "fahrenheit": convertedValue2 = (celsius * 9/5) + 32; break;
+    case "kelvin": convertedValue2 = celsius + 273.15; break;
+    default: convertedValue2 = NaN;
+  }
     document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
-  }
 }
+
 
 
 
