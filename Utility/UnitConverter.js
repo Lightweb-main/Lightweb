@@ -177,7 +177,6 @@ function convert3() {
   const from3 = document.getElementById("fromUnit3").value;
   const to3 = document.getElementById("toUnit3").value;
 
-
   if (Number.isNaN(value3)) {
     document.getElementById("result3").value = "";
     document.getElementById("resultSciNot3").value = "";
@@ -189,10 +188,10 @@ function convert3() {
   const valueInSeconds = value3 / conversionRates2[from3];
   const convertedValue = valueInSeconds * conversionRates2[to3];
 
-
-  document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces3); 
+  document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces);
   document.getElementById("resultSciNot3").value = convertedValue.toExponential(2);
 }
+
 
 
 
