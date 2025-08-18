@@ -146,3 +146,4 @@ switch (to) {
     document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
