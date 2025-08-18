@@ -129,12 +129,13 @@ switch (to) {
     case "celsius": convertedValue2 = celsius; break;
     case "fahrenheit": convertedValue2 = (celsius * 9/5) + 32; break;
     case "kelvin": convertedValue2 = celsius + 273.15; break;
-    case "rankine": convertedValue2 = (value * 1.8) + 491.67; break;
+    case "rankine": convertedValue2 = (celsius + 273.15) * 9/5; break;
     default: convertedValue2 = NaN;
   }
     document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
