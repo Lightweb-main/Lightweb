@@ -164,7 +164,7 @@ switch (to) {
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
 
-function convert() {
+function convert3() {
   const input = document.getElementById("inputValue3").value;
   const value = parseFloat(input);
   const from = document.getElementById("fromUnit3").value;
@@ -186,6 +186,7 @@ function convert() {
   document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces3); 
   document.getElementById("resultSciNot3").value = convertedValue.toExponential(2);
 }
+
 
 
 
