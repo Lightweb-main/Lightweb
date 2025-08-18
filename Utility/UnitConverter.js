@@ -12,6 +12,9 @@ document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
 document.getElementById("inputValue1").value = 1000;
 document.getElementById("decimalAmount1").value = "2 -- Default"
+
+convert();
+convert2();
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -91,8 +94,8 @@ function convert() {
 
   const decimalPlaces = getDecimalPlaces(input); 
 
-  const valueInMeters = value / conversionRates[from];
-  const convertedValue = valueInMeters * conversionRates[to];
+  const valueInMeters = value / conversionRates1[from];
+  const convertedValue = valueInMeters * conversionRates1[to];
 
 
   document.getElementById("result1").value = convertedValue.toFixed(decimalPlaces); 
@@ -112,15 +115,16 @@ function convert2() {
     return;
   }
 
-  const decimalPlaces = getDecimalPlaces(input); 
+  const decimalPlaces2 = getDecimalPlaces(input); 
 
-  const valueInMeters = value / conversionRates[from];
-  const convertedValue = valueInMeters * conversionRates[to];
+  const valueInMeters2 = value / conversionRates2[from];
+  const convertedValue2 = valueInMeters2 * conversionRates2[to];
 
 
-  document.getElementById("result2").value = convertedValue.toFixed(decimalPlaces); 
-  document.getElementById("resultSciNot2").value = convertedValue.toExponential(2);
+  document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces); 
+  document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
