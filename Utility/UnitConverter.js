@@ -11,6 +11,9 @@ document.getElementById("decimalAmount2").addEventListener("change", convert2);
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
 document.getElementById("inputValue1").value = 1000;
+document.getElementById("fromUnit2").value = "celsius";
+document.getElementById("toUnit2").value = "fahrenheit";
+document.getElementById("inputValue2").value = 100;
 
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
@@ -146,4 +149,5 @@ switch (to) {
     document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
