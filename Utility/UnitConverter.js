@@ -81,10 +81,6 @@ const conversionRates1 = {
   };
 
 
-const conversionRates2{
-seconds: 1,
-minutes: 0.01666667
-}
 
 
 function getDecimalPlaces(num, decimalInputId) {
@@ -165,6 +161,7 @@ function convert2() {
   document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
