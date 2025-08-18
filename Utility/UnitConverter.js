@@ -72,6 +72,7 @@ const conversionRates1 = {
 conversionRates2 = {
 celsius: 1,
 fahrenheit: 9/5 + 32,
+kelvin: 1,
 }
 
 function getDecimalPlaces(num) {
@@ -108,25 +109,47 @@ function convert() {
 function convert2() {
   const input = document.getElementById("inputValue2").value;
   const value = parseFloat(input);
-  const from = document.getElementById("fromUnit2").value;
-  const to = document.getElementById("toUnit2").value;
-
+  const from = document.getElementById("fromUnit2").value.toLowerCase();
+  const to = document.getElementById("toUnit2").value.toLowerCase();
 
   if (Number.isNaN(value)) {
     document.getElementById("result2").value = "";
-      document.getElementById("resultSciNot2").value = "";
+    document.getElementById("resultSciNot2").value = "";
     return;
   }
 
-  const decimalPlaces2 = getDecimalPlaces(input); 
+  const decimalPlaces2 = getDecimalPlaces(input);
 
-  const valueInMeters2 = value / conversionRates2[from];
-  const convertedValue2 = valueInMeters2 * conversionRates2[to];
+  let convertedValue2;
 
+  // 🌡️ Temperature conversion logic
+  if (from === to) {
+    convertedValue2 = value;
+  } else if (from === "celsius" && to === "fahrenheit") {
+    convertedValue2 = (value * 9/5) + 32;
+  } else if (from === "fahrenheit" && to === "celsius") {
+    convertedValue2 = (value - 32) * 5/9;
+  } else if (from === "celsius" && to === "kelvin") {
+    convertedValue2 = value + 273.15;
+  } else if (from === "kelvin" && to === "celsius") {
+    convertedValue2 = value - 273.15;
+  } else if (from === "fahrenheit" && to === "kelvin") {
+    convertedValue2 = (value - 32) * 5/9 + 273.15;
+  } else if (from === "kelvin" && to === "fahrenheit") {
+    convertedValue2 = (value - 273.15) * 9/5 + 32;
+  } else {
+    convertedValue2 = NaN;
+  }
 
-  document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces); 
-  document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
+  if (Number.isNaN(convertedValue2)) {
+    document.getElementById("result2").value = "Invalid conversion";
+    document.getElementById("resultSciNot2").value = "";
+  } else {
+    document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
+    document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
+  }
 }
+
 
 
 
