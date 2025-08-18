@@ -14,7 +14,6 @@ document.getElementById("inputValue1").value = 1000;
 document.getElementById("decimalAmount1").value = "2 -- Default"
 
 convert();
-convert2();
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -124,6 +123,7 @@ function convert2() {
   document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
