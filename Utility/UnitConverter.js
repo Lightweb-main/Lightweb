@@ -129,7 +129,7 @@ function convert2() {
     case "delisle": celsius = 100 - value * 2/3; break;
     case "fahrenheit": celsius = (value - 32) * 5/9; break;
     case "kelvin": celsius = value - 273.15; break;
-    case "leiden": celsius = value - 253 break;
+    case "leiden": celsius = value - 253; break;
     case "newton": celsius = value / 0.33; break;
     case "rankine": celsius = (value - 491.67) / 1.8; break;
     case "romer": celsius = (value - 7.5) * 40/21; break;
@@ -141,7 +141,7 @@ switch (to) {
   case "delisle": convertedValue2 = (100 - celsius) * 3/2; break;
   case "fahrenheit": convertedValue2 = (celsius * 9/5) + 32; break;
   case "kelvin": convertedValue2 = celsius + 273.15; break;
-  case "leiden": convertedValue2 = celsius + 253 break;
+  case "leiden": convertedValue2 = celsius + 253; break;
   case "newton": convertedValue2 = celsius * 0.33; break;
   case "rankine": convertedValue2 = (celsius + 273.15) * 9/5; break;
   case "romer": convertedValue2 = (celsius * 21/40) + 7.5; break;
@@ -151,6 +151,7 @@ switch (to) {
     document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
