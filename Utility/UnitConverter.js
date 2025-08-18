@@ -8,10 +8,7 @@ document.getElementById("fromUnit2").addEventListener("change", convert2);
 document.getElementById("toUnit2").addEventListener("change", convert2);
 document.getElementById("decimalAmount2").addEventListener("change", convert2);
 
-document.getElementById("inputValue3").addEventListener("input", convert3);
-document.getElementById("fromUnit3").addEventListener("change", convert3);
-document.getElementById("toUnit3").addEventListener("change", convert3);
-document.getElementById("decimalAmount3").addEventListener("change", convert3);
+
 
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
@@ -31,7 +28,7 @@ document.getElementById("decimalAmount3").value = "2"
 
 convert();
 convert2();
-convert3(); 
+
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -174,26 +171,8 @@ function convert2() {
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
 
-function convert3() {
-  const input3 = document.getElementById("inputValue3").value;
-  const value3 = parseFloat(input3);
-  const from3 = document.getElementById("fromUnit3").value;
-  const to3 = document.getElementById("toUnit3").value;
 
-  if (Number.isNaN(value3)) {
-    document.getElementById("result3").value = "";
-    document.getElementById("resultSciNot3").value = "";
-    return;
-  }
 
-  const decimalPlaces = getDecimalPlaces(input3, "decimalAmount3");
-
-  const valueInSeconds = value3 / conversionRates2[from3];
-  const convertedValue = valueInSeconds * conversionRates2[to3];
-
-  document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces);
-  document.getElementById("resultSciNot3").value = convertedValue.toExponential(2);
-}
 
 
 
