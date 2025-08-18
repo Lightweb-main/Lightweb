@@ -69,11 +69,6 @@ const conversionRates1 = {
     teraparsec: 0.000000000000000000000000000032408,
     quettameter: 10**-30,
   };
-conversionRates2 = {
-celsius: 1,
-fahrenheit: 9/5 + 32,
-kelvin: 1,
-}
 
 function getDecimalPlaces(num) {
   const decimalAmo = parseInt(document.getElementById("decimalAmount1").value);
@@ -149,46 +144,3 @@ function convert2() {
     document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
