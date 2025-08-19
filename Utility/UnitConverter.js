@@ -5,11 +5,11 @@ document.getElementById("decimalAmount1").addEventListener("change", convert);
 document.getElementById("inputValue2").addEventListener("input", convert2); 
 document.getElementById("fromUnit2").addEventListener("change", convert2); 
 document.getElementById("toUnit2").addEventListener("change", convert2); 
-document.getElementById("decimalAmount2").addEventListener("change", convert2);
-document.getElementById("inputValue2").addEventListener("input", convert3); 
-document.getElementById("fromUnit2").addEventListener("change", convert3); 
-document.getElementById("toUnit2").addEventListener("change", convert3); 
-document.getElementById("decimalAmount2").addEventListener("change", convert3);
+document.getElementById("decimalAmount3").addEventListener("change", convert2);
+document.getElementById("inputValue3").addEventListener("input", convert3); 
+document.getElementById("fromUnit3").addEventListener("change", convert3); 
+document.getElementById("toUnit3").addEventListener("change", convert3); 
+document.getElementById("decimalAmount3").addEventListener("change", convert3);
 
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
@@ -155,5 +155,6 @@ function convert2(){
   document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
