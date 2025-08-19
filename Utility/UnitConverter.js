@@ -19,9 +19,13 @@ document.getElementById("fromUnit2").value = "celsius";
 document.getElementById("toUnit2").value = "fahrenheit";
 document.getElementById("inputValue2").value = 100;
 
+document.getElementById("fromUnit3").value = "secpnd";
+document.getElementById("toUnit3").value = "hour";
+document.getElementById("inputValue3").value = 3600;
+
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
-
+document.getElementById("decimalAmount3").value = "2"
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -78,8 +82,16 @@ const conversionRates1 = {
     quettameter: 10**-30,
 };
 
+const conversionRates2 = {
+second: 1,
+minutes: 1/60,
+hour: 1/3600,
+day: 1/86400
+};
+
 convert();
 convert2();
+convert3();
 function getDecimalPlaces(num, decimalInputId) {
   const decimalAmo = parseInt(document.getElementById(decimalInputId).value);
   const numStr = String(num);
@@ -109,7 +121,7 @@ function convert() {
   document.getElementById("resultSciNot1").value = convertedValue.toExponential(2);
 }
 function convert2(){
-  const input2 = document.getElementById("inputValue2").value;
+const input2 = document.getElementById("inputValue2").value;
   const value2 = parseFloat(input2);
   const from2 = document.getElementById("fromUnit2").value.toLowerCase();
   const to2 = document.getElementById("toUnit2").value.toLowerCase();
@@ -155,6 +167,29 @@ function convert2(){
   document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
+}
+function convert3(){
+  const input3 = document.getElementById("inputValue3").value;
+  const value3 = parseFloat(input3);
+  const from3 = document.getElementById("fromUnit3").value.toLowerCase();
+  const to3 = document.getElementById("toUnit3").value.toLowerCase();
+
+  if (Number.isNaN(value3)) {
+    document.getElementById("result3").value = "";
+    document.getElementById("resultSciNot3").value = "";
+    return;
+  }
+
+  const decimalPlaces3 = getDecimalPlaces(input3, "decimalAmount3");
+
+  const valueInSeconds = value / conversionRates2[from];
+  const convertedValue3 = valueInSeconds * conversionRates2[to];
+
+  document.getElementById("result3").value = convertedValue3.toFixed(decimalPlaces3);
+  document.getElementById("resultSciNot3").value = convertedValue3.toExponential(2);
+}
+
 
 
 
