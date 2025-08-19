@@ -19,7 +19,7 @@ document.getElementById("fromUnit2").value = "celsius";
 document.getElementById("toUnit2").value = "fahrenheit";
 document.getElementById("inputValue2").value = 100;
 
-document.getElementById("fromUnit3").value = "secpnd";
+document.getElementById("fromUnit3").value = "second";
 document.getElementById("toUnit3").value = "hour";
 document.getElementById("inputValue3").value = 3600;
 
@@ -84,9 +84,19 @@ const conversionRates1 = {
 
 const conversionRates2 = {
 second: 1,
-minute: 1/60,
-hour: 1/3600,
-day: 1/86400
+minute: 0.016666666,
+hour: 0.000277777777,
+day: 0.0000115740741,
+week: 0.00000165343915,
+fortnight: 0.000000826719577,
+month: 0.000000380517504,
+year: 0.000000031709792,
+siderealYear: 0.0000000316876862,
+decade: 0.0000000031709792,
+century: 0.00000000031709792,
+millennium: 0.000000000031709792,
+aeon: 0.000000000000000031709792,
+
 };
 
 convert();
@@ -168,29 +178,25 @@ const input2 = document.getElementById("inputValue2").value;
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
 
-function convert3(){
-  const input3 = document.getElementById("inputValue3").value;
-  const value3 = parseFloat(input3);
-  const from3 = document.getElementById("fromUnit3").value.toLowerCase();
-  const to3 = document.getElementById("toUnit3").value.toLowerCase();
+function convert3() {
+  const input = document.getElementById("inputValue3").value;
+  const value = parseFloat(input);
+  const from = document.getElementById("fromUnit3").value;
+  const to = document.getElementById("toUnit3").value;
 
-  if (Number.isNaN(value3)) {
+  if (Number.isNaN(value)) {
     document.getElementById("result3").value = "";
     document.getElementById("resultSciNot3").value = "";
     return;
   }
 
-  const decimalPlaces3 = getDecimalPlaces(input3, "decimalAmount3");
+  const decimalPlaces = getDecimalPlaces(input, "decimalAmount3");
 
-  const valueInSeconds = value / conversionRates2[from3];
-  const convertedValue3 = valueInSeconds * conversionRates2[to3];
+  const valueInSeconds = value / conversionRates2[from];
+  const convertedValue = valueInSeconds * conversionRates2[to];
 
-  document.getElementById("result3").value = convertedValue3.toFixed(decimalPlaces3);
-  document.getElementById("resultSciNot3").value = convertedValue3.toExponential(2);
+  document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces); 
+  document.getElementById("resultSciNot3").value = convertedValue.toExponential(2);
 }
-
-
-
-
 
 
