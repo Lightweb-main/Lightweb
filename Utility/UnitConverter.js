@@ -84,7 +84,7 @@ const conversionRates1 = {
 
 const conversionRates2 = {
 second: 1,
-minutes: 1/60,
+minute: 1/60,
 hour: 1/3600,
 day: 1/86400
 };
@@ -188,6 +188,7 @@ function convert3(){
   document.getElementById("result3").value = convertedValue3.toFixed(decimalPlaces3);
   document.getElementById("resultSciNot3").value = convertedValue3.toExponential(2);
 }
+
 
 
 
