@@ -75,6 +75,17 @@ const conversionRates1 = {
     teraparsec: 0.000000000000000000000000000032408,
     quettameter: 10**-30,
   };
+const tempSymbols = {
+  celsius: "°C",
+  fahrenheit: "°F",
+  kelvin: "K",
+  rankine: "°R",
+  delisle: "°De",
+  newton: "°N",
+  romer: "°Rø",
+  réaumur: "°Ré",
+  leiden: "°L"
+};
 
 convert();
 convert2();
@@ -154,8 +165,9 @@ function convert2(){
     default: convertedValue2 = NaN;
   }
 
-  document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
-  document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
+  document.getElementById("result2").value = `${convertedValue2.toFixed(decimalPlaces2)} ${tempSymbols[to2] || to2}`;
+  document.getElementById("result2").value = `${convertedValue.toExponential(2);} ${tempSymbols[to2] || to2}`;
 }
+
 
 
