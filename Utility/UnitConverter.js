@@ -2,11 +2,10 @@ document.getElementById("inputValue1").addEventListener("input", convert);
 document.getElementById("fromUnit1").addEventListener("change", convert); 
 document.getElementById("toUnit1").addEventListener("change", convert); 
 document.getElementById("decimalAmount1").addEventListener("change", convert); 
-document.getElementById("inputValue2").addEventListener("input", convert2); 
-document.getElementById("fromUnit2").addEventListener("change", convert2); 
-document.getElementById("toUnit2").addEventListener("change", convert2); 
-document.getElementById("decimalAmount2").addEventListener("change", convert2);
-
+document.getElementById("inputValue2").addEventListener("input", convert); 
+document.getElementById("fromUnit2").addEventListener("change", convert); 
+document.getElementById("toUnit2").addEventListener("change", convert); 
+document.getElementById("decimalAmount2").addEventListener("change", convert);
 
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
@@ -19,6 +18,7 @@ document.getElementById("inputValue2").value = 100;
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
 
+convert();
 
 const conversionRates1 = {
     quectometer: 10**30,
@@ -74,22 +74,7 @@ const conversionRates1 = {
     ronnameter: 10**-27,
     teraparsec: 0.000000000000000000000000000032408,
     quettameter: 10**-30,
-  };
-const tempSymbols = {
-  celsius: "°C",
-  fahrenheit: "°F",
-  kelvin: "K",
-  rankine: "°R",
-  delisle: "°De",
-  newton: "°N",
-  romer: "°Rø",
-  réaumur: "°Ré",
-  leiden: "°L"
 };
-
-convert();
-convert2();
-
 
 function getDecimalPlaces(num, decimalInputId) {
   const decimalAmo = parseInt(document.getElementById(decimalInputId).value);
@@ -105,7 +90,6 @@ function convert() {
   const from = document.getElementById("fromUnit1").value;
   const to = document.getElementById("toUnit1").value;
 
-
   if (Number.isNaN(value)) {
     document.getElementById("result1").value = "";
     document.getElementById("resultSciNot1").value = "";
@@ -117,11 +101,9 @@ function convert() {
   const valueInMeters = value / conversionRates1[from];
   const convertedValue = valueInMeters * conversionRates1[to];
 
-
   document.getElementById("result1").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot1").value = convertedValue.toExponential(2);
-}
-function convert2(){
+
   const input2 = document.getElementById("inputValue2").value;
   const value2 = parseFloat(input2);
   const from2 = document.getElementById("fromUnit2").value.toLowerCase();
@@ -165,9 +147,6 @@ function convert2(){
     default: convertedValue2 = NaN;
   }
 
-  document.getElementById("result2").value = `${convertedValue2.toFixed(decimalPlaces2)} ${tempSymbols[to2] || to2}`;
-  document.getElementById("result2").value = `${convertedValue.toExponential(2);} ${tempSymbols[to2] || to2}`;
+  document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
+  document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
-
-
-
