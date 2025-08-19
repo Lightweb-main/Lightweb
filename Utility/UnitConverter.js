@@ -103,40 +103,38 @@ function convert() {
 
   document.getElementById("result1").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot1").value = convertedValue.toExponential(2);
-}
 
-function convert2() {
-  const input = document.getElementById("inputValue2").value;
-  const value = parseFloat(input);
-  const from = document.getElementById("fromUnit2").value.toLowerCase();
-  const to = document.getElementById("toUnit2").value.toLowerCase();
+      const input2 = document.getElementById("inputValue2").value;
+  const value2 = parseFloat(input2);
+  const from2 = document.getElementById("fromUnit2").value.toLowerCase();
+  const to2 = document.getElementById("toUnit2").value.toLowerCase();
 
-  if (Number.isNaN(value)) {
+  if (Number.isNaN(value2)) {
     document.getElementById("result2").value = "";
     document.getElementById("resultSciNot2").value = "";
     return;
   }
 
-  const decimalPlaces2 = getDecimalPlaces(input, "decimalAmount2");
+  const decimalPlaces2 = getDecimalPlaces(input2, "decimalAmount2");
 
   let celsius;
 
-  switch (from) {
-    case "celsius": celsius = value; break;
-    case "delisle": celsius = 100 - value * 2/3; break;
-    case "fahrenheit": celsius = (value - 32) * 5/9; break;
-    case "kelvin": celsius = value - 273.15; break;
-    case "leiden": celsius = value - 253; break;
-    case "newton": celsius = value / 0.33; break;
-    case "rankine": celsius = (value - 491.67) / 1.8; break;
-    case "romer": celsius = (value - 7.5) * 40/21; break;
-    case "réaumur": celsius = value * 1.25; break;
+  switch (from2) {
+    case "celsius": celsius = value2; break;
+    case "delisle": celsius = 100 - value2 * 2/3; break;
+    case "fahrenheit": celsius = (value2 - 32) * 5/9; break;
+    case "kelvin": celsius = value2 - 273.15; break;
+    case "leiden": celsius = value2 - 253; break;
+    case "newton": celsius = value2 / 0.33; break;
+    case "rankine": celsius = (value2 - 491.67) / 1.8; break;
+    case "romer": celsius = (value2 - 7.5) * 40/21; break;
+    case "réaumur": celsius = value2 * 1.25; break;
     default: celsius = NaN;
   }
 
   let convertedValue2;
 
-  switch (to) {
+  switch (to2) {
     case "celsius": convertedValue2 = celsius; break;
     case "delisle": convertedValue2 = (100 - celsius) * 3/2; break;
     case "fahrenheit": convertedValue2 = (celsius * 9/5) + 32; break;
@@ -152,6 +150,7 @@ function convert2() {
   document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
