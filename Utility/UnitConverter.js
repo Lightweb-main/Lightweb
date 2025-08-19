@@ -2,10 +2,10 @@ document.getElementById("inputValue1").addEventListener("input", convert);
 document.getElementById("fromUnit1").addEventListener("change", convert); 
 document.getElementById("toUnit1").addEventListener("change", convert); 
 document.getElementById("decimalAmount1").addEventListener("change", convert); 
-document.getElementById("inputValue2").addEventListener("input", convert); 
-document.getElementById("fromUnit2").addEventListener("change", convert); 
-document.getElementById("toUnit2").addEventListener("change", convert); 
-document.getElementById("decimalAmount2").addEventListener("change", convert);
+document.getElementById("inputValue2").addEventListener("input", convert2); 
+document.getElementById("fromUnit2").addEventListener("change", convert2); 
+document.getElementById("toUnit2").addEventListener("change", convert2); 
+document.getElementById("decimalAmount2").addEventListener("change", convert2);
 
 
 document.getElementById("fromUnit1").value = "meter"
@@ -20,6 +20,7 @@ document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
 
 convert();
+convert2();
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -108,7 +109,8 @@ function convert() {
 
   document.getElementById("result1").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot1").value = convertedValue.toExponential(2);
-
+}
+function convert2(){
   const input2 = document.getElementById("inputValue2").value;
   const value2 = parseFloat(input2);
   const from2 = document.getElementById("fromUnit2").value.toLowerCase();
@@ -155,3 +157,4 @@ function convert() {
   document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
