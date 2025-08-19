@@ -168,7 +168,6 @@ const input2 = document.getElementById("inputValue2").value;
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
 
-}
 function convert3(){
   const input3 = document.getElementById("inputValue3").value;
   const value3 = parseFloat(input3);
@@ -183,8 +182,8 @@ function convert3(){
 
   const decimalPlaces3 = getDecimalPlaces(input3, "decimalAmount3");
 
-  const valueInSeconds = value / conversionRates2[from];
-  const convertedValue3 = valueInSeconds * conversionRates2[to];
+  const valueInSeconds = value / conversionRates2[from3];
+  const convertedValue3 = valueInSeconds * conversionRates2[to3];
 
   document.getElementById("result3").value = convertedValue3.toFixed(decimalPlaces3);
   document.getElementById("resultSciNot3").value = convertedValue3.toExponential(2);
