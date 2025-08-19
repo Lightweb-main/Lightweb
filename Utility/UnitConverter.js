@@ -8,7 +8,8 @@ document.getElementById("fromUnit2").addEventListener("change", convert2);
 document.getElementById("toUnit2").addEventListener("change", convert2);
 document.getElementById("decimalAmount2").addEventListener("change", convert2);
 
-
+setInterval(convert, 100);
+setInterval(convert2, 100);
 
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
@@ -161,6 +162,7 @@ function convert2() {
   document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
