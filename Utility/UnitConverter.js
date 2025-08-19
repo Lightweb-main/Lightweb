@@ -1,5 +1,4 @@
 setInterval(convert, 100);
-setInterval(convert2, 100);
 
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
@@ -11,8 +10,6 @@ document.getElementById("inputValue2").value = 100;
 
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
-document.getElementById("decimalAmount3").value = "2"
-
 
 
 const conversionRates1 = {
@@ -104,7 +101,7 @@ function convert() {
   document.getElementById("result1").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot1").value = convertedValue.toExponential(2);
 
-      const input2 = document.getElementById("inputValue2").value;
+  const input2 = document.getElementById("inputValue2").value;
   const value2 = parseFloat(input2);
   const from2 = document.getElementById("fromUnit2").value.toLowerCase();
   const to2 = document.getElementById("toUnit2").value.toLowerCase();
@@ -150,6 +147,7 @@ function convert() {
   document.getElementById("result2").value = convertedValue2.toFixed(decimalPlaces2);
   document.getElementById("resultSciNot2").value = convertedValue2.toExponential(2);
 }
+
 
 
 
