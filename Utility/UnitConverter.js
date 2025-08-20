@@ -9,7 +9,15 @@ document.getElementById("decimalAmount2").addEventListener("change", convert2);
 document.getElementById("inputValue3").addEventListener("input", convert3); 
 document.getElementById("fromUnit3").addEventListener("change", convert3); 
 document.getElementById("toUnit3").addEventListener("change", convert3); 
-document.getElementById("decimalAmount3").addEventListener("change", convert3);
+document.getElementById("decimalAmount3").addEventListener("change", convert4);
+document.getElementById("inputValue4").addEventListener("input", convert4); 
+document.getElementById("fromUnit4").addEventListener("change", convert4); 
+document.getElementById("toUnit4").addEventListener("change", convert4); 
+document.getElementById("decimalAmount4").addEventListener("change", convert4);
+document.getElementById("inputValue5").addEventListener("input", convert5); 
+document.getElementById("fromUnit5").addEventListener("change", convert5); 
+document.getElementById("toUnit5").addEventListener("change", convert5); 
+document.getElementById("decimalAmount5").addEventListener("change", convert5);
 
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
@@ -23,9 +31,19 @@ document.getElementById("fromUnit3").value = "second";
 document.getElementById("toUnit3").value = "hour";
 document.getElementById("inputValue3").value = 3600;
 
+document.getElementById("fromUnit4").value = "gram";
+document.getElementById("toUnit4").value = "kilogram";
+document.getElementById("inputValue4").value = 1000;
+
+document.getElementById("fromUnit5").value = "mph";
+document.getElementById("toUnit5").value = "kph";
+document.getElementById("inputValue5").value = 34;
+
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
 document.getElementById("decimalAmount3").value = "2"
+document.getElementById("decimalAmount4").value = "2"
+document.getElementById("decimalAmount5").value = "2"
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -89,6 +107,7 @@ hour: 0.000277777777,
 day: 0.0000115740741,
 week: 0.00000165343915,
 fortnight: 0.000000826719577,
+lunarMonth: 0.000000391935227,
 month: 0.000000380517504,
 year: 0.000000031709792,
 siderealYear: 0.0000000316876862,
@@ -97,12 +116,67 @@ decade: 0.0000000031709792,
 century: 0.00000000031709792,
 millennium: 0.000000000031709792,
 aeon: 0.000000000000000031709792,
+};
 
+const conversionRates3 = {
+quectogram: 10**30,
+rontogram: 10**27,
+yoctogram: 10**24,
+atomicmu: 602210000000000000000000,
+zeptogram: 10**21,
+attogram: 10**18,
+femtogram: 10**15,
+picogram: 10**12,
+nanogram: 10**9,
+microgram: 10**6,
+milligram: 1000,
+centigram: 100,
+grain: 15.4323584,
+decigram: 10,
+carat: 5,
+gram: 1,
+dram: 0.56438339,
+dekagram: 10**-1,
+tola: 0.0857353242,
+ounce: 0.035273962,
+troyOunce: 0.0321507466,
+hectogram: 10**-2,
+pound: 0.00220462262,
+kilogram: 10**-3,
+stone: 0.000157473045,
+slug:  0.000068521766,
+USQuintal: 0.0000220462262,
+frenchQuintal: 0.0000067136623,
+metricQuintal: 10**-5,
+shortTon: 0.00000110231131,
+megagram: 10**-6,
+metricTon: 10**-6,
+longTon: 0.00000098421,
+imperialTon: 0.00000098421,
+gigagram: 10**-9,
+teragram: 10**-12,
+petagram: 10**-15,
+exagram: 10**-18,
+zettagram: 10**-21,
+yottagram: 10**-24,
+ronnagram: 10**-27,
+quettagram: 10**-30,
+
+};
+
+const conversionRates4 = {
+kph: 1.609344,
+fps: 1.46666666,
+mph: 1,
+knot: 0.86897624,
+mach: 0.00130332,
 };
 
 convert();
 convert2();
 convert3();
+convert4();
+convert5();
 function getDecimalPlaces(num, decimalInputId) {
   const decimalAmo = parseInt(document.getElementById(decimalInputId).value);
   const numStr = String(num);
@@ -156,7 +230,7 @@ const input2 = document.getElementById("inputValue2").value;
     case "newton": celsius = value2 / 0.33; break;
     case "rankine": celsius = (value2 - 491.67) / 1.8; break;
     case "romer": celsius = (value2 - 7.5) * 40/21; break;
-    case "réaumur": celsius = value2 * 1.25; break;
+    case "reaumur": celsius = value2 * 1.25; break;
     default: celsius = NaN;
   }
 
@@ -171,7 +245,7 @@ const input2 = document.getElementById("inputValue2").value;
     case "newton": convertedValue2 = celsius * 0.33; break;
     case "rankine": convertedValue2 = (celsius + 273.15) * 9/5; break;
     case "romer": convertedValue2 = (celsius * 21/40) + 7.5; break;
-    case "réaumur": convertedValue2 = celsius * 0.8; break;
+    case "reaumur": convertedValue2 = celsius * 0.8; break;
     default: convertedValue2 = NaN;
   }
 
@@ -201,5 +275,44 @@ function convert3() {
 }
 
 
+function convert4() {
+  const input = document.getElementById("inputValue4").value;
+  const value = parseFloat(input);
+  const from = document.getElementById("fromUnit4").value;
+  const to = document.getElementById("toUnit4").value;
 
+  if (Number.isNaN(value)) {
+    document.getElementById("result4").value = "";
+    document.getElementById("resultSciNot4").value = "";
+    return;
+  }
 
+  const decimalPlaces = getDecimalPlaces(input, "decimalAmount4");
+
+  const valueInSeconds = value / conversionRates3[from];
+  const convertedValue = valueInSeconds * conversionRates3[to];
+
+  document.getElementById("result4").value = convertedValue.toFixed(decimalPlaces); 
+  document.getElementById("resultSciNot4").value = convertedValue.toExponential(2);
+}
+
+function convert5() {
+  const input = document.getElementById("inputValue5").value;
+  const value = parseFloat(input);
+  const from = document.getElementById("fromUnit5").value;
+  const to = document.getElementById("toUnit5").value;
+
+  if (Number.isNaN(value)) {
+    document.getElementById("result5").value = "";
+    document.getElementById("resultSciNot5").value = "";
+    return;
+  }
+
+  const decimalPlaces = getDecimalPlaces(input, "decimalAmount5");
+
+  const valueInSeconds = value / conversionRates4[from];
+  const convertedValue = valueInSeconds * conversionRates4[to];
+
+  document.getElementById("result5").value = convertedValue.toFixed(decimalPlaces); 
+  document.getElementById("resultSciNot5").value = convertedValue.toExponential(2);
+}

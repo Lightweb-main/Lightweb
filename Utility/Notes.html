@@ -2,19 +2,20 @@
 <html>
 <head>
 	<link rel="stylesheet" href="../CSS/Lightweb.css">
+	<link rel="stylesheet" href="../CSS/DigitalClock.css">
  
 </head>
 <body> <header>Official Lightweb Site</header>
-   <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
   <title>LocalStorage Notepad</title>
   <style>
-    body {
-      font-family: sans-serif;
+    body, textarea, button{
+      font-family: times-new-roman;
       padding: 20px;
       background: #f4f4f4;
+	  color: var(--text);
+	background-color: var(--bg);
+	border: 2px solid var(--border);
     }
     textarea {
       width: 100%;
@@ -63,7 +64,8 @@
 	document.location = "../MainPages/Utility.html"
 	}
   </script>
-
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
+<div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
 </body>
 </html>
 

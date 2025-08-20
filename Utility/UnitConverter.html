@@ -2,6 +2,7 @@
 <head>
   <title>Unit Converter</title>
   <link rel="stylesheet" href="../CSS/Lightweb.css">
+  <link rel="stylesheet" href="../CSS/DigitalClock.css">
   <style> 
     body, textarea{ 
 	font-family: Arial; 
@@ -10,16 +11,22 @@
 	margin: auto; 
 	color: var(--text);
 	background-color: var(--bg);
-	border-color: var(--border);
+	border: 2px solid var(--border);
 	}
-	
-    input, #result{
+	input, select, button{
+	color: var(--text);
+	background-color: var(--bg);
+	border: 2px solid var(--border);
+	}
+    input, .result{
 	margin: 30px; 
 	padding: 10px; 
 	font-size: 20px;
-	
 	}
 	
+	#DigitalClock, #DigitalCalendar{
+	font-weight: 500;
+	}
 	select, button{
 	margin: 30px;
 	font-size: 20px;
@@ -86,8 +93,8 @@
    <option value="teraparsec">Teraparsec</option>
    <option value="quettameter">Quettameter</option>
   </select>
- <input id="result1" readonly>
- <input id="resultSciNot1" readonly>
+ <input id="result1"class="result"  readonly>
+ <input id="resultSciNot1"class="result"  readonly>
   <select id="toUnit1">
    <option value="quectometer">Quectometer</option>
    <option value="rontometer">Rontometer</option>
@@ -172,10 +179,10 @@
   <option value="newton">Newton</option>
   <option value="rankine">Rankine</option>
   <option value="romer">Romer Scale</option>
-  <option value="réaumur">Réaumur Scale</option>
+  <option value="reaumur">Réaumur Scale</option>
   </select>
- <input id="result2" readonly>
- <input id="resultSciNot2" readonly>
+ <input id="result2" class="result" readonly>
+ <input id="resultSciNot2"class="result"  readonly>
   <select id="toUnit2">
   <option value="celsius">Celsius&deg;</option> 
   <option value="delisle">Delisle</option>
@@ -185,7 +192,7 @@
   <option value="newton">Newton</option>
   <option value="rankine">Rankine</option>
   <option value="romer">Romer Scale</option>
-  <option value="réaumur">Réaumur Scale</option>
+  <option value="reaumur">Réaumur Scale</option>
   </select>
 	 <select id="decimalAmount2">
 	<option value="0">0</option>
@@ -215,16 +222,18 @@
   <option value="day">Day</option>
   <option value="week">Week</option>
   <option value="fortnight">Fortnight</option>
+  <option value="lunarMonth">Lunar Month</option>
   <option value="month">Month</option> 
   <option value="year">Year</option>
   <option value="siderealYear">Sidereal Year</option>
+  <option value="olympiad">Olympiad</option>
   <option value="decade">Decade</option>
   <option value="century">Century</option>
   <option value="millennium">Millennium</option>
   <option value="aeon">Aeon</option>
   </select>
- <input id="result3" readonly>
- <input id="resultSciNot3" readonly>
+ <input id="result3" class="result" readonly>
+ <input id="resultSciNot3"class="result"  readonly>
   <select id="toUnit3">
   <option value="second">Second</option> 
   <option value="minute">Minute</option>
@@ -232,9 +241,11 @@
   <option value="day">Day</option>
   <option value="week">Week</option>
   <option value="fortnight">Fortnight</option>
+  <option value="lunarMonth">Lunar Month</option>                 
   <option value="month">Month</option> 
   <option value="year">Year</option>
   <option value="siderealYear">Sidereal Year</option>
+  <option value="olympiad">Olympiad</option>
   <option value="decade">Decade</option>
   <option value="century">Century</option>
   <option value="millennium">Millennium</option>
@@ -258,7 +269,159 @@
 	<option value="60">60</option> 
 </select>
 </div>
+<h2>Weight Unit Converter</h2>
+	<div style="display: flex; align-items: center; flex-wrap: wrap;">
+  <input type="number" id="inputValue4" placeholder="Enter value">
+  <select id="fromUnit4">
+  <option value="quectogram">Quectogram</option> 
+  <option value="rontogram">Rontogram</option> 
+  <option value="yoctogram">Yoctogram</option> 
+  <option value="atomicmu">Atomic Mass Unit</option> 
+  <option value="zeptogram">Zeptogram</option> 
+  <option value="attogram">Attogram</option> 
+  <option value="femtogram">Femtogram</option> 
+  <option value="picogram">Picogram</option> 
+  <option value="nanogram">Nanogram</option> 
+  <option value="microgram">Microgram</option> 
+  <option value="milligram">Milligram</option> 
+  <option value="centigram">Centigram</option> 
+  <option value="grain">Grain</option> 
+  <option value="decigram">Decigram</option> 
+  <option value="carat">Carat</option> 
+  <option value="gram">Gram</option> 
+  <option value="dram">Dram</option>
+  <option value="dekagram">Dekagram</option> 
+  <option value="tola">Tola</option>
+  <option value="ounce">Ounce</option>
+  <option value="troyOunce">Troy Ounce</option>
+  <option value="hectogram">Hectogram</option> 
+  <option value="pound">Pound</option>
+  <option value="kilogram">Kilogram</option> 
+  <option value="stone">Stone</option>
+  <option value="slug">Slug</option>
+  <option value="USQuintal">US Quintal</option>
+  <option value="metricQuintal">Metric Quintal</option>
+  <option value="frenchQuintal">French Quintal</option>
+  <option value="shortTon">Short Ton</option>
+  <option value="megagram">Megagram</option> 
+  <option value="metricTon">Metric Ton</option> 
+  <option value="longTon">Long Ton</option>
+  <option value="imperialTon">Imperial Ton</option>
+  <option value="gigagram">Gigagram</option>
+  <option value="teragram">Teragram</option>
+  <option value="petagram">Petagram</option>
+  <option value="exagram">Exagram</option>
+  <option value="zettagram">Zettagram</option>
+  <option value="yottagram">Yottagram</option>
+  <option value="ronnagram">Ronnagram</option>
+  <option value="quettagram">Quettagram</option>
+  </select>
+ <input id="result4"class="result"  readonly>
+ <input id="resultSciNot4" class="result" readonly>
+  <select id="toUnit4">
+  <option value="quectogram">Quectogram</option> 
+  <option value="rontogram">Rontogram</option> 
+  <option value="yoctogram">Yoctogram</option> 
+  <option value="atomicmu">Atomic Mass Unit</option> 
+  <option value="zeptogram">Zeptogram</option> 
+  <option value="attogram">Attogram</option> 
+  <option value="femtogram">Femtogram</option> 
+  <option value="picogram">Picogram</option> 
+  <option value="nanogram">Nanogram</option> 
+  <option value="microgram">Microgram</option> 
+  <option value="milligram">Milligram</option> 
+  <option value="centigram">Centigram</option> 
+  <option value="grain">Grain</option> 
+  <option value="decigram">Decigram</option> 
+  <option value="carat">Carat</option> 
+  <option value="gram">Gram</option> 
+  <option value="dram">Dram</option>
+  <option value="dekagram">Dekagram</option> 
+  <option value="tola">Tola</option>
+  <option value="ounce">Ounce</option>
+  <option value="troyOunce">Troy Ounce</option>
+  <option value="hectogram">Hectogram</option> 
+  <option value="pound">Pound</option>
+  <option value="kilogram">Kilogram</option> 
+  <option value="stone">Stone</option>
+  <option value="slug">Slug</option>
+  <option value="USQuintal">US Quintal</option>
+  <option value="metricQuintal">Metric Quintal</option>
+  <option value="frenchQuintal">French Quintal</option>
+  <option value="shortTon">Short Ton</option>
+  <option value="megagram">Megagram</option> 
+  <option value="metricTon">Metric Ton</option> 
+  <option value="longTon">Long Ton</option>
+  <option value="imperialTon">Imperial Ton</option>
+  <option value="gigagram">Gigagram</option>
+  <option value="teragram">Teragram</option>
+  <option value="petagram">Petagram</option>
+  <option value="exagram">Exagram</option>
+  <option value="zettagram">Zettagram</option>
+  <option value="yottagram">Yottagram</option>
+  <option value="ronnagram">Ronnagram</option>
+  <option value="quettagram">Quettagram</option>
+  </select>
+	 <select id="decimalAmount4">
+	<option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+	<option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option> 
+	<option value="9">9</option> 
+	<option value="10">10</option> 
+	<option value="15">15</option> 
+	<option value="20">20</option> 
+	<option value="30">30</option> 
+	<option value="60">60</option> 
+</select>
+</div>
+<h2>Speed Unit Converter</h2>
+	<div style="display: flex; align-items: center; flex-wrap: wrap;">
+  <input type="number" id="inputValue5" placeholder="Enter value">
+  <select id="fromUnit5">
+  <option value="mph">Mph (Miles / Hour)</option> 
+  <option value="kph">Kph (Kilometer / Hour)</option>
+  <option value="mach">Mach</option>
+  <option value="fps">Fps (Foot / Second)</option>
+  <option value="mps">Mps (Meters / Second)</option>
+  <option value="knot">Knots</option>
+  </select>
+ <input id="result5" class="result" readonly>
+ <input id="resultSciNot5"class="result"  readonly>
+  <select id="toUnit5">
+  <option value="mph">Mph (Miles / Hour)</option> 
+  <option value="kph">Kph (Kilometer / Hour)</option>
+  <option value="mach">Mach</option>
+  <option value="fps">Fps (Foot / Second)</option>
+  <option value="mps">Mps (Meters / Second)</option>
+  <option value="knot">Knots</option>
+  </select>
+	 <select id="decimalAmount5">
+	<option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+	<option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option> 
+	<option value="9">9</option> 
+	<option value="10">10</option> 
+	<option value="15">15</option> 
+	<option value="20">20</option> 
+	<option value="30">30</option> 
+	<option value="60">60</option> 
+</select>
+</div>
 <button onclick="exit()">Exit</button>
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
+<div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
 <script>
 function exit(){
 document.location = "../MainPages/Utility.html"
