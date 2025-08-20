@@ -92,6 +92,7 @@ fortnight: 0.000000826719577,
 month: 0.000000380517504,
 year: 0.000000031709792,
 siderealYear: 0.0000000316876862,
+olympiad: 0.000000007927448,
 decade: 0.0000000031709792,
 century: 0.00000000031709792,
 millennium: 0.000000000031709792,
@@ -198,6 +199,7 @@ function convert3() {
   document.getElementById("result3").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot3").value = convertedValue.toExponential(2);
 }
+
 
 
 
