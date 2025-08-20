@@ -11,6 +11,6 @@ Then click the button until it allows you in.
 
 Rules & Other Stuff:
 
-No alteration of the original website is allowed, the consequences is a permanent ban from this domain.
+No alteration of the original website is allowed.
 
 Downloading Lightweb isn't recommended since updates don't apply directly to downloaded copies of Lightweb.
