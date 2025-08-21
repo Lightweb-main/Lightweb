@@ -1,14 +1,17 @@
-
+body.PC {
 p{
+font-size: 18px;
 text-align: center;
-font-size: 25px;
 }
 
-header{
-position: absolute;
-top: 18px;
-right: 18px;
-font-weight: bold;
+h1{
+font-size: 70px;
+text-align: center;
+}
+
+a{
+font-size: 25px;
+}
 }
 
 @keyframes flicker {
@@ -79,11 +82,7 @@ border-radius: 15px;
 font-weight: var(--FontWeight)
 }
 
-h1{
-text-align: center;
-font-size: 70px;
-font-weight: bold;
-}
+
 
 #searchInput {
 background-color: var(--SearchArticlesColor);
@@ -195,7 +194,6 @@ body {
 
 a{
 color: var(--text);
-font-size: 25px;
 font-weight: bold;
 border: 12px solid var(--border);
 border-radius: 10px;
@@ -203,17 +201,12 @@ text-decoration: none;
 border-color: var(--border);
 background-color: var(--border);
 font-weight: var(--FontWeight)
-
 }
 
 a:hover{
 color: red;
 }
 
-example{
-text-align: center;
-font-size: 25px;
-}
 
 #screen-toggle{
 color: var(--text);
@@ -302,3 +295,4 @@ left: 5%;
 text-align: center;
 width=200%
 }
+
