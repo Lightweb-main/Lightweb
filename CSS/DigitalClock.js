@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('dark', 'AnalogScreen');
 	  if(DeviceType == 'PC'){
 	  document.body.classList.add('PC');
+	  } else if(DeviceType == 'Phone'){
+	  document.body.classList.add('Phone');
 	  }
       if (theme === 'dark') {
         document.body.classList.add('dark');
@@ -138,6 +140,7 @@ iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
 
 
 document.head.appendChild(iconthingy);
+
 
 
 
