@@ -20,15 +20,28 @@
       display: none;
       }
 	  #DigitalClock{
-	  position: absolute;
-	  top: 0px;
-	  left: 1500px;
-	  }
-	   #DigitalCalendar{
-	   position: absolute;
-	   top: 65px;
-	   left: 1495px;
-	   }
+		position: absolute;
+		top: 0px;
+		left: 1600px;
+		font-size: 50px;
+		width: 300px;
+		border: 2px solid var(--DigitalClockBackground);
+		border-radius: 15px;
+		font-weight: var(--FontWeight);
+		text-align: center;
+		}
+
+		#DigitalCalendar{
+		position: absolute;
+		text-align: center;
+		top: 60px;
+		left: 1600px;
+		font-size: 25px;
+		width: 300px;
+		border: 2px solid var(--DigitalClockBackground);
+		border-radius: 15px; 
+		font-weight: var(--FontWeight)
+		}
     </style>
   </head>
   <body>
@@ -97,7 +110,7 @@
 	  pcVer = document.getElementById("pcVer")
 	  pcVer.style.display = "none"
       phoneVer.style.display = "none"
-	  localStorage.setItem('DeviceType', 'PC'); 
+	  localStorage.setItem('DeviceType', 'Phone'); 
       document.location = 'MainPages/Lightweb%20MainPage.html';
       document.location = 'MainPages/Lightweb%20MainPage.html?DeviceType=Phone';
       }
