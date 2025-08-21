@@ -60,8 +60,11 @@ update();
 document.addEventListener('DOMContentLoaded', () => {
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
-	
+	  const DeviceType = localStorage.getItem('DeviceType');
       document.body.classList.remove('dark', 'AnalogScreen');
+	  if(DeviceType == 'PC'){
+	  document.body.classList.add('PC');
+	  }
       if (theme === 'dark') {
         document.body.classList.add('dark');
       } else if (theme === 'AnalogScreen') {
@@ -80,8 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const toggleAnalogBtn = document.getElementById('analog-screen-button');
       const toggleMilitaryBtn = document.getElementById('millitary-time-button');
 	  const toggleCRTBlueScreen = document.getElementById('CRTBLUE-screen-button');
+	  const PCbutton = document.getElementById('pcVer');
 
-
+	 PCbutton.addEventListener('click', () => {
+        document.body.classList.toggle('PC');
+        localStorage.setItem(
+          'DeviceType',
+          document.body.classList.contains('PC') ? 'PC' : 'PC'
+        );
+      });
+    });
 
       toggleDarkBtn.addEventListener('click', () => {
         if (document.body.classList.contains('dark')) {
@@ -143,6 +154,7 @@ iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
 
 
 document.head.appendChild(iconthingy);
+
 
 
 
