@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen');
-  document.body.classList.add('PC');
+  document.body.classList.remove('PC', 'Phone');
   
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
