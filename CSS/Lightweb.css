@@ -39,9 +39,6 @@ text-align: center;
   gap: 15px;
   margin: 50px auto;
 }
- }
-
-
 .cell {
   background-color: var(--bg);
   border: 4px solid #333;
@@ -333,5 +330,6 @@ left: 5%;
 text-align: center;
 width=200%
 }
+
 
 
