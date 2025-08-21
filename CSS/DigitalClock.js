@@ -52,8 +52,8 @@ am_pm = ""
 	 currentTime = `${hour}:${min}:${sec} ${am_pm}`;  
    }
 
-    document.getElementById('DigitalClock').innerHTML = currentTime;
-    document.getElementById('DigitalCalendar').innerHTML = currentDay;
+    document.getElementById('DigitalClock').textContent = currentTime;
+    document.getElementById('DigitalCalendar').textContent = currentDay;
 }
 update();
 
@@ -89,10 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('PC');
         localStorage.setItem(
           'DeviceType',
-          document.body.classList.contains('PC') ? 'PC' : 'PC'
+          document.body.classList.contains('PC') ? 'PC' : 'None'
         );
       });
-    });
+    
 
       toggleDarkBtn.addEventListener('click', () => {
         if (document.body.classList.contains('dark')) {
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
           document.body.classList.contains('militaryTime') ? 'militaryTime' : '12-hour-clock'
         );
       });
-    });
+});
 
 function remove(){
 	document.body.classList.remove('dark');

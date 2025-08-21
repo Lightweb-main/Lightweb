@@ -3,8 +3,9 @@
   <head>
     <title>Lightweb Terms and Whatever</title>
     <link rel="stylesheet" href="CSS/Lightweb.css">
+	
     <style>
-      div{
+      #div{
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
@@ -18,11 +19,21 @@
       #button2, #button3, #button4, #button5{
       display: none;
       }
+	  #DigitalClock{
+	  position: absolute;
+	  top: 0px;
+	  left: 1500px;
+	  }
+	   #DigitalCalendar{
+	   position: absolute;
+	   top: 65px;
+	   left: 1495px;
+	   }
     </style>
   </head>
   <body>
     <h1>Terms and Whatever</h1>
-    <div>
+    <div id="div">
     1. No altering the original code (however downloading a copy and modifying it is okay and creating extensions or original articles are welcome).<br><br>
     2. NEVER USE LIGHTWEB WHEN GOGUARDIAN IS ACTIVE. (VERY VERY VERY IMPORTANT).<br><br>
     3. NEVER ALLOW ANY PERSONS THAT CAN BLOCK THIS SITE TO SEE LIGHTWEB (other students can be invited to the google doc link).<br><br>
@@ -31,11 +42,13 @@
     <button id="button3" style="display: flex; justify-content: center; display: none;" onclick="proceed3();">I still don't really believe you. Click me again again.</button>
     <button id="button4" style="display: flex; justify-content: center; display: none;" onclick="proceed4();">Click me again.</button>
     <button id="button5" style="display: flex; justify-content: center; display: none;" onclick="proceed5();">Alright click me again to go to Lightweb.</button>
-    <button id="pcVer" flex; justify-content: center; display: none; onclick="PC()">PC</button>
-    </div>
+    <button id="pcVer" style="display: none; justify-content: center; font-size: 30px;" onclick="PC()">PC</button>
+
+</div>
+	<script src="CSS/DigitalClock.js"></script>
     <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
     <div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
-    <script src="CSS/DigitalClock.js"></script>
+ 
     <script>
       function proceed1(){
       button1 = document.getElementById("button1") 
@@ -65,12 +78,14 @@
       button5 = document.getElementById("button5") 
       pcVer = document.getElementById("pcVer")
       button5.style.display = "none"
-      pcVer.style.display = "block"
+      pcVer.style.display = "flex"
       }
       function PC(){
       pcVer = document.getElementById("pcVer")
       pcVer.style.display = "none"
-      document.location = 'MainPages/Lightweb%20MainPage.html'
+	  localStorage.setItem('DeviceType', 'PC'); // ✅ Save before navigating
+      document.location = 'MainPages/Lightweb%20MainPage.html';
+      document.location = 'MainPages/Lightweb%20MainPage.html?DeviceType=PC';
       }
     </script>
   </body>
