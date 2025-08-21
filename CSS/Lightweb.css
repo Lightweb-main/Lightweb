@@ -130,7 +130,7 @@ top: -40px;
 left: -40px;
 font-size: 30px;
 width: 175px;
-border: 4px solid var(--DigitalClockBackground);
+border: 2px solid var(--DigitalClockBackground);
 border-radius: 15px;
 font-weight: var(--FontWeight);
 }
@@ -406,6 +406,7 @@ left: 5%;
 text-align: center;
 width=200%
 }
+
 
 
 
