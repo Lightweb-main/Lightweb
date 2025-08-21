@@ -43,6 +43,7 @@
     <button id="button4" style="display: flex; justify-content: center; display: none;" onclick="proceed4();">Click me again.</button>
     <button id="button5" style="display: flex; justify-content: center; display: none;" onclick="proceed5();">Alright click me again to go to Lightweb.</button>
     <button id="pcVer" style="display: none; justify-content: center; font-size: 30px;" onclick="PC()">PC</button>
+	<button id="phoneVer" style="display: none; justify-content: center; font-size: 30px;" onclick="Phone()">Phone</button>
 
 </div>
 	<script src="CSS/DigitalClock.js"></script>
@@ -81,11 +82,22 @@
       pcVer.style.display = "flex"
       }
       function PC(){
-      pcVer = document.getElementById("pcVer")
-      pcVer.style.display = "none"
-	  localStorage.setItem('DeviceType', 'PC'); // ✅ Save before navigating
+      phoneVer = document.getElementById("phoneVer")
+	  pcVer = document.getElementById("pcVer")
+      phoneVer.style.display = "none"
+	  pcVer.style.display = "none"
+	  localStorage.setItem('DeviceType', 'PC'); 
       document.location = 'MainPages/Lightweb%20MainPage.html';
       document.location = 'MainPages/Lightweb%20MainPage.html?DeviceType=PC';
+      }
+	  function Phone(){
+      phoneVer = document.getElementById("phoneVer")
+	  pcVer = document.getElementById("pcVer")
+	  pcVer.style.display = "none"
+      phoneVer.style.display = "none"
+	  localStorage.setItem('DeviceType', 'PC'); 
+      document.location = 'MainPages/Lightweb%20MainPage.html';
+      document.location = 'MainPages/Lightweb%20MainPage.html?DeviceType=Phone';
       }
     </script>
   </body>
