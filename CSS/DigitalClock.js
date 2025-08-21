@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen');
-
+  document.body.classList.add('PC');
   
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
@@ -69,8 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('dark', 'AnalogScreen');
 	  if(DeviceType == 'PC'){
 	  document.body.classList.add('PC');
-	  } else if(DeviceType == 'Phone'){
-	  document.body.classList.add('Phone');
 	  }
       if (theme === 'dark') {
         document.body.classList.add('dark');
