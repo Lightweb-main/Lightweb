@@ -58,6 +58,11 @@ am_pm = ""
 update();
 
 document.addEventListener('DOMContentLoaded', () => {
+
+
+  document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen');
+
+  
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
 	  const DeviceType = localStorage.getItem('DeviceType');
@@ -78,74 +83,53 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         document.body.classList.remove('militaryTime');
       }
-
+		
       const toggleDarkBtn = document.getElementById('screen-toggle');
       const toggleAnalogBtn = document.getElementById('analog-screen-button');
       const toggleMilitaryBtn = document.getElementById('millitary-time-button');
 	  const toggleCRTBlueScreen = document.getElementById('CRTBLUE-screen-button');
-	  const PCbutton = document.getElementById('pcVer');
+	 
+	
 
-	 PCbutton.addEventListener('click', () => {
-        document.body.classList.toggle('PC');
-        localStorage.setItem(
-          'DeviceType',
-          document.body.classList.contains('PC') ? 'PC' : 'None'
-        );
-      });
-    
-
-      toggleDarkBtn.addEventListener('click', () => {
-        if (document.body.classList.contains('dark')) {
-          document.body.classList.remove('dark');
-          localStorage.setItem('theme', '');
-        } else {
-			remove();
-          document.body.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        }
-      });
-
-      toggleAnalogBtn.addEventListener('click', () => {
-        if (document.body.classList.contains('AnalogScreen')) {
-          document.body.classList.remove('AnalogScreen');
-          localStorage.setItem('theme', '');
-        } else {
-		  remove();
-          document.body.classList.add('AnalogScreen');
-          localStorage.setItem('theme', 'AnalogScreen');
-        }
-      });
-	  
-	  toggleCRTBlueScreen.addEventListener('click', () => {
-        if (document.body.classList.contains('CRTBLUEScreen')) {
-          document.body.classList.remove('CRTBLUEScreen');
-          localStorage.setItem('theme', '');
-        } else {
-			remove();
-          document.body.classList.add('CRTBLUEScreen');
-          localStorage.setItem('theme', 'CRTBLUEScreen');
-        }
-      });
-
-      toggleMilitaryBtn.addEventListener('click', () => {
-        document.body.classList.toggle('militaryTime');
-        localStorage.setItem(
-          'timeType',
-          document.body.classList.contains('militaryTime') ? 'militaryTime' : '12-hour-clock'
-        );
-      });
+toggleDarkBtn.addEventListener('click', () => {
+  if (document.body.classList.contains('dark')) {
+    document.body.classList.remove('dark');
+    localStorage.setItem('theme', '');
+  } else {
+    document.body.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }
 });
 
-function remove(){
-	document.body.classList.remove('dark');
-	document.body.classList.remove('CRTBLUEScreen');
-	if (document.body.classList.contains('dark')) {
-	
-	} else{
-		document.body.classList.remove('CRTBLUEScreen');
-		document.body.classList.remove('CRTBLUEScreen');
-	}
-}
+toggleAnalogBtn.addEventListener('click', () => {
+  if (document.body.classList.contains('AnalogScreen')) {
+    document.body.classList.remove('AnalogScreen');
+    localStorage.setItem('theme', '');
+  } else {
+    document.body.classList.add('AnalogScreen');
+    localStorage.setItem('theme', 'AnalogScreen');
+  }
+});
+
+
+toggleCRTBlueScreen.addEventListener('click', () => {
+  if (document.body.classList.contains('CRTBLUEScreen')) {
+    document.body.classList.remove('CRTBLUEScreen');
+    localStorage.setItem('theme', '');
+  } else {
+    document.body.classList.add('CRTBLUEScreen');
+    localStorage.setItem('theme', 'CRTBLUEScreen');
+  }
+});
+
+toggleMilitaryBtn.addEventListener('click', () => {
+  document.body.classList.toggle('militaryTime');
+  localStorage.setItem(
+    'timeType',
+    document.body.classList.contains('militaryTime') ? 'militaryTime' : '12-hour-clock'
+  );
+});
+});
 
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
