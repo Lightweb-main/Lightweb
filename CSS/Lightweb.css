@@ -13,8 +13,19 @@ h1 {
 .articles a{
    font-size: 25px;
   }
-.smallHeading1 h1{
+
+.smallHeading1{
+font-size: 65px;
+text-align: center;
+}
+
+.smallHeading1A{
 font-size: 55px;
+text-align: center;
+}
+
+.smallHeading1B{
+font-size: 45px;
 text-align: center;
 }
  header {
@@ -28,6 +39,7 @@ text-align: center;
   gap: 15px;
   margin: 50px auto;
 }
+ }
 
 
 .cell {
@@ -321,4 +333,5 @@ left: 5%;
 text-align: center;
 width=200%
 }
+
 
