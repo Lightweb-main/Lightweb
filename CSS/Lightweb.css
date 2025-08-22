@@ -113,15 +113,15 @@ text-align: center;
  }
  #TicTacToeGame {
   display: grid;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(3,4000px);
   grid-template-rows: repeat(3, 400px);
-  gap: 3.75px;
-  margin: 12.5px auto;
+  gap: 30px;
+  margin: 100px auto;
 }
 .cell {
   background-color: var(--bg);
   border: 1px solid #333;
-  font-size: 3em;
+  font-size: 12em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -409,7 +409,6 @@ left: 5%;
 text-align: center;
 width=200%
 }
-
 
 
 
