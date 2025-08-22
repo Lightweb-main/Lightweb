@@ -67,9 +67,10 @@ function exitTicTacToe() {
 
 function resetScores(){
 PlayerXScore = 0;
-PlayerYScore = 0;
+PlayerOScore = 0;
 }
 drawBoard();
+
 
 
 
