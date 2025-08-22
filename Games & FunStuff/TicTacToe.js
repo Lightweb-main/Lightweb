@@ -65,10 +65,11 @@ function exitTicTacToe() {
   document.location = "../MainPages/Games%20&%20FunStuff.html";
 }
 
-function resetScores{
+function resetScores(){
 PlayerXScore = 0;
 PlayerYScore;
 }
 drawBoard();
+
 
 
