@@ -128,7 +128,7 @@ width: 250px;
 border: 2px solid var(--border);
 border-radius: 30px;
 }
-button{
+.button{
 font-size: 40px;
 padding: 20px;
 background-color: var(--bg);
@@ -146,8 +146,8 @@ color: var(--text);
   <div id="GameState">Player X's turn</div>
   <div id="PlayerXScore">Player X Score: </div>
   <div id="PlayerOScore">Player O Score: </div>
-  <button onclick="resetGame()">Restart</button>
-  <button onclick="exitTicTacToe();">Exit</button>
+  <button class="button" onclick="resetGame()">Restart</button>
+  <button class="button" onclick="exitTicTacToe();">Exit</button>
   <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
 <div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
   <script src="TicTacToe.js"></script>
@@ -155,6 +155,7 @@ color: var(--text);
 </body>
 
 </html>
+
 
 
 
