@@ -344,7 +344,7 @@ p, a, h1, h2, h3, h4, h5, h6 {
 }
 
 
-body.dark img {
+body.dark, body.AnalogScreen img {
     filter: brightness(1.1) ;
 }
 
@@ -415,4 +415,5 @@ right: 5%;
 text-align: center;
 width: 200%;
 }
+
 
