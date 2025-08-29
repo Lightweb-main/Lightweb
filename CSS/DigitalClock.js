@@ -145,9 +145,10 @@ document.addEventListener("contextmenu", e => e.preventDefault());
 document.addEventListener("keydown", e => {
   if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
     e.preventDefault();
-	window.location.href = "about:blank";
+	document.location.href = 'https://www.google.com/search?q=Stop+it%2C+get+some+help&sca_esv=7e05b07ddf466695&sxsrf=AE3TifNaVOMfyiOuT1Xp5JlRBPlHBMX-pw%3A1756438790739&source=hp&ei=BiGxaL3pKtzvkPIPoPq_2Qo&iflsig=AOw8s4IAAAAAaLEvFl2t1c7tmAq9Icvw_rsRF8jhJIMM&ved=0ahUKEwi9hMKxjK-PAxXcN0QIHSD9L6sQ4dUDCBo&uact=5&oq=Stop+it%2C+get+some+help&gs_lp=Egdnd3Mtd2l6IhZTdG9wIGl0LCBnZXQgc29tZSBoZWxwMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEiWWFC2C1jmVnAVeACQAQCYAUOgAegOqgECMzm4AQPIAQD4AQGYAjygAvsPqAIKwgIHECMYJxjqAsICDRAjGPAFGCcYyQIY6gLCAgQQIxgnwgIIEAAYgAQYsQPCAhEQLhiABBixAxjRAxiDARjHAcICDhAAGIAEGLEDGIMBGIoFwgILEAAYgAQYsQMYgwHCAgoQIxiABBgnGIoFwgIOEC4YgAQYsQMY0QMYxwHCAg4QLhiABBixAxiDARiKBcICChAAGIAEGLEDGArCAg4QLhiABBjHARiOBRivAcICERAuGIAEGMcBGJgFGI4FGK8BwgITEC4YgAQYsQMY0QMYgwEYxwEYCsICDRAAGIAEGLEDGIMBGArCAg0QLhiABBixAxiDARgKwgIQEAAYgAQYsQMYgwEYigUYCsICBRAuGIAEwgIEEAAYA8ICCBAuGIAEGLEDwgIHECMY8AUYJ8ICFBAuGIAEGLEDGNEDGIMBGMcBGIoFwgILEC4YgAQY0QMYxwHCAgsQLhiABBixAxiDAcICCxAAGIAEGLEDGMkDwgILEAAYgAQYkgMYigXCAgsQLhiABBjHARivAZgDBvEFwj_kw1cV_wySBwI2MKAH_soCsgcCMzm4B8IPwgcGMC41OS4xyAd-&sclient=gws-wizgoogle.com'
   }
 });
+
 
 
 
