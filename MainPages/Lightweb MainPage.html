@@ -27,16 +27,17 @@
 	
 	<br><br><br>
 	<div style="text-align: center;">
-	<a href="#" onclick="Link1(); return: false;">Informational</a><br><br>
+	<a href="#" onclick="Link1(); return false;">Informational</a>
 	<!-- You Found Me.....
 	<a href="Noninformational.html">Noninformational</a><br><br>
 	-->
-	<a href="#" onclick="Link2(); return: false;" class="MainPage">Games & Fun Stuff</a><br><br>
-	<a href="#" class="MainPage">All Members/Invited People</a><br><br>
-	<a href="#" class="MainPage">Quizzes</a><br><br>
-	<a href="#" class="MainPage">Simulations</a><br><br>
-	<a href="#" class="MainPage">Settings</a><br><br>
-	<a href="#" class="MainPage">Utility</a><br><br>
+	<a href="#" onclick="Link2(); return false;" class="MainPage">Games & Fun Stuff</a><br><br>
+	<a href="#" onclick="Link3(); return false;" class="MainPage">All Members/Invited People</a><br><br>
+<a href="#" onclick="Link4(); return false;" class="MainPage">Quizzes</a><br><br>
+<a href="#" onclick="Link5(); return false;" class="MainPage">Simulations</a><br><br>
+<a href="#" onclick="Link6(); return false;" class="MainPage">Settings</a><br><br>
+<a href="#" onclick="Link7(); return false;" class="MainPage">Utility</a><br><br>
+
 	</div>
 	<iframe id="History" src="../Other/LightwebHistory.html"></iframe>
 <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
@@ -44,16 +45,40 @@
     <script src="../CSS/DigitalClock.js"></script>
 	<script src="../Other/LightwebHistoryDisplay.js"></script>
 	<script>
-		function Link1(){
-		window.location.href = "Informational.html";
-		}
-		function Link2(){
-		window.location.href = "Games%20&%20FunStuff.html";
-		}
+		<script>
+  function Link1() {
+    window.location.href = "Informational.html";
+  }
+
+  function Link2() {
+    window.location.href = "Games%20&%20FunStuff.html";
+  }
+
+  function Link3() {
+    window.location.href = "Members.html";
+  }
+
+  function Link4() {
+    window.location.href = "Quizzes.html";
+  }
+
+  function Link5() {
+    window.location.href = "Simulations.html";
+  }
+
+  function Link6() {
+    window.location.href = "Settings.html";
+  }
+
+  function Link7() {
+    window.location.href = "Utility.html";
+  }
+</script>
 	</script>
 </body>
 
 </html>
+
 
 
 
