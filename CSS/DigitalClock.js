@@ -59,13 +59,14 @@ update();
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
+  
   document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen');
   document.body.classList.remove('PC', 'Phone');
   
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
 	  const DeviceType = localStorage.getItem('DeviceType');
+	  const LoginVerification = localStorage.getItem('LoginVerification');
       document.body.classList.remove('dark', 'AnalogScreen');
 	  if(DeviceType == 'PC'){
 	  document.body.classList.add('PC');
@@ -151,7 +152,9 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-
+  if (LoginVerification !== 'true') {
+    window.location.href = '../login.html'; 
+  }
 
 
 
