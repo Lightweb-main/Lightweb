@@ -1,4 +1,4 @@
-const currentPath = window.location.pathname
+const currentPath = window.location.pathname;
 const loginPageName = 'index.html';
 
 if (
@@ -175,6 +175,7 @@ document.addEventListener("keydown", function (e) {
   if (LoginVerification !== 'true') {
     document.location= '../login.html'; 
   }
+
 
 
 
