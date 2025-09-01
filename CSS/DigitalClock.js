@@ -23,8 +23,8 @@ if (
 		currentPath.toLowerCase().includes('lightweb-main.github.io/lightweb/courses/')) {
     window.location.href = '../index.html';
   }	
-    if(currentPath.toLowerCase().includes('lightweb-main/Quizzes/PreTests') || 
-	currentPath.toLowerCase().includes('lightweb-main/Quizzes/Tests')){
+    if(currentPath.toLowerCase().includes('lightweb-main/quizzes/preTests') || 
+	currentPath.toLowerCase().includes('lightweb-main/quizzes/tests')){
 	window.location.href = '../../index.html';
 	}
 
@@ -175,6 +175,7 @@ document.addEventListener("keydown", function (e) {
   if (LoginVerification !== 'true') {
     document.location= '../login.html'; 
   }
+
 
 
 
