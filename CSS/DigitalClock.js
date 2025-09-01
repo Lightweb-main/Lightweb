@@ -1,19 +1,32 @@
+const currentPath = window.location.pathname.toLowerCase();
+const loginPageName = 'index.html';
+
+if (
+  localStorage.getItem('LoginVerification') === null &&
+  currentPath.includes('lightweb-main') &&
+  !currentPath.endsWith(loginPageName)
+) {
+  localStorage.setItem('LoginVerification', 'false');
+}
+
+if (
+  localStorage.getItem('LoginVerification') !== 'true' &&
+  currentPath.includes('lightweb-main') &&
+  !currentPath.endsWith(loginPageName)
+) {
+    if (currentPath.toLowerCase().includes('lightweb-main/mainpages/') || currentPath.toLowerCase().includes('lightweb-main/articles/') || currentPath.toLowerCase().includes('lightweb-main/simulations/') || currentPath.toLowerCase().includes('lightweb-main/utility/') || currentPath.toLowerCase().includes('lightweb-main/noninformationalarticles/') || currentPath.toLowerCase().includes('lightweb-main/games%20funstuff/') || currentPath.toLowerCase().includes('lightweb-main/courses/')) {
+    window.location.href = '../index.html';
+  }	
+    if(currentPath.toLowerCase().includes('lightweb-main/Quizzes/PreTests') || currentPath.toLowerCase().includes('lightweb-main/Quizzes/Tests')){
+	window.location.href = '../../index.html';
+	}
+
+  
+  
+  
+}
 let faviconNum = 0
 setInterval(update, 100);
-
-(function setInitialTheme() {
-  const theme = localStorage.getItem('theme');
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else if (theme === 'AnalogScreen') {
-    document.documentElement.classList.add('AnalogScreen');
-  }
-
-  const timeType = localStorage.getItem('timeType');
-  if (timeType === 'militaryTime') {
-    document.documentElement.classList.add('militaryTime');
-  }
-})();
 
 function update() {
 	faviconNum += 1
@@ -59,14 +72,14 @@ update();
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  
+
   document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen');
   document.body.classList.remove('PC', 'Phone');
-  
+  document.body.classList.add('false');
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
 	  const DeviceType = localStorage.getItem('DeviceType');
-	  const LoginVerification = localStorage.getItem('LoginVerification');
+	  
       document.body.classList.remove('dark', 'AnalogScreen');
 	  if(DeviceType == 'PC'){
 	  document.body.classList.add('PC');
@@ -153,7 +166,7 @@ document.addEventListener("keydown", function (e) {
 });
 
   if (LoginVerification !== 'true') {
-    window.location.href = '../login.html'; 
+    document.location= '../login.html'; 
   }
 
 

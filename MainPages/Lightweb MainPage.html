@@ -37,6 +37,7 @@
 <a href="#" onclick="Link5(); return false;" class="MainPage">Simulations</a><br><br>
 <a href="#" onclick="Link6(); return false;" class="MainPage">Settings</a><br><br>
 <a href="#" onclick="Link7(); return false;" class="MainPage">Utility</a><br><br>
+<a href="#" onclick="Link8(); return false;" class="MainPage">Log Out</a><br><br>
 
 	</div>
 	<iframe id="History" src="../Other/LightwebHistory.html"></iframe>
@@ -45,6 +46,8 @@
     <script src="../CSS/DigitalClock.js"></script>
 	<script src="../Other/LightwebHistoryDisplay.js"></script>
 		<script>
+	
+	
   function Link1() {
     document.location = "Informational.html";
   }
@@ -71,6 +74,11 @@
 
   function Link7() {
     document.location = "Utility.html";
+  }
+  
+   function Link8() {
+   localStorage.setItem('LoginVerification', 'false');
+   document.location = "../index.html"
   }
 	</script>
 </body>
