@@ -168,13 +168,10 @@ document.addEventListener("keydown", function (e) {
       (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
       (e.ctrlKey && e.key === "U")) {
     e.preventDefault();
-    window.location.href = "about:blank";
+   
   }
 });
 
-  if (LoginVerification !== 'true') {
-    document.location= '../login.html'; 
-  }
 
 
 
