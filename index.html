@@ -123,6 +123,20 @@
 	  localStorage.setItem('DeviceType', 'Phone'); 
       document.location = 'MainPages/Lightweb%20MainPage.html';
       }
+
+	fetch('https://lightweb-backend.onrender.com/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ username: 'admin', password: 'secret' })
+})
+.then(res => res.json())
+.then(data => {
+  if (data.success) {
+    alert('Login successful!');
+  } else {
+    alert('Login failed!');
+  }
+});
     </script>
   </body>
 </html>
