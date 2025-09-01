@@ -1,4 +1,4 @@
-const currentPath = window.location.pathname.toLowerCase();
+const currentPath = window.location.pathname
 const loginPageName = 'index.html';
 
 if (
@@ -11,7 +11,7 @@ if (
 
 if (
   localStorage.getItem('LoginVerification') !== 'true' &&
-  currentPath.includes('lightweb-main') &&
+  currentPath.includes('lightweb-main.github.io') &&
   !currentPath.endsWith(loginPageName)
 ) {
     if (currentPath.toLowerCase().includes('lightweb-main.github.io/lightweb/mainpages/') || 
@@ -175,6 +175,7 @@ document.addEventListener("keydown", function (e) {
   if (LoginVerification !== 'true') {
     document.location= '../login.html'; 
   }
+
 
 
 
