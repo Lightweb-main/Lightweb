@@ -14,10 +14,17 @@ if (
   currentPath.includes('lightweb-main') &&
   !currentPath.endsWith(loginPageName)
 ) {
-    if (currentPath.toLowerCase().includes('lightweb-main/mainpages/') || currentPath.toLowerCase().includes('lightweb-main/articles/') || currentPath.toLowerCase().includes('lightweb-main/simulations/') || currentPath.toLowerCase().includes('lightweb-main/utility/') || currentPath.toLowerCase().includes('lightweb-main/noninformationalarticles/') || currentPath.toLowerCase().includes('lightweb-main/games%20funstuff/') || currentPath.toLowerCase().includes('lightweb-main/courses/')) {
+    if (currentPath.toLowerCase().includes('lightweb-main.github.io/lightweb/mainpages/') || 
+		currentPath.toLowerCase().includes('lightweb-main.github.io/lightweb/articles/') || 
+		currentPath.toLowerCase().includes('lightweb-main.github.io/lightweb/simulations/') || 
+		currentPath.toLowerCase().includes('lightweb-main.github.io/lightweb/utility/') || 
+		currentPath.toLowerCase().includes('lightweb-main.github.io/lightweb/noninformationalarticles/') || 
+		currentPath.toLowerCase().includes('lightweb-main.github.io/lightweb/games%20funstuff/') || 
+		currentPath.toLowerCase().includes('lightweb-main.github.io/lightweb/courses/')) {
     window.location.href = '../index.html';
   }	
-    if(currentPath.toLowerCase().includes('lightweb-main/Quizzes/PreTests') || currentPath.toLowerCase().includes('lightweb-main/Quizzes/Tests')){
+    if(currentPath.toLowerCase().includes('lightweb-main/Quizzes/PreTests') || 
+	currentPath.toLowerCase().includes('lightweb-main/Quizzes/Tests')){
 	window.location.href = '../../index.html';
 	}
 
@@ -168,6 +175,7 @@ document.addEventListener("keydown", function (e) {
   if (LoginVerification !== 'true') {
     document.location= '../login.html'; 
   }
+
 
 
 
