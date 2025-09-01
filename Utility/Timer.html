@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="../CSS/Lightweb.css">
+  <link rel="stylesheet" href="../CSS/DigitalClock.css">
+  <style> 
+    body{ 
+	font-family: timesnewroman; 
+	padding: 10px; 
+	max-width: 100%; 
+	margin: auto; 
+	color: var(--text);
+	background-color: var(--bg);
+	border: 2px solid var(--border);
+	}
+	button{
+	color: var(--text);
+	background-color: var(--bg);
+	border: 2px solid var(--border);
+	font-size: 35px;
+	}
+
+	
+	#DigitalClock, #DigitalCalendar{
+	font-weight: 500;
+	}
+	
+	#DigitalTimer{
+		display: flex;
+		justify-content: center;    
+		align-items: center;
+		
+		font-size: 125px;
+		width: fit-content;
+		padding: 15px;
+		margin: 50px;
+		border: 2px solid var(--DigitalClockBackground);
+		border-radius: 15px; 
+		}
+
+
+  </style>
+</head>
+<body>
+  <h1>Lightweb: Timer</h1>
+  <h2>Timer</h2>
+  <div id="DigitalTimer">00:00:00</div>
+  <h2>Add Time</h2>
+  <button onclick="onesecondAdd()">Add 1 Second </button>
+  <button onclick="fivesecondAdd()">Add 5 Seconds </button>
+  <button onclick="tensecondAdd()">Add 10 Seconds </button>
+  <button onclick="thirtysecondAdd()">Add 30 Seconds </button><br><br><br><br>
+  <button onclick="oneMinuteAdd()">Add 1 Minute</button>
+  <button onclick="twoMinuteAdd()">Add 2 Minutes</button>
+  <button onclick="fiveMinuteAdd()">Add 5 Minutes</button>
+  <button onclick="tenMinuteAdd()">Add 10 Minutes</button>
+  <button onclick="thirtyMinuteAdd()">Add 30 Minutes</button><br><br><br><br>
+  <button onclick="oneHourAdd()">Add 1 Hour</button>
+  <button onclick="twoHourAdd()">Add 2 Hours</button>
+  <button onclick="sixHourAdd()">Add 6 Hours</button>
+  <button onclick="twelveHourAdd()">Add 12 Hours</button>
+  <button onclick="twentyfourHourAdd()">Add 24 Hours</button><br><br><br><br>
+  <button onclick="start()">Start</button>
+  <button onclick="stop()">Stop</button>
+  <button onclick="resetTimer()">Reset</button><br><br><br><br>
+<button onclick="exit()">Exit</button><br>
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
+<div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
+<script>
+function exit(){
+document.location = "../MainPages/Utility.html"
+}
+</script>
+	<script src="../CSS/DigitalClock.js"></script>
+  <script src="LightwebTimer.js"></script>
+</body>
+</html>
