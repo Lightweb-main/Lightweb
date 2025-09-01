@@ -3,7 +3,7 @@ const loginPageName = 'index.html';
 
 if (
   localStorage.getItem('LoginVerification') === null &&
-  currentPath.includes('lightweb-main') &&
+  currentPath.includes('lightweb-main.github.io') &&
   !currentPath.endsWith(loginPageName)
 ) {
   localStorage.setItem('LoginVerification', 'false');
@@ -175,6 +175,7 @@ document.addEventListener("keydown", function (e) {
   if (LoginVerification !== 'true') {
     document.location= '../login.html'; 
   }
+
 
 
 
