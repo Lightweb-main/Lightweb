@@ -26,6 +26,7 @@ if (
     if(currentPath.toLowerCase().includes('/lightweb/quizzes/pretests/') || 
 	currentPath.toLowerCase().includes('/lightweb/quizzes/tests/')){
 	window.location.href = '../../index.html';
+	
 	}
 
   
@@ -171,6 +172,7 @@ document.addEventListener("keydown", function (e) {
    
   }
 });
+
 
 
 
