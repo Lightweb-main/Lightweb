@@ -1,6 +1,14 @@
 const currentPath = window.location.href.toLowerCase();
 const loginPageName = 'index.html';
 
+const isOnLightweb = currentPath.includes('lightweb-main.github.io');
+const isNotLoginPage = !currentPath.endsWith(loginPageName);
+const isSessionInvalid = localStorage.getItem('LoginVerification') !== 'true';
+
+if (isOnLightweb && isNotLoginPage && isSessionInvalid) {
+  alert("Session expired. Please log in again.");
+}
+
 if (
   localStorage.getItem('LoginVerification') === null &&
   currentPath.includes('lightweb-main.github.io') &&
@@ -172,6 +180,7 @@ document.addEventListener("keydown", function (e) {
    
   }
 });
+
 
 
 
