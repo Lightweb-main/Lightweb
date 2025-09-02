@@ -74,7 +74,16 @@
  
     <script>
 	localStorage.setItem('LoginVerification', 'false');
-	  function _0x44c0(t,n){const e=_0x4a23();return(_0x44c0=function(t,n){return e[t-=489]})(t,n)}function checkPassword(){const t=_0x44c0,n=document[t(507)](t(496)),e=document[t(508)](t(502));n[t(501)]===t(494)&&localStorage.setItem(t(489),t(498)),e.style[t(500)]=t(503),document[t(508)](t(497)).style[t(500)]="none"}function _0x4a23(){const t=["block","1200216HsyHAS","8169xAKNgn","99eBaBYH","querySelector","getElementById","266714kvGERJ","1365280xzosQa","2PMLMTA","LoginVerification","8BDoUod","1025436sLixeR","2165751gflMBb","2578800rbitJp","R2-aw537s","10Egccuz","#password input","password","true","156oOnmvg","display","value","div"];return(_0x4a23=function(){return t})()}!function(t,n){const e=_0x44c0,s=_0x4a23();for(;;)try{if(208375===-parseInt(e(509))/1*(parseInt(e(511))/2)+-parseInt(e(505))/3*(parseInt(e(499))/4)+parseInt(e(495))/5*(-parseInt(e(504))/6)+parseInt(e(510))/7+parseInt(e(490))/8*(-parseInt(e(492))/9)+parseInt(e(493))/10+-parseInt(e(506))/11*(-parseInt(e(491))/12))break;s.push(s.shift())}catch(t){s.push(s.shift())}}();
+	  function checkPassword() {
+  const passwordInput = document.querySelector("#password input");
+  const contentDiv = document.getElementById("div");
+
+  if (passwordInput.value === "R2-aw537s") {
+    localStorage.setItem("LoginVerification", "true");
+    localStorage.setItem('LoginTimestamp', Date.now().toString());
+    contentDiv.style.display = "block";
+    document.getElementById("password").style.display = "none";
+  }
 		function proceed1(){
       button1 = document.getElementById("button1") 
       button2 = document.getElementById("button2") 
