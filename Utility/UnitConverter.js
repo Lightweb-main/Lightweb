@@ -44,11 +44,16 @@ document.getElementById("fromUnit5").value = "mph";
 document.getElementById("toUnit5").value = "kph";
 document.getElementById("inputValue5").value = 34;
 
+document.getElementById("fromUnit5").value = "degree";
+document.getElementById("toUnit5").value = "revolution";
+document.getElementById("inputValue5").value = 360;
+
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
 document.getElementById("decimalAmount3").value = "2"
 document.getElementById("decimalAmount4").value = "2"
 document.getElementById("decimalAmount5").value = "2"
+document.getElementById("decimalAmount6").value = "2"
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -353,4 +358,5 @@ function convert6() {
   document.getElementById("resultSciNot6").value = convertedValue.toExponential(2);
 
 }
+
 
