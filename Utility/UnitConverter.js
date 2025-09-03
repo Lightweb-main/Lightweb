@@ -18,10 +18,10 @@ document.getElementById("inputValue5").addEventListener("input", convert5);
 document.getElementById("fromUnit5").addEventListener("change", convert5); 
 document.getElementById("toUnit5").addEventListener("change", convert5); 
 document.getElementById("decimalAmount5").addEventListener("change", convert5);
-document.getElementById("inputValue6").addEventListener("input", convert5); 
-document.getElementById("fromUnit6").addEventListener("change", convert5); 
-document.getElementById("toUnit6").addEventListener("change", convert5); 
-document.getElementById("decimalAmount6").addEventListener("change", convert5);
+document.getElementById("inputValue6").addEventListener("input", convert6); 
+document.getElementById("fromUnit6").addEventListener("change", convert6); 
+document.getElementById("toUnit6").addEventListener("change", convert6); 
+document.getElementById("decimalAmount6").addEventListener("change", convert6);
 
 
 document.getElementById("fromUnit1").value = "meter"
@@ -353,3 +353,4 @@ function convert6() {
   document.getElementById("resultSciNot6").value = convertedValue.toExponential(2);
 
 }
+
