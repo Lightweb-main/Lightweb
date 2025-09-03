@@ -184,6 +184,8 @@ mach: 0.00130332,
 };
 
 const conversionRates5 = {
+arcsecond: 1296000,
+arcminute: 21600,
 gradian: 400,
 degree: 360,
 radian: 6.28318531,
@@ -358,6 +360,7 @@ function convert6() {
   document.getElementById("resultSciNot6").value = convertedValue.toExponential(2);
 
 }
+
 
 
 
