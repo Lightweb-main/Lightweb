@@ -18,6 +18,11 @@ document.getElementById("inputValue5").addEventListener("input", convert5);
 document.getElementById("fromUnit5").addEventListener("change", convert5); 
 document.getElementById("toUnit5").addEventListener("change", convert5); 
 document.getElementById("decimalAmount5").addEventListener("change", convert5);
+document.getElementById("inputValue6").addEventListener("input", convert5); 
+document.getElementById("fromUnit6").addEventListener("change", convert5); 
+document.getElementById("toUnit6").addEventListener("change", convert5); 
+document.getElementById("decimalAmount6").addEventListener("change", convert5);
+
 
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
@@ -173,11 +178,19 @@ knot: 0.86897624,
 mach: 0.00130332,
 };
 
+const conversionRates5 = {
+gradian: 400,
+degree: 360,
+radian: 6.28318531,
+revolution: 1,
+};
+
 convert();
 convert2();
 convert3();
 convert4();
 convert5();
+convert6();
 function getDecimalPlaces(num, decimalInputId) {
   const decimalAmo = parseInt(document.getElementById(decimalInputId).value);
   const numStr = String(num);
@@ -316,5 +329,27 @@ function convert5() {
 
   document.getElementById("result5").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot5").value = convertedValue.toExponential(2);
+
+}
+
+function convert6() {
+  const input = document.getElementById("inputValue6").value;
+  const value = parseFloat(input);
+  const from = document.getElementById("fromUnit6").value;
+  const to = document.getElementById("toUnit6").value;
+
+  if (Number.isNaN(value)) {
+    document.getElementById("result6").value = "";
+    document.getElementById("resultSciNot6").value = "";
+    return;
+  }
+
+  const decimalPlaces = getDecimalPlaces(input, "decimalAmount6");
+
+  const valueInSeconds = value / conversionRates5[from];
+  const convertedValue = valueInSeconds * conversionRates5[to];
+
+  document.getElementById("result6").value = convertedValue.toFixed(decimalPlaces); 
+  document.getElementById("resultSciNot6").value = convertedValue.toExponential(2);
 
 }
