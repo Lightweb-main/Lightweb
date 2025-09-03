@@ -84,7 +84,6 @@ am_pm = ""
     document.getElementById('DigitalClock').textContent = currentTime;
     document.getElementById('DigitalCalendar').textContent = currentDay;
 }
-update();
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -180,6 +179,7 @@ document.addEventListener("keydown", function (e) {
    
   }
 });
+
 
 
 
