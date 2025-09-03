@@ -168,6 +168,7 @@ const conversionRates4 = {
 kph: 1.609344,
 fps: 1.46666666,
 mph: 1,
+mps: 0.44704,
 knot: 0.86897624,
 mach: 0.00130332,
 };
@@ -315,4 +316,5 @@ function convert5() {
 
   document.getElementById("result5").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot5").value = convertedValue.toExponential(2);
+
 }
