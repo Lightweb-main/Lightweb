@@ -40,7 +40,7 @@ function countdown() {
 function start() {
   if (!timerToggle) {
     timerToggle = true;
-    timerInterval = setInterval(countdown, 10);
+    timerInterval = setInterval(countdown, 1000);
   }
 }
 
@@ -138,4 +138,5 @@ function normalizeTime() {
     hours += Math.floor(minutes / 60);
     minutes %= 60;
   }
+
 }
