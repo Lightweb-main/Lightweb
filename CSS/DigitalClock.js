@@ -75,7 +75,7 @@ am_pm = ""
     sec = sec < 10 ? "0" + sec : sec;
 
     let currentTime = `${hour}:${min}:${sec}`;
-    const currentDay = `${month}/${day}/${year}`;
+    let currentDay = `${month}/${day}/${year}`;
    if(hasMilitaryTime){
     currentTime = `${hour}:${min} ${am_pm}`;
    }else{
@@ -202,6 +202,7 @@ document.addEventListener("keydown", function (e) {
    
   }
 });
+
 
 
 
