@@ -57,6 +57,7 @@ function update() {
 
 
     const hasMilitaryTime = document.body.classList.contains('militaryTime')
+	const hasDashedCalendar = document.body.classList.contains('dashedCalendar')
     if(!hasMilitaryTime){
     if (hour >= 12) {
         am_pm = "PM";
@@ -80,6 +81,11 @@ am_pm = ""
    }else{
 	 currentTime = `${hour}:${min}:${sec} ${am_pm}`;  
    }
+	if(hasDashedCalendar){
+	currentDay = `${month}-${day}-{year}`;
+	} else {
+	currentDay = `${month}/${day}/${year}`;
+	}
 
     document.getElementById('DigitalClock').textContent = currentTime;
     document.getElementById('DigitalCalendar').textContent = currentDay;
@@ -94,7 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
 	  const DeviceType = localStorage.getItem('DeviceType');
-	  
+	  const CalendarType = localStorage.getItem('calendarType');
+
+	
       document.body.classList.remove('dark', 'AnalogScreen');
 	  if(DeviceType == 'PC'){
 	  document.body.classList.add('PC');
@@ -114,12 +122,19 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         document.body.classList.remove('militaryTime');
       }
+	  
+	   if (CalendarType === 'dashedCalendar') {
+        document.body.classList.add('dashedCalendar');
+      } else {
+        document.body.classList.remove('defaultCalendar');
+      }
 		
       const toggleDarkBtn = document.getElementById('screen-toggle');
       const toggleAnalogBtn = document.getElementById('analog-screen-button');
       const toggleMilitaryBtn = document.getElementById('millitary-time-button');
 	  const toggleCRTBlueScreen = document.getElementById('CRTBLUE-screen-button');
-	 
+	  const toggleDashedCalendarBtn = document.getElementById('dashed-calendar-button');
+	  
 	
 
 toggleDarkBtn.addEventListener('click', () => {
@@ -162,6 +177,15 @@ toggleMilitaryBtn.addEventListener('click', () => {
 });
 });
 
+toggleDashedCalendarBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dashedCalendar');
+  localStorage.setItem(
+    'calendarType',
+    document.body.classList.contains('dashedCalendar') ? 'dashedCalendar' : 'defaultCalendar'
+  );
+});
+});
+
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
 iconthingy.type = 'image/png'; 
@@ -179,6 +203,7 @@ document.addEventListener("keydown", function (e) {
    
   }
 });
+
 
 
 
