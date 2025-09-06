@@ -80,6 +80,7 @@
   alert("Prompt: Try to type in some text");
 const textarea = document.getElementById("codeInput");
 codeInput.value = "Hello World!";
+	runCode();
   textarea.addEventListener("keydown", (event) => {
     if (event.key === '>') {
       setTimeout(() => {
@@ -127,4 +128,5 @@ codeInput.value = "Hello World!";
 </body>
 </html>
 		
+
 
