@@ -175,7 +175,6 @@ toggleMilitaryBtn.addEventListener('click', () => {
     document.body.classList.contains('militaryTime') ? 'militaryTime' : '12-hour-clock'
   );
 });
-});
 
 toggleDashedCalendarBtn.addEventListener('click', () => {
   document.body.classList.toggle('dashedCalendar');
@@ -203,6 +202,7 @@ document.addEventListener("keydown", function (e) {
    
   }
 });
+
 
 
 
