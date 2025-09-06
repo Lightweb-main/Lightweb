@@ -77,9 +77,9 @@
   </div>
 
   <script>
-  alert("Prompt: Try to type in some text")
+  alert("Prompt: Try to type in some text");
 const textarea = document.getElementById("codeInput");
-
+codeInput.value = "Hello World!";
   textarea.addEventListener("keydown", (event) => {
     if (event.key === '>') {
       setTimeout(() => {
@@ -127,3 +127,4 @@ const textarea = document.getElementById("codeInput");
 </body>
 </html>
 		
+
