@@ -380,16 +380,14 @@ position: absolute;
 top: 16%;
 left: 5%;
 text-align: center;
-width=200%
 }
 
 .settingbutton2{
 margin: 0;
 position: absolute;
 top: 16%;
-left: 10%;
+left: 30%;
 text-align: center;
-width=200%
 }
 
 .settingbutton3{
@@ -398,7 +396,6 @@ position: absolute;
 top: 24%;
 left: 5%;
 text-align: center;
-width=200%
 }
 
 .settingbutton4{
@@ -407,17 +404,16 @@ position: absolute;
 top: 32%;
 left: 5%;
 text-align: center;
-width=200%
 }
 
 .settingbutton5{
 margin: 0;
 position: absolute;
-top: 24%;
-left: 10%;
+top: 16%;
+left: 30%;
 text-align: center;
-width=200%
 }
+
 
 
 
