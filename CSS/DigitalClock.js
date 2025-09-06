@@ -82,7 +82,7 @@ am_pm = ""
 	 currentTime = `${hour}:${min}:${sec} ${am_pm}`;  
    }
 	if(hasDashedCalendar){
-	currentDay = `${month}-${day}-{year}`;
+	currentDay = `${month}-${day}-${year}`;
 	} else {
 	currentDay = `${month}/${day}/${year}`;
 	}
@@ -203,6 +203,7 @@ document.addEventListener("keydown", function (e) {
    
   }
 });
+
 
 
 
