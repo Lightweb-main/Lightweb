@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen');
+  document.body.classList.remove('dashedCalendar');
   document.body.classList.remove('PC', 'Phone');
   document.body.classList.add('false');
       const theme = localStorage.getItem('theme');
@@ -202,6 +203,7 @@ document.addEventListener("keydown", function (e) {
    
   }
 });
+
 
 
 
