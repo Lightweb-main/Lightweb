@@ -22,6 +22,10 @@ document.getElementById("inputValue6").addEventListener("input", convert6);
 document.getElementById("fromUnit6").addEventListener("change", convert6); 
 document.getElementById("toUnit6").addEventListener("change", convert6); 
 document.getElementById("decimalAmount6").addEventListener("change", convert6);
+document.getElementById("inputValue7").addEventListener("input", convert7); 
+document.getElementById("fromUnit7").addEventListener("change", convert7); 
+document.getElementById("toUnit7").addEventListener("change", convert7); 
+document.getElementById("decimalAmount7").addEventListener("change", convert7);
 
 
 document.getElementById("fromUnit1").value = "meter"
@@ -48,12 +52,17 @@ document.getElementById("fromUnit6").value = "degree";
 document.getElementById("toUnit6").value = "revolution";
 document.getElementById("inputValue6").value = 360;
 
+document.getElementById("fromUnit6").value = "newton";
+document.getElementById("toUnit6").value = "kilonewton";
+document.getElementById("inputValue6").value = 1000;
+
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
 document.getElementById("decimalAmount3").value = "2"
 document.getElementById("decimalAmount4").value = "2"
 document.getElementById("decimalAmount5").value = "2"
 document.getElementById("decimalAmount6").value = "2"
+document.getElementById("decimalAmount7").value = "2"
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -192,12 +201,26 @@ radian: 6.28318531,
 revolution: 1,
 };
 
+const conversionRates6 = {
+kyne: 1000000,
+gramforce: 101.971621,
+ounceforce: 3.59694309,
+newton: 1,
+poundforce: 0.22480894,
+kilogramforce: 0.10197162,
+kilonewton: 0.001,
+kipforce: 0.00022481,
+metrictonforce: 0.00010197,
+};
+
+
 convert();
 convert2();
 convert3();
 convert4();
 convert5();
 convert6();
+convert7();
 function getDecimalPlaces(num, decimalInputId) {
   const decimalAmo = parseInt(document.getElementById(decimalInputId).value);
   const numStr = String(num);
@@ -310,8 +333,8 @@ function convert4() {
 
   const decimalPlaces = getDecimalPlaces(input, "decimalAmount4");
 
-  const valueInSeconds = value / conversionRates3[from];
-  const convertedValue = valueInSeconds * conversionRates3[to];
+  const valueInGrams = value / conversionRates3[from];
+  const convertedValue = valueInGrams * conversionRates3[to];
 
   document.getElementById("result4").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot4").value = convertedValue.toExponential(2);
@@ -331,8 +354,8 @@ function convert5() {
 
   const decimalPlaces = getDecimalPlaces(input, "decimalAmount5");
 
-  const valueInSeconds = value / conversionRates4[from];
-  const convertedValue = valueInSeconds * conversionRates4[to];
+  const valueInMPH = value / conversionRates4[from];
+  const convertedValue = valueInMPH * conversionRates4[to];
 
   document.getElementById("result5").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot5").value = convertedValue.toExponential(2);
@@ -353,13 +376,36 @@ function convert6() {
 
   const decimalPlaces = getDecimalPlaces(input, "decimalAmount6");
 
-  const valueInSeconds = value / conversionRates5[from];
-  const convertedValue = valueInSeconds * conversionRates5[to];
+  const valueInRevolutions = value / conversionRates5[from];
+  const convertedValue = valueInRevolutions * conversionRates5[to];
 
   document.getElementById("result6").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot6").value = convertedValue.toExponential(2);
 
 }
+
+function convert7() {
+  const input = document.getElementById("inputValue7").value;
+  const value = parseFloat(input);
+  const from = document.getElementById("fromUnit7").value;
+  const to = document.getElementById("toUnit7").value;
+
+  if (Number.isNaN(value)) {
+    document.getElementById("result7").value = "";
+    document.getElementById("resultSciNot7").value = "";
+    return;
+  }
+
+  const decimalPlaces = getDecimalPlaces(input, "decimalAmount7");
+
+  const valueInNewtons = value / conversionRates6[from];
+  const convertedValue = valueInNewtons * conversionRates6[to];
+
+  document.getElementById("result7").value = convertedValue.toFixed(decimalPlaces); 
+  document.getElementById("resultSciNot7").value = convertedValue.toExponential(2);
+
+}
+
 
 
 
