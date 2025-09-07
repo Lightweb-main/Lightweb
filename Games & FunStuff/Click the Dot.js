@@ -75,4 +75,7 @@ function resetTimeA() {
   totalTime = 0;
   localStorage.setItem('totalTime', totalTime);
   timeDisplay2.textContent = totalTime;
+
 }
+
+moveDot();
