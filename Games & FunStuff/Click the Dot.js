@@ -11,7 +11,7 @@ let score = 0;
 let time = 0;
 let highscore = localStorage.getItem('highscore') || 0;
 highScoreDisplay.textContent = `Highscore: ${highscore}`;
-let totalTime = 0;
+let totalTime = localStorage.getItem('totalTime') || 0;
 
 function moveDot(){
 let x = Math.random() * (window.innerWidth - 50);
@@ -33,6 +33,7 @@ setInterval(tick, 100);
 function tick() {
   time++;
   totalTime++;
+  localStorage.setItem('totalTime', totalTime);
   timeDisplay1.textContent = time;
   timeDisplay2.textContent = totalTime;
 
@@ -64,11 +65,14 @@ gameReset();
 window.location.href = "../MainPages/Games%20&%20FunStuff.html";
 }
 
-function resetHighScoreA(){
-highscore = 0;
-highScoreDisplay.textContent = `Highscore: ${highscore}`;
+function resetHighScoreA() {
+  highscore = 0;
+  localStorage.setItem('highscore', highscore);
+  highScoreDisplay.textContent = `Highscore: ${highscore}`;
 }
 
-function resetTimeA(){
-totalTime = 0;
+function resetTimeA() {
+  totalTime = 0;
+  localStorage.setItem('totalTime', totalTime);
+  timeDisplay2.textContent = totalTime;
 }
