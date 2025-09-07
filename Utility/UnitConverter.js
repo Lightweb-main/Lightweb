@@ -202,7 +202,7 @@ revolution: 1,
 };
 
 const conversionRates6 = {
-kyne: 1000000,
+dyne: 1000000,
 gramforce: 101.971621,
 ounceforce: 3.59694309,
 newton: 1,
@@ -405,6 +405,7 @@ function convert7() {
   document.getElementById("resultSciNot7").value = convertedValue.toExponential(2);
 
 }
+
 
 
 
