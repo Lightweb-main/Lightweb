@@ -52,9 +52,9 @@ document.getElementById("fromUnit6").value = "degree";
 document.getElementById("toUnit6").value = "revolution";
 document.getElementById("inputValue6").value = 360;
 
-document.getElementById("fromUnit6").value = "newton";
-document.getElementById("toUnit6").value = "kilonewton";
-document.getElementById("inputValue6").value = 1000;
+document.getElementById("fromUnit7").value = "newton";
+document.getElementById("toUnit7").value = "kilonewton";
+document.getElementById("inputValue7").value = 1000;
 
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
@@ -405,6 +405,7 @@ function convert7() {
   document.getElementById("resultSciNot7").value = convertedValue.toExponential(2);
 
 }
+
 
 
 
