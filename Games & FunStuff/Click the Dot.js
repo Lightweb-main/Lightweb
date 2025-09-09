@@ -1,4 +1,4 @@
-const dot = document.getElementById('dot');
+ const dot = document.getElementById('dot');
 const scoreDisplay = document.getElementById('score');
 const highScoreDisplay = document.getElementById('highscore');
 const resetHighScore = document.getElementById('resetHighScore');

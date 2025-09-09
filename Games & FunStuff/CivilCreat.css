@@ -9,7 +9,7 @@ background-color: #ffffff;
 #Title1{
 position: absolute;
 top: 35px; 
-left: 180px; 
+left: 10%; 
 font-size: 30px;
 }
 	
@@ -18,12 +18,90 @@ font-size: 30px;
 #Title2{
 position: absolute;
 top: 35px; 
-left: 840px; 
+left: 42.5%; 
 font-size: 30px;
+}
+
+#Title3{
+position: absolute;
+top: 35px; 
+left: 75%; 
+font-size: 30px;
+}
+#Title4{
+position: absolute;
+top: 500px; 
+left: 75%; 
+font-size: 30px;
+}
+#Technology{
+position: absolute;
+top: 565px; 
+left: 75%; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+#Tech1{
+position: absolute;
+top: 750px; 
+left: 43%; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+#Tech1A{
+position: absolute;
+top: 700px; 
+left: 40%; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
 }
 #Wealth{
 position: absolute;
 top: 135px; 
+left: 200px; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+#exitCivilizationCreation{
+position: absolute;
+bottom: 0px;
+left: 0px;
+}
+#reset{
+position: absolute;
+bottom: 25px;
+left: 0px;
+}
+#TechExit{
+position: absolute;
+bottom: 0px;
+right: 0px;
+font-size: 35px;
+}
+#Food{
+position: absolute;
+top: 195px; 
+left: 200px; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+#Knowledge{
+position: absolute;
+top: 195px; 
+left: 75%; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+
+#Water{
+position: absolute;
+top: 255px; 
 left: 200px; 
 border: 2px solid; 
 padding: 15px;
@@ -45,7 +123,22 @@ left: 840px;
 border: 2px solid; 
 padding: 15px;
 background-color: #ffffff;
-
+}
+#Homeless{
+position: absolute;
+top: 135px; 
+left: 75%; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
+}
+#Housed{
+position: absolute;
+top: 75px; 
+left: 75%; 
+border: 2px solid; 
+padding: 15px;
+background-color: #ffffff;
 }
 #Unrest{
 position: absolute;
