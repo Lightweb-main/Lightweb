@@ -150,6 +150,81 @@ border-radius: 15px;
 font-weight: var(--FontWeight)
 }
 }
+body.Laptop{
+ p {
+  font-size: 18px;
+  text-align: center;
+}
+h1 {
+  font-size: 45px;
+  text-align: center;
+}
+ a {
+  font-size: 35px;
+}
+.articles a{
+   font-size: 20px;
+  }
+
+.smallHeading1{
+font-size: 40px;
+text-align: center;
+}
+
+.smallHeading1A{
+font-size: 35px;
+text-align: center;
+}
+
+.smallHeading1B{
+font-size: 30px;
+text-align: center;
+}
+ header {
+  font-size: 15px;
+  text-align: right;
+ }
+ #TicTacToeGame {
+  display: grid;
+  grid-template-columns: repeat(3,4000px);
+  grid-template-rows: repeat(3, 400px);
+  gap: 30px;
+  margin: 100px auto;
+}
+.cell {
+  background-color: var(--bg);
+  border: 1px solid #333;
+  font-size: 12em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#DigitalClock{
+position: absolute;
+top: -40px;
+left: -40px;
+font-size: 50px;
+width: 300px;
+border: 2px solid var(--DigitalClockBackground);
+border-radius: 15px;
+font-weight: var(--FontWeight);
+}
+
+#DigitalCalendar{
+position: absolute;
+text-align: center;
+top: 20px;
+left: -40px;
+font-size: 25px;
+width: 300px;
+border: 2px solid var(--DigitalClockBackground);
+border-radius: 15px; 
+font-weight: var(--FontWeight)
+}
+
+}
+}
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
   20%, 22%, 24%, 55% { opacity: 0.95; }
@@ -163,6 +238,7 @@ font-weight: var(--FontWeight)
     background-position: 0 24px;
   }
 }
+
 body.AnalogScreen::before{
   content: '';
   position: fixed;
@@ -414,6 +490,48 @@ position: absolute;
 top: 26%;
 left: 30.7%;
 text-align: center;
+}
+
+body.Laptop{
+.settingbutton1{
+margin: 0;
+position: absolute;
+top: 24%;
+left: 7.5%;
+text-align: center;
+}
+
+.settingbutton2{
+margin: 0;
+position: absolute;
+top: 24%;
+left: 45%;
+text-align: center;
+}
+
+.settingbutton3{
+margin: 0;
+position: absolute;
+top: 36%;
+left: 7.5%;
+text-align: center;
+}
+
+.settingbutton4{
+margin: 0;
+position: absolute;
+top: 48%;
+left: 7.5%;
+text-align: center;
+}
+
+.settingbutton5{
+margin: 0;
+position: absolute;
+top: 39%;
+left: 46.05%;
+text-align: center;
+}	
 }
 
 

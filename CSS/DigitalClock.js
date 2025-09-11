@@ -109,6 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	  document.body.classList.add('PC');
 	  } else if (DeviceType == 'Phone'){
 	  document.body.classList.add('Phone');
+	  } else if(DeviceType == 'Laptop'){
+	  document.body.classList.add('Laptop');	
 	  }
       if (theme === 'dark') {
         document.body.classList.add('dark');
