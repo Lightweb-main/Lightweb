@@ -10,11 +10,13 @@ document.getElementById("resultButton").addEventListener("click", function () {
     })
     .then(data => {
       const fahrenheit = ((data.main.temp * 1.8) + 32).toFixed(1);
+	  const fahrenheit2 = ((data.main.feels_like * 1.8) + 32).toFixed(1);
       document.querySelector("#result h2").textContent = `${data.name}, ${data.sys.country}`;
       document.querySelectorAll("#result p")[0].textContent = `Temperature: ${data.main.temp} °C OR ${fahrenheit}°F`;
-      document.querySelectorAll("#result p")[1].textContent = `Wind Speed: ${data.wind.speed} m/s`;
-      document.querySelectorAll("#result p")[2].textContent = `Wind Direction: ${data.wind.deg}°`;
-      document.querySelectorAll("#result p")[3].textContent = `Humidity: ${data.main.humidity}%`;
+	  document.querySelectorAll("#result p")[1].textContent = `Feels Like: ${data.main.feels_like}°C OR ${fahrenheit2}°F`;
+      document.querySelectorAll("#result p")[2].textContent = `Wind Speed: ${data.wind.speed} m/s`;
+      document.querySelectorAll("#result p")[3].textContent = `Wind Direction: ${data.wind.deg}°`;
+      document.querySelectorAll("#result p")[4].textContent = `Humidity: ${data.main.humidity}%`;
 
       const umbrellaNeeded = data.weather[0].main === "Rain" ? "Yes" : "No";
       document.querySelectorAll("#safetyGuidelines p")[0].textContent = `Umbrella Needed?: ${umbrellaNeeded}`;
@@ -44,4 +46,5 @@ document.getElementById("resultButton").addEventListener("click", function () {
       document.querySelectorAll("#result p")[3].textContent = "";
     });
 });
+
 
