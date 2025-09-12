@@ -12,9 +12,9 @@ async function getData() {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const data = await response.json();
-
+    fahrenheit = (data.main.temp * 1.8) + 32;
     document.querySelector("#output h2").textContent = `Weather in ${data.name}`;
-    document.getElementById("temperatureDisplay").textContent = `Temperature: ${data.main.temp}°C`;
+    document.getElementById("temperatureDisplay").textContent = `Temperature: ${data.main.temp}°C -- ${fahrenheit}°F`;
     document.getElementById("windSpeedDisplay").textContent = `Wind Speed: ${data.wind.speed} m/s`;
     document.getElementById("humidityDisplay").textContent = `Humidity: ${data.main.humidity}%`;
   } catch (error) {
