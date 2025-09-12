@@ -38,13 +38,13 @@
   <div id="input">
   <h2 style="text-align: center;">Enter a City</h2>
   <input id="inputCity">
-	<button id="enter">Load Weather</button>
+	<button id="enter" onClick="getData()">Load Weather</button>
   </div>
   <div id="output">
   <h2 style="text-align: center; font-size: 35px;">City Name</h2>
-  <p>Temperature</p>
-  <p>Wind Speed</p>
-  <p>Humidity</p>
+  <p id="temperatureDisplay">Temperature</p>
+  <p id="windSpeedDisplay">Wind Speed</p>
+  <p id="humidityDisplay">Humidity</p>
   </div>
   </div>
   <button onclick="exit()">Exit</button>
