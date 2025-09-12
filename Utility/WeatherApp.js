@@ -5,6 +5,8 @@ const apiKey = '6724f2d5e07375722cfcb71ecd81db7e'
 let location = "Los%20Angeles"
 const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
 
+
+async function getData(){
 fetch(apiUrl)
   .then(response => {
     if (!response.ok) {
@@ -20,3 +22,5 @@ fetch(apiUrl)
   .catch(error => {
     console.error('Error fetching weather data:', error);
   });
+
+}
