@@ -41,6 +41,10 @@ document.getElementById("resultButton").addEventListener("click", function () {
 	  
     .catch(error => {
       document.querySelector("#result h2").textContent = "Error";
+	  document.querySelectorAll("#result h3")[0].textContent = "";
+      document.querySelectorAll("#result h3")[1].textContent = "";
+      document.querySelectorAll("#result h3")[2].textContent = "";
+	  document.querySelectorAll("#result h3")[3].textContent = "";
       document.querySelectorAll("#result p")[0].textContent = error.message;
       document.querySelectorAll("#result p")[1].textContent = "";
       document.querySelectorAll("#result p")[2].textContent = "";
@@ -50,6 +54,7 @@ document.getElementById("resultButton").addEventListener("click", function () {
       document.querySelectorAll("#result p")[6].textContent = "";
     });
 });
+
 
 
 
