@@ -2,7 +2,7 @@ document.getElementById("resultButton").addEventListener("click", function () {
   const city = document.getElementById("inputCity").value;
   const apiKey = '6724f2d5e07375722cfcb71ecd81db7e'; 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+/* https://api.openweathermap.org/data/2.5/weather?q=Los%20Angeles&appid=6724f2d5e07375722cfcb71ecd81db7e&units=metric */
   fetch(url)
     .then(response => {
       if (!response.ok) throw new Error("City not found");
@@ -17,7 +17,8 @@ document.getElementById("resultButton").addEventListener("click", function () {
       document.querySelectorAll("#result p")[2].textContent = `Wind Speed: ${data.wind.speed} m/s`;
       document.querySelectorAll("#result p")[3].textContent = `Wind Direction: ${data.wind.deg}°`;
       document.querySelectorAll("#result p")[4].textContent = `Humidity: ${data.main.humidity}%`;
-
+	  document.querySelectorAll("#result p")[5].textContent = `Weather Type: ${data.weather.main}%`;
+	  document.querySelectorAll("#result p")[6].textContent = `Description: ${data.weather.description}%`;
       const umbrellaNeeded = data.weather[0].main === "Rain" ? "Yes" : "No";
       document.querySelectorAll("#safetyGuidelines p")[0].textContent = `Umbrella Needed?: ${umbrellaNeeded}`;
     if(fahrenheit <= 90 && fahrenheit >= 70 && umbrellaNeeded == "No"){
@@ -44,7 +45,11 @@ document.getElementById("resultButton").addEventListener("click", function () {
       document.querySelectorAll("#result p")[1].textContent = "";
       document.querySelectorAll("#result p")[2].textContent = "";
       document.querySelectorAll("#result p")[3].textContent = "";
+	  document.querySelectorAll("#result p")[4].textContent = "";
+      document.querySelectorAll("#result p")[5].textContent = "";
+      document.querySelectorAll("#result p")[6].textContent = "";
     });
 });
+
 
 
