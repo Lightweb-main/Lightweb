@@ -17,8 +17,8 @@ document.getElementById("resultButton").addEventListener("click", function () {
       document.querySelectorAll("#result p")[2].textContent = `Wind Speed: ${data.wind.speed} m/s`;
       document.querySelectorAll("#result p")[3].textContent = `Wind Direction: ${data.wind.deg}°`;
       document.querySelectorAll("#result p")[4].textContent = `Humidity: ${data.main.humidity}%`;
-	  document.querySelectorAll("#result p")[5].textContent = `Weather Type: ${data.weather.main}%`;
-	  document.querySelectorAll("#result p")[6].textContent = `Description: ${data.weather.description}%`;
+	  document.querySelectorAll("#result p")[5].textContent = `Weather Type: ${data.weather[0].main}`;
+	  document.querySelectorAll("#result p")[6].textContent = `Description: ${data.weather[0].description}`;
       const umbrellaNeeded = data.weather[0].main === "Rain" ? "Yes" : "No";
       document.querySelectorAll("#safetyGuidelines p")[0].textContent = `Umbrella Needed?: ${umbrellaNeeded}`;
     if(fahrenheit <= 90 && fahrenheit >= 70 && umbrellaNeeded == "No"){
@@ -50,6 +50,7 @@ document.getElementById("resultButton").addEventListener("click", function () {
       document.querySelectorAll("#result p")[6].textContent = "";
     });
 });
+
 
 
 
