@@ -63,10 +63,76 @@
 
 
 The formula is a lot but here it is…
-<p>&Sigma;(xi - x)(yi - y) / &radic;[(x<sub>i</sub> - x)&sup2;][(y<sub>i</sub> -  y)&sup2;]</p>
+<math display="block">
+<mrow>
+<mfrac>
+	<mrow>
+		<ms>&Sigma;</ms>
+		<ms>(&nbsp;</ms>
+		<msub>
+		<mn>x</mn>
+		<ms>i</ms>
+		</msub>
+		<ms>&nbsp;-&nbsp;</ms>
+		<mover>
+			<ms>x</ms>
+			<ms>__</ms>
+		</mover>
+		<ms>&nbsp;)</ms>
+		<ms>(&nbsp;</ms>
+		<msub>
+		<mn>y</mn>
+		<ms>i</ms>
+		</msub>
+		<ms>&nbsp;-&nbsp;</ms>
+		<mover>
+			<ms>y</ms>
+			<ms>__</ms>
+		</mover>
+		<ms>&nbsp;)</ms>
+	</mrow>
+	<mrow>
+		<msqrt>
+	    
+		    <ms>&Sigma;</ms>
+		<ms>(&nbsp;</ms>
+		<msub>
+		<mn>x</mn>
+		<ms>i</ms>
+		</msub>
+		<ms>&nbsp;-&nbsp;</ms>
+		<mover>
+			<ms>x</ms>
+			<ms>__</ms>
+		</mover>
+		<msup>
+		<ms>&nbsp;)</ms>
+		<mn>2</mn> 
+		</msup>
+		<ms>&nbsp;</ms>
+		<ms>&Sigma;</ms>
+		<ms>(&nbsp;</ms>
+		<msub>
+		<mn>y</mn>
+		<ms>i</ms>
+		</msub>
+		<ms>&nbsp;-&nbsp;</ms>
+		<mover>
+			<ms>y</ms>
+			<ms>__</ms>
+		</mover>
+		<msup>
+		<ms>&nbsp;)</ms>
+		<mn>2</mn>
+		</msup>
+		</msqrt>
+	</mrow>
+</mfrac>
+</mrow>
+</math>
 
-<p>(xi-x) - Every x value in a sample subtracted by the mean.</p>
-<p>(yi- y) - Every y value in a sample is subtracted by the mean.</p>
+<p>(x<sub>i</sub>-x) - Every x value in a sample subtracted by the mean.</p>
+<p>(y<sub>i</sub>- y) - Every y value in a sample is subtracted by the mean.</p>
 So we take all the values for x and y and find the mean of both variables…
 <p>X= 238/7 = 34</p>
 <p>Y = 49/7 = 7</p>
@@ -117,3 +183,4 @@ The correlation coefficient between x and y is 0.981, signifying a very strong c
 	</body>
 
 </html>
+
