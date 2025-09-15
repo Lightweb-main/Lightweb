@@ -1,10 +1,12 @@
 let PlayerXScore = 0;
-let PlayerOScore = 0;
+let PlayerYScore = 0;
+let PlayerZScore = 0;
 const TicTacTacGaGoo = document.getElementById('TicTacToeGame');
 const TextyToo = document.getElementById('GameState');
 const PlayerXScoreBoard = document.getElementById('PlayerXScore');
 const PlayerYScoreBoard = document.getElementById('PlayerYScore');
-let TicTacToeBoard = Array(9).fill("");
+const PlayerZScoreBoard = document.getElementById('PlayerZScore');
+let TicTacToeBoard = Array(16).fill("");
 let currentPlayerTurn = "X";
 let gameState = false;
 
@@ -29,14 +31,23 @@ function makeMove(index) {
       PlayerXScore += 1;
       PlayerXScoreBoard.textContent = "Player X Score: " + PlayerXScore;
     } else if(currentPlayerTurn == "Y"){
-      PlayerOScore += 1;
-      PlayerYScoreBoard.textContent = "Player O Score: " + PlayerOScore;
+      PlayerYScore += 1;
+      PlayerYScoreBoard.textContent = "Player Y Score: " + PlayerYScore;
+    } else if(currentPlayerTurn == "Z"){
+      PlayerZScore += 1;
+      PlayerZScoreBoard.textContent = "Player Z Score: " + PlayerZScore;
     }
   } else if (TicTacToeBoard.every(cell => cell !== "")) {
     TextyToo.textContent = "It's a draw!";
     gameState = true;
   } else {
-    currentPlayerTurn = currentPlayerTurn === "X" ? "O" : "X";
+    if(currentPlayerTurn == "X"){
+	currentPlayerTurn = "Y"
+	} else if (currentPlayerTurn == "Y"){
+	currentPlayerTurn = "Z"
+	} else if(currentPlayerTurn == "Z"){
+	currentPlayerTurn = "X"
+	}
     TextyToo.textContent = `Player ${currentPlayerTurn}'s turn`;
   }
   drawBoard();
@@ -44,9 +55,9 @@ function makeMove(index) {
 
 function checkWinner(player) {
   const winCombos = [
-    [0,1,2], [3,4,5], [6,7,8],
-    [0,3,6], [1,4,7], [2,5,8],
-    [0,4,8], [2,4,6]
+    [0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15],
+	[0, 5, 10, 15], [3, 6, 9, 12],
+	[0, 4, 8, 12], [1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15]
   ];
   return winCombos.some(combo =>
     combo.every(index => TicTacToeBoard[index] === player) 
@@ -54,7 +65,7 @@ function checkWinner(player) {
 }
 
 function resetGame() {
-  TicTacToeBoard = Array(9).fill("");
+  TicTacToeBoard = Array(16).fill("");
   currentPlayerTurn = "X";
   gameState = false;
   TextyToo.textContent = `Player ${currentPlayerTurn}'s turn`;
