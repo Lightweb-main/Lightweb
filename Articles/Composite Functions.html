@@ -7,7 +7,7 @@
 		header {position: absolute; top: 18px; right: 18px;}
 		</style>
 
-	<head>
+	</head>
 	<body> <header>Official Lightweb Site</header>
 	<h1>Composite Functions</h1>
 	<h2>Introduction</h2>
@@ -17,8 +17,30 @@
     <p>f(x) = 2x + 3</p>
     <p>g(x) = x - 5</p>
   And finally lets define an h(x) function...
-    <p>f(g(x))</p>
-  So in this example, h(x) is a <b>composite function</b, where g(x) is inside of f(x).
+    <p>h(x)</p>
+  So in this example, h(x) is a <b>composite function</b, where g(x) is inside of f(x)...
+	<p>h(x) = f(g(x))</p>
+  So h(x) is the <b>composite function</b>, f(x) as the outer function, and g(x) as the inner function. <br><br>
+g(x) is essentially the x part in f(x) since it replaces x in f(x)...
+	<p>f(g(x)) ---> x = g(x)</p> 
+  <h2>Evaluating Composite Functions</h2>
+  Evaluating composite function is finding the output of it. For example, lets give f(x) and g(x) equations...
+<p>f(x) = 2x - 3</p>
+<p>g(x) = 3x + 1</p>
+And lets input 5 in g(x)...
+<p>g(5) = 3x + 1</p>
+Lets evaluate g(5)...
+<p>g(5) = 3(5) + 1</p>
+<p>g(5) = 15 + 1</p>
+<p>g(5) = 16</p>
+So g(5) equals 16, now lets input that into f(x)...
+<p>f(16) = 2x - 3</p>
+<p>f(16) = 2(16) - 3</p>
+<p>f(16) = 32 - 3</p>
+<p>f(16) = 29</p>
+So finally f(g(5)) equals 29...
+<p>f(g(5)) = 29 --> g(5) = 16</p>
+
 <h2>Done? Here are other links.</h2>
 <a href="../MainPages/Informational.html">Back to Informational</a>
 <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div><div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
