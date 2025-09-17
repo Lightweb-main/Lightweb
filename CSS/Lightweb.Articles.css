@@ -416,5 +416,17 @@ text-align: center;
 width: 200%;
 }
 
+table, tr, td{
+		border: 2px solid var(--border);
+		font-size: 25;
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+}
+
+body.Dark, body.AnalogScreen, bodyCRTBLUEscreen img{
+filter: invert(1);
+}
 
 
