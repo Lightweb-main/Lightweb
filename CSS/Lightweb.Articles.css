@@ -425,8 +425,9 @@ table, tr, td{
 		text-align: center;
 }
 
-body.Dark, body.AnalogScreen, bodyCRTBLUEscreen img{
+body.Dark, body.AnalogScreen, body.CRTBLUEScreen img{
 filter: invert(1);
 }
+
 
 
