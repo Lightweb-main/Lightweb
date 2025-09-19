@@ -39,7 +39,7 @@ width: 250px;
 border: 2px solid var(--border);
 border-radius: 30px;
 }
-#PlayerYScore{
+#PlayerOScore{
 position: fixed;
 top: 10px;
 right: 100px;
