@@ -48,14 +48,7 @@ width: 250px;
 border: 2px solid var(--border);
 border-radius: 30px;
 }
-#PlayerZScore{
-position: fixed;
-top: 10px;
-font-size: 30px;
-width: 250px;
-border: 2px solid var(--border);
-border-radius: 30px;
-}
+
 body.dark {
   --bg: #121212;
   --text: #f0f0f0;
