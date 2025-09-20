@@ -1,6 +1,6 @@
  body.PC{
  p {
-  font-size: 18px;
+  font-size: 25px;
   text-align: center;
 }
 h1 {
@@ -417,7 +417,7 @@ width: 200%;
 }
 
 table, tr, td{
-		border: 2px solid var(--border);
+		border: 2px solid var(--tableborder);
 		font-size: 25;
 		border-collapse: collapse;
 		margin-left: auto;

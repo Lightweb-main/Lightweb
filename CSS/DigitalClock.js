@@ -150,6 +150,7 @@ toggleDarkBtn.addEventListener('click', () => {
   }
 });
 
+
 toggleAnalogBtn.addEventListener('click', () => {
   if (document.body.classList.contains('AnalogScreen')) {
     document.body.classList.remove('AnalogScreen');
@@ -159,7 +160,6 @@ toggleAnalogBtn.addEventListener('click', () => {
     localStorage.setItem('theme', 'AnalogScreen');
   }
 });
-
 
 toggleCRTBlueScreen.addEventListener('click', () => {
   if (document.body.classList.contains('CRTBLUEScreen')) {
@@ -171,6 +171,7 @@ toggleCRTBlueScreen.addEventListener('click', () => {
   }
 });
 
+
 toggleMilitaryBtn.addEventListener('click', () => {
   document.body.classList.toggle('militaryTime');
   localStorage.setItem(
@@ -178,6 +179,7 @@ toggleMilitaryBtn.addEventListener('click', () => {
     document.body.classList.contains('militaryTime') ? 'militaryTime' : '12-hour-clock'
   );
 });
+
 
 toggleDashedCalendarBtn.addEventListener('click', () => {
   document.body.classList.toggle('dashedCalendar');
