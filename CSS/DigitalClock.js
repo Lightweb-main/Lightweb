@@ -197,16 +197,6 @@ iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
 document.head.appendChild(iconthingy);
 
 
-document.addEventListener("keydown", function (e) {
-  if (e.key === "F12" || e.keyCode === 123 || 
-      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
-      (e.ctrlKey && e.key === "U")) {
-    e.preventDefault();
-  }
-});
-document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-  });
 
 
 
