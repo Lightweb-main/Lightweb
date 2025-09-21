@@ -1,0 +1,183 @@
+@import url("SpecialLightwebThemes.css");
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.95; }
+}
+
+@keyframes scanlines-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 24px;
+  }
+}
+
+body.AnalogScreen::before{
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 4px,
+    transparent 8px
+  );
+  background-size: 100% 12px; 
+  animation: scanlines-move 1s linear infinite;
+  
+}
+body.CRTBLUEScreen::before{
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 4px,
+    transparent 8px
+  );
+  background-size: 100% 12px; 
+  animation: scanlines-move 1s linear infinite;
+  
+}
+
+body.militaryTime{
+--militaryTimeButton: #13ff0d;
+}
+
+body.CRTBLUEScreen{
+--CRTBLUEScreen: #293aef;
+}
+
+
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --border: #474747;
+  --tableborder: #dbdbdb;
+  --screenToggleButton: #7ae5ff;
+  --SearchArticlesColor: #646464;
+  --DigitalClockBackground: #e9e9e9;
+}
+
+body.AnalogScreen {
+  --bg: #002b01;
+  --text: #16ff9c;
+  --border: #007102;
+  --tableborder: #16ff9c;
+  --AnalogScreenButton: #16ff9c;
+  --SearchArticlesColor: #00ad0a;
+  --DigitalClockBackground: #16ff9c;
+  --FontWeight: 900;
+  animation: flicker 0.15s infinite;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px #0f0,
+    0 0 80px #0f0;
+}
+
+body.CRTBLUEScreen {
+  --bg: #0011aa;
+  --text: #d0d0d0;
+  --border: #000d7f;
+  --tableborder: #d0d0d0;
+  --CRTBlueScreenButton: #16ff9c;
+  --SearchArticlesColor: #0011aa;
+  --DigitalClockBackground:  #d0d0d0;
+  --FontWeight: 900;
+  animation: flicker 0.15s infinite;
+  text-shadow: none;
+  
+}
+
+body.Christmas{
+--bg: #0011aa;
+  --text: #d0d0d0;
+  --border: #000d7f;
+  --tableborder: #d0d0d0;
+  --CRTBlueScreenButton: #16ff9c;
+  --SearchArticlesColor: #0011aa;
+  --DigitalClockBackground:  #d0d0d0;
+  --FontWeight: 900;
+  animation: flicker 0.15s infinite;
+  text-shadow: none;
+}
+:root {
+  --bg: #eceff1;
+  --text: #121212;
+  --border: #e9e8e8;
+  --tableborder: #000000;
+  --screenToggleButton: #006b86;
+  --militaryTimeButton: #037f00;
+  --AnalogScreenButton: #129426;
+  --CRTBlueScreenButton: #5f6bf3; 
+  --SearchArticlesColor: #fdfdfd;
+  --DigitalClockBackground: #000000;
+  --FontWeight: 400;
+ 
+}
+
+table, tr, td{
+border: 2px solid var(--tableborder);
+border-collapse: collapse;
+text-align: center;
+font-size: 25px;
+color: var(--text);
+margin-left: auto;
+margin-right: auto;
+}
+
+p, a, h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  font-weight: var(--FontWeight);
+  font-family: var(--FontFamily);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+a{
+font-weight: bold;
+border: 12px solid var(--border);
+border-radius: 10px;
+text-decoration: none;
+border-color: var(--border);
+background-color: var(--border);
+}
+
+ header {
+  font-size: 15px;
+  text-align: right;
+ }
+
+body.Dark img, body.AnalogScreen img, body.CRTBLUEScreen img{
+filter: invert(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

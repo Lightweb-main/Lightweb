@@ -94,17 +94,15 @@ am_pm = ""
 document.addEventListener('DOMContentLoaded', () => {
 
 
-  document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen');
+  document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default');
   document.body.classList.remove('dashedCalendar');
-  document.body.classList.remove('PC', 'Phone');
+  document.body.classList.remove('PC', 'Phone', 'Laptop');
   document.body.classList.add('false');
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
 	  const DeviceType = localStorage.getItem('DeviceType');
 	  const CalendarType = localStorage.getItem('calendarType');
 
-	
-      document.body.classList.remove('dark', 'AnalogScreen');
 	  if(DeviceType == 'PC'){
 	  document.body.classList.add('PC');
 	  } else if (DeviceType == 'Phone'){
@@ -113,12 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	  document.body.classList.add('Laptop');	
 	  }
       if (theme === 'dark') {
+	    clearScreenType();
         document.body.classList.add('dark');
       } else if (theme === 'AnalogScreen') {
+	    clearScreenType();
         document.body.classList.add('AnalogScreen');
       } else if (theme === 'CRTBLUEScreen') {
+	    clearScreenType();
         document.body.classList.add('CRTBLUEScreen');
-      }
+      } else if(theme === 'default'){
+	    clearScreenType();
+		document.body.classList.add('default');
+	  }
 
       if (timeType === 'militaryTime') {
         document.body.classList.add('militaryTime');
@@ -140,38 +144,45 @@ document.addEventListener('DOMContentLoaded', () => {
 	  
 	
 
+if(toggleDarkBtn){
 toggleDarkBtn.addEventListener('click', () => {
   if (document.body.classList.contains('dark')) {
     document.body.classList.remove('dark');
-    localStorage.setItem('theme', '');
+    localStorage.setItem('theme', 'default');
   } else {
+	clearScreenType();
     document.body.classList.add('dark');
     localStorage.setItem('theme', 'dark');
   }
 });
+}
 
-
+if(toggleAnalogBtn){
 toggleAnalogBtn.addEventListener('click', () => {
   if (document.body.classList.contains('AnalogScreen')) {
     document.body.classList.remove('AnalogScreen');
-    localStorage.setItem('theme', '');
+    localStorage.setItem('theme', 'default');
   } else {
+	clearScreenType();
     document.body.classList.add('AnalogScreen');
     localStorage.setItem('theme', 'AnalogScreen');
   }
 });
-
+}
+if(toggleCRTBlueScreen){
 toggleCRTBlueScreen.addEventListener('click', () => {
   if (document.body.classList.contains('CRTBLUEScreen')) {
     document.body.classList.remove('CRTBLUEScreen');
-    localStorage.setItem('theme', '');
+    localStorage.setItem('theme', 'default');
   } else {
+	clearScreenType();
     document.body.classList.add('CRTBLUEScreen');
     localStorage.setItem('theme', 'CRTBLUEScreen');
   }
 });
+}
 
-
+if(toggleMilitaryBtn){
 toggleMilitaryBtn.addEventListener('click', () => {
   document.body.classList.toggle('militaryTime');
   localStorage.setItem(
@@ -179,8 +190,9 @@ toggleMilitaryBtn.addEventListener('click', () => {
     document.body.classList.contains('militaryTime') ? 'militaryTime' : '12-hour-clock'
   );
 });
+}
 
-
+if(toggleDashedCalendarBtn){
 toggleDashedCalendarBtn.addEventListener('click', () => {
   document.body.classList.toggle('dashedCalendar');
   localStorage.setItem(
@@ -188,8 +200,13 @@ toggleDashedCalendarBtn.addEventListener('click', () => {
     document.body.classList.contains('dashedCalendar') ? 'dashedCalendar' : 'defaultCalendar'
   );
 });
+}
 });
 
+
+function clearScreenType(){
+document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default');
+}
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
 iconthingy.type = 'image/png'; 

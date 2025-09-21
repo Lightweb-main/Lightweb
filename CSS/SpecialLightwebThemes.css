@@ -1,0 +1,367 @@
+@import url("LightwebThemes.css");
+html#SLT-EarthquakesFaults body.default {
+  background-color: #dfa12f ;
+  color: #a6741a ;
+}
+
+html#SLT-EarthquakesFaults #DigitalClock,
+html#SLT-EarthquakesFaults #DigitalCalendar {
+  border-color: #a6741a ;
+}
+
+html#SLT-EarthquakesFaults body.default h1,
+html#SLT-EarthquakesFaults body.default h2,
+html#SLT-EarthquakesFaults body.default h3 {
+  color: #a6741a ;
+}
+
+html#SLT-EarthquakesFaults body.default a {
+  background-color: #a4751d ;
+  border-color: #a4751d ;
+  color: #dea843 ;
+}
+
+html#SLT-EarthquakesFaults body.dark {
+  background-color: #6a4b10 ;
+  color: #a6741a ;
+}
+
+html#SLT-EarthquakesFaults body.dark h1,
+html#SLT-EarthquakesFaults body.dark h2,
+html#SLT-EarthquakesFaults body.dark h3 {
+  color: #a6741a ;
+}
+
+html#SLT-EarthquakesFaults body.dark a {
+  background-color: #46310b ;
+  border-color: #46310b ;
+  color: #a6741a ;
+}
+
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) h1,
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) h2,
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) h3 {
+  color: var(--text);
+  
+}
+
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) a {
+  background-color: var(--border);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) img {
+  filter: none;
+}
+
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) #DigitalClock,
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) #DigitalCalendar {
+  border-color: var(--border);
+}
+
+
+
+
+
+
+
+
+
+html#SLT-LunarNewYear body.default {
+  background-color: #e55a5a;
+  color: #ac1919;
+}
+
+html#SLT-LunarNewYear #DigitalClock,
+html#SLT-LunarNewYear #DigitalCalendar {
+  border-color: #ac1919;
+}
+
+html#SLT-LunarNewYear body.default h1,
+html#SLT-LunarNewYear body.default h2,
+html#SLT-LunarNewYear body.default h3 {
+  color: #ac1919;
+}
+
+html#SLT-LunarNewYear body.default a {
+  background-color: #de3030;
+  border-color: #de3030;
+  color: #ee9999;
+}
+
+html#SLT-LunarNewYear body.dark {
+  background-color: #c62121;
+  color: #ee9999;
+}
+
+html#SLT-LunarNewYear body.dark h1,
+html#SLT-LunarNewYear body.dark h2,
+html#SLT-LunarNewYear body.dark h3 {
+  color: #ee9999;
+}
+
+html#SLT-LunarNewYear body.dark a {
+  background-color: #781212;
+  border-color: #781212;
+  color: #ee9999;
+}
+
+html#SLT-LunarNewYear body:not(.default):not(.dark) {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html#SLT-LunarNewYear body:not(.default):not(.dark) h1,
+html#SLT-LunarNewYear body:not(.default):not(.dark) h2,
+html#SLT-LunarNewYear body:not(.default):not(.dark) h3 {
+  color: var(--text);
+  
+}
+
+html#SLT-LunarNewYear body:not(.default):not(.dark) a {
+  background-color: var(--border);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html#SLT-LunarNewYear body:not(.default):not(.dark) img {
+  filter: none;
+}
+
+html#SLT-LunarNewYear body:not(.default):not(.dark) #DigitalClock,
+html#SLT-LunarNewYear body:not(.default):not(.dark) #DigitalCalendar {
+  border-color: var(--border);
+}
+
+
+
+
+
+
+html#SLT-TheRockCycle body.default {
+  background-color: #909090;
+  color: #595959;
+}
+
+html#SLT-TheRockCycle #DigitalClock,
+html#SLT-TheRockCycle #DigitalCalendar {
+  border-color: #595959;
+}
+
+html#SLT-TheRockCycle body.default h1,
+html#SLT-TheRockCycle body.default h2,
+html#SLT-TheRockCycle body.default h3 {
+  color: #595959;
+}
+
+html#SLT-TheRockCycle body.default a {
+  background-color: #adadad;
+  border-color: #adadad;
+  color: #595959;
+}
+
+html#SLT-TheRockCycle body.dark {
+  background-color: #3e3e3e;
+  color: #a1a1a1;
+}
+
+html#SLT-TheRockCycle body.dark h1,
+html#SLT-TheRockCycle body.dark h2,
+html#SLT-TheRockCycle body.dark h3 {
+  color: #a1a1a1;
+}
+
+html#SLT-TheRockCycle body.dark a {
+  background-color: #5f5f5f;
+  border-color: #5f5f5f;
+  color: #a1a1a1;
+}
+
+html#SLT-TheRockCycle body:not(.default):not(.dark) {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html#SLT-TheRockCycle body:not(.default):not(.dark) h1,
+html#SLT-TheRockCycle body:not(.default):not(.dark) h2,
+html#SLT-TheRockCycle body:not(.default):not(.dark) h3 {
+  color: var(--text);
+  
+}
+
+html#SLT-TheRockCycle body:not(.default):not(.dark) a {
+  background-color: var(--border);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html#SLT-TheRockCycle body:not(.default):not(.dark) img {
+  filter: none;
+}
+
+html#SLT-TheRockCycle body:not(.default):not(.dark) #DigitalClock,
+html#SLT-TheRockCycle body:not(.default):not(.dark) #DigitalCalendar {
+  border-color: var(--border);
+}
+
+
+
+
+
+
+html#SLT-TheWaterCycle body.default {
+  background-color: #bcdbeb;
+  color: #56a2c9;
+}
+
+html#SLT-TheWaterCycle #DigitalClock,
+html#SLT-TheWaterCycle #DigitalCalendar {
+  border-color: #56a2c9;
+}
+
+html#SLT-TheWaterCycle body.default h1,
+html#SLT-TheWaterCycle body.default h2,
+html#SLT-TheWaterCycle body.default h3 {
+  color: #56a2c9;
+}
+
+html#SLT-TheWaterCycle body.default a {
+  background-color: #7eb8d6;
+  border-color: #7eb8d6;
+  color: #56a2c9;
+}
+
+html#SLT-TheWaterCycle body.dark {
+  background-color: #2c769d;
+  color: #1b4961;
+}
+
+html#SLT-TheWaterCycle body.dark h1,
+html#SLT-TheWaterCycle body.dark h2,
+html#SLT-TheWaterCycle body.dark h3 {
+  color: #1b4961;
+}
+
+html#SLT-TheWaterCycle body.dark a {
+  background-color: #3996c7;
+  border-color: #3996c7;
+  color: #1b4961;
+}
+
+html#SLT-TheWaterCycle body:not(.default):not(.dark) {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html#SLT-TheWaterCycle body:not(.default):not(.dark) h1,
+html#SLT-TheWaterCycle body:not(.default):not(.dark) h2,
+html#SLT-TheWaterCycle body:not(.default):not(.dark) h3 {
+  color: var(--text);
+  
+}
+
+html#SLT-TheWaterCycle body:not(.default):not(.dark) a {
+  background-color: var(--border);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html#SLT-TheRockCycle body:not(.default):not(.dark) img {
+  filter: none;
+}
+
+html#SLT-TheRockCycle body:not(.default):not(.dark) #DigitalClock,
+html#SLT-TheRockCycle body:not(.default):not(.dark) #DigitalCalendar {
+  border-color: var(--border);
+}
+
+
+
+
+
+
+
+html#SLT-TheSolarSystem body{
+  background-color: #000000;
+  color: #ffea5a;
+}
+
+html#SLT-TheSolarSystem h1,
+html#SLT-TheSolarSystem h2,
+html#SLT-TheSolarSystem h3{
+  background-color: #000000;
+  color: #ffea5a;
+}
+html#SLT-TheSolarSystem #DigitalCalendar,
+html#SLT-TheSolarSystem #DigitalClock{
+border-color: #ffea5a;
+}
+html#SLT-TheSolarSystem img{
+filter: none;	
+}
+
+html#SLT-TheSolarSystem a{
+border-color: #272727;
+background-color: #272727;	
+}
+
+
+
+
+
+
+
+
+
+html#SLT-MilankovitchCycles body.default {
+  background-color: #b8e4b7;
+}
+
+
+html#SLT-MilankovitchCycles body.dark {
+  background-color: #3b9c39;
+}
+
+html#SLT-MilankovitchCycles body:not(.default):not(.dark) {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+html#SLT-MilankovitchCycles body:not(.default):not(.dark) h1,
+html#SLT-MilankovitchCycles body:not(.default):not(.dark) h2,
+html#SLT-MilankovitchCycles body:not(.default):not(.dark) h3 {
+  color: var(--text);
+  
+}
+
+html#SLT-MilankovitchCycles body:not(.default):not(.dark) a {
+  background-color: var(--border);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html#SLT-MilankovitchCycles body:not(.default):not(.dark) img {
+  filter: none;
+}
+
+html#SLT-MilankovitchCycles body:not(.default):not(.dark) #DigitalClock,
+html#SLT-MilankovitchCycles body:not(.default):not(.dark) #DigitalCalendar {
+  border-color: var(--border);
+}
+
+
+
+
+
+
+
+
+
+
+
