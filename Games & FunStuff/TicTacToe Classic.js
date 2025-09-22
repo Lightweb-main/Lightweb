@@ -28,7 +28,7 @@ function makeMove(index) {
     if (currentPlayerTurn == "X") {
       PlayerXScore += 1;
       PlayerXScoreBoard.textContent = "Player X Score: " + PlayerXScore;
-    } else if(currentPlayerTurn == "Y"){
+    } else if(currentPlayerTurn == "O"){
       PlayerOScore += 1;
       PlayerYScoreBoard.textContent = "Player O Score: " + PlayerOScore;
     }
@@ -67,6 +67,7 @@ function exitTicTacToe() {
 
 
 drawBoard();
+
 
 
 
