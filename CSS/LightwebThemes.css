@@ -139,7 +139,10 @@ p, a, h1, h2, h3, h4, h5, h6 {
   font-weight: var(--FontWeight);
   font-family: var(--FontFamily);
 }
-
+button{
+border-color: var(--border);
+background-color: var(--border);
+}
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -163,6 +166,7 @@ background-color: var(--border);
 body.Dark img, body.AnalogScreen img, body.CRTBLUEScreen img{
 filter: invert(1);
 }
+
 
 
 
