@@ -17,7 +17,7 @@ if (
   localStorage.setItem('LoginVerification', 'false');
 }
 
-if (
+if ( 
   localStorage.getItem('LoginVerification') !== 'true' &&
   currentPath.includes('lightweb-main.github.io') &&
   !currentPath.endsWith(loginPageName)
@@ -230,6 +230,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
