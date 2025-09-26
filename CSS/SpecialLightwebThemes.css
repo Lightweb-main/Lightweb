@@ -11,7 +11,10 @@ html#SLT-EarthquakesFaults #DigitalCalendar {
 
 html#SLT-EarthquakesFaults body.default h1,
 html#SLT-EarthquakesFaults body.default h2,
-html#SLT-EarthquakesFaults body.default h3 {
+html#SLT-EarthquakesFaults body.default h3,
+html#SLT-EarthquakesFaults body.default h4,
+html#SLT-EarthquakesFaults body.default h5,
+html#SLT-EarthquakesFaults body.default h6{
   color: #a6741a ;
 }
 
@@ -354,6 +357,7 @@ html#SLT-MilankovitchCycles body:not(.default):not(.dark) #DigitalClock,
 html#SLT-MilankovitchCycles body:not(.default):not(.dark) #DigitalCalendar {
   border-color: var(--border);
 }
+
 
 
 
