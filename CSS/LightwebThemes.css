@@ -164,9 +164,10 @@ background-color: var(--border);
   text-align: right;
  }
 
-body.Dark img, body.AnalogScreen img, body.CRTBLUEScreen img{
+body.dark img, body.AnalogScreen img, body.CRTBLUEScreen img{
 filter: invert(1);
 }
+
 
 
 
