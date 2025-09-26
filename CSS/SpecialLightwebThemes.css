@@ -56,7 +56,7 @@ html#SLT-EarthquakesFaults body:not(.default):not(.dark) a {
   color: var(--text);
 }
 
-html#SLT-EarthquakesFaults body img {
+html#SLT-EarthquakesFaults img{
   filter: none;
 }
 
@@ -354,6 +354,7 @@ html#SLT-MilankovitchCycles body:not(.default):not(.dark) #DigitalClock,
 html#SLT-MilankovitchCycles body:not(.default):not(.dark) #DigitalCalendar {
   border-color: var(--border);
 }
+
 
 
 
