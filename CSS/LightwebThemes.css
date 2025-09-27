@@ -97,15 +97,14 @@ body.CRTBLUEScreen {
   
 }
 
-body.Christmas{
---bg: #0011aa;
-  --text: #d0d0d0;
-  --border: #000d7f;
-  --tableborder: #d0d0d0;
-  --CRTBlueScreenButton: #16ff9c;
-  --SearchArticlesColor: #0011aa;
-  --DigitalClockBackground:  #d0d0d0;
-  --FontWeight: 900;
+body.squidGameScreen{
+--bg: #bd4b96;
+  --text: #ADD9D1;
+  --border: #0e7373;
+  --tableborder: #0e7373;
+  --squidGameScreen: #16ff9c;
+  --SearchArticlesColor: #8C205C;
+  --DigitalClockBackground:  #8C205C;
   animation: flicker 0.15s infinite;
   text-shadow: none;
 }
@@ -118,11 +117,13 @@ body.Christmas{
   --militaryTimeButton: #037f00;
   --AnalogScreenButton: #129426;
   --CRTBlueScreenButton: #5f6bf3; 
+  --squidGameButton: #ed77c4;
   --SearchArticlesColor: #fdfdfd;
   --DigitalClockBackground: #000000;
   --FontWeight: 400;
  
 }
+
 
 table, tr, td{
 border: 2px solid var(--tableborder);

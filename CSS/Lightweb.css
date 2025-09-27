@@ -247,7 +247,6 @@ color: red;
 
 
 #screen-toggle{
-color: var(--text);
 background: var(--screenToggleButton);
   color: white;
   border: 1px white;
@@ -260,7 +259,6 @@ background: var(--screenToggleButton);
 }
 
 #millitary-time-button{
-color: var(--text);
 background: var(--militaryTimeButton);
   color: white;
   border: 1px white;
@@ -273,7 +271,6 @@ background: var(--militaryTimeButton);
 }
 
 #analog-screen-button{
-color: var(--text);
 background: var(--AnalogScreenButton);
   color: white;
   border: 1px white;
@@ -286,8 +283,19 @@ background: var(--AnalogScreenButton);
 }
 
 #CRTBLUE-screen-button{
-color: var(--text);
 background: var(--CRTBlueScreenButton);
+  color: white;
+  border: 1px white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 1em;
+  position: absolute;
+  top: 50%
+  left: 50%
+}
+
+#squidGame-screen-button{
+background: var(--squidGameButton);
   color: white;
   border: 1px white;
   padding: 0.5em 1em;
@@ -340,6 +348,14 @@ left: 30.7%;
 text-align: center;
 }
 
+.settingbutton6{
+margin: 0;
+position: absolute;
+top: 40%;
+left: 5%;
+text-align: center;
+}
+
 body.Laptop{
 .settingbutton1{
 margin: 0;
@@ -380,9 +396,16 @@ top: 39%;
 left: 46.05%;
 text-align: center;
 }	
+
+.settingbutton6{
+margin: 0;
+position: absolute;
+top: 60%;
+left: 7.5%;
+text-align: center;
 }
 
-
+}
 
 
 

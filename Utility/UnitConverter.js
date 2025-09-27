@@ -9,7 +9,7 @@ document.getElementById("decimalAmount2").addEventListener("change", convert2);
 document.getElementById("inputValue3").addEventListener("input", convert3); 
 document.getElementById("fromUnit3").addEventListener("change", convert3); 
 document.getElementById("toUnit3").addEventListener("change", convert3); 
-document.getElementById("decimalAmount3").addEventListener("change", convert4);
+document.getElementById("decimalAmount3").addEventListener("change", convert3);
 document.getElementById("inputValue4").addEventListener("input", convert4); 
 document.getElementById("fromUnit4").addEventListener("change", convert4); 
 document.getElementById("toUnit4").addEventListener("change", convert4); 
@@ -123,6 +123,7 @@ const conversionRates2 = {
 second: 1,
 minute: 0.016666666,
 hour: 0.000277777777,
+businessDay: 0.000277777777 / 8,
 day: 0.0000115740741,
 week: 0.00000165343915,
 fortnight: 0.000000826719577,

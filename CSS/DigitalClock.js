@@ -122,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if(theme === 'default'){
 	    clearScreenType();
 		document.body.classList.add('default');
+	  } else if(theme == 'squidGameScreen'){
+		document.body.classList.add('squidGameScreen');
 	  }
 
       if (timeType === 'militaryTime') {
@@ -141,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const toggleMilitaryBtn = document.getElementById('millitary-time-button');
 	  const toggleCRTBlueScreen = document.getElementById('CRTBLUE-screen-button');
 	  const toggleDashedCalendarBtn = document.getElementById('dashed-calendar-button');
+	  const toggleSquidGameBtn = document.getElementById('squidGame-screen-button');
 	  
 	
 
@@ -201,11 +204,24 @@ toggleDashedCalendarBtn.addEventListener('click', () => {
   );
 });
 }
+
+if(toggleSquidGameBtn){
+toggleSquidGameBtn.addEventListener('click', () => {
+  if (document.body.classList.contains('squidGameScreen')) {
+    document.body.classList.remove('squidGameScreen');
+    localStorage.setItem('theme', 'default');
+  } else {
+	clearScreenType();
+    document.body.classList.add('squidGameScreen');
+    localStorage.setItem('theme', 'squidGameScreen');
+  }
+});
+}
 });
 
 
 function clearScreenType(){
-document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default');
+document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'squidGameScreen');
 }
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
