@@ -1,3 +1,5 @@
+
+
 const currentPath = window.location.href.toLowerCase();
 const loginPageName = 'index.html';
 
@@ -124,6 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.body.classList.add('default');
 	  } else if(theme == 'squidGameScreen'){
 		document.body.classList.add('squidGameScreen');
+	  } else if(theme == 'chaosScreen'){
+		document.body.classList.add('chaosScreen');  
 	  }
 
       if (timeType === 'militaryTime') {
@@ -144,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  const toggleCRTBlueScreen = document.getElementById('CRTBLUE-screen-button');
 	  const toggleDashedCalendarBtn = document.getElementById('dashed-calendar-button');
 	  const toggleSquidGameBtn = document.getElementById('squidGame-screen-button');
-	  
+	  const toggleChaosScreenBtn = document.getElementById('chaos-screen-button');
 	
 
 if(toggleDarkBtn){
@@ -217,11 +221,26 @@ toggleSquidGameBtn.addEventListener('click', () => {
   }
 });
 }
+
+if(toggleChaosScreenBtn){
+toggleChaosScreenBtn.addEventListener('click', () => {
+  if (document.body.classList.contains('chaosScreen')) {
+    document.body.classList.remove('chaosScreen');
+    localStorage.setItem('theme', 'default');
+  } else {
+	clearScreenType();
+    document.body.classList.add('chaosScreen');
+    localStorage.setItem('theme', 'chaosScreen');
+	
+  }
+});
+}
+
 });
 
 
 function clearScreenType(){
-document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'squidGameScreen');
+document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'squidGameScreen', 'chaosScreen');
 }
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
@@ -231,7 +250,7 @@ iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
 
 document.head.appendChild(iconthingy);
 
-document.addEventListener('contextmenu', event => event.preventDefault());
+/* document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
   if (event.key === "F12" || event.keyCode === 123) {
     event.preventDefault();
@@ -246,7 +265,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
-
+*/
 
 
 

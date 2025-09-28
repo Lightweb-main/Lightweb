@@ -13,6 +13,12 @@
   }
 }
 
+@keyframes chaos {
+  0%   { transform: scale(1) rotate(0deg); filter: invert(0%) hue-rotate(0deg)}
+  50%  { transform: scale(0.5) rotate(180deg); filter: invert(100%) hue-rotate(180deg)}
+  100% { transform: scale(1) rotate(360deg); filter: invert(0%) hue-rotate(360deg)}
+}
+
 body.AnalogScreen::before{
   content: '';
   position: fixed;
@@ -30,10 +36,7 @@ body.AnalogScreen::before{
   
 }
 body.CRTBLUEScreen::before{
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none;
+  
   background: repeating-linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.3),
@@ -46,6 +49,18 @@ body.CRTBLUEScreen::before{
   
 }
 
+
+body.chaosScreen *:not(.settingbutton7){
+  animation: chaos 5s linear infinite;
+}
+
+body.chaosScreen .settingbutton7{
+   animation: none !important;
+	transform: none !important;
+	display: block;
+}
+
+}
 body.militaryTime{
 --militaryTimeButton: #13ff0d;
 }
@@ -53,6 +68,11 @@ body.militaryTime{
 body.CRTBLUEScreen{
 --CRTBLUEScreen: #293aef;
 }
+
+body.dashedCalendar{
+	--dashedCalendarButton: #aaaaaa;
+}
+
 
 
 body.dark {
@@ -93,7 +113,6 @@ body.CRTBLUEScreen {
   --DigitalClockBackground:  #d0d0d0;
   --FontWeight: 900;
   animation: flicker 0.15s infinite;
-  text-shadow: none;
   
 }
 
@@ -102,12 +121,11 @@ body.squidGameScreen{
   --text: #ADD9D1;
   --border: #0e7373;
   --tableborder: #0e7373;
-  --squidGameScreen: #16ff9c;
+  --squidGameScreenButton: #0e7373;
   --SearchArticlesColor: #8C205C;
   --DigitalClockBackground:  #8C205C;
-  animation: flicker 0.15s infinite;
-  text-shadow: none;
 }
+
 :root {
   --bg: #eceff1;
   --text: #121212;
@@ -117,12 +135,16 @@ body.squidGameScreen{
   --militaryTimeButton: #037f00;
   --AnalogScreenButton: #129426;
   --CRTBlueScreenButton: #5f6bf3; 
-  --squidGameButton: #ed77c4;
+  --squidGameScreenButton: #ed77c4;
+  --dashedCalendarButton: #dddddd;
+  --chaoScreenButton: #ff0000;
   --SearchArticlesColor: #fdfdfd;
   --DigitalClockBackground: #000000;
   --FontWeight: 400;
+   text-shadow: none;
  
 }
+
 
 
 table, tr, td{

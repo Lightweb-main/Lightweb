@@ -254,8 +254,8 @@ background: var(--screenToggleButton);
   cursor: pointer;
   margin: 1em;
   position: absolute;
-  top: 50%
-  left: 50%
+  top: 50%;
+  left: 50%;
 }
 
 #millitary-time-button{
@@ -266,8 +266,8 @@ background: var(--militaryTimeButton);
   cursor: pointer;
   margin: 1em;
   position: absolute;
-  top: 50%
-  left: 50%
+  top: 50%;
+  left: 50%;
 }
 
 
@@ -279,8 +279,8 @@ background: var(--AnalogScreenButton);
   cursor: pointer;
   margin: 1em;
   position: absolute;
-  top: 50%
-  left: 50%
+  top: 50%;
+  left: 50%;
 }
 
 #CRTBLUE-screen-button{
@@ -291,20 +291,43 @@ background: var(--CRTBlueScreenButton);
   cursor: pointer;
   margin: 1em;
   position: absolute;
-  top: 50%
-  left: 50%
+  top: 50%;
+  left: 50%;
 }
 
-#squidGame-screen-button{
-background: var(--squidGameButton);
+#dashed-calendar-button{
+background: var(--dashedCalendarButton);
   color: white;
   border: 1px white;
   padding: 0.5em 1em;
   cursor: pointer;
   margin: 1em;
   position: absolute;
-  top: 50%
-  left: 50%
+  top: 50%;
+  left: 50%;	
+}
+#squidGame-screen-button{
+background: var(--squidGameScreenButton);
+  color: white;
+  border: 1px white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#chaos-screen-button{
+background: var(--chaoScreenButton);
+  color: white;
+  border: 1px white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 
@@ -344,8 +367,8 @@ text-align: center;
 .settingbutton5{
 margin: 0;
 position: absolute;
-top: 26%;
-left: 30.7%;
+top: 24%;
+left: 30%;
 text-align: center;
 }
 
@@ -353,6 +376,14 @@ text-align: center;
 margin: 0;
 position: absolute;
 top: 40%;
+left: 5%;
+text-align: center;
+}
+
+.settingbutton7{
+margin: 0;
+position: absolute;
+top: 48%;
 left: 5%;
 text-align: center;
 }
@@ -393,8 +424,8 @@ text-align: center;
 .settingbutton5{
 margin: 0;
 position: absolute;
-top: 39%;
-left: 46.05%;
+top: 36%;
+left: 45%;
 text-align: center;
 }	
 
@@ -406,6 +437,13 @@ left: 7.5%;
 text-align: center;
 }
 
+.settingbutton7{
+margin: 0;
+position: absolute;
+top: 75%;
+left: 5%;
+text-align: center;
+}
 }
 
 
