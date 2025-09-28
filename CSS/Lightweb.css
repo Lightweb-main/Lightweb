@@ -270,6 +270,19 @@ background: var(--militaryTimeButton);
   left: 50%
 }
 
+#dashed-calendar-button{
+background: var(--militaryTimeButton);
+  color: white;
+  border: 1px white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 1em;
+  position: absolute;
+  top: 50%
+  left: 50%
+}
+
+
 #analog-screen-button{
 background: var(--AnalogScreenButton);
   color: white;
@@ -406,6 +419,7 @@ text-align: center;
 }
 
 }
+
 
 
 
