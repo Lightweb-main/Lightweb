@@ -250,7 +250,7 @@ iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
 
 document.head.appendChild(iconthingy);
 
-/* document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
   if (event.key === "F12" || event.keyCode === 123) {
     event.preventDefault();
@@ -265,7 +265,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
-*/
+
 
 
 
