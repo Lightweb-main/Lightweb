@@ -26,7 +26,10 @@ document.getElementById("inputValue7").addEventListener("input", convert7);
 document.getElementById("fromUnit7").addEventListener("change", convert7); 
 document.getElementById("toUnit7").addEventListener("change", convert7); 
 document.getElementById("decimalAmount7").addEventListener("change", convert7);
-
+document.getElementById("inputValue8").addEventListener("input", convert8); 
+document.getElementById("fromUnit8").addEventListener("change", convert8); 
+document.getElementById("toUnit8").addEventListener("change", convert8); 
+document.getElementById("decimalAmount8").addEventListener("change", convert8);
 
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
@@ -56,6 +59,10 @@ document.getElementById("fromUnit7").value = "newton";
 document.getElementById("toUnit7").value = "kilonewton";
 document.getElementById("inputValue7").value = 1000;
 
+document.getElementById("fromUnit8").value = "bit";
+document.getElementById("toUnit8").value = "Byte";
+document.getElementById("inputValue8").value = 25;
+
 document.getElementById("decimalAmount1").value = "2"
 document.getElementById("decimalAmount2").value = "2"
 document.getElementById("decimalAmount3").value = "2"
@@ -63,6 +70,7 @@ document.getElementById("decimalAmount4").value = "2"
 document.getElementById("decimalAmount5").value = "2"
 document.getElementById("decimalAmount6").value = "2"
 document.getElementById("decimalAmount7").value = "2"
+document.getElementById("decimalAmount8").value = "2"
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -90,11 +98,13 @@ const conversionRates1 = {
     chain: 0.0497096954,
     hectometer:10**-2,
     furlong: 0.00497096954,
+	cableLength: 0.546806649 / 120,
     li: 0.002,
     kilometer: 10**-3,
-    mile: 0.000621371192,
+    statueMile: 0.000621371192,
     nauticalMile: 0.000539956803456,
-    league: 0.000179985601,
+	geographicalMile: 39.3700787 / 12 / 6080.2,
+    league: 0.000621371192 / 3,
     halfMarathon: 0.0000473989944,
     marathon: 0.0000236994972,
     picoparsec: 0.00003241,
@@ -214,6 +224,51 @@ kipforce: 0.00022481,
 metrictonforce: 0.00010197,
 };
 
+const conversionRates7 = {
+bit: 1,
+nibble: 1/4,
+Byte: 1/8,
+kilobit: 1/1000,
+kibibit: 1/1024,
+kilobyte: 1/1000/8,
+kibibyte: 1/1024/8,
+megabit: 1/1000000,
+mebibit: 1/1048576,
+megabyte: 1/1000000/8,
+mebibyte: 1/1048576/8,
+gigabit: 1/10**9,
+gibibit: 1/1024**3,
+gigabyte: 1/10**9/8,
+gibibyte: 1/1024**3/8,
+terabit: 1/10**12,
+tebibit: 1/1024**4,
+terabyte: 1/10**12/8,
+tebibyte: 1/1024**4/8,
+petabit: 1/10**15,
+pebibit: 1/1024**5,
+petabyte: 1/10**15/8,
+pebibyte: 1/1024**5/8,
+exabit: 1/10**18,
+exbibit: 1/1024**6,
+exabyte: 1/10**18/8,
+exbibyte: 1/1024**6/8,
+zettabit: 1/10**21,
+zebibit: 1/1024**7,
+zettabyte: 1/10**21/8,
+zebibyte: 1/1024**7/8,
+yottabit: 1/10**24,
+yobibit: 1/1024**8,
+yottabyte: 1/10**24, 
+yobibyte: 1/1024**8/8,
+ronnabit: 1/10**27,
+ronbibit: 1/1024**9,
+ronnabyte: 1/10**27/8, 
+ronbibyte: 1/1024**9/8,
+quettabit: 1/10**30,
+quebibit: 1/1024**10,
+quettabyte: 1/10**30/8,
+quebibyte: 1/1024**10/8,
+};
 
 convert();
 convert2();
@@ -222,6 +277,7 @@ convert4();
 convert5();
 convert6();
 convert7();
+convert8();
 function getDecimalPlaces(num, decimalInputId) {
   const decimalAmo = parseInt(document.getElementById(decimalInputId).value);
   const numStr = String(num);
@@ -404,6 +460,28 @@ function convert7() {
 
   document.getElementById("result7").value = convertedValue.toFixed(decimalPlaces); 
   document.getElementById("resultSciNot7").value = convertedValue.toExponential(2);
+
+}
+
+function convert8() {
+  const input = document.getElementById("inputValue8").value;
+  const value = parseFloat(input);
+  const from = document.getElementById("fromUnit8").value;
+  const to = document.getElementById("toUnit8").value;
+
+  if (Number.isNaN(value)) {
+    document.getElementById("result8").value = "";
+    document.getElementById("resultSciNot8").value = "";
+    return;
+  }
+
+  const decimalPlaces = getDecimalPlaces(input, "decimalAmount8");
+
+  const valueInNewtons = value / conversionRates7[from];
+  const convertedValue = valueInNewtons * conversionRates7[to];
+
+  document.getElementById("result8").value = convertedValue.toFixed(decimalPlaces); 
+  document.getElementById("resultSciNot8").value = convertedValue.toExponential(2);
 
 }
 

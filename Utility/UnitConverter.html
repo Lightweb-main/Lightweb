@@ -38,6 +38,7 @@
 <body>
   <h1>Lightweb: Unit Converter</h1>
 	<h2>Units are ordered in magnitude</h2>
+	<h2>Also if the non-scientific notation seems a little too accurate, look at the science notation version of the output (ex. 1 Exabit to Bits)
   <h2>Length Unit Converter</h2>
  <div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue1" placeholder="Enter value">
@@ -68,10 +69,12 @@
    <option value="chain">Chain</option>
    <option value="hectometer">Hectometer</option>
    <option value="furlong">Furlong</option>
+   <option value="cableLength">Cable Length</option>
    <option value="li">Li</option>
    <option value="kilometer">Kilometer</option>
-   <option value="mile">Mile</option>
+   <option value="statueMile">Statue Mile</option>
    <option value="nauticalMile">Nautical Mile</option>
+   <option value="geographicalMile">Geographical Mile</option>
    <option value="league">League (lea)</option>
    <option value="halfMarathon">Half Marathon</option>
    <option value="marathon">Marathon</option>
@@ -124,10 +127,12 @@
    <option value="chain">Chain</option>
    <option value="hectometer">Hectometer</option>
    <option value="furlong">Furlong</option>
+   <option value="cableLength">Cable Length</option>
    <option value="li">Li</option>
    <option value="kilometer">Kilometer</option>
-   <option value="mile">Mile</option>
+   <option value="statueMile">Statue Mile</option>
    <option value="nauticalMile">Nautical Mile</option>
+   <option value="geographicalMile">Geographical Mile</option>
    <option value="league">League (lea)</option>
    <option value="halfMarathon">Half Marathon</option>
    <option value="marathon">Marathon</option>
@@ -490,6 +495,120 @@
 	<option value="metrictonforce">Metric Ton-Force</option> 
   </select>
 	 <select id="decimalAmount7">
+	<option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+	<option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option> 
+	<option value="9">9</option> 
+	<option value="10">10</option> 
+	<option value="15">15</option> 
+	<option value="20">20</option> 
+	<option value="30">30</option> 
+	<option value="60">60</option> 
+</select>
+</div>
+<h2>Digital Storage Converter</h2>
+	<div style="display: flex; align-items: center; flex-wrap: wrap;">
+  <input type="number" id="inputValue8" placeholder="Enter value">
+  <select id="fromUnit8">
+  <option value="bit">Bit</option> 
+  <option value="Byte">Byte</option>
+  <option value="nibble">Nibble</option>
+  <option value="kilobit">Kilobit</option>
+  <option value="kibibit">Kibibit</option>
+  <option value="kilobyte">Kilobyte</option>
+  <option value="kibibyte">Kibibyte</option>
+  <option value="megabit">Megabit</option>
+  <option value="mebibit">Mebibit</option>
+  <option value="megabyte">Megabyte</option>
+  <option value="mebibyte">Mebibyte</option>
+  <option value="gigabit">Gigabit</option>
+  <option value="gibibit">Gibibit</option>
+  <option value="gigabyte">Gigabyte</option>
+  <option value="gibibyte">Gibibyte</option>
+  <option value="terabit">Terabit</option>
+  <option value="tebibit">Tebibit</option>
+  <option value="terabyte">Terabyte</option>
+  <option value="tebibyte">Tebibyte</option>
+  <option value="petabit">Petabit</option>
+  <option value="pebibit">Pebibit</option>
+  <option value="petabyte">Petabyte</option>
+  <option value="pebibyte">Pebibyte</option>
+  <option value="exabit">Exabit</option>
+  <option value="exbibit">Exbibit</option>
+  <option value="exabyte">Exabyte</option>
+  <option value="exbibyte">Exbibyte</option>
+  <option value="zettabit">Zettabit</option>
+  <option value="zebibit">Zebibit</option>
+  <option value="zettabyte">Zettabyte</option>
+  <option value="zebibyte">Zebibyte</option>
+  <option value="yottabit">Yottabit</option>
+  <option value="yobibit">Yobibit</option>
+  <option value="yottabyte">Yottabyte</option>
+  <option value="yobibyte">Yobibyte</option>
+  <option value="ronnabit">Ronnabit</option>
+  <option value="ronbibit">Ronbibit</option>
+  <option value="ronnabyte">Ronnabyte</option>
+  <option value="ronbibyte">Ronbibyte</option>
+  <option value="quettabit">Quettabit</option>
+  <option value="quebibit">Quebibit</option>
+  <option value="quettabyte">Quettabyte</option>
+  <option value="quebibyte">Quebibyte</option>
+  </select>
+ <input id="result8" class="result" readonly>
+ <input id="resultSciNot8"class="result"  readonly>
+  <select id="toUnit8"> 
+  <option value="bit">Bit</option> 
+  <option value="Byte">Byte</option>
+  <option value="nibble">Nibble</option>
+  <option value="kilobit">Kilobit</option>
+  <option value="kibibit">Kibibit</option>
+  <option value="kilobyte">Kilobyte</option>
+  <option value="kibibyte">Kibibyte</option>
+  <option value="megabit">Megabit</option>
+  <option value="mebibit">Mebibit</option>
+  <option value="megabyte">Megabyte</option>
+  <option value="mebibyte">Mebibyte</option>
+  <option value="gigabit">Gigabit</option>
+  <option value="gibibit">Gibibit</option>
+  <option value="gigabyte">Gigabyte</option>
+  <option value="gibibyte">Gibibyte</option>
+  <option value="terabit">Terabit</option>
+  <option value="tebibit">Tebibit</option>
+  <option value="terabyte">Terabyte</option>
+  <option value="tebibyte">Tebibyte</option>
+  <option value="petabit">Petabit</option>
+  <option value="pebibit">Pebibit</option>
+  <option value="petabyte">Petabyte</option>
+  <option value="pebibyte">Pebibyte</option>
+  <option value="exabit">Exabit</option>
+  <option value="exbibit">Exbibit</option>
+  <option value="exabyte">Exabyte</option>
+  <option value="exbibyte">Exbibyte</option>
+  <option value="zettabit">Zettabit</option>
+  <option value="zebibit">Zebibit</option>
+  <option value="zettabyte">Zettabyte</option>
+  <option value="zebibyte">Zebibyte</option>
+  <option value="yottabit">Yottabit</option>
+  <option value="yobibit">Yobibit</option>
+  <option value="yottabyte">Yottabyte</option>
+  <option value="yobibyte">Yobibyte</option>
+  <option value="ronnabit">Ronnabit</option>
+  <option value="ronbibit">Ronbibit</option>
+  <option value="ronnabyte">Ronnabyte</option>
+  <option value="ronbibyte">Ronbibyte</option>
+  <option value="quettabit">Quettabit</option>
+  <option value="quebibit">Quebibit</option>
+  <option value="quettabyte">Quettabyte</option>
+  <option value="quebibyte">Quebibyte</option>
+  
+  </select>
+	 <select id="decimalAmount8">
 	<option value="0">0</option>
     <option value="1">1</option>
     <option value="2">2</option>
