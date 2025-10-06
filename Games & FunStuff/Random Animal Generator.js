@@ -115,7 +115,7 @@ random = Math.floor(Math.random() * 12) + 1;
 	}
 
 	
-name = `${genus} ${phenotype} ${prefix1}`
+name = `${prefix1} ${phenotype} ${genus}`
 random = Math.floor(Math.random() * 5) + 1;
 
 	if(random == 1){
@@ -206,3 +206,11 @@ title.textContent = `${name}`;
 }
 
 
+function remove(){
+output1.textContent = "";	
+output2.textContent = "";
+output3.textContent = "";	
+output4.textContent = "";	
+output5.textContent = "";
+title.textContent = "";	
+}
