@@ -202,4 +202,6 @@ discoveryAltitude = Math.floor(Math.random() * 6000) - 3000;
 	} else if(movementType == "water"){
 	output5.textContent = `${name} has been seen by researchers to travel by ${movementType}.`
 	}
+title.textContent = name;
 }
+
