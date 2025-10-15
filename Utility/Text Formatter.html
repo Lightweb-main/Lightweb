@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+  <title>Lightweb: Text Formatter</title>
+  <link rel="stylesheet" href="../CSS/Lightweb.css">
+  <link rel="stylesheet" href="../CSS/DigitalClock.css">
+  <style>
+  input{
+  width: 75%;
+  height: auto;
+  margin-bottom: 10px;
+  }
+  #output, #APAOutput{
+  width: 45%;
+  border: 2px solid black;
+  background-color: #ffffff;
+  margin: 0 auto;
+  display: block; 
+  padding: 20px;
+  box-sizing: border-box; 
+	}
+
+
+  button{
+  padding: 5px;
+  font-size: 20px;
+  }
+  #ContentInput, #ContentInput2 {
+  width: 100%;
+  height: 300px;
+  }
+  </style>
+</head>
+<body>
+  <h1>Lightweb: Text Formatter</h1>
+  <h2>Format Selection</h2>
+<button id="MLA-format" onClick="MLASelect()">MLA</button>
+<button id="APA-format" onClick="APASelect()">APA</button>
+<p id="formatIndicator"style="text-align: left;">Format: </p>
+  <div id="container">
+<input id="Title" placeholder="Insert Title Here..." ></input>
+<input id="NameInput" placeholder="Insert Name Here..." ></input>
+<input id="InstructorNameInput" placeholder="Insert Instructor Name Here..." ></input>
+<input id="CourseNameInput" placeholder="Insert Course Name Here..." ></input>
+
+
+
+<input id="Title2" placeholder="Insert Title Here..." ></input>
+<input id="NameInput2" placeholder="Insert Name Here..." ></input>
+<input id="DepartmentNameInput" placeholder="Insert Depeartment Name Here..." ></input>
+<input id="UniversityNameInput" placeholder="Insert University Name Here..." ></input>
+<input id="CourseNumberInput" placeholder="Insert Course Number Here..." ></input>
+<input id="CourseName2Input" placeholder="Insert Course Name Here..." ></input>
+<input id="InstructorName2Input" placeholder="Insert Instructor Name Here..." ></input>
+<h2>Content</h2>
+<textarea id="ContentInput" placeholder="Enter Content Here..."></textarea>
+<textarea id="ContentInput2" placeholder="Enter Content Here..."></textarea>
+  <h2 style="text-align: center;">Output</h2>
+<div id="output">
+
+
+<div id="Name2"></div>
+<div id="InstructorName2"></div>
+<div id="CourseName2"></div>
+<div id="Time2"></div>
+<div id="title2"></div>
+<div id="Content"></div>
+
+
+<div style="text-align: center;" id="title3">Title of Your Paper</div>
+<div style="text-align: center;" id="Name3">2</div>
+<div style="text-align: center;" id="DepartmentUniversityName"></div>
+<div style="text-align: center;" id="CourseNumberName"></div>
+<div style="text-align: center;" id="InstructorNameInput2"></div>
+<div style="text-align: center;" id="Date2"></div>
+</div>
+<div id="APAOutput">
+<div id="Content2"></div>
+</div>
+<button id="generate" onClick="generate()">Generate</button>
+  </div>
+  <br>
+<button onclick="exit()">Exit</button>
+
+
+<script>
+function exit(){
+document.location = "../MainPages/Utility.html"
+}
+
+</script>
+	<script src="../CSS/DigitalClock.js"></script>
+  <script src="Text%20Formatter.js"></script>
+</body>
+</html>
