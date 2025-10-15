@@ -247,6 +247,14 @@ iconthingy.rel = 'icon';
 iconthingy.type = 'image/png'; 
 iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
 
+const html = `
+  <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
+  <div id="DigitalCalendar">If you are seeing this, your calendar needs a pin or two.</div>
+`;
+
+const container = document.createElement('div');
+container.innerHTML = html;
+document.body.appendChild(container);
 
 document.head.appendChild(iconthingy);
 
@@ -265,6 +273,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
