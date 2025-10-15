@@ -3,3 +3,6 @@
 font-size: 30px;
 font-weight: bold;
 }
+#DigitalClock, #DigitalCalendar{
+display: none !important;
+}
