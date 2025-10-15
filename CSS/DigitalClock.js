@@ -8,7 +8,7 @@ const isNotLoginPage = !currentPath.endsWith(loginPageName);
 const isSessionInvalid = localStorage.getItem('LoginVerification') !== 'true';
 
 if (isOnLightweb && isNotLoginPage && isSessionInvalid) {
-  alert("Session expired. Please log in again.");
+  alert("Session expired. Please log in again."); 
 }
 
 if (
@@ -273,6 +273,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
