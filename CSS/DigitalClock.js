@@ -252,9 +252,9 @@ const html = `
   <div id="DigitalCalendar">If you are seeing this, your calendar needs a pin or two.</div>
 `;
 
-const container = document.createElement('div');
-container.innerHTML = html;
-document.body.appendChild(container);
+const e = document.createElement('div');
+DigitalClockCalendarContainer.innerHTML = html;
+document.body.appendChild(DigitalClockCalendarContainer);
 
 document.head.appendChild(iconthingy);
 
@@ -273,6 +273,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
