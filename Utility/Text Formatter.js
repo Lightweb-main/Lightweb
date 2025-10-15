@@ -55,7 +55,7 @@ function update(){
 	CourseName2.style.display = "block";
 	Time2.style.display = "block";
 	title2.style.display = "block";
-	Content.style.display = "none";
+	Content.style.display = "block";
 	container.style.display = "block";
 	}
 	if(format === "APA"){
@@ -290,5 +290,6 @@ function generate(){
 
 	}
 }
+
 
 update();
