@@ -256,7 +256,7 @@ const html = `
 const DigitalClockCalendarContainer = document.createElement('div');
 DigitalClockCalendarContainer.innerHTML = html;
 document.body.appendChild(DigitalClockCalendarContainer);
-}
+});
 document.head.appendChild(iconthingy);
 
 document.addEventListener('contextmenu', event => event.preventDefault());
@@ -274,6 +274,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
