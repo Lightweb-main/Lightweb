@@ -25,7 +25,7 @@
 	<body> <header>Official Lightweb Site</header>
 	<h1>Welcome to Lightweb</h1>
 	<div>
-	<h3 id="funfacts" style="text-align: center;">Looks like the fun facts are not fun. :(</h3>
+	<h3 id="factOfTheDay" style="text-align: center;">Looks like the fact of the day wasn't here. :(</h3>
 	</div>
 	<br><br><br>
 	<div style="text-align: center;">
@@ -77,36 +77,34 @@
   }
   
   function funfactGenerator(){
-  	const funfactText = document.getElementById("funfacts");
-  	let RNG = Math.floor(Math.random() * 10) + 1;
-	switch (RNG) {
-	case 0:
-		funfactText.textContent = "The first step on the moon was on Janurary 20, 1969 during the Apollo 11 mission by Neil Armstrong and secondly by Bazz Aldrin";
-		break;
-	case 1:
-		funfactText.textContent = "Earth's Gravity is approximately 9.8m / s&sup2;";
-		break;
-	case 2:
-		funfactText.textContent = "T";
-		break;
-	case 3:
-		funfactText.textContent = "Wed";
-		break;
-	case 4:
-		funfactText.textContent = "Th";
-		break;
-	case 5:
-		funfactText.textContent = "";
-		break;
-	case 6:
-		funfactText.textContent = "Sa";
-	}
+  	const factText = document.getElementById("factOfTheDay");
+
+const facts = [
+  "The first step on the moon was on July 20, 1969 during the Apollo 11 mission by Neil Armstrong and secondly by Buzz Aldrin.",
+  "Earth's gravity is approximately 9.8 m/s².",
+  "Four Presidents of the United States have been assassinated.",
+  "HTML, or HyperText Markup Language, was first proposed in 1989 and implemented in 1991.",
+  "These facts were originally labeled 'Fun Facts', but were renamed 'Fact of the Day' due to some serious topics.",
+  "The Declaration of Independence was signed in Philadelphia.",
+  "Water is called the universal solvent because it can dissolve more substances than any other liquid."
+];
+
+const today = new Date();
+const start = new Date(today.getFullYear(), 0, 0);
+const diff = today - start;
+const oneDay = 1000 * 60 * 60 * 24;
+const dayOfYear = Math.floor(diff / oneDay);
+
+const index = dayOfYear % facts.length;
+factText.textContent = facts[index];
+
  }
 	funfactGenerator();
 	</script>
 </body>
 
 </html>
+
 
 
 
