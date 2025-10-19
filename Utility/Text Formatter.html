@@ -93,10 +93,12 @@ document.location = "../MainPages/Utility.html"
 }
 
 function downloadPNG(){
+if(output){
 if(format == "MLA"){
 const output = document.getElementById('MLAoutput');
 }
 html2pdf().from(output).save('LightwebTextFormatter.pdf');
+}
 }
 </script>
 	<script src="../CSS/DigitalClock.js"></script>
