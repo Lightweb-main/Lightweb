@@ -1,19 +1,4 @@
-const formatIndicator = document.getElementById("formatIndicator");
-const Title = document.getElementById("Title");
-const NameInput = document.getElementById("NameInput");
-const InstructorNameInput = document.getElementById("InstructorNameInput");
-const CourseNameInput = document.getElementById("CourseNameInput");
-const ContentInput = document.getElementById("ContentInput");
-const output = document.getElementById("MLAoutput");
-const Name2 = document.getElementById("Name2");
-const InstructorName2 = document.getElementById("InstructorName2");
-const CourseName2 = document.getElementById("CourseName2");
-const Time2 = document.getElementById("Time2");
-const title2 = document.getElementById("title2");
-const Content = document.getElementById("Content");
-const AuthorNameInput = document.getElementById("AuthorNameInput");
-const container = document.getElementById("container");
-const Name3 = document.getElementById("Name3");
+
 
 let format = "";
 
@@ -294,4 +279,3 @@ function generate(){
 
 
 update();
-

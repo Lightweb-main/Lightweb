@@ -3,6 +3,7 @@
   <title>Lightweb: Text Formatter</title>
   <link rel="stylesheet" href="../CSS/Lightweb.css">
   <link rel="stylesheet" href="../CSS/DigitalClock.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.0/html2pdf.bundle.min.js"></script>
   <style>
   input{
   width: 75%;
@@ -18,8 +19,9 @@
   padding: 20px;
   box-sizing: border-box; 
   color: #000000;
+  font-size: 12pt;
+  
 	}
-
 
   button{
   padding: 5px;
@@ -68,36 +70,78 @@
 <div id="Content"></div>
 
 </div>
-<div id="APATitleOutput">
-<div style="text-align: center;" id="title3"></div>
-<div style="text-align: center;" id="Name3"></div>
-<div style="text-align: center;" id="DepartmentUniversityName"></div>
-<div style="text-align: center;" id="CourseNumberName"></div>
-<div style="text-align: center;" id="InstructorNameInput2"></div>
-<div style="text-align: center;" id="Date2"></div>
-</div>
-<div id="APAContentOutput">
-<div id="Content2"></div>
-</div>
+	<div id="APATitleOutput">
+		<div style="text-align: center;" id="title3"></div>
+		<div style="text-align: center;" id="Name3"></div>
+		<div style="text-align: center;" id="DepartmentUniversityName"></div>
+		<div style="text-align: center;" id="CourseNumberName"></div>
+		<div style="text-align: center;" id="InstructorNameInput2"></div>
+		<div style="text-align: center;" id="Date2"></div>
+	</div>
+	<div id="APAContentOutput">
+		<div id="Content2"></div>
+	</div>
 <button id="generate" onClick="generate()">Generate</button>
-	<h2>Downloading</h2>
-	<button id="downloadPDF" onClick="downloadPDF()">Download as PDF</button>
+<h2>Downloading</h2>
+<button id="downloadPDF" onClick="downloadPDF()">Download as PDF</button>
   </div>
   <br>
 <button onclick="exit()">Exit</button>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <script>
-function exit(){
-document.location = "../MainPages/Utility.html"
+function exit() {
+  document.location = "../MainPages/Utility.html";
 }
 
-function downloadPDF(){
-const output = document.getElementById("MLAoutput");
-html2pdf().from(output).save("LightwebTextFormatter.pdf");
-}
+function downloadPDF() {
+  if (format === "MLA") {
+    const element = document.getElementById("MLAoutput");
 
+    const originalBorder = element.style.border;
+    const originalWidth = element.style.width;
+
+    element.style.border = "none";
+    element.style.width = "100%";
+
+    setTimeout(() => {
+      html2pdf().from(element).save('LightwebTextMLAFormat.pdf');
+      setTimeout(() => {
+        element.style.border = originalBorder;
+        element.style.width = originalWidth;
+      }, 600);
+    }, 600);
+  }
+
+  if (format === "APA") {
+    const output1 = document.getElementById("APATitleOutput");
+    const output2 = document.getElementById("APAContentOutput");
+	
+	const originalBorder1 = output1.style.border;
+	const originalBorder2 = output2.style.border;
+    const originalWidth1 = output1.style.width;
+    const originalWidth2 = output2.style.width;
+
+    output1.style.border = "none";
+    output2.style.border = "none";
+    output1.style.width = "100%";
+    output2.style.width = "100%";
+
+    setTimeout(() => {
+      html2pdf().from(output1).save("LightwebTextAPAFormatTitle.pdf");
+      html2pdf().from(output2).save("LightwebTextAPAFormatContent.pdf");
+      setTimeout(() => {
+        output1.style.border = originalBorder1;
+        output2.style.border = originalBorder2;
+        output1.style.width = originalWidth1;
+        output2.style.width = originalWidth2;
+      }, 600);
+    }, 600);
+	
+  }
+}
 </script>
+
 	<script src="../CSS/DigitalClock.js"></script>
   <script src="Text%20Formatter.js"></script>
 </body>
