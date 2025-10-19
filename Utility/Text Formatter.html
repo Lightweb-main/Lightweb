@@ -81,7 +81,7 @@
 </div>
 <button id="generate" onClick="generate()">Generate</button>
 	<h2>Downloading</h2>
-	<button id="downloadPNG" onClick="downloadPNG()">Download as PNG</button>
+	<button id="downloadPDF" onClick="downloadPDF()">Download as PDF</button>
   </div>
   <br>
 <button onclick="exit()">Exit</button>
@@ -92,7 +92,7 @@ function exit(){
 document.location = "../MainPages/Utility.html"
 }
 
-function downloadPNG() {
+function downloadPDF() {
   let output;
 
   if (format === "MLA") {
