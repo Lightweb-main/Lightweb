@@ -9,7 +9,7 @@
   height: auto;
   margin-bottom: 10px;
   }
-  #MLAoutput, #APATitleOutput, #APAContentOutput{
+  #output, #APATitleOutput, #APAContentOutput{
   width: 45%;
   border: 2px solid black;
   background-color: #ffffff;
@@ -90,27 +90,6 @@
 <script>
 function exit(){
 document.location = "../MainPages/Utility.html"
-}
-
-function downloadPDF() {
-  let output;
-
-  if (format === "MLA") {
-    output = document.getElementById("MLAoutput");
-  } else if (format === "APA") {
-    const titleOutput = document.getElementById("APATitleOutput");
-    const contentOutput = document.getElementById("APAContentOutput");
-
-    output = document.createElement("div");
-    output.appendChild(titleOutput.cloneNode(true));
-    output.appendChild(contentOutput.cloneNode(true));
-  }
-
-  if (output) {
-    html2pdf().from(output).save("LightwebTextFormatter.pdf");
-  } else {
-    alert("Please select a format and generate content before downloading.");
-  }
 }
 
 </script>
