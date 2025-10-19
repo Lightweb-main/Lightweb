@@ -76,34 +76,36 @@
     document.location = "Utility.html";
   }
   
-  function funfactGenerator(){
-  	const factText = document.getElementById("factOfTheDay");
+  function funfactGenerator() {
+  const factText = document.getElementById("factOfTheDay");
 
-const facts = [
-  "The first step on the moon was on July 20, 1969 during the Apollo 11 mission by Neil Armstrong and secondly by Buzz Aldrin.",
-  "Earth's gravity is approximately 9.8 m/s².",
-  "Four Presidents of the United States have been assassinated.",
-  "HTML, or HyperText Markup Language, was first proposed in 1989 and implemented in 1991.",
-  "These facts were originally labeled 'Fun Facts', but were renamed 'Fact of the Day' due to some serious topics.",
-  "The Declaration of Independence was signed in Philadelphia.",
-  "Water is called the universal solvent because it can dissolve more substances than any other liquid."
-];
+  const facts = [
+    "The first step on the moon was on July 20, 1969 during the Apollo 11 mission by Neil Armstrong and secondly by Buzz Aldrin.",
+    "Earth's gravity is approximately 9.8 m/s².",
+    "Four Presidents of the United States have been assassinated.",
+    "HTML, or HyperText Markup Language, was first proposed in 1989 and implemented in 1991.",
+    "These facts were originally labeled 'Fun Facts', but were renamed 'Fact of the Day' due to some serious topics.",
+    "The Declaration of Independence was signed in Philadelphia.",
+    "Water is called the universal solvent because it can dissolve more substances than any other liquid."
+  ];
 
-const currentDay = new Date();
-const JanuraryFirst = new Date(currentDay.getFullYear(), 0, 0);
-const dayNum = currentDay - JanuraryFirst;
-const oneDay = 86400000;
-const dayOfYear = Math.floor(dayNum / oneDay);
+  const currentDay = new Date();
+  const JanuaryFirst = new Date(currentDay.getFullYear(), 0, 0);
+  const dayNum = currentDay - JanuaryFirst;
+  const oneDay = 86400000;
+  const dayOfYear = Math.floor(dayNum / oneDay);
 
-const Num = dayOfYear % facts.length;
-factText.textContent = facts[Num];
+  const Num = dayOfYear % facts.length;
+  factText.textContent = facts[Num];
+}
 
- }
-	funfactGenerator();
+funfactGenerator();
+
 	</script>
 </body>
 
 </html>
+
 
 
 
