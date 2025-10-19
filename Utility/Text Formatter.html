@@ -92,6 +92,11 @@ function exit(){
 document.location = "../MainPages/Utility.html"
 }
 
+function downloadPDF(){
+const output = document.getElementById("MLAoutput");
+html2pdf().from(output).save("LightwebTextFormatter.pdf");
+}
+
 </script>
 	<script src="../CSS/DigitalClock.js"></script>
   <script src="Text%20Formatter.js"></script>
