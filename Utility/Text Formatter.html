@@ -93,9 +93,26 @@ document.location = "../MainPages/Utility.html"
 }
 
 function downloadPNG() {
-	const output = document.getElementById('MLAoutput');
-	html2pdf().from(output).save('LightwebTextFormatter.pdf');
+  let output;
+
+  if (format === "MLA") {
+    output = document.getElementById("MLAoutput");
+  } else if (format === "APA") {
+    const titleOutput = document.getElementById("APATitleOutput");
+    const contentOutput = document.getElementById("APAContentOutput");
+
+    output = document.createElement("div");
+    output.appendChild(titleOutput.cloneNode(true));
+    output.appendChild(contentOutput.cloneNode(true));
+  }
+
+  if (output) {
+    html2pdf().from(output).save("LightwebTextFormatter.pdf");
+  } else {
+    alert("Please select a format and generate content before downloading.");
+  }
 }
+
 </script>
 	<script src="../CSS/DigitalClock.js"></script>
   <script src="Text%20Formatter.js"></script>
