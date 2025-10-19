@@ -94,9 +94,9 @@ document.location = "../MainPages/Utility.html"
 }
 
 function downloadPNG(){
-
+let outut;
 if(format === "MLA"){
-const output = document.getElementById('MLAoutput');
+output = document.getElementById('MLAoutput');
 }
 html2pdf().from(output).save('LightwebTextFormatter.pdf');
 }
