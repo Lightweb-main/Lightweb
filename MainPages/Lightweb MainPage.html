@@ -24,6 +24,7 @@
 	</head>
 	<body> <header>Official Lightweb Site</header>
 	<h1>Welcome to Lightweb</h1>
+	<h3 id="funfacts">Looks like the fun facts are not fun. :(</h3>
 	
 	<br><br><br>
 	<div style="text-align: center;">
@@ -74,11 +75,37 @@
     document.location = "Utility.html";
   }
   
-
+  function funfactGenerator(){
+  	const funfactText = document.getElementById("funfacts");
+  	let RNG = Math.floor(Math.random() * 10) + 1;
+	switch (RNG) {
+	case 0:
+		funfactText.textContent = "The first step on the moon was on Janurary 20, 1969 during the Apollo 11 mission by Neil Armstrong and secondly by Bazz Aldrin";
+		break;
+	case 1:
+		funfactText.textContent = "Earth's Gravity is approximately 9.8m / s&sup2;";
+		break;
+	case 2:
+		funfactText.textContent = "T";
+		break;
+	case 3:
+		funfactText.textContent = "Wed";
+		break;
+	case 4:
+		funfactText.textContent = "Th";
+		break;
+	case 5:
+		funfactText.textContent = "";
+		break;
+	case 6:
+		funfactText.textContent = "Sa";
+	}
+ }
 	</script>
 </body>
 
 </html>
+
 
 
 
