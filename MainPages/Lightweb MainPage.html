@@ -96,7 +96,7 @@
   const hourOfYear = Math.floor(timeElapsed / oneHour);
 
   const Num = hourOfYear % facts.length;
-  factText.textContent = facts[Num];
+  factText.textContent = "Fact of the Hour: "+facts[Num];
 }
 
 funfactGenerator();
@@ -106,6 +106,7 @@ setInterval(funfactGenerator, 1800000);
 </body>
 
 </html>
+
 
 
 
