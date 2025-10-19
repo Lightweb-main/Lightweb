@@ -4,7 +4,7 @@ const NameInput = document.getElementById("NameInput");
 const InstructorNameInput = document.getElementById("InstructorNameInput");
 const CourseNameInput = document.getElementById("CourseNameInput");
 const ContentInput = document.getElementById("ContentInput");
-const output = document.getElementById("output");
+const output = document.getElementById("MLAoutput");
 const Name2 = document.getElementById("Name2");
 const InstructorName2 = document.getElementById("InstructorName2");
 const CourseName2 = document.getElementById("CourseName2");
@@ -28,7 +28,7 @@ function update(){
 	CourseNameInput.style.display = "none";
 	ContentInput.style.display = "none";
 	ContentInput2.style.display = "none";
-	output.style.display = "none";
+	MLAoutput.style.display = "none";
 	Name2.style.display = "none";
 	InstructorName2.style.display = "none";
 	CourseName2.style.display = "none";
@@ -42,14 +42,15 @@ function update(){
 	Name3.style.display = "none";
 	title3.style.display = "none";
 	InstructorName2Input.style.display = "none";
-	APAOutput.style.display = "none";
+	APATitleOutput.style.display = "none";
+	APAContentOutput.style.display = "none";
 	if(format === "MLA"){
 	Title.style.display = "inline";
 	NameInput.style.display = "inline";
 	InstructorNameInput.style.display = "inline";
 	CourseNameInput.style.display = "inline";
 	ContentInput.style.display = "inline";
-	output.style.display = "block";
+	MLAoutput.style.display = "block";
 	Name2.style.display = "block";
 	InstructorName2.style.display = "block";
 	CourseName2.style.display = "block";
@@ -68,7 +69,6 @@ function update(){
 	InstructorName2Input.style.display = "inline";
 	ContentInput2.style.display = "inline";
 	
-	output.style.display = "block";
 	title3.style.display = "block";
 	Name3.style.display = "block";
 	DepartmentUniversityName.style.display = "block";
@@ -77,7 +77,8 @@ function update(){
 	Date2.style.display = "block";
 	Content.style.display = "none";
 	container.style.display = "block";
-	APAOutput.style.display = "block";
+	APATitleOutput.style.display = "block";
+	APAContentOutput.style.display = "block";
 	}
 }
 Title.value = "Title of Your Report";
@@ -293,3 +294,4 @@ function generate(){
 
 
 update();
+
