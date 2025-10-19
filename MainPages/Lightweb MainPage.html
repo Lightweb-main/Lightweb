@@ -25,7 +25,7 @@
 	<body> <header>Official Lightweb Site</header>
 	<h1>Welcome to Lightweb</h1>
 	<div>
-	<h3 id="factOfTheDay" style="text-align: center;">Looks like the fact of the day wasn't here. :(</h3>
+	<h3 id="factOfTheHour" style="text-align: center;">Looks like the fact of the hour wasn't here. :(</h3>
 	</div>
 	<br><br><br>
 	<div style="text-align: center;">
@@ -77,34 +77,36 @@
   }
   
   function funfactGenerator() {
-  const factText = document.getElementById("factOfTheDay");
+  const factText = document.getElementById("factOfTheHour");
 
   const facts = [
     "The first step on the moon was on July 20, 1969 during the Apollo 11 mission by Neil Armstrong and secondly by Buzz Aldrin.",
     "Earth's gravity is approximately 9.8 m/s².",
     "Four Presidents of the United States have been assassinated.",
     "HTML, or HyperText Markup Language, was first proposed in 1989 and implemented in 1991.",
-    "These facts were originally labeled 'Fun Facts', but were renamed 'Fact of the Day' due to some serious topics.",
+    "These facts were originally labeled 'Fun Facts', but were renamed 'Fact of the Hour' due to some serious topics.",
     "The Declaration of Independence was signed in Philadelphia.",
     "Water is called the universal solvent because it can dissolve more substances than any other liquid."
   ];
 
   const currentDay = new Date();
   const JanuaryFirst = new Date(currentDay.getFullYear(), 0, 0);
-  const dayNum = currentDay - JanuaryFirst;
-  const oneDay = 1;
-  const dayOfYear = Math.floor(dayNum / oneDay);
+  const timeElapsed = currentDay - JanuaryFirst;
+  const oneHour = 1000 * 60 * 60; // 1 hour in milliseconds
+  const hourOfYear = Math.floor(timeElapsed / oneHour);
 
-  const Num = dayOfYear % facts.length;
+  const Num = hourOfYear % facts.length;
   factText.textContent = facts[Num];
 }
 
 funfactGenerator();
+setInterval(funfactGenerator, 1800000);
 
 	</script>
 </body>
 
 </html>
+
 
 
 
