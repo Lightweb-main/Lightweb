@@ -89,14 +89,14 @@ const facts = [
   "Water is called the universal solvent because it can dissolve more substances than any other liquid."
 ];
 
-const today = new Date();
-const start = new Date(today.getFullYear(), 0, 0);
-const diff = today - start;
-const oneDay = 1000 * 60 * 60 * 24;
-const dayOfYear = Math.floor(diff / oneDay);
+const currentDay = new Date();
+const JanuraryFirst = new Date(today.getFullYear(), 0, 0);
+const dayNum = currentDay - JanuraryFirst;
+const oneDay = 86400000;
+const dayOfYear = Math.floor(dayNum / oneDay);
 
-const index = dayOfYear % facts.length;
-factText.textContent = facts[index];
+const Num = dayOfYear % facts.length;
+factText.textContent = facts[Num];
 
  }
 	funfactGenerator();
@@ -104,6 +104,7 @@ factText.textContent = facts[index];
 </body>
 
 </html>
+
 
 
 
