@@ -186,6 +186,9 @@ background-color: var(--border);
  header {
   font-size: 15px;
   text-align: right;
+  position: absolute;
+  top: 18px;
+  right: 18px;
  }
 
 body.dark img, body.AnalogScreen img, body.CRTBLUEScreen img{

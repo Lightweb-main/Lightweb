@@ -247,6 +247,13 @@ iconthingy.rel = 'icon';
 iconthingy.type = 'image/png'; 
 iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
 
+
+
+const iconthingy2 = document.createElement('link');
+iconthingy2.rel = 'icon'; 
+iconthingy2.type = 'image/png'; 
+iconthingy2.href = 'Images/Lightweb.icon.png?v=' + faviconNum
+
 const html = `
   <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
   <div id="DigitalCalendar">If you are seeing this, your calendar needs a pin or two.</div>
@@ -256,6 +263,31 @@ const DigitalClockCalendarContainer = document.createElement('div');
 DigitalClockCalendarContainer.innerHTML = html;
 document.body.appendChild(DigitalClockCalendarContainer);
 document.head.appendChild(iconthingy);
+
+window.addEventListener("DOMContentLoaded", () => {
+	if(window.location.pathname.includes("/Articles/")){
+		let linkText = document.createElement("h2");
+		linkText.textContent = "Done? Here are other links.";
+		document.body.appendChild(linkText);
+		
+		let mainPageLink = document.createElement("a");
+		mainPageLink.href = "../MainPages/Lightweb%20MainPage.html";
+		mainPageLink.textContent = "Back to Main Page";
+		document.body.appendChild(mainPageLink);
+		
+		document.body.appendChild(document.createElement("br"));
+		document.body.appendChild(document.createElement("br"));
+		
+		let informationalPageLink = document.createElement("a");
+		informationalPageLink.href = "../MainPages/Informational.html";
+		informationalPageLink.textContent = "Back to Informational";
+		document.body.appendChild(informationalPageLink);
+		
+		let LightwebVerificationHeader = document.createElement("header");
+		LightwebVerificationHeader.textContent = "Official Lightweb Site";
+		document.body.appendChild(LightwebVerificationHeader);
+	}
+});
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
