@@ -14,20 +14,6 @@ body.PC .articles a{
    font-size: 25px;
   }
 
-body.PC .smallHeading1{
-font-size: 65px;
-text-align: center;
-}
-
-body.PC .smallHeading1A{
-font-size: 55px;
-text-align: center;
-}
-
-body.PC .smallHeading1B{
-font-size: 45px;
-text-align: center;
-}
  body.PC header {
   font-size: 18px;
   text-align: right;
@@ -90,20 +76,6 @@ body.Phone .articles a{
    font-size: 20px;
   }
 
-body.Phone .smallHeading1{
-font-size: 40px;
-text-align: center;
-}
-
-body.Phone .smallHeading1A{
-font-size: 35px;
-text-align: center;
-}
-
-body.Phone .smallHeading1B{
-font-size: 30px;
-text-align: center;
-}
  body.Phone header {
   font-size: 15px;
   text-align: right;
@@ -220,3 +192,4 @@ border: 2px solid var(--DigitalClockBackground);
 border-radius: 15px; 
 font-weight: var(--FontWeight);
 }
+
