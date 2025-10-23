@@ -286,6 +286,16 @@ window.addEventListener("DOMContentLoaded", () => {
 		let LightwebVerificationHeader = document.createElement("header");
 		LightwebVerificationHeader.textContent = "Official Lightweb Site";
 		document.body.appendChild(LightwebVerificationHeader);
+		
+		DigitalClock.style.position = "absolute";
+		DigitalClock.style.left = "5px";
+		DigitalClock.style.top = "5px";
+		DigitalClock.style.textAlign = "center";
+		
+		DigitalCalendar.style.position = "absolute";
+		DigitalCalendar.style.left = "5px";
+		DigitalCalendar.style.top = "65px";
+		DigitalCalendar.style.textAlign = "center";
 	}
 });
 
