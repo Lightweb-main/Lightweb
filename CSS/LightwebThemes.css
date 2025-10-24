@@ -66,12 +66,17 @@ body.militaryTime{
 --militaryTimeButton: #13ff0d;
 }
 
+
 body.CRTBLUEScreen{
 --CRTBLUEScreen: #293aef;
 }
 
 body.dashedCalendar{
 	--dashedCalendarButton: #aaaaaa;
+}
+
+#settingButton2{
+	background-color: var(--militaryTimeButton);
 }
 
 
@@ -194,6 +199,7 @@ background-color: var(--border);
 body.dark img, body.AnalogScreen img, body.CRTBLUEScreen img{
 filter: invert(1);
 }
+
 
 
 
