@@ -265,6 +265,24 @@ document.body.appendChild(DigitalClockCalendarContainer);
 document.head.appendChild(iconthingy);
 
 window.addEventListener("DOMContentLoaded", () => {
+		DigitalClock.style.position = "absolute";
+		DigitalClock.style.left = "0px";
+		DigitalClock.style.top = "0px";
+		DigitalClock.style.border = "2px solid black";
+		DigitalClock.style.width = "300px";
+		DigitalClock.style.fontSize = "50px";
+		DigitalClock.style.borderRadius = "15px";
+		DigitalClock.style.textAlign = "center";
+		
+		DigitalCalendar.style.position = "absolute";
+		DigitalCalendar.style.left = "0px";
+		DigitalCalendar.style.top = "60px";
+		DigitalCalendar.style.border = "2px solid black";
+		DigitalCalendar.style.width = "300px";
+		DigitalCalendar.style.fontSize = "25px";
+		DigitalCalendar.style.borderRadius = "15px";
+		DigitalCalendar.style.textAlign = "center";
+	
 	if(window.location.pathname.includes("/Articles/")){
 		let linkText = document.createElement("h2");
 		linkText.textContent = "Done? Here are other links.";
@@ -286,16 +304,6 @@ window.addEventListener("DOMContentLoaded", () => {
 		let LightwebVerificationHeader = document.createElement("header");
 		LightwebVerificationHeader.textContent = "Official Lightweb Site";
 		document.body.appendChild(LightwebVerificationHeader);
-		
-		DigitalClock.style.position = "absolute";
-		DigitalClock.style.left = "5px";
-		DigitalClock.style.top = "5px";
-		DigitalClock.style.textAlign = "center";
-		
-		DigitalCalendar.style.position = "absolute";
-		DigitalCalendar.style.left = "5px";
-		DigitalCalendar.style.top = "65px";
-		DigitalCalendar.style.textAlign = "center";
 	}
 });
 
@@ -314,6 +322,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
