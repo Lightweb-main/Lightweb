@@ -87,13 +87,15 @@
     "The Declaration of Independence was signed in Philadelphia.",
     "Water is called the universal solvent because it can dissolve more substances than any other liquid.",
 	"Minecraft was officially released in November 18th, 2011.",
-	"A centipede despite being named with the prefix centi- meaning 100, always never has a hundred legs."
+	"A centipede despite being named with the prefix centi- meaning 100, always never has a hundred legs.",
+	"This is a fact",
+	"The shortest battle in history was the Anglo-Zanzibar War that lasted between 38 and 45 minutes on 27 August 1896."
   ];
 
   const currentDay = new Date();
   const JanuaryFirst = new Date(currentDay.getFullYear(), 0, 0);
   const timeElapsed = currentDay - JanuaryFirst;
-  const oneHour = 1000 * 60 * 60; // 1 hour in milliseconds
+  const oneHour = 1000 ; 
   const hourOfYear = Math.floor(timeElapsed / oneHour);
 
   const Num = hourOfYear % facts.length;
@@ -101,7 +103,7 @@
 }
 
 funfactGenerator();
-setInterval(funfactGenerator, 1800000);
+setInterval(funfactGenerator, 1000);
 
 	</script>
 </body>
