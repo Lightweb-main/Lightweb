@@ -98,7 +98,7 @@ const conversionRates1 = {
     chain: 0.0497096954,
     hectometer:10**-2,
     furlong: 0.00497096954,
-	cableLength: 0.546806649 / 120,
+	cableLength: 1 / 185.2,
     li: 0.002,
     kilometer: 10**-3,
     statueMile: 0.000621371192,

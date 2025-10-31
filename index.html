@@ -99,10 +99,10 @@
       button5 = document.getElementById("button5") 
       pcVer = document.getElementById("pcVer")
 	  phoneVer = document.getElementById("phoneVer")
-      button5.style.display = "none"
-      pcVer.style.display = "flex"
-	  phoneVer.style.display = "flex"
-	  laptopVer.style.display = "flex"
+      button5.style.display = "none";
+      pcVer.style.display = "flex";
+	  phoneVer.style.display = "flex";
+	  laptopVer.style.display = "flex";
       }
       function PC(){
       phoneVer = document.getElementById("phoneVer")
@@ -110,6 +110,7 @@
 	  laptopVer = document.getElementById("laptopVer")
 	  pcVer.style.display = "none"
       phoneVer.style.display = "none"
+	  laptopVer.style.display = "none";
 	  localStorage.setItem('DeviceType', 'PC'); 
       document.location = 'MainPages/Lightweb%20MainPage.html';
       }
@@ -119,6 +120,7 @@
 	  laptopVer = document.getElementById("laptopVer")
 	  pcVer.style.display = "none"
       phoneVer.style.display = "none"
+	  laptopVer.style.display = "none";
 	  localStorage.setItem('DeviceType', 'Phone'); 
       document.location = 'MainPages/Lightweb%20MainPage.html';
       }
@@ -128,6 +130,7 @@
 	  laptopVer = document.getElementById("laptopVer")
 	  pcVer.style.display = "none"
       phoneVer.style.display = "none"
+	  laptopVer.style.display = "none";
 	  localStorage.setItem('DeviceType', 'Laptop'); 
       document.location = 'MainPages/Lightweb%20MainPage.html';
       }
