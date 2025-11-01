@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
       cell.classList.remove("red", "yellow");
     });
     currentPlayer = "red";
+	winner.textContent = "";
+	status.style.display = "block";
     status.classList.add(`${currentPlayer}-selected`);
   });
 
@@ -37,9 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
   createGameBoard();
 
   board.addEventListener("click", function (e) {
-    status.classList.remove(`${currentPlayer}-selected`);
-    let col = parseInt(e.target.getAttribute("data-col"));
-    
+	if (!e.target.classList.contains("cell") || isGameOver) return;
+    let col = parseInt(e.target.getAttribute("data-col")); 
+	
+	
+		
     if (e.target.classList.contains("cell") && !isGameOver) {
       for (let row = rows - 1; row >= 0; row--) {
         let clickedCell = board.querySelector(
@@ -62,10 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return; 
           }
   
-        
-          currentPlayer = currentPlayer === "red" ? "yellow" : "red";
-          
-          status.classList.add(`${currentPlayer}-selected`);
+			let previousPlayer = currentPlayer;
+			currentPlayer = currentPlayer === "red" ? "yellow" : "red";
+
+			status.classList.remove(`${previousPlayer}-selected`);
+			status.classList.add(`${currentPlayer}-selected`);
+
           break;
         }
       }
@@ -84,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
             player === gameBoard[r][c + 2] &&
             player === gameBoard[r][c + 3]
           ) {
-            // console.log("Win horizontally");
             return true;
           }
         }
@@ -101,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
             player === gameBoard[r + 2][c] &&
             player === gameBoard[r + 3][c]
           ) {
-            // console.log("Win vertically");
             return true;
           }
         }
