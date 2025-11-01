@@ -61,11 +61,10 @@ body.chaosScreen .settingbutton7{
 	display: block;
 }
 
-}
+
 body.militaryTime{
 --militaryTimeButton: #13ff0d;
 }
-
 
 body.CRTBLUEScreen{
 --CRTBLUEScreen: #293aef;

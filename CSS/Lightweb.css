@@ -38,7 +38,7 @@ background: var(--screenToggleButton);
 }
 
 #millitary-time-button{
-background: var(--militaryTimeButton);
+background-color: var(--militaryTimeButton);
   color: white;
   border: 1px white;
   padding: 0.5em 1em;
