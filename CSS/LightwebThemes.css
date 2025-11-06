@@ -55,29 +55,33 @@ body.chaosScreen *:not(.settingbutton7){
   animation: chaos 5s linear infinite;
 }
 
-body.chaosScreen .settingbutton7{
-   animation: none !important;
-	transform: none !important;
+body.chaosScreen .settingbutton7 #chaos-screen-button{
+   animation: none;
+	transform: none;
 	display: block;
 }
 
 
 body.militaryTime{
---militaryTimeButton: #13ff0d;
+	--militaryTimeButton: #13ff0d;
 }
 
 body.CRTBLUEScreen{
---CRTBLUEScreen: #293aef;
+	--CRTBLUEScreen: #293aef;
+}
+
+body.imageInversionOn{
+	--ImageInvertButton: #120b53;
+	--ImageInvertTextColor: #ffffff;
+}
+
+body.imageInversionOn img{
+	filter: invert(1);
 }
 
 body.dashedCalendar{
 	--dashedCalendarButton: #aaaaaa;
 }
-
-#settingButton2{
-	background-color: var(--militaryTimeButton);
-}
-
 
 
 body.dark {
@@ -145,6 +149,8 @@ body.squidGameScreen{
   --chaoScreenButton: #ff0000;
   --SearchArticlesColor: #fdfdfd;
   --DigitalClockBackground: #000000;
+  --ImageInvertButton: #edf4ac;
+  --ImageInvertTextColor: #000000;
   --FontWeight: 400;
    text-shadow: none;
  
@@ -195,9 +201,7 @@ background-color: var(--border);
   right: 18px;
  }
 
-body.dark img, body.AnalogScreen img, body.CRTBLUEScreen img{
-filter: invert(1);
-}
+
 
 
 

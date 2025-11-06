@@ -96,14 +96,16 @@ am_pm = ""
 document.addEventListener('DOMContentLoaded', () => {
 
 
-  document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default');
+  document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'chaos');
   document.body.classList.remove('dashedCalendar');
+  document.body.classList.remove('InverseInversionOn');
   document.body.classList.remove('PC', 'Phone', 'Laptop');
   document.body.classList.add('false');
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
 	  const DeviceType = localStorage.getItem('DeviceType');
 	  const CalendarType = localStorage.getItem('calendarType');
+	  const toggleImageInversion = localStorage.getItem('toggleImageInversion');
 
 	  if(DeviceType == 'PC'){
 	  document.body.classList.add('PC');
@@ -136,12 +138,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('militaryTime');
       }
 	  
-	   if (CalendarType === 'dashedCalendar') {
+	  if (CalendarType === 'dashedCalendar') {
         document.body.classList.add('dashedCalendar');
       } else {
         document.body.classList.remove('defaultCalendar');
       }
-		
+	  
+	  if (toggleImageInversion == 'imageInversionOn') {
+        document.body.classList.add('imageInversionOn');
+      } else {
+	    document.body.classList.remove('imageInversionOff');
+	  }
+	  
       const toggleDarkBtn = document.getElementById('screen-toggle');
       const toggleAnalogBtn = document.getElementById('analog-screen-button');
       const toggleMilitaryBtn = document.getElementById('millitary-time-button');
@@ -149,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  const toggleDashedCalendarBtn = document.getElementById('dashed-calendar-button');
 	  const toggleSquidGameBtn = document.getElementById('squidGame-screen-button');
 	  const toggleChaosScreenBtn = document.getElementById('chaos-screen-button');
-	
+	  const ImageInversionBtn = document.getElementById('image-inversion-button');
 
 if(toggleDarkBtn){
 toggleDarkBtn.addEventListener('click', () => {
@@ -231,6 +239,19 @@ toggleChaosScreenBtn.addEventListener('click', () => {
 	clearScreenType();
     document.body.classList.add('chaosScreen');
     localStorage.setItem('theme', 'chaosScreen');
+	
+  }
+});
+}
+
+if(ImageInversionBtn){
+ImageInversionBtn.addEventListener('click', () => {
+  if (document.body.classList.contains('imageInversionOn')) {
+    document.body.classList.remove('imageInversionOn');
+    localStorage.setItem('toggleImageInversion', 'imageInversionOff');
+  } else {
+    document.body.classList.add('imageInversionOn');
+    localStorage.setItem('toggleImageInversion', 'imageInversionOn');
 	
   }
 });
@@ -322,6 +343,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 

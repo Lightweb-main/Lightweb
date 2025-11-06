@@ -109,6 +109,18 @@ background: var(--chaoScreenButton);
   left: 50%;
 }
 
+#image-inversion-button{
+background: var(--ImageInvertButton);
+  color: var(--ImageInvertTextColor);
+  border: 1px white;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
 
 
 .settingbutton1{
@@ -167,8 +179,20 @@ left: 5%;
 text-align: center;
 }
 
-body.Laptop{
-.settingbutton1{
+.labelSettingButton8{
+position: absolute;
+top: 32%;
+left: 42%;
+}
+
+.settingbutton8{
+margin: 0;
+position: absolute;
+top: 32%;
+left: 30%;
+text-align: center;
+}
+body.Laptop .settingbutton1{
 margin: 0;
 position: absolute;
 top: 24%;
@@ -176,7 +200,7 @@ left: 7.5%;
 text-align: center;
 }
 
-.settingbutton2{
+body.Laptop .settingbutton2{
 margin: 0;
 position: absolute;
 top: 24%;
@@ -184,7 +208,7 @@ left: 45%;
 text-align: center;
 }
 
-.settingbutton3{
+body.Laptop .settingbutton3{
 margin: 0;
 position: absolute;
 top: 36%;
@@ -192,7 +216,7 @@ left: 7.5%;
 text-align: center;
 }
 
-.settingbutton4{
+body.Laptop .settingbutton4{
 margin: 0;
 position: absolute;
 top: 48%;
@@ -200,7 +224,7 @@ left: 7.5%;
 text-align: center;
 }
 
-.settingbutton5{
+body.Laptop .settingbutton5{
 margin: 0;
 position: absolute;
 top: 36%;
@@ -208,7 +232,7 @@ left: 45%;
 text-align: center;
 }	
 
-.settingbutton6{
+body.Laptop .settingbutton6{
 margin: 0;
 position: absolute;
 top: 60%;
@@ -216,15 +240,27 @@ left: 7.5%;
 text-align: center;
 }
 
-.settingbutton7{
+body.Laptop .settingbutton7{
 margin: 0;
 position: absolute;
 top: 72%;
 left: 7.5%;
 text-align: center;
 }
+
+body.Laptop .settingbutton8{
+margin: 0;
+position: absolute;
+top: 48%;
+left: 45%;
+text-align: center;
 }
 
+body.Laptop .labelSettingButton8{
+position: absolute;
+top: 48%;
+left: 63%;
+}
 
 
 
