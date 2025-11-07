@@ -186,8 +186,8 @@ body {
 
 a{
 font-weight: bold;
-border: 12px solid var(--border);
-border-radius: 10px;
+border: 12px solid var(--border) !important;
+border-radius: 10px !important;
 text-decoration: none;
 border-color: var(--border);
 background-color: var(--border);
@@ -200,6 +200,7 @@ background-color: var(--border);
   top: 18px;
   right: 18px;
  }
+
 
 
 
