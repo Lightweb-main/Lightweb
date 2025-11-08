@@ -68,7 +68,7 @@ background: var(--CRTBlueScreenButton);
   position: absolute;
   top: 50%;
   left: 50%;
-}
+} 
 
 #dashed-calendar-button{
 background: var(--dashedCalendarButton);
@@ -257,6 +257,7 @@ position: absolute;
 top: 48%;
 left: 63%;
 }
+
 
 
 
