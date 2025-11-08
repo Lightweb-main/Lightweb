@@ -194,6 +194,10 @@ border-color: var(--border) !important;
 background-color: var(--border) !important;
 }
 
+a:hover{
+	color: red;
+}
+
  header {
   font-size: 15px;
   text-align: right;
@@ -201,6 +205,7 @@ background-color: var(--border) !important;
   top: 18px;
   right: 18px;
  }
+
 
 
 
