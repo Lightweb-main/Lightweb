@@ -20,10 +20,6 @@ font-weight: var(--FontWeight);
    		   outline: none;
     }
 
-a:hover{
-color: red;
-}
-
 
 #screen-toggle{
 background: var(--screenToggleButton);
@@ -261,6 +257,7 @@ position: absolute;
 top: 48%;
 left: 63%;
 }
+
 
 
 
