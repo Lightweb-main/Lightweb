@@ -159,7 +159,7 @@ body.squidGameScreen{
 
 
 table, tr, td, th{
-	width: 500px;
+	width: 600px;
 	border: 2px solid var(--tableborder);
 	border-collapse: collapse;
 	text-align: center;
@@ -201,6 +201,7 @@ background-color: var(--border);
   top: 18px;
   right: 18px;
  }
+
 
 
 
