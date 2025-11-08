@@ -1,18 +1,7 @@
 <!DOCTYPE html> <html>
 	<head>
 		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
-		
-		
-		<style> 
-		
-		
-
-		table{
-		width:  500px;
-		}
-
-		</style>
-	<head>
+	</head>
 	<body> 
 	<h1>Cosine, Sine, Tangent</h1>
 	<h2>Introduction</h2>
@@ -22,167 +11,627 @@
 
 	<h2>Sine (Sin)</h2>
 	Sine is one of the three trigonometric ratios. Sine is used to find unknown sides and angles. Sine equals the opposite side over the hypotenuse…<br>
-	<img src="../Images/CoSiTa.img1.png" width=400 height=400>
+	<img src="../Images/CoSiTa.img1.png">
 	Since the opposite side is already known, we can just divide 5 by the square root of 44…
-	<p>Sin(θ) = 5 / &radic;44</p>
+	<br><br>
+	<math display="block">
+		<mrow>
+			<mtext>Sin(&theta;)</mtext>
+			<mo>=</mo>
+			<mfrac>
+				<mn>5</mn>
+				<msqrt>
+					<mn>44</mn>
+				</msqrt>
+			</mfrac>
+		</mrow>
+	</math>
+	<br><br>
 	5 over the square root of 44 is approximately 0.75377…
-	<p>Sin =5 / &radic; 44 = 0.75377</p>
+	<br><br>
+	<math display="block">
+		<mrow>
+			<mtext>Sin(&theta;)</mtext>
+			<mo>=</mo>
+			<mfrac>
+				<mn>5</mn>
+				<msqrt>
+					<mn>44</mn>
+				</msqrt>
+			</mfrac>
+			<mo>=</mo>
+			<mn>0.75377</mn>
+		</mrow>
+	</math>
+	<br><br>
 	<h2>Law of Sines</h2>
 	The law of sines is a formula that can be used to find the unknown sides of a triangle with one side already shown with sine…
-	<p>sin A / a = sin B / b = sin C / c</p>
+	<br><br>
+	<math display="block">
+		<mrow>
+			<mfrac>
+				<mtext>sin(A)</mtext>
+				<ms>a</ms>
+			</mfrac>
+			<mo>=</mo>
+			<mfrac>
+				<mtext>sin(B)</mtext>
+				<ms>b</ms>
+			</mfrac>
+			<mo>=</mo>
+			<mfrac>
+				<mtext>sin(C)</mtext>
+				<ms>c</ms>
+			</mfrac>
+		</mrow>
+	</math>
+	<br><br>
 	<p>a - length of side a</p>
-	<p>sin A - Sine of Angle A</p>
+	<p>sin(A) - Sine of Angle A</p>
 	<p>b - length of side b</p>
-	<p>sin B - Sine of Angle B</p>
+	<p>sin(B) - Sine of Angle B</p>
 	<p>c - length of side c</p>
-	<p>sin C - Sine of Angle C</p>
+	<p>sin(C) - Sine of Angle C</p>
 	An example of when this formula can be used is when you need to find the missing sides/angles of a triangle…<br>
-	<img src="../Images/CoSiTa.img2.png" width=450 height=400>
-	This example triangle’s hypotenuse length is 18 while the only known angle is 45&deg;. In the sine formula, the opposite side is over the hypotenuse. So by using sine, we can figure out the opposite side of the triangle which is the straight line up. First we can put the sine of 45&deg;…
+	<img src="../Images/CoSiTa.img2.png">
+	This example triangle’s hypotenuse length is 18 while the only known angle is 45&deg;. When finding sin, it's the opposite side's length is over the hypotenuse's length. So by using sine, we can figure out the opposite side of the triangle which is the straight line up. First we can put the sine of 45&deg;…
 	<p>sin 45&deg; = ???</p>
-	Now we multiply the sine of 45o with the length of the hypotenuse in the triangle…
-	<p>(18)sin 45&deg; = Opposite/18</p>
-	Now the sine of 45o times 18 equals = 12.727 but to keep it simple, we’re going to round it to the nearest tenth…
+	Now we multiply the sine of 45&deg; with the length of the hypotenuse in the triangle…
+	<br><br>
+	<math display="block">
+		<mrow>
+			<mtext>sin(45&deg;)</mtext>
+			<mo>=</mo>
+			<mfrac>
+				<mtext>Opposite</mtext>
+				<mn>18</mn>
+			</mfrac>
+		</mrow>
+	</math>
+	<br><br>
+	<math display="block">
+		<mrow>
+			<mn>18</mn>
+			<mo>*</mo>
+			<mtext>sin(45&deg;)</mtext>
+			<mo>=</mo>
+			<mtext>Opposite</mtext>
+		</mrow>
+	</math>
+	<br><br>
+	<math display="block">
+		<mrow>
+			<mtext>sin(45&deg;)</mtext>
+			<mo>=</mo>
+			<mfrac>
+				<msqrt>
+					<mn>2</mn>
+				</msqrt>
+				<mn>2</mn>
+			</mfrac>
+			<mo>&asymp;</mo>
+			<mn>0.7071</mn>
+		</mrow>
+	</math>
+	<br><br>
+	<math display="block">
+		<mrow>
+			<mn>18</mn>
+			<mo>*</mo>
+			<mn>0.7071</mn>
+			<mo>=</mo>
+			<mtext>Opposite</mtext>
+		</mrow>
+	</math>
+	<br><br>
+	<math display="block">
+		<mrow>
+			<mn>12.7279</mn>
+			<mo>=</mo>
+			<mtext>Opposite</mtext>
+		</mrow>
+	</math>
+	<br><br>
+	Now the sine of 45&deg; times 18 equals = 12.7279 but to keep it simple, we’re going to round it to the nearest tenth…
 	<p>Opposite ≈ 12.7</p>
 	The length of the opposite is 12.7.<br><br>
+	<img src="../Images/CoSiTa.img3.png">
+		Now to find an unknown angle of a triangle with sine…<br>
+		<img src="../Images/CoSiTa.img4.png">
 
-Now to find an unknown angle of a triangle with sine…<br>
-<img src="../Images/CoSiTa.img3.png" width=400 height=450>
+		To find a missing angle, you would have to use the values that you know from the triangle to try and find the missing angle of a triangle using sine. For example we 		have two sides and one angle known here, we are trying to find angle A. We already know angle A and the side lengths of a and c, so we can plug those values into the Law of Sines formula...
+		<p>sin(C) / 28 = sin(A) / 14</p>
 
-To find a missing angle, you would have to use the values that you know from the triangle to try and find the missing angle of a triangle using sine. For example we have two sides and one angle known here, we are trying to find angle b, so we can substitute some values into the laws of sine formula.
-<p>sin 40° / 14  = sin B / 29</p>
+		Next we multiply both sides by 14 to get sin(A) on its own…
+		<p>sin(40&deg;) / 2 = sin(A)</p>
+		The sine of 40&deg; divided by 2 equals 0.3214...
+		<p>0.3214 = sin A</p>
+		The sine of angle A equals 0.3214. Now this is when arcsin is used. Arcsin is the inverse function of sine, so angle A equals the arcsin of 0.3214…
+		<p>∠A = arcsin(0.3214)</p>
+		Now we calculate...
+		<p>∠A = 0.3272 rad</p>
+		<p>∠A = (0.3272 * 57.3)&deg;</p>
+		<p>∠A = 18.74856&deg;</p>
+		So angle A has a measure of approximately 18.74856&deg; or 18.7&deg; when rounded to the nearest tenth...
+		<img src="../Images/CoSiTa.img5.png">
+		<h2>Cosine (Cos)</h2>
+		Cosine is another trigonometry ratio that is commonly used to find angles and sides in a triangle like sine. But unlike cosine, it is calculated with the adjacent side divided by the hypotenuse instead of the opposite side…
+		<br><br>
+		<math display="block">
+			<mrow>
+				<mtext>cos(&theta;)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mtext>adjacent</mtext>
+					<mtext>hypotenuse</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<mtext>sin(&theta;)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mtext>opposite</mtext>
+					<mtext>hypotenuse</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
+		<h2>The Law of Cosines</h2>
+		The law of cosines is used to find any side in a triangle using the formulas…
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>c</ms>
+				<mo>=</mo>
+				<msqrt>
+					<ms>a</ms>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<ms>b</ms>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<ms>2ab</ms>
+					<mo>*</mo>
+					<mtext>cos(C)</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>b</ms>
+				<mo>=</mo>
+				<msqrt>
+					<ms>a</ms>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<ms>c</ms>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<ms>2ac</ms>
+					<mo>*</mo>
+					<mtext>cos(B)</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>a</ms>
+				<mo>=</mo>
+				<msqrt>
+					<ms>b</ms>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<ms>c</ms>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<ms>2bc</ms>
+					<mo>*</mo>
+					<mtext>cos(A)</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		The length of side c is equal to the square root of side a and b squared and added together minus twice the length of side a and b times the cosine of the opposite of angle c. (also as gamma but will be mentioned later). This may seem a lot for one side but an example would clear some things up…
+		<img src="../Images/CoSiTa.img6.png">
+		We can substitute some value in this problem into the law of cosines formula…
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>c</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>32</mn>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<mn>21</mn>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<mn>2(32)(21)</mn>
+					<mo>*</mo>
+					<mtext>cos(60&deg;)</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>c</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>1024</mn>
+					<mo>+</mo>
+					<mn>441</mn>
+					<mo>-</mo>
+					<mn>1344</mn>
+					<mo>*</mo>
+					<mtext>0.5</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>c</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>1465</mn>
+					<mo>-</mo>
+					<mn>672</mn>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>c</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>793</mn>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>c</ms>
+				<mo>&asymp;</mo>
+				<mn>28.16</mn>
+			</mrow>
+		</math>
+		<br><br>
+		The length of side c is 28.16 (approximately), you would most definitely need a calculator to find side c using this formula.<br><br>
+		The law of cosines can also be used to find sides a and b as well with different formulas…
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>a</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>b</mn>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<mn>c</mn>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<mn>2bc</mn>
+					<mo>*</mo>
+					<mtext>cos(A)</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>a</ms>
+				<mtext>&sup2;</mtext>
+				<mo>=</mo>
+					<mn>b</mn>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<mn>c</mn>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<mn>2bc</mn>
+					<mo>*</mo>
+					<mtext>cos(A)</mtext>
+			</mrow>
+		</math>
+		<br><br>
+		Lets use another example...
+		<br><br><br>
+		<img src="../Images/CoSiTa.img7.png">
+		<br><br><br>
+		We can already substitute some values in…
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>a</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>46</mn>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<mn>30</mn>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<mn>2(46)(30)</mn>
+					<mo>*</mo>
+					<mtext>cos(90&deg;)</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>a</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>2116</mn>
+					<mo>+</mo>
+					<mn>900</mn>
+					<mo>-</mo>
+					<mn>2760</mn>
+					<mo>*</mo>
+					<mtext>0</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>a</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>3016</mn>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>a</ms>
+				<mo>&asymp;</mo>
+				<mn>54.918</mn>
+			</mrow>
+		</math>
+		<br><br>
+		For side b...
+		<br><br><br>
+		<img src="../Images/CoSiTa.img8.png">
+		<br><br><br>
+		The formula for finding side b…
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>b</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>a</mn>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<mn>b</mn>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<mn>2(a)(b)</mn>
+					<mo>*</mo>
+					<mtext>cos(75&deg;)</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>b</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>132</mn>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<mn>66</mn>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<mn>2(132)(60)</mn>
+					<mo>*</mo>
+					<mtext>cos(75&deg;)</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>b</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>17474</mn>
+					<mtext>&sup2;</mtext>
+					<mo>+</mo>
+					<mn>4356</mn>
+					<mtext>&sup2;</mtext>
+					<mo>-</mo>
+					<mn>17424</mn>
+					<mo>*</mo>
+					<mtext>cos(75&deg;)</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<p>The cosine of 75° is 0.2588<p>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>b</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>21780</mn>
+					<mo>-</mo>
+					<mn>17424</mn>
+					<mo>*</mo>
+					<mtext>0.2588</mtext>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>b</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>21780</mn>
+					<mo>-</mo>
+					<mn>4509.3312</mn>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>b</ms>
+				<mo>=</mo>
+				<msqrt>
+					<mn>17270.6688</mn>
+				</msqrt>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<ms>b</ms>
+				<mo>&asymp;</mo>
+				<mn>131.42</mn>
+			</mrow>
+		</math>
+		<br><br>
+		<h2>Tangent</h2>
+		Tangent is another main trigonometry ratio. Its formula is the opposite side over the adjacent side…
+		<br><br>
+		<math display="block">
+			<mrow>
+				<mtext>sin(&theta;)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mtext>opposite</mtext>
+					<mtext>hypotenuse</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<mtext>cos(&theta;)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mtext>adjacent</mtext>
+					<mtext>hypotenuse</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<mtext>tan(&theta;)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mtext>opposite</mtext>
+					<mtext>adjacent</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
+		Let's say that a triangle has two known sides, being the opposite and the adjacent...
+		<p>Opposite = 12 in</p>
+		<p>Adjacent = 8 in</p>
+		Twelve over Eight is 1.5. <br><br>
+		<p>tan = 12 / 8 = 1.5</p>
+		Tan also has other formulas...
+		<br><br>
+		<math display="block">
+			<mrow>
+				<mtext>tan(&theta;)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mtext>opposite</mtext>
+					<mtext>adjacent</mtext>
+				</mfrac>
+				<mo>=</mo>
+				<mfrac>
+					<mtext>sin(&theta;)</mtext>
+					<mtext>cos(&theta;)</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
 
-Next we multiply both sides by 29 to get angle b on its own…
-<p>sin 40° / 14 * 29  = sin B</p>
-The sine of 40&deg; divided by 14 and multiplied by 29 equals 1.331...
-<p>1.331 = sin B</p>
-The sine of b equals 1.331. Now this is when arcsin is used. Arcsin is the reciprocal of sin where 1 is over the sin of B in this example…
-<p>∠B = arcsin(1.331)</p>
-This is where we run into an issue, the rule with arcsin is that x (the number in the parentheses) cannot be less than -1 and greater than 1. So for this problem, angle b is undefined; it's too large for a real number solution to the problem. 
-
-<h2>Cosine (Cos)</h2>
-Cosine is another trigonometry ratio that is commonly used to find angles and sides in a triangle like sine. But unlike cosine, it is calculated with the adjacent side divided by the hypotenuse instead of the opposite side…
-<p>Cos = Adjacent / Hypotenuse</p>
-<p>Sin = Opposite / Hypotenuse</p>
-
-<h2>The Law of Cosines</h2>
-The law of cosines is used to find any side in a triangle using the formulas…
-<p>c = &radic; (a&sup2; + b&sup2; - 2ab * cos(C))</p>
-<p>b = &radic; (a&sup2; + c&sup2; - 2ac * cos(B))</p>
-<p>a = &radic; (b&sup2; + c&sup2; - 2bc * cos(A))</p>
-The length of side c is equal to the square root of side a and b squared and added together minus twice the length of side a and b times the cosine of the opposite of angle c. (also as gamma but will be mentioned later). This may seem a lot for one side but an example would clear some things up…
-<img src="../Images/CoSiTa.img4.png" width=400 height=500>
-We can substitute some value in this problem into the law of cosines formula…
-<p>c = &radic; (32&sup2; + 21&sup2; - 2(32)(21) * cos(60&deg;))</p>
-<p>c = &radic; (1024 + 441 - 1344 * cos(60&deg;))</p>
-<p>c = &radic; (1465 - 1344 * 0.5)</p>
-<p>c = &radic; (1465 - 672)</p>
-<p>c = &radic; (793)</p>
-<p>c = 28.16</p>
-The length of side c is 28.16 (approximately), you would most definitely need a calculator to find side c using this formula.<br><br>
-The law of cosines can also be used to find sides a and b as well with different formulas…
-<p>a = &radic;(b&sup2; + c&sup2; - 2bc cos(A))</p>
-<p>a&sup2; = b&sup2; + c&sup2; - 2bc cos(A)</p>
-Lets use another example...<br>
-<img src="../Images/CoSiTa.img5.png" width=400 height=500>
-We can already substitute some values in…
-<p>a = &radic; 46&sup2; + 30&sup2; - (46*30*2)  cos(90°)</p>
-<p>a = &radic; 2116 + 900 - (46*30*2)  cos(90°)</p>
-<p>a = &radic; 3016 - (2760) *  cos(90°)</p>
-<p>a = &radic; 3016 - (2760) * 0</p>
-<p>a = &radic; 3016</p>
-<p>a =54.918</p>
-For side b...<br>
-<img src="../Images/CoSiTa.img6.png" width=400 height=500>
-The formula for finding side b…
-<p>b = &radic; a&sup2;+c&sup2;-2ac *cos(B)</p>
-<p>b = &radic;132&sup2; + 66&sup2; - (2*132*66) *cos(75°)</p>
-<p>b = &radic;17424 + 4356 - 17424 *cos(75°)</p>
-<p>The cosine of 75° is 0.2588<p>
-<p>b = &radic;17424+4356-17424*0.2588</p>
-<p>b = &radic;21780 - 4509.3312</p>
-<p>b = &radic;17270.6688</p>
-<p>b = 131.42</p>
-
-<h2>Tangent</h2>
-Tangent is another main trigonometry ratio. Its formula is the opposite side over the adjacent side…
-<p>Sin = opposite / hypotenuse</p>
-<p>Cos = adjacent / hypotenuse</p>
-<p>Tan = opposite / adjacent</p>
-Let's say that a triangle has two known sides, being the opposite and the adjacent.
-<p>Opposite = 12 in</p>
-<p>Adjacent = 8 in</p>
-Twelve over Eight is 1.5. <br><br>
-
-Tan also has other formulas...
-<p>Tan = opposite / adjacent = sin(θ) / cos(θ)</p>
-
-<h2>Cosine, Sin, Tan, Pi Chart</h2>
-<table>
-<tr>
-<th>Cosine(θ)</th>
-<th>Sine(θ)</th>
-<th>Tangent(θ)</th>
-<th>Angle(θ)</th>
-<th>Radians(θ)</th>
-</tr>
-<tr>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0&deg</td>
-<td>0</td>
-</tr>
-<tr>
-<td>&radic; 3 / 2</td>
-<td>&radic; 3 / 2</td>
-<td>1 / &radic; 3</td>
-<td>30&deg</td>
-<td>&pi; / 6</td>
-</tr>
-<tr>
-<td>&radic; 2 / 2</td>
-<td>1 / &radic;  2</td>
-<td>1 </td>
-<td>45&deg</td>
-<td>&pi; / 4</td>
-</tr>
-<tr>
-<td>1/2</td>
-<td>&radic; 3 / 2</td>
-<td>&radic; 3 </td>
-<td>60&deg</td>
-<td>&pi; / 3</td>
-</tr>
-<tr>
-<td>0</td>
-<td>1</td>
-<td>undefined</td>
-<td>90&deg</td>
-<td>&pi; / 2</td>
-</tr>
-<tr>
-<td>-1 / 2</td>
-<td>&radic; 3 / 2</td>
-<td>-&radic; 3</td>
-<td>120&deg</td>
-<td>2&pi; / 3</td>
-</tr>
-<tr>
-<td>- &radic; 3 / 2</td>
-<td>1 / 2</td>
-<td>-1 &radic; 3</td>
-<td>150&deg</td>
-<td>5&pi; / 6</td>
-</tr>
-<tr>
-<td>-1</td>
-<td>0</td>
-<td>0 &radic; 3</td>
-<td>180&deg</td>
-<td>&pi;</td>
-</tr>
-</table>
+		<h2>Cosine, Sin, Tan, Pi Chart</h2>
+		<table>
+		<tr>
+		<th>Cosine(θ)</th>
+		<th>Sine(θ)</th>
+		<th>Tangent(θ)</th>
+		<th>Angle(θ)</th>
+		<th>Radians(θ)</th>
+		</tr>
+		<tr>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0&deg</td>
+		<td>0</td>
+		</tr>
+		<tr>
+		<td>&radic; 3 / 2</td>
+		<td>&radic; 3 / 2</td>
+		<td>1 / &radic; 3</td>
+		<td>30&deg</td>
+		<td>&pi; / 6</td>
+		</tr>
+		<tr>
+		<td>&radic; 2 / 2</td>
+		<td>1 / &radic;  2</td>
+		<td>1 </td>
+		<td>45&deg</td>
+		<td>&pi; / 4</td>
+		</tr>
+		<tr>
+		<td>1/2</td>
+		<td>&radic; 3 / 2</td>
+		<td>&radic; 3 </td>
+		<td>60&deg</td>
+		<td>&pi; / 3</td>
+		</tr>
+		<tr>
+		<td>0</td>
+		<td>1</td>
+		<td>undefined</td>
+		<td>90&deg</td>
+		<td>&pi; / 2</td>
+		</tr>
+		<tr>
+		<td>-1 / 2</td>
+		<td>&radic; 3 / 2</td>
+		<td>-&radic; 3</td>
+		<td>120&deg</td>
+		<td>2&pi; / 3</td>
+		</tr>
+		<tr>
+		<td>- &radic; 3 / 2</td>
+		<td>1 / 2</td>
+		<td>-1 &radic; 3</td>
+		<td>150&deg</td>
+		<td>5&pi; / 6</td>
+		</tr>
+		<tr>
+		<td>-1</td>
+		<td>0</td>
+		<td>0 &radic; 3</td>
+		<td>180&deg</td>
+		<td>&pi;</td>
+		</tr>
+		</table>
 
 
 

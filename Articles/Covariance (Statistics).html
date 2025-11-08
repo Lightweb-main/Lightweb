@@ -1,16 +1,7 @@
-<!DOCTYPE html> <html>
+<!DOCTYPE html>
+<html>
 	<head>
 		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
-		 
-		
-		<style> 
-		
-		
-		
-		table{
-		width:  500px;
-		}
-		</style>
 	</head>
 	<body> 
 
@@ -22,10 +13,65 @@
 
 		<h2>Formula</h2>
 		The formula for finding the Covariance between two variables is…<br>
-
-		<p>Population Cov: <br>  Cov(x, y) = Σ(xi - x)(yi - y) / N</p>
-		<p>Sample Cov: <br> Cov(x, y) = Σ(xi - x)(yi - y) / n - 1</p>
-
+		<br><br>
+		<math display="block">
+			<mrow>
+				<mtext>Population: cov(x, y)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mrow>
+						<ms>&Sigma;</ms>
+						<ms>(</ms>
+						<msub>
+							<ms>x</ms>
+							<ms>i</ms>
+						</msub>
+						<mo>-</mo>
+						<ms>x</ms>
+						<ms>)</ms>
+						<ms>(</ms>
+						<msub>
+							<ms>y</ms>
+							<ms>i</ms>
+						</msub>
+						<mo>-</mo>
+						<ms>x</ms>
+						<ms>)</ms>
+					</mrow>
+					<mtext>N</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
+		<math display="block">
+			<mrow>
+				<mtext>Sample: cov(x, y)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mrow>
+						<ms>&Sigma;</ms>
+						<ms>(</ms>
+						<msub>
+							<ms>x</ms>
+							<ms>i</ms>
+						</msub>
+						<mo>-</mo>
+						<ms>x</ms>
+						<ms>)</ms>
+						<ms>(</ms>
+						<msub>
+							<ms>y</ms>
+							<ms>i</ms>
+						</msub>
+						<mo>-</mo>
+						<ms>x</ms>
+						<ms>)</ms>
+					</mrow>
+					<mtext>N - 1</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
 		<h2>Example</h2>
 		An example of finding between the covariance between two variables is this dataset…
 		
