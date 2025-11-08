@@ -135,11 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (timeType === 'militaryTime') {
         document.body.classList.add('militaryTime');
-      } else {
+      } else{
         document.body.classList.remove('militaryTime');
-      } else {
-		localStorage.setItem('timeType', '12-hour-clock')
-	  }
+      } 
 	  
 	  if (CalendarType === 'dashedCalendar') {
         document.body.classList.add('dashedCalendar');
@@ -346,6 +344,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
