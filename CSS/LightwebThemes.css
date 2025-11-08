@@ -190,8 +190,8 @@ font-weight: bold;
 border: 12px solid var(--border) !important;
 border-radius: 10px !important;
 text-decoration: none;
-border-color: var(--border);
-background-color: var(--border);
+border-color: var(--border) !important;
+background-color: var(--border) !important;
 }
 
  header {
@@ -201,6 +201,7 @@ background-color: var(--border);
   top: 18px;
   right: 18px;
  }
+
 
 
 
