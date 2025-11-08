@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.remove('dashedCalendar');
   document.body.classList.remove('InverseInversionOn');
   document.body.classList.remove('PC', 'Phone', 'Laptop');
-  document.body.classList.add('false');
       const theme = localStorage.getItem('theme');
       const timeType = localStorage.getItem('timeType');
 	  const DeviceType = localStorage.getItem('DeviceType');
@@ -343,6 +342,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
