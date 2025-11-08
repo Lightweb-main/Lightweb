@@ -129,19 +129,23 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.body.classList.add('squidGameScreen');
 	  } else if(theme == 'chaosScreen'){
 		document.body.classList.add('chaosScreen');  
+	  } else {
+		localStorage.setItem('theme', 'default')
 	  }
 
       if (timeType === 'militaryTime') {
         document.body.classList.add('militaryTime');
       } else {
         document.body.classList.remove('militaryTime');
-      }
+      } else {
+		localStorage.setItem('timeType', '12-hour-clock')
+	  }
 	  
 	  if (CalendarType === 'dashedCalendar') {
         document.body.classList.add('dashedCalendar');
       } else {
-        document.body.classList.remove('defaultCalendar');
-      }
+        document.body.classList.remove('dashedCalculator');
+      } 
 	  
 	  if (toggleImageInversion == 'imageInversionOn') {
         document.body.classList.add('imageInversionOn');
@@ -342,6 +346,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
