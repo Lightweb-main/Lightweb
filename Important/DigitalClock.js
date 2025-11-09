@@ -330,6 +330,23 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('keydown', event => {
+  if (event.key === "F12" || event.keyCode === 123) {
+    event.preventDefault();
+  }
+  if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'i') {
+    event.preventDefault();
+  }
+  if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'j') {
+    event.preventDefault();
+  }
+  if (event.ctrlKey && event.key.toLowerCase() === 'u') {
+    event.preventDefault();
+  }
+});
+
+
 
 
 
