@@ -304,6 +304,14 @@ window.addEventListener("DOMContentLoaded", () => {
 		DigitalCalendar.style.fontSize = "25px";
 		DigitalCalendar.style.borderRadius = "15px";
 		DigitalCalendar.style.textAlign = "center";
+
+		a.style.fontWeight = "bold";
+		a.style.border = "12px solid var(--border)";
+		a.style.borderRadius = "10px";
+		a.style.textDecoration = "none";
+		a.style.borderColor = "var(--border)";
+		a.style.backgroundColor = "var(--border)";
+		a.style.color = "var(--text)";
 	
 	if(window.location.pathname.includes("/Articles/")){
 		let linkText = document.createElement("h2");
@@ -345,6 +353,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
