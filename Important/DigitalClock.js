@@ -266,7 +266,7 @@ ImageInversionBtn.addEventListener('click', () => {
 
 
 function clearScreenType(){
-document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'squidGameScreen', 'chaosScreen');
+document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'squidGameScreen', 'chaosScreen');
 }
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
@@ -350,6 +350,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
