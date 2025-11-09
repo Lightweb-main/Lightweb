@@ -188,7 +188,7 @@ body {
 
 a{
 font-weight: bold;
-border: 12px solid var(--border);
+border: 12px solid;
 border-radius: 10px;
 text-decoration: none;
 border-color: var(--border);
@@ -206,38 +206,3 @@ a:hover{
   top: 18px;
   right: 18px;
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
