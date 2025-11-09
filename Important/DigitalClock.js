@@ -126,8 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	    clearScreenType();
 		document.body.classList.add('default');
 	  } else if(theme == 'squidGameScreen'){
+		  clearScreenType();
 		document.body.classList.add('squidGameScreen');
 	  } else if(theme == 'chaosScreen'){
+		clearScreenType();
 		document.body.classList.add('chaosScreen');  
 	  } else {
 		localStorage.setItem('theme', 'default')
@@ -148,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  if (toggleImageInversion == 'imageInversionOn') {
         document.body.classList.add('imageInversionOn');
       } else {
-	    document.body.classList.remove('imageInversionOff');
+	    document.body.classList.add('imageInversionOff');
 	  }
 	  
       const toggleDarkBtn = document.getElementById('screen-toggle');
@@ -345,6 +347,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
