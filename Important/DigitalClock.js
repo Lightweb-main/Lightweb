@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  if (CalendarType === 'dashedCalendar') {
         document.body.classList.add('dashedCalendar');
       } else {
-        document.body.classList.remove('dashedCalculator');
+        document.body.classList.remove('dashedCalendar');
       } 
 	  
 	  if (toggleImageInversion == 'imageInversionOn') {
@@ -345,6 +345,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
