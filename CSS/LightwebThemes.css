@@ -195,8 +195,11 @@ border-color: var(--border);
 background-color: var(--border);
 }
 
+
+
 a:hover{
 	color: red;
+	border-color: var(--border);
 }
 
  header {
@@ -206,3 +209,4 @@ a:hover{
   top: 18px;
   right: 18px;
  }
+
