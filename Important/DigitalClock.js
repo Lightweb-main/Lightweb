@@ -132,8 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		clearScreenType();
 		document.body.classList.add('chaosScreen');  
 	  } else {
-		localStorage.setItem('theme', 'default')
-	  }
+  		clearScreenType();
+  		document.body.classList.add('default');
+  		localStorage.setItem('theme', 'default');
+	 }
 
       if (timeType === 'militaryTime') {
         document.body.classList.add('militaryTime');
@@ -347,6 +349,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
