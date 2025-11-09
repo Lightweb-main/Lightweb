@@ -308,6 +308,13 @@ window.addEventListener("DOMContentLoaded", () => {
 		DigitalCalendar.style.fontSize = "25px";
 		DigitalCalendar.style.borderRadius = "15px";
 		DigitalCalendar.style.textAlign = "center";
+
+		document.querySelectorAll('a').forEach(link => {
+  			link.style.border = '12px solid var(--border)';
+ 			 link.style.backgroundColor = 'var(--border)';
+  			link.style.color = 'var(--text)';
+		});
+
 	
 	if(window.location.pathname.includes("/Articles/")){
 		let linkText = document.createElement("h2");
@@ -349,6 +356,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
