@@ -151,6 +151,7 @@ body.squidGameScreen{
   --DigitalClockBackground: #000000;
   --ImageInvertButton: #edf4ac;
   --ImageInvertTextColor: #000000;
+  --FontFamily: "Times New Roman", times, serif;
   --FontWeight: 400;
    text-shadow: none;
  
@@ -211,6 +212,7 @@ a:hover{
   top: 18px;
   right: 18px;
  }
+
 
 
 
