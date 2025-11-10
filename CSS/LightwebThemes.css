@@ -31,7 +31,7 @@ body.AnalogScreen::before{
     rgba(0, 0, 0, 0.3) 1px,
     transparent 4px,
     transparent 8px
-  );
+  ); 
   background-size: 100% 12px; 
   animation: scanlines-move 1s linear infinite;
   
@@ -211,6 +211,7 @@ a:hover{
   top: 18px;
   right: 18px;
  }
+
 
 
 
