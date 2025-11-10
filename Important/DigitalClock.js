@@ -45,6 +45,30 @@ if (
 }
 let faviconNum = 0
 setInterval(update, 100);
+function linkStyles() {
+  const testLink = document.querySelector('a');
+  if (!testLink) return;
+
+  const computed = window.getComputedStyle(testLink);
+  const borderColor = computed.borderColor;
+  const backgroundColor = computed.backgroundColor;
+
+  const isBroken =
+    borderColor === 'rgba(0, 0, 0, 0)' || backgroundColor === 'rgba(0, 0, 0, 0)' ||
+    borderColor === 'transparent' || backgroundColor === 'transparent';
+
+  if (isBroken) {
+    document.querySelectorAll('a').forEach(link => {
+      link.style.border = '12px solid var(--border)';
+      link.style.backgroundColor = 'var(--border)';
+      link.style.color = 'var(--text)';
+      link.style.textDecoration = 'none';
+      link.style.borderRadius = '10px';
+      link.style.fontWeight = 'bold';
+    });
+  }
+}
+
 
 function update() {
 	faviconNum += 1
@@ -137,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
   		localStorage.setItem('theme', 'default');
 	 }
 	 document.body.offsetHeight;
+	setTimeout(linkStyles, 50);
 
       if (timeType === 'militaryTime') {
         document.body.classList.add('militaryTime');
@@ -352,6 +377,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
