@@ -117,7 +117,13 @@ background: var(--ImageInvertButton);
   left: 50%;
 }
 
-
+body a{
+font-weight: bold;
+border-radius: 10px;
+border: 12px solid var(--border);
+text-decoration: none;
+background-color: var(--border);
+}
 
 .settingbutton1{
 margin: 0;
@@ -257,6 +263,7 @@ position: absolute;
 top: 48%;
 left: 63%;
 }
+
 
 
 
