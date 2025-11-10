@@ -132,13 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		clearScreenType();
 		document.body.classList.add('chaosScreen');  
 	  } else {
-		 setTimeout(() => {
   		clearScreenType();
   		document.body.classList.add('default');
   		localStorage.setItem('theme', 'default');
-		 }, 100);
 	 }
-	 
+	 document.body.offsetHeight;
 
       if (timeType === 'militaryTime') {
         document.body.classList.add('militaryTime');
@@ -312,6 +310,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		DigitalCalendar.style.borderRadius = "15px";
 		DigitalCalendar.style.textAlign = "center";
 
+
 	
 	if(window.location.pathname.includes("/Articles/")){
 		let linkText = document.createElement("h2");
@@ -353,6 +352,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
