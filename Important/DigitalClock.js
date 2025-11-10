@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  } else if(DeviceType == 'Laptop'){
 	  document.body.classList.add('Laptop');	
 	  }
-      if (theme === 'dark') {
+      /* if (theme === 'dark') {
 	    clearScreenType();
         document.body.classList.add('dark');
       } else if (theme === 'AnalogScreen') {
@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
   		localStorage.setItem('theme', 'default');
 		 }, 100);
 	 }
+	 */
 
       if (timeType === 'militaryTime') {
         document.body.classList.add('militaryTime');
@@ -352,6 +353,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
