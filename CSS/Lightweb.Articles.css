@@ -39,11 +39,7 @@ width: 250px;
 border: 4px solid var(--DigitalClockBackground);
 border-radius: 15px;
 }
-h1{
-text-align: center;
-font-size: 70px;
-font-weight: bold;
-}
+
 
 
 p{
@@ -60,6 +56,37 @@ margin-right: auto;
 
 a:hover{
 color: red;
+}
+
+/* Headings */
+h1 {
+	text-align: center;
+	font-size: 70px;
+	font-weight: bold;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+h4 {
+	text-decoration: underline;
+	font-size: 17px;
+}
+
+h5 {
+	text-decoration: underline;
+	font-size: 15px;
+}
+
+h6 {
+	font-size: 14px;
 }
 
 

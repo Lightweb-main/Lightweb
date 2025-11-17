@@ -175,6 +175,7 @@ p, a, h1, h2, h3, h4, h5, h6 {
   font-weight: var(--FontWeight);
   font-family: var(--FontFamily);
 }
+
 button{
 border-color: var(--border);
 background-color: var(--border);
@@ -211,6 +212,7 @@ a:hover{
   top: 18px;
   right: 18px;
  }
+
 
 
 
