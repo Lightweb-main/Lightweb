@@ -306,13 +306,13 @@ iconthingy2.rel = 'icon';
 iconthingy2.type = 'image/png'; 
 iconthingy2.href = 'Images/Lightweb.icon.png?v=' + faviconNum
 
-const html = `
+const htmlAdd = `
   <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
   <div id="DigitalCalendar">If you are seeing this, your calendar needs a pin or two.</div>
 `;
 
 const DigitalClockCalendarContainer = document.createElement('div');
-DigitalClockCalendarContainer.innerHTML = html;
+DigitalClockCalendarContainer.innerHTML = htmlAdd;
 document.body.appendChild(DigitalClockCalendarContainer);
 document.head.appendChild(iconthingy);
 
@@ -334,6 +334,13 @@ window.addEventListener("DOMContentLoaded", () => {
 		DigitalCalendar.style.fontSize = "25px";
 		DigitalCalendar.style.borderRadius = "15px";
 		DigitalCalendar.style.textAlign = "center";
+		
+		if(window.location.pathname.includes("/HTMLCSim")
+		   || window.location.pathname.includes("/HTMLCExercise")
+		){
+			DigitalCalendar.style.display = "none";
+			DigitalClock.style.display = "none";
+		}
 
 
 	
@@ -358,10 +365,75 @@ window.addEventListener("DOMContentLoaded", () => {
 		let LightwebVerificationHeader = document.createElement("header");
 		LightwebVerificationHeader.textContent = "Official Lightweb Site";
 		document.body.appendChild(LightwebVerificationHeader);
+	
+	}
+	
+	if(window.location.pathname.includes("/MainPages/")){
+	let lightwebCSS = document.createElement("link");
+	lightwebCSS.rel = "stylesheet";
+	lightwebCSS.href = "../CSS/Lightweb.css";
+	lightwebCSS.type = "text/css";
+	document.head.appendChild(lightwebCSS);
+	}
+	
+	if(window.location.pathname.includes("/Articles/")){
+	let lightwebArticlesCSS = document.createElement("link");
+	lightwebArticlesCSS.rel = "stylesheet";
+	lightwebArticlesCSS.href = "../CSS/LightwebArticles.css";
+	lightwebArticlesCSS.type = "text/css";
+	document.head.appendChild(lightwebArticlesCSS);
+	
+	let lightwebSpecialThemesCSS = document.createElement("link");
+	lightwebSpecialThemesCSS.rel = "stylesheet";
+	lightwebSpecialThemesCSS.href = "../CSS/SpecialLightwebThemes.css";
+	lightwebSpecialThemesCSS.type = "text/css";
+	document.head.appendChild(lightwebSpecialThemesCSS);
+	}
+	
+	if(window.location.pathname.includes("/Games%20&%20FunStuff/")){
+	let lightwebCSS2 = document.createElement("link");
+	lightwebCSS2.rel = "stylesheet";
+	lightwebCSS2.href = "../CSS/Lightweb.css";
+	lightwebCSS2.type = "text/css";
+	document.head.appendChild(lightwebCSS2);
+	}
+	
+	if(window.location.pathname.includes("/Simulations/")){
+	let lightwebCSS3 = document.createElement("link");
+	lightwebCSS3.rel = "stylesheet";
+	lightwebCSS3.href = "../CSS/Lightweb.css";
+	lightwebCSS3.type = "text/css";
+	document.head.appendChild(lightwebCSS3);
+	}
+	
+	if(window.location.pathname.includes("/HTML%20Course/")){
+		let lightwebDeviceOptimizationCSS = document.createElement("link");
+	lightwebDeviceOptimizationCSS.rel = "stylesheet";
+	lightwebDeviceOptimizationCSS.href = "../../CSS/LightwebDeviceOptimization.css";
+	lightwebDeviceOptimizationCSS.type = "text/css";
+	document.head.appendChild(lightwebDeviceOptimizationCSS);
+	
+		let lightwebThemesCSS = document.createElement("link");
+	lightwebThemesCSS.rel = "stylesheet";
+	lightwebThemesCSS.href = "../../CSS/LightwebThemes.css";
+	lightwebThemesCSS.type = "text/css";
+	document.head.appendChild(lightwebThemesCSS);
+	} else {
+	let lightwebDeviceOptimizationCSS = document.createElement("link");
+	lightwebDeviceOptimizationCSS.rel = "stylesheet";
+	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
+	lightwebDeviceOptimizationCSS.type = "text/css";
+	document.head.appendChild(lightwebDeviceOptimizationCSS);
+	
+	let lightwebThemesCSS = document.createElement("link");
+	lightwebThemesCSS.rel = "stylesheet";
+	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
+	lightwebThemesCSS.type = "text/css";
+	document.head.appendChild(lightwebThemesCSS);
 	}
 });
 
-
+/*
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
   if (event.key === "F12" || event.keyCode === 123) {
@@ -377,6 +449,8 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
+*/
 
 
 

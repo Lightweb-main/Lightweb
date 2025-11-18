@@ -35,7 +35,7 @@ window.onload = function () {
 	
 	placeFood();
 	document.addEventListener("keyup", changeDirection);
-	interval = setInterval(update, 125);
+	interval = setInterval(update, 135);
 }
 
 function update(){
@@ -190,5 +190,4 @@ function rightInputed(){
 		snakeSpeedY = 0;
 	}
 }
-
 

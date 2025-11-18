@@ -1,4 +1,4 @@
-@import url("LightwebThemes.css");
+
 
 body, textarea{
 font-size: 17px;
@@ -95,6 +95,5 @@ table, tr, td{
 course{
 font-size: 25px;
 position: absolute;
-bottom: 0px;
-left: 0px;
+top: 0%;
 }

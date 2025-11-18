@@ -1,5 +1,4 @@
-@import url("SpecialLightwebThemes.css");
-@import url("LightwebDeviceOptimization.css");
+
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
   20%, 22%, 24%, 55% { opacity: 0.95; }
@@ -152,7 +151,6 @@ body.squidGameScreen{
   --ImageInvertButton: #edf4ac;
   --ImageInvertTextColor: #000000;
   --FontFamily: "Times New Roman", times, serif;
-  --FontWeight: 400;
    text-shadow: none;
  
 }
@@ -172,14 +170,7 @@ table, tr, td, th{
 
 p, a, h1, h2, h3, h4, h5, h6 {
   color: var(--text);
-  font-weight: var(--FontWeight);
   font-family: var(--FontFamily);
-}
-
-h1 {
-	text-align: center;
-	font-size: 70px;
-	font-weight: bold;
 }
 
 button{
@@ -218,7 +209,6 @@ a:hover{
   top: 18px;
   right: 18px;
  }
-
 
 
 
