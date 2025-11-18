@@ -2,7 +2,6 @@ document.getElementById("resultButton").addEventListener("click", function () {
   const city = document.getElementById("inputCity").value;
   const apiKey = '6724f2d5e07375722cfcb71ecd81db7e'; 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-/* https://api.openweathermap.org/data/2.5/weather?q=Los%20Angeles&appid=6724f2d5e07375722cfcb71ecd81db7e&units=metric */
   fetch(url)
     .then(response => {
       if (!response.ok) throw new Error("City not found");
@@ -32,10 +31,10 @@ document.getElementById("resultButton").addEventListener("click", function () {
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Loose Clothing"
 	} else if(fahrenheit <= 75 && fahrenheit >= 65 && umbrellaNeeded == "No"){
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: T-shirt / Formal"
-	} else if(fahrenheit <= 64 && fahrenheit >= 55 && umbrellaNeeded == "No"){
+	} else if(fahrenheit <= 64 && fahrenheit >= 55){
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Light Jacket"
-	} else if(fahrenheit <= 54 && fahrenheit >= 32 && umbrellaNeeded == "No"){
-	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Thick Clothing"
+	} else if(fahrenheit <= 54 && fahrenheit >= 32){
+	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Thick Jacket / Clothing"
 	}
 	})
 	  
