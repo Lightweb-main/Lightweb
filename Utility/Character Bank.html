@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<head>
+  <title>Lightweb: Calculator</title>
+  <style>
+	#slidingCharacterBanks{
+	width: 100%;
+	border: 2px solid var(--border);
+	padding: 5px;
+	overflow: scroll;
+	}
+	.character {
+		width: 100%;
+		height: 300px;
+		border: 5px solid var(--border);
+		padding: 25px;
+		display: flex;
+		overflow-x: auto;
+		flex-columns: rows;
+		gap: 100px;
+	}
+	
+	.characterShow {
+		border: 5px solid var(--border);
+		width: 100px;
+	}
+	
+
+	
+	.copy{
+		width: 100px;
+	}
+
+	
+  </style>
+</head>
+<body>
+	<h1>Character Bank</h1>
+	<div id="slidingCharacterBanks">
+		<button onClick="switchSet(1)">Roman Alphabet</button>
+		<button onClick="switchSet(2)">Roman Numerals</button>
+		<button onClick="switchSet(3)">Greek Alphabet</button>
+	</div>
+	<div id="romanAlphabetSet">
+		<div class="character">
+			<div id="A roman">
+			<p class="characterShow">A</p>
+			<p class="characterShow">a</p>
+			<button class="copy" onClick=copy("A")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("a")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="B roman">
+			<p class="characterShow">B</p>
+			<p class="characterShow">b</p>
+			<button class="copy" onClick=copy("B")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("b")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="C roman">
+			<p class="characterShow">C</p>
+			<p class="characterShow">c</p>
+			<button class="copy" onClick=copy("C")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("c")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="D roman">
+			<p class="characterShow">D</p>
+			<p class="characterShow">d</p>
+			<button class="copy" onClick=copy("D")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("d")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="E roman">
+			<p class="characterShow">E</p>
+			<p class="characterShow">e</p>
+			<button class="copy" onClick=copy("E")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("e")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="F roman">
+			<p class="characterShow">F</p>
+			<p class="characterShow">f</p>
+			<button class="copy" onClick=copy("F")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("f")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="G roman">
+			<p class="characterShow">G</p>
+			<p class="characterShow">g</p>
+			<button class="copy" onClick=copy("G")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("g")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="H roman">
+			<p class="characterShow">H</p>
+			<p class="characterShow">h</p>
+			<button class="copy" onClick=copy("H")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("h")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="I roman">
+			<p class="characterShow">I</p>
+			<p class="characterShow">i</p>
+			<button class="copy" onClick=copy("I")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("i")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="J roman">
+			<p class="characterShow">J</p>
+			<p class="characterShow">j</p>
+			<button class="copy" onClick=copy("J")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("j")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="K roman">
+			<p class="characterShow">K</p>
+			<p class="characterShow">k</p>
+			<button class="copy" onClick=copy("K")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("k")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="L roman">
+			<p class="characterShow">L</p>
+			<p class="characterShow">l</p>
+			<button class="copy" onClick=copy("L")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("l")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="M roman">
+			<p class="characterShow">M</p>
+			<p class="characterShow">m</p>
+			<button class="copy" onClick=copy("M")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("m")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="N roman">
+			<p class="characterShow">N</p>
+			<p class="characterShow">n</p>
+			<button class="copy" onClick=copy("N")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("n")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="O roman">
+			<p class="characterShow">O</p>
+			<p class="characterShow">o</p>
+			<button class="copy" onClick=copy("O")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("o")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="P roman">
+			<p class="characterShow">P</p>
+			<p class="characterShow">p</p>
+			<button class="copy" onClick=copy("P")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("p")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="Q roman">
+			<p class="characterShow">Q</p>
+			<p class="characterShow">q</p>
+			<button class="copy" onClick=copy("Q")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("q")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="R roman">
+			<p class="characterShow">R</p>
+			<p class="characterShow">r</p>
+			<button class="copy" onClick=copy("R")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("r")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="S roman">
+			<p class="characterShow">S</p>
+			<p class="characterShow">s</p>
+			<button class="copy" onClick=copy("S")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("s")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="T roman">
+			<p class="characterShow">T</p>
+			<p class="characterShow">t</p>
+			<button class="copy" onClick=copy("T")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("t")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="U roman">
+			<p class="characterShow">U</p>
+			<p class="characterShow">u</p>
+			<button class="copy" onClick=copy("U")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("u")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="V roman">
+			<p class="characterShow">V</p>
+			<p class="characterShow">v</p>
+			<button class="copy" onClick=copy("V")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("v")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="W roman">
+			<p class="characterShow">W</p>
+			<p class="characterShow">w</p>
+			<button class="copy" onClick=copy("W")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("w")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="X roman">
+			<p class="characterShow">X</p>
+			<p class="characterShow">x</p>
+			<button class="copy" onClick=copy("X")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("x")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="Y roman">
+			<p class="characterShow">Y</p>
+			<p class="characterShow">y</p>
+			<button class="copy" onClick=copy("Y")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("y")>Copy to Clipboard (Lowercase)</button>
+			</div>
+			
+			<div id="Z roman">
+			<p class="characterShow">Z</p>
+			<p class="characterShow">z</p>
+			<button class="copy" onClick=copy("Z")>Copy to Clipboard (Uppercase)</button><br><br>
+			<button class="copy" onClick=copy("z")>Copy to Clipboard (Lowercase)</button>
+			</div>
+		</div>
+	</div>
+	<div id="romanNumeralsSet">
+		<div class="character">
+			<div id="1 roman">
+				<p class="characterShow">1</p>
+				<button class="copy" onClick=copy("1")>Copy to Clipboard</button>
+			</div>
+			<div id="2 roman">
+				<p class="characterShow">2</p>
+				<button class="copy" onClick=copy("2")>Copy to Clipboard</button>
+			</div>
+			<div id="3 roman">
+				<p class="characterShow">3</p>
+				<button class="copy" onClick=copy("3")>Copy to Clipboard</button>
+			</div>
+			<div id="4 roman">
+				<p class="characterShow">4</p>
+				<button class="copy" onClick=copy("4")>Copy to Clipboard</button>
+			</div>
+			<div id="5 roman">
+				<p class="characterShow">5</p>
+				<button class="copy" onClick=copy("5")>Copy to Clipboard</button>
+			</div>
+			<div id="6 roman">
+				<p class="characterShow">6</p>
+				<button class="copy" onClick=copy("6")>Copy to Clipboard</button>
+			</div>
+			<div id="7 roman">
+				<p class="characterShow">7</p>
+				<button class="copy" onClick=copy("7")>Copy to Clipboard</button>
+			</div>
+			<div id="8 roman">
+				<p class="characterShow">8</p>
+				<button class="copy" onClick=copy("8")>Copy to Clipboard</button>
+			</div>
+			<div id="9 roman">
+				<p class="characterShow">9</p>
+				<button class="copy" onClick=copy("9")>Copy to Clipboard</button>
+			</div>
+			<div id="0 roman">
+				<p class="characterShow">0</p>
+				<button class="copy" onClick=copy("0")>Copy to Clipboard</button>
+			</div>
+		</div>
+	</div>
+	<div id="greekAlphabetSet">
+		<div class="character">
+			<div id="A greek">
+				<p class="characterShow">α</p>
+				<p class="characterShow">A</p>
+				<button class="copy" onClick=copy("α")>Copy to Clipboard (Lowercase)</button><br><br>
+				<button class="copy" onClick=copy("A")>Copy to Clipboard (Uppercase)</button>
+			</div>
+		</div>
+	</div>
+	<button style="font-size: 25px;"onClick="exit()">Exit</button>
+	
+	
+	
+	<script>
+	function exit(){
+	document.location = "../MainPages/Utility.html"
+	}
+	</script>
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="Character%20Bank.js"></script>
+</body>
+</html>
