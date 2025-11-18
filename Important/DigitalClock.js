@@ -433,7 +433,6 @@ window.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
-/*
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
   if (event.key === "F12" || event.keyCode === 123) {
@@ -450,7 +449,7 @@ document.addEventListener('keydown', event => {
   }
 });
 
-*/
+
 
 
 
