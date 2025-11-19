@@ -1,24 +1,35 @@
 setInterval(update, 10);
 
-const romanAlphabetSet = document.getElementById("romanAlphabetSet");
+const latinAlphabetSet = document.getElementById("latinAlphabetSet");
 const romanNumeralsSet = document.getElementById("romanNumeralsSet");
 const greekAlphabetSet = document.getElementById("greekAlphabetSet");
+const spanishTonedAlphabetSet = document.getElementById("spanishTonedAlphabetSet");
+const mathSymbolsSet = document.getElementById("mathSymbolsSet");
 
 let set = 0;
 function update(){
-	romanAlphabetSet.style.display = "none";
-	romanNumeralsSet.style.display = "none";
+	latinAlphabetSet.style.display = "none";
+	HinduArabicNumberSet.style.display = "none";
 	greekAlphabetSet.style.display = "none";
+	spanishTonedAlphabetSet.style.display = "none";
+	mathSymbolsSet.style.display = "none";
+	
 	switch(set){
 		case 1:
-			romanAlphabetSet.style.display = "block";
+			latinAlphabetSet.style.display = "block";
 		break;
 		
 		case 2:
-			romanNumeralsSet.style.display = "block";
+			HinduArabicNumberSet.style.display = "block";
 		break;
 		case 3:
 			greekAlphabetSet.style.display = "block";
+		break;
+		case 4:
+			spanishTonedAlphabetSet.style.display = "block";
+		break;
+		case 5:
+			mathSymbolsSet.style.display = "block";
 		break;
 	}
 }
