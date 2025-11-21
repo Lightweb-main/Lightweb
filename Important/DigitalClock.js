@@ -418,7 +418,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	lightwebThemesCSS.href = "../../CSS/LightwebThemes.css";
 	lightwebThemesCSS.type = "text/css";
 	document.head.appendChild(lightwebThemesCSS);
-	} else if(window.location.pathname.includes("/index/")){
+	} else if(window.location.pathname.includes("/index")){
 		let lightwebDeviceOptimizationCSS = document.createElement("link");
 	lightwebDeviceOptimizationCSS.rel = "stylesheet";
 	lightwebDeviceOptimizationCSS.href = "CSS/LightwebDeviceOptimization.css";
@@ -461,3 +461,4 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
