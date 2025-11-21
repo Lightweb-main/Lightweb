@@ -195,6 +195,11 @@ background-color: var(--border);
 }
 
 
+body h1{
+	font-size: 70px;
+	text-align: center;
+	font-weight: bold;
+}
 
 
 a:hover{
@@ -209,6 +214,7 @@ a:hover{
   top: 18px;
   right: 18px;
  }
+
 
 
 
