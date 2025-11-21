@@ -374,6 +374,18 @@ window.addEventListener("DOMContentLoaded", () => {
 	lightwebCSS.href = "../CSS/Lightweb.css";
 	lightwebCSS.type = "text/css";
 	document.head.appendChild(lightwebCSS);
+
+	let lightwebDeviceOptimizationCSS = document.createElement("link");
+	lightwebDeviceOptimizationCSS.rel = "stylesheet";
+	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
+	lightwebDeviceOptimizationCSS.type = "text/css";
+	document.head.appendChild(lightwebDeviceOptimizationCSS);
+	
+	let lightwebThemesCSS = document.createElement("link");
+	lightwebThemesCSS.rel = "stylesheet";
+	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
+	lightwebThemesCSS.type = "text/css";
+	document.head.appendChild(lightwebThemesCSS);
 	}
 	
 	if(window.location.pathname.includes("/Articles/")){
@@ -388,6 +400,18 @@ window.addEventListener("DOMContentLoaded", () => {
 	lightwebSpecialThemesCSS.href = "../CSS/SpecialLightwebThemes.css";
 	lightwebSpecialThemesCSS.type = "text/css";
 	document.head.appendChild(lightwebSpecialThemesCSS);
+
+	let lightwebDeviceOptimizationCSS = document.createElement("link");
+	lightwebDeviceOptimizationCSS.rel = "stylesheet";
+	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
+	lightwebDeviceOptimizationCSS.type = "text/css";
+	document.head.appendChild(lightwebDeviceOptimizationCSS);
+	
+	let lightwebThemesCSS = document.createElement("link");
+	lightwebThemesCSS.rel = "stylesheet";
+	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
+	lightwebThemesCSS.type = "text/css";
+	document.head.appendChild(lightwebThemesCSS);
 	}
 	
 	if(window.location.pathname.includes("/Games%20&%20FunStuff/")){
@@ -396,6 +420,18 @@ window.addEventListener("DOMContentLoaded", () => {
 	lightwebCSS2.href = "../CSS/Lightweb.css";
 	lightwebCSS2.type = "text/css";
 	document.head.appendChild(lightwebCSS2);
+
+	let lightwebDeviceOptimizationCSS = document.createElement("link");
+	lightwebDeviceOptimizationCSS.rel = "stylesheet";
+	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
+	lightwebDeviceOptimizationCSS.type = "text/css";
+	document.head.appendChild(lightwebDeviceOptimizationCSS);
+	
+	let lightwebThemesCSS = document.createElement("link");
+	lightwebThemesCSS.rel = "stylesheet";
+	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
+	lightwebThemesCSS.type = "text/css";
+	document.head.appendChild(lightwebThemesCSS);
 	}
 	
 	if(window.location.pathname.includes("/Simulations/")){
@@ -404,6 +440,18 @@ window.addEventListener("DOMContentLoaded", () => {
 	lightwebCSS3.href = "../CSS/Lightweb.css";
 	lightwebCSS3.type = "text/css";
 	document.head.appendChild(lightwebCSS3);
+
+	let lightwebDeviceOptimizationCSS = document.createElement("link");
+	lightwebDeviceOptimizationCSS.rel = "stylesheet";
+	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
+	lightwebDeviceOptimizationCSS.type = "text/css";
+	document.head.appendChild(lightwebDeviceOptimizationCSS);
+	
+	let lightwebThemesCSS = document.createElement("link");
+	lightwebThemesCSS.rel = "stylesheet";
+	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
+	lightwebThemesCSS.type = "text/css";
+	document.head.appendChild(lightwebThemesCSS);
 	}
 	
 	if(window.location.pathname.includes("/HTML%20Course/")){
@@ -430,19 +478,8 @@ window.addEventListener("DOMContentLoaded", () => {
 	lightwebThemesCSS.href = "CSS/LightwebThemes.css";
 	lightwebThemesCSS.type = "text/css";
 	document.head.appendChild(lightwebThemesCSS);
-	} else {
-	let lightwebDeviceOptimizationCSS = document.createElement("link");
-	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
-	lightwebDeviceOptimizationCSS.type = "text/css";
-	document.head.appendChild(lightwebDeviceOptimizationCSS);
-	
-	let lightwebThemesCSS = document.createElement("link");
-	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
-	lightwebThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebThemesCSS);
 	}
+	
 });
 
 
@@ -461,4 +498,5 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
