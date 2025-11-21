@@ -418,7 +418,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	lightwebThemesCSS.href = "../../CSS/LightwebThemes.css";
 	lightwebThemesCSS.type = "text/css";
 	document.head.appendChild(lightwebThemesCSS);
-	} else if(window.location.pathname.includes("/index/"){
+	} else if(window.location.pathname.includes("/index/")){
 		let lightwebDeviceOptimizationCSS = document.createElement("link");
 	lightwebDeviceOptimizationCSS.rel = "stylesheet";
 	lightwebDeviceOptimizationCSS.href = "CSS/LightwebDeviceOptimization.css";
@@ -445,6 +445,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
+
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
   if (event.key === "F12" || event.keyCode === 123) {
@@ -460,62 +461,3 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
