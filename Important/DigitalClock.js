@@ -453,6 +453,26 @@ window.addEventListener("DOMContentLoaded", () => {
 	lightwebThemesCSS.type = "text/css";
 	document.head.appendChild(lightwebThemesCSS);
 	}
+
+	if(window.location.pathname.includes("/Utility/")){
+	let lightwebCSS3 = document.createElement("link");
+	lightwebCSS3.rel = "stylesheet";
+	lightwebCSS3.href = "../CSS/Lightweb.css";
+	lightwebCSS3.type = "text/css";
+	document.head.appendChild(lightwebCSS3);
+
+	let lightwebDeviceOptimizationCSS = document.createElement("link");
+	lightwebDeviceOptimizationCSS.rel = "stylesheet";
+	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
+	lightwebDeviceOptimizationCSS.type = "text/css";
+	document.head.appendChild(lightwebDeviceOptimizationCSS);
+	
+	let lightwebThemesCSS = document.createElement("link");
+	lightwebThemesCSS.rel = "stylesheet";
+	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
+	lightwebThemesCSS.type = "text/css";
+	document.head.appendChild(lightwebThemesCSS);
+	}
 	
 	if(window.location.pathname.includes("/HTML%20Course/")){
 		let lightwebDeviceOptimizationCSS = document.createElement("link");
@@ -498,5 +518,6 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
