@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lightweb: Statistic Calculator</title>
+  <style>
+		#oneVarCalc, #twoVarCalc {
+			width: 90%;
+			border: 4px solid var(--border);
+			padding: 45px;
+			display: flex;
+		}
+		
+		#arrayContents{
+			font-size: 21px;
+		}
+		
+		
+		
+		.section{
+			padding: 10px;
+			width: 70%;
+			border: 2px solid var(--border);
+			border-radius: 5px;
+		}
+		
+		.selectPopulationSample{
+			border-radius: 500px;
+			padding: 10px;
+			background-color: #ffffff;
+			border: 2px solid black;
+			cursor: pointer;
+		}
+		
+		#arrayDisplay, #arrayDisplay2Var{
+		overflow-y: scroll;
+		}
+		#selectData{
+			border: 3px solid var(--border);
+			width: 100%;
+			border-radius: 10px;
+			padding: 10px;
+			display: flex;
+			flex-columns: rows;
+			gap: 25px;
+		}
+		.varSelect{
+			padding: 15px;
+			font-size: 15px;
+			border-radius: 10px;
+		}
+  </style>
+</head>
+<body>
+	<h1>Statistic Calculator</h1>
+	<div id="selectData">
+		<button onClick="switchVarType(1)" class="varSelect">One-Variable</button>
+		<button onClick="switchVarType(2)" class="varSelect">Two-Varaible</button>
+	</div>
+	<div id="oneVarCalc">
+		<div class="section" id="arrayEditing">
+			<h2>Data Addition and Removal</h2>
+			<input id="arrayInput"><br><br>
+			<button id="addInput" onClick="addArrayInput()">Add Input</button><br><br>
+			<h2>Data Order Editing</h2>
+			<button id="sortData" onClick="sortDataNumericalOrder()">Sort Data By Numerical Order</button>
+			<h2>Data Set Properties</h2>
+			<button id="PopulationSelect" onClick=dataTypeSwitch("population"); class="selectPopulationSample">Population</button>
+			<button id="SampleSelect" onClick=dataTypeSwitch("sample"); class="selectPopulationSample">Sample</button>
+			<h2>Calculation</h2>
+			<button id="calculateData" onClick="calculate()">Calculate</button>
+			
+		</div>
+		
+		<div class="section" id="arrayDisplay">
+			<p id="arrayContents" >Data: []</p>
+		</div>
+		<div class="section" id="arrayCalculations">
+			<h2>Calculations</h2>
+			<p id="arrayMean">Data Mean: </p>
+			<p id="arrayMedian">Data Median: </p>
+			<p id="arrayMode">Data Mode: </p>
+			<p id="arrayMAD">Data Mean Absolute Deviation (MAD): </p>
+			<p id="arrayVariance">Data Variance: </p>
+			<p id="arrayStandardDeviation">Data Standard Deviation: </p>
+			<p id="arrayCoefficentOfVariation">Data Coefficent of Variation: </p>
+			<p id="arrayGeometricMean">Data Geometric Mean: </p>
+			<p id="arrayHarmonicMean">Data Harmonic Mean: </p>
+		</div>
+	</div>
+	<div id="twoVarCalc">
+		<div class="section" id="arrayEditing2Var">
+			<h2>Data Addition and Removal</h2>
+			<input id="arrayInput2Var"><br><br>
+			<button id="addInput2Var" onClick="addArrayInput2Var()">Add Input to Dataset 1</button><br><br>
+			<button id="addInput2VarSet2" onClick="addArrayInput2VarSet2()">Add Input to Dataset 2</button><br><br>
+			<h2>Calculation</h2>
+			<button id="calculateData2Var" onClick="calculateTwoVar()">Calculate</button>
+			
+		</div>
+		
+		<div class="section" id="arrayDisplay2Var">
+			<p id="twoVarDataset1Contents" >Dataset 1: []</p>
+			<p id="twoVarDataset2Contents" >Dataset 2: []</p>
+		</div>
+		<div class="section" id="arrayCalculations2Var">
+			<h2>Calculations</h2>
+			<p id="twoVarCorrelationCoefficentDisplay">Pearson Correlation Coefficent: </p>
+			
+		</div>
+	</div>
+	
+	<button style="font-size: 25px;"onClick="exit()">Exit</button>
+	
+	
+	
+	<script>
+	function exit(){
+	document.location = "../MainPages/Utility.html"
+	}
+	</script>
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="Statistic%20Calculator.js"></script>
+</body>
+</html>

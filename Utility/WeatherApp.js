@@ -10,7 +10,11 @@ document.getElementById("resultButton").addEventListener("click", function () {
     .then(data => {
       const fahrenheit = ((data.main.temp * 1.8) + 32).toFixed(1);
 	  const fahrenheit2 = ((data.main.feels_like * 1.8) + 32).toFixed(1);
+	  if(data.sys.country != undefined){
       document.querySelector("#result h2").textContent = `${data.name}, ${data.sys.country}`;
+	  } else {
+	  document.querySelector("#result h2").textContent = `${data.name}`;
+	  }
       document.querySelectorAll("#result p")[0].textContent = `Temperature: ${data.main.temp} °C OR ${fahrenheit}°F`;
 	  document.querySelectorAll("#result p")[1].textContent = `Feels Like: ${data.main.feels_like}°C OR ${fahrenheit2}°F`;
       document.querySelectorAll("#result p")[2].textContent = `Wind Speed: ${data.wind.speed} m/s`;
