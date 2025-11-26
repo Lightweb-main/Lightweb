@@ -127,7 +127,6 @@ if(data.length > 0 && dataType != ""){
 	
 	for(let i = 0; i < data.length; i++){
 		dataGeometricMean *= Number(data[i]);
-		console.log(dataGeometricMean);
 	}
 	
 	dataHarmonicMean = data.length;
@@ -243,9 +242,25 @@ const twoVarCalc = document.getElementById("twoVarCalc");
 const arrayInput2Var = document.getElementById("arrayInput2Var");
 const twoVarDataset1Contents = document.getElementById("twoVarDataset1Contents");
 const twoVarDataset2Contents = document.getElementById("twoVarDataset2Contents");
-const twoVarCorrelationCoefficentDisplay = document.getElementById("twoVarCorrelationCoefficentDisplay");
+const twoVarCorrelationCoefficientDisplay = document.getElementById("twoVarCorrelationCoefficientDisplay");
+const twoVarCovarianceDisplay = document.getElementById("twoVarCovarianceDisplay");
+const twoVarPopulationSelect = document.getElementById("twoVarPopulationSelect");
+const twoVarSampleSelect = document.getElementById("twoVarSampleSelect");
+
+
 let twoVarDataset1 = [];
 let twoVarDataset2 = [];
+let twoVarDataType = '';
+
+function twoVarDataTypeSwitch(input){
+	if(twoVarDataType == input){
+		twoVarDataType = "";
+	} else if(twoVarDataType != input){
+		twoVarDataType = input;
+	} else {
+		twoVarDataType = input;
+	}
+}
 
 function addArrayInput2Var(){
 	twoVarDataset1 = [];
@@ -296,52 +311,64 @@ function addArrayInput2VarSet2(){
 
 
 function calculateTwoVar(){
-if(twoVarDataset1.length == twoVarDataset2.length){
+if(twoVarDataset1.length == twoVarDataset2.length && twoVarDataType != ''){
 	let twoVarDataset1Mean = 0;
 	let twoVarDataset2Mean = 0;
-	let twoVarSumOfDataset1 = 0;
-	let twoVarSumOfDataset2 = 0;
-	let twoVarCorrelationCoefficentNumerator = 0;
-	let twoVarCorrelationCoefficentDenominator = 0;
-	let twoVarDataset1SummationMeanDifference = 0;
-	let twoVarDataset2SummationMeanDifference = 0;
-	let twoVarDataset1SummationMeanDifferenceSqaured = 0;
-	let twoVarDataset2SummationMeanDifferenceSqaured = 0;
-	
-	
+	let twoVarCorrelationCoefficient = 0;
+	let twoVarCorrelationCoefficientNumerator = 0;
+	let twoVarCorrelationCoefficientDenominator = 0;
+	let twoVarCorrelationCoefficentSumofSqauredMeanDifferenceDataset1 = 0;
+	let twoVarCorrelationCoefficentSumofSqauredMeanDifferenceDataset2 = 0;
+	let twoVarCovariance = 0;
 	
 	for(let i = 0; i < twoVarDataset1.length; i++){
-		twoVarSumOfDataset1 += Number(twoVarDataset1[i]);
+		twoVarDataset1Mean += twoVarDataset1[i];
+
+	}
+	for(let i = 0; i < twoVarDataset2.length; i++){
+		twoVarDataset2Mean += twoVarDataset2[i];
+	}
+	
+	twoVarDataset1Mean /= twoVarDataset1.length;
+	twoVarDataset2Mean /= twoVarDataset2.length;
+	
+	
+	for(let i = 0; i < twoVarDataset2.length; i++){
+		twoVarCorrelationCoefficientNumerator += (Number(twoVarDataset1[i]) - twoVarDataset1Mean) * (Number(twoVarDataset2[i]) - twoVarDataset2Mean);
+		twoVarCovariance += (Number(twoVarDataset1[i]) - twoVarDataset1Mean) * (Number(twoVarDataset2[i]) - twoVarDataset2Mean);
+		
+	}
+	
+	if(twoVarDataType == "population"){
+		twoVarCovariance /= twoVarDataset1.length;
+	} else if(twoVarDataType == "sample"){
+		twoVarCovariance /= twoVarDataset1.length - 1;
 	}
 	
 	for(let i = 0; i < twoVarDataset2.length; i++){
-		twoVarSumOfDataset2 += Number(twoVarDataset2[i]);
+		twoVarCorrelationCoefficentSumofSqauredMeanDifferenceDataset1 += (Number(twoVarDataset1[i]) - twoVarDataset1Mean) * (Number(twoVarDataset1[i]) - twoVarDataset1Mean);
+		twoVarCorrelationCoefficentSumofSqauredMeanDifferenceDataset2 += (Number(twoVarDataset2[i]) - twoVarDataset2Mean) * (Number(twoVarDataset2[i]) - twoVarDataset2Mean);
+		
 	}
 	
-	twoVarDataset1Mean = twoVarSumOfDataset1 / twoVarDataset1.length;
+	twoVarCorrelationCoefficientDenominator = twoVarCorrelationCoefficentSumofSqauredMeanDifferenceDataset1 * twoVarCorrelationCoefficentSumofSqauredMeanDifferenceDataset2;
+	twoVarCorrelationCoefficientDenominator = Math.sqrt(twoVarCorrelationCoefficientDenominator);
 	
-	twoVarDataset2Mean = twoVarSumOfDataset2 / twoVarDataset2.length;
+	twoVarCorrelationCoefficient = twoVarCorrelationCoefficientNumerator / twoVarCorrelationCoefficientDenominator;
 	
+	twoVarCorrelationCoefficientDisplay.textContent = `Data Correlation Coefficient: ${twoVarCorrelationCoefficient}`;
+	twoVarCovarianceDisplay.textContent = `Data Covariance: ${twoVarCovariance}`;
 	
-	for(let i = 0; i < twoVarDataset1.length; i++){
-		twoVarDataset1SummationMeanDifference = Number(twoVarDataset1[i]) - twoVarDataset1Mean;
-		twoVarDataset2SummationMeanDifference = Number(twoVarDataset2[i]) - twoVarDataset2Mean;
-		twoVarCorrelationCoefficentNumerator += twoVarDataset1SummationMeanDifference * twoVarDataset2SummationMeanDifference;
-	}
-	
-	for(let i = 0; i < twoVarDataset1.length; i++){
-		twoVarDataset1SummationMeanDifferenceSqaured = twoVarDataset1SummationMeanDifference * twoVarDataset1SummationMeanDifference;
-		twoVarDataset2SummationMeanDifferenceSqaured = twoVarDataset2SummationMeanDifference * twoVarDataset2SummationMeanDifference;
-		twoVarCorrelationCoefficentDenominator += twoVarDataset1SummationMeanDifferenceSqaured * twoVarDataset2SummationMeanDifferenceSqaured;
-	}
-	
-	twoVarCorrelationCoefficentDenominator = Math.sqrt(twoVarCorrelationCoefficentDenominator);
-	twoVarCorrelationCoefficent = twoVarCorrelationCoefficentNumerator / twoVarCorrelationCoefficentDenominator;
-	
-	
-	twoVarCorrelationCoefficentDisplay.textContent = `Pearson Correlation Coefficent: ${twoVarCorrelationCoefficent}`;
 } else {
-	alert("The datasets need to be equal in size");
+	
+	if(twoVarDataset1.length != twoVarDataset2.length){
+		alert("Both datasets need to be equal in size");
+	} 
+	
+	if(twoVarDataType == ''){
+		alert("Data Type needs to be initialized. (Population / Sample)");
+	}
+	
 }
 }
 
@@ -375,5 +402,17 @@ function update(){
 		SampleSelect.style.backgroundColor = "#ddaaaa";
 	} else {
 		SampleSelect.style.backgroundColor = "#ffffff";
+	}
+	
+	if(twoVarDataType == "population"){
+		twoVarPopulationSelect.style.backgroundColor = "#ddaaaa";
+	} else {
+		twoVarPopulationSelect.style.backgroundColor = "#ffffff";
+	}
+	
+	if(twoVarDataType == "sample"){
+		twoVarSampleSelect.style.backgroundColor = "#ddaaaa";
+	} else {
+		twoVarSampleSelect.style.backgroundColor = "#ffffff";
 	}
 }

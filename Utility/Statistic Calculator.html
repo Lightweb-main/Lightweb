@@ -93,6 +93,9 @@
 			<input id="arrayInput2Var"><br><br>
 			<button id="addInput2Var" onClick="addArrayInput2Var()">Add Input to Dataset 1</button><br><br>
 			<button id="addInput2VarSet2" onClick="addArrayInput2VarSet2()">Add Input to Dataset 2</button><br><br>
+			<h2>Data Set Properties</h2>
+			<button id="twoVarPopulationSelect" onClick=twoVarDataTypeSwitch("population"); class="selectPopulationSample">Population</button>
+			<button id="twoVarSampleSelect" onClick=twoVarDataTypeSwitch("sample"); class="selectPopulationSample">Sample</button>
 			<h2>Calculation</h2>
 			<button id="calculateData2Var" onClick="calculateTwoVar()">Calculate</button>
 			
@@ -102,9 +105,11 @@
 			<p id="twoVarDataset1Contents" >Dataset 1: []</p>
 			<p id="twoVarDataset2Contents" >Dataset 2: []</p>
 		</div>
+		
 		<div class="section" id="arrayCalculations2Var">
 			<h2>Calculations</h2>
-			<p id="twoVarCorrelationCoefficentDisplay">Pearson Correlation Coefficent: </p>
+			<p id="twoVarCovarianceDisplay">Data Covariance: </p>
+			<p id="twoVarCorrelationCoefficientDisplay">Data Correlation Coefficient: </p>
 			
 		</div>
 	</div>
