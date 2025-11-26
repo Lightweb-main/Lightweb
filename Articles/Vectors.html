@@ -1,0 +1,96 @@
+<!DOCTYPE html> <html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		
+	</head>
+	<body>
+		<h1>Vectors</h1>
+		<h2>Introduction </h2>
+		Vectors are lines that have a starting point and an ending point like this...
+		<img class="invert"  src="../Images/Vector.img1.png">
+		A vector has an <b>intial point</b> and an <b>terminal point</b> which can be called the head (terminal) or tail (initial) point of the vector...
+		<img class="invert"  src="../Images/Vector.img2.png">
+		A vector always has a specific <b>direction</b> and <b>magnitude</b>. The direction of a vector is where it's rotated at so a vector with a direction of 45&deg; would be facing in the upper right corner. The magnitude of a vector however is the length of the vector and is noted with |vertical lines| or with ||two vertical lines||...
+		<img class="invert" src="../Images/Vector.img3.png">
+		Basically the magnitude of a vector is the length of it. Vectors are noted with bolded lowercase letters like <b>a</b>, <b>b</b>, or <b>c</b> or they can be noted with the head and tail letters put together with an arrow above them. With vectors you can make multidimensional shapes...
+		<img src="../Images/Vector.img4.png">
+		<img src="../Images/Vector.img5.png">
+		Vectors don't just have intial/terminating points, direction, and magnitude. They also have <b>components</b> which are basically just the x and y coordinates of the terminal point...
+		<img src="../Images/Vector.img6.png">
+		These components are noted as a<sub>x</sub> which is the distance on the x-axis and a<sub>y</sub> which is the distance on the y-axis.
+		<h3>Calculating Magnitude</h3>
+		To calculate the magnitude of a vector, you would use an alternate version of the Pythagoraen theorem...
+		<p>|<b>a</b>| = &radic;(x<sup>2</sup>&nbsp;+&nbsp;y<sup>2</sup>)</p>
+		So for example...
+		<p><b>a</b> = &radic;(12, -7)</p>
+		<p><b>a</b> = &radic;(144 + 49)</p>
+		<p><b>a</b> = &radic;193</p>
+		So the magnitude of <b>a</b> is the square root of 193 which can be rounded to 14.
+		<h2>Elementary Operations on Vectors</h2>
+		With these components you can do basic operations on them. For addition you add the two vectors a<sub>x</sub> and a<sub>y</sub> together...
+		<img  src="../Images/Vector.img7.png">
+		<img  src="../Images/Vector.img8.png">
+		<img  src="../Images/Vector.img9.png">
+		<img  src="../Images/Vector.img10.png">
+		The summation of <b>a</b> and <b>b</b> is (21, 0)...
+		<img  src="../Images/Vector.img11.png">
+		You can also subtract vectors by reversing the signs of the second vector then add them...
+		<p><b>a</b> = (3, -6)</p>
+		<p><b>b</b> = (-6, 8)</p><br><br><br>
+		<p><b>a</b> = (3, -6)</p>
+		<p><b>b</b> = (6, -8)</p><br><br><br>
+		<p><b>c</b> = (3 + 6, -6 - 8)</p>
+		<p><b>c</b> = (9, -14)</p>
+		<h2>Multiplying Vectors</h2>
+		This is where the parallels between vectors and numbers end, unlike numbers vectors can be multiplied two ways, each way giving either a <b>scalar</b> or a <b>vector</b>. The difference between <mark>a scalar is a number that <b>only has magnitude</b>, a vector has a direction <b>and</b> a magnitude</mark>.
+		<h3>Vector x Scalar</h3>
+		To multiply a vector by a scalar (a number), you multiply the x and y components of the vector by the scalar...
+		<p><b>a</b> = (5, 3)</p>
+		<p>5<b>a</b> = (5 * 5, 3 * 5)</p>
+		<p>5<b>a</b> = (25, 15)</p>
+		The vector is (25, 15) with the same direction. <mark>Multiplying a vector by a scalar doesn't change the angle of it.</mark>
+		<h3>Vector x Vector</h3>
+		There are two ways to multiply a vector by a vector. <mark>You can find the <b>Dot Product</b> which gives a scalar or the <b>Cross Product</b> which gives a vector</mark>.
+		<h3>Dot Product</h3>
+		To find the dot product of vectors, you can either multiply the magnitude of vector <b>a</b> with the magnitude of vector <b>b</b> and with the cosine of &theta;. Or you can multiply a<sub>x</sub> with b<sub>x</sub> plus a<sub>y</sub> with b<sub>y</sub>...
+		<p><b>a</b> = (7, 12)</p>
+		<p><b>b</b> = (8, 10)</p>
+		<p><b>a</b> <span style="font-size: 19px;">&dot;</span> <b>b</b> = ???</p>
+		<p style="font-size: 16px;">Dot Products are noted with a dot in the center. Be VERY careful with this notation</p>
+		<p><b>a</b> <span style="font-size: 19px;">&dot;</span> <b>b</b> = 7 * 8 + 12 * 10</p>
+		<p><b>a</b> <span style="font-size: 19px;">&dot;</span> <b>b</b> = 56 + 120 = 176</p><br><br><br>
+		<p>|a| * |b| * cos(&theta;)</p>
+		<p>&radic;193 * &radic;164 * cos(8.406&deg;)</p>
+		<p>13.892 * 12.806 * 0.989 = 175.9 ≈ 176</p>
+		<p style="font-size: 16px">I recommend using the first method since the second one uses cosine, a trig function that can only be calculated using a calculator.</p>
+		<h3>Cross Product</h3>
+		To find the cross product of vectors, multiply the magnitude of all the vectors times the sine of &theta; times the unit vector of both vector <b>a</b> and <b>b</b>...
+		<p>|<b>a</b>| * |<b>b</b>| * sin(&theta;) * n</p>
+		Or for a way more simple approach...
+		<p><b>c</b><sub>x</sub> = <b>a</b><sub>y</sub><b>b</b><sub>z</sub> - <b>a</b><sub>z</sub><b>b</b><sub>y</sub></p>
+		<p><b>c</b><sub>y</sub> = <b>a</b><sub>z</sub><b>b</b><sub>x</sub> - <b>a</b><sub>x</sub><b>b</b><sub>z</sub></p>
+		<p><b>c</b><sub>z</sub> = <b>a</b><sub>x</sub><b>b</b><sub>y</sub> - <b>a</b><sub>y</sub><b>b</b><sub>x</sub></p>
+		For both methods, 3 dimensions are used to calculate...
+		<p><b>a</b> = (1, 6, 3)</p>
+		<p><b>b</b> = (3, 2, 4)</p>
+		<p><b>c</b><sub>x</sub> =  6(4) - 3(2)</p>
+		<p><b>c</b><sub>y</sub> =  3(3) - 1(4) </p>
+		<p><b>c</b><sub>z</sub> =  1(2) - 6(3)</p><br><br><br>
+		<p><b>c</b><sub>x</sub> =  24 - 6 = 18</p>
+		<p><b>c</b><sub>y</sub> =  9 - 4 = 5</p>
+		<p><b>c</b><sub>z</sub> =  2 - 18 = -16</p><br>
+		<p><b>c</b> = (18, 5, -16)</p>
+		<h3>3D Vectors</h3>
+		Vectors can also have three dimensions...
+		<p><b>a</b> = (1, 2, 3)</p>
+		With 3D vectors, calculations will change...
+		<p>|<b>a</b>| = &radic;(a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup>)</p>
+		<p>ba = b(a<sub>x</sub>, a<sub>y</sub>, a<sub>z</sub>)</p>
+		<p>a&nbsp;&dot;&nbsp;b =&nbsp; a<sub>x</sub>b<sub>x</sub>&nbsp;+&nbsp;a<sub>y</sub>b<sub>y</sub>&nbsp;+&nbsp;a<sub>z</sub>b<sub>z</sub></p>
+ <script src="../Important/DigitalClock.js"></script>
+	</body>
+
+</html>
+
+
+
