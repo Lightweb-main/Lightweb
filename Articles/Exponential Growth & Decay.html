@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.articles.css">
+		<link rel="stylesheet" href="../CSS/DigitalClock.css">
+		
+		<style>
+		table, tr, td{
+		border: 2px solid black;
+		font-size: 25;
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		}
+		table{
+		width:  500px;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>Exponential Growth and Decay</h1>
+		<h2>Introduction</h2>
+Exponential growth is growth that increases over time like linear growth. But unlike linear growth, exponential growth slope (rate of change) changes over time, instead of being one straight line, the line instead curves upwards as the x coordinate increases. Examples of exponential growth are bacterial growth or the increase in a town's population over time…
+<p>City In 2010: 14M
+<br><br>City In 2015: 16M
+<br><br>City In 2020: ???</p>
+These are hypothetical numbers, not actual recordings in population.
+The population growth is currently unknown as a place's population exponentially grows over time.
+<p>y(t) = Ae<sup>kt</sup></p>
+<p style="font-size: 15">This is the formula for estimating the population of New York in 2020 by using the values from 2010 to 2015.
+<br>y(t) represents the final value of the multiplication
+<br> A represents the initial population in this case 14 million.
+<br>E is Euler’s Number which is approximately 2.178 and the base for the natural logarithm
+<br>K represents the growth/decay rate, if K > 0 then it is exponential growth, if K < 0 then it is exponential decay.
+<br style="font-size: 15">T represents the amount of time between the earliest date (2010) and the latest date (2020).
+Remember that e is exponentially increasing or decreasing, it’s not a times e to the power of k times t.</p>
+Exponential Decay is the opposite of exponential growth where an amount exponentially decreases over time…
+Bacteria In Death Phase
+<p>1H: 12K
+<br><br>2H: 10.8K
+<br><br>4H: ???</p>
+To calculate the two missing values in both of these problems we would have to use the formula Ae to the power of kt. Let's solve the City population problem first. We can see that in 2010, the city’s population was 14 million and five years later the population grew from 14 million to 16 million. We can replace A from the formula with 14…
+
+<p>14e<sup>kt</sup></p>
+Why 14 and not 14,000,000? Since numbers beyond the thousands are too big to calculate properly, it’s highly recommended just to put the number and not the extra zeros. Also no matter if you put the extra zeros or not, the answers are the same.
+
+Since e in this equation is approximately 2.718, there is no need to calculate it since we already know its value. Next step is to calculate the natural logarithm of the second number divided by the first number. We can see that the second number is 16 and the first is 14 (from the last step). Now by calculating the natural logarithm of 16/14, it is approximately…
+<p>0.134</p>
+For approximation, I recommend to take the first three digits behind the zero, if the third digit is bigger than 5, round up.
+Now divide by the amount of time that they are apart from each other…
+<p>0.134 / 5 Years
+<br><br>0.134 / 5 = 0.0267
+<br><br>0.0267 = k</p>
+Now that we have found the value of k, we can find the value of t which is the difference in time between the unknown value and the first known value…
+<p>2020 - 2010 = 10
+10 = t</p>
+The unit in time doesn’t matter, just subtract the first number from the third, unknown value that you are trying to figure out.
+<p>14e<sup>0.0267 * 10</sup>
+<br><br>14e0.267 ≈ 18.285 ≈ 18.3 ≈ 18</p>
+The final city population in 2020 is 18 million (over 18 million if you don’t consider the estimation)...
+
+<p>A = Initial Number = 14
+<br><br>e = Euler’s Number ≅ 2.718
+<br><br>k = ln(second number / Initial Number) / (Second Time - First Time) = ln(16/14) / 5 = 0.0267
+<br><br>t = Third Time - First Time = 2020 - 2010 = 10</p>
+Putting Everything together.
+<p>14e<sup>0.0267 * 10</sup>
+14e0.267 ≅ 18</p>
+Now with this new formula, we can find the answer to the exponential decay problem…
+<p>12e</p>
+12 is the initial number. 10.8 is the second number.
+<p>ln(10.8/12) = -0.105 / 1 = -0.105
+<br><br>You would have to use an online or physical calculator.
+<br><br>Also the divisor is 1 because the time difference is 1.
+<br><br>12e<sup>-0.105 * 10</sup>
+<br><br>12e<sup>-1.05</sup> = 4.199 ≈ 4.2
+4.2</p>
+
+
+The exponential growth/decay rate can also be solved by another formula which is this…
+<p>f(x) = a(1 + r)<sup>x</sup>
+<br><br>f(x) represents the exponential growth rate function
+<br><br>a represents the initial number
+<br><br>r represents the growth rate,
+<br><br>x represents the time intervals.</p>
+Let's say that the value that we are solving is the exponential growth/decay rate of two dates and numbers…
+<p>Building a Skyscraper
+<br><br>1986: 3ft
+<br><br>1992: 237ft</p>
+We can tell immediately that this problem is an exponential growth equation since the later date contains a larger number. We can already substitute a for 3ft…
+<p>3(1 + r)<sup>x</sup></p>
+Now what makes this formula drastically different from the general formula a times e to the power of kt, there are two separate formulas, first is the one above which is another way to figure out an unknown value, another is to find the growth rate of an exponential growth/decay problem…
+<p>r = (Last Value / First Value)<sup>(1/x)</sup></p>
+We can immediately figure out the last value and the first value by looking at the equation, we can see that the first value is 3 and the other is 237…
+<p>r = (237 / 3)<sup>(1/x)</sup></p>
+Now x represents the time difference between the ending and the first value in this problem. The time difference is 6 years…
+<p>r = (237 / 3)<sup>(⅙)</sup></p>
+Now we can calculate the growth rate of this problem…
+<p>237 / 3 = 79
+<br><br>r = 79<sup>1/6</sup> 
+<br><br>79 to the power of ⅙ is approximately 2.071
+<br><br>2.071 - 1 = 1.071</p>
+Remember to subtract one from the exponentiation result. If you don’t do this, then expect an answer that is either way lower or higher than your last value.
+<p>r = 1.071 or 107.1%</p>
+You can multiply the final result by 100 to show it as a percentage increase
+Now that we found the value of r, we can substitute the growth rate as a decimal…
+<p>3(1 + 1.071)<sup>x</sup></p>
+X equals 6 since the time difference is 6 years.
+<p>3(2.071)<sup>6</sup> = 236.7</p>
+Remember that an answer is always not an exact whole number, but if we can round it to the nearest whole number that is the last value in this problem 237, we are correct.
+<p>236.7 ≈ 237</p>
+It’s very close to 237 which means that we are correct, of course you can use a calculator to further confirm that you’re right.
+Now the last formula that can be used to solve exponential growth or decay is this…
+<p>ab<sup>x</sup>
+<br><br>A represents the initial number 
+<br><br>B represents the growth rate
+<br><br>X represents the time intervals.</p>
+Let's say that a pond that has been recently populated with algae has had an algal bloom…
+<p>Algal Bloom
+<br><br>1900: 100 types of algae
+<br><br>1902: 3,280 types of algae</p>
+We can already see that a can be substituted with 100…
+<p>100b<sup>x</sup></p>
+We now say that the final value is equal to this…
+<p>3,280 = 100b<sup>x</sup></p>
+We divide 3,280 by 100
+<p>32.8 = b<sup>x</sup></p>
+X equals 2 because the time difference between the two values is 2 years.
+<p>32.8 = b<sup>2</sup></p>
+Now we cancel out the exponentiation with b by square rooting both numbers.
+<p>&radic;32.8 = b</p>
+<p>5.727 = b</p>
+<p><p>32.8 rooted is approximately 5.727, not exactly.</p>
+Now we can put this value back into the function
+<p>100(5.727)2 = 3279.9 ≈ 3280</p>
+Since the number is very close to 3280, it is correct.
+
+
+
+
+		<h2>Done? Here are other Links</h2>
+		<a href="../MainPages/Lightweb%20MainPage.html">Back to Main Page</a><br><br>
+		<a href="../MainPages/Informational.html">Back to Informational</a>
+
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div><div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
+ <script src="../CSS/DigitalClock.js"></script>
+	</body>
+</html>

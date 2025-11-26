@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.articles.css">
+		<link rel="stylesheet" href="../CSS/DigitalClock.css">
+		
+	<style>
+	body.dark img {
+    filter: invert(1.1) ;
+}
+	</style>
+	</head>
+	<body>	
+		<h1>Box Plots</h1>
+		<h2>Introduction</h2>
+Box plots are graphical images that take data to show its distribution among its values. A box plot has five elements, the minimum, the lower quartile, the median, the upper quartile, and the maximum. All of these values help create a box plot that looks like this…
+<img src='../Images/BoxPlots.img1.png'>
+<h2>Median</h2>
+The median is the line in the middle of the box…
+<img src='../Images/BoxPlots.img2.png'>
+The median of this box plot is 5. The median is the center number in the set of numbers but sometimes the median is not in the middle and is placed to the left or right, towards the quartiles.
+<img src='../Images/BoxPlots.img3.png'>
+<h2>Minimum</h2>
+The minimum is the straight line on the left of the box plot, it’s the smallest number in the data (set of numbers).
+<img src='../Images/BoxPlots.img4.png'>
+<h2>Lower Quartile</h2>
+The lower quartile is the number where 25% of the numbers are smaller than. 75% of the values are above the lower quartile…
+<img src='../Images/BoxPlots.img5.png'>
+<h2>Upper Quartile</h2>
+The upper quartile is the number where 75% of the numbers are smaller than. Only a quarter of the values are bigger than the upper quartile…
+<img src='../Images/BoxPlots.img6.png'>
+<h2>Maximum</h2>
+The maximum is the biggest number in the set of numbers. All numbers are below it…
+<img src='../Images/BoxPlots.img7.png'>
+Now that all the elements are known. We can start plotting a set of numbers like this one…
+<p>1, 1, 2, 3, 5, 7, 10, 12</p>
+We can see the smallest and biggest numbers which are 1 and 12…
+Now to find the lower and upper quartiles, we can use a formula that can pinpoint the value that can be those values…
+<img src='../Images/BoxPlots.img8.png'>
+<h2>Lower and Upper Quartile Formulas</h2>
+<p>L.Q = n + 14th term</p>
+<p>U.Q = 3 *n + 14th term</p>
+<p style='font-size: 16;'>n is the amount of numbers (NOT THE SUM OF NUMBERS)</p>
+In the example there are 8 numbers...
+<p>L.Q = 8 + 14 = 9/4 = 2.25th term - 3rd term</p>
+<p>U.Q = 3 * 8 + 14  = 27/4 = 6.75th term - 7th term</p>
+<p style='font-size: 16;'>You always round up when you get a decimal to find the lower and upper quartile</p>
+The Lower Quartile is the 3rd number and the Upper Quartile is the 7th term…
+<img src='../Images/BoxPlots.img9.png'>
+The median can be found by adding the two numbers in the middle since the amount of numbers is even…
+<p>3 + 5 = 8</p>
+Then we divide the sum by 2.
+<p>8/2 = 4</p>
+The median is 4...
+<img src='../Images/BoxPlots.img10.png'>
+And the box plot is complete.
+
+		<h2>Done? Here are other Links</h2>
+		<a href="../MainPages/Lightweb%20MainPage.html">Back to Main Page</a><br><br>
+		<a href="../MainPages/Informational.html">Back to Informational</a>
+		
+
+<div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div><div id="DigitalCalendar">If you are seeing this, your calender needs a pin or two.</div>
+ <script src="../CSS/DigitalClock.js"></script>
+	</body>
+</html>
