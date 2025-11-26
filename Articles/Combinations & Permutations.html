@@ -1,0 +1,215 @@
+<!DOCTYPE html> <html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		 	
+	</head>
+	<body> 
+	<h1>Combinations & Permutations</h1>
+	<h2>Introduction</h2>
+	Combinations and Permutations are both used to quantity the amount of sequences that can be done with <b>n</b> items.
+	<h2>Combinations vs Permutations</h2>
+	The two terms, "Combinations" and "Permutations" are different. Both are seperated <b>if the order of the sequence matters</b>. For example, putting the same books on a shelf randomly wouldn't include order since the bookshelf still has the same books, this is a combination which ignores order. Permutation is different, it takes into account of order, for example think of a lock that has the code of 12-24-54. Now the order matters since 24-12-54 or 54-12-24 both don't work, onlu 12-24-54 can.
+	<h2>Repetition</h2>
+	Repeititon really makes a difference into finding the total amount of combinations/permutations. For example, in a race, only one person can be 1st, 2nd, and 3rd, this is where repetition isn't allowed, however if repetition was allowed, two or more people can be 1st, 2nd, 3rd, and so on. Formulas may change with the addition of repetition.
+	<h2>Calculating Permutations</h2>
+	<h3>With Repetition</h3>
+	The formula to find the total amount of permutations with repetition is...<br><br><br><br>
+	<math display="block">
+	<mrow>
+		<msup><ms>n</ms><ms>r</ms></msup>
+	</mrow>
+	</math>
+	This basically means that the total amount of permutatons without repeititon is the amount of items by itself times the amount of times we would have to put in an item, so for example...
+	<p>The total amount of lock combinations</p>
+	<p>Range = 0 to 20</p>
+	<p>Total Amount of Numbers chosen = 3</p>
+	<p>20 * 20 * 20</p>
+	<p>400 * 20</p>
+	<p>8000</p>
+	This means that a lock combination with three numbers up to 20 IN ORDER WITH REPETITION would means that there are 8,000 total permutations.
+	<h3>Without Repetition</h3>
+	To find the total amount of permutations without repetition is...<br><br><br><br>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>n!</mtext>
+			<mtext>(n - r)!</mtext>
+		</mfrac>
+	</mrow>
+	</math>
+	In this formula we would have to use factorials in order to find the total amount of factorials. Since we are removing the choices each time we use them, we would have to subtract n by r at the bottom of the fraction to eliminate them. For example...
+	<p>A game of Musical Chairs</p>
+    <p>Starting Amount of Chairs = 9</p>
+	<p>The first five people to be out are eliminated</p>
+	<p>let n = 9 and r = 5</p>
+	<br><br><br><br>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>9!</mtext>
+			<mtext>(9 - 5)!</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>9!</mtext>
+			<mtext>4!</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mn>9!</mn>
+			<mn>4!</mn>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mn>362880</mn>
+			<mn>24</mn>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mn>362880</mn>
+			<mn>24</mn>
+		</mfrac>
+		<ms>=&nbsp;</ms>
+		<mn>15120</mn>
+	</mrow>
+	</math><br><br><br><br>
+The total amount of permutations from a game of musical chairs with 9 chairs starting and with the first five people to be out are eliminated is 15,120.
+<h2>Calculating Combination</h2>
+<h3>Without Repetition</h3>
+To calculate the total amount of combinations without repetition is...
+<br><br><br><br>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>n!</mtext>
+			<mtext>r!(n - r)!</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>
+The extra r! at the bottom of the fraction is due to the fact that when order doesn't matter, there aren't as much combinations as permutations. Heres an example...
+<p>A bingo game is being hosted</p>
+<p>A 3x3 grid is given to everyone participating</p>
+<p>Numbers can go up to 30</p>
+<p>let n = 30, r = 9</p>
+<br><br><br><br>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>30!</mtext>
+			<mtext>9!(30 - 9)!</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>	
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>30!</mtext>
+			<mtext>9!21!</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>	
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>265,252,859,⁣812,⁣191,⁣058,⁣636,⁣308,480,⁣000,000</mtext>
+			<mtext>362880 * 51,090,⁣942,171,⁣709,440,000</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>	
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>265,252,859,⁣812,⁣191,⁣058,⁣636,⁣308,480,⁣000,000</mtext>
+			<mtext>18,537,017,358,640,000,000,000</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>	
+		<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>265,252,859,⁣812,⁣191,⁣058,⁣636,⁣308,480,⁣000,000</mtext>
+			<mtext>18,537,017,358,640,000,000,000</mtext>
+		</mfrac>
+		<ms>=&nbsp;</ms>
+		<mn>14312</mn>
+	</mrow>
+	</math><br><br><br><br>
+The total amount of combinations is 14312.
+	<h3>With Repetition</h3>
+	To calculate the total amount of combinations with repetition, use the formula...
+	<br><br><br><br>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>(r + n - 1)!</mtext>
+			<mtext>r!(n - 1)!</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>	
+	For example...
+	<p>A dice is rolled 5 times</p>
+	<p>The dice has numbers from 1 to 12</p>
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>(5 + 12 - 1)!</mtext>
+			<mtext>5!(12 - 1)!</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>	
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>16!</mtext>
+			<mtext>5!11!</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>	
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>20922789888000</mtext>
+			<mtext>120 * 39916800</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>	
+	<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>20922789888000</mtext>
+			<mtext>4790016000</mtext>
+		</mfrac>
+	</mrow>
+	</math><br><br><br><br>	
+		<math display="block">
+	<mrow>
+		<mfrac>
+			<mtext>20922789888000</mtext>
+			<mtext>4790016000</mtext>
+		</mfrac>
+		<ms>=&nbsp;</ms>
+		<mn>4368</mn>
+	</mrow>
+	</math><br><br><br><br>
+	The total amount of combinations with repetition for this 12-sided dice that is rolled 5 times is 14312.
+
+		
+		
+
+ <script src="../Important/DigitalClock.js"></script>
+
+	</body>
+
+</html>

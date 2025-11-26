@@ -1,0 +1,114 @@
+<!DOCTYPE html> <html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		 
+	
+	
+	
+		
+	</head>
+	<body> 
+	<h1>Matrices (Math)</h1>
+	<h2>Introduction</h2>
+	Matrices (Singular: Matrix) in mathematics are arrays of numbers that are arranged in rows and columns…
+	<img src='../Images/MatrMa.img1.png'>
+	Each matrix has its own dimensions. Its dimensions is the amount of rows and columns it has, so a matrix with four numbers can be 2x2 (2 by 2)...
+	<img src='../Images/MatrMa.img2.png'>
+	The bigger the dimensions, the more numbers are inside the matrix.
+	<br><br>
+	Matrices are commonly used to contain multiple numbers. Every number in a matrix is called an element. Each matrix is usually shown with a capital letter like “A” or “B”. Each element is shown as a lowercase letter like “a” or “b” with a subscript with the row and the column…
+	<img src='../Images/MatrMa.img3.png' width=900 height=300>
+	<h2>Identity Matrix</h2>
+	The Identity Matrix is a square matrix with 1’s on the main diagonal with 0’s everywhere else and is shown with a capital i…
+	<img src='../Images/MatrMa.img4.png' width=800 height=300>
+	The identity matrix is a very important matrix as it can be used to find the inverse of a matrix using Elementary Row Operations.
+	<h2>Matrix Operations</h2>
+	There are several things that we can do with matrices.
+	<h2>Addition</h2>
+	You can add matrices with each element adding the same element in the other matrix…
+	<img src='../Images/MatrMa.img5.png' width=500 height=500>
+	For addition and subtraction to work, the matrices would have to be the same sizes. Otherwise addition and subtraction cannot work.
+	<h2>Subtraction</h2>
+	For subtract, basically do the opposite of addition by subtracting an element by another element in the same spot…
+	<img src='../Images/MatrMa.img6.png' width=500 height=500>
+	<h2>Multiplication</h2>
+	Multiplication with matrices can get complicated fast, but much easier with a constant…
+	<img src='../Images/MatrMa.img7.png' width=500 height=500>
+	This is called “scalar multiplication” because the constant is called a scalar because the matrix is being multiplied by this constant.
+	<h2>Multiplication with Two Matrices</h2>
+	Multiplying with two matrices can get really complicated based on the dimensions of both of the matrices…
+	<img src='../Images/MatrMa.img8.png' width=600 height=500>
+	Notice how every number is added with the first number from both the first row of matrix A and the first column of matrix B. No number multiplies twice…
+	<img src='../Images/MatrMa.img9.png' width=500 height=200>
+	The first number we got is 680. Now that we completed the first row with the first column, now we multiply the first row with the second column and same with the second row...
+	<img src='../Images/MatrMa.img10.png' width=500 height=300>
+	<img src='../Images/MatrMa.img11.png' width=225 height=100>
+	And now the matrix is complete. But there is still more. We can flip the multiplication so we are multiplying matrix B with matrix A…
+	<img src='../Images/MatrMa.img12.png' width=600 height=400>
+	You can see that the product of Matrix B with Matrix A is different from the product of Matrix with Matrix B, this is because we have three rows instead of two, this makes the product have three rows instead of two.
+	<h2>Transposing</h2>
+	When we ‘transpose’ a matrix, it means we flip the rows and columns of a matrix. When a matrix is being transposed, it is denoted with a “T” in the top-right corner…
+	<img src='../Images/MatrMa.img13.png' width=800 height=300>
+	<h2>The Negative of a Matrix</h2>
+	You can find out the negative of a matrix by multiplying every element in the matrix by -1 or just flip the positive/negative sign of every element…
+	<img src='../Images/MatrMa.img14.png' width=800 height=200>
+	<h2>Determinant of a Matrix</h2>
+	<h3>2x2 Matrices</h3>
+	The determinant of a matrix is a special number that can be calculated through a matrix. Only matrices that are squares (same amount of rows and columns) can have a determinant be calculated. An example of a determinant of a matrix would be…
+	<img src='../Images/MatrMa.img15.png' width=400 height=400>
+	In this example, the determinant is 128. The formula for 2x2 matrices is ad - bc where ad is positive and bc is negative. The determinant is shown with two vertical lines on the ends of the matrix capital letter…
+	<h3>3x3 Matrices</h3>
+	The determinant of 3x3 matrices is different from solving the determinant of 2x2 matrices. For 3x3 matrices you first multiply a by the determinant of the 2x2 matrix that contains every element that is not in a’s column or row, do the same for b and c...
+	<img src='../Images/MatrMa.img16.png' width=850 height=400>	
+	<p>1. Cross out every number in a's row and column</p>
+	<p>2. Find the determinant of the remaining, uncrossed out numbers</p>
+	<p>3. Repeat steps 1 and 2 for b and c.</p>
+	Each ‘submatrix’ of a matrix in a matrix is called a minor matrix. Here’s the example solved step by step...
+	<img src='../Images/MatrMa.img17.png' width=850 height=300>	
+	<img src='../Images/MatrMa.img18.png' width=850 height=400>	
+	<img src='../Images/MatrMa.img19.png' width=850 height=550>	
+	<img src='../Images/MatrMa.img20.png' width=850 height=550>	
+	The determinant of this 3x3 matrix is 1144. This method is called the <b>Lapase Expansion</b> and can be used to find the determinants of matrices bigger than 2x2 matrices. Keep in mind that there are other ways to find the determinant of a matrix.
+	<h3>The determinants of a 4x4 matrix</h3>
+	The determinant of a 4x4 matrix is similar to solving the determinant of a 3x3 matrix, but with a few differences…
+	<img src='../Images/MatrMa.img21.png' width=1000 height=400>	
+	This is the formula for solving the determinant of a 4x4 matrix and this pattern continues with bigger and bigger matrices.
+	<h2>The Inverse of a Matrix</h2>
+	Some Matrices have an inverse, these matrices are invertible matrices. The matrices that do not have an inverse are singular. Matrices that do have a non-zero determinant have an inverse. There are two ways to find the inverse of a matrix.
+	Finding out the Matrix through Matrix of Minors, Matrix of Cofactors, and Adjugate
+	<h3>Matrix of Minors</h3>
+	The first step to find the inverse of a matrix is to find the “Matrix of Minors”. For every element, ignore all the elements in its row or column and find the determinant of the rest of the numbers…  
+	<img src='../Images/MatrMa.img22.png' width=850 height=1000>
+	Now we put all of these numbers into a separate matrix…
+	<img src='../Images/MatrMa.img23.png' width=450 height=350>
+	Matrix of Cofactors
+	The matrix of cofactors is the next step after the Matrix of Minors, basically you multiply every alternate element by -1, or just flip the signs…
+	<img src='../Images/MatrMa.img24.png' width=450 height=350>
+	<h3>Adjugate</h3>
+	The adjugate is when you transpose the Matrix of cofactors like this…
+	<img src='../Images/MatrMa.img25.png' width=450 height=650>
+	<h3>1/Determinant</h3>
+	The last step is to divide the Adjugate by the determinant of the original matrix…
+	<img src='../Images/MatrMa.img26.png' width=450 height=350>
+	Now we divide the adjugate by -60…
+	<img src='../Images/MatrMa.img27.png' width=750 height=350>
+	The inverse of the matrix is…
+	<img src='../Images/MatrMa.img28.png' width=750 height=450>
+	This method can be used on bigger matrices but it’s best just to use a matrix calculator.
+	<h2>Inverse of a Matrix by Elementary Row Operations</h2>
+	You can also find the inverse of a Matrix by elementary row operations. Unlike the previous method, this one isn't a set of steps, but instead we try to turn the matrix that we want to see the inverse of into the identity matrix. So we put our example matrix and the identity matrix beside each other…
+	<img src='../Images/MatrMa.img29.png' width=450 height=170>
+	There are three Elementary Row Operations that we can do. We can multiply a row by a constant, we can swap rows, and we can replace one row by adding or subtracting a multiple of another…
+	<img src='../Images/MatrMa.img30.png' width=450 height=700>
+	<img src='../Images/MatrMa.img31.png' width=600 height=200>
+	And this is the final step since the left matrix is the identity matrix, so the inverse of the original matrix is…
+	<img src='../Images/MatrMa.img32.png' width=500 height=300>
+	
+</div>
+		
+		
+
+
+ <script src="../Important/DigitalClock.js"></script>
+	</body>
+</html>

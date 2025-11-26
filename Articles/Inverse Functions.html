@@ -1,0 +1,120 @@
+<!DOCTYPE html> <html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		 
+		
+		
+
+	</head>
+	<body> 
+	<h1>Inverse Functions</h1>
+	<h2>Introduction</h2>
+	Inverse functions are functions that reverse or do the opposite things as their normal or regular function counterparts. For example, the conversion from celsius to fahrenheit is...
+	<p>f(x) = (9/5 * x) + 32</p>
+	This is the formula used to convert celsius temperatures into fahrenheit temperatures, however if we do the opposite and convert fahrenheit temperatures to celsius, then the formula would be...
+	<p>c(x) = (x - 32) * 5/9</p>
+	Notice how every operation on x is reversed, the +32 turned into -32 and 9/5 turned into 5/9.
+	<h2>Inverse Function Notation</h2>
+	Inverse functions are shown as the regular function but instead with a -1 as the exponent and the input (x) value being the output (y)...
+	<p>f<sup>-1</sup>(y) = f(x)</p>
+	This is similar to whole numbers with negative exponents...
+	<p>2<sup>-1</sup> = 1/2<sup>1</sup></p><br><br>
+	<p>f(x) = 3x - 2</p>
+	<p>f<sup>-1</sup>(x) = (x + 2) / 3</p>
+	<h2>Finding Inverse Functions</h2>
+	To find inverse functions, first change the f(x) in the equation to y...
+	<p>f(x) = 9x - 5</p>
+	<p>y = 9x - 5</p>
+	Next, swap y and x...
+	<p>x = 9y - 5</p>
+	Then solve the equation...
+	<p style="font-size: 12px">Adding 5 on both sides</p>
+	<p>x + 5 = 9y</p>
+	<p style="font-size: 12px">Dividing both sides by 9</p>
+	<math display="block">
+	<mrow>
+	<mfrac>
+	<mtext>x + 5</mtext>
+	<mn>9</mn>
+	</mfrac>
+	<ms>&nbsp;=&nbsp;</ms>
+	<mn>y</mn>
+	</mrow>
+	</math>
+	Now change the x in the equation with f&nbsp;<sup>-1</sup>(x)...
+	<math display="block">
+	<mrow>
+	<msup><mtext>f</mtext><mn>&nbsp;-1</mn></msup>
+	<mtext>(x)</mtext>
+	<ms>&nbsp;=&nbsp;</ms>
+	<mfrac>
+	<mtext>x + 5</mtext>
+	<mn>9</mn>
+	</mfrac>
+	</mrow>
+	</math>
+	<h2>Verifying Inverse Functions Through Composition</h2>
+	You can verify if two functions are the inverse of each other through composition. In order for two functions to be the inverse of each other, they need to meet these equations...
+	<p>f(f&nbsp;<sup>-1</sup>(x)) = x</p>
+	<p>f&nbsp;<sup>-1</sup>(f(x)) = x</p>
+	So if f(x) composed of f<sup>-1</sup>(x) or if f<sup>-1</sup>(x) composed of f(x) equals x, then that means that the two functions are inverses of each other. For example...
+	<p>f(x) = -5x + 3</p>
+	<math display="block">
+	<mrow>
+	<mtext>g(x)</mtext>
+	<ms>&nbsp;=&nbsp;</ms>
+	<mfrac>
+	<mtext>x - 3</mtext>
+	<mn>-5</mn>
+	</mfrac>
+	</mrow>
+	</math>
+	So to see if they're inverses of each other, we must plug in the equation in f(x) over to g(x) and vice versa...
+	<p>f(g(x))</p>
+	<p>f(g(x)) = -5((x - 3) / -5) + 3 = </p>
+	<p>x - 3 + 3</p>
+	<p>f(g(x) = x</p><br><br>
+	<p>g(f(x)</p>
+	<math display="block">
+	<mrow>
+	<mtext>g(f(x)</mtext>
+	<ms>&nbsp;=&nbsp;</ms>
+	<mfrac>
+	<mtext>(-5x + 3) - 3</mtext>
+	<mn>-5</mn>
+	</mfrac>
+	</mrow>
+	</math><br><br>
+	<math display="block">
+	<mrow>
+	<mtext>g(f(x)</mtext>
+	<ms>&nbsp;=&nbsp;</ms>
+	<mfrac>
+	<mtext>-5x</mtext>
+	<mn>-5</mn>
+	</mfrac>
+	</mrow>
+	</math><br><br>
+	<math display="block">
+	<mrow>
+	<mtext>g(f(x)</mtext>
+	<ms>&nbsp;=&nbsp;</ms>
+	<mfrac>
+	<mtext>-5x</mtext>
+	<mn>-5</mn>
+	</mfrac>
+	<ms>&nbsp;=&nbsp;</ms>
+	<ms>x</ms>
+	</mrow>
+	</math><br><br>
+	<p>g(f(x)) = x</p>
+	<p>f(g(x)) = x</p>
+	Since f(g(x)) and g(f(x)) equal x, that means that the two functions are inverses of each other.
+<h2>Done? Here are other links.</h2>
+ <br><br>
+<a href="../MainPages/Lightweb%20MainPage.html">Back to Main Page</a>
+
+  <script src="../Important/DigitalClock.js"></script>
+	</body>
+
+</html>

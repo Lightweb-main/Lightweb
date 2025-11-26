@@ -1,0 +1,877 @@
+<!DOCTYPE html> <html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		 
+		
+	
+	</head>
+	<body> 	
+		<h1>Eigenvector and Eigenvalue</h1>
+		<h2>Introduction</h2>
+    Eigenvectors and Eigenvalues are special values included in spectral theory.
+    <h2>Eigenvalues</h2>
+    Eigenvalues appear in matrices and in linear transformations. They quantify how stretched an eigenvector is. The formula for finding an eigenvalue is...
+    <br><br>
+	<math display="block" style="font-size: 25px;">
+	<mo>Av = &lambda;v</mo>
+	</math><br><br><br><br>
+	<p style="font-size: 16px;">A - the matrix</p>
+	<p style="font-size: 16px;">v - the eigenvector</p>
+	<p style="font-size: 16px;">&lambda; - the scalar eigenvalue</p>
+    In sematic form, the matrix times the eigenvector is equal to the eigenvector times the scalar eigenvalue. An example of this formula being used is this scalar-matrix multiplication problem...<br><br>
+	<math display="block" style="font-size: 35px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+	<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>2</mn></mtd> 
+      </mtr>
+      <mtr>
+        <mtd><mn>-3</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+  </mrow><br>
+	<mo>&lambda; = 4</mo>
+</math>
+		So matrix A is <math style="font-size: 20px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math>
+		, the eigenvalue is 4, and the eigenvector is <math style="font-size: 20px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-3</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math>
+		 lets see if the two products are equal to each other. If they aren't, then the eigenvector or the eigenvalue is wrong...
+		<math display="block" style="font-size: 35px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+	<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>2</mn></mtd> 
+      </mtr>
+      <mtr>
+        <mtd><mn>-3</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+  </mrow>
+	<mo>=</mo>
+	<mo>4</mo>
+	<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-3</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+</math><br><br><br>
+		<math display="block" style="font-size: 35px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3(2) + 2(-3)</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4(2) + 7(-3)</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+  </mrow>
+	<mo>=</mo>
+	<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>8</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-12</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+</math>
+		</math><br><br><br>
+		<math display="block" style="font-size: 35px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>0</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-29</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+  </mrow>
+	<mo>&ne;</mo>
+	<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>8</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-12</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+</math>
+		The two matrices are not equal, meaning that the eigenvalue is incorrect. But we can find the eigenvalue of a 2x2 matrix by the formula...
+		<p style="font-size: 45px;">|A - &lambda;I|</p>
+		<p style="font-size: 16px">I = Identity Matrix</p>
+		<p style="font-size: 16px">A = Matrix A</p>
+		<p style="font-size: 16px">&lambda; = Eigenvalue</p>
+		So taking Matrix A...
+		<math display="block" style="font-size: 35px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math><br><br><br><br>
+		And the Identity Matrix with the eigenvalue...
+		<math display="block" style="font-size: 35px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	<mo>-</mo>
+		<ms>&lambda;</ms>
+		<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>1</mn></mtd>
+        <mtd><mn>0</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>0</mn></mtd>
+        <mtd><mn>1</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3 - &lambda;</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7 - &lambda;</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math><br><br><br><br>
+		Calculating the Determinant...
+		<math display="block" style="font-size: 35px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3 - &lambda;</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7 - &lambda;</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+			<mo>(3 - &lambda;)(7 - &lambda;) - 2(-4)</mo>
+		</math><br><br>
+		<math display="block" style="font-size: 35px;">
+			<msup><mn>&lambda;</mn><mo>2</mo></msup><mo>- 10&lambda;</mo><mo>+ 8</mo><mo>+ 21</mo>
+		</math><br><br>
+		<math display="block" style="font-size: 35px;">
+			<msup><mn>&lambda;</mn><mo>2</mo></msup><mo>- 10&lambda;</mo><mo>+ 29</mo>
+		</math><br><br><br><br>
+		The determinant got reduced to a quadratic equation. You can either factor, or if impossible use the quadratic formula...
+		<math display="block" style="font-size: 35px;">
+		<mrow>
+			<mfrac>
+    <mrow>
+      <mi>10</mi>
+      <mo>&plusmn;</mo>
+      <msqrt>
+        <mrow>
+          <mi>100</mi>
+          <mo>-</mo>
+          <mrow>
+            <mn>116</mn>
+          </mrow>
+        </mrow>
+      </msqrt>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+    </mrow>
+  </mfrac>
+		</mrow>
+		</math><br><br><br>
+		<math display="block" style="font-size: 35px;">
+		<mrow>
+			<mfrac>
+    <mrow>
+      <mi>10</mi>
+      <mo>&plusmn;</mo>
+      <msqrt>
+        <mrow>
+          <mi>-16</mi>
+        </mrow>
+      </msqrt>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+    </mrow>
+  </mfrac>
+		</mrow>
+		</math><br><br><br>
+<math display="block" style="font-size: 35px;">
+		<mrow>
+			<mfrac>
+    <mrow>
+      <mi>10</mi>
+      <mo>&plusmn;</mo>
+    <mi>4i</mi>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+    </mrow>
+  </mfrac>
+		</mrow>
+		</math><br><br><br>
+		</math><br><br><br>
+<math display="block" style="font-size: 35px;">
+		<mrow>
+    <mrow>
+      <mi>5</mi>
+      <mo>&plusmn;</mo>
+    <mi>2i</mi>
+    </mrow>
+    
+		</mrow>
+		</math><br><br><br>
+		<math display="block" style="font-size: 35px;">
+		<mrow>
+			<ms>&lambda;</ms>
+			<ms>=</ms>
+			<mo></mo>
+      <mi>5</mi>
+      <mo>+</mo>
+    <mi>2i</mi>
+	<mo>,&nbsp;</mo>
+		 <mi>5</mi>
+      <mo>-</mo>
+    <mi>2i</mi>
+    </mrow>
+		</math><br><br><br>
+		Looks like the eigenvalue is a complex value and has two possible values itself. Remember that sometimes you can get a complex eigenvalue.
+		<h2>Eigenvalue Significance</h2>
+		The eigenvalue can show how stretched an eigenvector gets, eigenvectors don't change direction as they increase/decrease in length. An eigenvalue of 2 means that the eigenvector would be double the length, 1 means that no change is present, -1 means that the vector will be pointing in the opposite direction.
+		<h2>Eigenvectors</h2>
+		Eigenvector(s)  can only be found after the eigenvalue(s) is known. To find the eigenvector, subtract Matrix A by the eigenvalue times the identity matrix like this...
+	<math display="block" style="font-size: 35px;">
+    <mrow>
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	<mo>-</mo>
+		<ms>&lambda;</ms>
+		<mrow>
+		<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>1</mn></mtd>
+        <mtd><mn>0</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>0</mn></mtd>
+        <mtd><mn>1</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+		</mrow>
+	</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+    <mrow>
+	<mo>&lambda; = 5 - 2i</mo>
+	</math>
+	<math display="block" style="font-size: 35px;">
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3 - (5 - 2i)</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7 - (5 - 2i)</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+		<mo>&lambda; = 5 + 2i</mo>
+		</math>
+		<math display="block" style="font-size: 35px;">
+		 <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3 - (5 + 2i)</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7 - (5 + 2i)</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math><br><br><br><br>
+		We'll then use the A<math style="font-size: 20px;">
+		 <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>x</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>y</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow></math> = 0 formula to find the eigenvectors...
+	<math display="block" style="font-size: 35px;">
+		<mo>When &lambda; = 5 + 2i</mo>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+		<mo>(-2 - 2i)x + 2y = 0</mo>
+		</math><br><br><br><br>
+		We'll then move the 2y to the right...
+			<math display="block" style="font-size: 35px;">
+		<mo>(-2 - 2i)x = -2y</mo>
+		</math><br><br><br><br>
+		We'll isolate the x variable on the left by dividing both sides by (-2 - 2i)...
+			<math display="block" style="font-size: 35px;">
+		<mrow>
+			<mfrac>
+				<mrow>
+					<mo>(-2 - 2i)x</mo>
+				</mrow>
+				<mrow>
+					<mo>(-2 - 2i)</mo>
+				</mrow>
+			</mfrac>
+		<mo>&nbsp;=&nbsp;</mo>
+			<mfrac>
+				<mrow>
+					<mo>2y</mo>
+				</mrow>
+				<mrow>
+					<mo>(-2 - 2i)</mo>
+				</mrow>
+			</mfrac>
+		</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+			<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>2y</mo>
+					</mrow>
+				<mrow>
+					<mo>(-2 - 2i)</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>
+		But this leaves us with 2y being divided by (-2 - 2i) on the right. To remove the complex denominator on the right, we'll multiply both sides by the conjugate (-2 + 2i) to remove the imaginary number...
+		<math display="block" style="font-size: 35px;">
+		<mrow>
+		<mo>(a - bi)(a + bi) = </mo>
+		<msup><mn>a</mn><mo>2</mo></msup>
+		<mo>+</mo>
+		<msup><mn>b</mn><mo>2</mo></msup>
+		</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+			<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>2y(-2 + 2i)</mo>
+					</mrow>
+				<mrow>
+					<mo>(-2 - 2i)(-2 + 2i)</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+			<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>y(-1 + i)</mo>
+					</mrow>
+				<mrow>
+					<mo>(-2 - 2i)(-2 + 2i)</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>
+			<math display="block" style="font-size: 35px;">
+			<mrow>
+			<mtable>
+				<mtr>
+					<mtd><mo>-2 - 2i</mo></mtd>
+					<mtd>*</mtd>
+					<mtd><mo>-2 + 2i</mo></mtd>
+				</mtr>
+				<mtr>
+					<mtd><mn>-2i</mn></mtd>
+					<ms>-&nbsp;</ms>
+					<mtd><msup><mn>2i</mn><mo>2</mo></msup></mtd>
+				</mtr>
+				<mtr>
+					<mtd><mn>2i</mn></mtd>
+					<ms>+&nbsp;</ms>
+					<mtd>4</mtd>
+				</mtr>
+			</mtable>
+			</mrow>
+		</math><br><br><br><br>
+			<math display="block" style="font-size: 35px;">
+			<mrow>
+			<mtable>
+				<mtr>
+					<mtd><mo>-2 - 2i</mo></mtd>
+					<mtd>*</mtd>
+					<mtd><mo>-2 + 2i</mo></mtd>
+				</mtr>
+				<mtr>
+					<mtd><mn>-2i</mn></mtd>
+					<ms>+&nbsp;</ms>
+					<mtd><mn>4</mn></mtd>
+				</mtr>
+				<mtr>
+					<mtd><mn>2i</mn></mtd>
+					<ms>+&nbsp;</ms>
+					<mtd>4</mtd>
+				</mtr>
+			</mtable>
+			</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+			<mrow>
+			<mtable>
+				<mtr>
+					<mtd><mo>-2 - 2i</mo></mtd>
+					<mtd>*</mtd>
+					<mtd><mo>-2 + 2i</mo></mtd>
+				</mtr>
+				<mtr>
+					<mtd><mn>8</mn></mtd>
+				</mtr>
+			</mtable>
+			</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+			<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>2y(-2 + 2i)</mo>
+					</mrow>
+				<mrow>
+					<mo>8</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>
+			<math display="block" style="font-size: 35px;">
+			<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>y(-4 + 4i)</mo>
+					</mrow>
+				<mrow>
+					<mo>8</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+			<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>y(-1 + i)</mo>
+					</mrow>
+				<mrow>
+					<mo>2</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>
+		<math display="block" style="font-size: 35px;">
+			<msub><ms>v</ms><mn>1</mn></msub>
+			<mo>=&nbsp;</mo>
+			<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mfrac><mn>-1 + i</mn><mn>2</mn></mfrac></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>1</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow></math>
+		Now eigenvector 1 is found, but another can be found through 5 - 2i...
+		<math display="block" style="font-size: 35px;">
+    <mrow>
+	<mo>&lambda; = 5 - 2i</mo>
+	</math>
+	<math display="block" style="font-size: 35px;">
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>3 - (5 - 2i)</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>7 - (5 - 2i)</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math><br><br><br><br>
+			<math display="block" style="font-size: 35px;">
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>-2 + 2i</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>2 + 2i</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math><br><br><br><br>
+			<math display="block" style="font-size: 35px;">
+    <mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mn>-2 + 2i</mn></mtd>
+        <mtd><mn>2</mn></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>-4</mn></mtd>
+        <mtd><mn>2 + 2i</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math><br><br><br><br>	
+		<math display="block" style="font-size: 35px;">
+		<mn>(-2 + 2i)x + 2y = 0</mn>
+		</math><br><br><br><br>	
+		<math display="block" style="font-size: 35px;">
+		<mn>(-2 + 2i)x = -2y</mn>
+		</math><br><br><br><br>	
+		<math display="block" style="font-size: 35px;">
+		<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>2y</mo>
+					</mrow>
+				<mrow>
+					<mo>(-2 + 2i)</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>	
+		<math display="block" style="font-size: 35px;">
+		<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>2y(2 - 2i)</mo>
+					</mrow>
+				<mrow>
+					<mo>(-2 + 2i)(-2 - 2i)</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>	
+		<math display="block" style="font-size: 35px;">
+		<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>y(4 - 4i)</mo>
+					</mrow>
+				<mrow>
+					<mo>8</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>	
+		<math display="block" style="font-size: 35px;">
+		<mrow>
+				<mo>x</mo>
+				<mo>&nbsp;=&nbsp;</mo>
+				<mfrac>
+					<mrow>
+						<mo>y(1 - i)</mo>
+					</mrow>
+				<mrow>
+					<mo>2</mo>
+				</mrow>
+				</mfrac>
+			</mrow>
+		</math><br><br><br><br>	
+		<math display="block" style="font-size: 35px;">
+			<mrow>
+			<msub><ms>v</ms><mn>1</mn></msub>
+			<mo>=&nbsp;</mo>
+			<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mfrac><mn>-1 + i</mn><mn>2</mn></mfrac></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>1</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+			<mrow>
+				<msub><ms>v</ms><mn>2</mn></msub>
+			<mo>=&nbsp;</mo>
+			<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd><mfrac><mn>-1 - i</mn><mn>2</mn></mfrac></mtd>
+      </mtr>
+      <mtr>
+        <mtd><mn>1</mn></mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+	</mrow>
+		</math>
+		<h2>3x3 Matrices and beyond</h2>
+		Matrices that have dimensions bigger than 2 will have different formulas with them. But there is a pattern...
+		<math>
+			<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd>a</mtd>
+		<mtd>b</mtd>
+		<mtd>c</mtd>
+      </mtr>
+       <mtr>
+        <mtd>d</mtd>
+		<mtd>e</mtd>
+		<mtd>f</mtd>
+      </mtr>
+		 <mtr>
+        <mtd>g</mtd>
+		<mtd>h</mtd>
+		<mtd>i</mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+			<mo>-&nbsp; &lambda;</mo>
+			<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd>1</mtd>
+		<mtd>0</mtd>
+		<mtd>0</mtd>
+      </mtr>
+       <mtr>
+        <mtd>0</mtd>
+		<mtd>1</mtd>
+		<mtd>0</mtd>
+      </mtr>
+		 <mtr>
+        <mtd>0</mtd>
+		<mtd>0</mtd>
+		<mtd>1</mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+		</math>
+		<math>
+			<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd>a</mtd>
+		<mtd>b</mtd>
+		<mtd>c</mtd>
+		<mtd>d</mtd>
+      </mtr>
+       <mtr>
+        <mtd>e</mtd>
+		<mtd>f</mtd>
+		<mtd>g</mtd>
+		<mtd>h</mtd>
+      </mtr>
+		 <mtr>
+        <mtd>i</mtd>
+		<mtd>j</mtd>
+		<mtd>k</mtd>
+		<mtd>l</mtd>
+      </mtr>
+		 <mtr>
+        <mtd>m</mtd>
+		<mtd>n</mtd>
+		<mtd>o</mtd>
+		<mtd>p</mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+			<mo>-&nbsp; &lambda;</mo>
+			<mo>[</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd>1</mtd>
+		<mtd>0</mtd>
+		<mtd>0</mtd>
+		<mtd>0</mtd>
+      </mtr>
+       <mtr>
+        <mtd>0</mtd>
+		<mtd>1</mtd>
+		<mtd>0</mtd>
+		<mtd>0</mtd>
+      </mtr>
+		 <mtr>
+        <mtd>0</mtd>
+		<mtd>0</mtd>
+		<mtd>1</mtd>
+		<mtd>0</mtd>
+      </mtr>
+		 <mtr>
+        <mtd>0</mtd>
+		<mtd>0</mtd>
+		<mtd>0</mtd>
+		<mtd>1</mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo> 
+		</math>
+		
+		
+		
+		
+
+
+ <script src="../Important/DigitalClock.js"></script>
+	</body>
+</html>
