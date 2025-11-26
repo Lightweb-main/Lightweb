@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<head>
+	<link rel='stylesheet' href='../../CSS/Lightweb.Quizzes.css'>
+  <title>Lightweb: Addition Quiz #2 (Beginners)</title>
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 20px; padding: 20px; max-width: 500px; margin: auto; }
+    .hidden { display: none; }
+    input[type="number"] { width: 200px; font-size: 1rem; }
+    button { margin-top: 10px; }
+    #msg { font-weight: bold; margin-top: 10px; }
+	
+	body.dark{
+	background-color: #000000;
+	}
+  </style>
+</head>
+<body>
+	<div id="QuizTitle">
+	<h1>Addition Quiz #2</h1>
+	</div>
+  <div id="Quiz">
+    <p id="Question"></p>
+    <input id="Input" type="number" placeholder="Your answer" />
+    <button id="submitButton">Check</button>
+    <p id="msg"></p>
+    <p id="progress"></p>
+  </div>
+
+  <div id="summary" class="hidden">
+    <h2>Done!</h2>
+    <p id="CorrectAnswers"></p>
+	<p id="CorrectIncorrectAnswerPercentage"></p>
+	<p id="LetterGrade"></p>
+	<p id="Time"></p>
+	<p id="AverageTime"></p>
+    <button id="retakeButton">Retry</button>
+	<button id="ExitButton">Exit</button>
+  </div>
+  <script src="../../Javascript/AdditionQuiz2.js" defer></script>
+  <script src="../../CSS/DigitalClock.js"></script>
+</body>
+</html>

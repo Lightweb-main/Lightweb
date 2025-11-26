@@ -1,0 +1,23 @@
+#DigitalClock{
+position: absolute;
+text-align: center;
+top: -40;
+left: -40;
+font-size: 45px;
+width: 265px;
+margin: 50px;
+border: 2px solid var(--DigitalClockBackground);
+border-radius: 15px; 
+}
+
+#DigitalCalendar{
+position: absolute;
+text-align: center;
+top: 15;
+left: -40;
+font-size: 25px;
+width: 265px;
+margin: 50px;
+border: 2px solid var(--DigitalClockBackground);
+border-radius: 15px; 
+}

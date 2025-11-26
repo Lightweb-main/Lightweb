@@ -1,0 +1,49 @@
+#QuizTitle{
+font-size: 30px;
+font-weight: bold;
+}
+body {
+  background-color: white;
+  color: black;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --border: #474747;
+  --tableborder: #dbdbdb;
+  --screenToggleButton: #7ae5ff;
+  --SearchArticlesColor: #646464;
+  --DigitalClockBackground: #e9e9e9;
+}
+
+:root {
+  --bg: #eceff1;
+  --text: #121212;
+  --border: #e9e8e8;
+  --tableborder: #000000;
+  --screenToggleButton: #006b86;
+  --SearchArticlesColor: #fdfdfd;
+  --DigitalClockBackground: #000000;
+  --militaryTimeButton: #037f00;
+}
+
+
+p, h1 {
+  color: var(--text);
+}
+
+
+body.dark img {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+

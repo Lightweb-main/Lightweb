@@ -1,0 +1,11 @@
+#DigitalClock{
+position: absolute;
+text-align: center;
+top: -50;
+right: -50;
+font-size: 50px;
+width: 265px;
+margin: 50px;
+border: 2px solid black;
+border-radius: 15px; 
+}
