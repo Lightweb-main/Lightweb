@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lightweb: Graphing Calculator</title>
+  <script src="https://cdn.plot.ly/plotly-3.3.0.min.js"></script>
+  
+  <style>
+	#selectGraphType{
+		border: 3px solid var(--border);
+		width: 100%;
+		border-radius: 10px;
+		padding: 10px;
+		display: flex;
+		flex-columns: rows;
+		gap: 25px;
+	}
+	.graphSelect{
+			padding: 15px;
+			font-size: 15px;
+			border-radius: 10px;
+	}
+	
+	.graph{
+		text-shadow: none;
+		margin: auto;
+		width: 100%;
+		height: 600px; 
+		background-color: var(--bg);
+	}
+	
+	input{
+		font-size: 15px;
+		padding: 5px;
+	}
+	
+	button{
+		font-size: 14px;
+		padding: 5px;
+	}
+	#histogramGraphBarSizeInput{
+		width: 270px;
+	}
+  </style>
+</head>
+<body>
+	<h1>Graphing Calculator</h1>
+	<div id="selectGraphType">
+		<button onClick=switchGraphType("box") class="graphSelect">Box Plot</button>
+		<button onClick=switchGraphType("histogram") class="graphSelect">Histogram</button>
+		<button onClick=switchGraphType("scatter") class="graphSelect">Scatter Plot</button>
+	</div>
+	
+	
+	<div id="boxPlotType">
+		<h2>Data</h2>
+		<input id="boxPlotDataInput">
+		<button onClick="boxPlotAddInput()">Add Data</button>
+		<br><br>
+		<p id="boxPlotDataDisplay">Data: </p>
+		<div id="boxPlot" class="graph"></div>
+	</div>
+	<div id="histogramGraphType">
+		<h2>Data</h2>
+		<input id="histogramGraphDataInput">
+		<button onClick="histogramGraphAddInput()">Add Data</button>
+		<br><br>
+		<h2>Graph Settings</h2>
+		<input id="histogramGraphBarSizeInput" placeholder="Enter the bar size for each individual bar.">
+		<button onClick="histogramGraphBarSizeAddInput()">Confirm</button><br><br>
+		<input id="histogramGraphXMaxInput" placeholder="Enter the maximum X-value.">
+		<button onClick="histogramGraphXMaxAddInput()">Confirm</button><br><br>
+		<input id="histogramGraphXMinInput" placeholder="Enter the minimum X-value.">
+		<button onClick="histogramGraphXMinAddInput()">Confirm</button><br><br>
+		<p id="histogramGraphDataDisplay">Data: </p>
+		<p id="histogramGraphBarSizeDisplay">Bar Size: </p>
+		<p id="histogramGraphXMinDisplay">X-min: </p>
+		<p id="histogramGraphXMaxDisplay">X-max: </p>
+		<div id="histogramGraph" class="graph"></div>
+	</div>
+	<div id="scatterPlotType">
+		<h2>Data</h2>
+		<input id="scatterPlotDataInputX">
+		<button onClick="scatterPlotAddInputX()">Add Data as an X Coordinate</button><br><br>
+		<input id="scatterPlotDataInputY">
+		<button onClick="scatterPlotAddInputY()">Add Data as a Y Coordinate</button>
+		<br><br>
+		<p id="scatterPlotDataXDisplay">Data X: </p>
+		<p id="scatterPlotDataYDisplay">Data Y: </p>
+		<div id="scatterPlot" class="graph"></div>
+	</div>
+	<button style="font-size: 25px;"onClick="exit()">Exit</button>
+	
+	
+	 
+	<script>
+	const boxPlotType = document.getElementById("boxPlotType");
+	const boxPlot = document.getElementById("boxPlot");
+	const boxPlotDataInput = document.getElementById("boxPlotDataInput");
+	const boxPlotDataDisplay = document.getElementById("boxPlotDataDisplay");
+	
+	
+	const histogramGraphXMinDisplay = document.getElementById("histogramGraphXMinDisplay");
+	const histogramGraphXMaxDisplay = document.getElementById("histogramGraphXMaxDisplay");
+	const histogramGraphType = document.getElementById("histogramGraphType");
+	const histogramGraphDataInput = document.getElementById("histogramGraphDataInput");
+	const histogramGraphBarSizeInput = document.getElementById("histogramGraphBarSizeInput");
+	const histogramGraphXMinInput = document.getElementById("histogramGraphXMinInput");
+	const histogramGraphXMaxInput = document.getElementById("histogramGraphXMaxInput");
+	
+	const scatterPlotType = document.getElementById("scatterPlotType");
+	const scatterPlot = document.getElementById("scatterPlot");
+	const scatterPlotDataInputX = document.getElementById("scatterPlotDataInputX");
+	const scatterPlotDataInputY = document.getElementById("scatterPlotDataInputY");
+	const scatterPlotDataXDisplay = document.getElementById("scatterPlotDataXDisplay");
+	const scatterPlotDataYDisplay = document.getElementById("scatterPlotDataYDisplay");
+	
+	let boxPlotData = [];
+	let histogramGraphData = [];
+	let scatterPlotDataX = [];
+	let scatterPlotDataY = [];
+	let histogramGraphBarSize = 1;
+	let histogramGraphXMax = 30;
+	let histogramGraphXMin = 0;
+	let graphType = "";
+	
+	let boxPlotTrace = {
+            x: boxPlotData,
+            type: 'box',
+			
+    };
+	
+	let scatterPlotTrace = {
+            x: scatterPlotDataX,
+			y: scatterPlotDataY,
+            type: 'scatter',
+			mode: 'markers',
+    };
+	
+	let histogramGraphTrace = {
+			x: histogramGraphData.sort((a, b) => a - b),
+			type: 'histogram',
+			
+    };
+		
+	const boxPlotLayout = {
+		boxmode: 'group', 
+		boxgap: 5, 
+		boxgroupgap: 5,
+	};
+	
+	let histogramGraphLayout = {
+		xaxis: {
+			range: [histogramGraphXMin, histogramGraphXMax],
+		}
+	};
+	</script>
+	<script src="Graphing%20Calculator.js"></script> 
+	<script src="../Important/DigitalClock.js"></script>
+</body>
+</html>
