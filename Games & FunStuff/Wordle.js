@@ -144,6 +144,7 @@ const words = [
 	"taste",
 	"thank",
 	"terse",
+	"trace",
 	"touch",
 	"their",
 	"trick",
@@ -375,4 +376,5 @@ guessesRemaining = numberOfGuesses;
 }
 
 generate();
+
 
