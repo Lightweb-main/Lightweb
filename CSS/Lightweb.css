@@ -125,6 +125,11 @@ text-decoration: none;
 background-color: var(--border);
 }
 
+.exitButton{
+	font-size: 25px !important;
+	padding: 5px; !important
+}
+
 .settingbutton1{
 margin: 0;
 position: absolute;
