@@ -1,3 +1,21 @@
+.summaryHeading{
+	font-size: 35px;
+	text-align: center;
+	margin-top: 5rem;
+}
+
+.summary{
+	display: flex;
+	justify-content: center;
+}
+
+.summarySection{
+	border: 3px solid var(--border);
+	width: 800px;
+	padding: 15px;
+}
+
+
 
 mark{
 background-color: #FDF89D;	

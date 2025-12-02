@@ -87,7 +87,7 @@ display: none !important;
 	</style>
 	</head>
 	<body>
-  <h2>Web Developer Simulation</h2>
+  <h2>A-Frame Simulation</h2>
   <div id="container">
     <iframe id="output"></iframe>
 
@@ -100,7 +100,8 @@ display: none !important;
 
   <script>
 const textarea = document.getElementById("codeInput");
-	textarea.value = "<html>\n\n\t<head>\n\n\t</head>\n\n\t<body>\n\n\t\t<p>Hello World!</p>\n\n\t</body>\n\n</html>";
+	textarea.value 
+	= `<html>\n\n\t<head>\n\n\t\t<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@bd6bf821eda2522f84a1dc2b6d78674dfcd06e4a/dist/aframe-master.min.js"><\/script>\n\n\t</head>\n\n\t<body>\n\n\t\t<a-scene>\n\n\t\t\t<a-box position="0 0.5 -5" color="tomato"></a-box>\n\n\t\t</a-scene>\n\n\t</body>\n\n</html>`;
 
   textarea.addEventListener("keydown", (event) => {
     if (event.key === '>') {
