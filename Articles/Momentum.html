@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+
+	</head>
+	<body> 
+		<h1>Momentum</h1>
+		<h2>What is Momentum?</h2>
+		In physics, <mark>momentum (shown as p) is defined as a <b>vector quantity</b> that is the product of both the mass (m) and velocity (v) of an object</mark>...
+		<p>p = m &times; v</p>
+		Like <b>inertia</b> momentum relates to an objects 'difficulty' to be affected from outside forces. <mark>The more momentum an object has, the more difficult it is for its movement can be stopped or changed.</mark>
+		<h2>Momentum as a Vector</h2>
+		<mark>Since Momentum is a vector, it not only has distance, but also direction.</mark> An object momentum direction is the same as it's velocity's direction, so if velocity is point north, momentum would also point north.
+		<h2>Change in Momentum Effect</h2>
+		<mark>When an object has a bigger momentum than another object, it wouldn't be affected as much as the other object.</mark> Take a car running over a tree branch, the car's velocity wouldn't be affect as much as the tree branch which would possibly be picked up and dragged by the car itself...
+		<img id="image1" src="../Images/Momentum.img1.png" title="Click to see a timeline of events">
+		Another example could be a rockets launching. As it's burning fuel, it accelerates upward, generating speed which in turn increases momentum as it overcomes Earth's gravity itself and flies towards outer space...
+		<img id="image2" src="../Images/Momentum.img5.png">
+		As you saw in the timeline of events, the tree branch was carried by the car due to it's much smaller momentum, it's velocity could easily be halted by another, bigger force like the movement of a car.
+		<h2>Momentum Standard Unit</h2>
+		The standard unit of momentum in SI (International System of Units) is kg * m / s, this comes from the formula itself...
+		<p>p = m &times; v</p>
+		<p>p = kg &times; m / s</p>
+		<p>p = 200g &times; 100cm / s</p>
+		<p>p = 4kg &times; m / s</p>
+		<p>p = 12μg &times; f / s</p>
+ <script src="../Important/DigitalClock.js"></script>
+		<script>
+			const image1 = document.getElementById("image1");
+			const image2 = document.getElementById("image2");
+			let index = 0;
+			let index2 = 0;
+			let images = [
+				"../Images/Momentum.img1.png",
+				"../Images/Momentum.img2.png",
+				"../Images/Momentum.img3.png",
+				"../Images/Momentum.img4.png"
+			]
+			let images2 = [
+				"../Images/Momentum.img5.png",
+				"../Images/Momentum.img6.png",
+				"../Images/Momentum.img7.png"
+			]
+			image1.addEventListener("click", function(){
+				index = (index + 1) % images.length;
+				image1.src = images[index];
+				image1.title = "Click to see a timeline of events";
+			});
+			
+			function updateImage2(){
+				index2 = (index2 + 1) % images2.length;
+				image2.src = images2[index2];
+			}
+			setInterval(updateImage2, 100);
+		</script>
+	</body>
+</html>
