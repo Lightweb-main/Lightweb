@@ -1,0 +1,29 @@
+#colorView{
+	width: 800px;
+	height: 800px;
+	position: absolute;
+	right: 0px;
+	margin-left: auto;
+	border: 2px solid var(--border);
+}
+
+input{
+	width: 500px;
+	cursor: pointer;
+}
+
+#colorHexIndicatorB{
+	border: 2px solid var(--border);
+	padding: 3px;
+}
+
+#colorHexIndicatorB:hover{
+	border: 3px solid var(--border);
+	padding: 3px;
+	cursor: pointer;
+}
+
+#colorHexIndicatorB:active{
+	background-color: #000000;
+	cursor: pointer;
+}

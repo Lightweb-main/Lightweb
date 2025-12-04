@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+  <title>Lightweb: Color Code Generator</title>
+  <link rel="stylesheet" href="Color%20Code%20Generator.css">
+</head>
+<body>
+	<h1>Color Code Generator</h1>
+	<div id="container">
+		<div id="colorView"></div>
+		<h2>Red</h2>
+		<input type="range" max="255" min="0" value="255" id="redSlider"><br><br>
+		<h2>Green</h2>
+		<input type="range" max="255" min="0" value="255" id="greenSlider"><br><br>
+		<h2>Blue</h2>
+		<input type="range" max="255" min="0" value="255" id="blueSlider"><br><br>
+		<p style="text-align: left; font-size: 15px;" id="redIndicator">Red: </p>
+		<p style="text-align: left; font-size: 15px;" id="greenIndicator">Green: </p>
+		<p style="text-align: left; font-size: 15px;" id="blueIndicator">Blue: </p>
+		<p style="text-align: left; font-size: 18px;" id="colorRGBIndicator">RGB: </p>
+		<p style="text-align: left; font-size: 18px; display: inline;" id="colorHexIndicatorA">Hex: </p>
+		<div style="text-align: left; display: inline; font-size: 18px;" id="colorHexIndicatorB"># </div>
+	</div>
+	
+	<button style="font-size: 25px;"onClick="exit()">Exit</button>
+	
+	
+	
+	<script>
+	function exit(){
+	document.location = "../MainPages/Utility.html"
+	}
+	</script>
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="Color%20Code%20Generator.js"></script>
+</body>
+</html>
