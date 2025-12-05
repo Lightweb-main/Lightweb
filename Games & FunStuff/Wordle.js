@@ -134,6 +134,7 @@ const words = [
 	"swift",
 	"slurp",
 	"slime",
+	"slice",
 	"sooth",
 	"shake",
 	"spoon",
@@ -376,5 +377,6 @@ guessesRemaining = numberOfGuesses;
 }
 
 generate();
+
 
 
