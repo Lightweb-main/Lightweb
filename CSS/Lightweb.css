@@ -11,11 +11,11 @@ font-weight: var(--FontWeight);
   	    	font-size: 18px;
       		border: 1px solid #ccc;
      		 border-radius: 8px;
-		transition: 0.3 ease
+		transition: 0.3 ease;
     }
 
 		    #searchInput:focus {
-    		  border-color: var(--SearchArticlesColor)
+    		  border-color: var(--SearchArticlesColor);
    		   box-shadow: 0 0 5px rgba(0,123,255,0.3);
    		   outline: none;
     }
@@ -274,6 +274,7 @@ position: absolute;
 top: 48%;
 left: 63%;
 }
+
 
 
 
