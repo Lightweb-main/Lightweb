@@ -14,9 +14,9 @@
 }
 
 @keyframes chaos {
-  0%   { transform: scale(1) rotate(0deg); filter: invert(0%) hue-rotate(0deg)}
-  50%  { transform: scale(0.5) rotate(180deg); filter: invert(100%) hue-rotate(180deg)}
-  100% { transform: scale(1) rotate(360deg); filter: invert(0%) hue-rotate(360deg)}
+  0%   { transform: scale(1) rotate(0deg); filter: invert(0%) hue-rotate(0deg)};
+  50%  { transform: scale(0.5) rotate(180deg); filter: invert(100%) hue-rotate(180deg)};
+  100% { transform: scale(1) rotate(360deg); filter: invert(0%) hue-rotate(360deg)}; 
 }
 
 body.AnalogScreen::before{
@@ -101,7 +101,7 @@ body.AnalogScreen {
   --AnalogScreenButton: #16ff9c;
   --SearchArticlesColor: #00ad0a;
   --DigitalClockBackground: #16ff9c;
-  --FontWeight: 900;
+  --FontWeight: 900; 
   animation: flicker 0.15s infinite;
   text-shadow:
     0 0 5px #39ff14,
@@ -190,6 +190,7 @@ body a{
 font-weight: bold;
 border-radius: 10px;
 border: 12px solid var(--border);
+border-color: var(--border);
 text-decoration: none;
 background-color: var(--border);
 }
@@ -214,6 +215,7 @@ a:hover{
   top: 18px;
   right: 18px;
  }
+
 
 
 
