@@ -320,7 +320,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		const hyperlinks = document.querySelectorAll('a');
 			hyperlinks.forEach(link => {
-				link.style.border = "12px solid var(--border);
+				link.style.border = "12px solid var(--border)";
 			}
 		DigitalClock.style.position = "absolute";
 		DigitalClock.style.left = "0px";
@@ -523,6 +523,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
 
 
 
