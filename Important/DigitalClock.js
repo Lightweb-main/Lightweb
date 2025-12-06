@@ -321,7 +321,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		const hyperlinks = document.querySelectorAll('a');
 			hyperlinks.forEach(link => {
 				link.style.border = "12px solid var(--border)";
-			}
+			});
 		DigitalClock.style.position = "absolute";
 		DigitalClock.style.left = "0px";
 		DigitalClock.style.top = "0px";
