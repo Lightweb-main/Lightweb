@@ -2,6 +2,7 @@
 <html>
 	<head>
 	<link rel="stylesheet" href="../CSS/LightwebThemes.css">
+
 	<style>
 	body.AnalogScreen::before, body.CRTBLUEScreen::before{
   content: '';
@@ -60,6 +61,8 @@
       padding: 10px;
       box-sizing: border-box;
 	  
+	  
+	  
     }
 
     button {
@@ -67,14 +70,11 @@
       font-size: 16px;
       width: 100%;
       border: none;
-      background: #007bff;
       color: white;
       cursor: pointer;
     }
 
-    button:hover {
-      background: #0056b3;
-    }
+    
 	
 	.highlight {
     color: red;
@@ -93,7 +93,7 @@ display: none !important;
 
     <div id="editor">
 	<button onclick="runCode()">Run Code</button>
-      <textarea id="codeInput" placeholder="Type your HTML, CSS, or JS here..."></textarea>
+      <textarea id="codeInput" spellcheck="false"  placeholder="Type your HTML, CSS, or JS here..."></textarea>
 	  <button onclick="exit()">Exit</button>
     </div>
   </div>
@@ -101,7 +101,7 @@ display: none !important;
   <script>
 const textarea = document.getElementById("codeInput");
 	textarea.value 
-	= `<html>\n\n\t<head>\n\n\t\t<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@bd6bf821eda2522f84a1dc2b6d78674dfcd06e4a/dist/aframe-master.min.js"><\/script>\n\n\t</head>\n\n\t<body>\n\n\t\t<a-scene>\n\n\t\t\t<a-box position="0 0.5 -5" color="tomato"></a-box>\n\n\t\t</a-scene>\n\n\t</body>\n\n</html>`;
+	= `<html>\n\n\t<head>\n\n\t\t<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@bd6bf821eda2522f84a1dc2b6d78674dfcd06e4a/dist/aframe-master.min.js"><\/script>\n\n\t</head>\n\n\t<body>\n\n\t\t<a-scene>\n\t\t<a-sky color="white"></a-sky>\n\n\t\t<a-box \n\t\t\tposition="0 1.5 -5" \n\t\t\tcolor="tomato" \n\t\t\tanimation="\n\t\t\t\tproperty: rotation;\n\t\t\t\tfrom: 0 0 0;\n\t\t\t\tto: 0 360 0;\n\t\t\t\tloop: true;\n\t\t\t\tdur: 2000;\n\t\t\t\teasing: linear;\n\t\t\t"\n\n\t\t></a-box>\n\n\t\t</a-scene>\n\n\t</body>\n\n</html>`;
 
   textarea.addEventListener("keydown", (event) => {
     if (event.key === '>') {
@@ -131,11 +131,11 @@ const textarea = document.getElementById("codeInput");
     }
   });
     function runCode() {
+	  
       const userCode = document.getElementById("codeInput").value;
       const outputFrame = document.getElementById("output");
       const outputDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
-	  
-	  
+	  	  
       outputDoc.open();
       outputDoc.write(userCode);
       outputDoc.close();

@@ -67,14 +67,11 @@
       font-size: 16px;
       width: 100%;
       border: none;
-      background: #007bff;
       color: white;
       cursor: pointer;
     }
 
-    button:hover {
-      background: #0056b3;
-    }
+   
 	
 	.highlight {
     color: red;
@@ -100,9 +97,11 @@ display: none !important;
 
   <script>
 const textarea = document.getElementById("codeInput");
-	textarea.value = "<html>\n\n\t<head>\n\n\t</head>\n\n\t<body>\n\n\t\t<p>Hello World!</p>\n\n\t</body>\n\n</html>";
+	textarea.value = "<html>\n\n\t<head>\n\n\t</head>\n\n\t<body>\n\n\t\t<h1>Welcome to my Website!</h1>\n\t\t<p>Hello World!</p>\n\n\t</body>\n\n</html>";
 
   textarea.addEventListener("keydown", (event) => {
+  
+	
     if (event.key === '>') {
         const cursor = textarea.selectionStart;
         const value = textarea.value;
@@ -128,6 +127,7 @@ const textarea = document.getElementById("codeInput");
           }
         }
     }
+	
   });
     function runCode() {
       const userCode = document.getElementById("codeInput").value;
@@ -143,6 +143,8 @@ const textarea = document.getElementById("codeInput");
 	function exit(){
 	document.location = "../MainPages/Simulations.html"
 	}
+	
+	runCode();
   </script>
 		<script src="../Important/DigitalClock.js"></script>
 </body>
