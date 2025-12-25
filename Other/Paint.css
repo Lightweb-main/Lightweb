@@ -1,0 +1,15 @@
+#paintCanvas{
+	display: flex;
+	margin: auto;
+}
+#paintWidthPreview{
+	border: 1px solid black;
+	border-radius: 50000rem;
+	width: 400px;
+	margin-left: 500px;
+	margin-bottom: 500px;
+}
+
+#downloadPNG{
+	padding: 5px;
+}

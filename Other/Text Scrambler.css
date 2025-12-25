@@ -1,0 +1,10 @@
+.input{
+	width: 70%;
+	height: 500px;
+	display: flex;
+}
+
+button{
+	padding: 5px;
+	font-size: 25px;
+}
