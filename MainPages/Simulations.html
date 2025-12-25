@@ -4,41 +4,44 @@
 		
 	</head>
 	<style>
-	ul{
-		margin: 0px;
-		padding: 0px;
+		ul{
+			margin: 0px;
+			padding: 0px;
+			list-style-type: none;
 		}
 		input{
-		width: 100%;
+			width: 100%;
 		}
 		
 		#noSimulations{
-		display: none;
-		font-size: 30px;
-		font-weight: bold;
-		border: 10px solid black;
-		border-radius: 10px;
-		text-decoration: none;
-		border-color: var(--border);
-		background-color: var(--border);
-    		}
+			display: none;
+			font-size: 45px;
+			font-weight: bold;
+			border: 10px solid black;
+			border-radius: 10px;
+			text-decoration: none;
+			border-color: var(--border);
+			background-color: var(--border);
+    	}
 	</style>
 	<body>	
 	<header>Official Lightweb Site</header>
 		<title>Lightweb: Simulations</title>
 		<h1>Simulations</h1>
 		<h2 style="text-align: center;">Here are the simulations where you can mess around and what not.</h2>
-		<input type="text" id="searchInput" placeholder="Search Articles..." />
+		<input type="text" id="searchInput" placeholder="Search Simulations..." />
 		<ul id="search">
-		<li>
-		<a href='../Simulations/AFrameSimulation.html'>A-Frame Simulation</a><br><br><br>
-		</li>
-		<li>
-		<a href='../Simulations/WebDeveloperSimulation.html'>Web Developer Simulation</a><br><br><br>
-		</li>
+			<li>
+				<a href='../Simulations/AFrameSimulation.html'>A-Frame Simulation</a><br><br><br>
+			</li>
+			<li>
+				<a href='../Simulations/WebDeveloperSimulation.html'>Web Developer Simulation</a><br><br><br>
+			</li>
+			<li>
+				<a href="Lightweb%20MainPage.html">Exit</a>
+			</li>
 		</ul>
 		<div id='noSimulations'>Simulation Error 492391238</div>
-		<a href="Lightweb%20MainPage.html">Exit</a>
 		
 	<script>
     const searchInput = document.getElementById('searchInput');

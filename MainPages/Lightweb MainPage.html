@@ -22,7 +22,7 @@
 	<body> <header>Official Lightweb Site</header>
 	<h1>Welcome to Lightweb</h1>
 	<div>
-	<h3 id="factOfTheHour" style="text-align: center;">Looks like the fact of the hour wasn't here. :(</h3>
+	<h3 id="factOfTheHour" style="text-align: center; font-weight: 400;">Looks like the fact of the hour wasn't here. :(</h3>
 	</div>
 	<br><br><br>
 	<div style="text-align: center;">
@@ -30,13 +30,14 @@
 	<!-- You Found Me.....
 	<a href="Noninformational.html">Noninformational</a><br><br>
 	-->
-	<a href="#" onclick="Link2(); return false;" class="MainPage" class="hyperlink">Games & Fun Stuff</a><br><br>
-<a href="#" onclick="Link5(); return false;" class="MainPage" class="hyperlink">Simulations</a><br><br>
-<a href="#" onclick="Link6(); return false;" class="MainPage" class="hyperlink">Settings</a><br><br>
-<a href="#" onclick="Link7(); return false;" class="MainPage" class="hyperlink">Utility</a><br><br>
+	<a href="#" onclick="Link2(); return false;" class="MainPage">Games & Fun Stuff</a><br><br>
+<a href="#" onclick="Link5(); return false;" class="MainPage">Simulations</a><br><br>
+<a href="#" onclick="Link6(); return false;" class="MainPage">Settings</a><br><br>
+<a href="#" onclick="Link7(); return false;" class="MainPage">Utility</a><br><br>
+<a href="#" onclick="Link8(); return false;" class="MainPage">Other</a><br><br>
 
 	</div>
-	<iframe id="History" src="../Other/LightwebHistory.html"></iframe>
+	<iframe id="History" src="../LightwebHistory/LightwebHistory.html"></iframe>
 
 
     <script src="../Important/DigitalClock.js"></script>
@@ -72,6 +73,10 @@
     document.location = "Utility.html";
   }
   
+  function Link8() {
+    document.location = "Other.html";
+  }
+  
   function funfactGenerator() {
   const factText = document.getElementById("factOfTheHour");
 
@@ -86,6 +91,10 @@
 	"Minecraft was officially released in November 18th, 2011.",
 	"A centipede despite being named with the prefix centi- meaning 100, always never has a hundred legs.",
 	"This is a fact",
+	"Since the debut of GIF (or Graphics Interchange Format), people have been calling it, 'Jif' or 'Gif'.",
+	"PNG stands for Portable Network Graphics.",
+	"The universe has three spacial dimensions.",
+	"Earth 600 millions years ago, only had days that were 21 hours long.",
 	"The shortest battle in history was the Anglo-Zanzibar War that lasted between 38 and 45 minutes on 27 August 1896.",
 	"The Statue of Liberty originally wasn't green originally. Instead it was a different color, possibly brownish due to it being made out of copper. Then over time, the copper that made up the Statue of Liberty reacted with the air and water around it which formed patina, slowly shifting it's color to the green hue we know now in 1920.",
 	"Pareidolia is the illusion of seeing randomly/accidentally recognizable patterns of lines and shapes, most referred to faces.",
@@ -96,8 +105,18 @@
 	"CAPTCHA stands for Completely Automated Public Turing test to tell Computers and Humans Apart.",
 	"AP Physics is widely considered to be the hardest AP course to take.",
 	"The Black Plague that spread throughout Europe killed about half of it's population or about 30 million people.",
+	"Dead Internet Theory is a popular theory regarding the widespread appearences of bots, suggesting that the internet is mostly comprised of bot-generated content or bot activity.",
+	"Lightweb is a (mostly) free AI site. (but I as the creator try to refrain from using it excessively)",
+	"Lightweb was originally a google document project, most of the articles are from google document Lightweb, but in July 2025, Lightweb had been declared an actual site.",
+	"The lake with the longest name in the world is called, Lake Chargoggagoggmanchauggagoggchaubunagungamaugg, or called Webster Lake.",
+	"Garry's Mod is the best game.",
+	"1 + 1 = 2",
+	"Antidisestablishmentarianism refers to the opposition of the disestablishment of the Church of England.",
+	"The sun is a deadly laser.",
+	"Laser stands for <b>L</b>ight <b>A</b>mplification by <b>S</b>imulated <b>E</b>missions of <b>R</b>adiation.",
+	`Rickrolling is a popular internet meme that refers to misleading hyperlinks, or any digital links, that links to the song, "Never Gonna Give You Up" by Rick Ashley.`,
   ];
-
+  
   const currentDay = new Date();
   const JanuaryFirst = new Date(currentDay.getFullYear(), 0, 0); 
   const timeElapsed = currentDay - JanuaryFirst;
@@ -105,7 +124,7 @@
   const hourOfYear = Math.floor(timeElapsed / oneHour);
 
   const Num = hourOfYear % facts.length;
-  factText.textContent = "Fact of the Hour: "+facts[Num];
+  factText.innerHTML = "Fact of the Hour: "+facts[Num];
 }
 
 funfactGenerator();

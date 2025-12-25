@@ -1,30 +1,71 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	
+		<style>
+			ul{
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+			}
+			#noUtilities{
+				display: none;
+				font-size: 45px;
+				font-weight: bold;
+				border: 10px solid black;
+				border-radius: 10px;
+				text-decoration: none;
+				border-color: var(--border);
+				background-color: var(--border);
+			}
+		</style>
 	</head>
 	
 	<body>	
 		<header>Official Lightweb Site</header>
 		<title>Lightweb: Utility</title>
 		<h1>Utility</h1>
-		<h2 style="text-align: center;" class="articles">Pretty much where all the utility thing are.</h2>
+		<h2 style="text-align: center;" class="articles">Pretty much where all the useful stuff is.</h2>
+		<input type="text" id="searchInput" placeholder="Search Utilities..." />
+		<ul id="search">
+		<li>
 		<a href="../Utility/Calculator.html" class="articles">Calculator</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Utility/Character%20Bank.html" class="articles">Character Bank</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Utility/Color%20Code%20Generator.html" class="articles">Color Code Generator</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Utility/Graphing%20Calculator.html" class="articles">Graphing Calculator</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Utility/Notes.html" class="articles">Notes</a><br><br><br>
-		<a href="../Utility/Random%20Number%20Generator.html" class="articles">Random Number Generator</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Utility/Timer.html" class="articles">Timer</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Utility/Text%20Formatter.html" class="articles">Text Formatter</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Utility/Statistical%20Calculator.html" class="articles">Statistical Calculator</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Utility/UnitConverter.html" class="articles">Unit Converter</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Utility/WeatherApp.html" class="articles">Weather App</a><br><br><br>
+		</li>
+		<li>
 		<a href="Lightweb%20MainPage.html">Exit</a>
+		</li>
+		</ul>
+		<div id="noUtilities">No Calculator Here...</div> 
 	<script>
     const searchInput = document.getElementById('searchInput');
     const listItems = document.querySelectorAll('#search li')
-    const noQuizzes = document.getElementById('noQuizzes');
+    const noUtilities = document.getElementById('noUtilities');
  
 
     searchInput.addEventListener('input', function () {
@@ -38,7 +79,7 @@
         if (isVisible) visibleCount++;
       });
 
-      noQuizzes.style.display = visibleCount === 0 ? 'block' : 'none';
+      noUtilities.style.display = visibleCount === 0 ? 'block' : 'none';
     });	
   </script>
 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Lightweb: Other</title>
+	<style>
+		ul{
+			margin: 0px;
+			padding: 0px;
+			list-style-type: none;
+		}
+		
+		#noOther{
+				display: none;
+				font-size: 45px;
+				font-weight: bold;
+				border: 10px solid black;
+				border-radius: 10px;
+				text-decoration: none;
+				border-color: var(--border);
+				background-color: var(--border);
+    	}
+	 
+	 
+	</style>
+	</head>
+	<body> <header>Official Lightweb Site</header>
+	<h1>Other</h1>
+	<h2 style="text-align: center;">Pretty much where other content goes.</h2>
+	<input type="text" style="font-family: times-new-roman;" id="searchInput" placeholder="Search Games..." />
+	<ul id="SearchInputVacuum">
+	<li>
+		<a href="../Other/Random%20Animal%20Generator.html">Random Animal Generator</a><br><br><br>
+	</li>
+	<li>
+		<a href="../Utility/Random%20Number%20Generator.html" class="articles">Random Number Generator</a><br><br><br>
+		</li>
+	<li>
+		<a href="../Other/Text%20Scrambler.html">Text Scrambler</a><br><br><br>
+	</li>
+	<li>
+		<a href="../Other/Paint.html">Paint</a><br><br><br>
+	</li>
+	<li>
+		<a href="../MainPages/Lightweb%20MainPage.html">Exit</a><br><br><br>
+	</li>
+	
+	</ul>
+	<div id="noOther">Nothing otherworldly is here...</div>
+	
+	
+    <script src="../Important/DigitalClock.js"></script>
+	<script>
+    const searchInput = document.getElementById('searchInput');
+    const listItems = document.querySelectorAll('#SearchInputVacuum li')
+    const noOther = document.getElementById('noOther');
+
+
+    searchInput.addEventListener('input', function () {
+      const searchTerm = this.value.toLowerCase();
+      let visibleCount = 0;
+
+      listItems.forEach((li) => {
+         const text = li.textContent.toLowerCase();
+        const isVisible = text.includes(searchTerm);
+        li.style.display = isVisible ? '' : 'none';
+        if (isVisible) visibleCount++;
+      });
+
+      noOther.style.display = visibleCount === 0 ? 'block' : 'none';
+    });	
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

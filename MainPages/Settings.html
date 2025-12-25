@@ -5,48 +5,58 @@
 	</head>
 
 	<body>
-	<header>Official Lightweb Site</header>
-	<title>Settings</title>
-	
-	
-
-	<div class="settingbutton1">
-	<button id="screen-toggle" style="width: 200px; height: 50px;">Toggle Dark Mode</button>
-	</div>
-	<div class="settingbutton2">
-	<button id="millitary-time-button" style="width: 200px; height: 50px;">Toggle Millitary Time</button>
-	</div>
-	<div class="settingbutton3">
-	<button id="analog-screen-button" style="width: 200px; height: 50px;">Toggle Analog Screen Mode</button>
-	</div>
-	<div class="settingbutton4">
-	<button id="CRTBLUE-screen-button" style="width: 200px; height: 50px;">Toggle CRT Blue Screen Mode</button>
-	</div>
-	<div class="settingbutton5">
-	<button id="dashed-calendar-button" style="width: 200px; height: 50px;">Toggle Dashed Calendar Date</button>
-	</div>
-	<div class="settingbutton6">
-	<button id="squidGame-screen-button" style="width: 200px; height: 50px;">Toggle Squid Game Screen Mode</button>
-	</div>
-	<div class="settingbutton7">
-	<button id="chaos-screen-button" style="width: 200px; height: 50px;">Toggle Chaos Screen Mode</button>
-	</div>
-	<div class="labelSettingButton8">
-	<p>*For darker screen modes</p>
-	</div>
-	<div class="settingbutton8">
-	<button id="image-inversion-button" style="width: 200px; height: 50px;">Toggle Image Color Inversion</button>
-	</div>
-	<a style="margin: 0;
-			  position: absolute;
-			  bottom: 5px;
-			  right: 5px;
-			  text-align: center;
-			  width=200%; 
-			  font-size: 45px;" 
-	    href="Lightweb%20MainPage.html">Back to Lightweb</a>
+		<header>Official Lightweb Site</header>
+		<title>Settings</title>
 		
-	<script src="../Important/DigitalClock.js"></script>
+		
+		<div id="screenTypes">
+			<h2 style="text-align: center;">Screen Modes</h2>
+			<div class="settingbutton1">
+				<button id="dark-screen-toggle" class="settingButton" style="background-color: var(--darkScreenToggleButton); ">Toggle Dark Mode</button>
+			</div>
+			<div class="settingbutton3">
+				<button id="analog-screen-button" class="settingButton" style="background-color: var(--AnalogScreenButton);">Toggle Analog Screen Mode</button>
+			</div>
+			<div class="settingbutton4">
+				<button id="CRTBLUE-screen-button" class="settingButton" style="background-color: var(--CRTBlueScreenButton);">Toggle CRT Blue Screen Mode</button>
+			</div>
+			<div class="settingbutton6">
+				<button id="squidGame-screen-button" class="settingButton" style="background-color: var(--squidGameScreenButton);">Toggle Squid Game Screen Mode</button>
+			</div>
+			<div class="settingbutton7">
+				<button id="chaos-screen-button" class="settingButton" style="background-color: var(--chaoScreenButton);">Toggle Chaos Screen Mode</button>
+			</div>
+			<div class="settingbutton9">
+				<button id="christmas-screen-button" class="settingButton" style="background-color: var(--christmasScreenButton);">Toggle Christmas Screen Mode</button>
+			</div>
+		</div>
+		<div id="calendarSettings">
+			<h2>Calendar Settings</h2>
+			<div class="settingbutton2">
+				<button id="millitary-time-button" class="settingButton" style="background-color: var(--militaryTimeButton);">Toggle Millitary Time</button>
+				<div id="militaryTimeSettings">
+					<input id="full-military-time-button" type="checkbox">Full Clock Time</input>
+				</div>
+			</div>
+			<div class="settingbutton5">
+				<button id="dashed-calendar-button" class="settingButton" style="background-color: var(--dashedCalendarButton);">Toggle Dashed Calendar Date</button>
+			</div>
+		</div>
+		
+		<div id="otherSettings">
+			<h2>Other Settings</h2>
+			<h3>↓ For Darker Screen Types ↓</h3>
+			<div class="settingbutton8">
+				<button id="image-inversion-button" class="settingButton" style="background-color: var(--ImageInvertButton); color: var(--ImageInvertTextColor)">Toggle Image Color Inversion</button>
+			</div>
+			<div class="settingbutton10">
+				<button id="clear-local-storage-button" class="settingButton" style="background-color: #c2e4a7; color: white" onClick="clearLocalStorage()">Clear Local Storage</button>
+			</div>
+		</div>
+		
+		<a style="margin: 0; position: absolute; bottom: 5px; right: 5px; text-align: center; width=200%;  font-size: 45px;" href="Lightweb%20MainPage.html">Back to Lightweb</a>
+			
+		<script src="../Important/DigitalClock.js"></script>
 	</body>
 </html>
 

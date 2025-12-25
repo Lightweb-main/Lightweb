@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="../CSS/Lightweb.css">
-		<link rel="stylesheet" href="../CSS/DigitalClock.css">
-		
 		<style>
-		a, h1, h2, header{
-	 font-weight: 550;
-	 }
+			#noGames{
+				display: none;
+				font-size: 45px;
+				font-weight: bold;
+				border: 10px solid black;
+				border-radius: 10px;
+				text-decoration: none;
+				border-color: var(--border);
+				background-color: var(--border);
+    		}
+			
+			ul{
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+			}
 		</style>
 	</head>
 	
@@ -16,19 +26,35 @@
 		<title>Lightweb: Games & Fun Stuff</title>
 		<h1>Games & Fun Stuff</h1>
 		<h2 style="text-align: center;">Home to the entertainment inducing stuff</h2>
-		<a href="../Games%20&%20FunStuff/Connect4.html">Connect 4</a><br><br><br>
-		<a href="../Games%20&%20FunStuff/Click%20the%20Dot.html">Click the Dot</a><br><br><br>
-		<a href="../Games%20&%20FunStuff/Civilization%20Creation.html">Civilization Creation</a><br><br><br>
-		<a href="../Games%20&%20FunStuff/Random%20Animal%20Generator.html">Random Animal Generator</a><br><br><br>
-		<a href="../Games%20&%20FunStuff/Snake.html">Snake</a><br><br><br>
-		<a href="../Games%20&%20FunStuff/TicTacToe%20Page.html">Tic-Tac-Toe</a><br><br><br>
-		<a href="../Games%20&%20FunStuff/Text%20Scrambler.html">Text Scrambler</a><br><br><br>
-		<a href="../Games%20&%20FunStuff/Wordle.html">Wordle</a><br><br><br>
-		<a href="Lightweb%20MainPage.html">Exit</a>
+		<input type="text" style="font-family: times-new-roman;" id="searchInput" placeholder="Search Games..." />
+		<ul id="SearchInputVacuum" >
+		<li>
+		<a  href="../Games%20&%20FunStuff/Connect4.html">Connect 4</a><br><br><br>
+		</li>
+		<li>
+		<a  href="../Games%20&%20FunStuff/Click%20the%20Dot.html">Click the Dot</a><br><br><br>
+		</li>
+		<li>
+		<a  href="../Games%20&%20FunStuff/Color%20Memory.html">Color Memory</a><br><br><br>
+		</li>
+		<li>
+		<a  href="../Games%20&%20FunStuff/Snake.html">Snake</a><br><br><br>
+		</li>
+		<li>
+		<a  href="../Games%20&%20FunStuff/TicTacToe.html">Tic-Tac-Toe</a><br><br><br>
+		</li>
+		<li>
+		<a  href="../Games%20&%20FunStuff/Wordle.html">Wordle</a><br><br><br>
+		</li>
+		<li>
+		<a  href="Lightweb%20MainPage.html">Exit</a>
+		</li>
+		</ul>
+		<div id="noGames" >No games were found in the making of this corner.</div>
 	<script>
     const searchInput = document.getElementById('searchInput');
-    const listItems = document.querySelectorAll('#search li')
-    const noQuizzes = document.getElementById('noQuizzes');
+    const listItems = document.querySelectorAll('#SearchInputVacuum li')
+    const noGames = document.getElementById('noGames');
 
 
     searchInput.addEventListener('input', function () {
@@ -42,7 +68,7 @@
         if (isVisible) visibleCount++;
       });
 
-      noQuizzes.style.display = visibleCount === 0 ? 'block' : 'none';
+      noGames.style.display = visibleCount === 0 ? 'block' : 'none';
     });	
   </script>
 
