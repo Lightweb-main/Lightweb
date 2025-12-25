@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/q5@3.7.0/q5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/planck.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/p5play.js"></script>
+	</head>
+		
+	<body>
+		<input type="range" id="object1AngularDisplacementSlider" min=1 max=3600 value=50><p id="object1AngularDisplacementDisplay" style="display: inline;">Object 1 Mass: </p>
+		<input type="range" id="object1TimeDisplacementSlider" min=1 max=10 value=3><p id="object1TimeDisplacementSliderDisplay" style="display: inline;">Object 1 Speed: </p>
+		<button onClick="generate1()">Generate Object 1</button><br>
+		<input type="range" id="object2AngularDisplacementSlider" min=1 max=3600 value=50><p id="object2AngularDisplacementDisplay" style="display: inline;">Object 2 Mass: </p>
+		<input type="range" id="object2TimeDisplacementSlider" min=1 max=10 value=3><p id="object2TimeDisplacementDisplay" style="display: inline;">Object 2 Speed: </p>
+		<button onClick="generate2()">Generate Object 2</button><br>
+		<button onClick="generate()">Generate Both Objects</button><br>
+		
+	</body>
+	<script>
+		const object1AngularDisplacementSlider = document.getElementById("object1AngularDisplacementSlider");
+		const object1AngularDisplacementDisplay = document.getElementById("object1AngularDisplacementDisplay");
+		const object1TimeDisplacementSlider = document.getElementById("object1TimeDisplacementSlider");
+		const object1TimeDisplacementDisplay = document.getElementById("object1TimeDisplacementSliderDisplay");
+		const object2AngularDisplacementSlider = document.getElementById("object2AngularDisplacementSlider");
+		const object2AngularDisplacementDisplay = document.getElementById("object2AngularDisplacementDisplay");
+		const object2TimeDisplacementSlider = document.getElementById("object2TimeDisplacementSlider");
+		const object2TimeDisplacementDisplay = document.getElementById("object2TimeDisplacementDisplay");
+	
+		let object1AngleDisplacement = Number(object1AngularDisplacementSlider.value);
+		let object1TimeDisplacement = Number(object1TimeDisplacementSlider.value);
+		let object2AngleDisplacement = Number(object2AngularDisplacementSlider.value);
+		let object2TimeDisplacement = Number(object2TimeDisplacementSlider.value);
+	
+		let object1;
+		let object2;
+		
+		setInterval(update, 10);
+		function update(){
+			object1AngleDisplacement = Number(object1AngularDisplacementSlider.value);
+			object1TimeDisplacement = Number(object1TimeDisplacementSlider.value);
+			object2AngleDisplacement = Number(object2AngularDisplacementSlider.value);
+			object2TimeDisplacement = Number(object2TimeDisplacementSlider.value);
+			
+			object1AngularDisplacementDisplay.textContent = `Object 1 Angle Displacement: ${object1AngleDisplacement}°`;
+			object1TimeDisplacementDisplay.textContent = `Object 1 Time Displacement: ${object1TimeDisplacement}`;
+			object2AngularDisplacementDisplay.textContent = `Object 2 Angle Displacement: ${object2AngleDisplacement}°`;
+			object2TimeDisplacementDisplay.textContent = `Object 2 Time Displacement: ${object2TimeDisplacement}`;
+		}
+		function generate1(){
+			object1 = new Sprite(width/4, height/2, 100, 100, "dynamic");
+				object1.bounciness = 0;
+				object1.friction = 0;
+				object1.life = 500;
+				object1.rotationSpeed = (object1AngleDisplacement / object1TimeDisplacement) / 100;
+		}
+		
+		function generate2(){
+			object2 = new Sprite(3 * width/4, height/2, 100, 100, "dynamic");
+				object2.bounciness = 0;
+				object2.friction = 0;
+				object2.life = 500;
+				object2.rotationSpeed = (object2AngleDisplacement / object2TimeDisplacement) / 100;
+		}
+		
+		function generate(){
+			object1 = new Sprite(width/4, height/2, 100, 100, "dynamic");
+				object1.bounciness = 0;
+				object1.friction = 0;
+				object1.life = 500;
+				object1.rotationSpeed = (object1AngleDisplacement / object1TimeDisplacement) / 100;
+			object2 = new Sprite(3 * width/4, height/2, 100, 100, "dynamic");
+				object2.bounciness = 0;
+				object2.friction = 0;
+				object2.life = 500;
+				object2.rotationSpeed = (object2AngleDisplacement / object2TimeDisplacement) / 100;
+		}
+		
+		
+		function setup() {
+			createCanvas(2000, 600);
+		}
+		
+		function draw(){
+			background(245);
+			frameRate(100);
+		}
+		
+		document.addEventListener('DOMContentLoaded', function(){
+		let message = document.createElement('p');
+		message.innerHTML = "Notice how much faster an object spins with a higher angle displacement or slower with a higher time displacement.";
+		document.body.appendChild(message);
+		});
+	</script>
+</html>
+	

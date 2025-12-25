@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p, math{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Quadratic Mean (Root Mean Square) Calculator</h1>
+		<h2>Formula</h2>
+		<p>Root Mean Square = 
+		<math>
+			<msqrt>
+    <mfrac>
+      <mrow>
+        <mo>&#x2211;</mo>
+        <mrow>
+            <mrow>
+            </mrow>
+        </mrow>
+        <msup>
+          <msub>
+            <mi>x</mi>
+            <mi>i</mi>
+          </msub>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+      <mi>n</mi>
+    </mfrac>
+  </msqrt>
+		</math></p>
+		<h2>Input Number</h2>
+		<input id="numberInput">
+		<button id="enterInput">Enter Input</button>
+		<h2>Calculate</h2>
+		<button id="calculateInput">Calculate</button>
+		<h2>Results</h2>
+		<p style="text-align: center; font-size: 60px;" id="calculationP1">Datset: []</p>
+		<p style="text-align: center; font-size: 50px;" id="calculationP2">Root Mean Square (&radic; x): </p>
+		<p style="text-align: center; font-size: 50px;" id="calculationP3">Root Mean Square (x): </p>
+		
+	</body>
+	<script>
+		const enterInput = document.getElementById("enterInput");
+		const numberInput = document.getElementById("numberInput");
+		const calculateInput = document.getElementById("calculateInput");
+		const calculationP1 = document.getElementById("calculationP1");
+		const calculationP2 = document.getElementById("calculationP2");
+		const calculationP3 = document.getElementById("calculationP3");
+		let data = [];
+		let dataQuadraticMean = 0;
+		setInterval(update, 10);
+		function update(){
+			calculationP1.textContent = `Dataset: [${data}]`;
+		}
+		
+		enterInput.addEventListener("click", function(){
+			const number = parseFloat(numberInput.value);
+			if(isNaN(number)){
+				return;
+			}
+			data.push(number);
+		});
+		
+		
+		calculateInput.addEventListener("click", function(){
+			for(let i = 0; i < data.length; i++){
+				dataQuadraticMean += data[i] * data[i];
+				console.log(dataQuadraticMean);
+			}
+			let dataQuadraticMeanSquared = dataQuadraticMean / data.length;
+			
+			dataQuadraticMean = Math.pow(dataQuadraticMeanSquared, 1/2);
+			calculationP2.innerHTML = `Root Mean Square (&radic;x): ${(dataQuadraticMean).toFixed(5)}`;
+			calculationP3.innerHTML = `Root Mean Square (x): ${(dataQuadraticMeanSquared).toFixed(5)}`;
+		});
+	</script>
+</html>
+	

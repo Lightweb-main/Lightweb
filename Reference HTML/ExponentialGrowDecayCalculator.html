@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Exponential Growth and Decay Calculator</h1>
+		<h2 style="text-align: center;">Max Number: 1.797e+308</h2>
+		<h2>Formula</h2>
+		<p>Exponential Change: ae<sup>kt</sup></p>
+		<h2>Input Number</h2>
+		<p>a<sub>0</sub> (initial number): <input id="numberInputA"></input></p>
+		<p>a (final number): <input id="numberInputB"></input></p>
+		<p>t(starting time): <input id="numberInputC"> * in years (or 0)</input></p>
+		<p>t<sub>e</sub> (ending time): <input id="numberInputD"></input></p>
+		<p>t<sub>f</sub> (future time): <input id="numberInputE"></input></p>
+		<h2>Calculate</h2>
+		<button id="calculateInput">Calculate</button>
+		<h2>Results</h2>
+		<p style="text-align: center; font-size: 80px;" id="calculationP1">Exponential Rate: </p>
+		<p style="text-align: center; font-size: 80px;" id="calculationP2">Future Value: </p>
+		
+	</body>
+	<script>
+		const numberInputA = document.getElementById("numberInputA");
+		const numberInputB = document.getElementById("numberInputB");
+		const numberInputC = document.getElementById("numberInputC");
+		const numberInputD = document.getElementById("numberInputD");
+		const numberInputE = document.getElementById("numberInputE");
+		const calculateInput = document.getElementById("calculateInput");
+		const calculationP1 = document.getElementById("calculationP1");
+		const calculationP2 = document.getElementById("calculationP2");
+	
+	
+		calculateInput.addEventListener("click", function(){
+			let a = parseFloat(numberInputA.value);
+			let aF = parseFloat(numberInputB.value);
+			let t = parseFloat(numberInputC.value);
+			let t2 = parseFloat(numberInputD.value);
+			let t3 = parseFloat(numberInputE.value);
+			let expoRate = 0;
+			let expoValue = 0;
+			
+			if(!isNaN(a) && !isNaN(aF) && !isNaN(t) && !isNaN(t2) && !isNaN(t3)){
+
+				expoRate = Math.log(aF / a, Math.E) / (t2 - t);
+				expoValue = a * Math.pow(Math.E, expoRate * (t3 - t));
+				calculationP1.textContent = `Exponential Rate: ${(expoRate * 100).toFixed(5)}%`;
+				calculationP2.textContent = `Future Number: ${expoValue}`;
+				if(expoValue > 1000000000000000){
+					let scientificNotation = expoValue.toString();
+						const base = scientificNotation[0];
+						let base2 = scientificNotation.slice(1);
+						const exponent = base2.length;
+						base2 = scientificNotation.slice(1, 25);
+						calculationP2.innerHTML = `Future Number: ${base}.${base2}e+${exponent}`;
+				} else {
+					calculationP2.innerHTML = `Future Number: ${expoValue}`;
+				}
+			}
+		});
+	</script>
+</html>
+	

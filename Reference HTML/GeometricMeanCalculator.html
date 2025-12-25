@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+			math {
+				font-size: 30px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Geometric Mean Calculator</h1>
+		<h2>Formulas</h2>
+		<math>
+			<mtext>Geometric Mean:&nbsp;&nbsp;</mtext>
+			<mroot>
+				<mrow>
+					<msub>
+						<ms>x</ms>
+						<mn>1</mn>
+					</msub>
+					<mo>+</mo>
+					<msub>
+						<ms>x</ms>
+						<mn>2</mn>
+					</msub>
+					<mo>+</mo>
+					<msub>
+						<ms>x</ms>
+						<mn>3</mn>
+					</msub>
+					<mo>...  +</mo>
+					<msub>
+						<ms>x</ms>
+						<mn>n</mn>
+					</msub>
+				</mrow>
+				<ms>x</ms>
+			</mroot>
+		</math>
+		<h2>Input Number</h2>
+		<input id="numberInput">
+		<button id="enterInput">Enter Input</button>
+		<h2>Calculate</h2>
+		<button id="calculateInput">Calculate</button>
+		<h2>Results</h2>
+		<p style="text-align: center; font-size: 60px;" id="calculationP1">Datset: []</p>
+		<p style="text-align: center; font-size: 50px;" id="calculationP2">Geometric Mean: </p>
+
+		
+	</body>
+	<script>
+		let data = [];
+		let dataGeometricMean = 0;
+	
+		
+		const enterInput = document.getElementById("enterInput");
+		const numberInput = document.getElementById("numberInput");
+		const calculateInput = document.getElementById("calculateInput");
+		const calculationP1 = document.getElementById("calculationP1");
+		const calculationP2 = document.getElementById("calculationP2");
+		
+		setInterval(update, 10);
+		
+		enterInput.addEventListener("click", function(){
+			const number = parseFloat(numberInput.value);
+			if(isNaN(number)){
+				return;
+			}
+			data.push(number);
+
+		});
+		
+		calculateInput.addEventListener("click", function(){
+			
+			for(num of data){
+				if(isNaN(num)){
+					return;
+				}
+			}
+			dataGeometricMean = 1;
+			for(num of data){
+				dataGeometricMean *= num;
+			}
+			
+			dataGeometricMean = Math.pow(dataGeometricMean, 1/ data.length);
+			
+			calculationP2.innerHTML = `Geometric Mean: ${dataGeometricMean}`;
+		});
+		
+		function update(){
+			calculationP1.textContent = `Dataset: [${data}]`;
+		}
+		
+	</script>
+</html>
+	

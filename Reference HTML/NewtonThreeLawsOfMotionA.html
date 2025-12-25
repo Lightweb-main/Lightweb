@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/q5@3.7.0/q5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/planck.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/p5play.js"></script>
+		<style>
+			h1 {
+				font-size: 80px; 
+				text-align: center;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Newton's First Law of Motion Simulation (Inertia)</h1>
+		<h2 style="text-align: center;">This is a simulation showing what an object would look like if an object was moving without any external forces.<br>Move the slider to change friction to see how differently the object slides across the ground.</h2>
+		<input type="range" min="0" max="100" value="0" id="object1FrictionSlider"></input>
+	</body>
+	<script>
+		const object1FrictionSlider = document.getElementById("object1FrictionSlider");
+	
+		let object1;
+		let object1Life;
+		let ground;
+		let toggle = false;
+		let object1SpeedIndicator;
+		let object1FrictionIndicator;
+		let frictionValue;
+		setInterval(generate, 1500);	
+		
+		function generate(){
+			if(toggle == false){
+				object1 = new Sprite(-300, 465, 300, 300, "dynamic");
+					object1.mass = 25;
+					object1.bounciness = 0.3;
+					object1.vel.x = 15;
+					object1.friction = parseFloat(object1FrictionSlider.value);
+					toggle = true;
+					object1Life = 0;
+			}
+		}
+		
+		
+		function setup() {
+			createCanvas(2000, 600);
+			world.gravity.y = 10;
+			frameRate(100);
+			
+			ground = new Sprite();
+			ground.collider = "static";
+			ground.width = width * 1.5;
+			ground.height = 4;
+			ground.color = "grey";
+			ground.y = 500;
+			
+			object1FrictionIndicator = new Sprite(width / 30, height / 20, 125, 50, "none");
+			object1FrictionIndicator.text = "Ground Friction: ";
+			object1FrictionIndicator.color = "white";
+			
+			object1SpeedIndicator = new Sprite(width / 10, height / 20, 125, 50, "none");
+			object1SpeedIndicator.text = "Object Speed: ";
+			object1SpeedIndicator.color = "white";
+		}
+
+		
+	
+		
+		function draw(){
+			background(245);
+			if(object1){
+				frictionValue = parseFloat(object1FrictionSlider.value);
+				frictionValue = constrain(frictionValue / 100, 0, 1);
+				object1.friction = frictionValue;
+				object1SpeedIndicator.text = `Object Speed: ${nf(object1.vel.x, 1, 2)}`;
+				object1FrictionIndicator.text = `Ground Friction: ${nf(object1.friction, 1, 2)}`;
+				object1Life++;
+				if(object1.x > width || object1Life >= 250){
+					object1.remove();
+					object1 = null;
+					toggle = false;
+				}
+			}
+			
+			if(!object1){
+				toggle = false;
+			}
+		}
+		
+	</script>
+</html>
+	

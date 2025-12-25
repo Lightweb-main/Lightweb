@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Linear Equations Calculator</h1>
+		<h2>General Form</h2>
+		<p>Linear Equations: ax + b = c</p>
+		<h2>Input Number</h2>
+		<input id="coefficentAInput">&nbsp; For Coefficent a</input><br><br>
+		<input id="numberBInput">&nbsp; For Constant b</input><br><br>
+		<input id="numberCInput">&nbsp; For Constant c</input>
+		<h2>Calculate</h2>
+		<button id="calculateInputs">Calculate</button>
+		<h2>Results</h2>
+		<p style="text-align: center; font-size: 80px;" id="calculationP1">ax + b = c</p>
+		<p style="text-align: center; font-size: 80px;" id="calculationP2">Solution: </p>
+
+	</body>
+	<script>
+		const coefficentAInput = document.getElementById("coefficentAInput");
+		const numberBInput = document.getElementById("numberBInput");
+		const numberCInput = document.getElementById("numberCInput");
+		const calculateInputs = document.getElementById("calculateInputs");
+		const calculationP1 = document.getElementById("calculationP1");
+		const calculationP2 = document.getElementById("calculationP2");
+		
+		calculateInputs.addEventListener("click", function(){
+			let a = parseFloat(coefficentAInput.value);
+			let b = parseFloat(numberBInput.value);
+			let c = parseFloat(numberCInput.value);
+			let solution = 0;
+			if(!isNaN(a) && !isNaN(c)){
+				if(a === 0){
+					alert("a cannot equal 0");
+					return;
+				}
+				if(b === 0 || isNaN(b)){
+					solution = c / a;
+					calculationP1.innerHTML = `${a}x = ${c}`;
+				} else {
+					solution = (c - b) / a;
+					calculationP1.innerHTML = `${a}x + ${b} = ${c}`;
+				}
+				
+				calculationP2.innerHTML = `Solution: ${solution.toFixed(4)}`;
+				
+			}
+		});
+		
+	</script>
+</html>
+	

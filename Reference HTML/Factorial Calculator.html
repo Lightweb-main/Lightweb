@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Factorial Calculator</h1>
+		<h2 style="text-align: center;">WARNING: VERY VERY VERY BIG NUMBERS CAUSE LAG</h2>
+		<h2>Formula</h2>
+		<p>x! = 1 * 2 * 3 *...... x</p>
+		<h2>Input Number</h2>
+		<input id="numberInput">
+		<h2>Calculate</h2>
+		<button id="calculateInput">Calculate</button>
+		<h2>Results</h2>
+		<p style="text-align: center; font-size: 80px;" id="calculationP1">x! = 1 * 2 * 3 *... x</p>
+		
+	</body>
+	<script>
+		const numberInput = document.getElementById("numberInput");
+		const calculateInput = document.getElementById("calculateInput");
+		const calculationP1 = document.getElementById("calculationP1");
+	
+		calculateInput.addEventListener("click", function(){
+			if(!isNaN(numberInput.value)){
+					let factorialValue = 1n;
+					let n = BigInt(numberInput.value);
+					for(let i = n; i > 0n; i--){
+						factorialValue *= i;
+					}
+					
+					if(factorialValue > 1000000000000n){
+						let scientificNotation = factorialValue.toString();
+						const base = scientificNotation[0];
+						let base2 = scientificNotation.slice(1);
+						const exponent = base2.length;
+						base2 = scientificNotation.slice(1, 25);
+						calculationP1.innerHTML = `${numberInput.value}! = ${base}.${base2}e+${exponent}`;
+					} else {
+						calculationP1.innerHTML = `${numberInput.value}! = ${factorialValue}`;
+					}
+				}
+		});
+	</script>
+</html>
+	

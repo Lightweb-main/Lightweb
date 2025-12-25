@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Square & Cube Root Calculator</h1>
+		<h2>Formula</h2>
+		<p>
+		<math>
+			<ms>x</ms>
+			<mo>=</mo>
+			<msqrt>
+				<ms>x</ms>
+			</msqrt>
+			<mo>*</mo>
+			<msqrt>
+				<ms>x</ms>
+			</msqrt>
+		</math>
+		</p>
+		<p>
+		<math>
+			<ms>x</ms>
+			<mo>=</mo>
+			<mroot>
+				<ms>x</ms>
+				<mn>3</mn>
+			</mroot>
+			<mo>*</mo>
+			<mroot>
+				<ms>x</ms>
+				<mn>3</mn>
+			</mroot>
+			<mo>*</mo>
+			<mroot>
+				<ms>x</ms>
+				<mn>3</mn>
+			</mroot>
+		</math>
+		</p>
+		<h2>Input Number</h2>
+		<input id="numberInput">
+		<h2>Calculate</h2>
+		<button id="calculateInput">Calculate</button>
+		<h2>Results</h2>
+		<p style="text-align: center; font-size: 80px;" id="calculationP1">x = &radic;x * &radic;x</p>
+		<p style="text-align: center; font-size: 80px;" id="calculationP2"><sup>3</sup>&radic;x = </p>
+		
+	</body>
+	<script>
+		const numberInput = document.getElementById("numberInput");
+		const calculateInput = document.getElementById("calculateInput");
+		const calculationP1 = document.getElementById("calculationP1");
+	
+		calculateInput.addEventListener("click", function(){
+			let num = parseFloat(numberInput.value);
+			if(!isNaN(num)){
+				let squareRoot = Math.pow(num, 1/2);
+				let cubeRoot = Math.pow(num, 1/3);
+				calculationP1.innerHTML = `&radic;${num} = ${squareRoot}`;
+				calculationP2.innerHTML = `<sup>3</sup>&radic;${num} = ${cubeRoot}`;
+			}
+		});
+	</script>
+</html>
+	

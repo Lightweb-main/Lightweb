@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Absolute Value Calculator</h1>
+		<h2>Formulas</h2>
+		<p>|x| = x</p>
+		<p>|-x| = x</p>
+		<p>-|x| = -x</p>
+		<h2>Input Number</h2>
+		<input id="numberInput">
+		<input type="checkbox" id="negativeSign">Negative Sign?</input>
+		<h2>Calculate</h2>
+		<button id="calculateInput">Calculate</button>
+		<h2>Results</h2>
+		<p style="text-align: center; font-size: 80px;" id="calculationP1">|x| = x</p>
+		
+	</body>
+	<script>
+		const numberInput = document.getElementById("numberInput");
+		const calculateInput = document.getElementById("calculateInput");
+		const calculationP1 = document.getElementById("calculationP1");
+		const negativeSign = document.getElementById("negativeSign");
+		let absValue = 3;
+		calculateInput.addEventListener("click", function(){
+			if(!isNaN(numberInput.value)){
+				if(negativeSign.checked){
+					absValue = -Math.abs(parseFloat(numberInput.value));
+					calculationP1.textContent = `-|${numberInput.value}| = ${absValue}`
+				} else {
+					absValue = Math.abs(parseFloat(numberInput.value));
+					calculationP1.textContent = `|${numberInput.value}| = ${absValue}`
+				}
+			}
+		});
+	</script>
+</html>
+	

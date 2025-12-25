@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+			#selectCombinationPermutation{
+				width: 100vw;
+				border: 2px solid black;
+				border-radius: 5px;
+				padding: 35px;
+				display: flex;
+				flex-direction: row;
+				gap: 25px;
+				border-collapse: collapse;
+			}
+			button {
+				border-radius: 10px;
+				padding: 15px;
+				font-size: 20px;
+				
+			}
+			
+			#Combination, #Permutation {
+				border: 2px solid black;
+				border-radius: 5px;
+				width: 100vw;
+				height: 100vh;
+				padding: 50px;
+			}
+			
+			math {
+				font-size: 25px;
+			}
+			button {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Combination & Permutation Calculator</h1>
+		<div id="selectCombinationPermutation">
+			<button id="combinationButton" onClick=combinationPermutationToggleA("c")>Combination</button>
+			<button id="permutationButton" onClick=combinationPermutationToggleA("p")>Permutation</button>
+		</div>
+		<div id="Combination">
+			<h1>Combination Calculator</h1>
+			<h2>Formula</h2>
+			<h3>Combination (without repetition):</h3>
+			<math>
+				<mrow>
+					<ms>C</ms>
+					<mtext>(n, r)</mtext>
+					<mo>=</mo>
+					<mfrac>
+						<mtext>n!</mtext>
+						<mrow>
+							<mtext>r!(n - r)!</mtext>
+						</mrow>
+					</mfrac>
+				</mrow>
+			</math>
+		<h3>Combination (w/ repetition):</h3>
+			<math>
+				<mrow>
+					<msub><ms>C</ms><mtext>rep</mtext></msub>
+					<mtext>(n, r)</mtext>
+					<mo>=</mo>
+					<mfrac>
+						<mtext>(n + r - 1)!</mtext>
+						<mrow>
+							<mtext>r!(n - 1)!</mtext>
+						</mrow>
+					</mfrac>
+				</mrow>
+			</math>
+		<p>n: Total Amount of Objects</p>
+		<p>r: Amount of Objects Being Selected.</p>
+		<h2>Input</h2>
+			<p>n: (Total Amount of Objects) <input id="combinationInputA"></p>
+			<p>r: (Sampled Objects) <input id="combinationInputB"></p>
+			<input type="checkbox" id="combinationRepetition">Repetition</input><br><br>
+			<button id="combinationCalculate">Calculate</button>
+		<h2>Calculation</h2>
+			<p style="text-align: center; font-size: 35px;" id="combinationCalculationA">Total Amount of Combinations: </p>
+		</div>
+		<div id="Permutation">
+			<h1>Permutations Calculator</h1>
+			<h2>Formula</h2>
+			<h3>Permutations (without repetition):</h3>
+			<math>
+				<mrow>
+					<ms>P</ms>
+					<mtext>(n, r)</mtext>
+					<mo>=</mo>
+					<mfrac>
+						<mtext>n!</mtext>
+						<mrow>
+							<mtext>(n - r)!</mtext>
+						</mrow>
+					</mfrac>
+				</mrow>
+			</math>
+		<h3>Permutations (w/ repetition):</h3>
+			<math>
+				<mrow>
+					<msub><ms>P</ms><mtext>rep</mtext></msub>
+					<mtext>(n, r)</mtext>
+					<mo>=</mo>
+					<msup><ms>n</ms><ms>r</ms></msup>
+				</mrow>
+			</math>
+		<p>n: Total Amount of Objects</p>
+		<p>r: Amount of Objects Being Selected.</p>
+		<h2>Input</h2>
+			<p>n: (Total Amount of Objects) <input id="permutationInputA"></p>
+			<p>r: (Sampled Objects) <input id="permutationInputB"></p>
+			<input type="checkbox" id="permutationRepetition">Repetition</input><br><br>
+			<button id="permutationCalculate">Calculate</button>
+		<h2>Calculation</h2>
+			<p style="text-align: center; font-size: 35px;" id="permutationCalculationA">Total Amount of Permutations: </p>
+		</div>
+	</body>
+	<script>
+		const Combination = document.getElementById("Combination");
+		const Permutation = document.getElementById("Permutation");
+		const combinationButton = document.getElementById("combinationButton");
+		const permutationButton = document.getElementById("permutationButton");
+		
+		
+		
+		
+		const combinationInputA = document.getElementById("combinationInputA");
+		const combinationInputB = document.getElementById("combinationInputB");
+		const combinationCalculate = document.getElementById("combinationCalculate");
+		const combinationCalculationA = document.getElementById("combinationCalculationA");
+		const combinationRepetition = document.getElementById("combinationRepetition");
+		
+		
+		
+		
+		const permutationInputA = document.getElementById("permutationInputA");
+		const permutationInputB = document.getElementById("permutationInputB");
+		const permutationCalculate = document.getElementById("permutationCalculate");
+		const permutationCalculationA = document.getElementById("permutationCalculationA");
+		const permutationRepetition = document.getElementById("permutationRepetition");
+		
+		
+		
+		
+		let combinationPermutationToggle = "";
+
+		
+		
+		permutationButton.style.backgroundColor = "#ffffff";
+		
+		function combinationPermutationToggleA(input){
+			if(combinationPermutationToggle === input){
+				combinationPermutationToggle = "";
+			} else {
+				combinationPermutationToggle = input;
+			}
+		}
+		setInterval(update, 10);
+		
+		function update(){
+			Combination.style.display = "none";
+			Permutation.style.display = "none";
+			combinationButton.style.backgroundColor = "#ffffff";
+			permutationButton.style.backgroundColor = "#ffffff";
+			
+			if(combinationPermutationToggle === "c"){
+				Combination.style.display = "block";
+				combinationButton.style.backgroundColor = "#ffaaaa";
+			} else if(combinationPermutationToggle === "p"){
+				Permutation.style.display = "block";
+				permutationButton.style.backgroundColor = "#ffaaaa";
+			}
+		}
+		
+		
+		
+		
+		combinationCalculate.addEventListener("click", function() {
+			let n = parseFloat(combinationInputA.value);
+			let r = parseFloat(combinationInputB.value);
+			console.log(n);
+			let nF = 1n;
+			let nF2 = 1n;
+			let rF = 1n;
+			let nrF = 1n;
+			let nRF = 1n;
+			for(let i = 1n; i <= n; i++){
+				nF *= i;
+			}
+			for(let i = 1n; i <= n - 1; i++){
+				nF2 *= i;
+			}
+			for(let i = 1n; i <= r; i++){
+				rF *= i;
+			}
+			for(let i = 1n; i <= n + r - 1; i++){
+				nrF *= i;
+			}
+			for(let i = 1n; i <= n - r; i++){
+				nRF *= i;
+			}
+				let combinationAmount = 0n;
+
+				if(combinationRepetition.checked){
+					combinationAmount = nrF / (rF * nF2);
+					if(combinationAmount >= 1000000000000n){
+						let scientificNotation = combinationAmount.toString();
+						const base = scientificNotation[0];
+						let base2 = scientificNotation.slice(1);
+						const exponent = base2.length;
+						base2 = scientificNotation.slice(1, 25);
+						combinationCalculationA.innerHTML = `Total Amount of Combinations = ${base}.${base2}e+${exponent}`;
+					} else {
+						combinationCalculationA.innerHTML = `Total Amount of Combinations: ${combinationAmount}`;
+					}
+				} else {
+					if(n >= r && r >= 0){
+						combinationAmount = nF / (rF * nRF);
+						if(combinationAmount >= 1000000000000n){
+							let scientificNotation = combinationAmount.toString();
+							const base = scientificNotation[0];
+							let base2 = scientificNotation.slice(1);
+							const exponent = base2.length;
+							base2 = scientificNotation.slice(1, 25);
+							combinationCalculationA.innerHTML = `Total Amount of Combinations = ${base}.${base2}e+${exponent}`;
+						} else {
+							combinationCalculationA.innerHTML = `Total Amount of Combinations: ${combinationAmount}`;
+						}
+					} else {
+						alert("Make sure n is greater than or equal to r and is greater than or equal to 0 (n >= r >= 0)");
+						return;
+					}
+				}	
+		});
+		
+		permutationCalculate.addEventListener("click", function() {
+			let n = parseFloat(permutationInputA.value);
+			let r = parseFloat(permutationInputB.value);
+			let nF = 1n;
+			let nrF = 1n;
+			let nRE = 1n;
+			for(let i = 1n; i <= n; i++){
+				nF *= i;
+			}
+			for(let i = 1n; i <= r; i++){
+				nRE *= BigInt(n);
+			}
+			for(let i = 1n; i <= n - r; i++){
+				nrF *= i;
+			}
+				let permutationAmount = 0n;
+
+				if(permutationRepetition.checked){
+					permutationAmount = nRE;
+					if(permutationAmount >= 1000000000000n){
+						let scientificNotation = permutationAmount.toString();
+						const base = scientificNotation[0];
+						let base2 = scientificNotation.slice(1);
+						const exponent = base2.length;
+						base2 = scientificNotation.slice(1, 25);
+						permutationCalculationA.innerHTML = `Total Amount of Permutations = ${base}.${base2}e+${exponent}`;
+					} else {
+						permutationCalculationA.innerHTML = `Total Amount of Permutations: ${permutationAmount}`;
+					}
+				} else {
+					if(n >= r && r >= 0){
+						permutationAmount = nF / nrF;
+						if(permutationAmount >= 1000000000000n){
+							let scientificNotation = permutationAmount.toString();
+							const base = scientificNotation[0];
+							let base2 = scientificNotation.slice(1);
+							const exponent = base2.length;
+							base2 = scientificNotation.slice(1, 25);
+							permutationCalculationA.innerHTML = `Total Amount of Permutations = ${base}.${base2}e+${exponent}`;
+						} else {
+							permutationCalculationA.innerHTML = `Total Amount of Permutations: ${permutationAmount}`;
+						}
+					} else {
+						alert("Make sure n is greater than or equal to r and is greater than or equal to 0 (n >= r >= 0)");
+						return;
+					}
+			}	
+		});
+		
+	</script>
+</html>
+	

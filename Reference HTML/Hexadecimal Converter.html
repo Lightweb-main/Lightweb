@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Hexadecimal / Decimal Converter</h1>
+		<h2>Base Tables</h2>
+		<p>Decimal: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16</p>
+		<p>Hexadecimal: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f</p>
+		<h2>Input Number</h2>
+		<input id="numberInput">
+		<h2>Convert</h2>
+		<button id="convertInputtoHexadecimal">Convert to Hexadecimal</button><br><br>
+		<button id="convertInputtoDecimal">Convert to Decimal</button>
+		<h2>Results</h2>
+		<p style="text-align: center; font-size: 80px;" id="calculationP1">ff = 255</p>
+		
+	</body>
+	<script>
+		const numberInput = document.getElementById("numberInput");
+		const convertInputtoHexadecimal = document.getElementById("convertInputtoHexadecimal");
+		const calculationP1 = document.getElementById("calculationP1");
+		
+		convertInputtoDecimal.addEventListener("click", function(){
+			let number = numberInput.value
+			let decimalNumber = parseInt(numberInput.value, 16);
+			if(!/^[0-9a-fA-f]+$/.test(number)){
+				return;
+			}
+			calculationP1.innerHTML = `${number} → ${decimalNumber}` 
+		});
+		
+		convertInputtoHexadecimal.addEventListener("click", function(){
+			let number = parseFloat(numberInput.value);
+			let hexadecimalNumber = number.toString(16);
+				if(!isNaN(numberInput.value)){
+					calculationP1.innerHTML = `${number} → ${hexadecimalNumber}` 
+				}
+		});
+	</script>
+</html>
+	

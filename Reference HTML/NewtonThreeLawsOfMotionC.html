@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/q5@3.7.0/q5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/planck.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/p5play.js"></script>
+		<style>
+			h1 {
+				font-size: 60px; 
+				text-align: center;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Newton's Third Law of Motion Simulation (Action and Reaction)</h1>
+		<h2 style="text-align: center;">This is a simulation showing how every collision acts an opposite force on both objects.</h2>
+		<input id="toggleSameMass" type="checkbox">Same Mass?</input>
+	</body>
+	<script>
+		const toggleSameMass = document.getElementById("toggleSameMass");
+		let object1 = 0;
+		let object2 = 0;
+		let objectLife;
+		let ground;
+		let toggle = false;
+		let rng;
+		let rng2;
+		setInterval(generate, 15);	
+		
+		function generate(){
+			if(toggle == false){
+				rng = Math.floor(Math.random() * 100) + 1;
+				object1 = new Sprite(-300, 465, 300, 300, "dynamic");
+					object1.mass = rng;
+					object1.bounciness = 0.3;
+					object1.vel.x = 3;
+					object1.friction = 0;
+				rng2 = Math.floor(Math.random() * 100) + 1;
+				object2 = new Sprite(2300, 465, 300, 300, "dynamic");
+					object2.mass = rng2;
+					object2.bounciness = 0.3;
+					object2.vel.x = -3;
+					object2.friction = 0;
+				toggle = true;
+				objectLife = 0;
+				if(toggleSameMass.checked){
+					rng = rng2;
+					object1.mass = rng;
+					object2.mass = rng2;
+				}
+			}
+		}
+		
+		
+		function setup() {
+			createCanvas(2000, 600);
+			world.gravity.y = 10;
+			frameRate(100);
+			
+			ground = new Sprite();
+			ground.collider = "static";
+			ground.width = width * 1.5;
+			ground.height = 4;
+			ground.color = "grey";
+			ground.y = 500;
+			
+			object1MassIndicator = new Sprite(width / 30, height / 20, 125, 50, "none");
+			object1MassIndicator.text = "Object 1 Mass: ";
+			object1MassIndicator.color = "white";
+			
+			object2MassIndicator = new Sprite(width / 10, height / 20, 125, 50, "none");
+			object2MassIndicator.text = "Object 2 Mass: ";
+			object2MassIndicator.color = "white";
+			
+		}
+
+		
+	
+		
+		function draw(){
+			background(245);
+			if(object1 && object2){
+				objectLife++;
+				object1MassIndicator.text = `Object 1 Mass: ${nf(object1.mass, 1, 0)}`;
+				object2MassIndicator.text = `Object 2 Mass: ${nf(object2.mass, 1, 0)}`;
+				if(objectLife >= 3000){
+					object1.remove();
+					object2.remove();
+					object1 = null;
+					object2 = null;
+					toggle = false;
+				}
+			}
+			if(isNaN(object1)){
+				object1MassIndicator.text = `Object 1 Mass: ${rng}`;
+			}
+			if(isNaN(object2)){
+				object2MassIndicator.text = `Object 2 Mass: ${rng2}`;
+			}
+			
+			if(!object1 || !object2){
+				toggle = false;
+			}
+			
+		}
+		
+		document.addEventListener("DOMContentLoaded", function(){
+			let e = document.createElement("p");
+			e.innerHTML = `
+			Newton's Third Law states that every action has an equal and opposite reaction. In everyday nature, when an object pushes or pulls an object, it exerts a force onto that object while the object that is being pulled or pushed exerts a force back onto the first object but in the opposite direction. Note that this doesn't mean that both objects travel the same distance, mass still plays a role in how much distance an object travels, so two objects with unequal masses that collide with the same speed won't travel the exact same distance.
+			`
+			document.body.appendChild(e);
+		});
+		
+	</script>
+</html>
+	

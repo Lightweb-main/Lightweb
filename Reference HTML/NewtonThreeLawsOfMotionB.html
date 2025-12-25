@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/q5@3.7.0/q5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/planck.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/p5play.js"></script>
+		<style>
+			h1 {
+				font-size: 80px; 
+				text-align: center;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Newton's Second Law of Motion Simulation (Acceleration)</h1>
+		<h2 style="text-align: center;">This is a simulation showing how mass and acceleration affect the net force of an object.</h2>
+		<input type="range" min="1" max="100" value="25" id="object1MassSlider"></input>
+		<input type="range" min="0" max="100" value="5" style="position: absolute; left: 10vw;" id="object1AccelerationSlider"></input>
+	</body>
+	<script>
+		const object1MassSlider = document.getElementById("object1MassSlider");
+		const object1AccelerationSlider = document.getElementById("object1AccelerationSlider");
+	
+		let object1;
+		let object1Life;
+		let ground;
+		let toggle = false;
+		let object1MassIndicator;
+		let object1AccelerationIndicator;
+		let object1NetForceIndicator;
+		setInterval(generate, 1500);	
+		
+		function generate(){
+			if(toggle == false){
+				object1 = new Sprite(-300, 465, 300, 300, "dynamic");
+					object1.mass = parseFloat(object1MassSlider.value);
+					object1.bounciness = 0.3;
+					object1.vel.x = parseFloat(object1AccelerationSlider.value);
+					object1.friction = 0;
+					toggle = true;
+					object1Life = 0;
+			}
+		}
+		
+		
+		function setup() {
+			createCanvas(2000, 600);
+			world.gravity.y = 10;
+			frameRate(100);
+			
+			ground = new Sprite();
+			ground.collider = "static";
+			ground.width = width * 1.5;
+			ground.height = 4;
+			ground.color = "grey";
+			ground.y = 500;
+			
+			object1MassIndicator = new Sprite(width / 30, height / 20, 125, 50, "none");
+			object1MassIndicator.text = "Object Mass: ";
+			object1MassIndicator.color = "white";
+			
+			object1AccelerationIndicator = new Sprite(width / 8, height / 20, 175, 50, "none");
+			object1AccelerationIndicator.text = "Object Acceleration: ";
+			object1AccelerationIndicator.color = "white";
+			
+			object1NetForceIndicator = new Sprite(width / 4.25, height / 20, 175, 50, "none");
+			object1NetForceIndicator.text = "Net Force: ";
+			object1NetForceIndicator.color = "white";
+		}
+
+		
+	
+		
+		function draw(){
+			background(245);
+			object1AccelerationIndicator.text = `Ground Acceleration: ${nf(object1AccelerationSlider.value, 1, 2)}m/s`;
+			object1MassIndicator.text = `Object Mass: ${nf(object1MassSlider.value, 1, 2)}kg`;
+			if(object1){
+				object1.text = `Net Force: ${nf(object1AccelerationSlider.value * object1MassSlider.value, 0, 0)}N`;
+				object1NetForceIndicator.text = `Net Force: ${nf(object1AccelerationSlider.value * object1MassSlider.value, 0, 0)}N`;
+				textSize(25);
+				object1.vel.x = object1AccelerationSlider.value / 10;
+				
+				object1Life++;
+				if(object1.x > width || (object1Life >= 250 && object1.vel.x < 0.5)){
+					object1.remove();
+					object1 = null;
+					toggle = false;
+				}
+			}
+			
+			if(!object1){
+				toggle = false;
+			}
+		}
+		
+	</script>
+</html>
+	
