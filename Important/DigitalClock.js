@@ -30,48 +30,35 @@ if (
 		currentPath.toLowerCase().includes('/lightweb/utility/') || 
 		currentPath.toLowerCase().includes('/lightweb/noninformationalarticles/') || 
 		currentPath.toLowerCase().includes('/lightweb/games%20funstuff/') || 
+		currentPath.toLowerCase().includes('/lightweb/other/') || 
 		currentPath.toLowerCase().includes('/lightweb/courses/')) {
     window.location.href = '../index.html';
   }	
-    if(currentPath.toLowerCase().includes('/lightweb/quizzes/pretests/') || 
-	currentPath.toLowerCase().includes('/lightweb/quizzes/tests/')){
-	window.location.href = '../../index.html';
-	
-	}
+
 
   
   
   
 }
 let faviconNum = 0
-setInterval(update, 100);
-function linkStyles() {
-  const testLink = document.querySelector('a');
-  if (!testLink) return;
+setInterval(update, 1);
 
-  const computed = window.getComputedStyle(testLink);
-  const borderColor = computed.borderColor;
-  const backgroundColor = computed.backgroundColor;
-
-  const isBroken =
-    borderColor === 'rgba(0, 0, 0, 0)' || backgroundColor === 'rgba(0, 0, 0, 0)' ||
-    borderColor === 'transparent' || backgroundColor === 'transparent';
-
-  if (isBroken) {
-    document.querySelectorAll('a').forEach(link => {
-      link.style.border = '12px solid var(--border)';
-      link.style.backgroundColor = 'var(--border)';
-      link.style.color = 'var(--text)';
-      link.style.textDecoration = 'none';
-      link.style.borderRadius = '10px';
-      link.style.fontWeight = 'bold';
-    });
-  }
+function clearLocalStorage(){
+	localStorage.clear();
+	
 }
 
+let frameCount = 0;
+let fullMilitaryTime;
+const fullMilitaryTimeCheckbox = document.getElementById("full-military-time-button");
+const militaryTimeSettings = document.getElementById("militaryTimeSettings");
 
 function update() {
-	faviconNum += 1
+	if(document.body.classList.contains("christmasScreen") && (frameCount % 15 === 0)){
+		snowflakeChristmasScreen();
+	}
+	faviconNum += 1;
+	frameCount++;
     const time = new Date();
     let hour = time.getHours();
     let min = time.getMinutes();
@@ -82,8 +69,18 @@ function update() {
     let am_pm = "AM";
 
 
-    const hasMilitaryTime = document.body.classList.contains('militaryTime')
-	const hasDashedCalendar = document.body.classList.contains('dashedCalendar')
+    const hasMilitaryTime = document.body.classList.contains('militaryTime');
+	const hasDashedCalendar = document.body.classList.contains('dashedCalendar');
+	if(fullMilitaryTimeCheckbox){
+		if(localStorage.getItem('fMT') === 'true'){
+			fullMilitaryTimeCheckbox.checked = true;
+		} else {
+			fullMilitaryTimeCheckbox.checked = false;
+		}
+	}
+	
+	
+	
     if(!hasMilitaryTime){
     if (hour >= 12) {
         am_pm = "PM";
@@ -91,11 +88,20 @@ function update() {
     }
     if (hour === 0) {
         hour = 12;
+		
     }
 }
    if(hasMilitaryTime){
-am_pm = ""
-}
+		am_pm = ""
+   }
+   if(militaryTimeSettings){
+		if(!hasMilitaryTime){
+			militaryTimeSettings.style.display = "none";
+		} else {
+			militaryTimeSettings.style.display = "block";
+		}
+    }
+	
     hour = hour < 10 ? hour : hour;
     min = min < 10 ? "0" + min : min;
     sec = sec < 10 ? "0" + sec : sec;
@@ -104,7 +110,10 @@ am_pm = ""
     let currentDay = `${month}/${day}/${year}`;
    if(hasMilitaryTime){
     currentTime = `${hour}:${min} ${am_pm}`;
-   }else{
+	if(localStorage.getItem('fMT') === 'true'){
+	currentTime = `${hour}:${min}:${sec}`;	
+	}
+   } else{
 	 currentTime = `${hour}:${min}:${sec} ${am_pm}`;  
    }
 	if(hasDashedCalendar){
@@ -115,21 +124,27 @@ am_pm = ""
 
     document.getElementById('DigitalClock').textContent = currentTime;
     document.getElementById('DigitalCalendar').textContent = currentDay;
+	
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
-
-  document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'chaos');
-  document.body.classList.remove('dashedCalendar');
-  document.body.classList.remove('InverseInversionOn');
-  document.body.classList.remove('PC', 'Phone', 'Laptop');
+	  
+	  
+	  
+	  document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'chaos');
+	  document.body.classList.remove('fullMilitaryTime');
+	  document.body.classList.remove('dashedCalendar');
+	  document.body.classList.remove('InverseInversionOn');
+	  document.body.classList.remove('PC', 'Phone', 'Laptop');
       const theme = localStorage.getItem('theme');
+	  const fullMilitaryTime = localStorage.getItem('fMT');
       const timeType = localStorage.getItem('timeType');
 	  const DeviceType = localStorage.getItem('DeviceType');
 	  const CalendarType = localStorage.getItem('calendarType');
 	  const toggleImageInversion = localStorage.getItem('toggleImageInversion');
-
+	  if(document.body.classList.contains("fullMilitaryTime")){
+	    document.body.classList.add("fullMilitaryTime");
+	  }
 	  if(DeviceType == 'PC'){
 	  document.body.classList.add('PC');
 	  } else if (DeviceType == 'Phone'){
@@ -155,16 +170,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	  } else if(theme == 'chaosScreen'){
 		clearScreenType();
 		document.body.classList.add('chaosScreen');  
+	  } else if(theme == 'christmasScreen'){
+		clearScreenType();
+		document.body.classList.add('christmasScreen');
 	  } else {
   		clearScreenType();
   		document.body.classList.add('default');
   		localStorage.setItem('theme', 'default');
 	 }
-	 document.body.offsetHeight;
-	setTimeout(linkStyles, 50);
 
       if (timeType === 'militaryTime') {
         document.body.classList.add('militaryTime');
+		if(localStorage.getItem('fMT') === 'true'){
+			document.body.classList.add('fMT', true);
+			if(fullMilitaryTimeCheckbox){
+			fullMilitaryTimeCheckbox.checked = true;
+			}
+		}
       } else{
         document.body.classList.remove('militaryTime');
       } 
@@ -181,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    document.body.classList.add('imageInversionOff');
 	  }
 	  
-      const toggleDarkBtn = document.getElementById('screen-toggle');
+      const toggleDarkBtn = document.getElementById('dark-screen-toggle');
       const toggleAnalogBtn = document.getElementById('analog-screen-button');
       const toggleMilitaryBtn = document.getElementById('millitary-time-button');
 	  const toggleCRTBlueScreen = document.getElementById('CRTBLUE-screen-button');
@@ -189,111 +211,204 @@ document.addEventListener('DOMContentLoaded', () => {
 	  const toggleSquidGameBtn = document.getElementById('squidGame-screen-button');
 	  const toggleChaosScreenBtn = document.getElementById('chaos-screen-button');
 	  const ImageInversionBtn = document.getElementById('image-inversion-button');
-
-if(toggleDarkBtn){
-toggleDarkBtn.addEventListener('click', () => {
-  if (document.body.classList.contains('dark')) {
-    document.body.classList.remove('dark');
-    localStorage.setItem('theme', 'default');
-  } else {
-	clearScreenType();
-    document.body.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-  }
-});
-}
-
-if(toggleAnalogBtn){
-toggleAnalogBtn.addEventListener('click', () => {
-  if (document.body.classList.contains('AnalogScreen')) {
-    document.body.classList.remove('AnalogScreen');
-    localStorage.setItem('theme', 'default');
-  } else {
-	clearScreenType();
-    document.body.classList.add('AnalogScreen');
-    localStorage.setItem('theme', 'AnalogScreen');
-  }
-});
-}
-if(toggleCRTBlueScreen){
-toggleCRTBlueScreen.addEventListener('click', () => {
-  if (document.body.classList.contains('CRTBLUEScreen')) {
-    document.body.classList.remove('CRTBLUEScreen');
-    localStorage.setItem('theme', 'default');
-  } else {
-	clearScreenType();
-    document.body.classList.add('CRTBLUEScreen');
-    localStorage.setItem('theme', 'CRTBLUEScreen');
-  }
-});
-}
-
-if(toggleMilitaryBtn){
-toggleMilitaryBtn.addEventListener('click', () => {
-  document.body.classList.toggle('militaryTime');
-  localStorage.setItem(
-    'timeType',
-    document.body.classList.contains('militaryTime') ? 'militaryTime' : '12-hour-clock'
-  );
-});
-}
-
-if(toggleDashedCalendarBtn){
-toggleDashedCalendarBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dashedCalendar');
-  localStorage.setItem(
-    'calendarType',
-    document.body.classList.contains('dashedCalendar') ? 'dashedCalendar' : 'defaultCalendar'
-  );
-});
-}
-
-if(toggleSquidGameBtn){
-toggleSquidGameBtn.addEventListener('click', () => {
-  if (document.body.classList.contains('squidGameScreen')) {
-    document.body.classList.remove('squidGameScreen');
-    localStorage.setItem('theme', 'default');
-  } else {
-	clearScreenType();
-    document.body.classList.add('squidGameScreen');
-    localStorage.setItem('theme', 'squidGameScreen');
-  }
-});
-}
-
-if(toggleChaosScreenBtn){
-toggleChaosScreenBtn.addEventListener('click', () => {
-  if (document.body.classList.contains('chaosScreen')) {
-    document.body.classList.remove('chaosScreen');
-    localStorage.setItem('theme', 'default');
-  } else {
-	clearScreenType();
-    document.body.classList.add('chaosScreen');
-    localStorage.setItem('theme', 'chaosScreen');
+	  const toggleChristmasBtn = document.getElementById('christmas-screen-button');
 	
-  }
-});
-}
+	if(fullMilitaryTimeCheckbox){
+		fullMilitaryTimeCheckbox.addEventListener('click', () => {
+			if(localStorage.getItem("fMT") === 'true'){
+				localStorage.setItem("fMT", false);
+			} else {
+				localStorage.setItem("fMT", true);
+			}
+		})
+	}
+	if(toggleDarkBtn){
+		toggleDarkBtn.addEventListener('click', () => {
+			if(document.body.classList.contains('dark')) {
+				document.body.classList.remove('dark');
+				localStorage.setItem('theme', 'default');
+			} else {
+				clearScreenType();
+				document.body.classList.add('dark');
+				localStorage.setItem('theme', 'dark');
+			}
+		});
+	}
 
-if(ImageInversionBtn){
-ImageInversionBtn.addEventListener('click', () => {
-  if (document.body.classList.contains('imageInversionOn')) {
-    document.body.classList.remove('imageInversionOn');
-    localStorage.setItem('toggleImageInversion', 'imageInversionOff');
-  } else {
-    document.body.classList.add('imageInversionOn');
-    localStorage.setItem('toggleImageInversion', 'imageInversionOn');
+	if(toggleChristmasBtn){
+		toggleChristmasBtn.addEventListener('click', () => {
+			if (document.body.classList.contains('christmasScreen')) {
+				document.body.classList.remove('christmasScreen');
+				localStorage.setItem('theme', 'default');
+			} else {
+				clearScreenType();
+				document.body.classList.add('christmasScreen');
+				localStorage.setItem('theme', 'christmasScreen');
+			}
+		});
+	}
+
+	if(toggleAnalogBtn){
+		toggleAnalogBtn.addEventListener('click', () => {
+			if (document.body.classList.contains('AnalogScreen')) {
+				document.body.classList.remove('AnalogScreen');
+				localStorage.setItem('theme', 'default');
+			} else {
+				clearScreenType();
+				document.body.classList.add('AnalogScreen');
+				localStorage.setItem('theme', 'AnalogScreen');
+			}
+		});
+	}
 	
-  }
+	if(toggleCRTBlueScreen){
+		toggleCRTBlueScreen.addEventListener('click', () => {
+			if (document.body.classList.contains('CRTBLUEScreen')) {
+				document.body.classList.remove('CRTBLUEScreen');
+				localStorage.setItem('theme', 'default');
+			} else {
+				clearScreenType();
+				document.body.classList.add('CRTBLUEScreen');
+				localStorage.setItem('theme', 'CRTBLUEScreen');
+			}
+		});
+	}
+
+	if(toggleMilitaryBtn){
+		toggleMilitaryBtn.addEventListener('click', () => {
+			document.body.classList.toggle('militaryTime');
+			localStorage.setItem('timeType', document.body.classList.contains('militaryTime') ? 'militaryTime' : '12-hour-clock');
+		});
+	}
+
+	if(toggleDashedCalendarBtn){
+		toggleDashedCalendarBtn.addEventListener('click', () => {
+			document.body.classList.toggle('dashedCalendar');
+			localStorage.setItem('calendarType',document.body.classList.contains('dashedCalendar') ? 'dashedCalendar' : 'defaultCalendar');
+		});
+	}
+
+	if(toggleSquidGameBtn){
+		toggleSquidGameBtn.addEventListener('click', () => {
+			if (document.body.classList.contains('squidGameScreen')) {
+				document.body.classList.remove('squidGameScreen');
+				localStorage.setItem('theme', 'default');
+			} else {
+				clearScreenType();
+				document.body.classList.add('squidGameScreen');
+				localStorage.setItem('theme', 'squidGameScreen');
+			}
+		});
+	}
+
+	if(toggleChaosScreenBtn){
+		toggleChaosScreenBtn.addEventListener('click', () => {
+			if (document.body.classList.contains('chaosScreen')) {
+				document.body.classList.remove('chaosScreen');
+				localStorage.setItem('theme', 'default');
+			} else {
+				clearScreenType();
+				document.body.classList.add('chaosScreen');
+				localStorage.setItem('theme', 'chaosScreen');	
+			}
+		});
+	}
+
+	if(ImageInversionBtn){
+		ImageInversionBtn.addEventListener('click', () => {
+			if (document.body.classList.contains('imageInversionOn')) {
+				document.body.classList.remove('imageInversionOn');
+				localStorage.setItem('toggleImageInversion', 'imageInversionOff');
+			} else {
+				document.body.classList.add('imageInversionOn');
+				localStorage.setItem('toggleImageInversion', 'imageInversionOn');
+			}
+		});
+	}
+	
+	
+
 });
+let snowflakeAmount = 0;
+
+document.addEventListener("DOMContentLoaded", function(){
+	let snowflakeContainer = document.createElement("div");
+	snowflakeContainer.id = "snowflakeContainerChristmasScreen";
+	document.body.appendChild(snowflakeContainer);
+});
+function snowflakeChristmasScreen(){
+		let snowflakeNum = 0;
+		const snowflakeContainer = document.getElementById("snowflakeContainerChristmasScreen");
+		function iterateSnowflake(){
+			if(document.body.classList.contains("christmasScreen") && snowflakeAmount < 100){
+			let snowflake = document.createElement("img");
+			snowflake.src = "../Images/snowflakeImg.png";
+			snowflake.id = `snowflake${snowflakeNum}`
+			snowflakeContainer.appendChild(snowflake);
+			snowflakeNum++;
+			snowflakeAmount++;
+			
+			
+			
+			let x = Math.floor(Math.random() * document.documentElement.scrollWidth);
+			let diameter = Math.floor(Math.random() * 25) + 3;
+			snowflake.style.width = `${diameter}px`;
+			snowflake.style.height = `${diameter}px`;
+			snowflake.style.position = "absolute";
+			snowflake.style.top = "0vh";
+			snowflake.style.left = `${x}px`;
+			snowflake.style.filter = `none`;
+			let y = 0;
+			let z = 0;
+			const snowflakeMovementInterval = setInterval(snowflakeMovement, 25);
+			if(x >= document.documentElement.scrollWidth - 40 || x <= 40){
+					clearInterval(snowflakeMovementInterval);
+					snowflake.remove();
+					snowflakeAmount--;
+					return;
+			}
+			function snowflakeMovement(){
+				let currentHeight = document.documentElement.scrollHeight;
+				y += currentHeight / 500;
+				y *= 1.02;
+				if(Math.floor(Math.random() * 100) <= 50){
+					x += 0.15 * Math.random();
+				} else {
+					x -= 0.15 * Math.random();
+				}
+				snowflake.style.top = `${y}px`;
+				snowflake.style.left = `${x}px`;
+				if(document.body.classList.contains("christmasScreen")){
+					snowflake.style.display = "block";
+				} else {
+					snowflake.style.display = "none";
+				}
+				if(x >= document.documentElement.scrollWidth - 40 || x <= 40){
+					clearInterval(snowflakeMovementInterval);
+					snowflake.remove();
+					snowflakeAmount--;
+					return;
+				}
+				if(y >= currentHeight / 1.01 - 25){
+					clearInterval(snowflakeMovementInterval);
+					snowflake.remove();
+					snowflakeAmount--;
+					return;
+				}
+			}
+			}
+			
+		}
+		iterateSnowflake();
+		snowflakeNum = 0;
 }
-
-});
-
 
 function clearScreenType(){
-document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'squidGameScreen', 'chaosScreen');
+	document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'squidGameScreen', 'chaosScreen', 'christmasScreen');
 }
+
+
+
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
 iconthingy.type = 'image/png'; 
@@ -319,15 +434,19 @@ document.head.appendChild(iconthingy);
 window.addEventListener("DOMContentLoaded", () => {
 
 		const hyperlinks = document.querySelectorAll('a');
-			hyperlinks.forEach(link => {
-				link.style.border = "12px solid var(--border)";
-			});
+
+		document.querySelectorAll('a').forEach(link => {
+			link.style.border = "12px solid var(--border)";
+		});
+		
+		// DigitalCalendarClock Styling
+
 		DigitalClock.style.position = "absolute";
 		DigitalClock.style.left = "0px";
 		DigitalClock.style.top = "0px";
 		DigitalClock.style.border = "2px solid var(--DigitalClockBackground)";
 		DigitalClock.style.width = "300px";
-		DigitalClock.style.fontSize = "50px";
+		DigitalClock.style.fontSize = "50px"
 		DigitalClock.style.borderRadius = "15px";
 		DigitalClock.style.textAlign = "center";
 		
@@ -339,6 +458,16 @@ window.addEventListener("DOMContentLoaded", () => {
 		DigitalCalendar.style.fontSize = "25px";
 		DigitalCalendar.style.borderRadius = "15px";
 		DigitalCalendar.style.textAlign = "center";
+		
+		
+		// Exception Styling
+		
+		if(window.location.pathname.includes("TicTacToe")){
+			DigitalClock.style.left = "0px";
+			DigitalClock.style.top = "1000px";
+			DigitalCalendar.style.left = "0px";
+			DigitalCalendar.style.top = "1060px";
+		}
 		
 		if(window.location.pathname.includes("/HTMLCSim")
 		   || window.location.pathname.includes("/HTMLCExercise")
@@ -396,7 +525,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	if(window.location.pathname.includes("/Articles/")){
 	let lightwebArticlesCSS = document.createElement("link");
 	lightwebArticlesCSS.rel = "stylesheet";
-	lightwebArticlesCSS.href = "../CSS/LightwebArticles.css";
+	lightwebArticlesCSS.href = "../CSS/Lightweb.Articles.css";
 	lightwebArticlesCSS.type = "text/css";
 	document.head.appendChild(lightwebArticlesCSS);
 	
@@ -415,6 +544,26 @@ window.addEventListener("DOMContentLoaded", () => {
 	let lightwebThemesCSS = document.createElement("link");
 	lightwebThemesCSS.rel = "stylesheet";
 	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
+	lightwebThemesCSS.type = "text/css";
+	document.head.appendChild(lightwebThemesCSS);
+	}
+	
+	if(window.location.pathname.includes("index.html")){
+	let lightwebArticlesCSS = document.createElement("link");
+	lightwebArticlesCSS.rel = "stylesheet";
+	lightwebArticlesCSS.href = "CSS/Lightweb.Articles.css";
+	lightwebArticlesCSS.type = "text/css";
+	document.head.appendChild(lightwebArticlesCSS);
+
+	let lightwebDeviceOptimizationCSS = document.createElement("link");
+	lightwebDeviceOptimizationCSS.rel = "stylesheet";
+	lightwebDeviceOptimizationCSS.href = "CSS/LightwebDeviceOptimization.css";
+	lightwebDeviceOptimizationCSS.type = "text/css";
+	document.head.appendChild(lightwebDeviceOptimizationCSS);
+	
+	let lightwebThemesCSS = document.createElement("link");
+	lightwebThemesCSS.rel = "stylesheet";
+	lightwebThemesCSS.href = "CSS/LightwebThemes.css";
 	lightwebThemesCSS.type = "text/css";
 	document.head.appendChild(lightwebThemesCSS);
 	}
@@ -445,6 +594,12 @@ window.addEventListener("DOMContentLoaded", () => {
 	lightwebCSS3.href = "../CSS/Lightweb.css";
 	lightwebCSS3.type = "text/css";
 	document.head.appendChild(lightwebCSS3);
+	
+	let lightwebSimulationsCSS3 = document.createElement("link");
+	lightwebSimulationsCSS3.rel = "stylesheet";
+	lightwebSimulationsCSS3.href = "../CSS/Lightweb.Simulations.css";
+	lightwebSimulationsCSS3.type = "text/css";
+	document.head.appendChild(lightwebSimulationsCSS3);
 
 	let lightwebDeviceOptimizationCSS = document.createElement("link");
 	lightwebDeviceOptimizationCSS.rel = "stylesheet";
@@ -479,33 +634,31 @@ window.addEventListener("DOMContentLoaded", () => {
 	document.head.appendChild(lightwebThemesCSS);
 	}
 	
-	if(window.location.pathname.includes("/HTML%20Course/")){
+	if(window.location.pathname.includes("/Other/")){
 		let lightwebDeviceOptimizationCSS = document.createElement("link");
 	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "../../CSS/LightwebDeviceOptimization.css";
+	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
 	lightwebDeviceOptimizationCSS.type = "text/css";
 	document.head.appendChild(lightwebDeviceOptimizationCSS);
 	
-		let lightwebThemesCSS = document.createElement("link");
-	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "../../CSS/LightwebThemes.css";
-	lightwebThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebThemesCSS);
-	} else if(window.location.pathname.includes("/index")){
-		let lightwebDeviceOptimizationCSS = document.createElement("link");
-	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "CSS/LightwebDeviceOptimization.css";
-	lightwebDeviceOptimizationCSS.type = "text/css";
-	document.head.appendChild(lightwebDeviceOptimizationCSS);
+		let lightwebCSS = document.createElement("link");
+	lightwebCSS.rel = "stylesheet";
+	lightwebCSS.href = "../CSS/Lightweb.css";
+	lightwebCSS.type = "text/css";
+	document.head.appendChild(lightwebCSS);
 	
 		let lightwebThemesCSS = document.createElement("link");
 	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "CSS/LightwebThemes.css";
+	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
 	lightwebThemesCSS.type = "text/css";
 	document.head.appendChild(lightwebThemesCSS);
 	}
 	
 });
+
+	
+	
+
 
 
 document.addEventListener('contextmenu', event => event.preventDefault());
@@ -523,8 +676,6 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
-
-
 
 
 
