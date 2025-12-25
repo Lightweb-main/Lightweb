@@ -2,11 +2,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const board = document.querySelector(".Connect4Board");
   const status = document.querySelector(".status");
   const resetBtn = document.getElementById("reset-btn");
+  const columnsDisplay = document.getElementById("columnsDisplay");
+  const columnsInput = document.getElementById("columnsInput");
+  const rowsDisplay = document.getElementById("rowsDisplay");
+  const rowsInput = document.getElementById("rowsInput");
   const winner = document.querySelector(".winner");
   let currentPlayer = "red";
   let isGameOver = false;
   let rows = 6;
   let cols = 7;
+
   let gameBoard = Array.from({ length: rows }, () => Array(cols).fill(null));
   
   resetBtn.addEventListener("click", function () {
@@ -22,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function createGameBoard() {
-    
     status.classList.add(`${currentPlayer}-selected`);
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
@@ -157,3 +161,10 @@ document.addEventListener("DOMContentLoaded", function () {
 function exitConnect4(){
 document.location = "../MainPages/Games%20&%20FunStuff.html"
 }
+
+function update(){
+	columnsDisplay.innerHTML = `Columns: ${columnsInput.value}`;
+	rowsDisplay.innerHTML = `Rows: ${rowsInput.value}`;
+}
+
+setInterval(update, 10);

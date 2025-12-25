@@ -10,6 +10,14 @@ body {
   
 }
 
+#connect4Settings{
+	width: 500px;
+	border: 2px solid var(--border);
+	position: absolute;
+	top: 1500px;
+	left: 70px;
+}
+
 
 h1 {
   font-size: 4.5rem;

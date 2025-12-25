@@ -43,8 +43,6 @@ function update(){
 		gameEnd();
 		return;
 	}
-	
-	highscoreDisplay.textContent = `Highscore: ${highscore}`;
 	currentScoreDisplay.textContent = `Current Score: ${currentScore}`;
 	
 	boardContext.fillStyle = "#8cef77";
@@ -102,18 +100,14 @@ function update(){
 }
 
 function changeDirection(e) {
-	if((e.code == "ArrowUp" || e.code == "KeyW") && snakeSpeedY != 1){
-		snakeSpeedX = 0;
-		snakeSpeedY = -1;
-	} else if((e.code == "ArrowDown" || e.code == "KeyS") && snakeSpeedY != -1){
-		snakeSpeedX = 0;
-		snakeSpeedY = 1;
-	} else if((e.code == "ArrowLeft" || e.code == "KeyA") && snakeSpeedX != 1){
-		snakeSpeedX = -1;
-		snakeSpeedY = 0;
-	} else if((e.code == "ArrowRight" || e.code == "KeyD") && snakeSpeedX != -1){
-		snakeSpeedX = 1;
-		snakeSpeedY = 0;
+	if((e.code == "ArrowUp" || e.code == "KeyW")){
+		upInputed();
+	} else if((e.code == "ArrowDown" || e.code == "KeyS")){
+		downInputed();
+	} else if((e.code == "ArrowLeft" || e.code == "KeyA")){
+		leftInputed();
+	} else if((e.code == "ArrowRight" || e.code == "KeyD")){
+		rightInputed();
 	}
 }
 
@@ -151,6 +145,7 @@ function gameReset(){
 	snakeBody.length = 3;
 	snakeSpeedX = 0;
 	snakeSpeedY = 1;
+	currentScore = 0;
 	placeFood();
 }
 
@@ -161,6 +156,12 @@ function exitSnake(){
 function highscoreReset(){
 	highscore = 0;
 	localStorage.setItem('snakeHighscore', highscore);
+}
+
+let highscoreInterval = setInterval(updateHighscore, 10);
+
+function updateHighscore(){
+	highscoreDisplay.textContent = `Highscore: ${highscore}`;
 }
 
 function upInputed(){

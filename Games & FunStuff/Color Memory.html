@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lightweb: Connect 4</title>
+		<link rel="stylesheet" href="Color%20Memory.css">
+	</head>
+	<body>
+		<p id="CurrentScoreDisplay">Current Score: </p>
+		<p id="HighScoreDisplay">High Score: </p>
+		<div id="container">
+			<div id="greenColor" class="colorButton"></div>
+			<div id="yellowColor" class="colorButton"></div>
+			<div id="blueColor" class="colorButton"></div>
+			<div id="redColor" class="colorButton"></div>
+		</div>
+		<div style="text-align: center;">
+			<button class="colorMemoryButtons" onclick="resetGame()">Reset</button><br>
+			<button class="colorMemoryButtons" onclick="resetHighscore()">Reset Highscore</button><br>
+			<button class="colorMemoryButtons" id="exit" onclick="exitColorMemory()">Exit</button>
+		</div>
+	
+		<script src="Color%20Memory.js"></script>
+		<script src="../Important/DigitalClock.js"></script>
+	</body>
+	
+	
+</html>

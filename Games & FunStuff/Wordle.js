@@ -17,6 +17,7 @@ const words = [
 	"angle",
 	"angel",
 	"about",
+	"acted",
 	"audio",
 	"arrow",
 	"again",
@@ -28,6 +29,7 @@ const words = [
 	"bunny",
 	"barge",
 	"built",
+	"comes",
 	"bunch",
 	"beach",
 	"brief",
@@ -107,6 +109,7 @@ const words = [
 	"monad",
 	"mouth",
 	"movie",
+	"melon",
 	"month",
 	"moose",
 	"metal",
@@ -125,16 +128,23 @@ const words = [
 	"otter",
 	"pride",
 	"purse",
+	"parse",
 	"pause",
 	"pizza",
 	"pitch",
 	"point",
+	"paste",
+	"peach",
 	"query",
 	"quest",
+	"quilt",
 	"quote",
 	"right",
+	"reach",
+	"rhyme",
 	"react",
 	"roses",
+	"roads",
 	"rusty",
 	"ratio",
 	"sight",
@@ -371,11 +381,11 @@ function shadeKeyBoard(letter, color){
 	for(const elem of document.getElementsByClassName("keyboardButton")){
 		if(elem.textContent === letter){
 			let oldColor = elem.style.backgroundColor;
-			if(oldColor === green){
+			if(oldColor === 'green'){
 				return;
 			}
 			
-			if(oldColor === yellow && color !== green){
+			if(oldColor === 'yellow' && color !== 'green'){
 				return;
 			}
 			
