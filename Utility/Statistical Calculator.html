@@ -23,12 +23,13 @@
 			border-radius: 5px;
 		}
 		
-		.selectPopulationSample{
+		.selectPopulationSample, .selectOutlierMethod{
 			border-radius: 500px;
 			padding: 10px;
 			background-color: #ffffff;
 			border: 2px solid black;
 			cursor: pointer;
+			color: black;
 		}
 		
 		#arrayDisplay, #arrayDisplay2Var{
@@ -51,7 +52,7 @@
   </style>
 </head>
 <body>
-	<h1>Statistic Calculator</h1>
+	<h1>Statistical Calculator</h1>
 	<div id="selectData">
 		<button onClick="switchVarType(1)" class="varSelect">One-Variable</button>
 		<button onClick="switchVarType(2)" class="varSelect">Two-Varaible</button>
@@ -67,6 +68,9 @@
 			<button id="PopulationSelect" onClick=dataTypeSwitch("population"); class="selectPopulationSample">Population</button>
 			<button id="SampleSelect" onClick=dataTypeSwitch("sample"); class="selectPopulationSample">Sample</button>
 			<h2>Calculation</h2>
+			<h3>Method for Outliers</h3>
+			<button id="selectTukeysMethod" onClick=dataOutlierMethodSwitch("Tukey") class="selectOutlierMethod">Tukey's Fences (IQR)</button>
+			<button id="selectZScoreMethod" onClick=dataOutlierMethodSwitch("ZScore") class="selectOutlierMethod">Z-Score</button><br><br>
 			<button id="calculateData" onClick="calculate()">Calculate</button>
 			
 		</div>
@@ -96,6 +100,7 @@
 			<p id="arrayQuartile3">Data Q<sub>3</sub> (Higher/Upper Quartile): </p>
 			<p id="arrayMinimum">Data Minimum: </p>
 			<p id="arrayMaximum">Data Maximum: </p>
+			<p id="arrayDataOutliers">Data Outliers: </p>
 
 		</div>
 	</div>
@@ -108,6 +113,7 @@
 			<h2>Data Set Properties</h2>
 			<button id="twoVarPopulationSelect" onClick=twoVarDataTypeSwitch("population"); class="selectPopulationSample">Population</button>
 			<button id="twoVarSampleSelect" onClick=twoVarDataTypeSwitch("sample"); class="selectPopulationSample">Sample</button>
+			
 			<h2>Calculation</h2>
 			<button id="calculateData2Var" onClick="calculateTwoVar()">Calculate</button>
 			

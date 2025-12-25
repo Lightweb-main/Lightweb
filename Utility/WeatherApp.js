@@ -58,7 +58,15 @@ document.getElementById("resultButton").addEventListener("click", function () {
     });
 });
 
-
+document.addEventListener("DOMContentLoaded", function(){
+	
+	
+	if(document.body.classList.contains("dark")){
+		document.body.style.backgroundColor = "#295965";
+	} else if(document.body.classList.contains("default")){
+		document.body.style.backgroundColor = "#d9ecf1";
+	}
+});
 
 
 

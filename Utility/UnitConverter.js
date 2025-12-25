@@ -130,6 +130,7 @@ const conversionRates1 = {
 };
 
 const conversionRates2 = {
+planckTime: 5.39E44,
 second: 1,
 minute: 0.016666666,
 hour: 0.000277777777,

@@ -19,9 +19,13 @@ const arrayMaximum = document.getElementById("arrayMaximum");
 const arrayRange = document.getElementById("arrayRange");
 const arrayInterquartileRange = document.getElementById("arrayInterquartileRange");
 const arrayQuartileDeviation = document.getElementById("arrayQuartileDeviation");
+const arrayDataOutliers = document.getElementById("arrayDataOutliers");
+const selectTukeysMethod = document.getElementById("selectTukeysMethod");
+const selectZScoreMethod = document.getElementById("selectZScoreMethod");
 
 
 let data = [];
+let dataOutliers = [];
 let dataSize = 0;
 let dataMinimum = 0;
 let dataMaximum = 0;
@@ -40,6 +44,7 @@ let dataVariance = 0;
 let dataCoefficentOfVariation = 0;
 let dataGeometricMean = 1;
 let dataHarmonicMean = 0;
+let outlierMethod = "none";
 setInterval(update, 10);
 
 
@@ -53,6 +58,15 @@ function dataTypeSwitch(input){
 	}
 }
 
+function dataOutlierMethodSwitch(input){
+	if(outlierMethod == input){
+		outlierMethod = "";
+	} else if(outlierMethod != input){
+		outlierMethod = input;
+	} else {
+		outlierMethod = input;
+	}
+}
 
 function addArrayInput(){
 	data = [];
@@ -101,10 +115,12 @@ if(data.length > 0 && dataType != ""){
 	dataInterquartileRange = 0;
 	dataRange = 0;
 	dataQuartileDeviation = 0;
+	dataOutliers = [];
 	
 	const modeMap = new Map();
 	let maxFrequency = 0;
 	let dataModes = [];
+	
 	
 	for(let i = 0; i < data.length; i++){
 		dataMean += parseInt(data[i]);
@@ -172,8 +188,8 @@ if(data.length > 0 && dataType != ""){
 	
 	dataGeometricMean = Math.pow(dataGeometricMean, 1 / data.length);
 	
-	dataMinimum = data[0];
-	dataMaximum = data[data.length - 1];
+	
+	
 	if(data.length % 2 === 0){
 		dataQuartile1 = (data[Math.floor(data.length / 4)] + data[Math.floor(data.length / 4) - 1]) / 2;
 		dataQuartile3 = (data[Math.floor(data.length * 3 / 4)] + data[Math.floor(data.length * 3 / 4) - 1]) / 2;
@@ -181,13 +197,44 @@ if(data.length > 0 && dataType != ""){
 		dataQuartile1 = data[Math.floor(data.length / 4)];
 		dataQuartile3 = data[Math.floor(data.length * 3 / 4)];
 	}
-	
-	dataRange = dataMaximum - dataMinimum;
 	dataInterquartileRange = dataQuartile3 - dataQuartile1;
 	dataQuartileDeviation =  (dataQuartile3 - dataQuartile1) / 2;
+	
+	if(outlierMethod == "Tukey"){
+		for(dataNum of data){
+			if(dataNum > dataQuartile3 + dataInterquartileRange * 1.5 || dataNum < dataQuartile1 - dataInterquartileRange * 1.5){
+				dataOutliers.push(dataNum);
+			}
+		}
+	} else if(outlierMethod == "ZScore"){
+		for(dataNum of data){
+			let ZScore = (dataNum - dataMean) / dataStandardDeviation;
+			if(ZScore > 3 || ZScore < -3){
+				dataOutliers.push(dataNum);
+			}
+		}
+	}
+	
+	dataMinimum = Infinity;
+	dataMaximum = -Infinity;
+	
+	for(dataNum of data){
+		if(!dataOutliers.includes(dataNum)){
+			if(dataNum < dataMinimum){
+				dataMinimum = dataNum;
+			}
+		}
+	}
+	
+	for(dataNum of data){
+		if(!dataOutliers.includes(dataNum)){
+			if(dataNum > dataMaximum){
+				dataMaximum = dataNum;
+			}
+		}
+	}
 
-	
-	
+	dataRange = dataMaximum - dataMinimum;
 
 	if(isNaN(dataMean)){
 		dataMean = "undefined";
@@ -231,6 +278,7 @@ if(data.length > 0 && dataType != ""){
 	arrayRange.textContent = `Data Range: ${dataRange}`;
 	arrayInterquartileRange.textContent = `Data Interquartile Range: ${dataInterquartileRange}`;
 	arrayQuartileDeviation.textContent = `Data Quartile Deviation: ${dataQuartileDeviation}`;
+	arrayDataOutliers.textContent = `Data Outliers: ${dataOutliers}`;
 	
 	if(dataType == "population"){
 	arrayStandardDeviation.innerHTML = `Data Standard Devitation (&sigma;<sub>x</sub>): ${dataStandardDeviation}`;
@@ -517,6 +565,7 @@ function update(){
 	SampleSelect.style.color = "#000000";
 	twoVarPopulationSelect.style.color = "#000000";
 	twoVarSampleSelect.style.color = "#000000";
+	selectTukeysMethod.style.color = "#000000";
 	
 	if(dataType == "population"){
 		PopulationSelect.style.backgroundColor = "#ddaaaa";
@@ -528,6 +577,18 @@ function update(){
 		SampleSelect.style.backgroundColor = "#ddaaaa";
 	} else {
 		SampleSelect.style.backgroundColor = "#ffffff";
+	}
+	
+	if(outlierMethod == "Tukey"){
+		selectTukeysMethod.style.backgroundColor = "#ddaaaa";
+	} else {
+		selectTukeysMethod.style.backgroundColor = "#ffffff";
+	}
+	
+	if(outlierMethod == "ZScore"){
+		selectZScoreMethod.style.backgroundColor = "#ddaaaa";
+	} else {
+		selectZScoreMethod.style.backgroundColor = "#ffffff";
 	}
 	
 	if(twoVarDataType == "population"){
