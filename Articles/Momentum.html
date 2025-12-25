@@ -1,57 +1,124 @@
 <!DOCTYPE html> 
 <html>
-	<head>
-
+	<head> 
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		 
 	</head>
 	<body> 
-		<h1>Momentum</h1>
-		<h2>What is Momentum?</h2>
-		In physics, <mark>momentum (shown as p) is defined as a <b>vector quantity</b> that is the product of both the mass (m) and velocity (v) of an object</mark>...
-		<p>p = m &times; v</p>
-		Like <b>inertia</b> momentum relates to an objects 'difficulty' to be affected from outside forces. <mark>The more momentum an object has, the more difficult it is for its movement can be stopped or changed.</mark>
-		<h2>Momentum as a Vector</h2>
-		<mark>Since Momentum is a vector, it not only has distance, but also direction.</mark> An object momentum direction is the same as it's velocity's direction, so if velocity is point north, momentum would also point north.
-		<h2>Change in Momentum Effect</h2>
-		<mark>When an object has a bigger momentum than another object, it wouldn't be affected as much as the other object.</mark> Take a car running over a tree branch, the car's velocity wouldn't be affect as much as the tree branch which would possibly be picked up and dragged by the car itself...
-		<img id="image1" src="../Images/Momentum.img1.png" title="Click to see a timeline of events">
-		Another example could be a rockets launching. As it's burning fuel, it accelerates upward, generating speed which in turn increases momentum as it overcomes Earth's gravity itself and flies towards outer space...
-		<img id="image2" src="../Images/Momentum.img5.png">
-		As you saw in the timeline of events, the tree branch was carried by the car due to it's much smaller momentum, it's velocity could easily be halted by another, bigger force like the movement of a car.
-		<h2>Momentum Standard Unit</h2>
-		The standard unit of momentum in SI (International System of Units) is kg * m / s, this comes from the formula itself...
-		<p>p = m &times; v</p>
-		<p>p = kg &times; m / s</p>
-		<p>p = 200g &times; 100cm / s</p>
-		<p>p = 4kg &times; m / s</p>
-		<p>p = 12μg &times; f / s</p>
- <script src="../Important/DigitalClock.js"></script>
-		<script>
-			const image1 = document.getElementById("image1");
-			const image2 = document.getElementById("image2");
-			let index = 0;
-			let index2 = 0;
-			let images = [
-				"../Images/Momentum.img1.png",
-				"../Images/Momentum.img2.png",
-				"../Images/Momentum.img3.png",
-				"../Images/Momentum.img4.png"
-			]
-			let images2 = [
-				"../Images/Momentum.img5.png",
-				"../Images/Momentum.img6.png",
-				"../Images/Momentum.img7.png"
-			]
-			image1.addEventListener("click", function(){
-				index = (index + 1) % images.length;
-				image1.src = images[index];
-				image1.title = "Click to see a timeline of events";
-			});
-			
-			function updateImage2(){
-				index2 = (index2 + 1) % images2.length;
-				image2.src = images2[index2];
-			}
-			setInterval(updateImage2, 100);
-		</script>
+	<h1>Momentum</h1>
+	<h2>Introduction</h2>
+	In physics, Momentum is a <b>vector quantity</b> that is equal to the product of an objects mass and velocity. Momentum is usually stated as the 'quantity of motion' or in other words, how hard it is for external forces to stop it's motion.
+	<h2>Comparison of Momentum Examples</h2>
+	Different objects may have different momentum, meaning that some objects can easily stop objects objects motion while also getting stopped easily by others...
+	<img src="../Images/Momentum.img12.png" id="image1">
+	<h2>Calculating  and Expressing Momentum</h2>
+	To calculate the momentum of an object, you multiply the mass and the velocity of it...
+	<p>P = mv</p>
+	<p>Momentum is expressed through "P"</p>
+	And momentum as expressed as a vector with speed and direction...
+	<img src="../Images/Momentum.img13.png" id="image1">
+	<h2>Total Momentum</h2>
+	Total Momentum in a system is the sum of the individual momenta (plural for momentum) of all the objects. Mathematically, it can be represented as...
+	<p>m<sub>T</sub> = &Sigma;(m<sub>i</sub> * v<sub>i</sub>)</p>
+	<p>&Sigma;: Represents the summation of something (in this case all the individual momenta of all the objects in a system)</p>
+	This formula can be used to find the total momentum. For example...
+	<p>Individual Velocities: 2 m/s, 5 m/s, 3 m/s</p>
+	<p>Individual Masses: 7kg, 12kg, 4kg</p>
+	If you are shown with individual velocities and masses, multiply each individual mass and velocity to get their momenta and then add them up (try to get m/s on its own without any coefficent)...
+	<p>Object 1: 7kg * 2 m/s</p> 
+	<p>Object 2: 12kg * 5 m/s</p> 
+	<p>Object 3: 4kg * 3 m/s</p><br> 
+	<p>Object 1: 14kg * m/s</p> 
+	<p>Object 2: 60kg * m/s</p> 
+	<p>Object 3: 12kg * m/s</p> 
+	<p>Total Momentum: (14 + 60 + 12)kg * m/s</p>
+	<p>Total Momentum: 86kg * m/s</p>
+	And the total momentum is 86kg * m/s.
+	<h2>The Law of Conservation of Momentum</h2>
+	The Law of Conservation in Momentum is a fundamenatal law in physics that states that the total momentum in a closed system, or in others words where no external forces can act on the objects, remains unchanged over time. This law in more simplified is the total momentum before an event (ex. collision) is equal to after the collision. The Law of Conservation of Momentum when applied to two objects that are about to collide with each other can mathematically represented as...
+	<p>m<sub>1</sub>u<sub>1</sub> + m<sub>2</sub>u<sub>2</sub> = m<sub>1</sub>v<sub>1</sub> + m<sub>2</sub>v<sub>2</sub>
+	<p>m<sub>1</sub> and m<sub>2</sub>: The masses of object 1 (m<sub>1</sub>) and object 2 (m<sub>2</sub>).</p>
+	<p>u<sub>1</sub> and u<sub>2</sub>: The intial velocities of object 1 (u<sub>1</sub>) and object 2 (u<sub>2</sub>).</p>
+	<p>v<sub>1</sub> and v<sub>2</sub>: The final velocities of object 1 (v<sub>1</sub>) and object 2 (v<sub>2</sub>).</p>
+	<h2>Simulation</h2>
+	<iframe src="../Reference%20HTML/Momentum.html" style="width: 100vw; height: 100vh; margin: auto; display: block;"></iframe>
+	<h2>Summary</h2>
+	<div class="summary">
+			<div class="summarySection">
+				<p>Glossary</p>
+				<p><b>Momentum</b>: A property that objects possess that quantifies how hard its motion can be stopped.</p>
+				<p><b>Vector Quantity</b>: A physical quantity that has both speed and direction (ex. 35 km/h North).</p>
+			</div>
+				
+			<div class="summarySection">
+				<p>Formulas: </p>
+				<p>Momentum: P = mv   OR   Momentum = mass * velocity</p>
+			</div>	
+			<div class="summarySection">
+				<p>General Form: </p>
+				<p>Momentum: mass * velocity direction</p>
+				<p>100kg * 25 m/s north</p>
+			</div>	
+	</div>
+	<script src="../Important/DigitalClock.js"></script>
+	<script>
+		const image1 = document.getElementById("image1");
+		let i = 0;
+		image1.title = `Click on the image to see a timeline of events!`;
+		image1.addEventListener("click", function update(){
+			switch(i){
+				case 0: 
+					image1.src = "../Images/Momentum.img1.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 1: 
+					image1.src = "../Images/Momentum.img2.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 2: 
+					image1.src = "../Images/Momentum.img3.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 3: 
+					image1.src = "../Images/Momentum.img4.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 4: 
+					image1.src = "../Images/Momentum.img5.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 5: 
+					image1.src = "../Images/Momentum.img6.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 6: 
+					image1.src = "../Images/Momentum.img7.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 7: 
+					image1.src = "../Images/Momentum.img8.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 8: 
+					image1.src = "../Images/Momentum.img9.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 9: 
+					image1.src = "../Images/Momentum.img10.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 10: 
+					image1.src = "../Images/Momentum.img11.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+				break;
+				case 11: 
+					image1.src = "../Images/Momentum.img12.png"
+					image1.title = `Click on the image to see a timeline of events!`;
+					i = 0;
+				break;
+			} 
+			i++;
+		});
+	</script>
 	</body>
 </html>
