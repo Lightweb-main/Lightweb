@@ -1,0 +1,4 @@
+button:hover{
+	background-color: color-mix(in srgb, var(--border) 80%, black);
+	border-color: color-mix(in srgb, var(--border) 80%, black);
+}

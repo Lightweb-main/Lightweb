@@ -14,8 +14,8 @@
 }
 
 @keyframes chaos {
-  0%   { transform: scale(1) rotate(0deg); filter: invert(0%) hue-rotate(0deg)};
-  50%  { transform: scale(0.5) rotate(180deg); filter: invert(100%) hue-rotate(180deg)};
+  0%   { transform: scale(1) rotate(0deg); filter: invert(0%) hue-rotate(0deg)}
+  50%  { transform: scale(0.5) rotate(180deg); filter: invert(100%) hue-rotate(180deg)}
   100% { transform: scale(1) rotate(360deg); filter: invert(0%) hue-rotate(360deg)}; 
 }
 
@@ -36,7 +36,10 @@ body.AnalogScreen::before{
   
 }
 body.CRTBLUEScreen::before{
-  
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
   background: repeating-linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.3),
@@ -44,18 +47,18 @@ body.CRTBLUEScreen::before{
     transparent 4px,
     transparent 8px
   );
-  background-size: 100% 12px; 
-  animation: scanlines-move 1s linear infinite;
+  background-size: 100% 9px; 
+  animation: scanlines-move 0.125s linear infinite;
   
 }
 
 
 body.chaosScreen *:not(.settingbutton7){
-  animation: chaos 5s linear infinite;
+	animation: chaos 5s linear infinite;
 }
 
 body.chaosScreen .settingbutton7 #chaos-screen-button{
-   animation: none;
+	animation: none;
 	transform: none;
 	display: block;
 }
@@ -79,16 +82,23 @@ body.imageInversionOn img{
 }
 
 body.dashedCalendar{
-	--dashedCalendarButton: #aaaaaa;
+	--dashedCalendarButton: #dddddd;
 }
 
+body.christmasScreen{
+	--bg: #78281f;
+	--text: #ffffff;
+	--border: #146B3A;
+	--DigitalClockBackground: #bb2528;
+	--tableborder: #146B3A;
+}
 
 body.dark {
   --bg: #121212;
   --text: #f0f0f0;
   --border: #474747;
   --tableborder: #dbdbdb;
-  --screenToggleButton: #7ae5ff;
+  --darkScreenToggleButton: #7ae5ff;
   --SearchArticlesColor: #646464;
   --DigitalClockBackground: #e9e9e9;
 }
@@ -139,13 +149,14 @@ body.squidGameScreen{
   --text: #121212;
   --border: #e9e5e5;
   --tableborder: #000000;
-  --screenToggleButton: #006b86;
+  --darkScreenToggleButton: #006b86;
   --militaryTimeButton: #037f00;
   --AnalogScreenButton: #129426;
   --CRTBlueScreenButton: #5f6bf3; 
   --squidGameScreenButton: #ed77c4;
-  --dashedCalendarButton: #dddddd;
+  --dashedCalendarButton: #aaaaaa;
   --chaoScreenButton: #ff0000;
+  --christmasScreenButton: #fc3e3e;
   --SearchArticlesColor: #fdfdfd;
   --DigitalClockBackground: #000000;
   --ImageInvertButton: #edf4ac;
@@ -174,9 +185,14 @@ p, a, h1, h2, h3, h4, h5, h6 {
 }
 
 button{
-border-color: var(--border);
-background-color: var(--border);
-color: var(--text);
+	border: 5px solid var(--border);
+	border-color: var(--border);
+	background-color: var(--border);
+	color: var(--text);
+	font-weight: bold;
+	border-radius: 10px;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 body {
@@ -186,14 +202,14 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-body a{
-font-weight: bold;
-border-radius: 10px;
-border: 12px solid var(--border);
-border-color: var(--border);
-text-decoration: none;
-background-color: var(--border);
+a{
+	font-weight: bold;
+	border-radius: 10px;
+	border: 12px solid var(--border);
+	text-decoration: none;
+	background-color: var(--border);
 }
+
 
 
 body h1{
