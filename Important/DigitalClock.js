@@ -342,7 +342,11 @@ function snowflakeChristmasScreen(){
 		function iterateSnowflake(){
 			if(document.body.classList.contains("christmasScreen") && snowflakeAmount < 100){
 			let snowflake = document.createElement("img");
-			snowflake.src = "../Images/snowflakeImg.png";
+			if(window.location.pathname.includes("index.html")){
+				snowflake.src = "Images/snowflakeImg.png";
+			} else {
+				snowflake.src = "../Images/snowflakeImg.png";
+			}
 			snowflake.id = `snowflake${snowflakeNum}`
 			snowflakeContainer.appendChild(snowflake);
 			snowflakeNum++;
@@ -657,9 +661,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 	
-	
-
-
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
