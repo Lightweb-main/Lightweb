@@ -39,6 +39,8 @@ document.getElementById("resultButton").addEventListener("click", function () {
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Light Jacket"
 	} else if(fahrenheit <= 54 && fahrenheit >= 32){
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Thick Jacket / Clothing"
+	} else if(fahrenheit < 32){
+		document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Multiple Layers of Heat-Insulative Clothing."
 	}
 	})
 	  
@@ -67,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		document.body.style.backgroundColor = "#d9ecf1";
 	}
 });
+
 
 
 
