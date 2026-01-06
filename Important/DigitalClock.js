@@ -348,6 +348,7 @@ function snowflakeChristmasScreen(){
 				snowflake.src = "../Images/snowflakeImg.png";
 			}
 			snowflake.id = `snowflake${snowflakeNum}`
+			snowflake.className = "snowflakeChristmasScreen";
 			snowflakeContainer.appendChild(snowflake);
 			snowflakeNum++;
 			snowflakeAmount++;
@@ -440,7 +441,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		const hyperlinks = document.querySelectorAll('a');
 
 		document.querySelectorAll('a').forEach(link => {
-			link.style.border = "12px solid var(--border)";
+			link.classList.add("link");
 		});
 		
 		// DigitalCalendarClock Styling
@@ -661,8 +662,11 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 	
+	
 
-document.addEventListener('contextmenu', event => event.preventDefault());
+
+
+/* document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
   if (event.key === "F12" || event.keyCode === 123) {
     event.preventDefault();
@@ -677,6 +681,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+*/
 
 
 
