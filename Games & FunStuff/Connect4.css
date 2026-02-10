@@ -24,7 +24,7 @@ h1 {
   color: #000;
 }
 
-.status {
+.status, .statusTPM {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -42,13 +42,22 @@ h1 {
   border-radius: 10px;
   border: 10px solid #0055aa;
 }
+.Connect4BoardThreePlayer{
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 10px;
+  background-color: #0066cc;
+  padding: 20px;
+  border-radius: 10px;
+  border: 10px solid #0055aa;
+}
 
 .cell {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 50px;
+  background-color: var(--bg);
   cursor: pointer;
-  
 }
 
 .Connect4Board .cell.red {
@@ -61,6 +70,27 @@ h1 {
   background-color: #ffdc00;
   transition: background 0.3s;
   box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.Connect4BoardThreePlayer .cell.blue {
+  background-color: #2940ff;
+  transition: background 0.3s;
+  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.6);
+}
+.Connect4BoardThreePlayer .cell.red {
+  background-color: #ff4136;
+  transition: background 0.3s;
+  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.Connect4BoardThreePlayer .cell.yellow {
+  background-color: #ffdc00;
+  transition: background 0.3s;
+  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.blue-selected {
+  background-color: #2940ff;
 }
 
 .yellow-selected {
@@ -86,15 +116,7 @@ h1 {
   background-color: #383938;
 }
 
-#e {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-}
+
 
 .Connect4Buttons{
 padding: 15px;

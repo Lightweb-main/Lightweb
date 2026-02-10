@@ -26,7 +26,9 @@ function update(){
 	
 	scatterPlotDataXDisplay.textContent = `Data X: [${scatterPlotDataX}]`;
 	scatterPlotDataYDisplay.textContent = `Data Y: [${scatterPlotDataY}]`;
-	boxHistogramGraphDataDisplay.textContent = `Data Y: [${boxPlotHistogramData}]`;
+	boxHistogramGraphDataDisplay.textContent = `Data: [${boxPlotHistogramData}]`;
+	boxHistogramGraphDataDisplay.textContent = `Data: [${boxPlotHistogramData}]`;
+	boxHistogramGraphDataBarSizeDisplay.textContent = `Bar Size: ${boxHistogramPlotBarSize}`;
 	
 	let boxPlotTrace = {
 			x: boxPlotData.sort((a, b) => a - b),

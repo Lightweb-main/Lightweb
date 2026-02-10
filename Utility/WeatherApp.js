@@ -1,4 +1,25 @@
-document.getElementById("resultButton").addEventListener("click", function () {
+const inputCity = document.getElementById("inputCity");
+inputCity.value = localStorage.getItem("weatherAppInputCityContents");
+setInterval(update, 10);
+
+document.addEventListener("DOMContentLoaded", function(){
+	localStorage.setItem("weatherAppInputCityContents", inputCity.value);
+	if(inputCity.value != ""){
+		getWeather();
+	}
+	if(document.body.classList.contains("dark")){
+		document.body.style.backgroundColor = "#295965";
+	} else if(document.body.classList.contains("default")){
+		document.body.style.backgroundColor = "#d9ecf1";
+	}
+});
+
+
+function update(){
+	localStorage.setItem("weatherAppInputCityContents", inputCity.value);
+}
+
+function getWeather() {
   const city = document.getElementById("inputCity").value;
   const apiKey = '6724f2d5e07375722cfcb71ecd81db7e'; 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -39,8 +60,6 @@ document.getElementById("resultButton").addEventListener("click", function () {
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Light Jacket"
 	} else if(fahrenheit <= 54 && fahrenheit >= 32){
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Thick Jacket / Clothing"
-	} else if(fahrenheit < 32){
-		document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Multiple Layers of Heat-Insulative Clothing."
 	}
 	})
 	  
@@ -58,17 +77,8 @@ document.getElementById("resultButton").addEventListener("click", function () {
       document.querySelectorAll("#result p")[5].textContent = "";
       document.querySelectorAll("#result p")[6].textContent = "";
     });
-});
+}
 
-document.addEventListener("DOMContentLoaded", function(){
-	
-	
-	if(document.body.classList.contains("dark")){
-		document.body.style.backgroundColor = "#295965";
-	} else if(document.body.classList.contains("default")){
-		document.body.style.backgroundColor = "#d9ecf1";
-	}
-});
 
 
 

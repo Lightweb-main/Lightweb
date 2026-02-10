@@ -1,10 +1,30 @@
 const originalText = document.getElementById("originalText");
 const scrambledText = document.getElementById("scrambledText");
 
-let originalTextContents = originalText.value;
-let scrambledTextContents = scrambledText.value;
-console.log(originalTextContents);
 
+
+originalText.value = localStorage.getItem('textScramblerOriginalText') || "";
+scrambledText.value = localStorage.getItem('textScramblerScrambledText') || "";
+
+setInterval(update, 10);
+function update(){
+	originalText.value = localStorage.getItem("textScramblerOriginalText");
+	scrambledText.value = localStorage.getItem("textScramblerScrambledText");
+}
+document.addEventListener("DOMContentLoaded", () => {
+	originalText.value = localStorage.getItem("textScramblerOriginalText");
+	scrambledText.value = localStorage.getItem("textScramblerScrambledText");
+	
+
+originalText.addEventListener("input", () => {
+    localStorage.setItem("textScramblerOriginalText", originalText.value);
+});
+
+scrambledText.addEventListener("input", () => {
+    localStorage.setItem("textScramblerScrambledText", scrambledText.value);
+});
+
+});
 
 const pronoun = [
 	"a",
@@ -97,7 +117,6 @@ const pronoun = [
 	"=",
 	"Δ",
 	"Ω",
-	"�",
 	"Œ",
 	"$",
 	"θ",
@@ -111,11 +130,6 @@ const pronoun = [
 	"ó",
 	"ú",
 	"ü",
-	"𒐫",
-	"ඞ",
-	"𒋦",
-	"𒍹",
-	"𒄦",
 	"€",
 	"←",
 	"→",
@@ -127,7 +141,9 @@ const pronoun = [
 	"↖",
 	"↘",
 	"↙",
-	
+	"°",
+	"℃",
+	"℉",
 ]
 
 
@@ -137,24 +153,24 @@ let randomInt2;
 
 
 function scramble(){
-	originalTextContents = originalText.value;
-	
+	let originalTextContents = originalText.value
 	randomInt = Math.floor(Math.random() * pronoun.length);
 	randomInt2 = Math.floor(Math.random() * pronoun.length);
 	
 	let scrambledText1 = originalTextContents.replace(pronoun[randomInt], pronoun[randomInt2]); 
-	for(let i = 0; i < 50000; i++){
-	originalTextContents = originalText.value;
+	for(let i = 0; i < 7000; i++){
+	originalTextContents = localStorage.setItem("textScramblerOriginalText", originalText.value);
 	
 	randomInt = Math.floor(Math.random() * pronoun.length);
 	randomInt2 = Math.floor(Math.random() * pronoun.length);
 	
 	scrambledText1 = scrambledText1.replace(pronoun[randomInt], pronoun[randomInt2]); 
-	scrambledText.value = scrambledText1;
+	textScramblerScrambledText = localStorage.setItem("textScramblerScrambledText", scrambledText1);
 	}
 	
 	
 }
+
 
 function exit(){
 	window.location = "../MainPages/Other.html";

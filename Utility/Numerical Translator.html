@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <title>Lightweb: Numerical Translator</title>
+  <link rel="stylesheet" href="../CSS/Lightweb.css">
+  <style>
+	textarea{
+		width: 100vw;
+		height: 30vh;
+		font-size: 16px;
+		font-family: "Lucida Console", serif;
+		padding: 5px;
+	}
+  </style>
+</head>
+<body>
+	<h1>Numerical Translator</h1>
+	<select id="inputNum">
+		<option value="text">Text</option>
+	</select>
+	<select id="outputNum">
+		<option value="binary">Binary</option>
+		<option value="decimal">Decimal</option>
+		<option value="hexadecimal">Hexadecimal</option>
+		<option value="octal">Octal</option>
+	</select><br>
+	<h2>Input</h2>
+	<textarea id="input"></textarea>
+	<button style="font-size: 25px; width: 100vw;" id="translateBtn">Translate</button>
+	<h2>Output</h2>
+	<textarea id="output" readonly></textarea>
+	<button style="font-size: 25px; width: 100vw;" id="downloadTxt">Download as .txt</button>
+	<button style="font-size: 25px;"onClick="exit()">Exit</button>
+	
+	
+	
+	<script>
+	function exit(){
+	document.location = "../MainPages/Utility.html"
+	}
+	</script>
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="Numerical%20Translator.js"></script>
+</body>
+</html>

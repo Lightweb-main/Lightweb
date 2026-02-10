@@ -53,6 +53,7 @@
 </head>
 <body>
 	<h1>Statistical Calculator</h1>
+	<h2 style="text-align: center;">Write with square brackets [] and numbers seperated by commas</h2> 
 	<div id="selectData">
 		<button onClick="switchVarType(1)" class="varSelect">One-Variable</button>
 		<button onClick="switchVarType(2)" class="varSelect">Two-Varaible</button>
@@ -62,8 +63,9 @@
 			<h2>Data Addition and Removal</h2>
 			<input id="arrayInput"><br><br>
 			<button id="addInput" onClick="addArrayInput()">Add Input</button><br><br>
+			<button id="sortData" onClick="deleteData1Var()">Delete Input</button>
 			<h2>Data Order Editing</h2>
-			<button id="sortData" onClick="sortDataNumericalOrder()">Sort Data By Numerical Order</button>
+			<button id="sortData" onClick="sortDataNumericalOrder()">Sort Data By Numerical Order</button><br>
 			<h2>Data Set Properties</h2>
 			<button id="PopulationSelect" onClick=dataTypeSwitch("population"); class="selectPopulationSample">Population</button>
 			<button id="SampleSelect" onClick=dataTypeSwitch("sample"); class="selectPopulationSample">Sample</button>
@@ -110,6 +112,8 @@
 			<input id="arrayInput2Var"><br><br>
 			<button id="addInput2Var" onClick="addArrayInput2Var()">Add Input to Dataset 1</button><br><br>
 			<button id="addInput2VarSet2" onClick="addArrayInput2VarSet2()">Add Input to Dataset 2</button><br><br>
+			<button id="sortData" onClick="deleteDataset12Var()">Delete Dataset 1</button><br><br>
+			<button id="sortData" onClick="deleteDataset22Var()">Delete Dataset 2</button>
 			<h2>Data Set Properties</h2>
 			<button id="twoVarPopulationSelect" onClick=twoVarDataTypeSwitch("population"); class="selectPopulationSample">Population</button>
 			<button id="twoVarSampleSelect" onClick=twoVarDataTypeSwitch("sample"); class="selectPopulationSample">Sample</button>

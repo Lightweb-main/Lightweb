@@ -335,6 +335,16 @@ document.addEventListener("DOMContentLoaded", function(){
 	let snowflakeContainer = document.createElement("div");
 	snowflakeContainer.id = "snowflakeContainerChristmasScreen";
 	document.body.appendChild(snowflakeContainer);
+	
+	function replaceSigns(node, target, replacement){
+		if(node.nodeType === Node.TEXT_NODE){
+			node.textContent = node.textContent.replaceAll(target, replacement);
+		} else {
+			node.childNodes.forEach(child => replaceSigns(child, target, replacement));
+		}
+	}
+	
+	replaceSigns(document.body, '*', '×');
 });
 function snowflakeChristmasScreen(){
 		let snowflakeNum = 0;
@@ -364,6 +374,8 @@ function snowflakeChristmasScreen(){
 			snowflake.style.left = `${x}px`;
 			snowflake.style.filter = `none`;
 			let y = 0;
+			let currentHeight = document.documentElement.scrollHeight;
+			let yChange = currentHeight / 500;
 			let z = 0;
 			const snowflakeMovementInterval = setInterval(snowflakeMovement, 25);
 			if(x >= document.documentElement.scrollWidth - 40 || x <= 40){
@@ -374,8 +386,11 @@ function snowflakeChristmasScreen(){
 			}
 			function snowflakeMovement(){
 				let currentHeight = document.documentElement.scrollHeight;
-				y += currentHeight / 500;
-				y *= 1.02;
+				yChange *= 1.02;
+				if(yChange > 35){
+					yChange = 35;
+				}
+				y += yChange;
 				if(Math.floor(Math.random() * 100) <= 50){
 					x += 0.15 * Math.random();
 				} else {

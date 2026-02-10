@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <h1>Lightweb: Paint</h1>
+	<div id="container">
 	<canvas id="paintCanvas"></canvas>
-	<h2>Settings</h2>
+	<div id="settings">
 	<h3 id="paintWidthDisplay">Paint Width: </h3>
 	<input style="display: inline;" id="paintWidthSlider" type="range" min="1" max="100" value="1">
 	<h3 id="paintScatterDisplay">Scatter: </h3>
@@ -25,15 +25,15 @@
 	
 	<br><br>
 	<h2>Canvas Settings</h2>
-	<button onClick="generateEmptyCanvas()" id="downloadPDF">Empty Canvas (No white background)</button><br><br>
+	<button onClick="generateEmptyCanvas()" id="downloadPDF">Remove Background</button><br><br>
 	<button onClick="deleteCanvas()" id="deleteCanvas">Delete</button><br><br>
 	<h2>Downloading</h2>
 	<button onClick="downloadJPEG()" id="downloadJPEG">Download as JPEG</button><br><br>
 	<button onClick="downloadPNG()" id="downloadPNG">Download as PNG</button><br><br>
-	<button onClick="downloadPDF()" id="downloadPDF">Download as PDF</button><br><br>
+	<button onClick="downloadPDF()" id="downloadPDF">Download as PDF</button>
+	</div>
+	</div>
 	
-	
-	<button id="exit" class="exitButton" onClick="exit()">Exit</button>
 </body>
 	
 	<script src="../Important/DigitalClock.js"></script>

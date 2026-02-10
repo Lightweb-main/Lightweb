@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lightweb: Gomoku</title>
+		<link rel="stylesheet" href="Gomoku.css">
+
+	</head>
+	<body>
+		<div class="container">
+			<h1 style="color: var(--text);">Gomoku</h1>
+				<div class="GomokuBoard">
+			</div>
+		</div>
+		<div class="message">
+			<p class="status"></p>
+			<p class="winner"></p>
+		</div>
+  
+		<button class="Connect4Buttons" id="reset-btn">Restart</button>
+		<button class="Connect4Buttons" id="exit" onclick="exit()">Exit</button>
+		
+		<script>
+			function exit(){
+				document.location.href = "../MainPages/Games%20&%20FunStuff.html";
+			}
+		</script>
+		<script src="Gomoku.js"></script>
+		<script src="../Important/DigitalClock.js"></script>
+	</body>
+</html>

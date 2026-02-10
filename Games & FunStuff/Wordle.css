@@ -64,8 +64,8 @@ body{
 }
 
 #originalLink{
-	border: none;
-	background-color: var(--bg);
+	border: none !important;
+	background-color: var(--bg) !important;
 	font-size: 2rem;
 	color: blue;
 	text-decoration: underline;

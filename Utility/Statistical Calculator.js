@@ -48,6 +48,21 @@ let outlierMethod = "none";
 setInterval(update, 10);
 
 
+
+
+function deleteData1Var(){
+	data = [];
+}
+
+function deleteDataset12Var(){
+	twoVarDataset1 = [];
+}
+
+function deleteDataset22Var(){
+	twoVarDataset2 = [];
+}
+
+
 function dataTypeSwitch(input){
 	if(dataType == input){
 		dataType = "";

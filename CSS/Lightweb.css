@@ -80,7 +80,9 @@ background-color: var(--border);
 	padding: 5px; !important
 }
 
-
+#clear-local-storage-button:active {
+	background-color: #8dcd5b !important;
+}
 
 
 

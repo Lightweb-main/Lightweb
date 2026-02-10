@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Power Rule Calculator</h1>
+		<h2>Formula</h2>
+		<p>
+		<math>
+			<mo>∫</mo>
+			<msup><ms>ax</ms><ms>n</ms></msup>
+			<ms>&nbsp;dx</ms>
+			<mo>=</mo>
+			<mfrac>
+				<msup><ms>ax</ms><ms>n + 1</ms></msup>
+				<mn>n + 1</mn>
+			</mfrac>
+		</math>
+		</p>
+		<h2>Input Number</h2>
+		<input id="coefficientInput" placeholder="Coefficient"><br><br>
+		<input id="exponentInput" placeholder="Exponent">
+		<h2>Calculate</h2>
+		<button id="calculateInput">Calculate</button>
+		<h2>Results</h2>
+		<div style="text-align: center;">
+		<math id="powerRuleIntegral"  style="font-size: 80px;">
+			<mo>∫</mo>
+			<ms id="coefficient">a</ms>
+			<msup><ms>x</ms><ms id="exponent">n</ms></msup>
+			<ms>dx</ms>
+			<mo>=</mo>
+			<mfrac>
+				<mn id="numerator"></mn>
+				<mn id="denominator"></mn>
+			</mfrac>
+			<msup><ms id="x"></ms><mn id="xExponent"></mn></msup>
+			<ms id="constantOfInt"></ms>
+		</math>
+		</div>
+	</body>
+	<script>
+		const coefficientInput = document.getElementById("coefficientInput");
+		const coefficientDisplay = document.getElementById("coefficient");
+		const exponentDisplay = document.getElementById("exponent");
+		const exponentInput = document.getElementById("exponentInput");
+		const calculateInput = document.getElementById("calculateInput");
+		const powerRuleIntegral = document.getElementById("powerRuleIntegral");
+		const constantOfInt = document.getElementById("constantOfInt");
+		const denominator = document.getElementById("denominator");
+		const numerator = document.getElementById("numerator");
+		const xExponent = document.getElementById("xExponent");
+		const x = document.getElementById("x");
+		const integral = document.getElementById("integral");
+	
+		calculateInput.addEventListener("click", function(){
+			let coefficient = parseFloat(coefficientInput.value);
+			let exponent = parseFloat(exponentInput.value);
+			if(!isNaN(coefficient) && !isNaN(exponent)){
+				let newExponent = exponent + 1;
+				let numer = coefficient;
+				let denom = newExponent;
+				function gcd(a, b){
+  	  				return b === 0 ? a : gcd(b, a % b);
+				}
+				const g = gcd(Math.abs(numer), Math.abs(denom));
+				numer /= g;
+				denom /= g;
+				numerator.innerHTML =  "&nbsp;" + numer + "&nbsp;";
+				denominator.innerHTML =  "&nbsp;" + denom + "&nbsp;";
+
+				x.innerHTML = "x";
+				xExponent.innerHTML = newExponent;
+				
+				coefficientDisplay.innerHTML = coefficient;
+				exponentDisplay.innerHTML = exponent;
+				constantOfInt.innerHTML = " + C";
+
+			}
+		});
+	</script>
+</html>
+	

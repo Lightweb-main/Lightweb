@@ -19,17 +19,18 @@ const paintScatterSlider = document.getElementById("paintScatterSlider");
 const context = canvas.getContext("2d");
 
 function generateCanvas(){
-	canvas.width = window.innerWidth * 1;
-	canvas.height = window.innerHeight * 1;
+	const rect = canvas.getBoundingClientRect(); 
+	canvas.width = rect.width; 
+	canvas.height = rect.height;
 	context.fillStyle = "white";
 	context.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function generateEmptyCanvas(){
-	canvas.width = window.innerWidth * 1;
-	canvas.height = window.innerHeight * 1;
+	const rect = canvas.getBoundingClientRect();
+	canvas.width = rect.width; 
+	canvas.height = rect.height;
 	context.fillStyle = "rgba(0,0,0,0)";
-	canvas.style.border = "2px solid var(--border)";
 	context.fillRect(0, 0, canvas.width, canvas.height);
 }
 let drawing = false;
@@ -81,9 +82,24 @@ function update(){
 
 	document.body.style.cursor = "cursor";
 }
+
+function getPos(e){
+	const boundaries = canvas.getBoundingClientRect();
+	if(e.touches){
+		return {
+			x: e.touches[0].clientX - boundaries.left,
+			y: e.touches[0].clientY - boundaries.top
+		};
+	} else {
+		return {
+            x: e.clientX - boundaries.left,
+            y: e.clientY - boundaries.top
+        };
+	}
+}
 function startPainting(){
 	drawing = true;
-	draw(drawingCanvas);
+	draw(e);
 }
 
 function endPainting(){
@@ -91,10 +107,10 @@ function endPainting(){
 	context.beginPath();
 }
 
-function draw(drawingCanvas) {
-	if(drawing != true){
-		return;
-	}
+function draw(e) {
+	if(drawing != true) return;
+	e.preventDefault();
+	const pos = getPos(e);
 	scatterX = Math.floor(Math.random() * paintScatter) - paintScatter / 2;
 	scatterY = Math.floor(Math.random() * paintScatter) - paintScatter / 2;
 	const boundaries = canvas.getBoundingClientRect();
@@ -104,22 +120,24 @@ function draw(drawingCanvas) {
 	
 	if(paintScatter > 0){
 		context.beginPath();
-		context.arc(drawingCanvas.clientX - boundaries.left + scatterX, drawingCanvas.clientY - boundaries.top + scatterY, paintWidth, 0, 2 * Math.PI);
+		context.arc(pos.x + scatterX, pos.y + scatterY, paintWidth, 0, 2 * Math.PI);
 		context.fill();
 	} else {
 		context.lineJoin = "round";
 		context.lineCap = "round";
-		context.lineTo(drawingCanvas.clientX - boundaries.left, drawingCanvas.clientY - boundaries.top);
+		context.lineTo(pos.x, pos.y);
 		context.stroke();
 		context.beginPath();
-		context.moveTo(drawingCanvas.clientX - boundaries.left, drawingCanvas.clientY - boundaries.top);
-		context.fill();
+		context.moveTo(pos.x, pos.y);
 	}
 }
 
 canvas.addEventListener('mousedown', startPainting);
+canvas.addEventListener('touchstart', startPainting);
 canvas.addEventListener('mouseup', endPainting);
+canvas.addEventListener('touchend', endPainting);
 canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('touchmove', draw);
 
 function exit(){
 	window.location.href = "../MainPages/Other.html";

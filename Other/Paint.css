@@ -1,15 +1,42 @@
 #paintCanvas{
 	display: flex;
 	margin: auto;
+	flex: 1;
+	width: 90vw;;
+	height: 100vh;
 }
-#paintWidthPreview{
-	border: 1px solid black;
-	border-radius: 50000rem;
-	width: 400px;
-	margin-left: 500px;
-	margin-bottom: 500px;
+#settings{
+	flex: 1;
+	border: 2px solid black;
+	width: auto;
+	padding: 5px;
+	flex-direction: column;
+
+}
+#container{
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+}
+body{
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
 }
 
 #downloadPNG{
 	padding: 5px;
+}
+
+#DigitalClock, #DigitalCalendar{
+	display: none !important;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100vh;
+	width: 100vw;
+    margin: 0;
+    padding: 0;
 }

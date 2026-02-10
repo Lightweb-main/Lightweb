@@ -33,14 +33,68 @@
 		</math>
 		<p>&Sigma;x<sub>i</sub>: The summation of all the values in a dataset.</p>
 		<p>n: The number of values in a dataset.</p>
-		<p>Median (Odd Amount of Numbers): The middle number (1, 2, <b>3</b>, 4, 5... Median: 3)</p>
-		<p>Median (Even Amount of Numbers): (n/2<sub>term</sub> + n/2 - 1<sub>term</sub>) / 2</p>
+		<p>Median (Odd Amount of Numbers): 
+		<math>
+			<msup>
+				<mrow>
+					<ms>(</ms>
+					<mfrac>
+						<mrow>
+							<ms>n</ms>
+							<mo>+</mo>
+							<mn>1</mn>
+						</mrow>
+						<mn>2</mn>
+					</mfrac>
+					<ms>)</ms>
+				</mrow>
+				<mtext>th</mtext>
+			</msup>
+			<mtext>&nbsp;term</mtext>
+		</math>
+		</p>
+		<p>Median (Even Amount of Numbers):
+		<math>
+			<mfrac>
+				<mrow>
+					<msup>
+						<mrow>
+							<ms>(</ms>
+							<mfrac>
+								<ms>&nbsp;n&nbsp;</ms>
+								<mn>&nbsp;2&nbsp;</mn>
+							</mfrac>
+							<ms>)</ms>
+						</mrow>
+						<mtext>th</mtext>
+					</msup>
+					<mo>+</mo>
+					<msup>
+						<mrow>
+							<ms>(</ms>
+							<mfrac>
+								<ms>&nbsp;n&nbsp;</ms>
+								<mn>&nbsp;2&nbsp;</mn>
+							</mfrac>
+							<mo>+</mo>
+							<mn>1</mn>
+							<ms>)</ms>
+						</mrow>
+						<mtext>th</mtext>
+					</msup>
+				</mrow>
+				<mn>2</mn>
+			</mfrac>
+			<mtext>&nbsp;term</mtext>
+		</math>
+		</p>
 		<p>Mode: The number(s) that appear the most</p>
 		<h2>Input Number</h2>
 		<input id="numberInput">
 		<button id="enterInput">Enter Input</button>
 		<h2>Calculate</h2>
-		<button id="calculateInput">Calculate</button>
+		<button id="calculateInput">Calculate</button><br>
+		<button id="clearInput">Clear</button>
 		<h2>Results</h2>
 		<p style="text-align: center; font-size: 60px;" id="calculationP1">Datset: []</p>
 		<p style="text-align: center; font-size: 50px;" id="calculationP2">Mean: </p>
@@ -57,12 +111,17 @@
 		const enterInput = document.getElementById("enterInput");
 		const numberInput = document.getElementById("numberInput");
 		const calculateInput = document.getElementById("calculateInput");
+		const clearInput = document.getElementById("clearInput");
 		const calculationP1 = document.getElementById("calculationP1");
 		const calculationP2 = document.getElementById("calculationP2");
 		const calculationP3 = document.getElementById("calculationP3");
 		const calculationP4 = document.getElementById("calculationP4");
 		
 		setInterval(update, 10);
+		
+		clearInput.addEventListener("click", function(){
+			data = [];
+		});
 		
 		enterInput.addEventListener("click", function(){
 			const number = parseFloat(numberInput.value);
@@ -73,6 +132,7 @@
 		});
 		
 		calculateInput.addEventListener("click", function(){
+			if(data.length == 0) return;
 			for(num of data){
 				if(isNaN(num)){
 					return;

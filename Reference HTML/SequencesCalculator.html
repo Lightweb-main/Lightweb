@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Sequence Calculator</h1>
+		<div style="border: 4px solid grey; border-radius: 25px; padding: 25px; display: flex; flex-direction: row; gap: 45px;">
+			<button style="padding: 20px; border-radius: 10px; font-size: 25px;" onClick="sequenceToggle = 0" id="arithmeticSequenceBtn">Arithmetic Sequence</button>
+			<button style="padding: 20px; border-radius: 10px; font-size: 25px;" onClick="sequenceToggle = 1" id="geometricSequenceBtn">Geometric Sequence</button>
+		</div>
+		<div id="arithmeticSequences">
+			<h2>Inputs</h2>
+			<input id="firstTermInput"> First Term</input><br><br>
+			<input id="commonDifferenceInput"> Common Difference</input><br><br>
+			<input id="amountOfTermInput"> Amount of Terms</input>
+			<h2>Calculate</h2>
+			<button id="calculateInput">Calculate</button>
+			<h2>Results</h2>
+			<div id="calculationP2" style="font-size: 45px; text-align: center; line-height: 1.5">Explicit Equation: </div>
+			<div id="calculationP3" style="font-size: 45px; text-align: center; line-height: 1.5">Recursive Equation: </div>
+			<div id="calculationP1" 
+			style="
+				border: 2px solid grey; 
+				width: 100vw; 
+				margin: auto; 
+				font-size: 25px; 
+				text-align: center;
+				overflow-wrap: break-word;
+			"
+			></div>
+		</div>
+		<div id="geometricSequences">
+			<h2>Inputs</h2>
+			<input id="firstTermInputg"> First Term</input><br><br>
+			<input id="commonDifferenceInputg"> Common Ratio</input><br><br>
+			<input id="amountOfTermInputg"> Amount of Terms</input>
+			<h2>Calculate</h2>
+			<button id="calculateInputg">Calculate</button>
+			<h2>Results</h2>
+			<div id="calculationP2g" style="font-size: 45px; text-align: center; line-height: 1.5">Explicit Equation: </div>
+			<div id="calculationP3g" style="font-size: 45px; text-align: center; line-height: 1.5">Recursive Equation: </div>
+			<div id="calculationP1g" 
+			style="
+				border: 2px solid grey; 
+				width: 100vw; 
+				margin: auto; 
+				font-size: 25px; 
+				text-align: center;
+				overflow-wrap: break-word;
+			"
+			></div>
+		</div>
+	</body>
+	<script>
+		const firstTermInput = document.getElementById("firstTermInput");
+		const firstTermInputg = document.getElementById("firstTermInputg");
+		const commonDifferenceInput = document.getElementById("commonDifferenceInput");
+		const commonDifferenceInputg = document.getElementById("commonDifferenceInputg");
+		const calculateInput = document.getElementById("calculateInput");
+		const calculateInputg = document.getElementById("calculateInputg");
+		const amountOfTermInput = document.getElementById("amountOfTermInput");
+		const amountOfTermInputg = document.getElementById("amountOfTermInputg");
+		const calculationP1 = document.getElementById("calculationP1");
+		const calculationP1g = document.getElementById("calculationP1g");
+		const calculationP2g = document.getElementById("calculationP2g");
+		const calculationP3g = document.getElementById("calculationP3g");
+		const arithmeticSequenceBtn = document.getElementById("arithmeticSequenceBtn");
+		const geometricSequenceBtn = document.getElementById("geometricSequenceBtn");
+		const arithmeticSequences = document.getElementById("arithmeticSequences");
+		const geometricSequences = document.getElementById("geometricSequences");
+		let sequenceToggle = 0;
+		setInterval(update, 1);
+		function update(){
+			arithmeticSequenceBtn.style.backgroundColor = "#ffffff";
+			geometricSequenceBtn.style.backgroundColor = "#ffffff";
+			arithmeticSequences.style.display = "none";
+			if(sequenceToggle == 0){
+				arithmeticSequenceBtn.style.backgroundColor = "#ffaaaa";
+				arithmeticSequences.style.display = "block";
+			} else {
+				geometricSequenceBtn.style.backgroundColor = "#ffaaaa";
+			}
+		}
+		calculateInput.addEventListener('click', function(){
+			let firstTerm = parseFloat(firstTermInput.value);
+			let commonDifference = parseFloat(commonDifferenceInput.value);
+			let amountOfTerms = parseInt(amountOfTermInput.value);
+			if(!isNaN(firstTerm) && !isNaN(commonDifference) && !isNaN(amountOfTerms)){
+				calculationP1.textContent = "";
+				let zerothTerm = firstTerm - commonDifference;
+				const div = document.createElement("text");
+				div.textContent = zerothTerm + ", ";
+				calculationP1.appendChild(div);
+				const div2 = document.createElement("text");
+				if(amountOfTerms <= 2){
+					div2.textContent = firstTerm;
+				} else {
+					div2.textContent = firstTerm + ", ";
+				}
+				calculationP1.appendChild(div2);
+				for(let i = 1; i <= amountOfTerms - 2; i++){
+					let divInst = document.createElement("text");
+					if(i != amountOfTerms - 2){
+						divInst.textContent = (firstTerm + commonDifference * i) + ", ";
+					} else {
+						divInst.textContent = (firstTerm + commonDifference * i);
+					}
+					calculationP1.appendChild(divInst);
+				}
+				if(zerothTerm < 0){
+					calculationP2.innerHTML = `Explicit Equation: a<sub>n</sub> = ${firstTerm} + ${commonDifference}(n - 1) &rarr; ${commonDifference}n - ${zerothTerm * -1}`
+				} else {
+					calculationP2.innerHTML = `Explicit Equation: a<sub>n</sub> = ${firstTerm} + ${commonDifference}(n - 1) &rarr; ${commonDifference}n + ${zerothTerm}`
+				}
+				
+				if(commonDifference < 0){
+					calculationP3.innerHTML = `Recursive Equation: a<sub>n</sub> = a<sub>n - 1</sub> - ${commonDifference * -1}`
+				} else {
+					calculationP3.innerHTML = `Recursive Equation: a<sub>n</sub> = a<sub>n - 1</sub> + ${commonDifference}`
+				}
+			};
+		});
+		calculateInputg.addEventListener('click', function(){
+			let firstTerm = parseFloat(firstTermInputg.value);
+			let commonRatio = parseFloat(commonDifferenceInputg.value);
+			let amountOfTerms = parseInt(amountOfTermInputg.value);
+			if(!isNaN(firstTerm) && !isNaN(commonRatio) && !isNaN(amountOfTerms)){
+				calculationP1g.textContent = "";
+				let zerothTerm = firstTerm / commonRatio;
+				const div = document.createElement("text");
+				div.textContent = zerothTerm + ", ";
+				calculationP1g.appendChild(div);
+				const div2 = document.createElement("text");
+				if(amountOfTerms <= 2){
+					div2.textContent = firstTerm;
+				} else {
+					div2.textContent = firstTerm + ", ";
+				}
+				calculationP1g.appendChild(div2);
+				for(let i = 1; i <= amountOfTerms - 2; i++){
+					let divInst = document.createElement("text");
+					if(i != amountOfTerms - 2){
+						divInst.textContent = (firstTerm * Math.pow(commonRatio, i)) + ", ";
+					} else {
+						divInst.textContent = (firstTerm * Math.pow(commonRatio, i));
+					}
+					calculationP1g.appendChild(divInst);
+				}
+				calculationP2g.innerHTML = `Explicit Equation: a<sub>n</sub> = ${firstTerm} * (${commonRatio})<sup>n - 1</sup>`
+			
+				
+				if(commonRatio < 0){
+					calculationP3g.innerHTML = `Recursive Equation: a<sub>n</sub> = a<sub>n - 1</sub> * (${commonRatio})`
+				} else {
+					calculationP3g.innerHTML = `Recursive Equation: a<sub>n</sub> = a<sub>n - 1</sub> * ${commonRatio}`
+				}
+			};
+		});
+	</script>
+</html>
+	

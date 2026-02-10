@@ -9,15 +9,23 @@
 
   <div class="container">
       <h1 style="color: var(--text);">Connect 4</h1>
-    <div class="Connect4Board">
-    </div>
+    <div class="Connect4Board"></div>
+	<div class="Connect4BoardThreePlayer"></div>
   </div>
   <div class="message">
     <p class="status"></p>
     <p class="winner"></p>
   </div>
-  
+  <div class="messageTPM">
+    <p class="statusTPM"></p>
+    <p class="winnerTPM"></p>
+  </div>
+  <div class="settings">
+	<input type="checkbox" class="ThreePlayerMode">3 Player Mode</input>
+  </div>
+  <br><br>
 <button class="Connect4Buttons" id="reset-btn">Restart</button>
+<button class="Connect4Buttons" id="reset-btn-TPM">Restart</button>
 <button class="Connect4Buttons" id="exit" onclick="exitConnect4()">Exit</button>
 
   <script src="Connect4.js"></script>
