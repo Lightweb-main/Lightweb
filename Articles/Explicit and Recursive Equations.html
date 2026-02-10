@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		 
+	</head>
+
+	<body> 
+		<h1>Explicit and Recursive Equations</h1>
+		<h2>Introduction</h2>
+		Explicit and recursive equations are both types of equations used to represent the pattern of a <b>sequence</b>. Both are related to each other and can be converted to the other...
+		<h2>Explicit Equations</h2>
+		An explicit equation is a formula used to find any term in a sequence without needing to know any previous term. The explicit equations formula is...
+		<p>a<sub>n</sub> = a<sub>1</sub> + d(n - 1)</p>
+		This formula basically states that the nth-term of a sequence is the first term plus the common difference multiplied by n minus 1. By knowing the explicit equation of a sequence, you can find any term in it. For example...
+		<p>Sequence 1:&nbsp;&nbsp;&nbsp;-7, -3, 1, 5, 9</p>
+		We know that the first term of this sequence is -7 and the <b>common difference</b> is +4 since every number is greater than the previous number by 4...
+		<p>s(n) = -7 + 4(n - 1)</p>
+		Then you simplify once you know the common difference and the first term of the sequence...
+		<p>s(n) = -7 + 4n - 1</p>
+		<p>s(n) = 4n - 8</p>
+		Once you know the explicit equation, you can find any term in the sequence, like for example the 100th term...
+		<p>s(100) = 4(100) - 8</p>
+		<p>s(100) = 400 - 8</p>
+		<p>s(100) = 392</p>
+		This is how you would find the explicit equation of an <b>arithmetic sequence</b>. But the general form for explicit equations of <b>geometric sequences</b> is instead...
+		<p>a<sub>n</sub> = a<sub>1</sub> * r<sup>(n - 1)</sup></p>
+		This formula states that the nth-term of a geometric sequence is the first term times the common difference to the power of n minus 1. For example...
+		<math display="block">
+			<mrow>
+				<mtext>Sequence 2:&nbsp;&nbsp;&nbsp;</mtext>
+				<mfrac>
+					<mn>1</mn>
+					<mn>27</mn>
+				</mfrac>
+				<ms>,&nbsp;&nbsp;</ms>
+				<mfrac>
+					<mn>1</mn>
+					<mn>9</mn>
+				</mfrac>
+				<ms>,&nbsp;&nbsp;</ms>
+				<mfrac>
+					<mn>1</mn>
+					<mn>3</mn>
+				</mfrac>
+				<ms>,&nbsp;&nbsp;</ms>
+				<mn>1,&nbsp;&nbsp;</mn>
+				<mn>3,&nbsp;&nbsp;</mn>
+				<mn>9,&nbsp;&nbsp;</mn>
+				<mn>27,&nbsp;&nbsp;</mn>
+				<mn>81&nbsp;&nbsp;</mn>
+			</mrow>
+		</math>
+		We can see that the first term of the sequence is 1/27 and the common difference is 3 since every number is three times bigger than the previous number...
+		<p>a<sub>n</sub> = 1/27 * 3<sup>(n - 1)</sup></p>
+		With this equation, we can calculate any term of this sequence like the 20th term...
+		<p>a<sub>20</sub> = 1/27 * 3<sup>(20 - 1)</sup></p>
+		<p>a<sub>20</sub> = 1/3<sup>3</sup> * 3<sup>19</sup></p>
+		<p>a<sub>20</sub> = 3<sup>16</sup></p>
+		The twenty term of this sequence is 3 to the power of 16 or 43,046,721.
+		<h2>Recursive Equations</h2>
+		The recursive equation of a sequence is the formula used to find a previous term. Unlike explicit equations, you have to know a previous term (or previous terms). The general form for recursive equations is...
+		<p>a<sub>n</sub> = a<sub>n - 1</sub> + d</p>
+		This tells us that each term is the sum of the previous term plus the common difference for arithmetic sequences. For example...
+		<p>Sequence 3:&nbsp;&nbsp;&nbsp; -4, -2, 0, ??, ??, ??</p>
+		For this sequence we need to find out the fourth, fifth and sixth term of it. To do this we can use the formula above to find these missing terms. We already know that the first term is -4 and the common difference is 2 since every number is greater than the previous number by 2...
+		<p>a<sub>4</sub> = 0 + 2</p>
+		<p>a<sub>4</sub> = 2</p>
+		By using the recursive equation, we found out that the fourth term of the sequence is 2...
+		<p>Sequence 3:&nbsp;&nbsp;&nbsp; -4, -2, 0, 2, ??, ??</p>
+		And you can use the recursive equation repeatively to find other unknown terms...
+		<p>a<sub>5</sub> = 2 + 2</p>
+		<p>a<sub>5</sub> = 4</p>
+		<p>Sequence 3:&nbsp;&nbsp;&nbsp; -4, -2, 0, 2, 4, ??</p>
+		<p>a<sub>6</sub> = 4 + 2</p>
+		<p>a<sub>6</sub> = 6</p>
+		<p>Sequence 3:&nbsp;&nbsp;&nbsp; -4, -2, 0, 2, 4, 6</p>
+		And now we've completed the sequence<br><br>
+		The general formula for recursive equations of geometric sequence is...
+		<p>a<sub>n</sub> = a<sub>n - 1</sub> * r</p>
+		This formula tells us that in a geometric sequence, a term is it's previous term times the common ratio of the sequence. For example...
+		<p>Sequence 4:&nbsp;&nbsp;&nbsp;1, 4, 16, 64, ???, 1024, ???, 16384</p>
+		In this sequence we're trying to figure out the fourth and sixth term of this sequence. We know that the common ratio is 4 since each term is 4 times bigger than the previous term...'
+		<p>a<sub>4</sub> = 64 * 4</p>
+		<p>a<sub>6</sub> = 1024 * 4</p>
+		<p>a<sub>4</sub> = 256</p>
+		<p>a<sub>6</sub> = 4096</p>
+		By using the recursive formula of this geometric sequence, we now know that the fourth term is 256 and the sixth term is 2048...
+		<p>Sequence 4:&nbsp;&nbsp;&nbsp;1, 4, 16, 64, 256, 1024, 4096, 16384</p>
+		<iframe src="../Reference%20HTML/SequencesCalculator.html" style="width: 100vw; height: 100vh;"></iframe>
+   <script src="../Important/DigitalClock.js"></script> 
+</body>
+</html>
