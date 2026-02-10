@@ -1,0 +1,1409 @@
+<!DOCTYPE html> <html>
+	<head>
+		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		<style>
+			.container{
+				margin-left: 50px;
+				
+			}
+			
+			.placeholder {
+				font-size: 13px;
+			}
+		
+			#periodicTable {
+				display: grid;
+				grid-template-columns: repeat(18, 70px);
+				gap: 16px;
+			}
+			
+			#LanthanideSeries, #ActinideSeries {
+				display: grid;
+				grid-template-columns: repeat(18, 70px);
+				gap: 16px;
+			}
+			
+			.element {
+				width: 70px;
+				height: 70px;
+				background-color: #e0e0e0;
+				border: 1px solid #bbb;
+				text-align: center;
+				line-height: 0.4em;
+				font-size: 12px;
+				position: relative;
+			}
+			
+			
+			.atomicNum {
+				position: absolute;
+				top: -10px;
+				right: 6px;
+				font-size: 15px;
+			}
+			
+			.fullName {
+				font-size: 12px;
+				text-align: center;
+			}
+			
+			.fullNamelong {
+				font-size: 11px;
+				text-align: center;
+			}
+		</style>
+	
+	
+		
+	</head>
+	<body> 	
+		<h1>The Periodic Table</h1>
+		<h2>Display</h2>
+		<div class="container">
+		<div id="periodicTable">
+			<div class="element" style="grid-column: 1;">
+				<p class="abbr">H</p>
+				<p class="atomicNum">1</p>
+				<p class="fullName">Hydrogen</p>
+				<p class="electronegativity">2.2</p>
+			</div>
+			<div class="element" style="grid-column: 18;">
+				<p class="abbr">He</p>
+				<p class="atomicNum">2</p>
+				<p class="fullName">Helium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 1;">
+				<p class="abbr">Li</p>
+				<p class="atomicNum">3</p>
+				<p class="fullName">Lithium</p>
+				<p class="electronegativity">0.98</p>
+			</div>
+			<div class="element" style="grid-column: 2;">
+				<p class="abbr">Be</p>
+				<p class="atomicNum">4</p>
+				<p class="fullName">Beryllium</p>
+				<p class="electronegativity">1.57</p>
+			</div>
+			<div class="element" style="grid-column: 13;">
+				<p class="abbr">B</p>
+				<p class="atomicNum">5</p>
+				<p class="fullName">Boron</p>
+				<p class="electronegativity">2.04</p>
+			</div>
+			<div class="element" style="grid-column: 14;">
+				<p class="abbr">C</p>
+				<p class="atomicNum">6</p>
+				<p class="fullName">Carbon</p>
+				<p class="electronegativity">2.55</p>
+			</div>
+			<div class="element" style="grid-column: 15;">
+				<p class="abbr">N</p>
+				<p class="atomicNum">7</p>
+				<p class="fullName">Nitrogen</p>
+				<p class="electronegativity">3.04</p>
+			</div>
+			<div class="element" style="grid-column: 16;">
+				<p class="abbr">O</p>
+				<p class="atomicNum">8</p>
+				<p class="fullName">Oxygen</p>
+				<p class="electronegativity">3.44</p>
+			</div>
+			<div class="element" style="grid-column: 17;">
+				<p class="abbr">F</p>
+				<p class="atomicNum">9</p>
+				<p class="fullName">Fluorine</p>
+				<p class="electronegativity">3.98</p>
+			</div>
+			<div class="element" style="grid-column: 18;">
+				<p class="abbr">Ne</p>
+				<p class="atomicNum">10</p>
+				<p class="fullName">Neon</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 1;">
+				<p class="abbr">Na</p>
+				<p class="atomicNum">11</p>
+				<p class="fullName">Sodium</p>
+				<p class="electronegativity">0.93</p>
+			</div>
+			<div class="element" style="grid-column: 2;">
+				<p class="abbr">Mg</p>
+				<p class="atomicNum">12</p>
+				<p class="fullName">Magnesium</p>
+				<p class="electronegativity">1.31</p>
+			</div>
+			<div class="element" style="grid-column: 13;">
+				<p class="abbr">Al</p>
+				<p class="atomicNum">13</p>
+				<p class="fullName">Aluminum</p>
+				<p class="electronegativity">1.61</p>
+			</div>
+			<div class="element" style="grid-column: 14;">
+				<p class="abbr">Si</p>
+				<p class="atomicNum">14</p>
+				<p class="fullName">Silicon</p>
+				<p class="electronegativity">1.9</p>
+			</div>
+			<div class="element" style="grid-column: 15;">
+				<p class="abbr">P</p>
+				<p class="atomicNum">15</p>
+				<p class="fullName">Phosphorus</p>
+				<p class="electronegativity">2.19</p>
+			</div>
+			<div class="element" style="grid-column: 16;">
+				<p class="abbr">S</p>
+				<p class="atomicNum">16</p>
+				<p class="fullName">Sulfur</p>
+				<p class="electronegativity">2.58</p>
+			</div>
+			<div class="element" style="grid-column: 17;">
+				<p class="abbr">Cl</p>
+				<p class="atomicNum">17</p>
+				<p class="fullName">Chlorine</p>
+				<p class="electronegativity">3.16</p>
+			</div>
+			<div class="element" style="grid-column: 18;">
+				<p class="abbr">Ar</p>
+				<p class="atomicNum">18</p>
+				<p class="fullName">Argon</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 1;">
+				<p class="abbr">K</p>
+				<p class="atomicNum">19</p>
+				<p class="fullName">Potassium</p>
+				<p class="electronegativity">0.82</p>
+			</div>
+			<div class="element" style="grid-column: 2;">
+				<p class="abbr">Ca</p>
+				<p class="atomicNum">20</p>
+				<p class="fullName">Calcium</p>
+				<p class="electronegativity">1</p>
+			</div>
+			<div class="element" style="grid-column: 3;">
+				<p class="abbr">Sc</p>
+				<p class="atomicNum">21</p>
+				<p class="fullName">Scandium</p>
+				<p class="electronegativity">1.36</p>
+			</div>
+			<div class="element" style="grid-column: 4;">
+				<p class="abbr">Ti</p>
+				<p class="atomicNum">22</p>
+				<p class="fullName">Titanium</p>
+				<p class="electronegativity">1.54</p>
+			</div>
+			<div class="element" style="grid-column: 5;">
+				<p class="abbr">V</p>
+				<p class="atomicNum">23</p>
+				<p class="fullName">Vanadium</p>
+				<p class="electronegativity">1.63</p>
+			</div>
+			<div class="element" style="grid-column: 6;">
+				<p class="abbr">Cr</p>
+				<p class="atomicNum">24</p>
+				<p class="fullName">Chromium</p>
+				<p class="electronegativity">1.66</p>
+			</div>
+			<div class="element" style="grid-column: 7;">
+				<p class="abbr">Mn</p>
+				<p class="atomicNum">25</p>
+				<p class="fullName">Manganese</p>
+				<p class="electronegativity">1.55</p>
+			</div>
+			<div class="element" style="grid-column: 8;">
+				<p class="abbr">Fe</p>
+				<p class="atomicNum">26</p>
+				<p class="fullName">Iron</p>
+				<p class="electronegativity">1.83</p>
+			</div>
+			<div class="element" style="grid-column: 9;">
+				<p class="abbr">Co</p>
+				<p class="atomicNum">27</p>
+				<p class="fullName">Cobalt</p>
+				<p class="electronegativity">1.88</p>
+			</div>
+			<div class="element" style="grid-column: 10;">
+				<p class="abbr">Ni</p>
+				<p class="atomicNum">28</p>
+				<p class="fullName">Nickel</p>
+				<p class="electronegativity">1.91</p>
+			</div>
+			<div class="element" style="grid-column: 11;">
+				<p class="abbr">Cu</p>
+				<p class="atomicNum">29</p>
+				<p class="fullName">Copper</p>
+				<p class="electronegativity">1.9</p>
+			</div>
+			<div class="element" style="grid-column: 12;">
+				<p class="abbr">Zn</p>
+				<p class="atomicNum">30</p>
+				<p class="fullName">Zinc</p>
+				<p class="electronegativity">1.65</p>
+			</div>
+			<div class="element" style="grid-column: 13;">
+				<p class="abbr">Ga</p>
+				<p class="atomicNum">31</p>
+				<p class="fullName">Gallium</p>
+				<p class="electronegativity">1.81</p>
+			</div>
+			<div class="element" style="grid-column: 14;">
+				<p class="abbr">Ge</p>
+				<p class="atomicNum">32</p>
+				<p class="fullName">Germanium</p>
+				<p class="electronegativity">2.01</p>
+			</div>
+			<div class="element" style="grid-column: 15;">
+				<p class="abbr">As</p>
+				<p class="atomicNum">33</p>
+				<p class="fullName">Arsenic</p>
+				<p class="electronegativity">2.18</p>
+			</div>
+			<div class="element" style="grid-column: 16;">
+				<p class="abbr">Se</p>
+				<p class="atomicNum">34</p>
+				<p class="fullName">Selenium</p>
+				<p class="electronegativity">2.55</p>
+			</div>
+			<div class="element" style="grid-column: 17;">
+				<p class="abbr">Br</p>
+				<p class="atomicNum">35</p>
+				<p class="fullName">Bromine</p>
+				<p class="electronegativity">2.96</p>
+			</div>
+			<div class="element" style="grid-column: 18;">
+				<p class="abbr">Kr</p>
+				<p class="atomicNum">36</p>
+				<p class="fullName">Krypton</p>
+				<p class="electronegativity">3</p>
+			</div>
+			<div class="element" style="grid-column: 1;">
+				<p class="abbr">Rb</p>
+				<p class="atomicNum">37</p>
+				<p class="fullName">Rubidium</p>
+				<p class="electronegativity">0.82</p>
+			</div>
+			<div class="element" style="grid-column: 2;">
+				<p class="abbr">Sr</p>
+				<p class="atomicNum">38</p>
+				<p class="fullName">Strontium</p>
+				<p class="electronegativity">0.95</p>
+			</div>
+			<div class="element" style="grid-column: 3;">
+				<p class="abbr">Y</p>
+				<p class="atomicNum">39</p>
+				<p class="fullName">Yttrium</p>
+				<p class="electronegativity">1.22</p>
+			</div>
+			<div class="element" style="grid-column: 4;">
+				<p class="abbr">Zr</p>
+				<p class="atomicNum">40</p>
+				<p class="fullName">Zirconium</p>
+				<p class="electronegativity">1.33</p>
+			</div>
+			<div class="element" style="grid-column: 5;">
+				<p class="abbr">Nb</p>
+				<p class="atomicNum">41</p>
+				<p class="fullName">Niobium</p>
+				<p class="electronegativity">1.6</p>
+			</div>
+			<div class="element" style="grid-column: 6;">
+				<p class="abbr">Mo</p>
+				<p class="atomicNum">42</p>
+				<p class="fullName">Molybdenum</p>
+				<p class="electronegativity">2.16</p>
+			</div>
+			<div class="element" style="grid-column: 7;">
+				<p class="abbr">Tc</p>
+				<p class="atomicNum">43</p>
+				<p class="fullName">Technetium</p>
+				<p class="electronegativity">1.9</p>
+			</div>
+			<div class="element" style="grid-column: 8;">
+				<p class="abbr">Ru</p>
+				<p class="atomicNum">44</p>
+				<p class="fullName">Ruthenium</p>
+				<p class="electronegativity">2.2</p>
+			</div>
+			<div class="element" style="grid-column: 9;">
+				<p class="abbr">Rh</p>
+				<p class="atomicNum">45</p>
+				<p class="fullName">Rhodium</p>
+				<p class="electronegativity">2.28</p>
+			</div>
+			<div class="element" style="grid-column: 10;">
+				<p class="abbr">Pd</p>
+				<p class="atomicNum">46</p>
+				<p class="fullName">Palladium</p>
+				<p class="electronegativity">2.2</p>
+			</div>
+			<div class="element" style="grid-column: 11;">
+				<p class="abbr">Ag</p>
+				<p class="atomicNum">47</p>
+				<p class="fullName">Silver</p>
+				<p class="electronegativity">1.93</p>
+			</div>
+			<div class="element" style="grid-column: 12;">
+				<p class="abbr">Cd</p>
+				<p class="atomicNum">48</p>
+				<p class="fullName">Cadmium</p>
+				<p class="electronegativity">1.69</p>
+			</div>
+			<div class="element" style="grid-column: 13;">
+				<p class="abbr">In</p>
+				<p class="atomicNum">49</p>
+				<p class="fullName">Indium</p>
+				<p class="electronegativity">1.78</p>
+			</div>
+			<div class="element" style="grid-column: 14;">
+				<p class="abbr">Sn</p>
+				<p class="atomicNum">50</p>
+				<p class="fullName">Tin</p>
+				<p class="electronegativity">1.96</p>
+			</div>
+			<div class="element" style="grid-column: 15;">
+				<p class="abbr">Sb</p>
+				<p class="atomicNum">51</p>
+				<p class="fullName">Antimony</p>
+				<p class="electronegativity">2.05</p>
+			</div>
+			<div class="element" style="grid-column: 16;">
+				<p class="abbr">Te</p>
+				<p class="atomicNum">52</p>
+				<p class="fullName">Tellurium</p>
+				<p class="electronegativity">2.1</p>
+			</div>
+			<div class="element" style="grid-column: 17;">
+				<p class="abbr">I</p>
+				<p class="atomicNum">53</p>
+				<p class="fullName">Iodine</p>
+				<p class="electronegativity">2.66</p>
+			</div>
+			<div class="element" style="grid-column: 18;">
+				<p class="abbr">Xe</p>
+				<p class="atomicNum">54</p>
+				<p class="fullName">Xenon</p>
+				<p class="electronegativity">2.6</p>
+			</div>
+			<div class="element" style="grid-column: 1;">
+				<p class="abbr">Cs</p>
+				<p class="atomicNum">55</p>
+				<p class="fullName">Cesium</p>
+				<p class="electronegativity">0.79</p>
+			</div>
+			<div class="element" style="grid-column: 2;">
+				<p class="abbr">Ba</p>
+				<p class="atomicNum">56</p>
+				<p class="fullName">Barium</p>
+				<p class="electronegativity">0.89</p>
+			</div>
+			<div class="element" style="grid-column: 3;">
+				<p class="placeholder">57-71</p>
+			</div>
+			<div class="element" style="grid-column: 4;">
+				<p class="abbr">Hf</p>
+				<p class="atomicNum">72</p>
+				<p class="fullName">Hafnium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 5;">
+				<p class="abbr">Ta</p>
+				<p class="atomicNum">73</p>
+				<p class="fullName">Tantalum</p>
+				<p class="electronegativity">1.5</p>
+			</div>
+			<div class="element" style="grid-column: 6;">
+				<p class="abbr">W</p>
+				<p class="atomicNum">74</p>
+				<p class="fullName">Tungsten</p>
+				<p class="electronegativity">2.36</p>
+			</div>
+			<div class="element" style="grid-column: 7;">
+				<p class="abbr">Re</p>
+				<p class="atomicNum">75</p>
+				<p class="fullName">Rhenium</p>
+				<p class="electronegativity">1.9</p>
+			</div>
+			<div class="element" style="grid-column: 8;">
+				<p class="abbr">Os</p>
+				<p class="atomicNum">76</p>
+				<p class="fullName">Osmium</p>
+				<p class="electronegativity">2.2</p>
+			</div>
+			<div class="element" style="grid-column: 9;">
+				<p class="abbr">Ir</p>
+				<p class="atomicNum">77</p>
+				<p class="fullName">Iridium</p>
+				<p class="electronegativity">2.2</p>
+			</div>
+			<div class="element" style="grid-column: 10;">
+				<p class="abbr">Pt</p>
+				<p class="atomicNum">78</p>
+				<p class="fullName">Platinum</p>
+				<p class="electronegativity">2.28</p>
+			</div>
+			<div class="element" style="grid-column: 11;">
+				<p class="abbr">Au</p>
+				<p class="atomicNum">79</p>
+				<p class="fullName">Gold</p>
+				<p class="electronegativity">2.54</p>
+			</div>
+			<div class="element" style="grid-column: 12;">
+				<p class="abbr">Hg</p>
+				<p class="atomicNum">80</p>
+				<p class="fullName">Mercury</p>
+				<p class="electronegativity">2</p>
+			</div>
+			<div class="element" style="grid-column: 13;">
+				<p class="abbr">Tl</p>
+				<p class="atomicNum">81</p>
+				<p class="fullName">Thallium</p>
+				<p class="electronegativity">1.62</p>
+			</div>
+			<div class="element" style="grid-column: 14;">
+				<p class="abbr">Pb</p>
+				<p class="atomicNum">82</p>
+				<p class="fullName">Lead</p>
+				<p class="electronegativity">2.33</p>
+			</div>
+			<div class="element" style="grid-column: 15;">
+				<p class="abbr">Bi</p>
+				<p class="atomicNum">83</p>
+				<p class="fullName">Bismuth</p>
+				<p class="electronegativity">2.02</p>
+			</div>
+			<div class="element" style="grid-column: 16;">
+				<p class="abbr">Po</p>
+				<p class="atomicNum">84</p>
+				<p class="fullName">Polonium</p>
+				<p class="electronegativity">2</p>
+			</div>
+			<div class="element" style="grid-column: 17;">
+				<p class="abbr">At</p>
+				<p class="atomicNum">85</p>
+				<p class="fullName">Astatine</p>
+				<p class="electronegativity">2.2</p>
+			</div>
+			<div class="element" style="grid-column: 18;">
+				<p class="abbr">Rn</p>
+				<p class="atomicNum">86</p>
+				<p class="fullName">Radon</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 1;">
+				<p class="abbr">Fr</p>
+				<p class="atomicNum">87</p>
+				<p class="fullName">Francium</p>
+				<p class="electronegativity">0.7</p>
+			</div>
+			<div class="element" style="grid-column: 2;">
+				<p class="abbr">Ra</p>
+				<p class="atomicNum">88</p>
+				<p class="fullName">Radium</p>
+				<p class="electronegativity">0.89</p>
+			</div>
+			<div class="element" style="grid-column: 3;">
+				<p class="placeholder">89-103</p>
+			</div>
+			<div class="element" style="grid-column: 4;">
+				<p class="abbr">Rf</p>
+				<p class="atomicNum">104</p>
+				<p class="fullNamelong">Rutherfordium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 5;">
+				<p class="abbr">Db</p>
+				<p class="atomicNum">105</p>
+				<p class="fullName">Dubnium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 6;">
+				<p class="abbr">Sg</p>
+				<p class="atomicNum">106</p>
+				<p class="fullName">Seaborgium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 7;">
+				<p class="abbr">Bh</p>
+				<p class="atomicNum">107</p>
+				<p class="fullName">Bohrium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 8;">
+				<p class="abbr">Hs</p>
+				<p class="atomicNum">108</p>
+				<p class="fullName">Hassium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 9;">
+				<p class="abbr">Mt</p>
+				<p class="atomicNum">109</p>
+				<p class="fullName">Meitnerium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 10;">
+				<p class="abbr">Ds</p>
+				<p class="atomicNum">110</p>
+				<p class="fullNamelong">Darmstadtium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 11;">
+				<p class="abbr">Rg</p>
+				<p class="atomicNum">111</p>
+				<p class="fullNamelong">Roentgenium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 12;">
+				<p class="abbr">Cn</p>
+				<p class="atomicNum">112</p>
+				<p class="fullName">Copernicium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 13;">
+				<p class="abbr">Nh</p>
+				<p class="atomicNum">113</p>
+				<p class="fullName">Nihonium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 14;">
+				<p class="abbr">Fl</p>
+				<p class="atomicNum">114</p>
+				<p class="fullName">Flerovium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 15;">
+				<p class="abbr">Mc</p>
+				<p class="atomicNum">115</p>
+				<p class="fullName">Moscovium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 16;">
+				<p class="abbr">Lv</p>
+				<p class="atomicNum">116</p>
+				<p class="fullNamelong">Livermorium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 17;">
+				<p class="abbr">Ts</p>
+				<p class="atomicNum">117</p>
+				<p class="fullName">Tennessine</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+			<div class="element" style="grid-column: 18;">
+				<p class="abbr">Og</p>
+				<p class="atomicNum">118</p>
+				<p class="fullName">Oganesson</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+		</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div id="LanthanideSeries">
+			<div class="element" style="grid-column: 4;">
+				<p class="abbr">La</p>
+				<p class="atomicNum">57</p>
+				<p class="fullName">Lanthanum</p>
+				<p class="electronegativity">1.1</p>
+			</div>
+			<div class="element" style="grid-column: 5;">
+				<p class="abbr">Ce</p>
+				<p class="atomicNum">58</p>
+				<p class="fullName">Cerium</p>
+				<p class="electronegativity">1.12</p>
+			</div>
+			<div class="element" style="grid-column: 6;">
+				<p class="abbr">Pr</p>
+				<p class="atomicNum">59</p>
+				<p class="fullNamelong">Praseodymium</p>
+				<p class="electronegativity">1.13</p>
+			</div>
+			<div class="element" style="grid-column: 7;">
+				<p class="abbr">Nd</p>
+				<p class="atomicNum">60</p>
+				<p class="fullName">Neodymium</p>
+				<p class="electronegativity">1.14</p>
+			</div>
+			<div class="element" style="grid-column: 8;">
+				<p class="abbr">Pm</p>
+				<p class="atomicNum">61</p>
+				<p class="fullName">Promethium</p>
+				<p class="electronegativity">1.13</p>
+			</div>
+			<div class="element" style="grid-column: 9;">
+				<p class="abbr">Sm</p>
+				<p class="atomicNum">62</p>
+				<p class="fullName">Samarium</p>
+				<p class="electronegativity">1.17</p>
+			</div>
+			<div class="element" style="grid-column: 10;">
+				<p class="abbr">Eu</p>
+				<p class="atomicNum">63</p>
+				<p class="fullName">Europium</p>
+				<p class="electronegativity">1.2</p>
+			</div>
+			<div class="element" style="grid-column: 11;">
+				<p class="abbr">Gd</p>
+				<p class="atomicNum">64</p>
+				<p class="fullName">Gadolinium</p>
+				<p class="electronegativity">1.2</p>
+			</div>
+			<div class="element" style="grid-column: 12;">
+				<p class="abbr">Tb</p>
+				<p class="atomicNum">65</p>
+				<p class="fullName">Terbium</p>
+				<p class="electronegativity">1.22</p>
+			</div>
+			<div class="element" style="grid-column: 13;">
+				<p class="abbr">Dy</p>
+				<p class="atomicNum">66</p>
+				<p class="fullName">Dysprosium</p>
+				<p class="electronegativity">1.23</p>
+			</div>
+			<div class="element" style="grid-column: 14;">
+				<p class="abbr">Ho</p>
+				<p class="atomicNum">67</p>
+				<p class="fullName">Holmium</p>
+				<p class="electronegativity">1.24</p>
+			</div>
+			<div class="element" style="grid-column: 15;">
+				<p class="abbr">Er</p>
+				<p class="atomicNum">68</p>
+				<p class="fullName">Erbium</p>
+				<p class="electronegativity">1.24</p>
+			</div>
+			<div class="element" style="grid-column: 16;">
+				<p class="abbr">Tm</p>
+				<p class="atomicNum">69</p>
+				<p class="fullName">Thulium</p>
+				<p class="electronegativity">1.25</p>
+			</div>
+			<div class="element" style="grid-column: 17;">
+				<p class="abbr">Yb</p>
+				<p class="atomicNum">70</p>
+				<p class="fullName">Ytterbium</p>
+				<p class="electronegativity">1.1</p>
+			</div>
+			<div class="element" style="grid-column: 18;">
+				<p class="abbr">Lu</p>
+				<p class="atomicNum">71</p>
+				<p class="fullName">Lutetium</p>
+				<p class="electronegativity">1.27</p>
+			</div>
+		</div>
+		</div>
+		<br>
+		<div class="container">
+			<div id="ActinideSeries">
+			<div class="element" style="grid-column: 4;">
+				<p class="abbr">Ac</p>
+				<p class="atomicNum">89</p>
+				<p class="fullName">Actinium</p>
+				<p class="electronegativity">1.1</p>
+			</div>
+			<div class="element" style="grid-column: 5;">
+				<p class="abbr">Th</p>
+				<p class="atomicNum">90</p>
+				<p class="fullName">Thorium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 6;">
+				<p class="abbr">Pa</p>
+				<p class="atomicNum">91</p>
+				<p class="fullName">Protactinium</p>
+				<p class="electronegativity">1.5</p>
+			</div>
+			<div class="element" style="grid-column: 7;">
+				<p class="abbr">U</p>
+				<p class="atomicNum">92</p>
+				<p class="fullName">Uranium</p>
+				<p class="electronegativity">1.38</p>
+			</div>
+			<div class="element" style="grid-column: 8;">
+				<p class="abbr">Np</p>
+				<p class="atomicNum">93</p>
+				<p class="fullName">Neptunium</p>
+				<p class="electronegativity">1.36</p>
+			</div>
+			<div class="element" style="grid-column: 9;">
+				<p class="abbr">Pu</p>
+				<p class="atomicNum">94</p>
+				<p class="fullName">Plutonium</p>
+				<p class="electronegativity">1.28</p>
+			</div>
+			<div class="element" style="grid-column: 10;">
+				<p class="abbr">Am</p>
+				<p class="atomicNum">95</p>
+				<p class="fullName">Americium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 11;">
+				<p class="abbr">Cm</p>
+				<p class="atomicNum">96</p>
+				<p class="fullName">Curium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 12;">
+				<p class="abbr">Bk</p>
+				<p class="atomicNum">97</p>
+				<p class="fullName">Berkelium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 13;">
+				<p class="abbr">Cf</p>
+				<p class="atomicNum">98</p>
+				<p class="fullName">Californium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 14;">
+				<p class="abbr">Es</p>
+				<p class="atomicNum">99</p>
+				<p class="fullName">Einsteinium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 15;">
+				<p class="abbr">Fm</p>
+				<p class="atomicNum">100</p>
+				<p class="fullName">Fermium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 16;">
+				<p class="abbr">Md</p>
+				<p class="atomicNum">101</p>
+				<p class="fullName">Mendelevium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 17;">
+				<p class="abbr">No</p>
+				<p class="atomicNum">102</p>
+				<p class="fullName">Nobelium</p>
+				<p class="electronegativity">1.3</p>
+			</div>
+			<div class="element" style="grid-column: 18;">
+				<p class="abbr">Lr</p>
+				<p class="atomicNum">103</p>
+				<p class="fullName">Lawrencium</p>
+				<p class="electronegativity">N/A</p>
+			</div>
+		</div>
+		</div>
+		<h2>Display</h2>
+		<input id="displayAlkaliMetal" name="displayAlkaliMetal" value="displayAlkaliMetal" type="checkbox">
+		<label for="displayAlkaliMetal">Alkali Metal</label>
+		<input id="displayAbbreviation" name="displayAbbreviation" value="displayAbbreviation" type="checkbox">
+		<label for="displayAbbreviation">Abbreviation</label><br>
+		<input id="displayAlkaliEarth" name="displayAlkaliEarth" value="displayAlkaliEarth" type="checkbox">
+		<label for="displayAlkaliEarth">Alkali Earth</label>
+		<input id="displayAtomicNumbers" name="displayAtomicNumbers" value="displayAtomicNumbers" type="checkbox">
+		<label for="displayAtomicNumbers">Atomic Numbers</label><br>
+		<input id="displayActinideSeries" name="displayActinideSeries" value="displayActinideSeries" type="checkbox">
+		<label for="displayActinideSeries">Actinide Series</label>
+		<input id="displayFullName" name="displayFullName" value="displayFullName" type="checkbox">
+		<label for="displayFullName">Full Name</label><br>
+		<input id="displayBasicMetals" name="displayBasicMetals" value="displayBasicMetals" type="checkbox">
+		<label for="displayBasicMetals">Basic Metals</label>
+		<input id="displayElectronegativity" name="displayElectronegativity" value="displayElectronegativity" type="checkbox">
+		<label for="displayElectronegativity">Electronegativity</label><br>
+		<input id="displayHalogens" name="displayHalogens" value="displayHalogens" type="checkbox">
+		<label for="displayHalogens">Halogens</label><br>
+		<input id="displayLanthanideSeries" name="displayLanthanideSeries" value="displayLanthanideSeries" type="checkbox">
+		<label for="displayLanthanideSeries">Lanthanide Series</label><br>
+		<input id="displayNonmetals" name="displayNonmetals" value="displayNonmetals" type="checkbox">
+		<label for="displayNonmetals">Nonmetals</label><br>
+		<input id="displayNobleGases" name="displayNobleGases" value="displayNobleGases" type="checkbox">
+		<label for="displayNobleGases">Noble Gases</label><br>
+		<input id="displayTransitionMetals" name="displayTransitionMetals" value="displayTransitionMetals" type="checkbox">
+		<label for="displayTransitionMetals">Transition Metals</label><br>
+		<input id="displaySemimetals" name="displaySemimetals" value="displaySemimetals" type="checkbox">
+		<label for="displaySemimetals">Semimetals</label><br>
+		
+ <script src="../Important/DigitalClock.js"></script>
+ <script>
+	const periodicTable = document.getElementById("periodicTable");
+	const LanthanideSeries = document.getElementById("LanthanideSeries");
+	const ActinideSeries = document.getElementById("ActinideSeries");
+	
+	const displayAlkaliMetal = document.getElementById("displayAlkaliMetal");
+	const displayAbbreviation = document.getElementById("displayAbbreviation");
+	const displayAlkaliEarth = document.getElementById("displayAlkaliEarth");
+	const displayAtomicNumbers = document.getElementById("displayAtomicNumbers");
+	const displayElectronegativity = document.getElementById("displayElectronegativity");
+	const displayNobleGases = document.getElementById("displayNobleGases");
+	const displayFullName = document.getElementById("displayFullName");
+	const displayTransitionMetals = document.getElementById("displayTransitionMetals");
+	const displaySemimetals = document.getElementById("displaySemimetals");
+	const displayBasicMetals = document.getElementById("displayBasicMetals");
+	const displayNonmetals = document.getElementById("displayNonmetals");
+	const displayHalogens = document.getElementById("displayHalogens");
+	const displayLanthanideSeries = document.getElementById("displayLanthanideSeries");
+	const displayActinideSeries = document.getElementById("displayActinideSeries");
+	
+	displayAlkaliMetal.checked = true;
+	displayAlkaliEarth.checked = true;
+	displayNobleGases.checked = true;
+	displayAbbreviation.checked = false;
+	displayAtomicNumbers.checked = false;
+	displayTransitionMetals.checked = true;
+	displayElectronegativity.checked = true;
+	displayFullName.checked = false;
+	displaySemimetals.checked = true;
+	displayBasicMetals.checked = true;
+	displayNonmetals.checked = true;
+	displayHalogens.checked = true;
+	displayLanthanideSeries.checked = true;
+	displayActinideSeries.checked = true;
+	
+	const innerDivs = periodicTable.querySelectorAll("div");
+	const innerDivs2 = ActinideSeries.querySelectorAll("div");
+	const innerDivs3 = LanthanideSeries.querySelectorAll("div");
+	
+	setInterval(update, 10);
+	
+	function update(){
+	
+	innerDivs3.forEach((div, index) => {
+		div.setAttribute("data-LanthanideElement-id", index + 1);
+		const elementId = index + 1;
+		div.style.backgroundColor = "#eba6ff";
+		div.style.border = "1px solid #c300fc";
+		div.classList.add("lanthanideSeries");
+	});
+	
+	
+	innerDivs2.forEach((div, index) => {
+		div.setAttribute("data-ActinideElement-id", index + 1);
+		const elementId = index + 1;
+		div.style.backgroundColor = "#ffafec";
+		div.style.border = "1px solid #db00a8";
+		div.classList.add("actinideSeries");
+	});
+	
+	
+	innerDivs.forEach((div, index) => {
+		div.setAttribute("data-element-id", index + 1);
+		const elementId = index + 1;
+		
+		if(elementId == 57){
+			div.style.backgroundColor = "#eba6ff";
+			div.style.border = "1px solid #c300fc";
+			div.classList.add("lanthanideSeries");
+		} else if(elementId == 75){
+			div.style.backgroundColor = "#ffafec";
+			div.style.border = "1px solid #db00a8";
+			div.classList.add("actinideSeries");
+		}
+			
+		if([3, 11, 19, 37, 55, 73].includes(elementId)){
+			div.style.backgroundColor = "#ffb9b9";
+			div.style.border = "1px solid #ff2929";
+			div.classList.add("alkaliMetal");
+		}
+		
+		if([4, 12, 20, 38, 56, 74].includes(elementId)){
+			div.style.backgroundColor = "#ffe5b9";
+			div.style.border = "1px solid #ffb12d";
+			div.classList.add("alkaliEarth");
+		}
+		
+		if([2, 10, 18, 36, 54, 72, 90].includes(elementId)){
+			div.style.backgroundColor = "#fffe8a";
+			div.style.border = "1px solid #ecea00";
+			div.classList.add("nobleGas");
+		}
+		
+		if([9, 17, 35, 53, 71, 89].includes(elementId)){
+			div.style.backgroundColor = "#8dff88";
+			div.style.border = "1px solid #0ae500";
+			div.classList.add("halogen");
+		}
+		
+		if( (elementId >= 21 && elementId <= 30) || 
+		    (elementId >= 39 && elementId <= 48) || 
+		    (elementId >= 58 && elementId <= 66) || 
+		    (elementId >= 76 && elementId <= 84)
+		  )
+		{
+			div.style.backgroundColor = "#57ffcf";
+			div.style.border = "1px solid #00af7e";
+			div.classList.add("transitionMetal");
+		}
+		
+		if([5, 14, 32, 33, 51, 52, 70].includes(elementId)){
+			div.style.backgroundColor = "#5afffb";
+			div.style.border = "1px solid #00d4cf";
+			div.classList.add("semiMetal");
+		}
+		
+		if([1, 6, 7, 8, 15, 16, 34].includes(elementId)){
+			div.style.backgroundColor = "#50d3ff";
+			div.style.border = "1px solid #009cd0";
+			div.classList.add("nonMetal");
+		}
+		
+		if([13, 31, 49, 50, 67, 68, 69, 85, 86, 87, 88].includes(elementId)){
+			div.style.backgroundColor = "#7ca2ff";
+			div.style.border = "1px solid #003acb";
+			div.classList.add("basicMetal");
+		}
+		
+		if(displayElectronegativity.checked){
+			displayAbbreviation.checked = false;
+			displayAtomicNumbers.checked = false;
+			innerDivs.forEach((div) => {
+				const electronegativityDiv = div.querySelector(".electronegativity");
+				const abbrDiv = div.querySelector(".abbr");
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				const placeholderDiv = div.querySelector(".placeholderDiv");
+				if(electronegativityDiv){
+					electronegativityDiv.style.display = "block";
+					const electronegativity = parseFloat(electronegativityDiv.textContent) * 63.75;
+					
+					div.style.backgroundColor = `rgb(255, ${255 - electronegativity}, ${255 - electronegativity})`;
+					div.style.border = `1px solid rgb(195, ${195 - electronegativity}, ${195 - electronegativity})`;
+					
+					if(electronegativityDiv.textContent == "N/A"){
+						div.style.backgroundColor = `#cccccc`;
+						div.style.border = `1px solid #111111`;
+					}
+				}
+				if(abbrDiv){
+					abbrDiv.style.display = "none";
+				}
+				if(atomicNumDiv){
+					atomicNumDiv.style.display = "none";
+				}
+				if(placeholderDiv){
+					placeholderDiv.style.display = "none";
+				}
+				
+			});
+			
+			innerDivs2.forEach((div) => {
+				const electronegativityDiv = div.querySelector(".electronegativity");
+				const abbrDiv = div.querySelector(".abbr");
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				if(electronegativityDiv){
+					electronegativityDiv.style.display = "block";
+					const electronegativity = parseFloat(electronegativityDiv.textContent) * 63.75;
+					
+					div.style.backgroundColor = `rgb(255, ${255 - electronegativity}, ${255 - electronegativity})`;
+					div.style.border = `1px solid rgb(195, ${195 - electronegativity}, ${195 - electronegativity})`
+				}
+				if(abbrDiv){
+					abbrDiv.style.display = "none";
+				}
+				if(atomicNumDiv){
+					atomicNumDiv.style.display = "none";
+				}
+			});
+			
+			innerDivs3.forEach((div) => {
+				const electronegativityDiv = div.querySelector(".electronegativity");
+				const abbrDiv = div.querySelector(".abbr");
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				if(electronegativityDiv){
+					electronegativityDiv.style.display = "block";
+					const electronegativity = parseFloat(electronegativityDiv.textContent) * 63.75;
+					
+					div.style.backgroundColor = `rgb(255, ${255 - electronegativity}, ${255 - electronegativity})`;
+					div.style.border = `1px solid rgb(195, ${195 - electronegativity}, ${195 - electronegativity})`
+				}
+				if(abbrDiv){
+					abbrDiv.style.display = "none";
+				}
+				if(atomicNumDiv){
+					atomicNumDiv.style.display = "none";
+				}
+				
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				const electronegativityDiv = div.querySelector(".electronegativity");
+				const abbrDiv = div.querySelector(".abbr");
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				const placeholderDiv = div.querySelector(".placeholderDiv");
+				if(electronegativityDiv){
+					electronegativityDiv.style.display = "none";
+				}
+				
+				if(abbrDiv){
+					abbrDiv.style.display = "block";
+				}
+				if(atomicNumDiv){
+					atomicNumDiv.style.display = "block";
+				}
+				if(placeholderDiv){
+					placeholderDiv.style.display = "none";
+				}
+				
+			});
+			innerDivs2.forEach((div) => {
+				const electronegativityDiv = div.querySelector(".electronegativity");
+				const abbrDiv = div.querySelector(".abbr");
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				if(electronegativityDiv){
+					electronegativityDiv.style.display = "none";
+				}
+				
+				if(abbrDiv){
+					abbrDiv.style.display = "block";
+				}
+				
+				if(atomicNumDiv){
+					atomicNumDiv.style.display = "block";
+				}
+				
+			});
+			innerDivs3.forEach((div) => {
+				const electronegativityDiv = div.querySelector(".electronegativity");
+				const abbrDiv = div.querySelector(".abbr");
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				if(electronegativityDiv){
+					electronegativityDiv.style.display = "none";
+				}
+				
+				if(abbrDiv){
+					abbrDiv.style.display = "block";
+				}
+				
+				if(atomicNumDiv){
+					atomicNumDiv.style.display = "block";
+				}
+				
+			});
+		};
+		
+		if(displayAlkaliMetal.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("alkaliMetal")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("alkaliMetal")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		if(displayAlkaliEarth.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("alkaliEarth")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("alkaliEarth")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		if(displayNobleGases.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("nobleGas")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("nobleGas")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		if(displayTransitionMetals.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("transitionMetal")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("transitionMetal")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		if(displaySemimetals.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("semiMetal")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("semiMetal")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		if(displayBasicMetals.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("basicMetal")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("basicMetal")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		if(displayNonmetals.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("nonMetal")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("nonMetal")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		
+		
+		
+		if(displayHalogens.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("halogen")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("halogen")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		if(displayLanthanideSeries.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("lanthanideSeries")){
+					div.style.display = "block";
+				};
+			});
+			innerDivs3.forEach((div) => {
+				if(div.classList.contains("lanthanideSeries")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("lanthanideSeries")){
+					div.style.display = "none";
+				};
+			});
+			innerDivs3.forEach((div) => {
+				if(div.classList.contains("lanthanideSeries")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		if(displayActinideSeries.checked){
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("actinideSeries")){
+					div.style.display = "block";
+				};
+			});
+			innerDivs2.forEach((div) => {
+				if(div.classList.contains("actinideSeries")){
+					div.style.display = "block";
+				};
+			});
+		} else {
+			innerDivs.forEach((div) => {
+				if(div.classList.contains("actinideSeries")){
+					div.style.display = "none";
+				};
+			});
+			innerDivs2.forEach((div) => {
+				if(div.classList.contains("actinideSeries")){
+					div.style.display = "none";
+				};
+			});
+		};
+		
+		if(displayFullName.checked){
+			innerDivs.forEach((div) => {
+				const fullNameDiv = div.querySelector(".fullName");
+				const fullNameDiv2 = div.querySelector(".fullNamelong");
+				if(fullNameDiv){
+					fullNameDiv.style.visibility = "visible";
+				}
+				
+				if(fullNameDiv2){
+					fullNameDiv2.style.visibility = "visible";
+				}
+				
+			});
+			innerDivs2.forEach((div) => {
+				const fullNameDiv = div.querySelector(".fullName");
+				const fullNameDiv2 = div.querySelector(".fullNamelong");
+				if(fullNameDiv){
+					fullNameDiv.style.visibility = "visible";
+				}
+				
+				if(fullNameDiv2){
+					fullNameDiv2.style.visibility = "visible";
+				}
+			});
+			innerDivs3.forEach((div) => {
+				const fullNameDiv = div.querySelector(".fullName");
+				const fullNameDiv2 = div.querySelector(".fullNamelong");
+				if(fullNameDiv){
+					fullNameDiv.style.visibility = "visible";
+				}
+				
+				if(fullNameDiv2){
+					fullNameDiv2.style.visibility = "visible";
+				}
+			});
+			
+		} else {
+			innerDivs.forEach((div) => {
+				const fullNameDiv = div.querySelector(".fullName");
+				const fullNameDiv2 = div.querySelector(".fullNamelong");
+				if(fullNameDiv){
+					fullNameDiv.style.visibility = "hidden";
+				}
+				
+				if(fullNameDiv2){
+					fullNameDiv2.style.visibility = "hidden";
+				}
+
+			});
+			innerDivs2.forEach((div) => {
+				const fullNameDiv = div.querySelector(".fullName");
+				const fullNameDiv2 = div.querySelector(".fullNamelong");
+				if(fullNameDiv){
+					fullNameDiv.style.visibility = "hidden";
+				}
+				
+				if(fullNameDiv2){
+					fullNameDiv2.style.visibility = "hidden";
+				}
+			});
+			innerDivs3.forEach((div) => {
+				const fullNameDiv = div.querySelector(".fullName");
+				const fullNameDiv2 = div.querySelector(".fullNamelong");
+				if(fullNameDiv){
+					fullNameDiv.style.visibility = "hidden";
+				}
+				
+				if(fullNameDiv2){
+					fullNameDiv2.style.visibility = "hidden";
+				}
+			});
+		};
+		
+		if(displayAtomicNumbers.checked){
+			innerDivs.forEach((div) => {
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				const atomicNumDiv2 = div.querySelector(".placeholder");
+				if(atomicNumDiv){
+					atomicNumDiv.style.visibility = "visible";
+				}
+				
+				if(atomicNumDiv2){
+					atomicNumDiv2.style.visibility = "visible";
+				}
+			});
+			innerDivs2.forEach((div) => {
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				if(atomicNumDiv){
+					atomicNumDiv.style.visibility = "visible";
+				}
+			});
+			innerDivs3.forEach((div) => {
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				if(atomicNumDiv){
+					atomicNumDiv.style.visibility = "visible";
+				}
+			});
+			
+		} else {
+			innerDivs.forEach((div) => {
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				const atomicNumDiv2 = div.querySelector(".placeholder");
+				if(atomicNumDiv){
+					atomicNumDiv.style.visibility = "hidden";
+				}
+				
+				if(atomicNumDiv2){
+					atomicNumDiv2.style.visibility = "hidden";
+				}
+
+			});
+			innerDivs2.forEach((div) => {
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				if(atomicNumDiv){
+					atomicNumDiv.style.visibility = "hidden";
+				}
+			});
+			innerDivs3.forEach((div) => {
+				const atomicNumDiv = div.querySelector(".atomicNum");
+				if(atomicNumDiv){
+					atomicNumDiv.style.visibility = "hidden";
+				}
+			});
+		};
+		
+		if(displayAbbreviation.checked){
+			innerDivs.forEach((div) => {
+				const abbrDiv = div.querySelector(".abbr");
+				if(abbrDiv){
+					abbrDiv.style.visibility = "visible";
+				}
+			});
+			innerDivs2.forEach((div) => {
+				const abbrDiv = div.querySelector(".abbr");
+				if(abbrDiv){
+					abbrDiv.style.visibility = "visible";
+				}
+			});
+			innerDivs3.forEach((div) => {
+				const abbrDiv = div.querySelector(".abbr");
+				if(abbrDiv){
+					abbrDiv.style.visibility = "visible";
+				}
+			});
+			
+		} else {
+			innerDivs.forEach((div) => {
+				const abbrDiv = div.querySelector(".abbr");
+				if(abbrDiv){
+					abbrDiv.style.visibility = "hidden";
+				}
+
+			});
+			innerDivs2.forEach((div) => {
+				const abbrDiv = div.querySelector(".abbr");
+				if(abbrDiv){
+					abbrDiv.style.visibility = "hidden";
+				}
+			});
+			innerDivs3.forEach((div) => {
+				const abbrDiv = div.querySelector(".abbr");
+				if(abbrDiv){
+					abbrDiv.style.visibility = "hidden";
+				}
+			});
+		};
+	});
+	};
+ </script>
+	</body>
+</html>
