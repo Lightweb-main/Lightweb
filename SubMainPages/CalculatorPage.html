@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			ul{
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+			}
+			#noCalculators{
+				display: none;
+				font-size: 45px;
+				font-weight: bold;
+				border: 10px solid black;
+				border-radius: 10px;
+				text-decoration: none;
+				border-color: var(--border);
+				background-color: var(--border);
+			}
+		</style>
+	</head>
+	
+	<body>	
+		<header>Official Lightweb Site</header>
+		<title>Lightweb: Calculators</title>
+		<h1>Calculators</h1>
+		<h2 style="text-align: center;" class="articles">Any calculator that is conceived is here...</h2>
+		<input type="text" id="searchInput" placeholder="Search Calculators..." />
+		<ul id="search">
+		<li>
+			<a href="../SubSections/Calculators/Calculator.html" class="articles">Calculator (App)</a><br><br><br>
+		</li>
+		<li>
+			<a href="../SubSections/Calculators/Interest%20Calculator.html" class="articles">Interest Calculator</a><br><br><br>
+		</li>
+		<li>
+			<a href="../SubSections/Calculators/Graphing%20Calculator.html" class="articles">Graphing Calculator</a><br><br><br>
+		</li>
+		<li>
+			<a href="../SubSections/Calculators/OneTwoVarCalculator.html" class="articles">One-Var / Two-Var Calculator</a><br><br><br>
+		</li>
+		<li>
+			<a href="../../MainPages/Utility.html">Exit</a>
+		</li>
+		</ul>
+		<div id="noCalculators">No Calculator Here...</div> 
+	<script>
+    const searchInput = document.getElementById('searchInput');
+    const listItems = document.querySelectorAll('#search li')
+    const noCalculators = document.getElementById('noCalculators');
+ 
+
+    searchInput.addEventListener('input', function () {
+      const searchTerm = this.value;
+      let visibleCount = 0;
+
+      listItems.forEach((li) => {
+         const text = li.textContent;
+        const isVisible = text.includes(searchTerm);
+        li.style.display = isVisible ? '' : 'none';
+        if (isVisible) visibleCount++;
+      });
+
+      noCalculators.style.display = visibleCount === 0 ? 'block' : 'none';
+    });	
+  </script>
+
+
+
+     <script src="../Important/DigitalClock.js"></script>
+</body>
+</html>
+

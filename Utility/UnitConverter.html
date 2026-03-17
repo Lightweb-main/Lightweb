@@ -13,6 +13,7 @@
 	background-color: var(--bg);
 	border: 2px solid var(--border);
 	}
+	
 	input, select, button{
 	color: var(--text);
 	background-color: var(--bg);
@@ -43,6 +44,16 @@
  <div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue1" placeholder="Enter value">
   <select id="fromUnit1">
+   <optgroup label="Recommended">
+		<option value="millimeter">Millimeter</option>
+		<option value="centimeter">Centimeter</option>
+		<option value="inch">Inch</option>
+		<option value="foot">Foot</option>
+		<option value="kilometer">Kilometer</option>
+		<option value="statueMile">Mile</option>
+   </optgroup>
+   <option disabled>────────────────</option>
+   <optgroup label="All">
    <option value="quectometer">Quectometer</option>
    <option value="rontometer">Rontometer</option>
    <option value="yoctometer">Yoctometer</option>
@@ -97,10 +108,21 @@
    <option value="ronnameter">Ronnameter</option>
    <option value="teraparsec">Teraparsec</option>
    <option value="quettameter">Quettameter</option>
+   </optgroup>
   </select>
  <input id="result1"class="result"  readonly>
  <input id="resultSciNot1"class="result"  readonly>
   <select id="toUnit1">
+   <optgroup label="Recommended">
+		<option value="millimeter">Millimeter</option>
+		<option value="centimeter">Centimeter</option>
+		<option value="inch">Inch</option>
+		<option value="foot">Foot</option>
+		<option value="kilometer">Kilometer</option>
+		<option value="statueMile">Mile</option>
+   </optgroup>
+   <option disabled>────────────────</option>
+   <optgroup label="All">
    <option value="quectometer">Quectometer</option>
    <option value="rontometer">Rontometer</option>
    <option value="yoctometer">Yoctometer</option>
@@ -155,6 +177,7 @@
    <option value="ronnameter">Ronnameter</option>
    <option value="teraparsec">Teraparsec</option>
    <option value="quettameter">Quettameter</option>
+   </optgroup>
   </select>
 	 <select id="decimalAmount1">
 	<option value="0">0</option>
@@ -178,6 +201,12 @@
 	<div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue2" placeholder="Enter value">
   <select id="fromUnit2">
+  <optgroup label="Recommended">
+	<option value="celsius">Celsius&deg;</option> 
+	<option value="fahrenheit">Fahrenheit&deg;</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="celsius">Celsius&deg;</option> 
   <option value="delisle">Delisle</option>
   <option value="fahrenheit">Fahrenheit&deg;</option>
@@ -187,10 +216,17 @@
   <option value="rankine">Rankine</option>
   <option value="romer">Romer Scale</option>
   <option value="reaumur">Réaumur Scale</option>
+  </optgroup>
   </select>
  <input id="result2" class="result" readonly>
  <input id="resultSciNot2"class="result"  readonly>
   <select id="toUnit2">
+  <optgroup label="Recommended">
+	<option value="celsius">Celsius&deg;</option> 
+	<option value="fahrenheit">Fahrenheit&deg;</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="celsius">Celsius&deg;</option> 
   <option value="delisle">Delisle</option>
   <option value="fahrenheit">Fahrenheit&deg;</option>
@@ -200,6 +236,7 @@
   <option value="rankine">Rankine</option>
   <option value="romer">Romer Scale</option>
   <option value="reaumur">Réaumur Scale</option>
+  </optgroup>
   </select>
 	 <select id="decimalAmount2">
 	<option value="0">0</option>
@@ -223,6 +260,17 @@
 	<div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue3" placeholder="Enter value">
   <select id="fromUnit3">
+  <optgroup label="Recommended">
+	<option value="second">Second</option> 
+	<option value="minute">Minute</option>
+	<option value="hour">Hour</option>
+	<option value="day">Day</option>
+	<option value="week">Week</option>
+	<option value="month">Month</option> 
+	<option value="year">Year</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="planckTime">Planck Time</option> 
   <option value="second">Second</option> 
   <option value="minute">Minute</option>
@@ -240,10 +288,22 @@
   <option value="century">Century</option>
   <option value="millennium">Millennium</option>
   <option value="aeon">Aeon</option>
+  </optgroup>
   </select>
  <input id="result3" class="result" readonly>
  <input id="resultSciNot3"class="result"  readonly>
   <select id="toUnit3">
+  <optgroup label="Recommended">
+	<option value="second">Second</option> 
+	<option value="minute">Minute</option>
+	<option value="hour">Hour</option>
+	<option value="day">Day</option>
+	<option value="week">Week</option>
+	<option value="month">Month</option> 
+	<option value="year">Year</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="planckTime">Planck Time</option> 
   <option value="second">Second</option> 
   <option value="minute">Minute</option>
@@ -252,7 +312,7 @@
   <option value="day">Day</option>
   <option value="week">Week</option>
   <option value="fortnight">Fortnight</option>
-  <option value="lunarMonth">Lunar Month</option>                 
+  <option value="lunarMonth">Lunar Month</option>
   <option value="month">Month</option> 
   <option value="year">Year</option>
   <option value="siderealYear">Sidereal Year</option>
@@ -261,6 +321,7 @@
   <option value="century">Century</option>
   <option value="millennium">Millennium</option>
   <option value="aeon">Aeon</option>
+  </optgroup>
   </select>
 	 <select id="decimalAmount3">
 	<option value="0">0</option>
@@ -284,6 +345,13 @@
 	<div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue4" placeholder="Enter value">
   <select id="fromUnit4">
+  <optgroup label="Recommended">
+	<option value="gram">Gram</option>
+	<option value="kilogram">Kilogram</option>
+	<option value="pound">Pound</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="quectogram">Quectogram</option> 
   <option value="rontogram">Rontogram</option> 
   <option value="yoctogram">Yoctogram</option> 
@@ -326,10 +394,18 @@
   <option value="yottagram">Yottagram</option>
   <option value="ronnagram">Ronnagram</option>
   <option value="quettagram">Quettagram</option>
+  </optgroup>
   </select>
  <input id="result4"class="result"  readonly>
  <input id="resultSciNot4" class="result" readonly>
   <select id="toUnit4">
+  <optgroup label="Recommended">
+	<option value="gram">Gram</option>
+	<option value="kilogram">Kilogram</option>
+	<option value="pound">Pound</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="quectogram">Quectogram</option> 
   <option value="rontogram">Rontogram</option> 
   <option value="yoctogram">Yoctogram</option> 
@@ -372,6 +448,7 @@
   <option value="yottagram">Yottagram</option>
   <option value="ronnagram">Ronnagram</option>
   <option value="quettagram">Quettagram</option>
+  </optgroup>
   </select>
 	 <select id="decimalAmount4">
 	<option value="0">0</option>
@@ -395,22 +472,36 @@
 	<div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue5" placeholder="Enter value">
   <select id="fromUnit5">
+  <optgroup label="Recommended">
+  <option value="mph">Mph (Miles / Hour)</option> 
+  <option value="kph">Kph (Kilometer / Hour)</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="mph">Mph (Miles / Hour)</option> 
   <option value="kph">Kph (Kilometer / Hour)</option>
   <option value="mach">Mach</option>
   <option value="fps">Fps (Foot / Second)</option>
   <option value="mps">Mps (Meters / Second)</option>
   <option value="knot">Knots</option>
+  </optgroup>
   </select>
  <input id="result5" class="result" readonly>
  <input id="resultSciNot5"class="result"  readonly>
   <select id="toUnit5">
+  <optgroup label="Recommended">
+  <option value="mph">Mph (Miles / Hour)</option> 
+  <option value="kph">Kph (Kilometer / Hour)</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="mph">Mph (Miles / Hour)</option> 
   <option value="kph">Kph (Kilometer / Hour)</option>
   <option value="mach">Mach</option>
   <option value="fps">Fps (Foot / Second)</option>
   <option value="mps">Mps (Meters / Second)</option>
   <option value="knot">Knots</option>
+  </optgroup>
   </select>
 	 <select id="decimalAmount5">
 	<option value="0">0</option>
@@ -434,22 +525,38 @@
 	<div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue6" placeholder="Enter value">
   <select id="fromUnit6">
+  <optgroup label="Recommended">
+	<option value="degree">Degree</option> 
+	<option value="radian">Radian</option> 
+	<option value="revolution">Revolution</option> 
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="degree">Degree</option> 
   <option value="radian">Radian</option> 
   <option value="revolution">Revolution</option> 
   <option value="gradian">Gradian</option> 
 <option value="arcsecond">Arcsecond</option> 
   <option value="arcminute">Arcminute</option> 
+  </optgroup>
   </select>
  <input id="result6" class="result" readonly>
  <input id="resultSciNot6"class="result"  readonly>
   <select id="toUnit6">
-<option value="degree">Degree</option> 
+<optgroup label="Recommended">
+	<option value="degree">Degree</option> 
+	<option value="radian">Radian</option> 
+	<option value="revolution">Revolution</option> 
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
+  <option value="degree">Degree</option> 
   <option value="radian">Radian</option> 
   <option value="revolution">Revolution</option> 
   <option value="gradian">Gradian</option> 
-	  <option value="arcsecond">Arcsecond</option> 
+<option value="arcsecond">Arcsecond</option> 
   <option value="arcminute">Arcminute</option> 
+  </optgroup>
   </select>
 	 <select id="decimalAmount6">
 	<option value="0">0</option>
@@ -473,6 +580,12 @@
 	<div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue7" placeholder="Enter value">
   <select id="fromUnit7">
+  <optgroup label="Recommended">
+	<option value="newton">Newton</option> 
+	<option value="poundforce">Pound-Force</option> 
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="dyne">Dyne</option> 
   <option value="newton">Newton</option> 
   <option value="gramforce">Gram-Force</option> 
@@ -482,11 +595,18 @@
   <option value="kilonewton">Kilonewton</option> 
 	<option value="kipforce">Kip-Force</option> 
 	<option value="metrictonforce">Metric Ton-Force</option> 
+	</optgroup>
   </select>
  <input id="result7" class="result" readonly>
  <input id="resultSciNot7"class="result"  readonly>
   <select id="toUnit7">
-<option value="dyne">Dyne</option> 
+<optgroup label="Recommended">
+	<option value="newton">Newton</option> 
+	<option value="poundforce">Pound-Force</option> 
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
+  <option value="dyne">Dyne</option> 
   <option value="newton">Newton</option> 
   <option value="gramforce">Gram-Force</option> 
 <option value="ounceforce">Ounce-Force</option> 
@@ -495,6 +615,7 @@
   <option value="kilonewton">Kilonewton</option> 
 	<option value="kipforce">Kip-Force</option> 
 	<option value="metrictonforce">Metric Ton-Force</option> 
+	</optgroup>
   </select>
 	 <select id="decimalAmount7">
 	<option value="0">0</option>
@@ -518,6 +639,15 @@
 	<div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue8" placeholder="Enter value">
   <select id="fromUnit8">
+  <optgroup label="Recommended">
+	<option value="Byte">Byte</option>
+	<option value="kilobyte">Kilobyte</option>
+	<option value="megabyte">Megabyte</option>
+	<option value="gigabyte">Gigabyte</option>
+	<option value="terabyte">Terabyte</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="bit">Bit</option> 
   <option value="Byte">Byte</option>
   <option value="nibble">Nibble</option>
@@ -561,10 +691,20 @@
   <option value="quebibit">Quebibit</option>
   <option value="quettabyte">Quettabyte</option>
   <option value="quebibyte">Quebibyte</option>
+  </optgroup>
   </select>
  <input id="result8" class="result" readonly>
  <input id="resultSciNot8"class="result"  readonly>
   <select id="toUnit8"> 
+  <optgroup label="Recommended">
+	<option value="Byte">Byte</option>
+	<option value="kilobyte">Kilobyte</option>
+	<option value="megabyte">Megabyte</option>
+	<option value="gigabyte">Gigabyte</option>
+	<option value="terabyte">Terabyte</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
   <option value="bit">Bit</option> 
   <option value="Byte">Byte</option>
   <option value="nibble">Nibble</option>
@@ -608,6 +748,7 @@
   <option value="quebibit">Quebibit</option>
   <option value="quettabyte">Quettabyte</option>
   <option value="quebibyte">Quebibyte</option>
+  </optgroup>
   
   </select>
 	 <select id="decimalAmount8">

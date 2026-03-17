@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lightweb: Interest Calculator</title>
+		<style>
+			.SimpleCompoundBtn {
+				padding: 15px;
+				font-size: 25px;
+			}
+			#SimpleCompoundSelect {
+				width: 100%;
+				display: flex;
+				flex-direction: rows;
+				gap: 25px;
+				padding: 15px;
+				border: 2px solid var(--border);
+				border-radius: 15px;
+				overflow-x: scroll;
+			}
+			
+			#simpleInterestDiv, #compoundInterestDiv {
+				width: 100%;
+				height: auto;
+				padding: 25px;
+				border: 2px solid var(--border);
+				border-radius: 9px;
+			}
+			
+			input {
+				font-size: 17px;
+				padding: 5px;
+			}
+			
+			select {
+				font-size: 16px;
+				padding: 5px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Interest Calculator</h1>
+		<h2 style="text-align: center;">Simple Calculator that Calculates Simple and Compound Interest</h2>
+		<div id="SimpleCompoundSelect">
+			<button class="SimpleCompoundBtn" id="simpleInterestSelectBtn">Simple Interest</button>
+			<button class="SimpleCompoundBtn" id="compoundInterestSelectBtn">Compound Interest</button>
+		</div>
+		
+		<div id="simpleInterestDiv">
+			<h2>Input</h2>
+			<input id="simpleInterestPrincipalInput">  Principal ($)</input><br><br>
+			<input id="simpleInterestRateOfInterestInput">  Rate of Interest (%)</input><br><br>
+			<input id="simpleInterestTimeInput"> Time</input><br><br>
+			<select id="simpleInterestTimeSpanInput">
+				<option value="Day">Day</option>
+				<option value="Week">Week</option>
+				<option value="Monthly">Monthly</option>
+				<option value="Quarter">Quarter</option>
+				<option value="HalfYear">Half-Year</option>
+				<option value="Year">Year</option>
+			</select><br><br>
+			<button id="simpleInterestBtn">Calculate</button>
+			
+			<p style="text-align: center; font-size: 21px;" id="simpleInterestDisplay">SI = </p>
+		</div>
+		
+		<div id="compoundInterestDiv">
+			<h2>Input</h2>
+			<select id="compoundInterestTimeSpanInput">
+				<option value="Daily365">Daily (365 Days)</option>
+				<option value="Daily360">Daily (360 Days)</option>
+				<option value="Weekly">Weekly</option>
+				<option value="Biweekly">Biweekly</option>
+				<option value="Semimonthly">Semimonthly</option>
+				<option value="Monthly">Monthly</option>
+				<option value="Bimonthly">Bimonthly</option>
+				<option value="Quarterly">Quarterly</option>
+				<option value="Semiannually">Semiannually</option>
+				<option value="Annually">Annually</option>
+			</select><br><br>
+			<input id="compoundInterestPrincipalInput">  Principal ($)</input><br><br>
+			<input id="compoundInterestRateOfInterestInput">  Annual Rate (%)</input><br><br>
+			<input id="compoundInterestTimeInput">  Time (Years)</input><br><br>
+			<button id="compoundInterestBtn">Calculate</button>
+			<p style="text-align: center; font-size: 21px;" id="compoundInterestDisplay"></p>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		<script>
+			function exit(){
+				window.location = "../../SubMainPages/CalculatorPage.html"
+			}
+		</script>
+		
+		
+		<script src="../../Important/DigitalClock.js"></script>
+		<script src="Interest%20Calculator.js"></script>
+	
+	
+	</body>
+</html>
