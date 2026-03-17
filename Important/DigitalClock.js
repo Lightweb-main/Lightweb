@@ -160,6 +160,7 @@ function update() {
 		}
 	}
 	
+	const flashbangColor = localStorage.getItem("darkScreenFlashbangColorBoxValue");
 	if(darkScreenFlashbangColorBox){
 		darkScreenFlashbangColorBox.addEventListener("input", function(){
 			localStorage.setItem("darkScreenFlashbangColorBoxValue", darkScreenFlashbangColorBox.value);
@@ -1279,7 +1280,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-/* document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
   if (event.key === "F12" || event.keyCode === 123) {
     event.preventDefault();
