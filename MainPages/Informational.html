@@ -9,15 +9,19 @@
 		padding: 0px;
 		list-style-type: none;
 		}
-		input{
-		width: 100%;
-		}
-		input::placeholder{
-		color: #000000;
-		font-style: italic;
 		
+		searchInput { 
+			width: 65%;
+			color: var(--text);
+			text-decoration: italic;
+		} 
+		
+		searchInput::placeholder{
+			color: var(--text);
+			text-decoration: italic;
 		}
-
+		
+		
 		#noArticles{
 		display: none;
 		font-size: 45px;
@@ -28,10 +32,6 @@
 		border-color: var(--border);
 		background-color: var(--border);
     	}
-			
-			 a, h1{
-	 font-weight: 550;
-	 }
 		</style>
 	</head>
 
@@ -368,6 +368,9 @@
 		<a href="../Articles/The%20Milankovitch%20Cycles.html" class="articles">The Milankovitch Cycles</a><br><br><br>
 		</li>
 		<li>
+		<a href="../Articles/The%20American%20Revolution.html" class="articles">The American Revolution</a><br><br><br>
+		</li>
+		<li>
 		<a href="../Articles/The%20Industrial%20Revolution.html" class="articles">The Industrial Revolution</a><br><br><br>
 		</li>
 		<li>
@@ -403,11 +406,11 @@
 
 
     searchInput.addEventListener('input', function () {
-      const searchTerm = this.value.toLowerCase();
+      const searchTerm = this.value;
       let visibleCount = 0;
 
       listItems.forEach((li) => {
-         const text = li.textContent.toLowerCase();
+         const text = li.textContent;
         const isVisible = text.includes(searchTerm);
         li.style.display = isVisible ? '' : 'none';
         if (isVisible) visibleCount++;

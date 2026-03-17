@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lightweb: Random Mandarin Diagnostic</title>
+	<link rel="stylesheet" href="Random%20Mandarin%20Diagnostic.css">
+	<meta charset="UTF-8"/>
+</head>
+
+<body>
+    <h1>Lightweb: Random<br>Mandarin Diagnostic</h1>
+	<div id="container">
+		<div id="notes">
+			<h2 style="text-align: center;" id="text1">Welcome to the Lightweb Mandarin Diagnostic!</h2>
+			<div id="text2" style="display: none;">
+				<p style="text-align: left; font-size: 18px;">This diagnostic, like others start out easy, then progressively gets more difficult as you answer questions.</p>
+				<p style="text-align: left; font-size: 18px;">Alternatively, if you get questions wrong, the difficulty of the questions will decrease.</p>
+				<hr>
+				<p style="text-align: left; font-size: 18px;">The diagnostic will be split into 5 different categories...</p>
+				<ul style="text-align: left; font-size: 18px;">
+					<li>Introductions</li>
+					<li>Understanding of Radicals</li>
+					<li>Numerical Vocabulary</li>
+					<li>Time and Spacial Vocabulary</li>
+					<li>Food Vocabulary</li>
+					<li>Family Vocabulary</li>
+				</ul>
+				If you do exceptionally well on one of these categories, you will recieve a new 'sub category' with harder questions.
+				<hr>
+				<p style="text-align: left; font-size: 18px;">The question topic and number will be displayed in the top left corner with the question itself appearing in the middle.</p>
+				<p style="text-align: left; font-size: 18px;">The choices will be presented in a 2 x 2 grid with four possible answers. Click over one of the choices to select it, then when you're sure about your answer, click the submit button at the bottom right corner.</p>
+				<hr>
+				<p style="text-align: left; font-size: 18px;">The questions themselves may be the following:</p>
+				<ul style="text-align: left; font-size: 18px;">
+					<li>Fill in the blanks</li>
+					<li>Answer the following question.</li>
+					<li>Identify the definition.</li>
+					<li>True or False.</li>
+				</ul>
+				<hr>
+				<p style="text-align: left; font-size: 18px;">Results will appear at the end of the diagnostic (around 70 - 80 questions)</p>
+				<hr>
+				<p style="text-align: left; font-size: 18px;">Pinyin will be included for more basic topics, but more advanced questions will not have pinyin alongside chinese characters. Questions will always be in English.</p> 
+				<hr>
+				<p style="text-align: left; font-size: 18px;">Click the "Proceed" button to start the diagnostic</p>
+			</div>
+			<div style="text-align: center; display: none;" id="proceedBtn2">
+				<button onClick="
+						text2.style.display = 'none' 
+						proceedBtn2.style.display = 'none' 
+						questionDisplayDiv.style.display = 'block' 
+						questionNumDiv.style.display = 'block' 
+						choicesDiv.style.display = 'block' 
+						submitBtnDiv.style.display = 'block' 
+						generateNewQuestion();
+								"
+				>Proceed</button>
+			</div>
+			<div style="text-align: center;" id="proceedBtn1">
+				<button onClick="
+						text1.style.display = 'none' 
+						text2.style.display = 'block' 
+						proceedBtn1.style.display = 'none' 
+						proceedBtn2.style.display = 'block' 
+						
+								"
+				>Proceed</button>
+		</div>
+		</div>
+		<div id="questionNumDiv" style="display: none;">
+			<p id="questionNumDisplay">Question #</p>
+			<p id="questionSetDisplay"></p>
+			<p id="scoreDisplay">Score: </p>
+		</div>
+		<div id="questionDisplayDiv" style="display: none;">
+			<p id="questionDisplay"></p>
+		</div>
+		<div id="choicesDiv" style="display: none;">
+
+		</div>
+		<div id="submitBtnDiv" style="display: none;">
+			<button id="submitBtn">Submit</button>
+		</div>
+	</div>
+</body>
+	
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="Random%20Mandarin%20Diagnostic.js"></script>
+</html>

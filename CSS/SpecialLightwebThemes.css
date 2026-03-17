@@ -9,6 +9,7 @@ html#SLT-EarthquakesFaults #DigitalCalendar {
   border-color: #a6741a ;
 }
 
+html#SLT-EarthquakesFaults body.default p,
 html#SLT-EarthquakesFaults body.default h1,
 html#SLT-EarthquakesFaults body.default h2,
 html#SLT-EarthquakesFaults body.default h3,
@@ -31,7 +32,11 @@ html#SLT-EarthquakesFaults body.dark {
 
 html#SLT-EarthquakesFaults body.dark h1,
 html#SLT-EarthquakesFaults body.dark h2,
-html#SLT-EarthquakesFaults body.dark h3 {
+html#SLT-EarthquakesFaults body.dark h3,
+html#SLT-EarthquakesFaults body.dark h4,
+html#SLT-EarthquakesFaults body.dark h5,
+html#SLT-EarthquakesFaults body.dark h6,
+html#SLT-EarthquakesFaults body.dark p {
   color: #a6741a ;
 }
 
@@ -48,7 +53,10 @@ html#SLT-EarthquakesFaults body:not(.default):not(.dark) {
 
 html#SLT-EarthquakesFaults body:not(.default):not(.dark) h1,
 html#SLT-EarthquakesFaults body:not(.default):not(.dark) h2,
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) h3 {
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) h3, 
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) h4, 
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) h5, 
+html#SLT-EarthquakesFaults body:not(.default):not(.dark) h6 {
   color: var(--text);
   
 }
@@ -86,9 +94,13 @@ html#SLT-LunarNewYear #DigitalCalendar {
   border-color: #ac1919;
 }
 
+html#SLT-LunarNewYear body.default p,
 html#SLT-LunarNewYear body.default h1,
 html#SLT-LunarNewYear body.default h2,
-html#SLT-LunarNewYear body.default h3 {
+html#SLT-LunarNewYear body.default h3,
+html#SLT-LunarNewYear body.default h4,
+html#SLT-LunarNewYear body.default h5,
+html#SLT-LunarNewYear body.default h6 {
   color: #ac1919;
 }
 
@@ -103,9 +115,13 @@ html#SLT-LunarNewYear body.dark {
   color: #ee9999;
 }
 
+html#SLT-LunarNewYear body.dark p,
 html#SLT-LunarNewYear body.dark h1,
 html#SLT-LunarNewYear body.dark h2,
-html#SLT-LunarNewYear body.dark h3 {
+html#SLT-LunarNewYear body.dark h3,
+html#SLT-LunarNewYear body.dark h4,
+html#SLT-LunarNewYear body.dark h5,
+html#SLT-LunarNewYear body.dark h6 {
   color: #ee9999;
 }
 
@@ -122,7 +138,10 @@ html#SLT-LunarNewYear body:not(.default):not(.dark) {
 
 html#SLT-LunarNewYear body:not(.default):not(.dark) h1,
 html#SLT-LunarNewYear body:not(.default):not(.dark) h2,
-html#SLT-LunarNewYear body:not(.default):not(.dark) h3 {
+html#SLT-LunarNewYear body:not(.default):not(.dark) h3,
+html#SLT-LunarNewYear body:not(.default):not(.dark) h4,
+html#SLT-LunarNewYear body:not(.default):not(.dark) h5,
+html#SLT-LunarNewYear body:not(.default):not(.dark) h6 {
   color: var(--text);
   
 }
@@ -157,9 +176,13 @@ html#SLT-TheRockCycle #DigitalCalendar {
   border-color: #595959;
 }
 
+html#SLT-TheRockCycle body.default p,
 html#SLT-TheRockCycle body.default h1,
 html#SLT-TheRockCycle body.default h2,
-html#SLT-TheRockCycle body.default h3 {
+html#SLT-TheRockCycle body.default h3,
+html#SLT-TheRockCycle body.default h4,
+html#SLT-TheRockCycle body.default h5,
+html#SLT-TheRockCycle body.default h6 {
   color: #595959;
 }
 
@@ -174,9 +197,13 @@ html#SLT-TheRockCycle body.dark {
   color: #a1a1a1;
 }
 
+html#SLT-TheRockCycle body.dark p,
 html#SLT-TheRockCycle body.dark h1,
 html#SLT-TheRockCycle body.dark h2,
-html#SLT-TheRockCycle body.dark h3 {
+html#SLT-TheRockCycle body.dark h3,
+html#SLT-TheRockCycle body.dark h4,
+html#SLT-TheRockCycle body.dark h5,
+html#SLT-TheRockCycle body.dark h6 {
   color: #a1a1a1;
 }
 
@@ -228,9 +255,13 @@ html#SLT-TheWaterCycle #DigitalCalendar {
   border-color: #56a2c9;
 }
 
+html#SLT-TheWaterCycle body.default p,
 html#SLT-TheWaterCycle body.default h1,
 html#SLT-TheWaterCycle body.default h2,
-html#SLT-TheWaterCycle body.default h3 {
+html#SLT-TheWaterCycle body.default h3,
+html#SLT-TheWaterCycle body.default h4,
+html#SLT-TheWaterCycle body.default h5,
+html#SLT-TheWaterCycle body.default h6 {
   color: #56a2c9;
 }
 
@@ -245,9 +276,13 @@ html#SLT-TheWaterCycle body.dark {
   color: #1b4961;
 }
 
+html#SLT-TheWaterCycle body.dark p,
 html#SLT-TheWaterCycle body.dark h1,
 html#SLT-TheWaterCycle body.dark h2,
-html#SLT-TheWaterCycle body.dark h3 {
+html#SLT-TheWaterCycle body.dark h3,
+html#SLT-TheWaterCycle body.dark h4,
+html#SLT-TheWaterCycle body.dark h5,
+html#SLT-TheWaterCycle body.dark h6 {
   color: #1b4961;
 }
 
@@ -295,9 +330,13 @@ html#SLT-TheSolarSystem body{
   color: #ffea5a;
 }
 
+html#SLT-TheSolarSystem p,
 html#SLT-TheSolarSystem h1,
 html#SLT-TheSolarSystem h2,
-html#SLT-TheSolarSystem h3{
+html#SLT-TheSolarSystem h3,
+html#SLT-TheSolarSystem h4,
+html#SLT-TheSolarSystem h5,
+html#SLT-TheSolarSystem h6{
   background-color: #000000;
   color: #ffea5a;
 }

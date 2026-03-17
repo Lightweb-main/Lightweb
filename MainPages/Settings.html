@@ -1,24 +1,34 @@
-<!DOCTYPE html> <html>
+<!DOCTYPE html> 
+<html>
 	<head>
 	<link rel="stylesheet" href="../CSS/Lightweb.css">
-	
 	</head>
 
 	<body>
 		<header>Official Lightweb Site</header>
 		<title>Settings</title>
 		
-		
-		<div id="screenTypes">
+		<div style="display: grid; grid-template-columns: repeat(4, 1fr); position: absolute; gap: 25px; top: 20vh; left: 6vw;">
+		<div id="screenTypes" class="settingDiv">
 			<h2 style="text-align: center;">Screen Modes</h2>
 			<div class="settingbutton1">
 				<button id="dark-screen-toggle" class="settingButton" style="background-color: var(--darkScreenToggleButton); ">Toggle Dark Mode</button>
+				<div id="darkScreenSettings">
+					<input id="dark-screen-flashbang-checkbox" type="checkbox">Toggle Dark Screen Flashbang</input>
+					<div id="darkScreenFlashingSettings">
+						<input type="color" id="darkScreenFlashbangColorSet"></input>
+						<p for="darkScreenFlashbangColorSet" style="display: inline;">: Flashbang Color</p>
+					</div>
+				</div>
 			</div>
 			<div class="settingbutton3">
 				<button id="analog-screen-button" class="settingButton" style="background-color: var(--AnalogScreenButton);">Toggle Analog Screen Mode</button>
 			</div>
 			<div class="settingbutton4">
 				<button id="CRTBLUE-screen-button" class="settingButton" style="background-color: var(--CRTBlueScreenButton);">Toggle CRT Blue Screen Mode</button>
+				<div id="CRTBlueScreenSettings">
+					<input id="CRTBlueScreen-flicker-effect-button" type="checkbox">Toggle Flickering</input>
+				</div>
 			</div>
 			<div class="settingbutton6">
 				<button id="squidGame-screen-button" class="settingButton" style="background-color: var(--squidGameScreenButton);">Toggle Squid Game Screen Mode</button>
@@ -28,9 +38,12 @@
 			</div>
 			<div class="settingbutton9">
 				<button id="christmas-screen-button" class="settingButton" style="background-color: var(--christmasScreenButton);">Toggle Christmas Screen Mode</button>
+				<div id="christmasScreenSettings">
+					<input id="snowflake-toggle-checkbox" type="checkbox">Toggle Snowflakes</input>
+				</div>
 			</div>
 		</div>
-		<div id="calendarSettings">
+		<div id="calendarSettings" class="settingDiv">
 			<h2>Calendar Settings</h2>
 			<div class="settingbutton2">
 				<button id="millitary-time-button" class="settingButton" style="background-color: var(--militaryTimeButton);">Toggle Millitary Time</button>
@@ -43,10 +56,21 @@
 			</div>
 		</div>
 		
-		<div id="otherSettings">
+		<div id="textSettings" class="settingDiv">
+			<h2>Text Settings</h2>
+			<div class="settingButton11">
+				<button id="toggleCustomSpeak" class="settingButton" style="background-color: #cccccc;">Toggle Custom Speak</button>
+				<div id="customSpeakSettings">
+					<input id="shakespearean-speak-checkbox" type="checkbox">Shakespearean Speak</input><br>
+					<input id="greek-letter-speak-checkbox" type="checkbox">Greek Letter Speak</input>
+				</div>
+			</div>
+		</div>
+		
+		<div id="otherSettings" class="settingDiv">
 			<h2>Other Settings</h2>
 			<h3>↓ For Darker Screen Types ↓</h3>
-			<div class="settingbutton8">
+			<div class="settingbutton8"> 
 				<button id="image-inversion-button" class="settingButton" style="background-color: var(--ImageInvertButton); color: var(--ImageInvertTextColor)">Toggle Image Color Inversion</button>
 			</div>
 			<div class="settingbutton10">
@@ -54,8 +78,18 @@
 			</div>
 		</div>
 		
+		<div id="trippySettings" class="settingDiv">
+			<h2>Trippy Settings</h2>
+			<p>Warning: These settings can temporarily break the site, refresh when things get too out of hand</p>
+			<div class="settingButton11">
+				<button id="toggle-scrambler-button" class="settingButton" style="background-color: #cccccc;">Scrambler</button>
+			</div>
+		</div>
 		
-		<a style="margin: 0; position: absolute; bottom: 5px; right: 5px; text-align: center; width=200%;  font-size: 45px;" href="Lightweb%20MainPage.html">Back to Lightweb</a>
+		<div id="exitSettingsDiv" class="settingDiv">
+			<a style="font-size: 45px; margin: 50px;" href="Lightweb%20MainPage.html">Back to Lightweb</a>
+		</div>
+		</div>
 			
 		<script src="../Important/DigitalClock.js"></script>
 	</body>

@@ -4,19 +4,14 @@
   20%, 22%, 24%, 55% { opacity: 0.95; }
 }
 
-@keyframes scanlines-move { 
-  0% {
-    background-position: 0 0;
-  }
-  100% {
+
+@keyframes scanlines-move {
+   0% {
+    background-position: 0 0px;
+	}
+    100% {
     background-position: 0 24px;
   }
-}
-
-@keyframes chaos {
-  0%   { transform: scale(1) rotate(0deg); filter: invert(0%) hue-rotate(0deg)}
-  50%  { transform: scale(0.5) rotate(180deg); filter: invert(100%) hue-rotate(180deg)}
-  100% { transform: scale(1) rotate(360deg); filter: invert(0%) hue-rotate(360deg)}; 
 }
 
 body.AnalogScreen::before{
@@ -53,15 +48,7 @@ body.CRTBLUEScreen::before{
 }
 
 
-body.chaosScreen *:not(.settingbutton7){
-	animation: chaos 5s linear infinite;
-}
 
-body.chaosScreen .settingbutton7 #chaos-screen-button{
-	animation: none;
-	transform: none;
-	display: block;
-}
 
 
 body.militaryTime{
@@ -189,7 +176,7 @@ table, tr, td, th{
 	margin-right: auto;
 }
 
-p, a, h1, h2, h3, h4, h5, h6 {
+p, a, h1, h2, h3, h4, h5, h6, example {
   color: var(--text);
   font-family: var(--FontFamily);
 }

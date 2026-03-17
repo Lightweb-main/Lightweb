@@ -50,6 +50,11 @@ document.addEventListener("DOMContentLoaded", function(){
 			){
 				clickedCell.classList.add(currentPlayer);
 				gameBoard[rows][cols] = currentPlayer;
+				
+				let previousPlayer = currentPlayer;
+				currentPlayer = currentPlayer === "black" ? "white" : "black";
+				status.classList.remove(`${previousPlayer}-selected`);
+				status.classList.add(`${currentPlayer}-selected`);
 			}
 			
 			if(checkForWin()){
@@ -58,11 +63,6 @@ document.addEventListener("DOMContentLoaded", function(){
 			winner.innerText = `${currentPlayer.toUpperCase()} is the Winner!`;
 			return;
 			}
-		
-			let previousPlayer = currentPlayer;
-			currentPlayer = currentPlayer === "black" ? "white" : "black";
-			status.classList.remove(`${previousPlayer}-selected`);
-			status.classList.add(`${currentPlayer}-selected`);
 		}   
 	});
 	

@@ -61,11 +61,11 @@
 
 
     searchInput.addEventListener('input', function () {
-      const searchTerm = this.value.toLowerCase();
+      const searchTerm = this.value;
       let visibleCount = 0;
 
       listItems.forEach((li) => {
-         const text = li.textContent.toLowerCase();
+         const text = li.textContent;
         const isVisible = text.includes(searchTerm);
         li.style.display = isVisible ? '' : 'none';
         if (isVisible) visibleCount++;

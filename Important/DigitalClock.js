@@ -31,6 +31,8 @@ if (
 		currentPath.toLowerCase().includes('/lightweb/noninformationalarticles/') || 
 		currentPath.toLowerCase().includes('/lightweb/games%20funstuff/') || 
 		currentPath.toLowerCase().includes('/lightweb/other/') || 
+		currentPath.toLowerCase().includes('/lightweb/subsections/') || 
+		currentPath.toLowerCase().includes('/lightweb/submainpages/') || 
 		currentPath.toLowerCase().includes('/lightweb/courses/')) {
     window.location.href = '../index.html';
   }	
@@ -43,15 +45,41 @@ if (
 let faviconNum = 0
 setInterval(update, 1);
 
-function clearLocalStorage(){
-	localStorage.clear();
-	
-}
+
 
 let frameCount = 0;
 let fullMilitaryTime;
 const fullMilitaryTimeCheckbox = document.getElementById("full-military-time-button");
+const snowflakeToggleCheckbox = document.getElementById('snowflake-toggle-checkbox');
 const militaryTimeSettings = document.getElementById("militaryTimeSettings");
+const customSpeakSettings = document.getElementById("customSpeakSettings");
+const toggleCustomSpeak = document.getElementById("toggleCustomSpeak");
+const christmasScreenSettings = document.getElementById("christmasScreenSettings");
+const CRTBlueScreenSettings = document.getElementById("CRTBlueScreenSettings");
+const toggleShakespeareanSpeakCheckbox = document.getElementById("shakespearean-speak-checkbox");
+const toggleGreekLetterSpeakCheckbox = document.getElementById("greek-letter-speak-checkbox");
+const toggleCRTBlueScreenFlickeringCheckbox = document.getElementById("CRTBlueScreen-flicker-effect-button");
+const toggleScramblerBtn = document.getElementById("toggle-scrambler-button");
+const toggleDarkScreenFlashbangBtn = document.getElementById("dark-screen-flashbang-checkbox");
+const darkScreenFlashbangColorBox = document.getElementById("darkScreenFlashbangColorSet");
+const darkScreenFlashingSettings = document.getElementById("darkScreenFlashingSettings");
+const darkScreenSettings = document.getElementById("darkScreenSettings");
+
+function clearLocalStorage(){
+	
+	localStorage.setItem("snowflakeToggle", false);
+	localStorage.setItem("toggleCustomSpeak", false);
+	localStorage.setItem("theme", "default");
+	localStorage.setItem('timeType', '12-hour-clock');
+	localStorage.setItem('calendarType', 'defaultCalendar');
+	
+	
+	toggleCustomSpeakCheckbox.checked = false;
+	toggleShakespeareanSpeakCheckbox.checked = false;
+	snowflakeToggleCheckbox.checked = false;
+	fullMilitaryTimeCheckbox.checked = false;
+}
+
 
 function update() {
 	if(document.body.classList.contains("christmasScreen") && (frameCount % 15 === 0)){
@@ -79,11 +107,142 @@ function update() {
 		}
 	}
 	
+	const lightwebHeader = document.querySelector("header");
+	
+	if(lightwebHeader){
+		lightwebHeader.style.top = "14px";
+		lightwebHeader.style.right = "14px";
+	}
+	
+	if(document.body.classList.contains('chaosScreen')){
+		if(frameCount % 12 === 0){
+			const r = (Math.floor(Math.random() * 256)).toString(16);
+			const g = (Math.floor(Math.random() * 256)).toString(16);
+			const b = (Math.floor(Math.random() * 256)).toString(16);
+			const fontFamilies = ["Arial", "Georgia", "Open Sans", "Lucida Console", "Times New Roman", "Serif", "Calibri", "Courier New", "Helvetica Neue"];
+			const fontWeights = ["normal", "bold", "lighter", "bolder"];
+			const textAligns = ["left", "middle", "right"];
+			const textDecorations = ["overline", "underline", "line-through", "overline underline"];
+			const allElementsWithinScene = document.querySelectorAll("*");
+			
+			allElementsWithinScene.forEach(el => {
+				el.style.backgroundColor = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`
+				el.style.color = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`
+				el.style.borderColor = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`
+				el.style.borderRadius = `${Math.floor(Math.random() * 100)}%`
+				el.style.borderWidth = `${Math.floor(Math.random() * 45)}px`
+				el.style.fontFamily = `${fontFamilies[Math.floor(Math.random() * fontFamilies.length)]}, san-serif`;
+				el.style.fontWeight = `${fontWeights[Math.floor(Math.random() * fontWeights.length)]}`;
+				el.style.textAlign = `${textAligns[Math.floor(Math.random() * textAligns.length)]}`;
+				el.style.textDecoration = `${textDecorations[Math.floor(Math.random() * textDecorations.length)]}`;
+			});
+			
+			document.documentElement.style.setProperty('--bg', `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`);
+			document.body.style.transitionDuration = '0s'
+		}
+	}
+	
+	if(document.body.classList.contains('CRTBLUEScreen') || document.body.classList.contains('chaosScreen')){
+		if(localStorage.getItem('CRTBlueFlicker') === 'true'){
+		const allElementsWithinScene = document.querySelectorAll("*");
+	
+		allElementsWithinScene.forEach(el => {
+			if(frameCount % (50 * (Math.floor(Math.random() * 25) + 30)) === 0){
+			setTimeout( () => {
+				el.style.visibility = "hidden";
+			}, 100);
+			setTimeout( () => {
+				el.style.visibility = "visible";
+			}, 125);
+			
+		  }
+		});
+		}
+	}
+	
+	if(darkScreenFlashbangColorBox){
+		darkScreenFlashbangColorBox.addEventListener("input", function(){
+			localStorage.setItem("darkScreenFlashbangColorBoxValue", darkScreenFlashbangColorBox.value);
+		});
+	}
+	
+
+	
+	if(localStorage.getItem("darkScreenFlashbangSetting") === 'true'){
+		if(darkScreenFlashbangColorBox){
+			darkScreenFlashbangColorBox.style.display = "inline";
+		}
+		
+		if(darkScreenFlashingSettings){
+			darkScreenFlashingSettings.style.display = "block";
+		}
+		
+	} else {
+		if(darkScreenFlashbangColorBox){
+			darkScreenFlashbangColorBox.style.display = "none";
+		}
+		
+		if(darkScreenFlashingSettings){
+			darkScreenFlashingSettings.style.display = "none";
+		}
+	}
+	
+	
+	if(localStorage.getItem("theme") === 'dark'){
+		if(darkScreenSettings){
+			darkScreenSettings.style.display = "block";
+		}
+	} else {
+		if(darkScreenSettings){
+			darkScreenSettings.style.display = "none";
+		}
+	}
+
+	
+	
+	
+	if(localStorage.getItem("darkScreenFlashbangSetting") === 'true' && localStorage.getItem("theme") === "dark"){
+		let flashbangIntervalIndex = 1000 + Math.floor(Math.random() * 1000);
+		if(frameCount % flashbangIntervalIndex === 0){
+			const allElementsWithinScene = document.querySelectorAll("*");
+			
+			allElementsWithinScene.forEach(function(el){
+				el.style.transitionDuration = "0.1s";
+				if(el == document.body){
+					el.style.color = flashbangColor;
+					el.style.backgroundColor = flashbangColor;
+				} else if(el.tagName === "A"){
+					el.style.color = flashbangColor;
+					el.style.backgroundColor = flashbangColor;
+					el.style.borderColor = flashbangColor;
+				} else {
+					el.style.color = flashbangColor;
+				}
+				setTimeout(function(){
+					el.style.transitionDuration = "3s";
+					if(el == document.body){
+						el.style.color = "var(--text)";
+						el.style.backgroundColor = "var(--bg)";
+					} else if(el.tagName === "A"){
+						el.style.color = "var(--text)";
+						el.style.borderColor = "var(--border)";
+						el.style.backgroundColor = "var(--border)";
+					} else {
+						el.style.color = "var(--text)";
+					}
+					setTimeout(function(){
+						el.style.transitionDuration = "0.3s";
+					}, 3000);
+				}, 800);
+			});
+			
+		}
+	}
 	
 	
     if(!hasMilitaryTime){
     if (hour >= 12) {
-        am_pm = "PM";
+        am_pm = "PM"
         if (hour > 12) hour -= 12;
     }
     if (hour === 0) {
@@ -102,8 +261,67 @@ function update() {
 		}
     }
 	
+	if(christmasScreenSettings){
+		if(!document.body.classList.contains("christmasScreen")){
+			christmasScreenSettings.style.display = "none";
+		} else {
+			christmasScreenSettings.style.display = "block";
+		}
+    }
+	
+	if(CRTBlueScreenSettings){
+		if(document.body.classList.contains("CRTBLUEScreen")){
+			CRTBlueScreenSettings.style.display = "block";
+		} else {
+			CRTBlueScreenSettings.style.display = "none";
+		}
+    }
+	
+	if(toggleCustomSpeak){
+		if(localStorage.getItem("toggleCustomSpeak") === 'true'){
+			toggleCustomSpeak.style.backgroundColor = "#191919";
+			toggleCustomSpeak.style.color = "#ffffff";
+		} else {
+			toggleCustomSpeak.style.backgroundColor = "#dddddd";
+			toggleCustomSpeak.style.color = "#000000";
+		}
+	}
+	
+	if(toggleScramblerBtn){
+		if(localStorage.getItem("toggleScrambler") === 'true'){
+			toggleScramblerBtn.style.backgroundColor = "#235235";
+			toggleScramblerBtn.style.color = "#ffffff";
+		} else {
+			toggleScramblerBtn.style.backgroundColor = "#ffffff";
+			toggleScramblerBtn.style.color = "#000000";
+		}
+	}
+	
+	if(toggleCustomSpeak){
+		if(localStorage.getItem('toggleCustomSpeak') === 'true'){
+			customSpeakSettings.style.display = "block";
+		} else {
+			customSpeakSettings.style.display = "none";
+		}
+    }
+	if(toggleGreekLetterSpeakCheckbox){
+		toggleGreekLetterSpeakCheckbox.checked = false;
+	}
+	if(toggleShakespeareanSpeakCheckbox){
+		toggleShakespeareanSpeakCheckbox.checked = false;
+	}
+	if(localStorage.getItem('customSpeakSetting') === 'greekLetterSpeak'){
+		if(toggleGreekLetterSpeakCheckbox){
+			toggleGreekLetterSpeakCheckbox.checked = true;
+		}
+	} else if(localStorage.getItem('customSpeakSetting') === 'shakespeareanEnglishSpeak'){
+		if(toggleShakespeareanSpeakCheckbox){
+			toggleShakespeareanSpeakCheckbox.checked = true;
+		}
+	}
+	
     hour = hour < 10 ? hour : hour;
-    min = min < 10 ? "0" + min : min;
+    min = min < 10 ? "0" + min : min; 
     sec = sec < 10 ? "0" + sec : sec;
 
     let currentTime = `${hour}:${min}:${sec}`;
@@ -121,27 +339,87 @@ function update() {
 	} else {
 	currentDay = `${month}/${day}/${year}`;
 	}
-
-    document.getElementById('DigitalClock').textContent = currentTime;
-    document.getElementById('DigitalCalendar').textContent = currentDay;
 	
+	if(!window.location.pathname.includes("LightwebHistory.html")){
+		document.getElementById("DigitalClock").textContent = currentTime;
+		document.getElementById("DigitalCalendar").textContent = currentDay;
+	}
 }
 
+document.addEventListener("keydown", (e) => {
+	if(localStorage.getItem('theme') === "chaosScreen"){
+		if(e.key.toLowerCase() === 'e'){
+			document.body.classList.remove('chaosScreen');
+			document.body.classList.add('default');
+			localStorage.setItem('theme', 'default');
+		}
+	}
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+	
+	  const meta = document.createElement("meta");
+	  meta.setAttribute("charset", "UTF-8");
+	  document.head.appendChild(meta);
 	  
-	  
-	  
-	  document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'chaos');
-	  document.body.classList.remove('fullMilitaryTime');
+	  document.body.classList.remove('default', 'dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'chaos');
+	  document.body.classList.remove('fullMilitaryTime', 'snowflakeToggleOn');
 	  document.body.classList.remove('dashedCalendar');
 	  document.body.classList.remove('InverseInversionOn');
 	  document.body.classList.remove('PC', 'Phone', 'Laptop');
+	  document.body.classList.remove('modernEnglishSpeak', 'shakespeareanEnglishSpeak');
       const theme = localStorage.getItem('theme');
 	  const fullMilitaryTime = localStorage.getItem('fMT');
+	  const snowflakeToggle = localStorage.getItem('snowflakeToggle');
+	  const CRTBlueFlickerToggle = localStorage.getItem('CRTBlueFlicker');
       const timeType = localStorage.getItem('timeType');
 	  const DeviceType = localStorage.getItem('DeviceType');
 	  const CalendarType = localStorage.getItem('calendarType');
 	  const toggleImageInversion = localStorage.getItem('toggleImageInversion');
+	  const toggleCustomSpeak = localStorage.getItem('toggleCustomSpeak');
+	  const customSpeakSetting = localStorage.getItem('customSpeakSetting');
+	  const dyslexiaModeSetting = localStorage.getItem('dyslexiaModeSetting');
+	  const darkScreenFlashbangSetting = localStorage.getItem('darkScreenFlashbangSetting');
+	  const darkScreenFlashbangColorBoxValue = localStorage.getItem('darkScreenFlashbangColorBoxValue');
+	  
+	  if(darkScreenFlashbangColorBox){
+		  darkScreenFlashbangColorBox.value = darkScreenFlashbangColorBoxValue;
+	  }
+
+	  
+	  if(toggleDarkScreenFlashbangBtn){
+		  if(localStorage.getItem('darkScreenFlashbangSetting') === 'true'){
+			  toggleDarkScreenFlashbangBtn.checked = true;
+		  } else {
+			toggleDarkScreenFlashbangBtn.checked = false;
+		  }
+	  }
+
+	  if(toggleShakespeareanSpeakCheckbox){
+		  if(localStorage.getItem('customSpeakSetting') === 'shakespeareanEnglishSpeak'){
+			  toggleShakespeareanSpeakCheckbox.checked = true;
+		  } else {
+			toggleShakespeareanSpeakCheckbox.checked = false;
+		  }
+	  }
+	  
+	  if(toggleGreekLetterSpeakCheckbox){
+		  if(localStorage.getItem('customSpeakSetting') === 'greekLetterSpeak'){
+			  toggleGreekLetterSpeakCheckbox.checked = true;
+		  } else {
+			toggleGreekLetterSpeakCheckbox.checked = false;
+		  }
+	  }
+	  
+	  
+	  if(toggleCRTBlueScreenFlickeringCheckbox){
+	      if(localStorage.getItem('CRTBlueFlicker') === 'true'){
+			  toggleCRTBlueScreenFlickeringCheckbox.checked = true;
+	      } else {
+			  toggleCRTBlueScreenFlickeringCheckbox.checked = false;
+		  }
+	  }
+
 	  if(document.body.classList.contains("fullMilitaryTime")){
 	    document.body.classList.add("fullMilitaryTime");
 	  }
@@ -191,6 +469,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('militaryTime');
       } 
 	  
+	  if(localStorage.getItem('snowflakeToggle') === 'true'){
+			document.body.classList.add('snowflakeToggleOn', true);
+			if(snowflakeToggleCheckbox){
+			snowflakeToggleCheckbox.checked = true;
+			}
+	  }
+
+	  
 	  if (CalendarType === 'dashedCalendar') {
         document.body.classList.add('dashedCalendar');
       } else {
@@ -212,6 +498,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	  const toggleChaosScreenBtn = document.getElementById('chaos-screen-button');
 	  const ImageInversionBtn = document.getElementById('image-inversion-button');
 	  const toggleChristmasBtn = document.getElementById('christmas-screen-button');
+	  const toggleCustomSpeakBtn = document.getElementById('toggleCustomSpeak');
+	  const toggleScramblerBtn = document.getElementById('toggle-scrambler-button');
+	  const toggleDarkScreenFlashbangCheckbox = document.getElementById("dark-screen-flashbang-checkbox");
+	
+	if(toggleDarkScreenFlashbangCheckbox){
+		toggleDarkScreenFlashbangCheckbox.addEventListener('click', () => {
+			if(localStorage.getItem("darkScreenFlashbangSetting") === 'true'){
+				localStorage.setItem("darkScreenFlashbangSetting", false);
+			} else {
+				localStorage.setItem("darkScreenFlashbangSetting", true);
+			}
+		})
+	}
 	
 	if(fullMilitaryTimeCheckbox){
 		fullMilitaryTimeCheckbox.addEventListener('click', () => {
@@ -222,10 +521,73 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		})
 	}
+	if(snowflakeToggleCheckbox){
+		snowflakeToggleCheckbox.addEventListener('click', () => {
+			if(localStorage.getItem("snowflakeToggle") === 'true'){
+				localStorage.setItem("snowflakeToggle", false);
+			} else {
+				localStorage.setItem("snowflakeToggle", true);
+			}
+		})
+	}
+	if(toggleCustomSpeakBtn){
+		toggleCustomSpeakBtn.addEventListener('click', () => {
+			if(localStorage.getItem("toggleCustomSpeak") === 'true'){
+				localStorage.setItem("toggleCustomSpeak", false);
+			} else {
+				localStorage.setItem("toggleCustomSpeak", true);
+			}
+		})
+	}
+	if(toggleScramblerBtn){
+		toggleScramblerBtn.addEventListener('click', () => {
+			if(localStorage.getItem("toggleScrambler") === 'true'){
+				localStorage.setItem("toggleScrambler", false);
+			} else {
+				alert("Refresh tab to apply speak change");
+				localStorage.setItem("toggleScrambler", true);
+			}
+		})
+	}
+	
+	if(toggleShakespeareanSpeakCheckbox){
+		toggleShakespeareanSpeakCheckbox.addEventListener('click', () => {
+			if(localStorage.getItem('customSpeakSetting') === 'shakespeareanEnglishSpeak') {
+				localStorage.setItem('customSpeakSetting', 'modernEnglishSpeak');
+			} else {
+				alert("Refresh tab to apply speak change");
+				localStorage.setItem('customSpeakSetting', 'shakespeareanEnglishSpeak');
+			}
+		}) 
+	}
+	
+	if(toggleGreekLetterSpeakCheckbox){
+		toggleGreekLetterSpeakCheckbox.addEventListener('click', () => {
+			if(localStorage.getItem('customSpeakSetting') === 'greekLetterSpeak') {
+				localStorage.setItem('customSpeakSetting', 'modernEnglishSpeak');
+			} else {
+				alert("Refresh tab to apply speak change");
+				localStorage.setItem('customSpeakSetting', 'greekLetterSpeak');
+			}
+		}) 
+	}
+	
+	if(toggleCRTBlueScreenFlickeringCheckbox){
+		toggleCRTBlueScreenFlickeringCheckbox.addEventListener('click', () => {
+			if(localStorage.getItem('CRTBlueFlicker') === 'true') {
+				localStorage.setItem('CRTBlueFlicker', 'false');
+			} else {
+				localStorage.setItem('CRTBlueFlicker', 'true');
+			}
+		}) 
+	}
+	
+	
 	if(toggleDarkBtn){
 		toggleDarkBtn.addEventListener('click', () => {
 			if(document.body.classList.contains('dark')) {
 				document.body.classList.remove('dark');
+				document.body.classList.add('default');
 				localStorage.setItem('theme', 'default');
 			} else {
 				clearScreenType();
@@ -239,6 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		toggleChristmasBtn.addEventListener('click', () => {
 			if (document.body.classList.contains('christmasScreen')) {
 				document.body.classList.remove('christmasScreen');
+				document.body.classList.add('default');
 				localStorage.setItem('theme', 'default');
 			} else {
 				clearScreenType();
@@ -252,6 +615,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		toggleAnalogBtn.addEventListener('click', () => {
 			if (document.body.classList.contains('AnalogScreen')) {
 				document.body.classList.remove('AnalogScreen');
+				document.body.classList.add('default');
 				localStorage.setItem('theme', 'default');
 			} else {
 				clearScreenType();
@@ -265,6 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		toggleCRTBlueScreen.addEventListener('click', () => {
 			if (document.body.classList.contains('CRTBLUEScreen')) {
 				document.body.classList.remove('CRTBLUEScreen');
+				document.body.classList.add('default');
 				localStorage.setItem('theme', 'default');
 			} else {
 				clearScreenType();
@@ -292,6 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		toggleSquidGameBtn.addEventListener('click', () => {
 			if (document.body.classList.contains('squidGameScreen')) {
 				document.body.classList.remove('squidGameScreen');
+				document.body.classList.add('default');
 				localStorage.setItem('theme', 'default');
 			} else {
 				clearScreenType();
@@ -305,10 +671,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		toggleChaosScreenBtn.addEventListener('click', () => {
 			if (document.body.classList.contains('chaosScreen')) {
 				document.body.classList.remove('chaosScreen');
+				document.body.classList.add('default');
 				localStorage.setItem('theme', 'default');
 			} else {
 				clearScreenType();
 				document.body.classList.add('chaosScreen');
+				alert("EPLIPSY WARNING. CLICK E TO PAUSE CHAOS");
 				localStorage.setItem('theme', 'chaosScreen');	
 			}
 		});
@@ -335,22 +703,160 @@ document.addEventListener("DOMContentLoaded", function(){
 	let snowflakeContainer = document.createElement("div");
 	snowflakeContainer.id = "snowflakeContainerChristmasScreen";
 	document.body.appendChild(snowflakeContainer);
+	const speakSetting = localStorage.getItem('customSpeakSetting');
+	
+	let dateRightNow = new Date();
 	
 	function replaceSigns(node, target, replacement){
+		let regexp = target;
+		if(speakSetting === 'greekLetterSpeak' || (dateRightNow.getMonth() === 2 && dateRightNow.getDate() == 14)){
+			let regexp = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+		} else {
+			
+		}
+		let regexp1 = new RegExp(regexp, 'g');
+		
 		if(node.nodeType === Node.TEXT_NODE){
-			node.textContent = node.textContent.replaceAll(target, replacement);
+			node.textContent = node.textContent.replaceAll(regexp1, replacement);
 		} else {
 			node.childNodes.forEach(child => replaceSigns(child, target, replacement));
 		}
 	}
 	
-	replaceSigns(document.body, '*', '×');
+	if(localStorage.getItem("toggleScrambler") === 'true'){
+		const allLinks = document.querySelectorAll("a");
+		let linkContents = [];
+		allLinks.forEach(function(a){
+			linkContents.push(a.textContent);
+		});
+		
+		allLinks.forEach(function(a){
+			let linkContentsIndex = Math.floor(Math.random() * linkContents.length);
+			a.textContent = linkContents[linkContentsIndex];
+			linkContents.splice(linkContentsIndex, 1);
+			
+		});
+
+	}
+	
+	
+	let month = dateRightNow.getMonth();
+	let day = dateRightNow.getDate();
+	
+	if(month === 2 && day === 14){
+		replaceSigns(document.body, 'p', '\u03C0');
+		replaceSigns(document.body, 'P', '\u03A0');
+	}
+	
+	
+	if(speakSetting === 'shakespeareanEnglishSpeak'){
+		replaceSigns(document.body, '\\byou\\b', 'thee');
+		replaceSigns(document.body, '\\bYou\\b', 'Thee');
+		replaceSigns(document.body, '\\byour\\b', 'thine');
+		replaceSigns(document.body, '\\bYour\\b', 'Thine');
+		replaceSigns(document.body, '\\bbefore\\b', 'ere');
+		replaceSigns(document.body, '\\bBefore\\b', 'Ere');
+		replaceSigns(document.body, '\\byes\\b', 'aye');
+		replaceSigns(document.body, '\\bYes\\b', 'Aye');
+		replaceSigns(document.body, '\\bno\\b', 'nay');
+		replaceSigns(document.body, '\\bNo\\b', 'Nay');
+		replaceSigns(document.body, '\\balways\\b', 'alway');
+		replaceSigns(document.body, '\\bAlways\\b', 'Alway');
+		replaceSigns(document.body, '\\bif\\b', 'an');
+		replaceSigns(document.body, '\\bIf\\b', 'An');
+		replaceSigns(document.body, '\\bthere\\b', 'thither');
+		replaceSigns(document.body, '\\bThere\\b', 'Thither');
+		replaceSigns(document.body, '\\bwhere\\b', 'whither');
+		replaceSigns(document.body, '\\bWhere\\b', 'Whither');
+		replaceSigns(document.body, '\\bare\\b', 'art');
+		replaceSigns(document.body, '\\bAre\\b', 'Art');
+		replaceSigns(document.body, '\\bover\\b', "ov'r");
+		replaceSigns(document.body, '\\bOver\\b', "Ov'r");
+		replaceSigns(document.body, '\\bthat\\b', 'yond');
+		replaceSigns(document.body, '\\bThat\\b', 'Yond');
+		replaceSigns(document.body, '\\bhave\\b', 'hast');
+		replaceSigns(document.body, '\\bHave\\b', 'Hast');
+		replaceSigns(document.body, '\\bhas\\b', 'hath');
+		replaceSigns(document.body, '\\bHas\\b', 'Hath');
+		replaceSigns(document.body, '\\bwas\\b', 'wast');
+		replaceSigns(document.body, '\\bWas\\b', 'Wast');
+		replaceSigns(document.body, '\\bit\\b', 't');
+		replaceSigns(document.body, '\\bIt\\b', 'T');
+		replaceSigns(document.body, '\\bBack\\b', 'T');
+		replaceSigns(document.body, '\\bdid\\b', 'didst');
+		replaceSigns(document.body, '\\bDid\\b', 'Didst');
+		replaceSigns(document.body, '\\bdo\\b', 'dost');
+		replaceSigns(document.body, '\\bDo\\b', 'Dost');
+		replaceSigns(document.body, '\\bshall\\b', 'shalt');
+		replaceSigns(document.body, '\\bShall\\b', 'Shalt');
+		replaceSigns(document.body, '\\bdoes\\b', 'doth');
+		replaceSigns(document.body, '\\bDoes\\b', 'Doth');
+		replaceSigns(document.body, '\\bit\\s+is\\b', 'tis');
+		replaceSigns(document.body, '\\bIt\\s+is\\b', 'Tis');
+		replaceSigns(document.body, '\\byou\\s+all\\b', 'Ye');
+		replaceSigns(document.body, '\\bYou\\s+all\\b', 'Ye');
+		
+	}
+	
+	if(speakSetting === 'greekLetterSpeak'){
+		replaceSigns(document.body, 'th', '\u03B8');
+		replaceSigns(document.body, 'Th', '\u0398');
+		replaceSigns(document.body, 'ch', '\u03C7');
+		replaceSigns(document.body, 'Ch', '\u03A7');
+		replaceSigns(document.body, 'ps', '\u03C8');
+		replaceSigns(document.body, 'Ps', '\u03A8');
+		replaceSigns(document.body, 'a', '\u03B1');
+		replaceSigns(document.body, 'a', '\u03B1');
+		replaceSigns(document.body, 'b', '\u03B2');
+		replaceSigns(document.body, 'd', '\u03B4');
+		replaceSigns(document.body, 'D', '\u0394');
+		replaceSigns(document.body, 'e', '\u03B5');
+		replaceSigns(document.body, 'f', '\u03C6');
+		replaceSigns(document.body, 'F', '\u03A6');
+		replaceSigns(document.body, 'g', '\u03B3');
+		replaceSigns(document.body, 'G', '\u0393');
+		replaceSigns(document.body, 'h', '\u03B7');
+		replaceSigns(document.body, 'i', '\u03B9');
+		replaceSigns(document.body, 'k', '\u03BA');
+		replaceSigns(document.body, 'l', '\u03BB');
+		replaceSigns(document.body, 'L', '\u039B');
+		replaceSigns(document.body, 'm', '\u03BC');
+		replaceSigns(document.body, 'n', '\u03BD');
+		replaceSigns(document.body, 'o', '\u03C9');
+		replaceSigns(document.body, 'O', '\u03A9');
+		replaceSigns(document.body, 'p', '\u03C0');
+		replaceSigns(document.body, 'P', '\u03A0');
+		replaceSigns(document.body, 'r', '\u03A1');
+		replaceSigns(document.body, 'R', 'P');
+		replaceSigns(document.body, 's\\b', '\u03C4');
+		replaceSigns(document.body, 's', '\u03C3');
+		replaceSigns(document.body, 'S', '\u03A3');
+		replaceSigns(document.body, 't', '\u03C4');
+		replaceSigns(document.body, 'T', '\u03A4');
+		replaceSigns(document.body, 'u', '\u03C5');
+		replaceSigns(document.body, 'U', '\u03A5');
+		replaceSigns(document.body, 'x', '\u03BC');
+		replaceSigns(document.body, 'X', '\u039C');
+		replaceSigns(document.body, 'z', '\u03A6');
+		replaceSigns(document.body, 'Z', '\u0396');
+	}
+	if(!window.location.pathname.includes("LightwebHistory")){
+		replaceSigns(document.body, '*', '×');
+	}
+	
+	
+	
+	
+	
+
 });
 function snowflakeChristmasScreen(){
 		let snowflakeNum = 0;
+		
 		const snowflakeContainer = document.getElementById("snowflakeContainerChristmasScreen");
 		function iterateSnowflake(){
 			if(document.body.classList.contains("christmasScreen") && snowflakeAmount < 100){
+			if(localStorage.getItem("snowflakeToggle") === 'true'){
 			let snowflake = document.createElement("img");
 			if(window.location.pathname.includes("index.html")){
 				snowflake.src = "Images/snowflakeImg.png";
@@ -417,6 +923,7 @@ function snowflakeChristmasScreen(){
 				}
 			}
 			}
+			}
 			
 		}
 		iterateSnowflake();
@@ -424,7 +931,7 @@ function snowflakeChristmasScreen(){
 }
 
 function clearScreenType(){
-	document.body.classList.remove('dark', 'AnalogScreen', 'CRTBLUEScreen', 'squidGameScreen', 'chaosScreen', 'christmasScreen');
+	document.body.classList.remove('default', 'dark', 'AnalogScreen', 'CRTBLUEScreen', 'squidGameScreen', 'chaosScreen', 'christmasScreen');
 }
 
 
@@ -439,66 +946,223 @@ iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
 const iconthingy2 = document.createElement('link');
 iconthingy2.rel = 'icon'; 
 iconthingy2.type = 'image/png'; 
-iconthingy2.href = 'Images/Lightweb.icon.png?v=' + faviconNum
+iconthingy2.href = 'Images/Lightweb.icon.png?v=' + faviconNum;
+
+const iconthingy3 = document.createElement('link');
+iconthingy3.rel = 'icon'; 
+iconthingy3.type = 'image/png'; 
+iconthingy3.href = '../../Images/Lightweb.icon.png?v=' + faviconNum;
 
 const htmlAdd = `
   <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
   <div id="DigitalCalendar">If you are seeing this, your calendar needs a pin or two.</div>
 `;
 
-const DigitalClockCalendarContainer = document.createElement('div');
-DigitalClockCalendarContainer.innerHTML = htmlAdd;
-document.body.appendChild(DigitalClockCalendarContainer);
-document.head.appendChild(iconthingy);
+if(!window.location.pathname.includes("LightwebHistory.html")){
+	const DigitalClockCalendarContainer = document.createElement('div');
+	DigitalClockCalendarContainer.innerHTML = htmlAdd;
+	document.body.appendChild(DigitalClockCalendarContainer);
+}
+if(window.location.pathname.includes("index.html")){
+	document.head.appendChild(iconthingy2);
+}
+if(window.location.pathname.includes("/Articles/") ||
+   window.location.pathname.includes("/Games%20&%20FunStuff/") ||
+   window.location.pathname.includes("/MainPages/") ||
+   window.location.pathname.includes("/Other/") ||
+   window.location.pathname.includes("/Simulations/") ||
+   window.location.pathname.includes("/SubMainPages/") ||
+   window.location.pathname.includes("/Utility/")
+   ){
+	document.head.appendChild(iconthingy2);
+}
+if(window.location.pathname.includes("/SubSections/")){
+	document.head.appendChild(iconthingy3);
+}
 
 window.addEventListener("DOMContentLoaded", () => {
 
 		const hyperlinks = document.querySelectorAll('a');
+		const title = document.querySelector('h1');
+		const heading2s = document.querySelectorAll('h2');
+		const tableOfContentsDiv = document.createElement("div");
+		
+		
+		if(title){
+		tableOfContentsDiv.innerHTML += `<h2>${title.innerHTML}: Table of Contents</h2>`
+		}
+		tableOfContentsDiv.id = "tableOfContentsDiv";
+		if(title != null && window.location.pathname.includes("/Articles/")){
+			title.insertAdjacentElement("afterend", tableOfContentsDiv);
+			let heading2Index = 1;
+			heading2s.forEach(heading => {
+				let heading3Index = 1;
+				let heading4Index = 1;
+				let heading5Index = 1;
+				let heading6Index = 1;
+				
+				heading.id = `H2.${heading2Index}`;
+				
+				let heading2BookMark = document.createElement("a");
+				
+				heading2BookMark.href = `#H2.${heading2Index}`;
+				heading2BookMark.innerHTML = document.getElementById(`H2.${heading2Index}`).innerHTML;
+				
+				heading2BookMark.style.display = "block";
+				heading2BookMark.style.backgroundColor = "transparent";
+				heading2BookMark.style.border = "none";
+				heading2BookMark.style.fontSize = "20px";
+				heading2BookMark.style.marginBottom = "9px";
+				heading2BookMark.style.textDecoration = "underline";
 
-		document.querySelectorAll('a').forEach(link => {
-			link.classList.add("link");
-		});
-		
-		// DigitalCalendarClock Styling
+				
+				heading2BookMark.classList.add("TableOfContentH2");
+				tableOfContentsDiv.appendChild(heading2BookMark)
+				
+				let next = heading.nextElementSibling;
+				
+				
+				while(next && next.tagName !== 'H2'){
+					if(next.tagName === "H3") {
+						next.id = `H2.${heading2Index}.H3.${heading3Index}`;
+						let heading3BookMark = document.createElement("a");
+				
+						heading3BookMark.href = `#H2.${heading2Index}.H3.${heading3Index}`;
+						heading3BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+						heading3BookMark.innerHTML += document.getElementById(`H2.${heading2Index}.H3.${heading3Index}`).innerHTML;
+				
+						heading3BookMark.style.display = "block";
+						heading3BookMark.style.backgroundColor = "transparent";
+						heading3BookMark.style.border = "none";
+						heading3BookMark.style.fontSize = "17px";
+						heading3BookMark.style.marginBottom = "9px";
+						
+						tableOfContentsDiv.appendChild(heading3BookMark);
+						
+						let next2 = next.nextElementSibling;
+						
+						while(next2 && next2.tagName !== 'H3'){
+							if(next2.tagName === "H4") {
+								next2.id = `H2.${heading2Index}.H3.${heading3Index}.H4${heading4Index}`;
+								let heading4BookMark = document.createElement("a");
+								heading4BookMark.href = `#H2.${heading2Index}.H3.${heading3Index}`;
+								heading4BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+								heading4BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+								heading4BookMark.innerHTML += document.getElementById(next2.id).innerHTML;
+				
+								heading4BookMark.style.display = "block";
+								heading4BookMark.style.backgroundColor = "transparent";
+								heading4BookMark.style.border = "none";
+								heading4BookMark.style.fontSize = "15px";
+								heading4BookMark.style.marginBottom = "9px";
+								
+								tableOfContentsDiv.appendChild(heading4BookMark);
+								
+								let next3 = next2.nextElementSibling;
+								while(next3 && next3.tagName !== 'H4'){
+									if(next3.tagName === "H5") {
+										next3.id = `H2.${heading2Index}.H3.${heading3Index}.H4${heading4Index}.H5${heading5Index}`;
+										let heading5BookMark = document.createElement("a");
+										heading5BookMark.href = `#H2.${heading2Index}.H3.${heading3Index}.H4${heading4Index}.H5${heading5Index}`;
+										heading5BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+										heading5BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+										heading5BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+										heading5BookMark.innerHTML += document.getElementById(next3.id).innerHTML;
+										
+										heading5BookMark.style.display = "block";
+										heading5BookMark.style.backgroundColor = "transparent";
+										heading5BookMark.style.border = "none";
+										heading5BookMark.style.fontSize = "13px";
+										heading5BookMark.style.marginBottom = "9px";
+								
+								
+										tableOfContentsDiv.appendChild(heading5BookMark);
+										
+										let next4 = next3.nextElementSibling;
+										while(next4 && next4.tagName !== 'H5'){
+											if(next4.tagName === "H6") {
+												next4.id = `H2.${heading2Index}.H3.${heading3Index}.H4${heading4Index}.H5${heading5Index}.H6${heading6Index}`;
+												let heading6BookMark = document.createElement("a");
+												heading6BookMark.href = `#H2.${heading2Index}.H3.${heading3Index}.H4${heading4Index}.H5${heading5Index}.H6${heading6Index}`;
+												heading6BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+												heading6BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+												heading6BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+												heading6BookMark.innerHTML += "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
+												heading6BookMark.innerHTML += document.getElementById(next4.id).innerHTML;
+												
+												heading6BookMark.style.display = "block";
+												heading6BookMark.style.backgroundColor = "transparent";
+												heading6BookMark.style.border = "none";
+												heading6BookMark.style.fontSize = "11px";
+												heading6BookMark.style.marginBottom = "7px";
+										
+										
+												tableOfContentsDiv.appendChild(heading6BookMark);
+										
+											}
+										next4 = next4.nextElementSibling;
+										heading6Index++;
+										}
+										
+									}
+									next3 = next3.nextElementSibling;
+									heading5Index++;
+								}
+							}
+							next2 = next2.nextElementSibling;
+							heading4Index++;
+						}
+						
+						heading3Index++;
+					}
+					
+					next = next.nextElementSibling;
+				}
+				heading2Index++;
+			});
+			
+		}
+});
 
-		DigitalClock.style.position = "absolute";
-		DigitalClock.style.left = "0px";
-		DigitalClock.style.top = "0px";
-		DigitalClock.style.border = "2px solid var(--DigitalClockBackground)";
-		DigitalClock.style.width = "300px";
-		DigitalClock.style.fontSize = "50px"
-		DigitalClock.style.borderRadius = "15px";
-		DigitalClock.style.textAlign = "center";
+document.addEventListener("DOMContentLoaded", function() {
+	
+	const path = window.location.pathname;
+	
+	if(!path.includes("LightwebHistory.html")){
+			DigitalClock.style.position = "absolute";
+			DigitalClock.style.left = "0px";
+			DigitalClock.style.top = "0px";
+			DigitalClock.style.border = "2px solid var(--DigitalClockBackground)";
+			DigitalClock.style.width = "300px";
+			DigitalClock.style.fontSize = "50px"
+			DigitalClock.style.borderRadius = "15px";
+			DigitalClock.style.textAlign = "center";
 		
-		DigitalCalendar.style.position = "absolute";
-		DigitalCalendar.style.left = "0px";
-		DigitalCalendar.style.top = "60px";
-		DigitalCalendar.style.border = "2px solid var(--DigitalClockBackground)";
-		DigitalCalendar.style.width = "300px";
-		DigitalCalendar.style.fontSize = "25px";
-		DigitalCalendar.style.borderRadius = "15px";
-		DigitalCalendar.style.textAlign = "center";
+			DigitalCalendar.style.position = "absolute";
+			DigitalCalendar.style.left = "0px";
+			DigitalCalendar.style.top = "60px";
+			DigitalCalendar.style.border = "2px solid var(--DigitalClockBackground)";
+			DigitalCalendar.style.width = "300px";
+			DigitalCalendar.style.fontSize = "25px";
+			DigitalCalendar.style.borderRadius = "15px";
+			DigitalCalendar.style.textAlign = "center";
+		}
 		
-		
-		// Exception Styling
-		
-		if(window.location.pathname.includes("TicTacToe")){
+		if(path.includes("TicTacToe")){
 			DigitalClock.style.left = "0px";
 			DigitalClock.style.top = "1000px";
 			DigitalCalendar.style.left = "0px";
 			DigitalCalendar.style.top = "1060px";
 		}
 		
-		if(window.location.pathname.includes("/HTMLCSim")
-		   || window.location.pathname.includes("/HTMLCExercise")
+		if(path.includes("/HTMLCSim")
+		   || path.includes("/HTMLCExercise")
 		){
 			DigitalCalendar.style.display = "none";
 			DigitalClock.style.display = "none";
 		}
-
-
 	
-	if(window.location.pathname.includes("/Articles/")){
+	if(path.includes("/Articles/")){
 		let linkText = document.createElement("h2");
 		linkText.textContent = "Done? Here are other links.";
 		document.body.appendChild(linkText);
@@ -516,166 +1180,100 @@ window.addEventListener("DOMContentLoaded", () => {
 		informationalPageLink.textContent = "Back to Informational";
 		document.body.appendChild(informationalPageLink);
 		
+		if(!path.toLowerCase().includes("/lightwebmusicbackground.html/")){
 		let LightwebVerificationHeader = document.createElement("header");
 		LightwebVerificationHeader.textContent = "Official Lightweb Site";
 		document.body.appendChild(LightwebVerificationHeader);
+		}
 	
 	}
-	
-	if(window.location.pathname.includes("/MainPages/")){
-	let lightwebCSS = document.createElement("link");
-	lightwebCSS.rel = "stylesheet";
-	lightwebCSS.href = "../CSS/Lightweb.css";
-	lightwebCSS.type = "text/css";
-	document.head.appendChild(lightwebCSS);
 
-	let lightwebDeviceOptimizationCSS = document.createElement("link");
-	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
-	lightwebDeviceOptimizationCSS.type = "text/css";
-	document.head.appendChild(lightwebDeviceOptimizationCSS);
 	
-	let lightwebThemesCSS = document.createElement("link");
-	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
-	lightwebThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebThemesCSS);
+	if(path.includes("/Articles/")){
+		let lightwebArticlesCSS = document.createElement("link");
+		lightwebArticlesCSS.rel = "stylesheet";
+		lightwebArticlesCSS.href = "../CSS/Lightweb.Articles.css";
+		lightwebArticlesCSS.type = "text/css";
+		document.head.appendChild(lightwebArticlesCSS);
+	
+		let lightwebSpecialThemesCSS = document.createElement("link");
+		lightwebSpecialThemesCSS.rel = "stylesheet";
+		lightwebSpecialThemesCSS.href = "../CSS/SpecialLightwebThemes.css";
+		lightwebSpecialThemesCSS.type = "text/css";
+		document.head.appendChild(lightwebSpecialThemesCSS);
 	}
 	
-	if(window.location.pathname.includes("/Articles/")){
-	let lightwebArticlesCSS = document.createElement("link");
-	lightwebArticlesCSS.rel = "stylesheet";
-	lightwebArticlesCSS.href = "../CSS/Lightweb.Articles.css";
-	lightwebArticlesCSS.type = "text/css";
-	document.head.appendChild(lightwebArticlesCSS);
 	
-	let lightwebSpecialThemesCSS = document.createElement("link");
-	lightwebSpecialThemesCSS.rel = "stylesheet";
-	lightwebSpecialThemesCSS.href = "../CSS/SpecialLightwebThemes.css";
-	lightwebSpecialThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebSpecialThemesCSS);
-
-	let lightwebDeviceOptimizationCSS = document.createElement("link");
-	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
-	lightwebDeviceOptimizationCSS.type = "text/css";
-	document.head.appendChild(lightwebDeviceOptimizationCSS);
-	
-	let lightwebThemesCSS = document.createElement("link");
-	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
-	lightwebThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebThemesCSS);
-	}
-	
-	if(window.location.pathname.includes("index.html")){
-	let lightwebArticlesCSS = document.createElement("link");
-	lightwebArticlesCSS.rel = "stylesheet";
-	lightwebArticlesCSS.href = "CSS/Lightweb.Articles.css";
-	lightwebArticlesCSS.type = "text/css";
-	document.head.appendChild(lightwebArticlesCSS);
-
-	let lightwebDeviceOptimizationCSS = document.createElement("link");
-	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "CSS/LightwebDeviceOptimization.css";
-	lightwebDeviceOptimizationCSS.type = "text/css";
-	document.head.appendChild(lightwebDeviceOptimizationCSS);
-	
-	let lightwebThemesCSS = document.createElement("link");
-	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "CSS/LightwebThemes.css";
-	lightwebThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebThemesCSS);
-	}
-	
-	if(window.location.pathname.includes("/Games%20&%20FunStuff/")){
-	let lightwebCSS2 = document.createElement("link");
-	lightwebCSS2.rel = "stylesheet";
-	lightwebCSS2.href = "../CSS/Lightweb.css";
-	lightwebCSS2.type = "text/css";
-	document.head.appendChild(lightwebCSS2);
-
-	let lightwebDeviceOptimizationCSS = document.createElement("link");
-	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
-	lightwebDeviceOptimizationCSS.type = "text/css";
-	document.head.appendChild(lightwebDeviceOptimizationCSS);
-	
-	let lightwebThemesCSS = document.createElement("link");
-	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
-	lightwebThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebThemesCSS);
-	}
-	
-	if(window.location.pathname.includes("/Simulations/")){
-	let lightwebCSS3 = document.createElement("link");
-	lightwebCSS3.rel = "stylesheet";
-	lightwebCSS3.href = "../CSS/Lightweb.css";
-	lightwebCSS3.type = "text/css";
-	document.head.appendChild(lightwebCSS3);
-	
-	let lightwebSimulationsCSS3 = document.createElement("link");
-	lightwebSimulationsCSS3.rel = "stylesheet";
-	lightwebSimulationsCSS3.href = "../CSS/Lightweb.Simulations.css";
-	lightwebSimulationsCSS3.type = "text/css";
-	document.head.appendChild(lightwebSimulationsCSS3);
-
-	let lightwebDeviceOptimizationCSS = document.createElement("link");
-	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
-	lightwebDeviceOptimizationCSS.type = "text/css";
-	document.head.appendChild(lightwebDeviceOptimizationCSS);
-	
-	let lightwebThemesCSS = document.createElement("link");
-	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
-	lightwebThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebThemesCSS);
+	if(path.includes("/Simulations/")){
+		let lightwebSimulationsCSS3 = document.createElement("link");
+		lightwebSimulationsCSS3.rel = "stylesheet";
+		lightwebSimulationsCSS3.href = "../CSS/Lightweb.Simulations.css";
+		lightwebSimulationsCSS3.type = "text/css";
+		document.head.appendChild(lightwebSimulationsCSS3);
 	}
 
-	if(window.location.pathname.includes("/Utility/")){
-	let lightwebCSS3 = document.createElement("link");
-	lightwebCSS3.rel = "stylesheet";
-	lightwebCSS3.href = "../CSS/Lightweb.css";
-	lightwebCSS3.type = "text/css";
-	document.head.appendChild(lightwebCSS3);
-
-	let lightwebDeviceOptimizationCSS = document.createElement("link");
-	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
-	lightwebDeviceOptimizationCSS.type = "text/css";
-	document.head.appendChild(lightwebDeviceOptimizationCSS);
-	
-	let lightwebThemesCSS = document.createElement("link");
-	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
-	lightwebThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebThemesCSS);
-	}
-	
-	if(window.location.pathname.includes("/Other/")){
-		let lightwebDeviceOptimizationCSS = document.createElement("link");
-	lightwebDeviceOptimizationCSS.rel = "stylesheet";
-	lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
-	lightwebDeviceOptimizationCSS.type = "text/css";
-	document.head.appendChild(lightwebDeviceOptimizationCSS);
-	
+	if(path.includes("/Utility/") || 
+	   path.includes("/Other/") || 
+	   path.includes("/Simulations/") ||
+	   path.includes("/Games%20&%20FunStuff/") ||
+	   path.includes("/MainPages/") || 
+	   path.includes("/SubMainPages/")){
 		let lightwebCSS = document.createElement("link");
-	lightwebCSS.rel = "stylesheet";
-	lightwebCSS.href = "../CSS/Lightweb.css";
-	lightwebCSS.type = "text/css";
-	document.head.appendChild(lightwebCSS);
+		lightwebCSS.rel = "stylesheet";
+		lightwebCSS.href = "../CSS/Lightweb.css";
+		lightwebCSS.type = "text/css";
+		document.head.appendChild(lightwebCSS);
+		
+		let lightwebDeviceOptimizationCSS = document.createElement("link");
+		lightwebDeviceOptimizationCSS.rel = "stylesheet";
+		lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
+		lightwebDeviceOptimizationCSS.type = "text/css";
+		document.head.appendChild(lightwebDeviceOptimizationCSS);
+		
+		let lightwebThemeCSS = document.createElement("link");
+		lightwebThemeCSS.rel = "stylesheet";
+		lightwebThemeCSS.href = "../CSS/LightwebThemes.css";
+		lightwebThemeCSS.type = "text/css";
+		document.head.appendChild(lightwebThemeCSS);
 	
-		let lightwebThemesCSS = document.createElement("link");
-	lightwebThemesCSS.rel = "stylesheet";
-	lightwebThemesCSS.href = "../CSS/LightwebThemes.css";
-	lightwebThemesCSS.type = "text/css";
-	document.head.appendChild(lightwebThemesCSS);
 	}
+	
+	if(path.includes("index.html")){
+		let lightwebDeviceOptimizationCSS = document.createElement("link");
+		lightwebDeviceOptimizationCSS.rel = "stylesheet";
+		lightwebDeviceOptimizationCSS.href = "CSS/LightwebDeviceOptimization.css";
+		lightwebDeviceOptimizationCSS.type = "text/css";
+		document.head.appendChild(lightwebDeviceOptimizationCSS);
+		
+		let lightwebThemeCSS = document.createElement("link");
+		lightwebThemeCSS.rel = "stylesheet";
+		lightwebThemeCSS.href = "CSS/LightwebThemes.css";
+		lightwebThemeCSS.type = "text/css";
+		document.head.appendChild(lightwebThemeCSS);
+	}
+	
+	if(path.includes("/SubSections/")){
+		let lightwebDeviceOptimizationCSS = document.createElement("link");
+		lightwebDeviceOptimizationCSS.rel = "stylesheet";
+		lightwebDeviceOptimizationCSS.href = "../../CSS/LightwebDeviceOptimization.css";
+		lightwebDeviceOptimizationCSS.type = "text/css";
+		document.head.appendChild(lightwebDeviceOptimizationCSS);
+		
+		let lightwebThemeCSS = document.createElement("link");
+		lightwebThemeCSS.rel = "stylesheet";
+		lightwebThemeCSS.href = "../../CSS/LightwebThemes.css";
+		lightwebThemeCSS.type = "text/css";
+		document.head.appendChild(lightwebThemeCSS);
+		
+		let lightwebCSS = document.createElement("link");
+		lightwebCSS.rel = "stylesheet";
+		lightwebCSS.href = "../../CSS/Lightweb.css";
+		lightwebCSS.type = "text/css";
+		document.head.appendChild(lightwebCSS);
+	}
+	
 	
 });
-
 	
 	
 

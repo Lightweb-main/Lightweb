@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lightweb: Music Player</title>
+		<style>
+			#DigitalClock, #DigitalCalendar{
+				display: none;
+			}
+			#AriaMathDiv {
+				width: 0px;
+				height: 0px;
+				cursor: none;
+			}	
+			#musicsDiv {
+			
+			}
+		</style>
+	</head>
+	<body> <header>Official Lightweb Site</header>
+	<br><br>
+	<h2 style="text-align: center; font-size: 35px;">Welcome to Lightweb's Music Background</h2>
+	<p>Here you can play some background music while you scroll in Lightweb or anywhere else</p>
+		<div data-video="atgjKEgSqSU" data-loop="1" id="AriaMathDiv"></div>
+		<div id="musicsDiv">
+		<button id="AriaMathPlayBtn">Play Aria Math --- C418</button>
+		</div>
+		
+		<script src="https://www.youtube.com/iframe_api"></script>
+
+	<script>
+	
+	let player;
+	
+	 function onYouTubeIframeAPIReady() {
+            const div = document.getElementById("AriaMathDiv");
+            const videoId = div.getAttribute("data-video");
+
+            player = new YT.Player("AriaMathDiv", {
+                videoId: videoId,
+                playerVars: {
+                    autoplay: 0,
+					mute: 1,
+                    controls: 0,	
+                }, 
+				onReady: function() {
+				}
+           });
+        }
+		
+		document.addEventListener("DOMContentLoaded", function() {
+		
+		document.getElementById("AriaMathPlayBtn").addEventListener("click", function() {
+						if (player && player.playVideo) {
+							player.playVideo();
+							player.unMute();
+							localStorage.setItem("currentMusicBackground", "AriaMath");
+						} 
+		});
+		
+		
+		window.addEventListener("load", function() {
+			if (localStorage.getItem("currentMusicBackground") === "AriaMath") {
+				player.playVideo(); 
+				player.unMute();
+			}
+		});
+		
+		});
+
+	</script>
+
+		
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="../Important/MusicBackLocStor.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

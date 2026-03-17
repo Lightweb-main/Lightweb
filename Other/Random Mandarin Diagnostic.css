@@ -1,0 +1,50 @@
+#container{
+	padding: 20px;
+	border: 2px solid var(--border);
+}
+
+#choicesDiv{
+	font-size: 17px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+	gap: 10px;
+	padding: 10px;
+}
+
+button{
+	border: none;
+	background-color: none;
+	color: black;
+	font-weight: bold;
+	border-radius: 10px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#questionNumDiv, #questionDisplayDiv{
+	padding: 5px;
+	font-size: 25px;
+	border: 1px solid var(--border);
+}
+
+#questionNumDisplay, #questionSetDisplay{
+	text-align: left;
+}
+
+
+#submitBtnDiv {
+	text-align: right;
+}
+#submitBtn {
+	margin-top: 35px;
+	width: 15%;
+	height: 35%;
+	padding: 10px;
+	border: 2px solid #aaaaaa;
+}
+
+.selected{
+	background-color: #aaaaaa !important;
+	border-color: #101010 !important;
+}

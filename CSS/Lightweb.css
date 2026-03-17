@@ -2,6 +2,7 @@
  
 #searchInput {
 background-color: var(--SearchArticlesColor);
+color: var(--color);
 font-weight: var(--FontWeight);
      width: 100%;
      max-width: 600px;
@@ -31,40 +32,15 @@ font-weight: var(--FontWeight);
 	font-size: calc(0.25 * 1vw + 0.5em);
 }
 
-#screenTypes{
+.settingDiv {
 	border: 2px solid var(--border);
 	width: 20vw;
 	height: auto;
-	position: absolute;
-	top: 20vh;
-	left: 10vw;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-}
-
-#calendarSettings{
-	border: 2px solid var(--border);
-	width: 20vw;
-	height: auto;
-	position: absolute;
-	top: 20vh;
-	left: 35vw;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-}
-
-#otherSettings{
-	border: 2px solid var(--border);
-	width: 20vw;
-	height: auto;
-	position: absolute;
-	top: 20vh;
-	left: 60vw;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
+	padding: 5px;
 }
 
 body a{

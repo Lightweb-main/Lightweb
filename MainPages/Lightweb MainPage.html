@@ -7,8 +7,8 @@
 				position: fixed;
 				bottom: 0px;
 				right: 0px;
-				width: 400px;
-				height: 325px;
+				width: 23vw;
+				height: 40vh;
 				background-color: var(--bg);
 			}
 		</style>
@@ -24,11 +24,6 @@
 		<!-- You Found Me.....
 		<a href="Noninformational.html">Noninformational</a><br><br>
 		-->
-
-		<?php
-			echo "E";
-		?>
-			
 		<a href="#" onclick="Link9(); return false;" class="MainPage">Lightwebs Background</a><br><br>
 		<a href="#" onclick="Link2(); return false;" class="MainPage">Games & Fun Stuff</a><br><br>
 		<a href="#" onclick="Link5(); return false;" class="MainPage">Simulations</a><br><br>
@@ -38,10 +33,16 @@
 	
 		</div>
 		<iframe id="History" src="../LightwebHistory/LightwebHistory.html"></iframe>
-
-
+		
+		
 		<script src="../Important/DigitalClock.js"></script>
 			<script>
+	
+	document.addEventListener("keydown", (e) => {
+		if(e.key.toLowerCase() === "m"){
+			window.open("LightwebMusicBackground.html", "_blank", "width=700,height=600")
+		}
+	});
 	
 	
   function Link1() {
@@ -117,7 +118,15 @@
 	"Antidisestablishmentarianism refers to the opposition of the disestablishment of the Church of England.",
 	"The sun is a deadly laser.",
 	"Laser stands for <b>L</b>ight <b>A</b>mplification by <b>S</b>imulated <b>E</b>missions of <b>R</b>adiation.",
-	`<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="font-size: 20px; border: none; background-color: none;">Rickrolling is a popular internet meme that refers to misleading hyperlinks, or any digital links, that links to the song, "Never Gonna Give You Up" by Rick Ashley.</a>`,
+	`<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="font-size: 20px; border: none; background-color: transparent;">Rickrolling is a popular internet meme that refers to misleading hyperlinks, or any digital links, that links to the song, "Never Gonna Give You Up" by Rick Ashley.</a>`,
+	`Light travels at 299,792,458 meters per second, or about 874 thousand times faster than sound.`,
+	`The Mitochondria is the powerhouse of the cell as it breaks down sugars into energy.`,
+	`The Roman Empire as its peak is smaller than the United States.`,
+	`For a brief period of time, you were the youngest person in the world.`,
+	`Color is an illusion as it's created by cone cells in your retina that send signals to your brain which makes you see color.`,
+	`Hot air rises while cold air sinks.`,
+	`Idkwhyididthissome says hi.`,
+	`Notch got banned from his own game.`
   ];
   
   const currentDay = new Date();
@@ -137,7 +146,6 @@ setInterval(funfactGenerator, 1000 * 60 * 60);
 </body>
 
 </html>
-
 
 
 

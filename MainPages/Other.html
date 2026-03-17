@@ -29,11 +29,17 @@
 	<input type="text" style="font-family: times-new-roman;" id="searchInput" placeholder="Search Games..." />
 	<ul id="SearchInputVacuum">
 	<li>
+		<a href="../Other/Coin%20Flipper.html">Coin Flipper</a><br><br><br>
+	</li>
+	<li>
+		<a href="../Other/Dice%20Roller.html">Dice Roller</a><br><br><br>
+	</li>
+	<li>
 		<a href="../Other/Random%20Animal%20Generator.html">Random Animal Generator</a><br><br><br>
 	</li>
 	<li>
-		<a href="../Utility/Random%20Number%20Generator.html" class="articles">Random Number Generator</a><br><br><br>
-		</li>
+		<a href="../Other/Random%20Number%20Generator.html" class="articles">Random Number Generator</a><br><br><br>
+	</li>
 	<li>
 		<a href="../Other/Text%20Scrambler.html">Text Scrambler</a><br><br><br>
 	</li>
@@ -56,11 +62,11 @@
 
 
     searchInput.addEventListener('input', function () {
-      const searchTerm = this.value.toLowerCase();
+      const searchTerm = this.value;
       let visibleCount = 0;
 
       listItems.forEach((li) => {
-         const text = li.textContent.toLowerCase();
+         const text = li.textContent;
         const isVisible = text.includes(searchTerm);
         li.style.display = isVisible ? '' : 'none';
         if (isVisible) visibleCount++;
