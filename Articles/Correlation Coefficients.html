@@ -13,13 +13,15 @@
 	<body> 
 	<h1>Correlation Coefficients</h1>
 	<h2>Introduction</h2>
+	<p>
 	Correlation Coefficients are the numbers that range from -1 to 1 that quantifies the strength and direction (linear relationship) between a variable
 	and another with 1 being a perfect correlation and zero being no correlation at all. Correlation Coefficients are often disrupted by outliers (numb
 	ers significantly out of range or an unusual number).
-
+	</p>
 	<h2>Pearson's Correlation Coefficient</h2>
+	<p>
 	Pearson’s Correlation Coefficient is a way to calculate the linear relationship between two continuous variables…
-	
+	</p>
 	<table>
 	<tr>
 	<th>X</th>
@@ -56,8 +58,9 @@
 	</table>
 
 
+<p>
 The formula is a lot but here it is…
-<math display="block">
+</p><math display="block">
 <mrow>
 <mfrac>
 	<mrow>
@@ -125,51 +128,55 @@ The formula is a lot but here it is…
 </mrow>
 </math>
 
-<p>(x<sub>i</sub>-x) - Every x value in a sample subtracted by the mean.</p>
-<p>(y<sub>i</sub>- y) - Every y value in a sample is subtracted by the mean.</p>
+<example>(x<sub>i</sub>-x) - Every x value in a sample subtracted by the mean.</example>
+<example>(y<sub>i</sub>- y) - Every y value in a sample is subtracted by the mean.</example>
+<p>
 So we take all the values for x and y and find the mean of both variables…
-<p>X= 238/7 = 34</p>
-<p>Y = 49/7 = 7</p>
-<p>-30 - 25 - 15 - 5 + 10 + 24 + 41 = 0 </p>
-<p>-7 - 6 - 2 + 0 + 3 + 5 + 7 = 0 </p>
+</p><example>X= 238/7 = 34</example>
+<example>Y = 49/7 = 7</example>
+<example>-30 - 25 - 15 - 5 + 10 + 24 + 41 = 0 </example>
+<example>-7 - 6 - 2 + 0 + 3 + 5 + 7 = 0 </example>
+<p>
 Quick note: If the value is equal to zero like (x - the mean of x) = 0, that means (HAHAHA) that the value of (variable - the mean of the variable) is its mean…
-<p>(xi - x)(yi - y)</p>
-<p>-30 * -7 = 210</p>
-<p>-25 * -6 = 150</p>
-<p>-15 * -2 = 30</p>
-<p>-5 * 0 = 0</p>
-<p>10 * 3 = 30</p>
-<p>24 * 5 = 120</p>
-<p>41 * 7 = 287</p> 
+</p><example>(xi - x)(yi - y)</example>
+<example>-30 * -7 = 210</example>
+<example>-25 * -6 = 150</example>
+<example>-15 * -2 = 30</example>
+<example>-5 * 0 = 0</example>
+<example>10 * 3 = 30</example>
+<example>24 * 5 = 120</example>
+<example>41 * 7 = 287</example> 
 
 
-<p>210 + 150 + 30 + 0 + 30 + 120 + 287 = 827</p>
+<example>210 + 150 + 30 + 0 + 30 + 120 + 287 = 827</example>
  
-<p>827[(xi - x)&sup2;][(yi - y)&sup2;]</p>
+<example>827[(xi - x)&sup2;][(yi - y)&sup2;]</example>
+<p>
 Now finding the squared versions of all the numbers…
-<p>(-30)2 = 900</p> 
-<p>(-25)2 = 625</p> 
-<p>(-15)2 = 225</p> 
-<p>(-5)2 = 25</p> 
-<p>102 = 100</p> 
-<p>242 = 576</p> 
-<p>412 = 1681</p> 
-<p>900 + 625 + 225 + 25 + 100 + 576 + 1681 = 4132</p> 
+</p><example>(-30)2 = 900</example> 
+<example>(-25)2 = 625</example> 
+<example>(-15)2 = 225</example> 
+<example>(-5)2 = 25</example> 
+<example>102 = 100</example> 
+<example>242 = 576</example> 
+<example>412 = 1681</example> 
+<example>900 + 625 + 225 + 25 + 100 + 576 + 1681 = 4132</example> 
 
-<p>(-7)2 = 49</p> 
-<p>(-6)2 = 36</p> 
-<p>(-2)2 = 4</p> 
-<p>02 = 0</p> 
-<p>(3)2 = 9</p> 
-<p>(5)2 = 25</p> 
-<p>(7)2 = 49 </p> 
+<example>(-7)2 = 49</example> 
+<example>(-6)2 = 36</example> 
+<example>(-2)2 = 4</example> 
+<example>02 = 0</example> 
+<example>(3)2 = 9</example> 
+<example>(5)2 = 25</example> 
+<example>(7)2 = 49 </example> 
 
-<p>49 + 36 + 4 + 0 + 9 + 25 + 49 = 172</p> 
-<p>4132 * 172 = 710704<p>
+<example>49 + 36 + 4 + 0 + 9 + 25 + 49 = 172</example> 
+<example>4132 * 172 = 710704</example>
 
-<p>827 / &radic;710704 = 827 / 843= 0.981</p> 
+<example>827 / &radic;710704 = 827 / 843= 0.981</example> 
+<p>
 The correlation coefficient between x and y is 0.981, signifying a very strong covariance between the two variables.<br><br>
-
+</p>
 
 
 

@@ -8,17 +8,23 @@
 	<body> 	
 		<h1>Eigenvector and Eigenvalue</h1>
 		<h2>Introduction</h2>
-    Eigenvectors and Eigenvalues are special values included in spectral theory.
-    <h2>Eigenvalues</h2>
-    Eigenvalues appear in matrices and in linear transformations. They quantify how stretched an eigenvector is. The formula for finding an eigenvalue is...
-    <br><br>
+    <p>
+	Eigenvectors and Eigenvalues are special values included in spectral theory.
+    </p>
+	<h2>Eigenvalues</h2>
+    <p>
+	Eigenvalues appear in matrices and in linear transformations. They quantify how stretched an eigenvector is. The formula for finding an eigenvalue is...
+    </p>
+	<br><br>
 	<math display="block" style="font-size: 25px;">
 	<mo>Av = &lambda;v</mo>
 	</math><br><br><br><br>
-	<p style="font-size: 16px;">A - the matrix</p>
-	<p style="font-size: 16px;">v - the eigenvector</p>
-	<p style="font-size: 16px;">&lambda; - the scalar eigenvalue</p>
-    In sematic form, the matrix times the eigenvector is equal to the eigenvector times the scalar eigenvalue. An example of this formula being used is this scalar-matrix multiplication problem...<br><br>
+	<example>A - the matrix</example>
+	<example>v - the eigenvector</example>
+	<example>&lambda; - the scalar eigenvalue</example>
+    <p>
+	In sematic form, the matrix times the eigenvector is equal to the eigenvector times the scalar eigenvalue. An example of this formula being used is this scalar-matrix multiplication problem...<br><br>
+	</p>
 	<math display="block" style="font-size: 35px;">
     <mrow>
     <mo>[</mo>
@@ -43,10 +49,10 @@
       </mtr>
     </mtable>
     <mo>]</mo>
-  </mrow><br>
+  </mrow>
 	<mo>&lambda; = 4</mo>
 </math>
-		So matrix A is <math style="font-size: 20px;">
+		<p>So matrix A is <math style="font-size: 20px;">
     <mrow>
     <mo>[</mo>
     <mtable rowspacing="4pt" columnspacing="1em">
@@ -166,12 +172,16 @@
     </mtable>
     <mo>]</mo>
 </math>
+		<p>
 		The two matrices are not equal, meaning that the eigenvalue is incorrect. But we can find the eigenvalue of a 2x2 matrix by the formula...
-		<p style="font-size: 45px;">|A - &lambda;I|</p>
-		<p style="font-size: 16px">I = Identity Matrix</p>
-		<p style="font-size: 16px">A = Matrix A</p>
-		<p style="font-size: 16px">&lambda; = Eigenvalue</p>
+		</p>
+		<example>|A - &lambda;I|</example>
+		<example>I = Identity Matrix</example>
+		<example>A = Matrix A</example>
+		<example>&lambda; = Eigenvalue</example>
+		<p>
 		So taking Matrix A...
+		</p>
 		<math display="block" style="font-size: 35px;">
     <mrow>
     <mo>[</mo>
@@ -188,7 +198,9 @@
     <mo>]</mo> 
 	</mrow>
 		</math><br><br><br><br>
+		<p>
 		And the Identity Matrix with the eigenvalue...
+		</p>
 		<math display="block" style="font-size: 35px;">
     <mrow>
     <mo>[</mo>
@@ -235,7 +247,9 @@
     <mo>]</mo> 
 	</mrow>
 		</math><br><br><br><br>
+		<p>
 		Calculating the Determinant...
+		</p>
 		<math display="block" style="font-size: 35px;">
     <mrow>
     <mo>[</mo>
@@ -261,7 +275,9 @@
 		<math display="block" style="font-size: 35px;">
 			<msup><mn>&lambda;</mn><mo>2</mo></msup><mo>- 10&lambda;</mo><mo>+ 29</mo>
 		</math><br><br><br><br>
+		<p>
 		The determinant got reduced to a quadratic equation. You can either factor, or if impossible use the quadratic formula...
+		</p>
 		<math display="block" style="font-size: 35px;">
 		<mrow>
 			<mfrac>
@@ -341,11 +357,17 @@
     <mi>2i</mi>
     </mrow>
 		</math><br><br><br>
+		<p>
 		Looks like the eigenvalue is a complex value and has two possible values itself. Remember that sometimes you can get a complex eigenvalue.
+		</p>
 		<h2>Eigenvalue Significance</h2>
+		<p>
 		The eigenvalue can show how stretched an eigenvector gets, eigenvectors don't change direction as they increase/decrease in length. An eigenvalue of 2 means that the eigenvector would be double the length, 1 means that no change is present, -1 means that the vector will be pointing in the opposite direction.
+		</p>
 		<h2>Eigenvectors</h2>
+		<p>
 		Eigenvector(s)  can only be found after the eigenvalue(s) is known. To find the eigenvector, subtract Matrix A by the eigenvalue times the identity matrix like this...
+		</p>
 	<math display="block" style="font-size: 35px;">
     <mrow>
     <mo>[</mo>
@@ -415,7 +437,7 @@
     <mo>]</mo> 
 	</mrow>
 		</math><br><br><br><br>
-		We'll then use the A<math style="font-size: 20px;">
+		<p>We'll then use the A<math style="font-size: 20px;">
 		 <mo>[</mo>
     <mtable rowspacing="4pt" columnspacing="1em">
       <mtr>
@@ -426,19 +448,23 @@
       </mtr>
     </mtable>
     <mo>]</mo> 
-	</mrow></math> = 0 formula to find the eigenvectors...
+	</mrow></math> = 0 formula to find the eigenvectors...</p>
 	<math display="block" style="font-size: 35px;">
 		<mo>When &lambda; = 5 + 2i</mo>
 		</math><br><br><br><br>
 		<math display="block" style="font-size: 35px;">
 		<mo>(-2 - 2i)x + 2y = 0</mo>
 		</math><br><br><br><br>
+		<p>
 		We'll then move the 2y to the right...
-			<math display="block" style="font-size: 35px;">
+		</p>
+		<math display="block" style="font-size: 35px;">
 		<mo>(-2 - 2i)x = -2y</mo>
 		</math><br><br><br><br>
+		<p>
 		We'll isolate the x variable on the left by dividing both sides by (-2 - 2i)...
-			<math display="block" style="font-size: 35px;">
+		</p>
+		<math display="block" style="font-size: 35px;">
 		<mrow>
 			<mfrac>
 				<mrow>
@@ -473,7 +499,9 @@
 				</mfrac>
 			</mrow>
 		</math><br><br><br><br>
+		<p>
 		But this leaves us with 2y being divided by (-2 - 2i) on the right. To remove the complex denominator on the right, we'll multiply both sides by the conjugate (-2 + 2i) to remove the imaginary number...
+		</p>
 		<math display="block" style="font-size: 35px;">
 		<mrow>
 		<mo>(a - bi)(a + bi) = </mo>
@@ -622,7 +650,9 @@
     </mtable>
     <mo>]</mo> 
 	</mrow></math>
+		<p>
 		Now eigenvector 1 is found, but another can be found through 5 - 2i...
+		</p>
 		<math display="block" style="font-size: 35px;">
     <mrow>
 	<mo>&lambda; = 5 - 2i</mo>
@@ -765,7 +795,9 @@
 	</mrow>
 		</math>
 		<h2>3x3 Matrices and beyond</h2>
+		<p>
 		Matrices that have dimensions bigger than 2 will have different formulas with them. But there is a pattern...
+		</p>
 		<br>
 		<math display="block">
 			<mo>[</mo>
