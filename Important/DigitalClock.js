@@ -73,6 +73,7 @@ const hyperlinkHoverColorSelection = document.getElementById("hyperlinkHoverColo
 
 
 
+
 function clearLocalStorage(){
 	
 	localStorage.clear();
@@ -91,6 +92,11 @@ function clearLocalStorage(){
 	window.location.reload(true);
 }
 
+document.addEventListener("DOMContentLoaded", function(){
+	if(localStorage.length === 0){
+		clearLocalStorage();
+	}
+});
 
 function update() {
 	if(document.body.classList.contains("christmasScreen") && (frameCount % 15 === 0)){
