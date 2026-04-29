@@ -92,6 +92,8 @@ function clearLocalStorage(){
 	window.location.reload(true);
 }
 
+
+
 document.addEventListener("DOMContentLoaded", function(){
 	if(localStorage.length === 0){
 		clearLocalStorage();
@@ -1449,7 +1451,11 @@ function setSize(toggle){
 	
 
 	if(textSizeSelection && toggle === 1){
-		localStorage.setItem("lightwebTextSize", Number(textSizeSelection.value) || 1);
+		localStorage.setItem("lightwebTextSize", Number(textSizeSelection.value));
+	}
+	
+	if(isNaN(textSizeSelection.value)){
+		localStorage.setItem("lightwebTextSize", 1);
 	}
 	
 	if(textFontSelection && toggle === 1){
