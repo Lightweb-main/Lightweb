@@ -1454,7 +1454,8 @@ function setSize(toggle){
 		localStorage.setItem("lightwebTextSize", Number(textSizeSelection.value));
 	}
 	
-	if(isNaN(textSizeSelection.value)){
+	const val = localStorage.getItem("lightwebTextSize").trim();
+	if(isNaN(val)){
 		localStorage.setItem("lightwebTextSize", 1);
 	}
 	
@@ -1493,6 +1494,10 @@ function setSize(toggle){
 				hypli.style.fontSize = `${25 * textSizeMultiplier}px`;
 			} else {
 				hypli.style.fontSize = `${30 * textSizeMultiplier}px`;
+			}
+			
+			if(hypli.id === "exitSettingsBtn"){
+				hypli.style.fontSize = `${50 * textSizeMultiplier}px`;
 			}
 		});
 	});
