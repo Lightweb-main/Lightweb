@@ -1,47 +1,200 @@
 <!DOCTYPE html> <html>
 	<head>
-		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		
 		 
 	</head>
 	<body> 
 		<h1>Complex Plane Coordinate System</h1>
 		<h2>Introduction</h2>
 		<p>
-		The complex plane (also called Argand Diagram) coordinate system is the Cartesian coordinate system with two lines being the x-axis and the y-axis, but instead of the y-axis being the y value, it’s all the imaginary numbers…
+		The complex plane (also called Argand Diagram) coordinate system is the Cartesian coordinate system with two lines being the x-axis and the y-axis, but instead of the y-axis being the y value, it’s replaced with imaginary numbers…
 		</p>
-		<img src="../Images/EmptyGraph.png" width=600 height=600>
+		<img src="../Images/EmptyGraph.png">
 		<p>
 		Examples of complex numbers on this coordinate system is 3 + 2i, 5i - 3. This basically translates to (3, 2) since the real part of the complex number is 3 and the imaginary part is 2…
 		</p>
-		<img src="../Images/CPCS.img1.png" width=600 height=600>
+		<img src="../Images/CPCS.img1.png">
 		<p>
 		Complex numbers on a graph can also form 2D shapes as multiple points can be plotted in complex notation…
 		</p>
-		<example>(3, 2i), 6(1, i/3), (3, -4i), (6, -4i)</example>
-		<img src="../Images/CPCS.img2.png" width=600 height=600>
+		<math>
+			<mo>(</mo>
+			<mn>3</mn>
+			<mo>,</mo>
+			<mn>2i</mn>
+			<mo>)</mo>
+			<mo>,</mo>
+			<mrow>
+				<mn>6</mn>
+				<mo>(</mo>
+				<mn>1</mn>
+				<mo>,</mo>
+				<mfrac>
+					<mn>&nbsp;1&nbsp;</mn>
+					<mn>&nbsp;3&nbsp;</mn>
+				</mfrac>
+				<mn>i</mn>
+				<mo>)</mo>
+				<mo>,</mo>
+				<mo>(</mo>
+				<mn>3</mn>
+				<mo>,</mo>
+				<mn>-4i</mn>
+				<mo>)</mo>
+				<mo>,</mo>
+				<mo>(</mo>
+				<mn>6</mn>
+				<mo>,</mo>
+				<mn>-i</mn>
+				<mo>)</mo>
+			</mrow>
+		</math>
+		<img src="../Images/CPCS.img2.png">
 		<h2>Polar Coordinates Conversion</h2>
 		<p>
 		To convert complex plane coordinates or just cartesian coordinates to polar coordinates. First find out the square root of both of the x and y values squared added together, we will name this value, “r”...
 		</p>
 		<example>(4, 6i)</example>
-		<example>r = &radic;x&sup2; + y&sup2;</example>
-		<example>r = &radic;4<sup>2</sup> + 6<sup>2</sup></example>
-		<example>r = &radic;16 + 36</example>
-		<example>r = &radic;52 </example>
+		<math>
+			<ms>r</ms>
+			<mo>=</mo>
+			<msqrt>
+				<msup>
+					<ms>x</ms>
+					<mn>2</mn>
+				</msup>
+				<mo>+</mo>
+				<msup>
+					<ms>y</ms>
+					<mn>2</mn>
+				</msup>
+			</msqrt>
+		</math>
+		<br><br>
+		<math>
+			<ms>r</ms>
+			<mo>=</mo>
+			<msqrt>
+				<msup>
+					<ms>4</ms>
+					<mn>2</mn>
+				</msup>
+				<mo>+</mo>
+				<msup>
+					<ms>4</ms>
+					<mn>2</mn>
+				</msup>
+			</msqrt>
+		</math>
+		<br><br>
+		<math>
+			<ms>r</ms>
+			<mo>=</mo>
+			<msqrt>
+				<mn>16</mn>
+				<mo>+</mo>
+				<mn>36</mn>
+			</msqrt>
+		</math>
+		<br><br>
+		<math>
+			<ms>r</ms>
+			<mo>=</mo>
+			<msqrt>
+				<mn>52</mn>
+			</msqrt>
+		</math>
+		<br><br>
 		<p>
 		r is the square root of 52…
 		</p>
-		<img src="../Images/CPCS.img3.png" width=600 height=600>
+		<img src="../Images/CPCS.img3.png">
 		<p>
-		Now we figure out another value named theta (𝚹) that is the arctan of the coordinate of y over x…
+		Now we figure out another value named theta (θ) that is the arctan of the coordinate of y over x…
 		</p>
-		<example>𝚹 = tan-1(y / x)</example>
-		<example>𝚹 = arctan(6 / 4)= 0.983 rad</example>
+		<math>
+			<ms>θ</ms>
+			<mo>=</mo>
+			<msup>
+				<mtext>tan</mtext>
+				<mn>-1</mn>
+			</msup>
+			<mo>(</mo>
+			<mfrac>
+				<ms>y</ms>
+				<ms>x</ms>
+			</mfrac>
+			<mo>)</mo>
+		</math>
+		<br><br>
+		<math>
+			<ms>θ</ms>
+			<mo>=</mo>
+			<mtext>arctan</mtext>
+			<mo>(</mo>
+			<mfrac>
+				<ms>6</ms>
+				<ms>4</ms>
+			</mfrac>
+			<mo>)</mo>
+			<mo>&asymp;</mo>
+			<mtext>0.983 rad</mtext>
+		</math>
 		<p>
 		Since theta is 0.983 radians, now we can check our answers for both sides to make sure that we got the correct value of theta by using cosine and sine…
 		</p>
-		<example>x = r * cos(𝚹) = &radic;52 * cos(0.983 rad) = &radic;52 * 0.555 = 4.002 CLOSE ENOUGH</example>
-		<example>y = r * sin(𝚹) = &radic;52 * sin(0.983 rad) =  &radic;52 * sin(0.983 rad) = &radic;52 * 0.832 = 6.00008 CLOSE ENOUGH</example><br>
+		<math>
+			<ms>x</ms>
+			<mo>=</mo>
+			<ms>r</ms>
+			<mo>*</mo>
+			<mtext>cos(θ)</mtext>
+			<mo>=</mo>
+			<msqrt>
+				<mn>52</mn>
+			</msqrt>
+			<mo>*</mo>
+			<mtext>cos</mtext>
+			<mo>(</mo>
+			<mtext>0.983 rad</mtext>
+			<mo>)</mo>
+			<mo>=</mo>
+			<msqrt>
+				<mn>52</mn>
+			</msqrt>
+			<mo>*</mo>
+			<mn>0.555</mn>
+			<mo>=</mo>
+			<mn>3.998</mn>
+			<mo>&asymp;</mo>
+			<mn>4</mn>
+		</math>
+		<math>
+			<ms>y</ms>
+			<mo>=</mo>
+			<ms>r</ms>
+			<mo>*</mo>
+			<mtext>sin(θ)</mtext>
+			<mo>=</mo>
+			<msqrt>
+				<mn>52</mn>
+			</msqrt>
+			<mo>*</mo>
+			<mtext>sin</mtext>
+			<mo>(</mo>
+			<mtext>0.983 rad</mtext>
+			<mo>)</mo>
+			<mo>=</mo>
+			<msqrt>
+				<mn>52</mn>
+			</msqrt>
+			<mo>*</mo>
+			<mn>0.832</mn>
+			<mo>=</mo>
+			<mn>5.9996</mn>
+			<mo>&asymp;</mo>
+			<mn>6</mn>
+		</math>
 		<p>
 		Since the x and y values are very close to the coordinates that are (4, 6) we can say that the theta value is correct.  This formula can also be used to convert polar coordinates back into Cartesian coordinates…
 		</p>

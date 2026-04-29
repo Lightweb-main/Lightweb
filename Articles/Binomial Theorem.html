@@ -1,8 +1,21 @@
-<!DOCTYPE html> <html>
+<!DOCTYPE html> 
+<html>
 	<head>
-	
-		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
-		
+		<style>
+			div > example {
+				border: 3px solid var(--border);
+				width: 85px;
+				height: 85px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0px;
+			}
+			
+			div {
+				gap: 0px;
+			}
+		</style>
 	</head>
 	<body> 
 		<h1>Binomial Theorem</h1>
@@ -15,7 +28,7 @@
 		You see, we can't just multiply these together like numbers because every term would have to get multiplied by something. This is where the binomial theorem comes into play...
 		</p>
 		<br><br>
-		<math display="block">
+		<math>
   <mrow>
     <msup>
       <mrow>
@@ -78,7 +91,7 @@
 		This is because of the formula...
 </p>
 		<br><br>
-<math display="block">
+<math>
   <mrow>
     <msup>
       <mrow>
@@ -132,7 +145,50 @@
 <p>
 		If we look at the coefficents very closely, we can see that they form the Pascal Triangle...
 </p>
-		<img src="../Images/PascalTriangle.png">
+		<div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>2</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>3</example>
+				<example>3</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>4</example>
+				<example>6</example>
+				<example>4</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>5</example>
+				<example>10</example>
+				<example>10</example>
+				<example>5</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>6</example>
+				<example>15</example>
+				<example>20</example>
+				<example>15</example>
+				<example>6</example>
+				<example>1</example>
+			</div>
+		</div>
 <p>
 		This is very important since every individual coefficent is equal to each number on this triangle...
 </p>
@@ -156,7 +212,7 @@
 		But there is another formula of finding the Binomial Coefficent of a term...
 </p>
 		<br><br>
-<math display="block">
+<math>
 <mrow>
       <mo>(</mo>
       <mtable>
@@ -180,7 +236,7 @@
 		This formula is used to find Binomial Coefficients. The semantic (word) form of this is "N chooses K". So for example, lets solve the third number in the sixth row...
 </p>
 		<br><br>
-<math display="block">
+<math>
 <mrow>
       <mo>(</mo>
       <mtable>
@@ -200,7 +256,7 @@
     </mrow>
 </math>
 <br><br>
-<math display="block">
+<math>
 	<mrow>
       <mo>(</mo>
       <mtable>
@@ -220,7 +276,7 @@
     </mrow>
 </math>
 <br><br>
-<math display="block">
+<math>
 <mrow>
       <mo>(</mo>
       <mtable>
@@ -240,7 +296,7 @@
     </mrow>
 </math>
 <br><br>
-<math display="block">
+<math>
 <mrow>
       <mo>(</mo>
       <mtable>
@@ -256,7 +312,50 @@
 <p>
 		Lets see if that's correct...
 </p>
-		<img src="../Images/BinomTheo.img1.png">
+		<div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>2</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>3</example>
+				<example>3</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>4</example>
+				<example>6</example>
+				<example>4</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>5</example>
+				<example>10</example>
+				<example>10</example>
+				<example>5</example>
+				<example>1</example>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: center;">
+				<example>1</example>
+				<example>6</example>
+				<example>15</example>
+				<example style="border: 4px solid var(--border); background-color: yellow;">20</example>
+				<example>15</example>
+				<example>6</example>
+				<example>1</example>
+			</div>
+		</div>
 <p>
 		Looks like the third number in the sixth row is 20, meaning that the formula is correct. (keep in mind that the 1 on the left counts as the '0th' number in the sixth row, thats why the third number in the sixth row equals 20)
 </p>

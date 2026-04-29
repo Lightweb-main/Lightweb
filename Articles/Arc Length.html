@@ -1,6 +1,6 @@
 <!DOCTYPE html> <html class="ImageInverse">
 	<head>
-		<link rel="stylesheet" href="../CSS/Lightweb.Articles.css">
+		
 		 
 	</head>
 	<body> 
@@ -16,21 +16,31 @@
 		<example>While the angle is expressed in Radians</example>
 		<example>Arc Length = r * &theta;</example>
 		<example>While the angle is expressed in degrees</example>
-		<br><br><math display="block">
-		<mrow>
-			<mfrac>
-				<mtext>&theta;</mtext>
-				<mn>360</mn>
-			</mfrac>
-			<mtext>&nbsp;* 2&pi;r</mtext>
-		</mrow>
-		</math><br><br>
+		<math>
+			<mrow>
+				<mfrac>
+					<mi>&theta;</mi>
+					<mn>360</mn>
+				</mfrac>
+				<mo>*</mo>
+				<mn>2</mn>
+				<mi>&pi;</mi>
+				<mi>r</mi>
+			</mrow>
+		</math>
+		<br><br>
 		<example>Or</example>
-		<br><br><math display="block">
+		<br><br>
+		<math>
 		<mrow>
 			<mfrac>
-				<mtext>&theta; * &pi;</mtext>
+				<mrow>
+					<mi>&theta;</mi>
+					<mo>*</mo> 
+					<mi>&pi;</mi>
+				</mrow>
 				<mn>180</mn>
+			
 			</mfrac>
 			<mtext>&nbsp;* r</mtext>
 		</mrow>
@@ -43,31 +53,58 @@
 		<p>
 			What we know from the problem is the central angle which is 1/8th of the circumference of a full circle, which is 45 degrees. And we can also see that the radius of the circle is 25m or 25 meters. So by plugging in the values...
 		</p>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mfrac>
-				<mtext>45&deg; * &pi;</mtext>
+				<mrow>
+					<mn>45</mn>
+					<mo>&deg;</mo>
+					<mo>*</mo> 
+					<mi>&pi;</mi>
+				</mrow>
 				<mn>180</mn>
 			</mfrac>
-			<mtext>&nbsp;* 25m</mtext>
+			<mo>*</mo>
+			<mn>25</mn>
+			<mi>m</mi>
+		</mrow>
+		</math>
+		<br><br>
+		<math>
+		<mrow>
+			<mfrac>
+				<mrow>
+					<mn>45</mn>
+					<mo>&deg;</mo> 
+					<mo>*</mo>
+					<mi>&pi;</mi>
+				</mrow>
+				<mn>180</mn>
+			</mfrac>
+			<mo>≈</mo>
+			<mn>0.785</mn>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mfrac>
-				<mtext>45&deg; * &pi;</mtext>
+				<mrow>
+					<mn>45</mn>
+					<mo>&deg;</mo> 
+					<mo>*</mo>
+					<mi>&pi;</mi>
+				</mrow>
 				<mn>180</mn>
 			</mfrac>
-			<mtext>≈ 0.785</mtext>
-		</mrow>
-		</math><br><br>
-		<br><br><math display="block">
-		<mrow>
-			<mfrac>
-				<mtext>45&deg; * &pi;</mtext>
-				<mn>180</mn>
-			</mfrac>
-			<mtext>* 25 = 0.78539 * 25 = 19.635m</mtext>
+			<mo>*</mo>
+			<mn>25</mn>
+			<mo>=</mo>
+			<mn>0.78539</mn>
+			<mo>*</mo>
+			<mn>25</mn>
+			<mo>=</mo>
+			<mn>19.635</mn>
+			<mi>m</mi>
 		</mrow>
 		</math><br><br>
 		<p>
@@ -77,19 +114,27 @@
 		<example>An arc covers about 1.5&pi; radians of a circle, which has a radius of 45m. Calculate the length of the arc.</example>
 		<img src="../Images/ArcLength.img2.png">
 		<p>
-			What we know from the problem is the central angle is about 1.5%pi; radians, or about 270 degrees. This is true because 1 rad * &pi; equals 180, so 1 rad * pi plus 0.5 rad * pi would equal 270 degrees. What we also know is that the radius of the circle is 45m. So by plugging in the values, the length of the arc is...
+			What we know from the problem is the central angle is about 1.5&pi; radians, or about 270 degrees. This is true because 1 rad * &pi; equals 180, so 1 rad * pi plus 0.5 rad * pi would equal 270 degrees. What we also know is that the radius of the circle is 45m. So by plugging in the values, the length of the arc is...
 		</p>
-		<br><br><math display="block">
-		<mrow>
-			<mtext>1.5 rad * r</mtext>
-		</mrow>
-		</math><br><br>
-		<br><br><math display="block">
-		<mrow>
-			<mtext>1.5 * 45m</mtext>
-		</mrow>
-		</math><br><br>
-		<br><br><math display="block">
+		<br><br>
+		<math>
+			<mrow>
+				<mn>1.5</mn>
+				<mtext>&nbsp;rad</mtext>
+				<mo>*</mo> 
+				<mi>r</mi>
+			</mrow>
+		</math>
+		<br><br>
+		<math>
+			<mrow>
+				<mn>1.5</mn>
+				<mo>*</mo>
+				<mn>45</mn>
+				<mi>m</mi>
+			</mrow>
+		</math>
+		<math>
 		<mrow>
 			<mtext>Arc Length = 67.5m</mtext>
 		</mrow>
@@ -102,57 +147,108 @@
 			To find the length of an arc without the radius, instead calculate the <b>sector area</b> which can be using the formula...
 		</p>
 		<example>In degrees...</example>
-		<br><br><math display="block">
-		<mrow>
-			<mtext>Sector Area = (&theta; / 360&deg;) * &pi;r&sup2;</mtext>
-		</mrow>
-		</math><br><br>
+		<br><br>
+		<math>
+			<mrow>
+				<mtext>Sector Area</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mi>&theta;</mi> 
+					<mrow>
+						<mn>360</mn>
+						<mi>&deg;</mi> 
+					</mrow>
+				</mfrac>
+				<mo>*</mo>
+				<mi>&pi;</mi>
+				<msup><mi>r</mi><mn>2</mn></msup>
+			</mrow>
+		</math>
 		<example>In radians</example>
-		<br><br><math display="block">
-		<mrow>
-			<mtext>Sector Area = 1/2 * r&sup2;&theta;</mtext>
-		</mrow>
-		</math><br><br>
+		<br><br>
+		<math>
+			<mrow>
+				<mtext>Sector Area</mtext>
+				<mo>=</mo> 
+				<mfrac>
+					<mn>1</mn>
+					<mn>2</mn>
+				</mfrac>
+				<mo>*</mo>
+				<msup><mi>r</mi><mn>2</mn></msup>
+				<mi>&theta;</mi>
+			</mrow>
+		</math>
 		<h3>Examples</h3>
 		<h4>Example #1</h4>
 		<example>A rainbow in a storm has been spotted, it's shape is that of an arc that is 1/4th of a circumference of a complete circle, the area of it's sector is about 120m<sup>2</sup>. Calculate it's length.</example>
 		<p>
 			What we know from this problem is that the central angle is about 1/4th of 360 degrees, or 360 / 4 degrees, or 90 degrees. The only value unknown is the area of the sector...
 		</p>
-		<br><br><math display="block">
+		<br><br>
+		<math>
+			<mrow>
+				<mtext>Sector Area</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mrow>
+						<mn>90</mn>
+						<mi>&deg;</mi>
+					</mrow>
+					<mrow>
+					<mn>360</mn>
+					<mi>&deg;</mi> 
+					</mrow>
+				</mfrac>
+				<mo>*</mo>
+				<mi>&pi;</mi>
+				<msup><mi>r</mi><mn>2</mn></msup>
+			</mrow>
+		</math>
+		<br><br>
+		<math>
+			<mrow>
+				<mn>120</mn>
+				<msup><mi>m</mi><mn>2</mn></msup>
+				<mo>=</mo>
+				<mfrac>
+					<mn>1</mn>
+					<mn>4</mn>
+				</mfrac>
+				<mo>*</mo>
+				<mi>&pi;</mi>
+				<msup><mi>r</mi><mn>2</mn></msup>
+			</mrow>
+		</math><br><br>
+		<br><br>
+		<math>
+			<mrow>
+				<mn>480</mn>
+				<msup><mi>m</mi><mn>2</mn></msup>
+				<mo>=</mo>
+				<mi>&pi;</mi>
+				<msup><mi>r</mi><mn>2</mn></msup>
+			</mrow>
+		</math><br><br>
+		<br><br><math>
 		<mrow>
-			<mtext>Sector Area = (90&deg; / 360&deg;) * &pi;r&sup2;</mtext>
+			<mn>152.788</mn>
+			<mo>=</mo>
+			<msup><mi>r</mi><mn>2</mn></msup>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
-		<mrow>
-			<mtext>120 = (1/4) * &pi;r&sup2;</mtext>
-		</mrow>
-		</math><br><br>
-		<br><br><math display="block">
-		<mrow>
-			<mtext>120 = (1/4) * &pi;r&sup2;</mtext>
-		</mrow>
-		</math><br><br>
-		<br><br><math display="block">
-		<mrow>
-			<mtext>480 = &pi;r&sup2;</mtext>
-		</mrow>
-		</math><br><br>
-		<br><br><math display="block">
-		<mrow>
-			<mtext>152.788 = r&sup2;</mtext>
-		</mrow>
-		</math><br><br>
-		<br><br><math display="block">
-		<mrow>
-			<mtext>r = 12.36m;</mtext>
-		</mrow>
+		<math>
+			<mrow>
+				<mi>r</mi>
+				<mo>=</mo>
+				<mn>12.36</mn>
+				<mi>m</mi>
+			</mrow>
 		</math><br><br>
 		<p>
 			So by isolating r on the right and the sector area on the left, we can see that the radius is 12.36m<sup>2</sup>. Now we can solve it normally...
 		</p>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mfrac>
 				<mtext>90&deg; * &pi;</mtext>
@@ -161,7 +257,7 @@
 			<mtext>&nbsp;* 12.36m</mtext>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mfrac>
 				<mtext>90&deg; * &pi;</mtext>
@@ -170,7 +266,7 @@
 			<mtext>&nbsp;* 3.09m&sup2; = 1.5707 * 12.36m</mtext>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mfrac>
 				<mtext>90&deg; * &pi;</mtext>
@@ -179,7 +275,7 @@
 			<mtext>&nbsp;* 3.09m&sup2; = 1.5707 * 12.36m</mtext>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mfrac>
 				<mtext>90&deg; * &pi;</mtext>
@@ -199,7 +295,7 @@
 		<example>3/8 * 360 =</example>
 		<example>1080 / 8 = </example>
 		<example>135 --> 3/8 * 360&deg; = 135&deg;</example>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mfrac>
 				<mtext>135&deg; * &pi;</mtext>
@@ -208,33 +304,46 @@
 			<mtext>&nbsp;* r&sup2; = Arc Length</mtext>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mtext>Sector Area = (135&deg; / 360&deg;) * &pi;r&sup2;</mtext>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mtext>1 meter&sup2;  = 3/8 * &pi;r&sup2;</mtext>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mtext>1 meter&sup2; = 3/8 * &pi;r&sup2;</mtext>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mtext>2.66 meter&sup2; = &pi;r&sup2;</mtext>
 		</mrow>
 		</math><br><br>
-		<example>2.66m<sup>2</sup> / &pi; ≈ 0.8467m<sup>2</sup></example>
-		<br><br><math display="block">
+		<math>
+			<mfrac>
+				<msup>
+					<mtext>2.66m</mtext>
+					<mn>2</mn>
+				</msup>
+				<ms>&pi;</ms>
+			</mfrac>
+			<mo>≈</mo>
+			<msup>
+				<mtext>0.8467m</mtext>
+				<mn>2</mn>
+			</msup>
+		</math>
+		<br><br><math>
 		<mrow>
 			<mtext>r&sup2; = 0.8467m&sup2;</mtext>
 		</mrow>
 		</math><br><br>
-			<br><br><math display="block">
+			<br><br><math>
 		<mrow>
 			<msqrt>
 				<mn>0.8467</mn>
@@ -242,27 +351,27 @@
 			<mtext>&nbsp;=&nbsp; 0.9201</mtext>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mtext>r = 0.9201 meters</mtext>
 		</mrow>
 		</math>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mfrac>
 				<mtext>135&deg; * &pi;</mtext>
 				<mn>180</mn>
 			</mfrac>
-			<mtext>&nbsp;* 0.9201m; = 2.3562 * 0.9201m</mtext>
+			<mtext>&nbsp;* 0.9201m = 2.3562 * 0.9201m</mtext>
 		</mrow>
 		</math><br><br>
-		<br><br><math display="block">
+		<br><br><math>
 		<mrow>
 			<mfrac>
 				<mtext>135&deg; * &pi;</mtext>
 				<mn>180</mn>
 			</mfrac>
-			<mtext>&nbsp;* 0.9201m; = 2.1670m</mtext>
+			<mtext>&nbsp;* 0.9201m = 2.1670m</mtext>
 		</mrow>
 		</math><br><br>
 		<p>
@@ -283,7 +392,7 @@
 			<example>Formulas: </example>
 			<example>Arc Length (Radians): r * &theta;</example> 
 			<example>Arc Length (Degrees):</example>
-			<math display="block">
+			<math>
 				<mfrac>
 					<mrow>
 						<ms>&theta;</ms>
