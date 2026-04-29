@@ -50,6 +50,7 @@ setInterval(update, 1);
 let frameCount = 0;
 let fullMilitaryTime;
 const fullMilitaryTimeCheckbox = document.getElementById("full-military-time-button");
+const toggleChristmasScreen = document.getElementById("christmas-screen-button");
 const snowflakeToggleCheckbox = document.getElementById('snowflake-toggle-checkbox');
 const militaryTimeSettings = document.getElementById("militaryTimeSettings");
 const customSpeakSettings = document.getElementById("customSpeakSettings");
@@ -64,20 +65,30 @@ const toggleDarkScreenFlashbangBtn = document.getElementById("dark-screen-flashb
 const darkScreenFlashbangColorBox = document.getElementById("darkScreenFlashbangColorSet");
 const darkScreenFlashingSettings = document.getElementById("darkScreenFlashingSettings");
 const darkScreenSettings = document.getElementById("darkScreenSettings");
+const toggleColorVomitButton = document.getElementById("toggle-colorVomit-button");
+const textSizeSelection = document.getElementById("textSizeSelection");
+const textFontSelection = document.getElementById("textFontSelection");
+const hyperlinkHoverColorSelection = document.getElementById("hyperlinkHoverColorSelection");
+
+
+
 
 function clearLocalStorage(){
 	
+	localStorage.clear();
+	
 	localStorage.setItem("snowflakeToggle", false);
 	localStorage.setItem("toggleCustomSpeak", false);
+	localStorage.setItem("customSpeakSetting", "modernEnglishSpeak");
+	localStorage.setItem("lightwebTextSize", 1);
+	localStorage.setItem("lightwebTextFont", "Default");
 	localStorage.setItem("theme", "default");
 	localStorage.setItem('timeType', '12-hour-clock');
 	localStorage.setItem('calendarType', 'defaultCalendar');
+	localStorage.setItem('calendarType', 'defaultCalendar');
 	
 	
-	toggleCustomSpeakCheckbox.checked = false;
-	toggleShakespeareanSpeakCheckbox.checked = false;
-	snowflakeToggleCheckbox.checked = false;
-	fullMilitaryTimeCheckbox.checked = false;
+	window.location.reload(true);
 }
 
 
@@ -160,14 +171,13 @@ function update() {
 		}
 	}
 	
+	
 	const flashbangColor = localStorage.getItem("darkScreenFlashbangColorBoxValue");
 	if(darkScreenFlashbangColorBox){
 		darkScreenFlashbangColorBox.addEventListener("input", function(){
 			localStorage.setItem("darkScreenFlashbangColorBoxValue", darkScreenFlashbangColorBox.value);
 		});
 	}
-	
-
 	
 	if(localStorage.getItem("darkScreenFlashbangSetting") === 'true'){
 		if(darkScreenFlashbangColorBox){
@@ -262,12 +272,47 @@ function update() {
 		}
     }
 	
+	if(toggleColorVomitButton){
+		if(frameCount % 60 === 0){
+			toggleColorVomitButton.style.backgroundColor = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`;
+			toggleColorVomitButton.style.color = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`;
+		}
+	}
+	
+	if(toggleScramblerBtn){
+		if(frameCount % 350 === 0){
+			let btnText = toggleScramblerBtn.textContent.split('');
+			for(let i = 0; i < 25; i++){
+				let j = Math.floor(Math.random() * btnText.length);
+				let k = Math.floor(Math.random() * btnText.length);
+				[btnText[j], btnText[i]] = [btnText[i], btnText[j]]
+			}
+			toggleScramblerBtn.textContent = btnText.join('');
+			setTimeout(function(){
+				toggleScramblerBtn.textContent = "Scrambler";
+			}, 100);
+		}
+	}
+	
+	if(localStorage.getItem("colorVomitActivated") === 'true'){
+		const allElements = document.querySelectorAll("*");
+		
+		allElements.forEach(el => {
+			if(frameCount % 14 === 0){
+				el.style.backgroundColor = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`;
+				el.style.color = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`; 
+				el.style.borderColor = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`; 
+			}
+		});
+	}
+	
 	if(christmasScreenSettings){
 		if(!document.body.classList.contains("christmasScreen")){
 			christmasScreenSettings.style.display = "none";
 		} else {
 			christmasScreenSettings.style.display = "block";
 		}
+		
     }
 	
 	if(CRTBlueScreenSettings){
@@ -321,6 +366,8 @@ function update() {
 		}
 	}
 	
+	
+	
     hour = hour < 10 ? hour : hour;
     min = min < 10 ? "0" + min : min; 
     sec = sec < 10 ? "0" + sec : sec;
@@ -363,6 +410,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	  meta.setAttribute("charset", "UTF-8");
 	  document.head.appendChild(meta);
 	  
+	  
+	 
+	  
 	  document.body.classList.remove('default', 'dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'chaos');
 	  document.body.classList.remove('fullMilitaryTime', 'snowflakeToggleOn');
 	  document.body.classList.remove('dashedCalendar');
@@ -379,9 +429,53 @@ document.addEventListener('DOMContentLoaded', () => {
 	  const toggleImageInversion = localStorage.getItem('toggleImageInversion');
 	  const toggleCustomSpeak = localStorage.getItem('toggleCustomSpeak');
 	  const customSpeakSetting = localStorage.getItem('customSpeakSetting');
-	  const dyslexiaModeSetting = localStorage.getItem('dyslexiaModeSetting');
 	  const darkScreenFlashbangSetting = localStorage.getItem('darkScreenFlashbangSetting');
 	  const darkScreenFlashbangColorBoxValue = localStorage.getItem('darkScreenFlashbangColorBoxValue');
+	  const colorVomitActivated = localStorage.getItem('colorVomitActivated');
+	  
+	  if(localStorage.getItem("toggleScrambler") === "true"){
+			function scrambleText(node){
+				node.childNodes.forEach(child => {
+					if (child.nodeType === Node.TEXT_NODE) {
+						let scrambledText = child.textContent.split('');
+						for (let i = 0; i < 100; i++) {
+							let j = Math.floor(Math.random() * scrambledText.length);
+							let k = Math.floor(Math.random() * scrambledText.length);
+							[scrambledText[j], scrambledText[k]] = [scrambledText[k], scrambledText[j]];
+						}
+						child.textContent = scrambledText.join('');
+					} else if (child.nodeType === Node.ELEMENT_NODE) {
+						scrambleText(child);
+					}
+				})
+			}
+			
+			
+			scrambleText(document.body);
+			const title = document.querySelector("title");
+			let titleText = title.textContent;
+			let scrambledTitleText = title.textContent.split('');
+			for (let i = 0; i < 25; i++) {
+				let j = Math.floor(Math.random() * scrambledTitleText.length);
+				let k = Math.floor(Math.random() * scrambledTitleText.length);
+				[scrambledTitleText[j], scrambledTitleText[k]] = [scrambledTitleText[k], scrambledTitleText[j]];
+			}
+			title.textContent = scrambledTitleText.join('');
+			
+			
+	  }
+	  
+	  if(textSizeSelection){
+		  textSizeSelection.value = localStorage.getItem("lightwebTextSize");
+	  }
+	  
+	  if(textFontSelection){
+		  textFontSelection.value = localStorage.getItem("lightwebTextFont") || "Times New Roman";
+	  }
+	  
+	  if(hyperlinkHoverColorSelection){
+		  hyperlinkHoverColorSelection.value = localStorage.getItem("lightwebHyperlinkHoverColorSelection") || "#ff0000";
+	  }
 	  
 	  if(darkScreenFlashbangColorBox){
 		  darkScreenFlashbangColorBox.value = darkScreenFlashbangColorBoxValue;
@@ -502,6 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  const toggleCustomSpeakBtn = document.getElementById('toggleCustomSpeak');
 	  const toggleScramblerBtn = document.getElementById('toggle-scrambler-button');
 	  const toggleDarkScreenFlashbangCheckbox = document.getElementById("dark-screen-flashbang-checkbox");
+	  const toggleColorVomitButton = document.getElementById("toggle-colorVomit-button");
 	
 	if(toggleDarkScreenFlashbangCheckbox){
 		toggleDarkScreenFlashbangCheckbox.addEventListener('click', () => {
@@ -509,6 +604,16 @@ document.addEventListener('DOMContentLoaded', () => {
 				localStorage.setItem("darkScreenFlashbangSetting", false);
 			} else {
 				localStorage.setItem("darkScreenFlashbangSetting", true);
+			}
+		})
+	}
+	
+	if(toggleColorVomitButton){
+		toggleColorVomitButton.addEventListener('click', () => {
+			if(localStorage.getItem("colorVomitActivated") === 'true'){
+				localStorage.setItem("colorVomitActivated", false);
+			} else {
+				localStorage.setItem("colorVomitActivated", true);
 			}
 		})
 	}
@@ -543,9 +648,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	if(toggleScramblerBtn){
 		toggleScramblerBtn.addEventListener('click', () => {
 			if(localStorage.getItem("toggleScrambler") === 'true'){
+				window.location.reload(true);
 				localStorage.setItem("toggleScrambler", false);
 			} else {
-				alert("Refresh tab to apply speak change");
+				window.location.reload(true);
 				localStorage.setItem("toggleScrambler", true);
 			}
 		})
@@ -556,7 +662,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if(localStorage.getItem('customSpeakSetting') === 'shakespeareanEnglishSpeak') {
 				localStorage.setItem('customSpeakSetting', 'modernEnglishSpeak');
 			} else {
-				alert("Refresh tab to apply speak change");
+				window.location.reload(true);
 				localStorage.setItem('customSpeakSetting', 'shakespeareanEnglishSpeak');
 			}
 		}) 
@@ -567,7 +673,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if(localStorage.getItem('customSpeakSetting') === 'greekLetterSpeak') {
 				localStorage.setItem('customSpeakSetting', 'modernEnglishSpeak');
 			} else {
-				alert("Refresh tab to apply speak change");
+				window.location.reload(true);
 				localStorage.setItem('customSpeakSetting', 'greekLetterSpeak');
 			}
 		}) 
@@ -842,10 +948,18 @@ document.addEventListener("DOMContentLoaded", function(){
 		replaceSigns(document.body, 'Z', '\u0396');
 	}
 	if(!window.location.pathname.includes("LightwebHistory")){
-		replaceSigns(document.body, '*', '×');
+		document.querySelectorAll("mo").forEach(op => {
+			if(op.textContent == "*"){
+				op.textContent = "\u00D7";
+			}
+		});
 	}
 	
-	
+	if(window.location.pathname.includes("/Articles/")){
+		document.querySelectorAll("math").forEach(math => {
+			math.setAttribute("display", "block");
+		});
+	}
 	
 	
 	
@@ -860,9 +974,32 @@ function snowflakeChristmasScreen(){
 			if(localStorage.getItem("snowflakeToggle") === 'true'){
 			let snowflake = document.createElement("img");
 			if(window.location.pathname.includes("index.html")){
-				snowflake.src = "Images/snowflakeImg.png";
+				switch(Math.floor(Math.random() * 3) + 1){
+					case 1:
+						snowflake.src = "Images/snowflakeImg1.png";
+					case 2:
+						snowflake.src = "Images/snowflakeImg2.png";
+					case 3:
+						snowflake.src = "Images/snowflakeImg3.png";
+				}
+			} else if(window.location.pathname.includes("/Calculators/")){
+				switch(Math.floor(Math.random() * 3) + 1){
+					case 1:
+						snowflake.src = "../../Images/snowflakeImg1.png";
+					case 2:
+						snowflake.src = "../../Images/snowflakeImg2.png";
+					case 3:
+						snowflake.src = "../../Images/snowflakeImg3.png";
+				}
 			} else {
-				snowflake.src = "../Images/snowflakeImg.png";
+				switch(Math.floor(Math.random() * 3) + 1){
+					case 1:
+						snowflake.src = "../Images/snowflake.img1.png";
+					case 2:
+						snowflake.src = "../Images/snowflake.img2.png";
+					case 3:
+						snowflake.src = "../Images/snowflake.img3.png";
+				}
 			}
 			snowflake.id = `snowflake${snowflakeNum}`
 			snowflake.className = "snowflakeChristmasScreen";
@@ -940,19 +1077,19 @@ function clearScreenType(){
 const iconthingy = document.createElement('link');
 iconthingy.rel = 'icon'; 
 iconthingy.type = 'image/png'; 
-iconthingy.href = '../Images/Lightweb.icon.png?v=' + faviconNum
+iconthingy.href = '../Important/Lightweb.icon.png?v=' + faviconNum
 
 
 
 const iconthingy2 = document.createElement('link');
 iconthingy2.rel = 'icon'; 
 iconthingy2.type = 'image/png'; 
-iconthingy2.href = 'Images/Lightweb.icon.png?v=' + faviconNum;
+iconthingy2.href = 'Important/Lightweb.icon.png?v=' + faviconNum;
 
 const iconthingy3 = document.createElement('link');
 iconthingy3.rel = 'icon'; 
 iconthingy3.type = 'image/png'; 
-iconthingy3.href = '../../Images/Lightweb.icon.png?v=' + faviconNum;
+iconthingy3.href = '../../Important/Lightweb.icon.png?v=' + faviconNum;
 
 const htmlAdd = `
   <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
@@ -975,7 +1112,7 @@ if(window.location.pathname.includes("/Articles/") ||
    window.location.pathname.includes("/SubMainPages/") ||
    window.location.pathname.includes("/Utility/")
    ){
-	document.head.appendChild(iconthingy2);
+	document.head.appendChild(iconthingy);
 }
 if(window.location.pathname.includes("/SubSections/")){
 	document.head.appendChild(iconthingy3);
@@ -990,7 +1127,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		
 		
 		if(title){
-		tableOfContentsDiv.innerHTML += `<h2>${title.innerHTML}: Table of Contents</h2>`
+		tableOfContentsDiv.innerHTML += `<h2>${title.textContent}: Table of Contents</h2>`
 		}
 		tableOfContentsDiv.id = "tableOfContentsDiv";
 		if(title != null && window.location.pathname.includes("/Articles/")){
@@ -1123,9 +1260,12 @@ window.addEventListener("DOMContentLoaded", () => {
 			});
 			
 		}
+	
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+	
+	
 	
 	const path = window.location.pathname;
 	
@@ -1181,11 +1321,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		informationalPageLink.textContent = "Back to Informational";
 		document.body.appendChild(informationalPageLink);
 		
-		if(!path.toLowerCase().includes("/lightwebmusicbackground.html/")){
-		let LightwebVerificationHeader = document.createElement("header");
+		const LightwebVerificationHeader = document.createElement("header");
 		LightwebVerificationHeader.textContent = "Official Lightweb Site";
 		document.body.appendChild(LightwebVerificationHeader);
-		}
+		
+
 	
 	}
 
@@ -1193,7 +1333,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	if(path.includes("/Articles/")){
 		let lightwebArticlesCSS = document.createElement("link");
 		lightwebArticlesCSS.rel = "stylesheet";
-		lightwebArticlesCSS.href = "../CSS/Lightweb.Articles.css";
+		lightwebArticlesCSS.href = "../CSS/LightwebArticles.css";
 		lightwebArticlesCSS.type = "text/css";
 		document.head.appendChild(lightwebArticlesCSS);
 	
@@ -1202,13 +1342,24 @@ document.addEventListener("DOMContentLoaded", function() {
 		lightwebSpecialThemesCSS.href = "../CSS/SpecialLightwebThemes.css";
 		lightwebSpecialThemesCSS.type = "text/css";
 		document.head.appendChild(lightwebSpecialThemesCSS);
+		
+		let articleTitle = document.createElement("title");
+		articleTitle.textContent = document.querySelector("h1").textContent;
+		document.head.appendChild(articleTitle);
+		let bre = document.createElement("br");
+		for(let i = 0; i < 4; i++){
+			document.querySelector("h1").insertAdjacentElement("afterBegin", bre);
+		}
+		
+		
+		
 	}
 	
 	
 	if(path.includes("/Simulations/")){
 		let lightwebSimulationsCSS3 = document.createElement("link");
 		lightwebSimulationsCSS3.rel = "stylesheet";
-		lightwebSimulationsCSS3.href = "../CSS/Lightweb.Simulations.css";
+		lightwebSimulationsCSS3.href = "../CSS/LightwebSimulations.css";
 		lightwebSimulationsCSS3.type = "text/css";
 		document.head.appendChild(lightwebSimulationsCSS3);
 	}
@@ -1218,7 +1369,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	   path.includes("/Simulations/") ||
 	   path.includes("/Games%20&%20FunStuff/") ||
 	   path.includes("/MainPages/") || 
-	   path.includes("/SubMainPages/")){
+	   path.includes("/SubMainPages/") || 
+	   path.includes("/Articles/")){
 		let lightwebCSS = document.createElement("link");
 		lightwebCSS.rel = "stylesheet";
 		lightwebCSS.href = "../CSS/Lightweb.css";
@@ -1273,14 +1425,87 @@ document.addEventListener("DOMContentLoaded", function() {
 		document.head.appendChild(lightwebCSS);
 	}
 	
-	
 });
 	
 	
+document.addEventListener("DOMContentLoaded", () => setSize(0));
+if(textSizeSelection){
+	textSizeSelection.addEventListener("change", () => setSize(1));
+}
+if(textFontSelection){
+	textFontSelection.addEventListener("change", () => setSize(1));
+}
+
+if(hyperlinkHoverColorSelection){
+	hyperlinkHoverColorSelection.addEventListener("change", () => setSize(1));
+}
+function setSize(toggle){
+	
+
+	if(textSizeSelection && toggle === 1){
+		localStorage.setItem("lightwebTextSize", Number(textSizeSelection.value) || 1);
+	}
+	
+	if(textFontSelection && toggle === 1){
+		localStorage.setItem("lightwebTextFont", textFontSelection.value);
+	}
+	
+	if(hyperlinkHoverColorSelection && toggle === 1){
+		localStorage.setItem("lightwebHyperlinkHoverColorSelection", hyperlinkHoverColorSelection.value);
+	}
+	
+	const scales = [
+		{ elements: "p, span, input, select, option, optgroup, textarea, h5, label", size: 15 },
+		{ elements: "h6", size: 14 },
+		{ elements: "h4", size: 17 },
+		{ elements: "h3", size: 20 },
+		{ elements: "h2, example", size: 25 },
+		{ elements: "math", size: 35 },
+		{ elements: "h1", size: 60 },
+		
+	]
+	
+	const fonts = [
+		{elements: "p, a, span, input, select, option, optgroup, textarea, h1, h2, h3, h4, h5, h6, label, example, math"}
+	]
+	const font = localStorage.getItem("lightwebTextFont") || "Times New Roman";
+	const textSizeMultiplier = localStorage.getItem("lightwebTextSize");
+
+	scales.forEach(group => {
+		document.querySelectorAll(group.elements).forEach(element => {
+			element.style.fontSize = `${group.size * textSizeMultiplier}px`;
+		});
+		
+		document.querySelectorAll("a").forEach(hypli => {
+			if(hypli.classList.contains("articles")){
+				hypli.style.fontSize = `${25 * textSizeMultiplier}px`;
+			} else {
+				hypli.style.fontSize = `${30 * textSizeMultiplier}px`;
+			}
+		});
+	});
+	
+	fonts.forEach(group => {
+		document.querySelectorAll(group.elements).forEach(element => {
+			element.style.fontFamily = font;
+		});
+		
+		document.querySelectorAll("button").forEach(button => {
+			if(!button.classList.contains("settingButton")){
+				button.style.fontFamily = font;
+			}
+		});
+	});
+	
+	document.documentElement.style.setProperty("--hyperlinkHoverColor", localStorage.getItem("lightwebHyperlinkHoverColorSelection"));
+	setTimeout( () => {
+		document.documentElement.style.setProperty("--hyperlinkHoverColor", localStorage.getItem("lightwebHyperlinkHoverColorSelection"));
+	}, 200);
+}
 
 
 
-document.addEventListener('contextmenu', event => event.preventDefault());
+/* document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
   if (event.key === "F12" || event.keyCode === 123) {
     event.preventDefault();
@@ -1295,6 +1520,8 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
+*/
 
 
 
