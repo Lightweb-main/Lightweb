@@ -6,7 +6,7 @@ html#SLT-EarthquakesFaults body.default {
 
 html#SLT-EarthquakesFaults #DigitalClock,
 html#SLT-EarthquakesFaults #DigitalCalendar {
-  border-color: #a6741a ;
+  border-color: #a6741a;
 }
 
 html#SLT-EarthquakesFaults body.default p,
@@ -442,12 +442,6 @@ html#SLT-USConstitution p {
 	text-align: left;
 }
 
-
-
-
-
-
-
-
-
-
+html#SLT-Matrices math {
+	font-size: 55px;
+}
