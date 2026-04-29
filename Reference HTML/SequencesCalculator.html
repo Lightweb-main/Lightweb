@@ -65,7 +65,7 @@
 		</div>
 	</body>
 	<script>
-		const firstTermInput = document.getElementById("firstTermInput");
+		const e = document.getElementById("firstTermInput");
 		const firstTermInputg = document.getElementById("firstTermInputg");
 		const commonDifferenceInput = document.getElementById("commonDifferenceInput");
 		const commonDifferenceInputg = document.getElementById("commonDifferenceInputg");
@@ -81,21 +81,24 @@
 		const geometricSequenceBtn = document.getElementById("geometricSequenceBtn");
 		const arithmeticSequences = document.getElementById("arithmeticSequences");
 		const geometricSequences = document.getElementById("geometricSequences");
+		
 		let sequenceToggle = 0;
 		setInterval(update, 1);
 		function update(){
 			arithmeticSequenceBtn.style.backgroundColor = "#ffffff";
 			geometricSequenceBtn.style.backgroundColor = "#ffffff";
 			arithmeticSequences.style.display = "none";
+			geometricSequenceBtn.style.display = "none";
 			if(sequenceToggle == 0){
 				arithmeticSequenceBtn.style.backgroundColor = "#ffaaaa";
 				arithmeticSequences.style.display = "block";
 			} else {
 				geometricSequenceBtn.style.backgroundColor = "#ffaaaa";
+				geometricSequences.style.display = "block";
 			}
 		}
 		calculateInput.addEventListener('click', function(){
-			let firstTerm = parseFloat(firstTermInput.value);
+			let firstTerm = parseFloat(e.value);
 			let commonDifference = parseFloat(commonDifferenceInput.value);
 			let amountOfTerms = parseInt(amountOfTermInput.value);
 			if(!isNaN(firstTerm) && !isNaN(commonDifference) && !isNaN(amountOfTerms)){

@@ -1,7 +1,6 @@
 <!DOCTYPE html> 
 <html>
 	<head>
-	<link rel="stylesheet" href="../CSS/Lightweb.css">
 	</head>
 
 	<body>
@@ -11,7 +10,7 @@
 		<div style="display: grid; grid-template-columns: repeat(4, 1fr); position: absolute; gap: 25px; top: 20vh; left: 6vw;">
 		<div id="screenTypes" class="settingDiv">
 			<h2 style="text-align: center;">Screen Modes</h2>
-			<div class="settingbutton1">
+			<div class="">
 				<button id="dark-screen-toggle" class="settingButton" style="background-color: var(--darkScreenToggleButton); ">Toggle Dark Mode</button>
 				<div id="darkScreenSettings">
 					<input id="dark-screen-flashbang-checkbox" type="checkbox">Toggle Dark Screen Flashbang</input>
@@ -21,22 +20,22 @@
 					</div>
 				</div>
 			</div>
-			<div class="settingbutton3">
+			<div>
 				<button id="analog-screen-button" class="settingButton" style="background-color: var(--AnalogScreenButton);">Toggle Analog Screen Mode</button>
 			</div>
-			<div class="settingbutton4">
+			<div>
 				<button id="CRTBLUE-screen-button" class="settingButton" style="background-color: var(--CRTBlueScreenButton);">Toggle CRT Blue Screen Mode</button>
 				<div id="CRTBlueScreenSettings">
 					<input id="CRTBlueScreen-flicker-effect-button" type="checkbox">Toggle Flickering</input>
 				</div>
 			</div>
-			<div class="settingbutton6">
+			<div>
 				<button id="squidGame-screen-button" class="settingButton" style="background-color: var(--squidGameScreenButton);">Toggle Squid Game Screen Mode</button>
 			</div>
-			<div class="settingbutton7">
+			<div>
 				<button id="chaos-screen-button" class="settingButton" style="background-color: var(--chaoScreenButton);">Toggle Chaos Screen Mode</button>
 			</div>
-			<div class="settingbutton9">
+			<div>
 				<button id="christmas-screen-button" class="settingButton" style="background-color: var(--christmasScreenButton);">Toggle Christmas Screen Mode</button>
 				<div id="christmasScreenSettings">
 					<input id="snowflake-toggle-checkbox" type="checkbox">Toggle Snowflakes</input>
@@ -45,35 +44,101 @@
 		</div>
 		<div id="calendarSettings" class="settingDiv">
 			<h2>Calendar Settings</h2>
-			<div class="settingbutton2">
+			<div>
 				<button id="millitary-time-button" class="settingButton" style="background-color: var(--militaryTimeButton);">Toggle Millitary Time</button>
 				<div id="militaryTimeSettings">
 					<input id="full-military-time-button" type="checkbox">Full Clock Time</input>
 				</div>
 			</div>
-			<div class="settingbutton5">
+			<div>
 				<button id="dashed-calendar-button" class="settingButton" style="background-color: var(--dashedCalendarButton);">Toggle Dashed Calendar Date</button>
 			</div>
 		</div>
 		
 		<div id="textSettings" class="settingDiv">
 			<h2>Text Settings</h2>
-			<div class="settingButton11">
+			<div>
 				<button id="toggleCustomSpeak" class="settingButton" style="background-color: #cccccc;">Toggle Custom Speak</button>
 				<div id="customSpeakSettings">
 					<input id="shakespearean-speak-checkbox" type="checkbox">Shakespearean Speak</input><br>
 					<input id="greek-letter-speak-checkbox" type="checkbox">Greek Letter Speak</input>
 				</div>
 			</div>
+			<br><br>
+			<div>
+				<p>Text Size:
+				<select id="textSizeSelection">
+					<optgroup label="Default">
+						<option value="1">100%</option>
+					</optgroup>
+					<optgroup label="Custom">
+						<option value="0.1">10%</option>
+						<option value="0.2">20%</option>
+						<option value="0.35">35%</option>
+						<option value="0.5">50%</option>
+						<option value="0.6">60%</option>
+						<option value="0.85">85%</option>
+						<option value="1">100%</option>
+						<option value="1.25">125%</option>
+						<option value="1.5">150%</option>
+						<option value="2">200%</option>
+						<option value="3">300%</option>
+					</optgroup>
+				</select>
+				</p>
+				<p>Not all fonts will be supported on your device</p>
+				<p>Font:
+				<select id="textFontSelection">
+					<optgroup label="Default">
+						<option value="Default">Default (No Change)</option>
+					</optgroup>
+					<optgroup label="Custom">
+						<optgroup label="Cursive">
+							<option style="font-family: 'Comic Sans MS' !important;" value="Comic Sans MS">Comic Sans</option>
+						</optgroup>
+						
+						<optgroup label="Fantasy">
+							<option style="font-family: 'Impact' !important;" value="Impact">Impact</option>
+						</optgroup>
+						
+						
+						<optgroup label="Monospace">
+							<option style="font-family: 'Courier New' !important;" value="Courier New">Courier New</option>
+							<option style="font-family: 'Lucida Console' !important;" value="Lucida Console">Lucida Console</option>
+							<option style="font-family: 'Monaco' !important;" value="Monaco">Monaco</option>
+						</optgroup>
+					
+						<optgroup label="Serif">
+							<option style="font-family: 'Times New Roman' !important;" value="Times New Roman">Times New Roman</option>
+							<option style="font-family: 'Georgia' !important;" value="Georgia">Georgia</option>
+							<option style="font-family: 'Garamond' !important;" value="Garamond">Garamond</option>
+						</optgroup>
+						
+						<optgroup label="San-Serif">
+							<option style="font-family: 'Arial' !important;" value="Arial">Arial</option>
+							<option style="font-family: 'Calibri' !important;" value="Calibri">Calibri</option>
+							<option style="font-family: 'Gill Sans' !important;" value="Gill Sans">Gill Sans</option>
+							<option style="font-family: 'Helvetica' !important;" value="Helvetica">Helvetica</option>
+							<option style="font-family: 'Ink Free' !important;" value="Ink Free">Ink Free</option>
+							<option style="font-family: 'Noto Sans' !important;" value="Noto Sans">Noto Sans</option>
+							<option style="font-family: 'Optima' !important;" value="Optima">Optima</option>
+							<option style="font-family: 'Trebuchet MS' !important;" value="Trebuchet MS">Trebuchet MS</option>
+							<option style="font-family: 'Verdana' !important;" value="Verdana">Verdana</option>
+						</optgroup>
+					</optgroup>
+				</select>
+				</p>
+				<p>Hyperlink Hover Color: <input type="color" id="hyperlinkHoverColorSelection"></p>
+			</div>
 		</div>
 		
 		<div id="otherSettings" class="settingDiv">
 			<h2>Other Settings</h2>
 			<h3>↓ For Darker Screen Types ↓</h3>
-			<div class="settingbutton8"> 
+			<div> 
 				<button id="image-inversion-button" class="settingButton" style="background-color: var(--ImageInvertButton); color: var(--ImageInvertTextColor)">Toggle Image Color Inversion</button>
 			</div>
-			<div class="settingbutton10">
+			<div>
 				<button id="clear-local-storage-button" class="settingButton" style="background-color: #c2e4a7; color: white" onClick="clearLocalStorage()">Clear Local Storage</button>
 			</div>
 		</div>
@@ -81,13 +146,14 @@
 		<div id="trippySettings" class="settingDiv">
 			<h2>Trippy Settings</h2>
 			<p>Warning: These settings can temporarily break the site, refresh when things get too out of hand</p>
-			<div class="settingButton11">
+			<div>
 				<button id="toggle-scrambler-button" class="settingButton" style="background-color: #cccccc;">Scrambler</button>
+				<button id="toggle-colorVomit-button" class="settingButton">Color Vomit</button>
 			</div>
 		</div>
 		
 		<div id="exitSettingsDiv" class="settingDiv">
-			<a style="font-size: 45px; margin: 50px;" href="Lightweb%20MainPage.html">Back to Lightweb</a>
+			<a style="font-size: 30px; margin: 50px;" href="Lightweb%20MainPage.html">Back to Lightweb</a>
 		</div>
 		</div>
 			

@@ -1,13 +1,8 @@
 const canvas = document.getElementById("paintCanvas");
 const paintWidthPreview = document.getElementById("paintWidthPreview");
 
-const paintColorRedSlider = document.getElementById("paintColorRedSlider");
-const paintColorGreenSlider = document.getElementById("paintColorGreenSlider");
-const paintColorBlueSlider = document.getElementById("paintColorBlueSlider");
-
-const paintColorRedDisplay = document.getElementById("paintColorRedDisplay");
-const paintColorGreenDisplay = document.getElementById("paintColorGreenDisplay");
-const paintColorBlueDisplay = document.getElementById("paintColorBlueDisplay");
+const paintColorInput = document.getElementById("paintColorInput");
+const canvasBackgroundColorInput = document.getElementById("canvasBackgroundColorInput");
 
 
 const paintWidthDisplay = document.getElementById("paintWidthDisplay");
@@ -16,7 +11,37 @@ const paintScatterDisplay = document.getElementById("paintScatterDisplay");
 const paintWidthSlider = document.getElementById("paintWidthSlider");
 const paintScatterSlider = document.getElementById("paintScatterSlider");
 
+
+const paintSettings = document.getElementById("paintSettings");
+const canvasSettings = document.getElementById("canvasSettings");
+const downloading = document.getElementById("downloading");
+
+
+const nextPageBtn = document.getElementById("nextPageBtn");
+
+
+
 const context = canvas.getContext("2d");
+
+
+let canvasScreenshots = [];
+let pageActive = 1;
+
+nextPageBtn.addEventListener("click", function(){
+	if(pageActive == 1){
+		pageActive = 2;
+	} else if(pageActive == 2){
+		pageActive = 3;
+	} else if(pageActive == 3){
+		pageActive = 1;
+	}
+});
+
+
+changeCanvasBackground.addEventListener("click", function(){
+	context.fillStyle = canvasBackgroundColorInput.value;
+	context.fillRect(0, 0, canvas.width, canvas.height);
+});
 
 function generateCanvas(){
 	const rect = canvas.getBoundingClientRect(); 
@@ -40,13 +65,7 @@ let scatterY = 0;
 let paintWidth = paintWidthSlider.value;
 let paintScatter = paintScatterSlider.value;
 
-let paintColorR = paintColorRedSlider.value;
-let paintColorG = paintColorGreenSlider.value;
-let paintColorB = paintColorBlueSlider.value;
-
-let r  = parseInt(paintColorR, 10); 
-let g  = parseInt(paintColorG, 10); 
-let b  = parseInt(paintColorB, 10); 
+let paintColor = paintColorInput.value;
 	
 setInterval(update, 10);
 
@@ -55,28 +74,24 @@ function update(){
 	
 	paintWidthDisplay.textContent = `Paint Width: ${paintWidth}`;
 	paintScatterDisplay.textContent = `Scatter: ${paintScatter}`;
-	
-	paintColorRedDisplay.textContent = `Red: ${paintColorR}`;
-	paintColorGreenDisplay.textContent = `Green: ${paintColorG}`;
-	paintColorBlueDisplay.textContent = `Blue: ${paintColorB}`;
-	paintColorRedDisplay.style.color = `rgb(${r}, 0, 0)`;
-	paintColorGreenDisplay.style.color = `rgb(0, ${g}, 0)`;
-	paintColorBlueDisplay.style.color = `rgb(0, 0, ${b})`;
-	
-	
+
 	paintWidth = paintWidthSlider.value;
 	paintScatter = paintScatterSlider.value;
+	paintColor = paintColorInput.value;
 	
-	paintColorR = paintColorRedSlider.value;
-	paintColorG = paintColorGreenSlider.value;
-	paintColorB = paintColorBlueSlider.value;
+	paintSettings.style.display = "none";
+	canvasSettings.style.display = "none";
+	downloading.style.display = "none";
+	
+	if(pageActive == 1){
+		paintSettings.style.display = "block";
+	} else if(pageActive == 2){
+		canvasSettings.style.display = "block";
+	} else if(pageActive == 3){
+		downloading.style.display = "block";
+	}
 	
 	
-	r = parseInt(paintColorR, 10); 
-	g = parseInt(paintColorG, 10); 
-	b = parseInt(paintColorB, 10); 
-	
-	paintWidthPreview.style.borderColor = `rgb(${r}, ${g}, ${b})`
 	paintWidthPreview.style.borderWidth = paintWidth + "px";
 	
 
@@ -97,8 +112,9 @@ function getPos(e){
         };
 	}
 }
-function startPainting(){
+function startPainting(e){
 	drawing = true;
+	canvasScreenshots.push(context.getImageData(0, 0, canvas.width, canvas.height));
 	draw(e);
 }
 
@@ -114,8 +130,8 @@ function draw(e) {
 	scatterX = Math.floor(Math.random() * paintScatter) - paintScatter / 2;
 	scatterY = Math.floor(Math.random() * paintScatter) - paintScatter / 2;
 	const boundaries = canvas.getBoundingClientRect();
-	context.strokeStyle = `rgb(${r}, ${g}, ${b})`;
-	context.fillStyle = `rgb(${r}, ${g}, ${b})`;
+	context.strokeStyle = paintColor;
+	context.fillStyle = paintColor;
 	context.lineWidth = paintWidth;
 	
 	if(paintScatter > 0){
@@ -130,7 +146,9 @@ function draw(e) {
 		context.beginPath();
 		context.moveTo(pos.x, pos.y);
 	}
+	
 }
+
 
 canvas.addEventListener('mousedown', startPainting);
 canvas.addEventListener('touchstart', startPainting);
@@ -138,6 +156,13 @@ canvas.addEventListener('mouseup', endPainting);
 canvas.addEventListener('touchend', endPainting);
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('touchmove', draw);
+
+document.addEventListener("keydown", (e) => {
+	if(e.ctrlKey && e.key.toLowerCase() === "z"){
+		if(canvasScreenshots.length <= 0) return;
+		context.putImageData(canvasScreenshots.pop(), 0, 0);
+	}
+});
 
 function exit(){
 	window.location.href = "../MainPages/Other.html";
@@ -151,12 +176,6 @@ function downloadPNG(){
 	link.click();
 }
 
-function downloadPDF(){
-	let link = document.createElement('a');
-	link.href = canvas.toDataURL('image/pdf');
-	link.download = 'LightwebPaint.pdf';
-	link.click();
-}
 
 function downloadJPEG(){
 	let link = document.createElement('a');

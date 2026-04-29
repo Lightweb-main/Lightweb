@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lightweb: Text Modifier</title>
+	<link rel="stylesheet" href="Text%20Modifier.css">
+	<meta charset="UTF-8"/>
+</head>
+
+<body>
+    <h1>Lightweb: Text Modifier</h1>
+	<div id="selectTextMode">
+		<button id="textScramblerSelectBtn">Text Scrambler</button>
+		<button id="textDegrammarifierSelectBtn">Text Degrammarifier</button>
+		<button id="textCaseAlternatorSelectBtn">Text Case Alternator</button>
+	</div>	
+	<div id="textScrambler">
+		<h2>Original Text</h2>
+		<textarea id="originalText" class="input"></textarea><br>
+		<button  onClick="scramble()">Scramble</button>
+		<h2>Scrambled Text</h2>
+		<textarea id="scrambledText" class="input" readonly></textarea>
+		<button id="exit" class="exitButton" onClick="exit()">Exit</button>
+	</div>
+	<div id="textDegrammarify">
+		<h2>Original Text</h2>
+		<textarea id="originalText2" class="input"></textarea><br>
+		<button  onClick="degrammarify()">Degrammarify</button>
+		<h2>Degrammared Text</h2>
+		<textarea id="degrammarifiedText" class="input" readonly></textarea>
+		<button id="exit" class="exitButton" onClick="exit()">Exit</button>
+	</div>
+	<div id="textCaseAlternator">
+		<h2>Original Text</h2>
+		<input type="checkbox" id="textCaseAlternatorOppositeSwitchingCheckbox">Opposite Switching</input><br><br>
+		<textarea id="originalText3" class="input"></textarea><br>
+		<button  onClick="alternateCase()">Alternate Cases</button>
+		<h2>Alternate Cased Text</h2>
+		<textarea id="alternateCasesText" class="input" readonly></textarea>
+		<button id="exit" class="exitButton" onClick="exit()">Exit</button>
+	</div>
+</body>
+	
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="Text%20Modifier.js"></script>
+</html>

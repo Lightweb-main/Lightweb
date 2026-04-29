@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lightweb: Punnett Square Calculator</title>
+  <style>
+	#container{
+		width: fit-content;
+		height: fit-content;
+		border: 4px solid var(--border);
+		padding: 15px;
+		display: grid;
+	}
+	
+	.offspring {
+		width: 100px;
+		height: 100px;
+		display: flex;
+		
+		justify-content: center;
+		align-items: center;
+		border: 2px solid var(--border);
+	}
+	
+	.alleleDisplay {
+		width: 100px;
+		height: 100px;
+		display: flex;
+		font-size: 35px;
+		
+		justify-content: center;
+		align-items: center;
+	}
+  </style>
+</head>
+<body>
+	<br><br><br><br> 
+	<h1>Punnett Square Calculator</h1>
+	<div style="height: auto; border: 2px solid var(--border); display: block; padding: 15px;">
+			<input id="alleles1Input"> Alleles 1</input><br><br>
+			<input id="alleles2Input"> Alleles 2</input>
+			
+			<button id="generatePunnettSquareBtn">Generate</button>
+			<h2>Conditions</h2>
+			<ul>
+				<li>Both alleles must have equal amount of letter to each other.</li>
+				<li>Both alleles must have a length divisible by 2.</li>
+				<li>Both alleles must have a length greater than 1.</li>
+				<li>Spaces will be cut out.</li>
+			</ul>
+			<button onClick="exit()">Exit</button>
+	</div>
+	<br>
+	<div style="display: flex; justify-content: center;">
+		<div id="container">
+			
+		</div>
+	</div>
+	
+	
+	<script>
+		function exit(){
+			window.location = "../../SubMainPages/CalculatorPage.html";
+		}
+	</script>
+	
+	<script src="Punnett%20Square%20Calculator.js"></script> 
+	<script src="../../Important/DigitalClock.js"></script>
+</body>
+</html>

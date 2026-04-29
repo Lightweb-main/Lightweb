@@ -66,6 +66,9 @@
 		
 		<div id="compoundInterestDiv">
 			<h2>Input</h2>
+			<input id="compoundInterestPrincipalInput">  Principal ($)</input><br><br>
+			<input id="compoundInterestRateOfInterestInput">  Annual Rate (%)</input><br><br>
+			<input id="compoundInterestTimeInput">  Time (Years)</input><br><br>
 			<select id="compoundInterestTimeSpanInput">
 				<option value="Daily365">Daily (365 Days)</option>
 				<option value="Daily360">Daily (360 Days)</option>
@@ -78,12 +81,12 @@
 				<option value="Semiannually">Semiannually</option>
 				<option value="Annually">Annually</option>
 			</select><br><br>
-			<input id="compoundInterestPrincipalInput">  Principal ($)</input><br><br>
-			<input id="compoundInterestRateOfInterestInput">  Annual Rate (%)</input><br><br>
-			<input id="compoundInterestTimeInput">  Time (Years)</input><br><br>
 			<button id="compoundInterestBtn">Calculate</button>
+			
 			<p style="text-align: center; font-size: 21px;" id="compoundInterestDisplay"></p>
 		</div>
+		
+		<button onClick="exit()">Exit</button>
 		
 		
 		

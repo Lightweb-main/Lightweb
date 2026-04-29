@@ -1,0 +1,25 @@
+.input {
+	width: 70%;
+	height: 500px;
+	display: flex;
+}
+
+button {
+	padding: 5px;
+	font-size: 25px;
+}
+
+#selectTextMode {
+	display: flex;
+	flex-direction: rows;
+	gap: 15px;
+	padding: 25px;
+	border: 2px solid var(--border);
+	border-radius: 25px;
+	overflow-x: scroll;
+}
+
+#selectTextMode button {
+	padding: 15px;
+	font-size: 15px;
+}

@@ -7,35 +7,41 @@
 </head>
 
 <body>
+
 	<div id="container">
-	<canvas id="paintCanvas"></canvas>
-	<div id="settings">
-	<h3 id="paintWidthDisplay">Paint Width: </h3>
-	<input style="display: inline;" id="paintWidthSlider" type="range" min="1" max="100" value="1">
-	<h3 id="paintScatterDisplay">Scatter: </h3>
-	<input style="display: inline;" id="paintScatterSlider" type="range" min="0" max="500" value="0">
-	<div style="display: inline;" id="paintWidthPreview"></div>
-	<h3>Paint Color: </h3>
-	<h4 id="paintColorRedDisplay">Red: </h4>
-	<input id="paintColorRedSlider" type="range" min="0" max="255" value="0"><br><br>
-	<h4 id="paintColorGreenDisplay">Green: </h4>
-	<input id="paintColorGreenSlider" type="range" min="0" max="255" value="0"><br><br>
-	<h4 id="paintColorBlueDisplay">Blue</h4>
-	<input id="paintColorBlueSlider" type="range" min="0" max="255" value="0"><br><br>
 	
-	<br><br>
-	<h2>Canvas Settings</h2>
-	<button onClick="generateEmptyCanvas()" id="downloadPDF">Remove Background</button><br><br>
-	<button onClick="deleteCanvas()" id="deleteCanvas">Delete</button><br><br>
-	<h2>Downloading</h2>
-	<button onClick="downloadJPEG()" id="downloadJPEG">Download as JPEG</button><br><br>
-	<button onClick="downloadPNG()" id="downloadPNG">Download as PNG</button><br><br>
-	<button onClick="downloadPDF()" id="downloadPDF">Download as PDF</button>
+		<div id="settings">
+			<div id="paintSettings">
+				<h3 id="paintWidthDisplay">Paint Width: </h3>
+				<input style="display: inline;" id="paintWidthSlider" type="range" min="1" max="100" value="1">
+				<h3 id="paintScatterDisplay">Scatter: </h3>
+				<input style="display: inline;" id="paintScatterSlider" type="range" min="0" max="500" value="0">
+				<div style="display: inline;" id="paintWidthPreview"></div><br><br>
+				<input type="color" id="paintColorInput">
+			</div>
+			<div id="canvasSettings">
+				<h2>Canvas Settings</h2>
+				<button id="changeCanvasBackground">Set Background Color</button>  <input type="color" id="canvasBackgroundColorInput"><br><br>
+				<button onClick="generateEmptyCanvas()" id="removeCanvasBackground">Remove Background</button><br><br>
+				<button onClick="deleteCanvas()" id="deleteCanvas">Delete</button><br><br>
+			</div>
+			<div id="downloading">
+				<h2>Downloading</h2>
+				<button onClick="downloadJPEG()" id="downloadJPEG">Download as JPEG</button><br><br>
+				<button onClick="downloadPNG()" id="downloadPNG">Download as PNG</button><br><br>
+			</div>
+	
+			<div id="buttons" style="margin-top: 25px;"> 
+				<button id="nextPageBtn">Next Page</button><br><br>
+				<button onClick="exit()">Exit</button>
+			</div>
+		</div>
+		<canvas id="paintCanvas"></canvas>
 	</div>
-	</div>
-	
-</body>
-	
-	<script src="../Important/DigitalClock.js"></script>
-	<script src="Paint.js"></script>
+		<script>
+			function exit(){ window.location = "../MainPages/Other.html"};
+		</script>
+		<script src="../Important/DigitalClock.js"></script>
+		<script src="Paint.js"></script>
+	</body>
 </html>

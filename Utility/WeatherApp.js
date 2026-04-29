@@ -19,6 +19,13 @@ function update(){
 	localStorage.setItem("weatherAppInputCityContents", inputCity.value);
 }
 
+document.getElementById("inputCity").addEventListener("keydown", (e) => {
+	if(e.key === "Enter"){
+		e.preventDefault();
+		getWeather();
+	}
+});
+
 function getWeather() {
   const city = document.getElementById("inputCity").value;
   const apiKey = '6724f2d5e07375722cfcb71ecd81db7e'; 
@@ -56,9 +63,9 @@ function getWeather() {
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Loose Clothing"
 	} else if(fahrenheit <= 75 && fahrenheit >= 65 && umbrellaNeeded == "No"){
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: T-shirt / Formal"
-	} else if(fahrenheit <= 64 && fahrenheit >= 55){
+	} else if(fahrenheit <= 64 && fahrenheit >= 55 || umbrellaNeeded == "Yes"){
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Light Jacket"
-	} else if(fahrenheit <= 54 && fahrenheit >= 32){
+	} else if(fahrenheit <= 54 && fahrenheit >= 32 || umbrellaNeeded == "Yes"){
 	document.querySelectorAll("#safetyGuidelines p")[2].textContent = "Recommended Clothing: Thick Jacket / Clothing"
 	}
 	})
