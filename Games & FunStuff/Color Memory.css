@@ -1,0 +1,27 @@
+#container{
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 500px;
+	height: 500px;
+	position: relative;
+	top: 15%;
+	left: 37%;
+	margin-bottom: 25px;
+}
+
+#HighScoreDisplay, #CurrentScoreDisplay, .colorMemoryButtons{
+	font-size: 25px;
+}
+
+.colorButton{
+	box-sizing: border-box;
+	width: 250px;
+	height: 250px;
+	border: 2px solid var(--border);
+	transition: background-color 0.5s ease;
+	background-color: #333;
+}
+
+

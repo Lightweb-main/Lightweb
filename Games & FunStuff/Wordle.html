@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lightweb: Wordle</title>
+	<link rel="stylesheet" href="Wordle.css">
+</head>
+
+<body>
+    <h1>Lightweb: Wordle</h1>
+	
+	<div style="text-align: center">
+	<h2>Please go see the original Wordle before playing this one.</h2>
+	<a id="originalLink" href="https://www.nytimes.com/games/wordle/index.html">Original</a>
+	</div>
+	<br><br><br><br>  
+	
+	<div id="wordleBoard"></div>
+	<div id="keyboard">
+		<div>
+			<button class="keyboardButton">q</button>
+			<button class="keyboardButton">w</button>
+			<button class="keyboardButton">e</button>
+			<button class="keyboardButton">r</button>
+			<button class="keyboardButton">t</button>
+			<button class="keyboardButton">y</button>
+			<button class="keyboardButton">u</button>
+			<button class="keyboardButton">i</button>
+			<button class="keyboardButton">o</button>
+			<button class="keyboardButton">p</button>
+		</div>
+		
+		<div id="secondRow">
+			<button class="keyboardButton">a</button>
+			<button class="keyboardButton">s</button>
+			<button class="keyboardButton">d</button>
+			<button class="keyboardButton">f</button>
+			<button class="keyboardButton">g</button>
+			<button class="keyboardButton">h</button>
+			<button class="keyboardButton">j</button>
+			<button class="keyboardButton">k</button>
+			<button class="keyboardButton">l</button>
+		</div>
+		
+		<div>
+			<button class="keyboardButton">DEL</button>
+			<button class="keyboardButton">z</button>
+			<button class="keyboardButton">x</button>
+			<button class="keyboardButton">c</button>
+			<button class="keyboardButton">v</button>
+			<button class="keyboardButton">b</button>
+			<button class="keyboardButton">n</button>
+			<button class="keyboardButton">n</button>
+			<button class="keyboardButton">m</button>
+			<button class="keyboardButton">ENTER</button>
+		</div>
+		<div>
+			<button id="reset" onClick="reset()" class="keyboardButton">Reset</button>
+		</div>
+	</div>
+	<button id="exit" class="exitButton" onClick="exit()">Exit</button>
+	
+</body>
+	
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="Wordle.js"></script>
+	
+	<script>
+		function exit(){
+			document.location = "../MainPages/Games%20&%20FunStuff.html";
+		}
+	</script>
+</html>

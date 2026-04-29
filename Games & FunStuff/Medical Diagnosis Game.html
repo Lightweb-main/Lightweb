@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<style>
+			#container {
+				display: flex;
+				flex-direction: row;
+				border: 2px solid black;
+				padding: 15px;
+				height: 100%;
+			}
+			
+			#diagnosisDiv {
+				border: 1px solid black;
+				flex: 1;
+				padding: 10px;
+			}
+			
+			#messagesDiv, #examinationDiv{
+				border: 1px solid black;
+				flex: 1;
+				padding: 10px;
+				overflow-y: scroll;
+				max-height: 50%;
+			}
+			
+			#toolsDiv, #infoDiv, #diseasesSelectDiv{
+				border: 1px solid black;
+				padding: 20px;
+				height: fit-content;
+			}
+			
+			#diseaseInfoDiv, #toolsProceduresInfoDiv, #infoDivA {
+				bordeR: 1px solid black;
+				padding: 10px; 
+				height: fit-content;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Medical Diagnosis Game</h1>
+		<div id="container">
+			<div id="diagnosisDiv">
+				<button id="toolsSelectBtn">Tools</button><br><br>
+				<button id="diseaseInfoBtn">Disease Info</button><br><br>
+				<button id="diseaseSelectBtn">Disease Selection</button><br><br>
+				<div id="toolsDiv">
+					<h2>Tools & Procedures</h2>
+					<h3>Tools</h3>
+					<button id="thermometerBtn">Thermometer</button>
+					<h3>Procedures</h3>
+					<button id="noseSwabTestBtn">Nose Swab Test</button>
+					<button id="physicalCheckupBtn">Physical Checkup</button>
+					<button id="throatSwabTestBtn">Throat Swab Test</button>
+					<h3>Questions</h3>
+					<button id="originDiseaseQuestionBtn">Ask about the origin of the disease.</button>
+				</div>
+				<div id="infoDiv">
+					<h2>Information</h2>
+					<button id="diseaseInfoDivBtn">Diseases</button><br><br>
+					<button id="toolsProceduresInfoBtn">Tools & Procedures</button><br><br>
+					
+					<div id="diseaseInfoDiv">
+						<button id="allergiesInfoBtn">Allergies</button>
+						<button id="commonColdInfoBtn">Common Cold</button>
+						<button id="influenzaInfoBtn">Influenza</button>
+						<button id="covidInfoBtn">Covid-19</button>
+					</div>
+					
+					<div id="toolsProceduresInfoDiv">
+						<button id="physicalCheckupInfoBtn">Physical Checkup</button>
+						<button id="thermometerInfoBtn">Thermometer</button>
+					</div>
+					
+					
+					<div id="infoDivA"> 
+						
+					</div>
+				</div>
+				<div id="diseasesSelectDiv">
+					<h2>Disease Selection</h2>
+					<div style="border: 1px solid black; padding: 15px; margin-bottom: 15px;">
+						<h2>Respiratory</h2>
+						<button class="symptomSelectBtns" data-symptom-select="coughing">Coughing</button>
+						<button class="symptomSelectBtns" data-symptom-select="runnyNose">Irritated Nose</button>
+						<button class="symptomSelectBtns" data-symptom-select="sneezing">Sneezing</button>
+						<button class="symptomSelectBtns" data-symptom-select="soreThroat">Sore Throat</button>
+						<button class="symptomSelectBtns" data-symptom-select="wheezing">Wheezing</button>
+						<h2>Nervous</h2>
+						<button class="symptomSelectBtns" data-symptom-select="fever">Fever</button>
+						<button class="symptomSelectBtns" data-symptom-select="headache">Headache</button>
+					</div>
+					<div style="border: 1px solid black; padding: 15px; margin-bottom: 15px;">
+						<button id="commonColdSelectBtn" class="diseaseSelectBtns" data-disease-select="Common Cold">Common Cold</button>
+						<button id="allergiesSelectBtn" class="diseaseSelectBtns" data-disease-select="Allergies">Allergies</button>
+						<button id="influenzaSelectBtn" class="diseaseSelectBtns" data-disease-select="Influenza">Influenza</button>
+						<hr>
+						<p id="selectedDiseaseDisplay">Selected Disease: </p>
+						<button id="confirmBtn">Confirm</button>
+					</div>
+				</div>
+			</div>
+			<div style="display: flex; flex-direction: column; flex: 1;">
+				<div id="messagesDiv">
+				
+				</div>
+				<div id="examinationDiv">
+				
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="Medical%20Diagnosis%20Game.js"></script>
+</html>

@@ -1,0 +1,56 @@
+body {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	flex-direction: column;
+}
+
+.boardSlot {
+	border: 1px solid black;
+	cursor: pointer;
+	padding: 22px;
+	
+}
+
+.GomokuBoard .boardSlot.white{
+	background-color: white;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+
+.GomokuBoard .boardSlot.black{
+	background-color: black;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+
+.GomokuBoard {
+	border: 5px solid #c7c7c7;
+	background-color: #caa160;
+	display: grid;
+	grid-template-columns: repeat(15, 1fr);
+}
+
+.winner {
+	font-size: 25px;
+}
+
+.status {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.3);
+	transition: background-color 0.3s ease;
+}
+
+
+.black-selected {
+	background-color: black;
+}
+
+.white-selected {
+	background-color: white;
+}
