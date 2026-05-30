@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="https://cdn.jsdelivr.net/npm/q5@3.7.0/q5.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/planck.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.33.5/p5play.js"></script>
+		<script type="module" src="https://q5js.org/q5.js"></script>
+		<script type="module" src="https://q5play.org/q5play.js"></script>
 	</head>
 		
 	<body>
@@ -17,97 +16,67 @@
 		
 	</body>
 	<script>
-		const object1MassSlider = document.getElementById("object1MassSlider");
-		const object1SpeedSlider = document.getElementById("object1SpeedSlider");
-		const object1SpeedDisplay = document.getElementById("object1SpeedDisplay");
-		const object1MassDisplay = document.getElementById("object1MassDisplay");
-		const object2MassSlider = document.getElementById("object2MassSlider");
-		const object2SpeedSlider = document.getElementById("object2SpeedSlider");
-		const object2SpeedDisplay = document.getElementById("object2SpeedDisplay");
-		const object2MassDisplay = document.getElementById("object2MassDisplay");
-	
-	
-	
-	
-		let object1;
-		let object2;
-		let ground1;
-		let incline1;
-		let incline2;
-		
-		
-		let object1Mass = object1MassSlider.value;
-		let object1Speed = object1SpeedSlider.value;
-		let object2Mass = object2MassSlider.value;
-		let object2Speed = object2SpeedSlider.value;
-		setInterval(update, 10);
-		function update(){
-			object1Mass = Number(object1MassSlider.value);
-			object1Speed = Number(object1SpeedSlider.value);
-			object2Mass = Number(object2MassSlider.value);
-			object2Speed = Number(object2SpeedSlider.value);
-			
-			object1MassDisplay.textContent = `Object 1 Mass: ${object1Mass}`;
-			object1SpeedDisplay.textContent = `Object 1 Speed: ${object1Speed}`;
-			object2MassDisplay.textContent = `Object 2 Mass: ${object2Mass}`;
-			object2SpeedDisplay.textContent = `Object 2 Speed: ${object2Speed}`;
-		}
-		function generate(){
-			object1 = new Sprite(300, 465 - object1Mass / 5, object1Mass / 1.5, object1Mass / 1.5, "dynamic");
-				object1.mass = object1Mass;
-				object1.bounciness = 0.3;
-				object1.vel.x = object1Speed * 2;
-				object1.friction = 0;
-				object1.life = 500;
-			object2 = new Sprite(1700, 465 - object2Mass / 5, object2Mass / 1.5, object2Mass / 1.5, "dynamic");
-				object2.mass = object2Mass;
-				object2.bounciness = 0.3;
-				object2.vel.x = -object2Speed * 2;
-				object2.friction = 0;
-				object2.life = 500;
-		}
 		
 		function generate1(){
-			object1 = new Sprite(300, 465 - object1Mass / 5, object1Mass / 1.5, object1Mass / 1.5, "dynamic");
-				object1.mass = object1Mass;
-				object1.bounciness = 0.3;
-				object1.vel.x = object1Speed * 2;
-				object1.friction = 0;
-				object1.life = 500;
+			let object = new Sprite();
+			object.x = 300;
+			object.y = 450;
+			object.bounciness = 0;
+			object.friction = 0;
+			object.mass = Number(object1MassSlider.value);
+			object.vel.x = Number(object1SpeedSlider.value);
 		}
 		
 		function generate2(){
-			object2 = new Sprite(1700, 465 - object2Mass / 5, object2Mass / 1.5, object2Mass / 1.5, "dynamic");
-				object2.mass = object2Mass;
-				object2.bounciness = 0.3;
-				object2.vel.x = -object2Speed * 2;
-				object2.friction = 0;
-				object2.life = 500;
+			let object = new Sprite();
+			object.x = 1500;
+			object.y = 450;
+			object.bounciness = 0;
+			object.friction = 0;
+			object.mass = object2MassSlider.value;
+			object.vel.x = object2SpeedSlider.value * -1;
 		}
 		
-		function setup() {
-    createCanvas(2000, 600);
-    world.gravity.y = 10;
-
-    let ground = new Sprite();
-    ground.collider = "static";
-    ground.width = width;
-    ground.height = 4;
-    ground.color = "grey";
-    ground.y = 500;
-}
-
-		
-	
+		function generate(){
+			let object1 = new Sprite();
+			object1.x = 300;
+			object1.y = 450;
+			object1.bounciness = 0;
+			object1.friction = 0;
+			object1.mass = object1MassSlider.value;
+			object1.vel.x = object1SpeedSlider.value;
+			
+			let object2 = new Sprite();
+			object2.x = 1500;
+			object2.y = 450;
+			object2.bounciness = 0;
+			object2.friction = 0;
+			object2.mass = object2MassSlider.value;
+			object2.vel.x = object2SpeedSlider.value * -1;
+		}
+		async function setup(){
+			await Canvas(2000, 600);
+			
+			let floor = new Sprite();
+			floor.mass = 150250;
+			floor.y = 500;
+			floor.height = 15;
+			floor.width = 2400;
+			floor.bounciness = 0;
+			floor.friction = 0;
+			floor.fill = "#dddddd"
+			floor.stroke = "#bbbbbb"
+			floor.physics = STATIC;
+			world.gravity.y = 10;
+		}
 		
 		function draw(){
-			background(245);
+			background("#eeeeee");
+			object1MassDisplay.textContent = `Object 1 Mass: ${object1MassSlider.value}`;
+			object1SpeedDisplay.textContent = `Object 1 Speed: ${object1SpeedSlider.value}`;
+			object2MassDisplay.textContent = `Object 2 Mass: ${object2MassSlider.value}`;
+			object2SpeedDisplay.textContent = `Object 2 Speed: ${object2SpeedSlider.value}`;
 		}
-		document.addEventListener('DOMContentLoaded', function(){
-		let message = document.createElement('p');
-		message.innerHTML = "Notice how a much heavier or faster object pushes the other object easily.";
-		document.body.appendChild(message);
-		});
 	</script>
 </html>
 	

@@ -43,14 +43,6 @@ font-weight: var(--FontWeight);
 	padding: 5px;
 }
 
-body a{
-font-weight: bold;
-border-radius: 10px;
-border: 12px solid var(--border);
-text-decoration: none;
-background-color: var(--border);
-}
-
 .exitButton{
 	font-size: 25px !important;
 	padding: 5px; !important

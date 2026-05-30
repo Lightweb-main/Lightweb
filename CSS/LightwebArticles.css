@@ -15,7 +15,15 @@
 	padding: 15px;
 }
 
-
+.articleSimulation {
+	width: 70%;
+	height: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: block;
+}
 
 mark{
 background-color: #FDF89D;	
@@ -25,10 +33,6 @@ color: var(--text);
 background-color: var(--bg);
 text-decoration: underline;
 text-decoration-color: #FDF89D;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 math{
@@ -59,40 +63,17 @@ img{
 	margin-top: 55px;
 }
 
-
-a:hover{
-color: red;
-}
-
 /* Headings */
 h1 {
 	text-align: center;
-	font-size: 70px;
+}
+
+h1, h2, h3{
 	font-weight: bold;
 }
 
-h2 {
-	font-weight: bold;
-	font-size: 25px;
-}
-
-h3 {
-	font-weight: bold;
-	font-size: 20px;
-}
-
-h4 {
+h4, h5 {
 	text-decoration: underline;
-	font-size: 17px;
-}
-
-h5 {
-	text-decoration: underline;
-	font-size: 15px;
-}
-
-h6 {
-	font-size: 14px;
 }
 
 

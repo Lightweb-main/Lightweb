@@ -1,38 +1,42 @@
 <!DOCTYPE html> 
 <html>
+	<head></head>
 	<body>
-  <h2>A-Frame Simulation</h2>
+  <h2>q5.play.js Simulation</h2>
   <div id="container">
     <iframe id="output"></iframe>
 
     <div id="editor">
 	<button onclick="runCode()">Run Code</button>
-      <textarea id="codeInput" spellcheck="false"  placeholder="Type your A-Frame code here..."></textarea>
+      <textarea id="codeInput" spellcheck="false"  placeholder="Type your Q5.play.js code here..."></textarea>
 	  <button onclick="exit()">Exit</button>
     </div>
   </div>
 
   <script>
 const textarea = document.getElementById("codeInput");
-	textarea.value =
+	textarea.value = 
 	`
-<a-scene>
-	<a-box  position="0 1 -5"
-		width="2"
-		height="2"
-		depth="2"
-		color="tomato"
-		animation=
-		"
-			property: rotation;
-			to: 0 360 0;
-			loop: true;
-			easing: linear;
-			dur: 2000
-		"
-	></a-box>
-</a-scene>
-	`
+	async function setup(){
+		await Canvas(canvas.w, canvas.h);
+		let ball = new Sprite();
+		ball.diameter = 15;
+		ball.color = red;
+		ball.physics = DYNAMIC;
+		
+		let bat = new Sprite();
+		bat.width = 135;
+		bat.height = 15;
+		bat.y = 800;
+		bat.rotationSpeed = 10;
+		bat.physics = KINEMATIC;
+	}
+		
+	function draw(){
+		world.gravity.y = 10;
+		background("#eeeeee");
+	}
+	`;
 
   textarea.addEventListener("keydown", (event) => {
     if (event.key === '>') {
@@ -74,11 +78,15 @@ const textarea = document.getElementById("codeInput");
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="https://aframe.io/releases/1.7.0/aframe.min.js"><\/script>
+		<script src="https://q5js.org/q5.js"><\/script>
+		<script type="module" src="https://q5play.org/q5play.js"><\/script>
 	</head>
 	<body>
-		${userCode};
+		
 	</body>
+	<script>
+		${userCode};
+	<\/script>
 </html>
 	
 	`;

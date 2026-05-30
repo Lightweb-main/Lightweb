@@ -38,7 +38,7 @@
 				<p>CSS (Cascading Style Sheets): Appearance</p>
 				<p>Javascript: Interactivity</p>
 				<p>&emsp;q5.js: For Simulations (Articles)</p>
-				<p>&emsp;p5.play: For Simulations (Articles)</p>
+				<p>&emsp;q5.play: For Simulations (Articles)</p>
 				<p>&emsp;Plotly.js: For Graphs</p>
 			</div>
 			<div class="innerDivs" id="lightwebHistory">
@@ -46,6 +46,18 @@
 				<p>Established: 11/29/24 (As a google doc project)</p>
 				<p>Moved to Github: 7/14/25</p>
 				<p id="lightwebDays">Lightweb is currently ___ years old.</p>
+			</div>
+			<div class="innerDivs" id="debugStatus">
+				<h2>Lightweb Debug</h2>
+				<h3>User Information</h3>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<h3>Module Confirmation</h3>
+				<p></p>
+				<p></p>
+				<p></p>
 			</div>
 		</div>
 		<br><br>
@@ -63,7 +75,42 @@
 				let dayDifference = Math.floor((currentDate - establishedDate) / (1000 * 3600 * 24));
 				
 				lightwebDays.innerHTML = `Lightweb is currently ${dayDifference} days old.`;
+				
+				debugStatus.querySelectorAll("p")[0].textContent = `User's Platform: ${navigator.platform}`;
+				debugStatus.querySelectorAll("p")[1].textContent = `User's Agent: ${navigator.userAgent}`;
+				debugStatus.querySelectorAll("p")[2].textContent = `User's Platform Version: ${navigator.appVersion}`;
+				debugStatus.querySelectorAll("p")[3].textContent = `User Language: ${navigator.languages}`;
 			}
+			
+			fetch("https://cdn.plot.ly/plotly-3.5.0.min.js", { method: "HEAD" })
+				.then(cdn => {
+					if(cdn.ok){
+						debugStatus.querySelectorAll("p")[4].textContent = `Plotly.js 3.4.0: Active`;
+					} else {
+						debugStatus.querySelectorAll("p")[4].textContent = `Plotly.js 3.4.0: Inactive / Error Detected`;
+					}
+			});
+			
+			fetch("https://q5js.org/q5.js", { method: "HEAD" })
+				.then(cdn => {
+					if(cdn.ok){
+						debugStatus.querySelectorAll("p")[5].textContent = `q5.js: Active`;
+					} else {
+						debugStatus.querySelectorAll("p")[5].textContent = `q5.js: Inactive / Error Detected`;
+					}
+			});
+			
+			fetch("https://q5play.org/q5play.js", { method: "HEAD" })
+				.then(cdn => {
+					if(cdn.ok){
+						debugStatus.querySelectorAll("p")[6].textContent = `q5.play: Active`;
+					} else {
+						debugStatus.querySelectorAll("p")[6].textContent = `q5.play: Inactive / Error Detected`;
+					}
+			});
+
+			
+			
 		</script>
 		<script src="../Important/DigitalClock.js"></script>
 	</body>

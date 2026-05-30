@@ -13,6 +13,7 @@
 		<button id="textScramblerSelectBtn">Text Scrambler</button>
 		<button id="textDegrammarifierSelectBtn">Text Degrammarifier</button>
 		<button id="textCaseAlternatorSelectBtn">Text Case Alternator</button>
+		<button id="textReverserSelectBtn">Text Reverser</button>
 	</div>	
 	<div id="textScrambler">
 		<h2>Original Text</h2>
@@ -37,6 +38,14 @@
 		<button  onClick="alternateCase()">Alternate Cases</button>
 		<h2>Alternate Cased Text</h2>
 		<textarea id="alternateCasesText" class="input" readonly></textarea>
+		<button id="exit" class="exitButton" onClick="exit()">Exit</button>
+	</div>
+	<div id="textReverser">
+		<h2>Original Text</h2>
+		<textarea id="originalText4" class="input"></textarea><br>
+		<button  onClick="reverseText()">Reverse Text</button>
+		<h2>Reversed Text</h2>
+		<textarea id="reversedText" class="input" readonly></textarea>
 		<button id="exit" class="exitButton" onClick="exit()">Exit</button>
 	</div>
 </body>

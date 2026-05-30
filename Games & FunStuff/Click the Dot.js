@@ -8,7 +8,7 @@ const timeDisplay2 = document.getElementById('totalTime');
 const timeDisplay3 = document.getElementById('reactionTime');
 const exitButton = document.getElementById('exitButton');
 let score = 0;
-let time = 0;
+let time2 = 0;
 let highscore = localStorage.getItem('highscore') || 0;
 highScoreDisplay.textContent = `Highscore: ${highscore}`;
 let totalTime = localStorage.getItem('totalTime') || 0;
@@ -23,21 +23,21 @@ dot.style.top = `${y}px`;
 dot.addEventListener('click', () => {
 score++
 scoreDisplay.textContent = `Score: ${score}`;
-timeDisplay3.textContent = time;
+timeDisplay3.textContent = time2;
 moveDot();
-time = 0;
+time2 = 0;
 });
 
 setInterval(tick, 100);
 
 function tick() {
-  time++;
+  time2++;
   totalTime++;
   localStorage.setItem('totalTime', totalTime);
-  timeDisplay1.textContent = time;
+  timeDisplay1.textContent = time2;
   timeDisplay2.textContent = totalTime;
 
-  if (time > 30) {
+  if (time2 > 30) {
     gameReset();
   }
 }
@@ -56,7 +56,7 @@ function gameReset(){
 	}
     score = 0;
     scoreDisplay.textContent = `Score: ${score}`;
-    time = 0;
+    time2 = 0;
     moveDot(); 
 }
 

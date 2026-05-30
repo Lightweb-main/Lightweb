@@ -1,79 +1,296 @@
+// This file is really really important. So don't delete it.
 
 
-const currentPath = window.location.href.toLowerCase();
-const loginPageName = 'index.html';
 
-const isOnLightweb = currentPath.includes('lightweb-main.github.io');
-const isNotLoginPage = !currentPath.endsWith(loginPageName);
-const isSessionInvalid = localStorage.getItem('LoginVerification') !== 'true';
+/* Constants: Oops...*/
+
+	/* DOM Elements: TOMMY */
+	
+	const articleTitle = document.createElement("title");
+	const bre = document.createElement("br");
+	const christmasScreenSettings = document.getElementById("christmasScreenSettings");
+	const customSpeakSettings = document.getElementById("customSpeakSettings");
+	const CRTBlueScreenSettings = document.getElementById("CRTBlueScreenSettings");
+	const darkScreenFlashbangColorBox = document.getElementById("darkScreenFlashbangColorSet");
+	const darkScreenFlashingSettings = document.getElementById("darkScreenFlashingSettings");
+	const darkScreenSettings = document.getElementById("darkScreenSettings");
+	const digitalCalendar = document.createElement("div");
+	const digitalClock = document.createElement("div");
+	const digitalClockCalendarContainer = document.createElement('div');
+	const iconthingy = document.createElement("link");
+	const ImageInversionBtn = document.getElementById('image-inversion-button');
+	const informationalPageLink = document.createElement("a");
+	const flashbangColor = localStorage.getItem("darkScreenFlashbangColorBoxValue");
+	const fullMilitaryTimeCheckbox = document.getElementById("full-military-time-button");
+	const hyperlinkHoverColorSelection = document.getElementById("hyperlinkHoverColorSelection");
+	const lightwebArticlesCSS = document.createElement("link");
+	const loadCustomFontsToggle = document.getElementById("load-custom-fonts-toggle");
+	const lightwebCSSLink = document.createElement("link");
+	const lightwebDeviceOptimizationCSSLink = document.createElement("link");
+	const lightwebSimulationsCSS = document.createElement("link");
+	const lightwebSpecialThemesCSS = document.createElement("link");
+	const lightwebThemesCSSLink = document.createElement("link");
+	const lightwebHeader = document.querySelector("header");
+	const linkText = document.createElement("h2");
+	const mainPageLink = document.createElement("a");
+	const militaryTimeSettings = document.getElementById("militaryTimeSettings");
+	const snowflakeToggleCheckbox = document.getElementById('snowflake-toggle-checkbox');
+	const textFontSelection = document.getElementById("textFontSelection");
+	const textSizeSelection = document.getElementById("textSizeSelection");
+	const textLineHeightSelection = document.getElementById("textLineHeightSelection");
+	const toggleAnalogBtn = document.getElementById('analog-screen-button');
+	const toggleChaosScreenBtn = document.getElementById('chaos-screen-button');
+	const toggleChristmasBtn = document.getElementById('christmas-screen-button');
+	const toggleChristmasScreen = document.getElementById("christmas-screen-button");
+	const toggleColorVomitButton = document.getElementById("toggle-colorVomit-button");
+	const toggleCRTBlueScreen = document.getElementById('CRTBLUE-screen-button');
+	const toggleCRTBlueScreenFlickeringCheckbox = document.getElementById("CRTBlueScreen-flicker-effect-button");
+	const toggleCustomSpeakBtn = document.getElementById('toggleCustomSpeak');
+	const toggleDarkBtn = document.getElementById('dark-screen-toggle');
+	const toggleDarkScreenFlashbangBtn = document.getElementById("dark-screen-flashbang-checkbox");
+	const toggleDarkScreenFlashbangCheckbox = document.getElementById("dark-screen-flashbang-checkbox");
+	const toggleDashedCalendarBtn = document.getElementById('dashed-calendar-button');
+	const toggleGreekLetterSpeakCheckbox = document.getElementById("greek-letter-speak-checkbox");
+	const toggleMilitaryBtn = document.getElementById('millitary-time-button');
+	const toggleRelativePositionBtn = document.getElementById("toggle-relative-position-button");
+	const toggleScramblerBtn = document.getElementById("toggle-scrambler-button");
+	const toggleShakespeareanSpeakCheckbox = document.getElementById("shakespearean-speak-checkbox");
+	const toggleSquidGameBtn = document.getElementById('squidGame-screen-button');
+
+	
+	/* Window Constants: fin: */
+	const loginPageName = 'index.html';
+	const path = window.location.pathname;
+	const isNotLoginPage = !path.endsWith(loginPageName);
+	const isOnLightweb = path.includes('lightweb-main.github.io');
+	
+	/* Conditioned Constants: Airgo: */
+	
+	
+	/* Array Consants: ARGH!!! */
+	const fontFamilies = ["Arial", "Georgia", "Open Sans", "Comic Sans", "Lucida Console", "Times New Roman", "Serif", "Calibri", "Courier New", "Helvetica Neue", "Oswald", "Impact"];
+	const fontWeights = ["normal", "bold", "lighter", "bolder"];
+	const textAligns = ["left", "middle", "right"];
+	const textDecorations = ["overline", "underline", "line-through", "overline underline"];
+	const allElementsWithinScene = document.querySelectorAll("*");
+	
+	
+
+	
+	/* Other: Ergo */
+
+/* Let Statements: go */
+let am_pm;
+let currentTime, currentDay, customFontHyperlink = document.createElement("link");
+let day, directoryLevel, directoryLevelA;
+let faviconNum, frameCount = 0, flashbangIntervalIndex, fullMilitaryTime, fullMilitaryTimeLS = localStorage.getItem('fMT');
+let hour, hasDashedCalendar, hasMilitaryTime;
+let meta, meta2, min, month;
+let nodeScrambledText;
+let scramblerBtnTextIndexA, scramblerBtnTextIndexB;
+let time = new Date();
+
+let toggleScramblerBtnText;
+	let sec = time.getSeconds();
+let year = String(time.getFullYear()).slice(-2);
+
+
+
+
+/* Setting Directory Level: Letch */
+if(path.includes("/index.html")){
+	directoryLevel = 0;
+} else if(path.includes("/Articles/") ||
+          path.includes("/Games%20&%20FunStuff/") ||
+          path.includes("/MainPages/") ||
+          path.includes("/LightwebHistory/") ||
+          path.includes("/Other/") ||
+          path.includes("/Simulations/") ||
+          path.includes("/SubMainPages/") ||
+          path.includes("/Utility/")){
+	directoryLevel = 1;
+} else if(path.includes("/SubSections/")){
+	directoryLevel = 2;
+}
+
+directoryLevelA = ("../").repeat(directoryLevel);
+
+
+
+document.head.appendChild(iconthingy);
+
+/* Intervals: Mathy */
+setInterval(update, 1);
+
+
+
+/* Login Check */
 
 if (isOnLightweb && isNotLoginPage && isSessionInvalid) {
   alert("Session expired. Please log in again."); 
 }
 
 if (
-  localStorage.getItem('LoginVerification') === null &&
-  currentPath.includes('lightweb-main.github.io') &&
-  !currentPath.endsWith(loginPageName)
+  localStorage.getItem("loginVerification") === null &&
+  path.includes('lightweb-main.github.io') &&
+  !path.endsWith(loginPageName)
 ) {
-  localStorage.setItem('LoginVerification', 'false');
+  localStorage.getItem("loginVerification") = "false";
 }
 
 if ( 
-  localStorage.getItem('LoginVerification') !== 'true' &&
-  currentPath.includes('lightweb-main.github.io') &&
-  !currentPath.endsWith(loginPageName)
+  localStorage.getItem("loginVerification") !== "true" &&
+  path.includes('lightweb-main.github.io') &&
+  !path.includes('file/C:') &&
+  !path.endsWith(loginPageName)
 ) {
-    if (currentPath.toLowerCase().includes('/lightweb/mainpages/') || 
-		currentPath.toLowerCase().includes('/lightweb/articles/') || 
-		currentPath.toLowerCase().includes('/lightweb/simulations/') || 
-		currentPath.toLowerCase().includes('/lightweb/utility/') || 
-		currentPath.toLowerCase().includes('/lightweb/noninformationalarticles/') || 
-		currentPath.toLowerCase().includes('/lightweb/games%20funstuff/') || 
-		currentPath.toLowerCase().includes('/lightweb/other/') || 
-		currentPath.toLowerCase().includes('/lightweb/subsections/') || 
-		currentPath.toLowerCase().includes('/lightweb/submainpages/') || 
-		currentPath.toLowerCase().includes('/lightweb/courses/')) {
+    if (path.toLowerCase().includes('/lightweb/mainpages/') || 
+		path.toLowerCase().includes('/lightweb/articles/') || 
+		path.toLowerCase().includes('/lightweb/simulations/') || 
+		path.toLowerCase().includes('/lightweb/utility/') || 
+		path.toLowerCase().includes('/lightweb/noninformationalarticles/') || 
+		path.toLowerCase().includes('/lightweb/games%20funstuff/') || 
+		path.toLowerCase().includes('/lightweb/other/') || 
+		path.toLowerCase().includes('/lightweb/subsections/') || 
+		path.toLowerCase().includes('/lightweb/submainpages/')){
     window.location.href = '../index.html';
-  }	
-
-
-  
-  
-  
+  }
 }
-let faviconNum = 0
-setInterval(update, 1);
-
-
-
-let frameCount = 0;
-let fullMilitaryTime;
-const fullMilitaryTimeCheckbox = document.getElementById("full-military-time-button");
-const toggleChristmasScreen = document.getElementById("christmas-screen-button");
-const snowflakeToggleCheckbox = document.getElementById('snowflake-toggle-checkbox');
-const militaryTimeSettings = document.getElementById("militaryTimeSettings");
-const customSpeakSettings = document.getElementById("customSpeakSettings");
-const toggleCustomSpeak = document.getElementById("toggleCustomSpeak");
-const christmasScreenSettings = document.getElementById("christmasScreenSettings");
-const CRTBlueScreenSettings = document.getElementById("CRTBlueScreenSettings");
-const toggleShakespeareanSpeakCheckbox = document.getElementById("shakespearean-speak-checkbox");
-const toggleGreekLetterSpeakCheckbox = document.getElementById("greek-letter-speak-checkbox");
-const toggleCRTBlueScreenFlickeringCheckbox = document.getElementById("CRTBlueScreen-flicker-effect-button");
-const toggleScramblerBtn = document.getElementById("toggle-scrambler-button");
-const toggleDarkScreenFlashbangBtn = document.getElementById("dark-screen-flashbang-checkbox");
-const darkScreenFlashbangColorBox = document.getElementById("darkScreenFlashbangColorSet");
-const darkScreenFlashingSettings = document.getElementById("darkScreenFlashingSettings");
-const darkScreenSettings = document.getElementById("darkScreenSettings");
-const toggleColorVomitButton = document.getElementById("toggle-colorVomit-button");
-const textSizeSelection = document.getElementById("textSizeSelection");
-const textFontSelection = document.getElementById("textFontSelection");
-const hyperlinkHoverColorSelection = document.getElementById("hyperlinkHoverColorSelection");
 
 
 
 
+/* Inserting DOM Elements, Flachet */
 
+meta = document.createElement("meta");
+meta.setAttribute("charset", "UTF-8");
+document.head.appendChild(meta);
+	  
+meta2 = document.createElement("meta");
+meta2.setAttribute("name", "viewport");
+meta2.content = "width=device-width, initial-scale=1.0";
+document.head.appendChild(meta2);
+
+iconthingy.rel = "icon";
+iconthingy.type = "image/png";
+iconthingy.href = `${directoryLevelA}Important/Lightweb.icon.png`;
+document.head.appendChild(iconthingy);
+
+if(!path.includes("/LightwebHistory/")){
+	digitalClock.id = "DigitalClock";
+	digitalCalendar.id = "DigitalCalendar";
+	document.body.appendChild(digitalClock);
+	document.body.appendChild(digitalCalendar);
+}
+
+if(path.includes("/Articles/")){
+	linkText.textContent = "Done? Here are other links.";
+	document.body.appendChild(linkText);
+		
+	mainPageLink.href = "../MainPages/Lightweb%20MainPage.html";
+	mainPageLink.textContent = "Back to Main Page";
+	document.body.appendChild(mainPageLink);
+		
+	document.body.appendChild(document.createElement("br"));
+	document.body.appendChild(document.createElement("br"));
+		
+	informationalPageLink.href = "../MainPages/Informational.html";
+	informationalPageLink.textContent = "Back to Informational";
+	document.body.appendChild(informationalPageLink);
+	
+	articleTitle.textContent = document.querySelector("h1").textContent;
+	document.head.appendChild(articleTitle);
+	
+	for(let i = 0; i < 4; i++){
+		document.querySelector("h1").insertAdjacentElement("afterBegin", bre);
+	}
+}
+
+/* Insert Styles: yarrH Styles*/
+
+if(!path.includes("/LightwebHistory/")){
+	digitalClock.style.left = "0px";
+	digitalClock.style.top = "0px";
+	digitalClock.style.border = "2px solid var(--DigitalClockBackground)";
+	digitalClock.style.width = "300px";
+	digitalClock.style.fontSize = "50px"
+	digitalClock.style.borderRadius = "15px";
+	digitalClock.style.textAlign = "center";
+		
+	digitalCalendar.style.left = "0px";
+	digitalCalendar.style.top = "60px";
+	digitalCalendar.style.border = "2px solid var(--DigitalClockBackground)";
+	digitalCalendar.style.width = "300px";
+	digitalCalendar.style.fontSize = "25px";
+	digitalCalendar.style.borderRadius = "15px";
+	digitalCalendar.style.textAlign = "center";
+		
+	if(path.includes("TicTacToe")){
+		digitalClock.style.left = "0px";
+		digitalClock.style.top = "1000px";
+		digitalCalendar.style.left = "0px";
+		digitalCalendar.style.top = "1060px";
+	}
+	
+	if(localStorage.getItem("lightwebRelativePositioning") === 'true'){
+		digitalClock.style.position = "fixed";
+		digitalCalendar.style.position = "fixed";
+	} else {
+		digitalClock.style.position = "absolute";
+		digitalCalendar.style.position = "absolute";
+	}
+} 
+
+if(lightwebHeader){
+	lightwebHeader.style.top = "14px";
+	lightwebHeader.style.right = "14px";
+	lightwebHeader.id = "LightwebHeader";
+}
+
+if(path.includes("/Articles/")){
+	lightwebArticlesCSS.rel = "stylesheet";
+	lightwebArticlesCSS.href = "../CSS/LightwebArticles.css";
+	
+	lightwebSpecialThemesCSS.rel = "stylesheet";
+	lightwebSpecialThemesCSS.href = "../CSS/SpecialLightwebThemes.css";
+	
+	document.head.appendChild(lightwebArticlesCSS);
+	document.head.appendChild(lightwebSpecialThemesCSS);
+	
+	
+} else if(path.includes("/Simulations/")){
+	lightwebSimulationsCSS.rel = "stylesheet";
+	lightwebSimulationsCSS.href = "../CSS/LightwebSimulations.css";
+	
+	document.head.appendChild(lightwebSimulationsCSS);
+}
+
+lightwebCSSLink.href = `${directoryLevelA}CSS/Lightweb.css`;
+lightwebCSSLink.rel = "stylesheet";
+
+
+lightwebThemesCSSLink.href = `${directoryLevelA}CSS/LightwebThemes.css`;
+lightwebThemesCSSLink.rel = "stylesheet";
+
+lightwebDeviceOptimizationCSSLink.href = `${directoryLevelA}CSS/LightwebDeviceOptimization.css`;
+lightwebDeviceOptimizationCSSLink.rel = "stylesheet";
+
+
+
+
+
+document.head.appendChild(lightwebCSSLink);
+document.head.appendChild(lightwebDeviceOptimizationCSSLink);
+document.head.appendChild(lightwebThemesCSSLink);
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+	
+});
+	
+/* Local Storage Sstuff: */
 function clearLocalStorage(){
 	
 	localStorage.clear();
@@ -82,10 +299,11 @@ function clearLocalStorage(){
 	localStorage.setItem("toggleCustomSpeak", false);
 	localStorage.setItem("customSpeakSetting", "modernEnglishSpeak");
 	localStorage.setItem("lightwebTextSize", 1);
+	localStorage.setItem("lightwebHyperlinkHoverColorSelection", "#ff0000");
 	localStorage.setItem("lightwebTextFont", "Default");
+	localStorage.setItem("lightwebLineHeight", "normal");
 	localStorage.setItem("theme", "default");
 	localStorage.setItem('timeType', '12-hour-clock');
-	localStorage.setItem('calendarType', 'defaultCalendar');
 	localStorage.setItem('calendarType', 'defaultCalendar');
 	
 	
@@ -100,50 +318,64 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 });
 
+/* Document Class List Remove: REREORWOEPRJ */
+document.body.classList.remove('default', 'dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'chaos', 'christmasScreen');
+document.body.classList.remove('fullMilitaryTime', 'snowflakeToggleOn');
+document.body.classList.remove('dashedCalendar');
+document.body.classList.remove('InverseInversionOn');
+document.body.classList.remove('PC', 'Phone', 'Laptop');
+document.body.classList.remove('modernEnglishSpeak', 'shakespeareanEnglishSpeak', "greekLetterSpeak"); 
+
+if(textSizeSelection){
+	textSizeSelection.value = localStorage.getItem("lightwebTextSize");
+}
+	  
+	
+if(textFontSelection){
+	textFontSelection.value = localStorage.getItem("lightwebTextFont");
+}
+	  
+	
+if(textLineHeightSelection){
+	textLineHeightSelection.value = localStorage.getItem("lightwebLineHeight");
+}
+	  
+	
+if(hyperlinkHoverColorSelection){
+	hyperlinkHoverColorSelection.value = localStorage.getItem("lightwebHyperlinkHoverColorSelection");
+}
+	  
+	
+if(darkScreenFlashbangColorBox){
+	darkScreenFlashbangColorBox.value = localStorage.getItem("darkScreenFlashbangColorBoxValue");
+}
+
+/* Update: Strikesd */
+
+
 function update() {
 	if(document.body.classList.contains("christmasScreen") && (frameCount % 15 === 0)){
 		snowflakeChristmasScreen();
 	}
+	time = new Date();
+	am_pm = "AM";
+	day = String(time.getDate()).padStart(2, '0');
+	hour = time.getHours();
+	min = time.getMinutes();
+	month = String(time.getMonth() + 1).padStart(2, '0');
+	sec = time.getSeconds();
+	year = String(time.getFullYear()).slice(-2);
 	faviconNum += 1;
 	frameCount++;
-    const time = new Date();
-    let hour = time.getHours();
-    let min = time.getMinutes();
-    let sec = time.getSeconds();
-    let day = String(time.getDate()).padStart(2, '0');
-    let month = String(time.getMonth() + 1).padStart(2, '0');
-    let year = String(time.getFullYear()).slice(-2);
-    let am_pm = "AM";
-
-
-    const hasMilitaryTime = document.body.classList.contains('militaryTime');
-	const hasDashedCalendar = document.body.classList.contains('dashedCalendar');
-	if(fullMilitaryTimeCheckbox){
-		if(localStorage.getItem('fMT') === 'true'){
-			fullMilitaryTimeCheckbox.checked = true;
-		} else {
-			fullMilitaryTimeCheckbox.checked = false;
-		}
-	}
 	
-	const lightwebHeader = document.querySelector("header");
-	
-	if(lightwebHeader){
-		lightwebHeader.style.top = "14px";
-		lightwebHeader.style.right = "14px";
-	}
+	hasMilitaryTime = document.body.classList.contains('militaryTime');
+    hasDashedCalendar = document.body.classList.contains('dashedCalendar');
+
+	fullMilitaryTimeLS = localStorage.getItem('fMT');
+
 	
 	if(document.body.classList.contains('chaosScreen')){
-		if(frameCount % 12 === 0){
-			const r = (Math.floor(Math.random() * 256)).toString(16);
-			const g = (Math.floor(Math.random() * 256)).toString(16);
-			const b = (Math.floor(Math.random() * 256)).toString(16);
-			const fontFamilies = ["Arial", "Georgia", "Open Sans", "Lucida Console", "Times New Roman", "Serif", "Calibri", "Courier New", "Helvetica Neue"];
-			const fontWeights = ["normal", "bold", "lighter", "bolder"];
-			const textAligns = ["left", "middle", "right"];
-			const textDecorations = ["overline", "underline", "line-through", "overline underline"];
-			const allElementsWithinScene = document.querySelectorAll("*");
-			
+		if(frameCount % 6 === 0){		
 			allElementsWithinScene.forEach(el => {
 				el.style.backgroundColor = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`
 				el.style.color = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`
@@ -163,7 +395,6 @@ function update() {
 	
 	if(document.body.classList.contains('CRTBLUEScreen') || document.body.classList.contains('chaosScreen')){
 		if(localStorage.getItem('CRTBlueFlicker') === 'true'){
-		const allElementsWithinScene = document.querySelectorAll("*");
 	
 		allElementsWithinScene.forEach(el => {
 			if(frameCount % (50 * (Math.floor(Math.random() * 25) + 30)) === 0){
@@ -179,8 +410,6 @@ function update() {
 		}
 	}
 	
-	
-	const flashbangColor = localStorage.getItem("darkScreenFlashbangColorBoxValue");
 	if(darkScreenFlashbangColorBox){
 		darkScreenFlashbangColorBox.addEventListener("input", function(){
 			localStorage.setItem("darkScreenFlashbangColorBoxValue", darkScreenFlashbangColorBox.value);
@@ -216,15 +445,23 @@ function update() {
 			darkScreenSettings.style.display = "none";
 		}
 	}
+	
+	if(toggleRelativePositionBtn){
+		if(localStorage.getItem("lightwebRelativePositioning") === 'true'){
+			toggleRelativePositionBtn.style.backgroundColor = "#bbbbbb";
+		} else {
+			toggleRelativePositionBtn.style.backgroundColor = "#aaaaaa";
+		}
+	}
 
 	
 	
 	
+	
 	if(localStorage.getItem("darkScreenFlashbangSetting") === 'true' && localStorage.getItem("theme") === "dark"){
-		let flashbangIntervalIndex = 1000 + Math.floor(Math.random() * 1000);
+		flashbangIntervalIndex = 500 + Math.floor(Math.random() * 500);
 		if(frameCount % flashbangIntervalIndex === 0){
-			const allElementsWithinScene = document.querySelectorAll("*");
-			
+			flashbangIntervalIndex = 500 + Math.floor(Math.random() * 500);
 			allElementsWithinScene.forEach(function(el){
 				el.style.transitionDuration = "0.1s";
 				if(el == document.body){
@@ -289,13 +526,13 @@ function update() {
 	
 	if(toggleScramblerBtn){
 		if(frameCount % 350 === 0){
-			let btnText = toggleScramblerBtn.textContent.split('');
+			toggleScramblerBtnText = toggleScramblerBtn.textContent.split('');
 			for(let i = 0; i < 25; i++){
-				let j = Math.floor(Math.random() * btnText.length);
-				let k = Math.floor(Math.random() * btnText.length);
-				[btnText[j], btnText[i]] = [btnText[i], btnText[j]]
+				let scramblerBtnTextIndexA = Math.floor(Math.random() * toggleScramblerBtnText.length);
+				let scramblerBtnTextIndexB = Math.floor(Math.random() * toggleScramblerBtnText.length);
+				[toggleScramblerBtnText[scramblerBtnTextIndexB], toggleScramblerBtnText[scramblerBtnTextIndexA]] = [toggleScramblerBtnText[scramblerBtnTextIndexA], toggleScramblerBtnText[scramblerBtnTextIndexB]]
 			}
-			toggleScramblerBtn.textContent = btnText.join('');
+			toggleScramblerBtn.textContent = toggleScramblerBtnText.join('');
 			setTimeout(function(){
 				toggleScramblerBtn.textContent = "Scrambler";
 			}, 100);
@@ -303,9 +540,8 @@ function update() {
 	}
 	
 	if(localStorage.getItem("colorVomitActivated") === 'true'){
-		const allElements = document.querySelectorAll("*");
 		
-		allElements.forEach(el => {
+		allElementsWithinScene.forEach(el => {
 			if(frameCount % 14 === 0){
 				el.style.backgroundColor = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`;
 				el.style.color = `#${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}${(Math.floor(Math.random() * 256)).toString(16)}`; 
@@ -331,13 +567,19 @@ function update() {
 		}
     }
 	
-	if(toggleCustomSpeak){
+	if(toggleCustomSpeakBtn){
 		if(localStorage.getItem("toggleCustomSpeak") === 'true'){
-			toggleCustomSpeak.style.backgroundColor = "#191919";
-			toggleCustomSpeak.style.color = "#ffffff";
+			toggleCustomSpeakBtn.style.backgroundColor = "#191919";
+			toggleCustomSpeakBtn.style.color = "#ffffff";
 		} else {
-			toggleCustomSpeak.style.backgroundColor = "#dddddd";
-			toggleCustomSpeak.style.color = "#000000";
+			toggleCustomSpeakBtn.style.backgroundColor = "#dddddd";
+			toggleCustomSpeakBtn.style.color = "#000000";
+		}
+		
+		if(localStorage.getItem('toggleCustomSpeak') === 'true'){
+			customSpeakSettings.style.display = "block";
+		} else {
+			customSpeakSettings.style.display = "none";
 		}
 	}
 	
@@ -350,14 +592,7 @@ function update() {
 			toggleScramblerBtn.style.color = "#000000";
 		}
 	}
-	
-	if(toggleCustomSpeak){
-		if(localStorage.getItem('toggleCustomSpeak') === 'true'){
-			customSpeakSettings.style.display = "block";
-		} else {
-			customSpeakSettings.style.display = "none";
-		}
-    }
+
 	if(toggleGreekLetterSpeakCheckbox){
 		toggleGreekLetterSpeakCheckbox.checked = false;
 	}
@@ -380,11 +615,11 @@ function update() {
     min = min < 10 ? "0" + min : min; 
     sec = sec < 10 ? "0" + sec : sec;
 
-    let currentTime = `${hour}:${min}:${sec}`;
-    let currentDay = `${month}/${day}/${year}`;
+    currentTime = `${hour}:${min}:${sec}`;
+    currentDay = `${month}/${day}/${year}`;
    if(hasMilitaryTime){
     currentTime = `${hour}:${min} ${am_pm}`;
-	if(localStorage.getItem('fMT') === 'true'){
+	if(fullMilitaryTimeLS === 'true'){
 	currentTime = `${hour}:${min}:${sec}`;	
 	}
    } else{
@@ -396,10 +631,8 @@ function update() {
 	currentDay = `${month}/${day}/${year}`;
 	}
 	
-	if(!window.location.pathname.includes("LightwebHistory.html")){
-		document.getElementById("DigitalClock").textContent = currentTime;
-		document.getElementById("DigitalCalendar").textContent = currentDay;
-	}
+	digitalClock.textContent = currentTime;
+	digitalCalendar.textContent = currentDay;
 }
 
 document.addEventListener("keydown", (e) => {
@@ -413,45 +646,18 @@ document.addEventListener("keydown", (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-	
-	  const meta = document.createElement("meta");
-	  meta.setAttribute("charset", "UTF-8");
-	  document.head.appendChild(meta);
-	  
-	  
-	 
-	  
-	  document.body.classList.remove('default', 'dark', 'AnalogScreen', 'CRTBLUEScreen', 'default', 'chaos');
-	  document.body.classList.remove('fullMilitaryTime', 'snowflakeToggleOn');
-	  document.body.classList.remove('dashedCalendar');
-	  document.body.classList.remove('InverseInversionOn');
-	  document.body.classList.remove('PC', 'Phone', 'Laptop');
-	  document.body.classList.remove('modernEnglishSpeak', 'shakespeareanEnglishSpeak');
-      const theme = localStorage.getItem('theme');
-	  const fullMilitaryTime = localStorage.getItem('fMT');
-	  const snowflakeToggle = localStorage.getItem('snowflakeToggle');
-	  const CRTBlueFlickerToggle = localStorage.getItem('CRTBlueFlicker');
-      const timeType = localStorage.getItem('timeType');
-	  const DeviceType = localStorage.getItem('DeviceType');
-	  const CalendarType = localStorage.getItem('calendarType');
-	  const toggleImageInversion = localStorage.getItem('toggleImageInversion');
-	  const toggleCustomSpeak = localStorage.getItem('toggleCustomSpeak');
-	  const customSpeakSetting = localStorage.getItem('customSpeakSetting');
-	  const darkScreenFlashbangSetting = localStorage.getItem('darkScreenFlashbangSetting');
-	  const darkScreenFlashbangColorBoxValue = localStorage.getItem('darkScreenFlashbangColorBoxValue');
-	  const colorVomitActivated = localStorage.getItem('colorVomitActivated');
 	  
 	  if(localStorage.getItem("toggleScrambler") === "true"){
 			function scrambleText(node){
 				node.childNodes.forEach(child => {
 					if (child.nodeType === Node.TEXT_NODE) {
-						let scrambledText = child.textContent.split('');
+						nodeScrambledText = child.textContent.split('');
 						for (let i = 0; i < 100; i++) {
-							let j = Math.floor(Math.random() * scrambledText.length);
-							let k = Math.floor(Math.random() * scrambledText.length);
-							[scrambledText[j], scrambledText[k]] = [scrambledText[k], scrambledText[j]];
+							let j = Math.floor(Math.random() * nodeScrambledText.length);
+							let k = Math.floor(Math.random() * nodeScrambledText.length);
+							[nodeScrambledText[j], nodeScrambledText[k]] = [nodeScrambledText[k], nodeScrambledText[j]];
 						}
-						child.textContent = scrambledText.join('');
+						child.textContent = nodeScrambledText.join('');
 					} else if (child.nodeType === Node.ELEMENT_NODE) {
 						scrambleText(child);
 					}
@@ -460,34 +666,26 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 			
 			scrambleText(document.body);
-			const title = document.querySelector("title");
-			let titleText = title.textContent;
-			let scrambledTitleText = title.textContent.split('');
+			let scrambledTitleText = document.querySelector("title").textContent.split('');
 			for (let i = 0; i < 25; i++) {
 				let j = Math.floor(Math.random() * scrambledTitleText.length);
 				let k = Math.floor(Math.random() * scrambledTitleText.length);
 				[scrambledTitleText[j], scrambledTitleText[k]] = [scrambledTitleText[k], scrambledTitleText[j]];
 			}
-			title.textContent = scrambledTitleText.join('');
+			document.querySelector("title").textContent = scrambledTitleText.join('');
 			
 			
 	  }
 	  
-	  if(textSizeSelection){
-		  textSizeSelection.value = localStorage.getItem("lightwebTextSize");
+	  
+	  if(loadCustomFontsToggle){
+		 if(localStorage.getItem('loadCustomFonts') === 'true'){
+			loadCustomFontsToggle.checked = true;
+		 } else {
+			loadCustomFontsToggle.checked = false;
+		 }
 	  }
 	  
-	  if(textFontSelection){
-		  textFontSelection.value = localStorage.getItem("lightwebTextFont") || "Times New Roman";
-	  }
-	  
-	  if(hyperlinkHoverColorSelection){
-		  hyperlinkHoverColorSelection.value = localStorage.getItem("lightwebHyperlinkHoverColorSelection") || "#ff0000";
-	  }
-	  
-	  if(darkScreenFlashbangColorBox){
-		  darkScreenFlashbangColorBox.value = darkScreenFlashbangColorBoxValue;
-	  }
 
 	  
 	  if(toggleDarkScreenFlashbangBtn){
@@ -526,44 +724,43 @@ document.addEventListener('DOMContentLoaded', () => {
 	  if(document.body.classList.contains("fullMilitaryTime")){
 	    document.body.classList.add("fullMilitaryTime");
 	  }
-	  if(DeviceType == 'PC'){
+	  if(localStorage.getItem("DeviceType") == 'PC'){
 	  document.body.classList.add('PC');
-	  } else if (DeviceType == 'Phone'){
+	  } else if (localStorage.getItem("DeviceType") == 'Phone'){
 	  document.body.classList.add('Phone');
-	  } else if(DeviceType == 'Laptop'){
+	  } else if(localStorage.getItem("DeviceType") == 'Laptop'){
 	  document.body.classList.add('Laptop');	
 	  }
-       if (theme === 'dark') {
+       if (localStorage.getItem("theme") === 'dark') {
 	    clearScreenType();
         document.body.classList.add('dark');
-      } else if (theme === 'AnalogScreen') {
+      } else if (localStorage.getItem("theme") === 'AnalogScreen') {
 	    clearScreenType();
         document.body.classList.add('AnalogScreen');
-      } else if (theme === 'CRTBLUEScreen') {
+      } else if (localStorage.getItem("theme") === 'CRTBLUEScreen') {
 	    clearScreenType();
         document.body.classList.add('CRTBLUEScreen');
-      } else if(theme === 'default'){
+      } else if(localStorage.getItem("theme") === 'default'){
 	    clearScreenType();
 		document.body.classList.add('default');
-	  } else if(theme == 'squidGameScreen'){
+	  } else if(localStorage.getItem("theme") == 'squidGameScreen'){
 		  clearScreenType();
 		document.body.classList.add('squidGameScreen');
-	  } else if(theme == 'chaosScreen'){
+	  } else if(localStorage.getItem("theme") == 'chaosScreen'){
 		clearScreenType();
 		document.body.classList.add('chaosScreen');  
-	  } else if(theme == 'christmasScreen'){
+	  } else if(localStorage.getItem("theme") == 'christmasScreen'){
 		clearScreenType();
 		document.body.classList.add('christmasScreen');
 	  } else {
   		clearScreenType();
   		document.body.classList.add('default');
-  		localStorage.setItem('theme', 'default');
+  		themeLS = "default";
 	 }
 
-      if (timeType === 'militaryTime') {
+      if (localStorage.getItem("timeType") === 'militaryTime') {
         document.body.classList.add('militaryTime');
-		if(localStorage.getItem('fMT') === 'true'){
-			document.body.classList.add('fMT', true);
+		if(fullMilitaryTimeLS === 'true'){
 			if(fullMilitaryTimeCheckbox){
 			fullMilitaryTimeCheckbox.checked = true;
 			}
@@ -580,31 +777,27 @@ document.addEventListener('DOMContentLoaded', () => {
 	  }
 
 	  
-	  if (CalendarType === 'dashedCalendar') {
+	  if (localStorage.getItem("CalendarType") === 'dashedCalendar') {
         document.body.classList.add('dashedCalendar');
       } else {
         document.body.classList.remove('dashedCalendar');
       } 
 	  
-	  if (toggleImageInversion == 'imageInversionOn') {
+	  if (localStorage.getItem("toggleImageInversion") == 'imageInversionOn') {
         document.body.classList.add('imageInversionOn');
       } else {
 	    document.body.classList.add('imageInversionOff');
 	  }
-	  
-      const toggleDarkBtn = document.getElementById('dark-screen-toggle');
-      const toggleAnalogBtn = document.getElementById('analog-screen-button');
-      const toggleMilitaryBtn = document.getElementById('millitary-time-button');
-	  const toggleCRTBlueScreen = document.getElementById('CRTBLUE-screen-button');
-	  const toggleDashedCalendarBtn = document.getElementById('dashed-calendar-button');
-	  const toggleSquidGameBtn = document.getElementById('squidGame-screen-button');
-	  const toggleChaosScreenBtn = document.getElementById('chaos-screen-button');
-	  const ImageInversionBtn = document.getElementById('image-inversion-button');
-	  const toggleChristmasBtn = document.getElementById('christmas-screen-button');
-	  const toggleCustomSpeakBtn = document.getElementById('toggleCustomSpeak');
-	  const toggleScramblerBtn = document.getElementById('toggle-scrambler-button');
-	  const toggleDarkScreenFlashbangCheckbox = document.getElementById("dark-screen-flashbang-checkbox");
-	  const toggleColorVomitButton = document.getElementById("toggle-colorVomit-button");
+	
+	if(loadCustomFontsToggle){
+		loadCustomFontsToggle.addEventListener('click', () => {
+			if(localStorage.getItem("loadCustomFonts") === 'true'){
+				localStorage.setItem("loadCustomFonts", false);
+			} else {
+				localStorage.setItem("loadCustomFonts", true);
+			}
+		})
+	}
 	
 	if(toggleDarkScreenFlashbangCheckbox){
 		toggleDarkScreenFlashbangCheckbox.addEventListener('click', () => {
@@ -612,6 +805,16 @@ document.addEventListener('DOMContentLoaded', () => {
 				localStorage.setItem("darkScreenFlashbangSetting", false);
 			} else {
 				localStorage.setItem("darkScreenFlashbangSetting", true);
+			}
+		})
+	}
+	
+	if(toggleRelativePositionBtn){
+		toggleRelativePositionBtn.addEventListener('click', () => {
+			if(localStorage.getItem("lightwebRelativePositioning") === 'true'){
+				localStorage.setItem("lightwebRelativePositioning", false);
+			} else {
+				localStorage.setItem("lightwebRelativePositioning", true);
 			}
 		})
 	}
@@ -808,9 +1011,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	}
-	
-	
-
 });
 let snowflakeAmount = 0;
 
@@ -1080,54 +1280,44 @@ function clearScreenType(){
 	document.body.classList.remove('default', 'dark', 'AnalogScreen', 'CRTBLUEScreen', 'squidGameScreen', 'chaosScreen', 'christmasScreen');
 }
 
-
-
-const iconthingy = document.createElement('link');
-iconthingy.rel = 'icon'; 
-iconthingy.type = 'image/png'; 
-iconthingy.href = '../Important/Lightweb.icon.png?v=' + faviconNum
-
-
-
-const iconthingy2 = document.createElement('link');
-iconthingy2.rel = 'icon'; 
-iconthingy2.type = 'image/png'; 
-iconthingy2.href = 'Important/Lightweb.icon.png?v=' + faviconNum;
-
-const iconthingy3 = document.createElement('link');
-iconthingy3.rel = 'icon'; 
-iconthingy3.type = 'image/png'; 
-iconthingy3.href = '../../Important/Lightweb.icon.png?v=' + faviconNum;
-
-const htmlAdd = `
-  <div id="DigitalClock">If you are seeing this, your clock is missing a ding-dong</div>
-  <div id="DigitalCalendar">If you are seeing this, your calendar needs a pin or two.</div>
-`;
-
-if(!window.location.pathname.includes("LightwebHistory.html")){
-	const DigitalClockCalendarContainer = document.createElement('div');
-	DigitalClockCalendarContainer.innerHTML = htmlAdd;
-	document.body.appendChild(DigitalClockCalendarContainer);
-}
-if(window.location.pathname.includes("index.html")){
-	document.head.appendChild(iconthingy2);
-}
-if(window.location.pathname.includes("/Articles/") ||
-   window.location.pathname.includes("/Games%20&%20FunStuff/") ||
-   window.location.pathname.includes("/MainPages/") ||
-   window.location.pathname.includes("/Other/") ||
-   window.location.pathname.includes("/Simulations/") ||
-   window.location.pathname.includes("/SubMainPages/") ||
-   window.location.pathname.includes("/Utility/")
-   ){
-	document.head.appendChild(iconthingy);
-}
-if(window.location.pathname.includes("/SubSections/")){
-	document.head.appendChild(iconthingy3);
-}
-
 window.addEventListener("DOMContentLoaded", () => {
-
+		
+		if(localStorage.getItem("lightwebRelativePositioning") === 'true'){
+		if(document.getElementById("DigitalClock")){
+			document.getElementById("DigitalClock").style.position = "fixed";
+		}
+		if(document.getElementById("DigitalCalendar")){
+			document.getElementById("DigitalCalendar").style.position = "fixed";
+		}
+		if(document.getElementById("searchInput")){
+			document.getElementById("searchInput").style.position = "fixed";
+			let br = document.createElement("br");
+			let br2 = document.createElement("br");
+			let br3 = document.createElement("br");
+			let br4 = document.createElement("br");
+			if(document.getElementById("SearchInputVacuum")){
+				document.getElementById("SearchInputVacuum").insertAdjacentElement("afterbegin", br);
+				document.getElementById("SearchInputVacuum").insertAdjacentElement("afterbegin", br2);
+				document.getElementById("SearchInputVacuum").insertAdjacentElement("afterbegin", br3);
+				document.getElementById("SearchInputVacuum").insertAdjacentElement("afterbegin", br4);
+			}
+		}
+		if(document.getElementById("LightwebHeader")){
+			document.getElementById("LightwebHeader").style.position = "fixed";
+		}
+	} else {
+		if(document.getElementById("DigitalClock")){
+			document.getElementById("DigitalClock").style.position = "absolute";
+		}
+		if(document.getElementById("DigitalCalendar")){
+			document.getElementById("DigitalCalendar").style.position = "absolute";
+		}
+		
+		if(document.getElementById("LightwebHeader")){
+			document.getElementById("LightwebHeader").style.position = "absolute";
+		}
+	}
+	
 		const hyperlinks = document.querySelectorAll('a');
 		const title = document.querySelector('h1');
 		const heading2s = document.querySelectorAll('h2');
@@ -1271,169 +1461,6 @@ window.addEventListener("DOMContentLoaded", () => {
 	
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-	
-	
-	
-	const path = window.location.pathname;
-	
-	if(!path.includes("LightwebHistory.html")){
-			DigitalClock.style.position = "absolute";
-			DigitalClock.style.left = "0px";
-			DigitalClock.style.top = "0px";
-			DigitalClock.style.border = "2px solid var(--DigitalClockBackground)";
-			DigitalClock.style.width = "300px";
-			DigitalClock.style.fontSize = "50px"
-			DigitalClock.style.borderRadius = "15px";
-			DigitalClock.style.textAlign = "center";
-		
-			DigitalCalendar.style.position = "absolute";
-			DigitalCalendar.style.left = "0px";
-			DigitalCalendar.style.top = "60px";
-			DigitalCalendar.style.border = "2px solid var(--DigitalClockBackground)";
-			DigitalCalendar.style.width = "300px";
-			DigitalCalendar.style.fontSize = "25px";
-			DigitalCalendar.style.borderRadius = "15px";
-			DigitalCalendar.style.textAlign = "center";
-		}
-		
-		if(path.includes("TicTacToe")){
-			DigitalClock.style.left = "0px";
-			DigitalClock.style.top = "1000px";
-			DigitalCalendar.style.left = "0px";
-			DigitalCalendar.style.top = "1060px";
-		}
-		
-		if(path.includes("/HTMLCSim")
-		   || path.includes("/HTMLCExercise")
-		){
-			DigitalCalendar.style.display = "none";
-			DigitalClock.style.display = "none";
-		}
-	
-	if(path.includes("/Articles/")){
-		let linkText = document.createElement("h2");
-		linkText.textContent = "Done? Here are other links.";
-		document.body.appendChild(linkText);
-		
-		let mainPageLink = document.createElement("a");
-		mainPageLink.href = "../MainPages/Lightweb%20MainPage.html";
-		mainPageLink.textContent = "Back to Main Page";
-		document.body.appendChild(mainPageLink);
-		
-		document.body.appendChild(document.createElement("br"));
-		document.body.appendChild(document.createElement("br"));
-		
-		let informationalPageLink = document.createElement("a");
-		informationalPageLink.href = "../MainPages/Informational.html";
-		informationalPageLink.textContent = "Back to Informational";
-		document.body.appendChild(informationalPageLink);
-		
-		const LightwebVerificationHeader = document.createElement("header");
-		LightwebVerificationHeader.textContent = "Official Lightweb Site";
-		document.body.appendChild(LightwebVerificationHeader);
-		
-
-	
-	}
-
-	
-	if(path.includes("/Articles/")){
-		let lightwebArticlesCSS = document.createElement("link");
-		lightwebArticlesCSS.rel = "stylesheet";
-		lightwebArticlesCSS.href = "../CSS/LightwebArticles.css";
-		lightwebArticlesCSS.type = "text/css";
-		document.head.appendChild(lightwebArticlesCSS);
-	
-		let lightwebSpecialThemesCSS = document.createElement("link");
-		lightwebSpecialThemesCSS.rel = "stylesheet";
-		lightwebSpecialThemesCSS.href = "../CSS/SpecialLightwebThemes.css";
-		lightwebSpecialThemesCSS.type = "text/css";
-		document.head.appendChild(lightwebSpecialThemesCSS);
-		
-		let articleTitle = document.createElement("title");
-		articleTitle.textContent = document.querySelector("h1").textContent;
-		document.head.appendChild(articleTitle);
-		let bre = document.createElement("br");
-		for(let i = 0; i < 4; i++){
-			document.querySelector("h1").insertAdjacentElement("afterBegin", bre);
-		}
-		
-		
-		
-	}
-	
-	
-	if(path.includes("/Simulations/")){
-		let lightwebSimulationsCSS3 = document.createElement("link");
-		lightwebSimulationsCSS3.rel = "stylesheet";
-		lightwebSimulationsCSS3.href = "../CSS/LightwebSimulations.css";
-		lightwebSimulationsCSS3.type = "text/css";
-		document.head.appendChild(lightwebSimulationsCSS3);
-	}
-
-	if(path.includes("/Utility/") || 
-	   path.includes("/Other/") || 
-	   path.includes("/Simulations/") ||
-	   path.includes("/Games%20&%20FunStuff/") ||
-	   path.includes("/MainPages/") || 
-	   path.includes("/SubMainPages/") || 
-	   path.includes("/Articles/")){
-		let lightwebCSS = document.createElement("link");
-		lightwebCSS.rel = "stylesheet";
-		lightwebCSS.href = "../CSS/Lightweb.css";
-		lightwebCSS.type = "text/css";
-		document.head.appendChild(lightwebCSS);
-		
-		let lightwebDeviceOptimizationCSS = document.createElement("link");
-		lightwebDeviceOptimizationCSS.rel = "stylesheet";
-		lightwebDeviceOptimizationCSS.href = "../CSS/LightwebDeviceOptimization.css";
-		lightwebDeviceOptimizationCSS.type = "text/css";
-		document.head.appendChild(lightwebDeviceOptimizationCSS);
-		
-		let lightwebThemeCSS = document.createElement("link");
-		lightwebThemeCSS.rel = "stylesheet";
-		lightwebThemeCSS.href = "../CSS/LightwebThemes.css";
-		lightwebThemeCSS.type = "text/css";
-		document.head.appendChild(lightwebThemeCSS);
-	
-	}
-	
-	if(path.includes("index.html")){
-		let lightwebDeviceOptimizationCSS = document.createElement("link");
-		lightwebDeviceOptimizationCSS.rel = "stylesheet";
-		lightwebDeviceOptimizationCSS.href = "CSS/LightwebDeviceOptimization.css";
-		lightwebDeviceOptimizationCSS.type = "text/css";
-		document.head.appendChild(lightwebDeviceOptimizationCSS);
-		
-		let lightwebThemeCSS = document.createElement("link");
-		lightwebThemeCSS.rel = "stylesheet";
-		lightwebThemeCSS.href = "CSS/LightwebThemes.css";
-		lightwebThemeCSS.type = "text/css";
-		document.head.appendChild(lightwebThemeCSS);
-	}
-	
-	if(path.includes("/SubSections/")){
-		let lightwebDeviceOptimizationCSS = document.createElement("link");
-		lightwebDeviceOptimizationCSS.rel = "stylesheet";
-		lightwebDeviceOptimizationCSS.href = "../../CSS/LightwebDeviceOptimization.css";
-		lightwebDeviceOptimizationCSS.type = "text/css";
-		document.head.appendChild(lightwebDeviceOptimizationCSS);
-		
-		let lightwebThemeCSS = document.createElement("link");
-		lightwebThemeCSS.rel = "stylesheet";
-		lightwebThemeCSS.href = "../../CSS/LightwebThemes.css";
-		lightwebThemeCSS.type = "text/css";
-		document.head.appendChild(lightwebThemeCSS);
-		
-		let lightwebCSS = document.createElement("link");
-		lightwebCSS.rel = "stylesheet";
-		lightwebCSS.href = "../../CSS/Lightweb.css";
-		lightwebCSS.type = "text/css";
-		document.head.appendChild(lightwebCSS);
-	}
-	
-});
 	
 	
 document.addEventListener("DOMContentLoaded", () => setSize(0));
@@ -1444,14 +1471,25 @@ if(textFontSelection){
 	textFontSelection.addEventListener("change", () => setSize(1));
 }
 
+if(textLineHeightSelection){
+	textLineHeightSelection.addEventListener("change", () => setSize(1));
+}
+
 if(hyperlinkHoverColorSelection){
 	hyperlinkHoverColorSelection.addEventListener("change", () => setSize(1));
 }
+
+
+setInterval(setSize(1), 3000);
 function setSize(toggle){
 	
 
 	if(textSizeSelection && toggle === 1){
 		localStorage.setItem("lightwebTextSize", Number(textSizeSelection.value));
+	}
+	
+	if(textLineHeightSelection && toggle === 1){
+		localStorage.setItem("lightwebLineHeight", textLineHeightSelection.value);
 	}
 	
 	const val = localStorage.getItem("lightwebTextSize").trim();
@@ -1461,6 +1499,7 @@ function setSize(toggle){
 	
 	if(textFontSelection && toggle === 1){
 		localStorage.setItem("lightwebTextFont", textFontSelection.value);
+		textFontSelection.value = localStorage.getItem("lightwebTextFont");
 	}
 	
 	if(hyperlinkHoverColorSelection && toggle === 1){
@@ -1478,10 +1517,11 @@ function setSize(toggle){
 		
 	]
 	
-	const fonts = [
-		{elements: "p, a, span, input, select, option, optgroup, textarea, h1, h2, h3, h4, h5, h6, label, example, math"}
+	const allElementsAffected = [
+		{font: "p, a, div:not(#DigitalClock):not(#DigitalCalendar), span, input, select, option, optgroup, textarea, table, h1, h2, h3, h4, h5, h6, label, example, math"},
+		{lineHeight: "p, div:not(#DigitalClock):not(#DigitalCalendar), span, input, select, option, optgroup, textarea, h1, h2, h3, h4, h5, h6, label, example, math"}
 	]
-	const font = localStorage.getItem("lightwebTextFont") || "Times New Roman";
+
 	const textSizeMultiplier = localStorage.getItem("lightwebTextSize");
 
 	scales.forEach(group => {
@@ -1502,23 +1542,52 @@ function setSize(toggle){
 		});
 	});
 	
-	fonts.forEach(group => {
-		document.querySelectorAll(group.elements).forEach(element => {
-			element.style.fontFamily = font;
+	allElementsAffected.forEach(group => {
+		document.querySelectorAll(group.lineHeight).forEach(element => {
+			element.style.lineHeight = `${localStorage.getItem("lightwebLineHeight")}em`;
+		});
+	});
+	
+	allElementsAffected.forEach(group => {
+		document.querySelectorAll(group.font).forEach(element => {
+			element.style.fontFamily = localStorage.getItem("lightwebTextFont");;
 		});
 		
 		document.querySelectorAll("button").forEach(button => {
 			if(!button.classList.contains("settingButton")){
-				button.style.fontFamily = font;
+				button.style.fontFamily = localStorage.getItem("lightwebTextFont");;
 			}
 		});
 	});
+	
 	
 	document.documentElement.style.setProperty("--hyperlinkHoverColor", localStorage.getItem("lightwebHyperlinkHoverColorSelection"));
 	setTimeout( () => {
 		document.documentElement.style.setProperty("--hyperlinkHoverColor", localStorage.getItem("lightwebHyperlinkHoverColorSelection"));
 	}, 200);
+	
 }
+
+/* Importing Google API Fonts */
+
+const customFontLinks = [
+	"https://fonts.googleapis.com/css2?family=Oswald",
+	"https://fonts.googleapis.com/css2?family=Noto+Sans",
+	"https://fonts.googleapis.com/css2?family=Quicksand",
+	"https://fonts.googleapis.com/css2?family=Pacifico",
+	"https://fonts.googleapis.com/css2?family=Lobster+Two",
+	"https://fonts.googleapis.com/css2?family=Roboto",
+]
+
+customFontLinks.forEach(customFontLink => {
+	if(localStorage.getItem("loadCustomFonts") === 'true'){
+		customFontHyperlink = document.createElement("link");
+		customFontHyperlink.rel = "stylesheet";
+		customFontHyperlink.href = customFontLink;
+		document.head.appendChild(customFontHyperlink);
+	}
+});
+
 
 
 

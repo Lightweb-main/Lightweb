@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lightweb: Sudoku</title>
+		<link rel="stylesheet" href="Sudoku.css">
+	</head>
+	<body>
+		<h1 style="color: var(--text);">Sudoku</h1>
+		<div style="display: flex; justify-content: center;">
+			<div style="width: 80px; height: 80px; border: 1px solid black; display: flex; justify-content: center; align-items: center; font-size: 35px;"></div>
+			<div style="width: 80px; height: 80px; border: 1px solid black; display: flex; justify-content: center; align-items: center; font-size: 35px;"></div>
+			<div style="width: 80px; height: 80px; border: 1px solid black; display: flex; justify-content: center; align-items: center; font-size: 35px;"></div>
+		</div><br><br>
+		<div id="container">
+		</div>
+		<div style="text-align: center; padding: 15px; font-size: 35px;">
+			<button id="solveButton">Solve</button>
+			<button id="restartButton">Restart</button>
+		</div>
+		<button onclick="exit()">Exit</button>
+		<script src="Sudoku.js"></script>
+		<script>
+			function exit(){
+				window.location = "../MainPages/Games%20&%20FunStuff.html";
+			}
+		</script>
+		<script src="../Important/DigitalClock.js"></script>
+	</body>
+</html>

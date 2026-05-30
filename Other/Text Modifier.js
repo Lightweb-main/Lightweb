@@ -26,6 +26,9 @@ degrammarifiedText.value = localStorage.getItem('textModifierDegrammaredText') |
 originalText3.value = localStorage.getItem('textModifierOriginalText3') || "";
 alternateCasesText.value = localStorage.getItem('textModifierAlternateCasesText') || "";
 
+originalText4.value = localStorage.getItem('textModifierOriginalText4') || "";
+reversedText.value = localStorage.getItem('textModifierReversedText') || "";
+
 let mode = 0;
 
 setInterval(update, 10);
@@ -34,6 +37,7 @@ function update(){
 	textScrambler.style.display = "none";
 	textDegrammarify.style.display = "none";
 	textCaseAlternator.style.display = "none";
+	textReverser.style.display = "none";
 	
 	if(mode == 1){
 		textScrambler.style.display = "block";
@@ -41,6 +45,8 @@ function update(){
 		textDegrammarify.style.display = "block";
 	} else if(mode == 3){
 		textCaseAlternator.style.display = "block";
+	} else if(mode == 4){
+		textReverser.style.display = "block";
 	}
 }
 document.addEventListener("DOMContentLoaded", () => {
@@ -71,6 +77,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	alternateCasesText.addEventListener("input", () => {
 		localStorage.setItem("textModifierAlternateCasesText", alternateCasesText.value);
 	});
+	
+	originalText4.addEventListener("input", () => {
+		localStorage.setItem("textModifierOriginalText4", originalText4.value);
+	});
+
+	reversedText.addEventListener("input", () => {
+		localStorage.setItem("textModifierReversedText", reversedText.value);
+	});
 
 	textScramblerSelectBtn.addEventListener("click", () => {
 		if(mode == 1){
@@ -93,6 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			mode = 0;
 		} else {
 			mode = 3;
+		}
+	});
+	
+	textReverserSelectBtn.addEventListener("click", () => {
+		if(mode == 4){
+			mode = 0;
+		} else {
+			mode = 4;
 		}
 	});
 
@@ -387,6 +409,21 @@ function alternateCase(){
 	localStorage.setItem('textModifierAlternateCasesText', altText);
 	originalText3.value = localStorage.getItem('textModifierOriginalText3') || "";
 	alternateCasesText.value = localStorage.getItem('textModifierAlternateCasesText') || "";
+}
+
+function reverseText(){
+	let originalTextContents = originalText4.value;
+	let reversedTextContents = originalTextContents;
+
+	reversedTextContents = reversedTextContents.split('');
+	
+	reversedTextContents.reverse();
+	
+	reversedTextContents = reversedTextContents.join('');
+	
+	localStorage.setItem('textModifierReversedText', reversedTextContents);
+	originalText4.value = localStorage.getItem('textModifierOriginalText4') || "";
+	reversedText.value = localStorage.getItem('textModifierReversedText') || "";
 }
 
 function exit(){

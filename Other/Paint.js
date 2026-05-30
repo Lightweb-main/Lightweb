@@ -59,11 +59,13 @@ function generateEmptyCanvas(){
 	context.fillRect(0, 0, canvas.width, canvas.height);
 }
 let drawing = false;
+
 let scatterX = 0;
 let scatterY = 0;
 
 let paintWidth = paintWidthSlider.value;
 let paintScatter = paintScatterSlider.value;
+let paintOpacity = paintOpacitySlider.value;
 
 let paintColor = paintColorInput.value;
 	
@@ -74,10 +76,13 @@ function update(){
 	
 	paintWidthDisplay.textContent = `Paint Width: ${paintWidth}`;
 	paintScatterDisplay.textContent = `Scatter: ${paintScatter}`;
+	paintOpacityDisplay.textContent = `Opacity: ${(paintOpacity / 2.55).toFixed(0)}`;
 
 	paintWidth = paintWidthSlider.value;
 	paintScatter = paintScatterSlider.value;
-	paintColor = paintColorInput.value;
+	paintColor = paintColorInput.value + Number(paintOpacitySlider.value).toString(16);
+	
+	console.log(paintColor);
 	
 	paintSettings.style.display = "none";
 	canvasSettings.style.display = "none";
@@ -91,11 +96,9 @@ function update(){
 		downloading.style.display = "block";
 	}
 	
-	
-	paintWidthPreview.style.borderWidth = paintWidth + "px";
-	
 
 	document.body.style.cursor = "cursor";
+	paintOpacity = paintOpacitySlider.value;
 }
 
 function getPos(e){

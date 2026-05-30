@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Minesweeper";
+    src: url("Minesweeper.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+#stats {
+	border: 2px solid var(--border);
+	width: 850px;
+	height: 200px;
+	margin: auto;
+}
+#container {
+    background-color: #ffffff;
+    font-family: "Minesweeper", sans-serif !important;
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="module" src="https://q5js.org/q5.js"></script>
+		<script type="module" src="https://q5play.org/q5play.js"></script>
+	</head>
+		
+	<body>
+	
+	</body>
+	<script>
+		let object1;
+		let object2;
+		let wall;
+		
+		async function setup(){
+			await Canvas(1400, 700);
+			object1 = new Sprite();
+			object1.bounciness = 1;
+			object1.friction = 0;
+			object1.vel.x = 40;
+			object1.vel.y = 5;
+			object1.physics = DYNAMIC;
+			
+			object2 = new Sprite();
+			object2.bounciness = 1
+			object2.friction = 0;
+			object2.physics = DYNAMIC;
+			
+			
+			let wall = new Sprite();
+			wall.width = width * 2;
+			wall.physics = STATIC;
+			wall.height = 50;
+			wall.x = 0;
+			wall.y = 0;
+			
+			let wall2 = new Sprite();
+			wall2.width = width * 2;
+			wall2.physics = STATIC;
+			wall2.height = 50;
+			wall2.x = 0;
+			wall2.y = height;
+			
+			let wall3 = new Sprite();
+			wall3.width = 50;
+			wall3.physics = STATIC;
+			wall3.height = height * 2;
+			wall3.x = 0;
+			wall3.y = height;
+			
+			let wall4 = new Sprite();
+			wall4.width = 50;
+			wall4.physics = STATIC;
+			wall4.height = height * 2;
+			wall4.x = width;
+			wall4.y = height;
+		}
+		
+		function draw(){
+			background("#cccccc");
+			object2.x = object1.x + 200;
+			object2.rotation = object1.rotation;
+			object2.y = object1.y;
+		}
+	</script>
+</html>
+	

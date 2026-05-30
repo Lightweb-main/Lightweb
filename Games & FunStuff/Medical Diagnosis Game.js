@@ -196,11 +196,11 @@ covidInfoBtn.addEventListener("click", function(){
 	`	
 });
 
-physicalCheckupInfoBtn.addEventListener("click", function(){
+physicalExaminationInfoBtn.addEventListener("click", function(){
 	infoDivA.innerHTML = 
 	`
-		<h2>Physical Checkup</h2>
-		<p>Physical Checkups typically are annual visits from patients to meet with their doctors to ensure good physical and mental health. Physical Checkups check and mark the following: </p>
+		<h2>Physical Examination</h2>
+		<p>Physical examinations typically are annual visits from patients to meet with their doctors to ensure good physical and mental health. Physical examinations check and confirm the following: </p>
 		<ul>
 			<li>Coughing</li>
 			<li>Sneezing</li>
@@ -245,24 +245,24 @@ thermometerBtn.addEventListener("click", function(){
 	}
 });
 
-physicalCheckupBtn.addEventListener("click", function(){
+physicalExaminationBtn.addEventListener("click", function(){
 	if(toolToggle){
-		physicalCheckupBtn.textContent = "Arranging a Physical Checkup...";
+		physicalExaminationBtn.textContent = "Arranging a Physical Examination...";
 		toolToggle = false;
 		
 		setTimeout(function() {
 			if(cases[diseaseIndex].symptoms.includes("coughing")){
-				examinationDiv.innerHTML += `Patient has been observed to cough periodically during the physical checkup.<br>`;
+				examinationDiv.innerHTML += `Patient has been observed to cough periodically during the physical examination.<br>`;
 			} else {
-				examinationDiv.innerHTML += `Patient has not been observed to cough anywhere in the duration of the physical checkup.<br>`;
+				examinationDiv.innerHTML += `Patient has not been observed to cough anywhere in the duration of the physical examination.<br>`;
 			}
 		}, 1300);
 		
 		setTimeout(function() {
 			if(cases[diseaseIndex].symptoms.includes("sneezing")){
-				examinationDiv.innerHTML += `Patient has been observed to sneeze irregularly often during the physical checkup.<br>`;
+				examinationDiv.innerHTML += `Patient has been observed to sneeze irregularly often during the physical examination.<br>`;
 			} else {
-				examinationDiv.innerHTML += `Patient has not been observed to sneeze often in the physical checkup.<br>`;
+				examinationDiv.innerHTML += `Patient has not been observed to sneeze often in the physical examination.<br>`;
 			}
 		}, 2600);
 		
@@ -270,14 +270,12 @@ physicalCheckupBtn.addEventListener("click", function(){
 			if(cases[diseaseIndex].symptoms.includes("wheezing")){
 				examinationDiv.innerHTML += `Patient has been observed to wheeze after a forcefull exhale.<br>`;
 			} else {
-				examinationDiv.innerHTML += `Patient has been observed to not produce a wheezing sound when forcefully exhaling in the physical checkup.<br>`;
+				examinationDiv.innerHTML += `Patient has been observed to not produce a wheezing sound when forcefully exhaling in the physical examination.<br>`;
 			}
 			
-			physicalCheckupBtn.textContent = "Physical Checkup";
+			physicalExaminationBtn.textContent = "Physical Examination";
 			toolToggle = true;
 		}, 3900);
-		
-		
 	}
 });
 
@@ -486,9 +484,9 @@ function update(){
 	
 	for(const symptom of selectedSymptoms){
 		if(symptom != "sneezing" &&
-		   symptom != "coughing" &&
 		   symptom != "runnyNose" &&
-		   symptom != "wheezing"
+		   symptom != "wheezing" &&
+		   symptom != "soreThroat"
 		   ){
 			allergiesSelectBtn.style.backgroundColor = "color-mix(var(--border) 75%, #000000 25%)";
 			allergiesSelectBtn.style.borderColor = "color-mix(var(--border) 75%, #000000 25%)";
@@ -518,6 +516,23 @@ function update(){
 		influenzaSelectBtn.style.borderColor = "var(--border)";
 	}
 	
+	for(const symptom of selectedSymptoms){
+		if(symptom != "fever" &&
+		   symptom != "sneezing" &&
+		   symptom != "runnyNose" &&
+		   symptom != "headache"
+		   ){
+			covidSelectBtn.style.backgroundColor = "color-mix(var(--border) 75%, #000000 25%)";
+			covidSelectBtn.style.borderColor = "color-mix(var(--border) 75%, #000000 25%)";
+			covidSelectBtn.style.textDecoration = "line-through";
+			break;
+		}
+		
+		covidSelectBtn.style.textDecoration = "none";
+		covidSelectBtn.style.backgroundColor = "var(--border)";
+		covidSelectBtn.style.borderColor = "var(--border)";
+	}
+	
 	document.querySelectorAll(".diseaseSelectBtns").forEach(button => {
 		if(selectedDisease == button.dataset.diseaseSelect){
 			button.style.backgroundColor = "yellow";
@@ -531,7 +546,7 @@ confirmBtn.addEventListener("click", function(){
 	if(selectedDisease == caseDisease){
 		console.log("Correct!!! :O");
 	} else {
-		console.log("Incorrect...");
+		console.log(`Incorrect... it was actually ${caseDisease}`);
 	}
 	
 	messagesDiv.innerHTML = "";

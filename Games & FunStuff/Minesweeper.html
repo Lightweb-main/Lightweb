@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lightweb: Minesweeper</title>
+		<link rel="stylesheet" href="Minesweeper.css">
+	</head>
+	<body>
+		<h1>Minesweeper</h1>
+		<div id="stats" style="padding: 15px; width: fit-content; height: fit-content; display: block;">
+			<p>Flags: </p>
+			<p>Amount of Rows: <input></p>
+			<p>Amount of Columns: <input></p>
+			<p>Amount of Mines: <input></p>
+			<img src="../Images/Minesweeper.img1.png">
+			<img src="../Images/Minesweeper.img2.png"><br>
+			<button id="resetBtn">Reset</button>
+		</div>
+		<div id="container">
+			
+		</div>
+		<button onclick="exit()">Exit</button>
+		<script src="Minesweeper.js"></script>
+		<script>
+			function exit(){
+				window.location = "../MainPages/Games%20&%20FunStuff.html";
+			}
+		</script>
+		<script src="../Important/DigitalClock.js"></script>
+	</body>
+</html>

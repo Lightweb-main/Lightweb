@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="module" src="https://q5js.org/q5.js"></script>
+		<script type="module" src="https://q5play.org/q5play.js"></script>
+	</head>
+	<body>
+		<h1>Cell Simulation</h1>
+		<p>A simple simuation programmed in q5.js and q5play.js to show the process of evolution.</p>
+		<a href="../MainPages/Simulations.html">Back to Simulations</a><br><br>
+	</body>
+	<script src="../Important/DigitalClock.js"></script>
+	<script>
+		let cellCount; 
+		let cellTypeSet = ["Norm", "Fast", "AtkC", "Para", "HypM"];
+		
+		async function setup() {
+			await Canvas(windowWidth, windowHeight);
+
+			
+			stroke("#000000")
+			let wall = new Sprite();
+			wall.width = canvas.w;
+			wall.height = 30;
+			wall.y = 0;
+			wall.physics = STATIC;
+			
+			let wall2 = new Sprite();
+			wall2.width = canvas.w;
+			wall2.height = 30;
+			wall2.y = canvas.h;
+			wall2.physics = STATIC;
+			
+			let wall3 = new Sprite();
+			wall3.width = 30;
+			wall3.height = canvas.h;
+			wall3.x = 0;
+			wall3.physics = STATIC;
+			
+			let wall4 = new Sprite();
+			wall4.width = 30;
+			wall4.height = canvas.h;
+			wall4.x = canvas.w;
+			wall4.physics = STATIC;
+			
+			let startingCell = new Sprite();
+			startingCell.diameter = 15;
+			startingCell.type = "CELL";
+			startingCell.age = 0;
+			startingCell.x = canvas.w / 2;
+			startingCell.y = canvas.h / 2;
+			startingCell.physics = DYNAMIC;
+			startingCell.genome = {
+				phenotype: "ffffff",
+				lifeExpectency: 700,
+				cellType: "Norm",
+			}
+			
+			
+			
+			startingCell.genome.phenotype = Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+
+			startingCell.genome.lifeExpectency = Math.floor(Math.random() * 300 + 700).toString().padStart(3, "0");
+			
+			
+			let cellTypeIndex = cellTypeSet[Math.floor(Math.random() * cellTypeSet.length)];
+			
+			startingCell.genome.cellType = cellTypeIndex;
+
+			
+			window.startingCell = startingCell;
+		}
+		
+		function draw(){
+			background("#aaaaaa");
+			cellCount = 0;
+			for(let i of allSprites){
+				if(i.type !== "CELL") continue;
+					let cellCloneVelocity = 5;
+					if(i.genome.cellType == "Fast"){
+						cellCloneVelocity *= 1.7;
+					} else if(i.genome.cellType == "AtkC"){
+						cellCloneVelocity *= 0.6;
+					}
+					
+					if(i.genome.cellType == "Norm"){
+						i.stroke = "#000000";
+					} else if(i.genome.cellType == "Fast"){
+						i.stroke = "#ffff00";
+					} else if(i.genome.cellType == "AtkC"){
+						i.stroke = "#ff0000";
+					} else if(i.genome.cellType == "Para"){
+						i.stroke = "#990000";
+					} else if(i.genome.cellType == "HypM"){
+						i.stroke = "#ffffff";
+					}
+					i.strokeWeight = 2;
+					
+					if(i.genome.cellType == "AtkC"){
+						for(let otherCell of allSprites){
+							if(otherCell.type !== "CELL" || otherCell == i) continue;
+							if (i.overlaps(otherCell)) {
+								if(i.genome.cellType === "AtkC" && otherCell.genome.cellType !== "AtkC"){
+									if(i.diameter > otherCell.diameter && i.diameter <= 50){
+										otherCell.delete();                       
+										i.diameter += otherCell.diameter / 3;
+									}
+								}
+							}
+						}
+					} else if(i.genome.cellType == "Para"){
+						for(let otherCell of allSprites){
+							if(otherCell.type !== "CELL" || otherCell == i) continue;
+							if (i.overlaps(otherCell)) {
+								if(i.genome.cellType === "Para"){
+									if(i.diameter > otherCell.diameter && i.diameter <= 50){                
+										i.diameter += otherCell.diameter / 30;
+										otherCell.diameter -= otherCell.diameter / 30;
+									}
+								}
+							}
+						}
+					}
+					cellCount++;
+					if(i.diameter <= 50 && cellCount <= 500){
+						if(i.genome.cellType == "Fast"){
+							i.diameter *= 1.03;
+						} else {
+							i.diameter *= 1.01;
+						}
+					}
+					if(i.genome.cellType == "Fast" || i.genome.cellType == "AtkC"){
+						i.diameter -= i.age / (i.genome.lifeExpectency / 4);
+					} else if(i.genome.cellType == "Para"){
+						i.diameter -= i.age / (i.genome.lifeExpectency / 2);
+					} else {
+						i.diameter -= i.age / i.genome.lifeExpectency;
+					}
+					if(cellCount >= 500){
+						i.diameter -= 0.4;
+					}
+					i.age += 1;
+					i.color = "#" + i.genome.phenotype;
+					if(i.diameter <= 3){
+						i.delete();
+						cellCount--;
+					}
+					if(i.diameter >= 25){
+						if (cellCount >= 500) continue;
+
+						i.diameter /= 2;
+						let splitRotation = Math.random() * 360;
+						let daughterCell = new Sprite();
+						daughterCell.type = "CELL";
+						daughterCell.genome = structuredClone(i.genome);
+						daughterCell.x = i.x + i.diameter;
+						daughterCell.y = i.y;
+						daughterCell.age = 0;
+						i.age = 0;
+						daughterCell.diameter = i.diameter;
+						daughterCell.physics = DYNAMIC;
+						i.vel.x = cos(splitRotation) * cellCloneVelocity;
+						i.vel.y = sin(splitRotation) * cellCloneVelocity;
+						
+						daughterCell.vel.x = cos(splitRotation) * -cellCloneVelocity;
+						daughterCell.vel.y = sin(splitRotation) * -cellCloneVelocity;
+						
+						let mutationIndex = Math.floor(Math.random() * 25);
+						if(i.genome.cellType === "HypM"){
+							mutationIndex = Math.floor(Math.random() * 5);
+						}
+						let mutatedGenome = structuredClone(daughterCell.genome);
+						let mutatedPhenotypeGene = mutatedGenome.phenotype;
+						if(mutationIndex === 1){
+							switch(Math.floor(Math.random() * 3)){
+								case 0:
+									mutatedPhenotypeGene = mutatedPhenotypeGene.split('');
+									for(let i = mutatedPhenotypeGene.length - 1; i >= 0; i--){
+										let j = Math.floor(Math.random() * mutatedPhenotypeGene.length);
+										let k = Math.floor(Math.random() * mutatedPhenotypeGene.length);
+										[mutatedPhenotypeGene[j], mutatedPhenotypeGene[k]] = [mutatedPhenotypeGene[k], mutatedPhenotypeGene[j]];
+									}
+									mutatedPhenotypeGene = mutatedPhenotypeGene.join('');
+									mutatedGenome.phenotype = mutatedPhenotypeGene;
+									
+									daughterCell.genome = mutatedGenome;
+								break;
+								case 1:
+									mutatedGenome.lifeExpectency = Math.floor(Math.random() * 300 + 700).toString().padStart(3, "0"); 
+									daughterCell.genome = mutatedGenome;
+								break;
+								case 2:
+									mutatedGenome.cellType = cellTypeSet[Math.floor(Math.random() * cellTypeSet.length)];
+									daughterCell.genome = mutatedGenome;
+								break;
+							}
+						}
+				}
+			}
+		}
+	
+	
+	</script>
+</html>
