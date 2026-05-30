@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lightweb: Flashcard Generator</title>
+		<style>
+			.questionDiv {
+				padding: 15px;
+				border: 2px solid var(--border);
+			}
+			#flashcardsDivControls {
+				padding: 20px;
+				border: 3px solid var(--border);
+				margin: auto;
+				text-align: center;
+			}
+			#flashcardsDivControls {
+				width: 50vw;
+				height: 50vh;
+			}
+			#flashcardsDiv {
+				width: 700px;
+				height: 450px;
+				perspective: 1000px;
+				margin: auto;
+			}
+			#flashcardsDivInner {
+				width: 100%;
+				height: 100%;
+				background-color: #ffffff;
+				border: 3px solid black;
+				border-radius: 20px;
+				transition: transform 0.6s ease-in;
+				transform-style: preserve-3d;
+				cursor: pointer;
+			}
+	
+
+			#flashcardFront, #flashcardBack {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				font-size: 30px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				backface-visibility: hidden;
+			}
+			
+			
+			#flashcardsDivInner.flipped {
+				transform: rotateY(180deg);
+			}
+			
+			#flashcardBack {
+				transform: rotateY(180deg);
+			}
+
+			#flashcardGenerating, #flashcardDisplaying {
+				padding: 15px;
+				border: 1px solid var(--border);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>Flashcard Generator</h1>
+		<div id="selectMode" style="padding: 25px; border: 4px solid var(--border); border-radius: 20px; display: flex; gap: 15px; flex-direction: rows;">
+			<button style="font-size: 25px;">Flashcard Generating</button>
+			<button style="font-size: 25px;">Flashcard Displaying</button>
+		</div>
+		<div id="flashcardGenerating">
+		<h2>Flashcard Generating</h2>
+		<input id="generateQuestionsAmount">
+		<button id="generateQuestionsAmountButton">Generate</button><br><br>
+		<input type="file" accept="text/csv" id="csvFileInput"><br><br>
+		<button id="importCSV">Import CSV</button><br><br>
+		<button id="downloadCSV">Download as a CSV</button><br><br>
+		<div id="questionsDiv">
+			
+		</div>
+		<br><br>
+		</div>
+		<div id="flashcardDisplaying">
+		<h2>Flashcard Displaying</h2>
+		<div id="flashcardsDiv">
+			<div id="flashcardsDivInner">
+				<div id="flashcardFront"></div>
+				<div id="flashcardBack"></div>
+			</div>
+		</div><br><br>
+		<div id="flashcardsDivControls">
+			<button>Next</button>
+			<button id="clearBtn">Clear Flashcards</button><br><br>
+			<button id="startFlashcards">Start Flashcards</button><br><br>
+		</div>
+		</div>
+		<button onclick="exit()">Exit</button>
+		<script>
+			function exit(){
+				document.location = "../MainPages/Utility.html"
+			}
+		</script>
+		<script src="../Important/DigitalClock.js"></script>
+		<script src="FlashcardGenerator.js"></script>
+	</body>
+</html>

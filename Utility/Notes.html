@@ -28,26 +28,21 @@
 <body>
 
   <h1>Lightweb: Notes</h1>
+  <h2 style="text-align: center;">Saves content when you leave</h2>
   <textarea id="noteArea" placeholder="Start typing..."></textarea>
   <br>
-  <button onclick="saveState()">Save</button>
   <button onclick="clearState()">Clear</button>
   <button onclick="exit()">Exit</button>
 
   <script>
     const noteArea = document.getElementById('noteArea');
 
-    window.onload = () => {
-      const savedNote = localStorage.getItem('myNote');
-      if (savedNote) {
-        noteArea.value = savedNote;
-      }
-    };
-
-    function saveState() {
-      localStorage.setItem('myNote', noteArea.value);
-		alert("Note has been saved");
-    }
+    window.addEventListener("DOMContentLoaded", () => {
+		const savedNote = localStorage.getItem('myNote');
+		if (savedNote) {
+			noteArea.value = savedNote;
+		}
+    });
 
     function clearState() {
         noteArea.value = '';
@@ -55,7 +50,8 @@
 		alert("Note has been cleared");
     }
 	function exit(){
-	document.location = "../MainPages/Utility.html"
+		localStorage.setItem('myNote', noteArea.value);
+		document.location = "../MainPages/Utility.html";
 	}
   </script>
   <script src="../Important/DigitalClock.js"></script>
