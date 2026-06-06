@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	<body> 
+
+		<h1>Covariance</h1>
+		<h2>Introduction</h2>
+		<p>
+		The Covariance between two different variables is the quantification of the linear relationship between them. A positive cova
+		riance indicates that as one variable increases, the other tends to do so as well. A negative covariance indicates that as one v
+		ariable increases, the other tends to decrease. Zero covariance indicates no linear relationship between the two variables.
+		</p>
+		<h2>Formula</h2>
+<p>		
+The formula for finding the Covariance between two variables is…<br>
+</p>		<br><br>
+		<math>
+			<mrow>
+				<mtext>Population: cov(x, y)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mrow>
+						<ms>&Sigma;</ms>
+						<ms>(</ms>
+						<msub>
+							<ms>x</ms>
+							<ms>i</ms>
+						</msub>
+						<mo>-</mo>
+						<ms>x</ms>
+						<ms>)</ms>
+						<ms>(</ms>
+						<msub>
+							<ms>y</ms>
+							<ms>i</ms>
+						</msub>
+						<mo>-</mo>
+						<ms>x</ms>
+						<ms>)</ms>
+					</mrow>
+					<mtext>N</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
+		<math>
+			<mrow>
+				<mtext>Sample: cov(x, y)</mtext>
+				<mo>=</mo>
+				<mfrac>
+					<mrow>
+						<ms>&Sigma;</ms>
+						<ms>(</ms>
+						<msub>
+							<ms>x</ms>
+							<ms>i</ms>
+						</msub>
+						<mo>-</mo>
+						<ms>x</ms>
+						<ms>)</ms>
+						<ms>(</ms>
+						<msub>
+							<ms>y</ms>
+							<ms>i</ms>
+						</msub>
+						<mo>-</mo>
+						<ms>x</ms>
+						<ms>)</ms>
+					</mrow>
+					<mtext>N - 1</mtext>
+				</mfrac>
+			</mrow>
+		</math>
+		<br><br>
+		<h2>Example</h2>
+<p>		
+An example of finding between the covariance between two variables is this dataset…
+</p>		
+		<table>
+		<tr>
+		<th>X</th>
+		<th>Y</th>	
+		</tr>
+		<tr>
+		<td>153</td>
+		<td>102</td>
+		</tr>
+		<tr>
+		<td>162</td>
+		<td>109</td>
+		</tr>
+		<tr>
+		<td>174</td>
+		<td>115</td>
+		</tr>
+		<tr>
+		<td>187</td>
+		<td>120</td>
+		</tr>
+		<tr>
+		<td>198</td>
+		<td>130</td>
+		</tr>
+		<tr>
+		<td>205</td>
+		<td>216</td>
+		</tr>
+		</table>
+
+<p>
+First we find the mean for both X and Y…
+</p><example>153 + 162 = 315</example>
+<example>315 + 174 = 489</example>
+<example>489 + 187 = 676</example>
+<example>676 + 198 = 874 </example>
+<example>874 + 205 = 1079</example>
+<example>1079 + 216 = 1295</example>
+<example>1295/7 = 185</example>
+<example>102 + 109 = 211</example>
+<example>211 + 115 = 326</example>
+<example>326 + 120 = 446</example>
+<example>446 + 130 = 576</example>
+<example>576 + 139 = 715</example>
+<example>715 + 153 = 868</example>
+<example>868 / 7 = 124</example>
+<p>
+Then we subtract all the X and Y by their respective average…
+</p><example>153 - 185 = -32</example>
+<example>162 - 185 = -23</example>
+<example>174 - 185 = -11</example>
+<example>187 - 185 = 2</example>
+<example>198 - 185 = 13</example>
+<example>205 - 185 = 20</example>
+<example>216 - 185 = 31</example>
+
+<example>102 - 124 = -22</example>
+<example>115 - 124 = -9</example>
+<example>120 - 124  = -4</example>
+<example>130 - 124 = 6</example>
+<example>139 - 124 = 15</example>
+<example>153 - 124 = 29</example>
+<p>
+Then we multiply every number together, so the first numbers in X and Y are multiplied together, then the second, then the third and so on…
+</p><example>-32 * -22 = 704 </example>
+<example>-23 * -15 = 345</example>
+<example>-11 * -9 = 99</example>
+<example>2 * -4 = -8</example>
+<example>13 * 6 = 78</example>
+<example>15 * 20 = 300</example>
+<example>31 * 29 = 899</example>
+<p>
+Then we add them up together…
+</p><example>704 + 345 = 1049</example>
+<example>1049 + 99 = 1148</example>
+<example>1148 - 8 = 1140</example>
+<example>1140 + 78 = 1218</example>
+<example>1218 + 300 + 1518</example>
+<example>1518 + 899 = 2417</example>
+<p>
+Then we divide the sum by 7 since there are seven numbers…
+</p><example>Cov(x, y) = 2417 / 7 = 345.285...</example>
+<p>
+The covariance between x and y is 345.285, indicating a high covariance. 
+</p>
+<p>
+For a sample…
+</p>
+		<table>
+		<tr>
+		<th>X</th>
+		<th>Y</th>	
+		</tr>
+		<tr>
+		<td>153</td>
+		<td>102</td>
+		</tr>
+		<tr>
+		<td>162</td>
+		<td>109</td>
+		</tr>
+		<tr>
+		<td>198</td>
+		<td>137</td>
+		</tr>
+		</table>
+
+<p>
+We find the averages of X and Y…
+</p><example>162 + 153 = 315</example>
+<example>315 + 198 = 513</example>
+<example>513/3 = 171</example>
+
+<example>102 + 109 = 211</example>
+<example>211 + 137 = 348</example>
+<example>348/3 = 116</example>
+<p>
+Subtract the values…
+</p><example>153 - 171 = -18</example>
+<example>162 - 171 = -9</example>
+<example>198 - 171 = 27</example>
+
+<example>102 - 116 = -14</example>
+<example>109 - 116 = -7</example>
+<example>137 - 116 = 21</example>
+<p>
+Now multiply and add them up…
+</p><example>-18 * -14 = 252</example>
+<example>-9 * -7 = 63</example>
+<example>27 * 21 = 567</example>
+
+<example>252 + 63 = 315</example>
+<example>315 + 567 = 882</example>
+<p>
+Now 511 is being divided by the amount of numbers minus 1 because this is a sample, not a population…
+</p><example>Cov(x, y) = 882 / 2 = 441</example>
+<p>
+The final covariance of X and Y equals 441.</example>
+</p>
+
+		
+		
+		
+
+
+     <script src="../Important/DigitalClock.js"></script>
+	</body>
+</html>

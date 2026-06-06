@@ -1,0 +1,1001 @@
+<!DOCTYPE html> <html>
+	<head>
+		
+		 
+		<style> 
+		
+
+		table{
+		width:  500px;
+		}
+		</style>
+	<head>
+	<body> 
+	<h1>Correlation Coefficients</h1>
+	<h2>Introduction</h2>
+	<p>
+	Correlation Coefficients are the numbers that range from -1 to 1 that quantifies the strength and direction (linear relationship) between a variable
+	and another with 1 being a perfect correlation and zero being no correlation at all. Correlation Coefficients are often disrupted by outliers (numbers significantly out of range or an unusual number).
+	</p>
+	<h2>Pearson's Correlation Coefficient</h2>
+	<p>
+	Pearson’s Correlation Coefficient is a way to calculate the linear relationship between two continuous variables…
+	</p>
+	<table>
+	<tr>
+	<th>X</th>
+	<th>Y</th>
+	</tr>
+	<tr>
+	<td>4</td>
+	<td>0</td>
+	</tr>
+	<tr>
+	<td>9</td>
+	<td>1</td>
+	</tr>
+	<tr>
+	<td>19</td>
+	<td>5</td>
+	</tr>
+	<tr>
+	<td>29</td>
+	<td>7</td>
+	</tr>
+	<tr>
+	<td>44</td>
+	<td>10</td>
+	</tr>
+	<tr>
+	<td>58</td>
+	<td>12</td>
+	</tr>
+	<tr>
+	<td>75</td>
+	<td>14</td>
+	</tr>
+	</table>
+
+
+<p>
+The formula is a lot but here it is…
+</p><math display="block">
+<mrow>
+<mfrac>
+	<mrow>
+		<mi>&Sigma;</mi>
+		<mo>(</mo>
+		<msub>
+			<mi>x</mi>
+			<mi>i</mi>
+		</msub>
+		<mo>-</mo>
+		<mover>
+			<mi>x</mi>
+			<mtext>__</mtext>
+		</mover>
+		<mo>)</mo>
+		<mo>(</mo>
+		<msub>
+			<mi>y</mi>
+			<mi>i</mi>
+		</msub>
+		<mo>-</mo>
+		<mover>
+			<mi>y</mi>
+			<mtext>__</mtext>
+		</mover>
+		<mo>)</mo>
+	</mrow>
+	<mrow>
+		<msqrt>
+			<msup>
+				<mrow>
+					<mi>&Sigma;</mi>
+					<mo>(</mo>
+					<msub>
+						<mi>x</mi>
+						<mi>i</mi>
+					</msub>
+					<mo>-</mo>
+					<mover>
+						<mi>x</mi>
+						<mtext>__</mtext>
+					</mover>
+					<mo>)</mo>
+				</mrow>
+				<mn>2</mn> 
+			</msup>
+			<msup>
+				<mrow>
+				<mi>&Sigma;</mi>
+				<mo>(</mo>
+				<msub>
+					<mi>y</mi>
+					<mi>i</mi>
+				</msub>
+				<mo>-</mo>
+				<mover>
+					<mi>y</mi>
+					<mtext>__</mtext>
+				</mover>
+				<mo>)</mo>
+				</mrow>
+				<mn>2</mn>
+			</msup>
+		</msqrt>
+	</mrow>
+</mfrac>
+</mrow>
+</math>
+<math>	
+	<mi>&Sigma;</mi>
+	<mo>(</mo>
+	<msub>
+		<mi>x</mi>
+		<mi>i</mi>
+	</msub>
+	<mo>-</mo>
+	<mi>x</mi>
+	<mo>)</mo>
+	<mtext>: The sum of all the x values in a set first subtracted by the mean. 
+</math>
+<math>	
+	<mi>&Sigma;</mi>
+	<mo>(</mo>
+	<msub>
+		<mi>y</mi>
+		<mi>i</mi>
+	</msub>
+	<mo>-</mo>
+	<mi>y</mi>
+	<mo>)</mo>
+	<mtext>: The sum of all the y values in a set first subtracted by the mean. 
+</math>
+<p>
+The first step to find the correlation coefficent between two variables is to find the average (or mean) of both of them...
+<math>
+	<mtext>Average of&nbsp;</mtext>
+	<mi>x</mi>
+</math>
+<math>
+	<mfrac>
+	<mrow>
+		<mn>4</mn>
+		<mo>+</mo>
+		<mn>9</mn>
+		<mo>+</mo>
+		<mn>19</mn>
+		<mo>+</mo>
+		<mn>29</mn>
+		<mo>+</mo>
+		<mn>44</mn>
+		<mo>+</mo>
+		<mn>58</mn>
+		<mo>+</mo>
+		<mn>75</mn>
+	</mrow>
+	<mrow>
+		<mn>7</mn>
+	</mrow>
+	</mfrac>
+</math>
+<math>
+	<mfrac>
+		<mn>238</mn>
+		<mn>7</mn>
+	</mfrac>
+</math>
+<math>
+	<mtext>Average</mtext>
+	<mo>(</mo>
+	<mi>x</mi>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>34</mn>
+</math>
+<br><br>
+<math>
+	<mtext>Average of&nbsp;</mtext>
+	<mi>y</mi>
+</math>
+<math>
+	<mfrac>
+	<mrow>
+		<mn>0</mn>
+		<mo>+</mo>
+		<mn>1</mn>
+		<mo>+</mo>
+		<mn>5</mn>
+		<mo>+</mo>
+		<mn>7</mn>
+		<mo>+</mo>
+		<mn>10</mn>
+		<mo>+</mo>
+		<mn>12</mn>
+		<mo>+</mo>
+		<mn>14</mn>
+	</mrow>
+	<mrow>
+		<mn>7</mn>
+	</mrow>
+	</mfrac>
+</math>
+<math>
+	<mfrac>
+		<mn>49</mn>
+		<mn>7</mn>
+	</mfrac>
+</math>
+<math>
+	<mtext>Average</mtext>
+	<mo>(</mo>
+	<mi>y</mi>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>7</mn>
+</math>
+Next, you all the values subtracted by their averages...
+<math>
+	<mtext>Value of all</mtext>
+	<mo>(</mo>
+	<msub>
+		<mi>x</mi>
+		<mi>i</mi>
+	</msub>
+	<mo>-</mo>
+	<mi>x</mi>
+	<mo>)</mo>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>4</mn>
+	<mo>-</mo>
+	<mn>34</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>-30</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>9</mn>
+	<mo>-</mo>
+	<mn>34</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>-25</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>19</mn>
+	<mo>-</mo>
+	<mn>34</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>-15</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>29</mn>
+	<mo>-</mo>
+	<mn>34</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>-5</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>44</mn>
+	<mo>-</mo>
+	<mn>34</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>10</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>58</mn>
+	<mo>-</mo>
+	<mn>34</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>24</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>75</mn>
+	<mo>-</mo>
+	<mn>34</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>41</mn>
+</math>
+<math>
+	<mtext>Value of all</mtext>
+	<mo>(</mo>
+	<msub>
+		<mi>y</mi>
+		<mi>i</mi>
+	</msub>
+	<mo>-</mo>
+	<mi>y</mi>
+	<mo>)</mo>
+</math>
+
+<math>
+	<mo>(</mo>
+	<mn>0</mn>
+	<mo>-</mo>
+	<mn>7</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>-7</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>1</mn>
+	<mo>-</mo>
+	<mn>7</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>-6</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>5</mn>
+	<mo>-</mo>
+	<mn>7</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>-2</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>7</mn>
+	<mo>-</mo>
+	<mn>7</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>0</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>10</mn>
+	<mo>-</mo>
+	<mn>7</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>3</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>12</mn>
+	<mo>-</mo>
+	<mn>7</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>5</mn>
+</math>
+<math>
+	<mo>(</mo>
+	<mn>14</mn>
+	<mo>-</mo>
+	<mn>7</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>7</mn>
+</math>
+<div class="note">
+	<p>&Sigma;: The summation of multiple values</p>
+</div>
+<p>
+	Then to get the value of the numerator of the fraction, you find the sum of all the x values mutliplied with their respective y value...
+</p>
+<math>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>x</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>x</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>1</mn>
+	</msub>
+	<mo>*</mo>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>y</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>1</mn>
+	</msub>
+	<mo>&rarr;</mo>
+	<mo>(</mo>
+	<mn>-30</mn>
+	<mo>)</mo>
+	<mo>*</mo>
+	<mo>(</mo>
+	<mn>-7</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>210</mn>
+</math>
+<math>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>x</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>x</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msub>
+	<mo>*</mo>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>y</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msub>
+	<mo>&rarr;</mo>
+	<mo>(</mo>
+	<mn>-25</mn>
+	<mo>)</mo>
+	<mo>*</mo>
+	<mo>(</mo>
+	<mn>-6</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>150</mn>
+</math>
+<math>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>x</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>x</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>3</mn>
+	</msub>
+	<mo>*</mo>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>y</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>3</mn>
+	</msub>
+	<mo>&rarr;</mo>
+	<mo>(</mo>
+	<mn>-15</mn>
+	<mo>)</mo>
+	<mo>*</mo>
+	<mo>(</mo>
+	<mn>-2</mn>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mn>30</mn>
+</math>
+<math>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>x</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>x</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>4</mn>
+	</msub>
+	<mo>*</mo>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>y</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>4</mn>
+	</msub>
+	<mo>&rarr;</mo>
+	<mo>(</mo>
+	<mn>-5</mn>
+	<mo>)</mo>
+	<mo>*</mo>
+	<mn>0</mn>
+	<mo>=</mo>
+	<mn>0</mn>
+</math>
+<math>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>x</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>x</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>5</mn>
+	</msub>
+	<mo>*</mo>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>y</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>5</mn>
+	</msub>
+	<mo>&rarr;</mo>
+	<mn>10</mn>
+	<mo>*</mo>
+	<mn>3</mn>
+	<mo>=</mo>
+	<mn>30</mn>
+</math>
+<math>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>x</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>x</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>6</mn>
+	</msub>
+	<mo>*</mo>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>y</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>6</mn>
+	</msub>
+	<mo>&rarr;</mo>
+	<mn>24</mn>
+	<mo>*</mo>
+	<mn>5</mn>
+	<mo>=</mo>
+	<mn>120</mn>
+</math>
+<math>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>x</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>x</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>7</mn>
+	</msub>
+	<mo>*</mo>
+	<msub>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>y</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>7</mn>
+	</msub>
+	<mo>&rarr;</mo>
+	<mn>41</mn>
+	<mo>*</mo>
+	<mn>7</mn>
+	<mo>=</mo>
+	<mn>287</mn>
+</math>
+<math>
+	<mn>210</mn>
+	<mo>+</mo>
+	<mn>150</mn>
+	<mo>+</mo>
+	<mn>30</mn>
+	<mo>+</mo>
+	<mn>0</mn>
+	<mo>+</mo>
+	<mn>30</mn>
+	<mo>+</mo>
+	<mn>120</mn>
+	<mo>+</mo>
+	<mn>287</mn>
+	<mo>=</mo>
+	<mn>827</mn>
+</math>
+<math>
+	<mfrac>
+		<mn>827</mn>
+		<msqrt>
+			<mi>&Sigma;</mi>
+			<msup>
+				<mrow>
+				<mo>(</mo>
+				<msub>
+					<mi>x</mi>
+					<mi>i</mi>
+				</msub>
+				<mo>-</mo>
+				<mi>x</mi>
+				<mo>)</mo>
+				</mrow>
+				<mn>2</mn>
+			</msup>
+			<mi>&Sigma;</mi>
+			<msup>
+				<mrow>
+				<mo>(</mo>
+				<msub>
+					<mi>y</mi>
+					<mi>i</mi>
+				</msub>
+				<mo>-</mo>
+				<mi>y</mi>
+				<mo>)</mo>
+				</mrow>
+				<mn>2</mn>
+			</msup>
+		</msqrt>
+	</mfrac>
+</math>
+<p>
+Now to find the denominator of the fraction, you first find all the sqaured values of x and y...
+</p>
+<math>
+	<mtext>Value of all&nbsp;</mtext>
+	<msup>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>x</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>x</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+	<mtext>:</mtext>
+</math>
+<math>
+	<msup>
+		<mrow>
+			<mo>(</mo>
+			<mn>-30</mn>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>900</mn>
+</math>
+<math>
+	<msup>
+		<mrow>
+			<mo>(</mo>
+			<mn>-25</mn>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>625</mn>
+</math>
+<math>
+	<msup>
+		<mrow>
+			<mo>(</mo>
+			<mn>-15</mn>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>225</mn>
+</math>
+<math>
+	<msup>
+		<mrow>
+			<mo>(</mo>
+			<mn>-5</mn>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>25</mn>
+</math>
+<math>
+	<msup>
+		<mn>10</mn>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>100</mn>
+</math>
+<math>
+	<msup>
+		<mn>24</mn>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>576</mn>
+</math>
+<math>
+	<msup>
+		<mn>41</mn>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>1,681</mn>
+</math>
+<math>
+	<mtext>Value of all&nbsp;</mtext>
+	<msup>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>y</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+	<mtext>:</mtext>
+</math>
+<math>
+	<msup>
+		<mrow>
+		<mo>(</mo>
+			<mn>-7</mn>
+		<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>49</mn>
+</math>
+<math>
+	<msup>
+		<mrow>
+		<mo>(</mo>
+			<mn>-6</mn>
+		<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>36</mn>
+</math>
+<math>
+	<msup>
+		<mrow>
+		<mo>(</mo>
+			<mn>-2</mn>
+		<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>4</mn>
+</math>
+<math>
+	<msup>
+		<mn>0</mn>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>0</mn>
+</math>
+<math>
+	<msup>
+		<mn>3</mn>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>9</mn>
+</math>
+<math>
+	<msup>
+		<mn>5</mn>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>25</mn>
+</math>
+<math>
+	<msup>
+		<mn>7</mn>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mn>49</mn>
+</math>
+<p>
+Next you add the values up...
+</p>
+<math>
+	<mtext>Value of &Sigma;</mtext>
+	<msup>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>x</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>x</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+</math>
+<math>
+	<mn>900</mn>
+	<mo>+</mo>
+	<mn>625</mn>
+	<mo>+</mo>
+	<mn>225</mn>
+	<mo>+</mo>
+	<mn>25</mn>
+	<mo>+</mo>
+	<mn>100</mn>
+	<mo>+</mo>
+	<mn>576</mn>
+	<mo>+</mo>
+	<mn>1,681</mn>
+	<mo>=</mo>
+	<mn>4,132</mn>
+</math>
+<math>
+	<mtext>Value of &Sigma;</mtext>
+	<msup>
+		<mrow>
+			<mo>(</mo>
+			<msub>
+				<mi>y</mi>
+				<mi>i</mi>
+			</msub>
+			<mo>-</mo>
+			<mi>y</mi>
+			<mo>)</mo>
+		</mrow>
+		<mn>2</mn>
+	</msup>
+</math>
+<math>
+	<mn>49</mn>
+	<mo>+</mo>
+	<mn>36</mn>
+	<mo>+</mo>
+	<mn>4</mn>
+	<mo>+</mo>
+	<mn>0</mn>
+	<mo>+</mo>
+	<mn>9</mn>
+	<mo>+</mo>
+	<mn>25</mn>
+	<mo>+</mo>
+	<mn>49</mn>
+	<mo>=</mo>
+	<mn>172</mn>
+</math>
+<p>
+	Then you multiply the two sums together...
+</p>
+<math>
+	<mn>4,132</mn>
+	<mo>*</mo>
+	<mn>172</mn>
+	<mo>=</mo>
+	<mn>710,704</mn>
+</math>
+<p>
+	This will be the radicand for the denominator...
+</p>
+<math>
+	<mfrac>
+		<mn>827</mn>
+		<msqrt>
+			<mn>710,704</mn>
+		</msqrt>
+	</mfrac>
+</math>
+<p>
+	Lastly, you calculate the square root of the radicand and divide...
+</p>
+<math>
+	<mtext>Since&nbsp;</mtext>
+	<msqrt>
+		<mn>710,704</mn>
+	</msqrt>
+	<mo>&asymp;</mo>
+	<mn>843</mn>
+</math>
+<math>
+	<mfrac>
+		<mn>827</mn>
+		<mn>843</mn>
+	</mfrac>
+	<mo>&asymp;</mo>
+	<mn>0.981</mn>
+</math> 
+<p>
+The correlation coefficient between x and y is around 0.981, signifying a very strong covariance between the two variables.
+</p>
+
+
+
+  <script src="../Important/DigitalClock.js"></script>
+	</body>
+
+</html>
+
