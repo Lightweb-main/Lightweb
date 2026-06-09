@@ -164,8 +164,6 @@ body.default {
  
 }
 
-
-
 table, tr, td, th{
 	width: 600px;
 	border: 2px solid var(--tableborder);

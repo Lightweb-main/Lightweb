@@ -80,13 +80,13 @@
 	/* Other: Ergo */
 
 /* Let Statements: go */
-let am_pm;
+let allNotes, am_pm;
 let currentTime, currentDay, customFontHyperlink = document.createElement("link");
 let day, directoryLevel, directoryLevelA;
 let faviconNum, frameCount = 0, flashbangIntervalIndex, fullMilitaryTime, fullMilitaryTimeLS = localStorage.getItem('fMT');
 let hour, hasDashedCalendar, hasMilitaryTime;
 let meta, meta2, min, month;
-let nodeScrambledText;
+let nodeScrambledText, noteIndex;
 let scramblerBtnTextIndexA, scramblerBtnTextIndexB;
 let time = new Date();
 
@@ -204,6 +204,16 @@ if(path.includes("/Articles/")){
 	for(let i = 0; i < 4; i++){
 		document.querySelector("h1").insertAdjacentElement("afterBegin", bre);
 	}
+	
+	allNotes = document.querySelectorAll(".note");
+	noteIndex = 0;
+	allNotes.forEach( (e) => {
+		noteIndex++;
+		let title = document.createElement("p");
+		title.classList.add("noteTitle");
+		title.textContent = "Note #" + noteIndex;
+		e.prepend(title);
+	});
 }
 
 /* Insert Styles: yarrH Styles*/
@@ -1063,7 +1073,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		replaceSigns(document.body, 'P', '\u03A0');
 	}
 	
-	
+	if(localStorage.getItem("toggleCustomSpeak") === 'true'){
 	if(speakSetting === 'shakespeareanEnglishSpeak'){
 		replaceSigns(document.body, '\\byou\\b', 'thee');
 		replaceSigns(document.body, '\\bYou\\b', 'Thee');
@@ -1154,6 +1164,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		replaceSigns(document.body, 'X', '\u039C');
 		replaceSigns(document.body, 'z', '\u03A6');
 		replaceSigns(document.body, 'Z', '\u0396');
+	}
 	}
 	if(!window.location.pathname.includes("LightwebHistory")){
 		document.querySelectorAll("mo").forEach(op => {
@@ -1325,7 +1336,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		
 		
 		if(title){
-		tableOfContentsDiv.innerHTML += `<h2>${title.textContent}: Table of Contents</h2>`
+		tableOfContentsDiv.innerHTML += `<h2 style="font-family: ${localStorage.getItem("lightwebTextFont")}">${title.textContent}: Table of Contents</h2>`
 		}
 		tableOfContentsDiv.id = "tableOfContentsDiv";
 		if(title != null && window.location.pathname.includes("/Articles/")){
@@ -1349,6 +1360,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				heading2BookMark.style.border = "none";
 				heading2BookMark.style.fontSize = "20px";
 				heading2BookMark.style.marginBottom = "9px";
+				heading2BookMark.style.fontFamily = localStorage.getItem("lightwebTextFont");
 				heading2BookMark.style.textDecoration = "underline";
 
 				
@@ -1371,6 +1383,7 @@ window.addEventListener("DOMContentLoaded", () => {
 						heading3BookMark.style.backgroundColor = "transparent";
 						heading3BookMark.style.border = "none";
 						heading3BookMark.style.fontSize = "17px";
+						heading3BookMark.style.fontFamily = localStorage.getItem("lightwebTextFont");
 						heading3BookMark.style.marginBottom = "9px";
 						
 						tableOfContentsDiv.appendChild(heading3BookMark);
@@ -1390,6 +1403,7 @@ window.addEventListener("DOMContentLoaded", () => {
 								heading4BookMark.style.backgroundColor = "transparent";
 								heading4BookMark.style.border = "none";
 								heading4BookMark.style.fontSize = "15px";
+								heading4BookMark.style.fontFamily = localStorage.getItem("lightwebTextFont");
 								heading4BookMark.style.marginBottom = "9px";
 								
 								tableOfContentsDiv.appendChild(heading4BookMark);
@@ -1409,6 +1423,7 @@ window.addEventListener("DOMContentLoaded", () => {
 										heading5BookMark.style.backgroundColor = "transparent";
 										heading5BookMark.style.border = "none";
 										heading5BookMark.style.fontSize = "13px";
+										heading5BookMark.style.fontFamily = localStorage.getItem("lightwebTextFont");
 										heading5BookMark.style.marginBottom = "9px";
 								
 								
@@ -1430,6 +1445,7 @@ window.addEventListener("DOMContentLoaded", () => {
 												heading6BookMark.style.backgroundColor = "transparent";
 												heading6BookMark.style.border = "none";
 												heading6BookMark.style.fontSize = "11px";
+												heading6BookMark.style.fontFamily = localStorage.getItem("lightwebTextFont");
 												heading6BookMark.style.marginBottom = "7px";
 										
 										
@@ -1510,6 +1526,7 @@ function setSize(toggle){
 		{ elements: "p, span, input, select, option, optgroup, textarea, h5, label", size: 15 },
 		{ elements: "h6", size: 14 },
 		{ elements: "h4", size: 17 },
+		{ elements: ".note .noteTitle", size: 18 },
 		{ elements: "h3", size: 20 },
 		{ elements: "h2, example", size: 25 },
 		{ elements: "math", size: 35 },
@@ -1550,12 +1567,12 @@ function setSize(toggle){
 	
 	allElementsAffected.forEach(group => {
 		document.querySelectorAll(group.font).forEach(element => {
-			element.style.fontFamily = localStorage.getItem("lightwebTextFont");;
+			element.style.fontFamily = localStorage.getItem("lightwebTextFont");
 		});
 		
 		document.querySelectorAll("button").forEach(button => {
 			if(!button.classList.contains("settingButton")){
-				button.style.fontFamily = localStorage.getItem("lightwebTextFont");;
+				button.style.fontFamily = localStorage.getItem("lightwebTextFont");
 			}
 		});
 	});

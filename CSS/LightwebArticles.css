@@ -25,6 +25,8 @@
 	display: block;
 }
 
+
+
 mark{
 background-color: #FDF89D;	
 }
@@ -49,6 +51,22 @@ example {
 	margin: 30px;
 	color: var(--text);
 	font-family: var(--FontFamily);
+}
+
+.note {
+	border: 2px solid var(--border);
+	border-radius: 3px;
+	width: 400px;
+	padding: 15px;
+	height: fit-content;
+	background-color: #eeeeee;
+	position: absolute;
+	right: 0;
+	
+}
+
+.note .noteTitle {
+	font-weight: bold;
 }
 
 p {

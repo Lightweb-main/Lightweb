@@ -71,13 +71,14 @@ NameInput.value = "Your Name";
 InstructorNameInput.value = "Professor Name";
 CourseNameInput.value = "Subject Name";
 Title2.value = "Title about Report";
+ContentInput.textContent = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan.";
 NameInput2.value = "Your Name";
 UniversityNameInput.value = "University Name";
 DepartmentNameInput.value = "Department Name";
 CourseNumberInput.value = "Course Number";
 CourseName2Input.value = "Course Name";
 InstructorName2Input.value = "Instructor Name";
-ContentInput2.textContent = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan."
+ContentInput2.textContent = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan.";
 function MLASelect(){
 format = "MLA";
 update();
