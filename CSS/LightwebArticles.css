@@ -62,7 +62,8 @@ example {
 	background-color: #eeeeee;
 	position: absolute;
 	right: 0;
-	
+	color: var(--text);
+	background-color: color-mix(in oklab, var(--bg) 90%, white 10%);
 }
 
 .note .noteTitle {
