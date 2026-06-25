@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="module" src="https://q5js.org/q5.js"></script>
+		<script type="module" src="https://q5play.org/q5play.js"></script>
+		<style>
+			h1 {
+				font-size: 60px; 
+				text-align: center;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Newton's Third Law of Motion Simulation (Action and Reaction)</h1>
+		<h2 style="text-align: center;">This is a simulation showing how every collision acts an opposite force on both objects.</h2>
+		<input id="toggleSameMass" type="checkbox">Same Mass?</input>
+	</body>
+	<script>
+		let object1;
+		let object2;
+		
+		let rng1 = 0;
+		let rng2 = 0;
+		
+		setInterval(generate, 3000);
+		
+		function generate(){
+			rng1 = Math.floor(Math.random() * 100) + 1;
+			rng2 = Math.floor(Math.random() * 100) + 1;
+		
+			object1 = new Sprite();
+			object1.x = 0;
+			object1.y = 475;
+			object1.vel.x = 10;
+			object1.friction = 0;
+			object1.life = 300;
+			object1.mass = rng1;
+			
+			object2 = new Sprite();
+			object2.x = 2000;
+			object2.y = 475;
+			object2.vel.x = -10;
+			object2.friction = 0;
+			object2.life = 300;
+			object2.mass = rng2;
+		}
+		
+		
+		async function setup() {
+			await Canvas(2000, 600);
+			world.gravity.y = 10;
+			frameRate(100);
+			
+			ground = new Sprite();
+			ground.physics = STATIC;
+			ground.width = width * 1.5;
+			ground.height = 4;
+			ground.color = "grey";
+			ground.y = 500;
+			
+		}
+
+		
+	
+		
+		function draw(){
+			background("#eeeeee");
+			textSize(21);
+			text(`Object 1 Mass: ${rng1}kg`, 50, 50);
+			text(`Object 2 Mass: ${rng2}kg`, 350, 50);
+		}
+		
+		document.addEventListener("DOMContentLoaded", function(){
+			let e = document.createElement("p");
+			e.innerHTML = `
+			Newton's Third Law states that every action has an equal and opposite reaction. In everyday nature, when an object pushes or pulls an object, it exerts a force onto that object while the object that is being pulled or pushed exerts a force back onto the first object but in the opposite direction. Note that this doesn't mean that both objects travel the same distance, mass still plays a role in how much distance an object travels, so two objects with unequal masses that collide with the same speed won't travel the exact same distance.
+			`
+			document.body.appendChild(e);
+		});
+		
+	</script>
+</html>
+	

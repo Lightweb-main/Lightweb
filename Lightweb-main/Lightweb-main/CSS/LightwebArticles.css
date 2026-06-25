@@ -1,0 +1,125 @@
+.summaryHeading{
+	font-size: 35px;
+	text-align: center;
+	margin-top: 5rem;
+}
+
+.summary{
+	display: flex;
+	justify-content: center;
+}
+
+.summarySection{
+	border: 3px solid var(--border);
+	width: 800px;
+	padding: 15px;
+}
+
+.articleSimulation {
+	width: 70%;
+	height: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: block;
+}
+
+
+
+mark{
+background-color: #FDF89D;	
+}
+body.dark mark{
+color: var(--text);
+background-color: var(--bg);
+text-decoration: underline;
+text-decoration-color: #FDF89D;
+}
+
+math{
+	font-size: 25px;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+example {
+	font-size: 25px;
+	display: block;
+	text-align: center;
+	margin: 30px;
+	color: var(--text);
+	font-family: var(--FontFamily);
+}
+
+.note {
+	border: 2px solid var(--border);
+	border-radius: 3px;
+	width: 400px;
+	padding: 15px;
+	height: fit-content;
+	background-color: #eeeeee;
+	position: absolute;
+	right: 0;
+	color: var(--text);
+	background-color: color-mix(in oklab, var(--bg) 90%, white 10%);
+}
+
+.note .noteTitle {
+	font-weight: bold;
+}
+
+p {
+	font-size: 15px;
+}
+
+img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 55px;
+	margin-top: 55px;
+	border: 2px solid color-mix(in oklab, var(--border) 70%, black 30%);
+}
+
+/* Headings */
+h1 {
+	text-align: center;
+}
+
+h1, h2, h3{
+	font-weight: bold;
+}
+
+h4, h5 {
+	text-decoration: underline;
+}
+
+
+#tableOfContentsDiv{
+	border: 2px solid var(--border);
+	padding: 15px;
+}
+.exampleDiv {
+	width: 50%;
+	border: 1px solid var(--border);
+	margin: auto;
+	display: block;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	padding: 8px;
+}
+
+
+.articleSettings {
+	width: 75%;
+	border: 2px solid var(--border);
+	margin: auto;
+	display: block;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	padding: 20px;
+}
+
+

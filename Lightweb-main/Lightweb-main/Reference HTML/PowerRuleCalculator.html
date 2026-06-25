@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				text-align: center;
+				font-size: 45px;
+			}
+			h2{
+				font-size: 35px;
+			}
+			p{
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<h1>Power Rule Calculator</h1>
+		<h2>Formula</h2>
+		<p>
+		<math>
+			<mo>∫</mo>
+			<msup>
+				<mrow>
+					<mi>a</mi>
+					<mi>x</mi>
+				</mrow>
+				<mi>n</mi>
+			</msup>
+			<mtext>&nbsp;dx</mtext>
+			<mo>=</mo>
+			<mfrac>
+				<msup><mi>ax</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></msup>
+				<mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow>
+			</mfrac>
+		</math>
+		</p>
+		<h2>Input Number</h2>
+		<input id="coefficientInput" placeholder="Coefficient"><br><br>
+		<input id="exponentInput" placeholder="Exponent">
+		<h2>Calculate</h2>
+		<button id="calculateInput">Calculate</button>
+		<h2>Results</h2>
+		<div style="text-align: center;">
+		<math id="powerRuleIntegral"  style="font-size: 80px;">
+			<mo>∫</mo>
+			<msup><mrow><mi id="coefficientX">ax</mi></mrow><mi id="exponentX">n</mi></msup>
+			<mtext>dx</mtext>
+			<mo>=</mo>
+			<mfrac>
+				<mn id="numerator"></mn>
+				<mn id="denominator"></mn>
+			</mfrac>
+			<msup><mi id="x"></mi><mn id="xExponent"></mn></msup>
+			<ms id="constantOfInt"></ms>
+		</math>
+		</div>
+	</body>
+	<script>
+	
+		calculateInput.addEventListener("click", function(){
+			let coefficient = parseFloat(coefficientInput.value);
+			let exponent = parseFloat(exponentInput.value);
+			if(!isNaN(coefficient) && !isNaN(exponent)){
+				let newExponent = exponent + 1;
+				let numer = coefficient;
+				let denom = newExponent;
+				function gcd(a, b){
+					if(b == 0){
+						
+					}
+  	  				return b === 0 ? a : gcd(b, a % b);
+				}
+				const g = gcd(Math.abs(numer), Math.abs(denom));
+				numer /= g;
+				denom /= g;
+				numerator.innerHTML =  "&nbsp;" + numer + "&nbsp;";
+				denominator.innerHTML =  "&nbsp;" + denom + "&nbsp;";
+
+				x.innerHTML = "x";
+				xExponent.innerHTML = newExponent;
+				
+				coefficientX.innerHTML = `${coefficient}x`;
+				exponentX.innerHTML = exponent;
+				constantOfInt.innerHTML = " + C";
+
+			}
+		});
+	</script>
+</html>
+	
