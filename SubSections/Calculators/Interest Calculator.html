@@ -36,6 +36,12 @@
 				padding: 5px;
 				
 			}
+			
+			example.displays {
+				font-size: 26px;
+				display: block;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
@@ -61,7 +67,7 @@
 			</select><br><br>
 			<button id="simpleInterestBtn">Calculate</button>
 			
-			<p style="text-align: center; font-size: 21px;" id="simpleInterestDisplay">SI = </p>
+			<example class="displays" id="simpleInterestDisplay">SI = </example>
 		</div>
 		
 		<div id="compoundInterestDiv">
@@ -83,7 +89,7 @@
 			</select><br><br>
 			<button id="compoundInterestBtn">Calculate</button>
 			
-			<p style="text-align: center; font-size: 21px;" id="compoundInterestDisplay"></p>
+			<example class="displays" id="compoundInterestDisplay">CI = </example>
 		</div>
 		
 		<button onClick="exit()">Exit</button>

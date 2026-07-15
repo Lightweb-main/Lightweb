@@ -1,35 +1,47 @@
 document.getElementById("inputValue1").addEventListener("input", convert); 
 document.getElementById("fromUnit1").addEventListener("change", convert); 
 document.getElementById("toUnit1").addEventListener("change", convert); 
-document.getElementById("decimalAmount1").addEventListener("change", convert); 
+document.getElementById("decimalAmount1").addEventListener("input", convert); 
+
 document.getElementById("inputValue2").addEventListener("input", convert2); 
 document.getElementById("fromUnit2").addEventListener("change", convert2); 
 document.getElementById("toUnit2").addEventListener("change", convert2); 
-document.getElementById("decimalAmount2").addEventListener("change", convert2);
+document.getElementById("decimalAmount2").addEventListener("input", convert2);
+
 document.getElementById("inputValue3").addEventListener("input", convert3); 
 document.getElementById("fromUnit3").addEventListener("change", convert3); 
 document.getElementById("toUnit3").addEventListener("change", convert3); 
-document.getElementById("decimalAmount3").addEventListener("change", convert3);
+document.getElementById("decimalAmount3").addEventListener("input", convert3);
+
 document.getElementById("inputValue4").addEventListener("input", convert4); 
 document.getElementById("fromUnit4").addEventListener("change", convert4); 
 document.getElementById("toUnit4").addEventListener("change", convert4); 
-document.getElementById("decimalAmount4").addEventListener("change", convert4);
+document.getElementById("decimalAmount4").addEventListener("input", convert4);
+
 document.getElementById("inputValue5").addEventListener("input", convert5); 
 document.getElementById("fromUnit5").addEventListener("change", convert5); 
 document.getElementById("toUnit5").addEventListener("change", convert5); 
-document.getElementById("decimalAmount5").addEventListener("change", convert5);
+document.getElementById("decimalAmount5").addEventListener("input", convert5);
+
 document.getElementById("inputValue6").addEventListener("input", convert6); 
 document.getElementById("fromUnit6").addEventListener("change", convert6); 
 document.getElementById("toUnit6").addEventListener("change", convert6); 
-document.getElementById("decimalAmount6").addEventListener("change", convert6);
+document.getElementById("decimalAmount6").addEventListener("input", convert6);
+
 document.getElementById("inputValue7").addEventListener("input", convert7); 
 document.getElementById("fromUnit7").addEventListener("change", convert7); 
 document.getElementById("toUnit7").addEventListener("change", convert7); 
-document.getElementById("decimalAmount7").addEventListener("change", convert7);
+document.getElementById("decimalAmount7").addEventListener("input", convert7);
+
+document.getElementById("decimalAmount8").addEventListener("input", convert8); 
 document.getElementById("inputValue8").addEventListener("input", convert8); 
 document.getElementById("fromUnit8").addEventListener("change", convert8); 
 document.getElementById("toUnit8").addEventListener("change", convert8); 
-document.getElementById("decimalAmount8").addEventListener("change", convert8);
+
+document.getElementById("inputValue9").addEventListener("input", convert9);
+document.getElementById("fromUnit9").addEventListener("change", convert9); 
+document.getElementById("toUnit9").addEventListener("change", convert9); 
+document.getElementById("decimalAmount9").addEventListener("input", convert9);
 
 document.getElementById("fromUnit1").value = "meter"
 document.getElementById("toUnit1").value = "kilometer"
@@ -63,14 +75,19 @@ document.getElementById("fromUnit8").value = "bit";
 document.getElementById("toUnit8").value = "Byte";
 document.getElementById("inputValue8").value = 25;
 
-document.getElementById("decimalAmount1").value = "2"
-document.getElementById("decimalAmount2").value = "2"
-document.getElementById("decimalAmount3").value = "2"
-document.getElementById("decimalAmount4").value = "2"
-document.getElementById("decimalAmount5").value = "2"
-document.getElementById("decimalAmount6").value = "2"
-document.getElementById("decimalAmount7").value = "2"
-document.getElementById("decimalAmount8").value = "2"
+document.getElementById("fromUnit9").value = "milliliter";
+document.getElementById("toUnit9").value = "liter";
+document.getElementById("inputValue9").value = 25;
+
+document.getElementById("decimalAmount1").value = "2";
+document.getElementById("decimalAmount2").value = "2";
+document.getElementById("decimalAmount3").value = "2";
+document.getElementById("decimalAmount4").value = "2";
+document.getElementById("decimalAmount5").value = "2";
+document.getElementById("decimalAmount6").value = "2";
+document.getElementById("decimalAmount7").value = "2";
+document.getElementById("decimalAmount8").value = "2";
+document.getElementById("decimalAmount9").value = "2";
 const conversionRates1 = {
     quectometer: 10**30,
     rontometer: 10**27,
@@ -271,6 +288,20 @@ quettabyte: 1/10**30/8,
 quebibyte: 1/1024**10/8,
 };
 
+const conversionRates8 = {
+milliliter: 1000,
+teaspoon: 202.884136,
+centiliter: 100,
+tablespoon: 67.6280455,
+ounce: 33.8140227,
+gill: 8.45350569,
+cup: 4.22675284,
+pint: 2.11337642,
+quart: 1.05668821,
+liter: 1,
+gallon: 1/3.78541178,
+};
+
 convert();
 convert2();
 convert3();
@@ -279,6 +310,8 @@ convert5();
 convert6();
 convert7();
 convert8();
+convert9();
+
 function getDecimalPlaces(num, decimalInputId) {
   const decimalAmo = parseInt(document.getElementById(decimalInputId).value);
   const numStr = String(num);
@@ -485,6 +518,29 @@ function convert8() {
   document.getElementById("resultSciNot8").value = convertedValue.toExponential(2);
 
 }
+
+function convert9() {
+  const input = document.getElementById("inputValue9").value;
+  const value = parseFloat(input);
+  const from = document.getElementById("fromUnit9").value;
+  const to = document.getElementById("toUnit9").value;
+
+  if (Number.isNaN(value)) {
+    document.getElementById("result9").value = "";
+    document.getElementById("resultSciNot9").value = "";
+    return;
+  }
+
+  const decimalPlaces = getDecimalPlaces(input, "decimalAmount9");
+
+  const valueInNewtons = value / conversionRates8[from];
+  const convertedValue = valueInNewtons * conversionRates8[to];
+
+  document.getElementById("result9").value = convertedValue.toFixed(decimalPlaces); 
+  document.getElementById("resultSciNot9").value = convertedValue.toExponential(2);
+
+}
+
 
 
 

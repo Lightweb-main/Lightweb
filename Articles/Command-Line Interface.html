@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html id="SLT-CLI">
+	<head>
+		
+		 
+	</head>
+	<body> 
+	<h1>Command-Line Interface</h1>
+	<h2>Introduction</h2>
+	<p>
+		In a computer, the command-line interface (abbreviated as CLI and also known as a "computer-line shell") is a user interface on a computer that users can use by typing to interact with their computer systems...
+	</p>
+	<img src="../Images/CLI.img1.png">
+	<h2>Process of a CLI</h2>
+	<p>
+		A CLI is activated when inputs from the user via keyboard called, <b>commands</b>, then a <b>shell</b> interprets the inputs and performs the commands. 
+	</p>
+	<h3>Shells</h3>
+	<p>
+		When the user submits commands, a shell, then performs tasks like deleting and adding files or changing the current directory. Basically, a shell acts as the translator of the CLI, processing commands and then performing them. One particular example of a shell is, <b>Bash</b>, which is used commonly for Linux and Mac devices, and for Window devices, they use <b>Batch</b>.
+	</p>
+	<h2>CLI Commands</h2>
+	<p>
+		Commands in CLI are text from the user that is then later processed and performed by the shell, the commands in the CLI change depending on what operating system the computer is using.
+	</p>
+	<select id="changingDivLang">
+		<option value="Batch">Batch</option>
+		<option value="Bash">Bash</option>
+	</select>
+	<div id="changingDiv">
+		<div id="batchDiv">
+			<h2>Basic Batch Commands</h2>
+				<h3>Creating a new Batch File</h3>
+				<p>
+					If you are on windows, to create a new Batch file, first open file explorer, next go to a desired directory (I prefer Downloads), then right click to open up the context menu...
+				</p>
+				<img src="../Images/CLI.img2.png">
+				<p>
+					Once you have opened the context menu, hover over "New" then click on "Text Document", this will create a new .txt file which you can convert to a .bat file via notepad (Right click on the file < Open With < Notepad < File < Save As... < FILENAME.bat).
+				</p>
+				<img src="../Images/CLI.img3.png">
+				<p>
+					Alternatively you can create a command script by instead saving the file as FILENAME.cmd, which will function similarily as a .bat file.
+				</p>
+				<h3>@ECHO OFF and @ECHO ON</h3>
+				<p>
+					At the beginning of a batch file, the first line is typed as "@ECHO OFF". This command prevents the command-line interface from displaying the commands found within the file itself. And to reverse this, use @ECHO ON later on in the script to see the commands be displayed again in the CLI.
+				</p>
+				<div class="codeExample">
+					<div>
+						<p>@ECHO OFF</p>
+						<p>ECHO Hello World</p>
+						<p>@ECHO ON</p>
+						<p>ECHO Hello World</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						
+						<p>ECHO Hello World</p>
+						<p>Hello World</p>
+						<p>PAUSE</p>
+						<p>Press any key to continue . . .</p>
+					</div>
+				</div>
+				<h3>Printing</h3>
+				<p>
+					To print a string or variable in Batch, you write "ECHO" on a new line then the variable or string you want to print.
+				</p>
+				<div class="codeExample">
+					<div>
+						<p>@ECHO OFF</p>
+						<p>ECHO Hello World</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						<p>Hello World</p>
+						<p>Press any key to continue . . .</p>
+					</div>
+				</div>
+				<h4>Printing Variables</h4>
+				<p>
+					To print a variable, you type ECHO then the variable's name with percentage signs on both sides...
+				</p>
+				<div class="codeExample">
+					<div>
+						<p>@ECHO OFF</p>
+						<p>SET "name=Idkwhyididthissome"</p>
+						<p>ECHO %name%</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						<p>Idkwhyididthissome</p>
+						<p>Press any key to continue . . .</p>
+					</div>
+				</div>
+				<h4>Printing the Current Directory</h4>
+				<p>
+					To print the current directory that the CLI is currently on, type out "ECHO %CD%", this will then print out the current directory...
+				</p>
+				<div class="codeExample">
+					<div>
+						<p>@ECHO OFF</p>
+						<p>ECHO %CD%</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						<p>C:\Users\Example</p>
+						<p>Press any key to continue . . .</p>
+					</div>
+				</div>
+				<p>
+					Note how "cd" is used with printing and redirecting the current directory as well and that %CD% may print a different directory depending on where you executed the Batch file from.
+				</p>
+				<h3>PAUSE</h3>
+				<p>
+					The PAUSE command halts the batch script and waits for the user to press any key and when keyboard input is given, the script then continues.
+				</p>
+				<div class="codeExample">
+					<div>
+						<p>@ECHO OFF</p>
+						<p>ECHO Hello World</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						<p>Hello World</p>
+						<p>Press any key to continue . . .</p>
+					</div>
+				</div>
+				<p>
+					Make sure to use the PAUSE command if you want to see your script's printing (via ECHO), otherwise the script will end right after it executes its last line.
+				</p>
+				<h3>START</h3>
+				<p>
+					The START command opens up a seperate command prompt window which then runs/executes a program or file. For example, if I wanted to open up notepad I would write "START notepad.exe"...
+				</p>
+				<div class="codeExample">
+					<div>
+						<p>@ECHO OFF</p>
+						<p>START notepad.exe</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						<p>Hello World</p>
+						<p>Press any key to continue . . .</p>
+					</div>
+				</div>
+				<h3>Declaring Variables</h3>
+				<p>
+					To declare a variable in a Batch file, first use the SET command, next type out the variable's name, then an equal sign "=", then the variable's value, lastly wrap the whole equation in double quotes... 
+				</p>
+				<div class="codeExample">
+					<div>
+						<p>@ECHO OFF</p>
+						<p>SET "name=Mount Fuji"</p>
+						<p>SET "height=12,389"</p>
+						<p></p>
+						<p>ECHO Name: %name%</p>
+						<p>ECHO Height: %height%</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						<p>Name: Mount Fuji</p>
+						<p>Press any key to continue . . .</p>
+					</div>
+				</div>
+				<p>
+					And everytime you need to reference a variable, write its name out with percentage signs on both sides.
+				</p>
+				<h3>File & Directory Commands</h3>
+				<h4>Changing Directory</h4>
+				<p>
+					The directory in a CLI is the current location or pathway of a file, folder, or a repository, the default directory is a pathway to your user account on your personal device. In windows, the command prompt displays the current directory first as a string of names called components with "\" in between them like "C:\Users\User1\Downloads". You may have seen this in a url to a website for example (except urls use "/" instead of "\").
+					To change this in a Batch file, use the CD command and type out the next components name. Alternatively you can also retype the entire directory and add the new component at the end... 
+				</p>
+				<div class="codeExample">
+					<div>
+						<p>@ECHO OFF</p>
+						<p>CD C:\Users\Example</p>
+						<p>CD C:\Users\Example\Downloads</p>
+						<p>ECHO %CD%</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						<p>C:\Users\Example\Downloads</p>
+						<p>Press any key to continue . . .</p>
+					</div>
+				</div>
+				<div class="codeExample">
+					<div>
+						<p>@ECHO OFF</p>
+						<p>CD C:\Users\Example</p>
+						<p>CD Downloads</p>
+						<p>ECHO %CD%</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						<p>C:\Users\Example\Downloads</p>
+						<p>Press any key to continue . . .</p>
+					</div>
+				</div>
+				<h4>Listing All Files</h4>
+				<p>
+					When you change the directory to a folder, then execute the DIR command, the command prompt will list out all files within the folder. Information about the files will also be displayed such as when they were last modified, the file's name, the total amount of files and directories, and how much bytes the folder has used and how many are currently free...
+				</p>
+				<div class="codeExample">
+					<div>
+						<p>Content (folder)</p>
+						<p>Location: C:\Users\Example\Downloads</p>
+						<p>&emsp;&emsp;&emsp;file1.txt</p>
+						<p>&emsp;&emsp;&emsp;file2.html</p>
+						<p>&emsp;&emsp;&emsp;file3.bat</p>
+						<p>&emsp;&emsp;&emsp;file4.css</p>
+					</div>
+					<div>
+						<img src="../Images/CLI.img4.png">
+					</div>
+					<div>
+						<p>@ECHO OFF</p>
+						<p>CD Downloads</p>
+						<p>CD Content</p>
+						<p>DIR</p>
+						<p>PAUSE</p>
+					</div>
+					<div>
+						<p> Directory of C:\Users\idkwh\Downloads\Content</p>
+						<p>	DATE  TIME    < DIR >      .             		   </p>
+						<p>	DATE  TIME    < DIR >      ..            		   </p>
+						<p>	DATE  TIME                 FILE SIZE file1.txt     </p>    
+						<p>	DATE  TIME                 FILE SIZE file2.html    </p>      
+						<p>	DATE  TIME                 FILE SIZE file3.bat     </p>     
+						<p>	DATE  TIME                 FILE SIZE file4.css     </p>     
+						<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 4 File(s)             	   182 		</p>
+						<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  2 Dir(s)79,959,445,504 bytes free	</p>
+						<p>Press any key to continue . . .					   </p>
+					</div>
+				</div>
+		</div>	
+		<div id="bashDiv">
+		
+		</div>
+	</div>
+	<h2>Summary</h2>
+	<div class="summary">
+		<div class="summarySection">
+			<p class="summaryHeading">Definitions</p>
+			<p><b>Command-Line Interface (CLI)</b>: A textual interface used to change and manipulate certain properties in computer systems.</p>
+			<p><b>Command</b>: Keyboard input typed by the user to be interpreted by the CLI to do something.</p>
+			<p><b>Shell</b>: A command-line program that interprets the inputs/commands and performs tasks based on them.</p>
+		</div>
+	</div>
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="../Important/ArticleJS/CommandLineInterface.js"></script>
+	</body>
+</html>

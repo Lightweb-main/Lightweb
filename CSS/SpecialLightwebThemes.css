@@ -1,429 +1,103 @@
+@import './LightwebThemes.css';
 
-html#SLT-EarthquakesFaults body.default {
-  background-color: #dfa12f ;
-  color: #a6741a ;
-}
-
-html#SLT-EarthquakesFaults #DigitalClock,
-html#SLT-EarthquakesFaults #DigitalCalendar {
-  border-color: #a6741a;
-}
-
-html#SLT-EarthquakesFaults body.default p,
-html#SLT-EarthquakesFaults body.default h1,
-html#SLT-EarthquakesFaults body.default h2,
-html#SLT-EarthquakesFaults body.default h3,
-html#SLT-EarthquakesFaults body.default h4,
-html#SLT-EarthquakesFaults body.default h5,
-html#SLT-EarthquakesFaults body.default h6{
-  color: #a6741a ;
-}
-
-html#SLT-EarthquakesFaults body.default a {
-  background-color: #a4751d ;
-  border-color: #a4751d ;
-  color: #dea843 ;
-}
-
-html#SLT-EarthquakesFaults body.dark {
-  background-color: #6a4b10 ;
-  color: #a6741a ;
-}
-
-html#SLT-EarthquakesFaults body.dark h1,
-html#SLT-EarthquakesFaults body.dark h2,
-html#SLT-EarthquakesFaults body.dark h3,
-html#SLT-EarthquakesFaults body.dark h4,
-html#SLT-EarthquakesFaults body.dark h5,
-html#SLT-EarthquakesFaults body.dark h6,
-html#SLT-EarthquakesFaults body.dark p {
-  color: #a6741a ;
-}
-
-html#SLT-EarthquakesFaults body.dark a {
-  background-color: #46310b ;
-  border-color: #46310b ;
-  color: #a6741a ;
-}
-
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) {
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) h1,
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) h2,
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) h3, 
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) h4, 
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) h5, 
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) h6 {
-  color: var(--text);
-  
-}
-
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) a {
-  background-color: var(--border);
-  border-color: var(--border);
-  color: var(--text);
-}
-
-html#SLT-EarthquakesFaults body img{
+body img{
   filter: none;
 }
 
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) #DigitalClock,
-html#SLT-EarthquakesFaults body:not(.default):not(.dark) #DigitalCalendar {
-  border-color: var(--border);
+#SLT-EarthquakesFaults body.default {
+  --bg: #dfa12f;
+  --text: #e9be72;
+  --border: #a4751d;
+  --DigitalClockBackground: #a4751d;
+}
+
+#SLT-EarthquakesFaults body.dark {
+  --bg: #6a4b10;
+  --text: #a6741a;
+  --border: #46310b;
+  --DigitalClockBackground: #46310b;
+}
+
+#SLT-LunarNewYear body.default {
+  --bg: #e65e5e;
+  --text: #ac1919;
+  --border: #de3030;
+  --DigitalClockBackground: #ac1919;
+}
+
+#SLT-LunarNewYear body.dark {
+  --bg: #c62121;
+  --text: #ee9999;
+  --border: #781212;
+  --DigitalClockBackground: #ac1919;
+}
+
+#SLT-TheRockCycle body.default {
+  --bg: #909090;
+  --text: #595959;
+  --border: #adadad;
+  --DigitalClockBackground: #595959;
+}
+
+#SLT-TheRockCycle body.dark {
+  --bg: #3e3e3e;
+  --text: #a1a1a1;
+  --border: #5f5f5f;
+  --DigitalClockBackground: #5f5f5f;
+}
+
+#SLT-TheWaterCycle body.default {
+  --bg: #bcdbeb;
+  --text: #56a2c9;
+  --border: #7eb8d6;
+  --DigitalClockBackground: #56a2c9;
+}
+
+#SLT-TheWaterCycle body.default {
+  --bg: #bcdbeb;
+  --text: #56a2c9;
+  --border: #7eb8d6;
+  --DigitalClockBackground: #56a2c9;
+}
+
+#SLT-TheWaterCycle body.dark {
+  --bg: #2c769d;
+  --text: #1b4961;
+  --border: #3996c7;
+  --DigitalClockBackground: #3996c7;
+}
+
+#SLT-TheSolarSystem body {
+	--bg: #000000;
+	--text: #ffea5a;
+	--border: #272727;
+	--DigitalClockBackground: #ffea5a;
+}
+
+#SLT-MilankovitchCycles body.default {
+	--bg: #b8e4b7;
+}
+
+#SLT-MilankovitchCycles body.dark {
+	--bg: #3b9c39;
 }
 
 
-
-
-
-
-
-
-
-html#SLT-LunarNewYear body.default {
-  background-color: #e55a5a;
-  color: #ac1919;
-}
-
-html#SLT-LunarNewYear #DigitalClock,
-html#SLT-LunarNewYear #DigitalCalendar {
-  border-color: #ac1919;
-}
-
-html#SLT-LunarNewYear body.default p,
-html#SLT-LunarNewYear body.default h1,
-html#SLT-LunarNewYear body.default h2,
-html#SLT-LunarNewYear body.default h3,
-html#SLT-LunarNewYear body.default h4,
-html#SLT-LunarNewYear body.default h5,
-html#SLT-LunarNewYear body.default h6 {
-  color: #ac1919;
-}
-
-html#SLT-LunarNewYear body.default a {
-  background-color: #de3030;
-  border-color: #de3030;
-  color: #ee9999;
-}
-
-html#SLT-LunarNewYear body.dark {
-  background-color: #c62121;
-  color: #ee9999;
-}
-
-html#SLT-LunarNewYear body.dark p,
-html#SLT-LunarNewYear body.dark h1,
-html#SLT-LunarNewYear body.dark h2,
-html#SLT-LunarNewYear body.dark h3,
-html#SLT-LunarNewYear body.dark h4,
-html#SLT-LunarNewYear body.dark h5,
-html#SLT-LunarNewYear body.dark h6 {
-  color: #ee9999;
-}
-
-html#SLT-LunarNewYear body.dark a {
-  background-color: #781212;
-  border-color: #781212;
-  color: #ee9999;
-}
-
-html#SLT-LunarNewYear body:not(.default):not(.dark) {
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-html#SLT-LunarNewYear body:not(.default):not(.dark) h1,
-html#SLT-LunarNewYear body:not(.default):not(.dark) h2,
-html#SLT-LunarNewYear body:not(.default):not(.dark) h3,
-html#SLT-LunarNewYear body:not(.default):not(.dark) h4,
-html#SLT-LunarNewYear body:not(.default):not(.dark) h5,
-html#SLT-LunarNewYear body:not(.default):not(.dark) h6 {
-  color: var(--text);
-  
-}
-
-html#SLT-LunarNewYear body:not(.default):not(.dark) a {
-  background-color: var(--border);
-  border-color: var(--border);
-  color: var(--text);
-}
-
-html#SLT-LunarNewYear body:not(.default):not(.dark) img {
-  filter: none;
-}
-
-html#SLT-LunarNewYear body:not(.default):not(.dark) #DigitalClock,
-html#SLT-LunarNewYear body:not(.default):not(.dark) #DigitalCalendar {
-  border-color: var(--border);
-}
-
-
-
-
-
-
-html#SLT-TheRockCycle body.default {
-  background-color: #909090;
-  color: #595959;
-}
-
-html#SLT-TheRockCycle #DigitalClock,
-html#SLT-TheRockCycle #DigitalCalendar {
-  border-color: #595959;
-}
-
-html#SLT-TheRockCycle body.default p,
-html#SLT-TheRockCycle body.default h1,
-html#SLT-TheRockCycle body.default h2,
-html#SLT-TheRockCycle body.default h3,
-html#SLT-TheRockCycle body.default h4,
-html#SLT-TheRockCycle body.default h5,
-html#SLT-TheRockCycle body.default h6 {
-  color: #595959;
-}
-
-html#SLT-TheRockCycle body.default a {
-  background-color: #adadad;
-  border-color: #adadad;
-  color: #595959;
-}
-
-html#SLT-TheRockCycle body.dark {
-  background-color: #3e3e3e;
-  color: #a1a1a1;
-}
-
-html#SLT-TheRockCycle body.dark p,
-html#SLT-TheRockCycle body.dark h1,
-html#SLT-TheRockCycle body.dark h2,
-html#SLT-TheRockCycle body.dark h3,
-html#SLT-TheRockCycle body.dark h4,
-html#SLT-TheRockCycle body.dark h5,
-html#SLT-TheRockCycle body.dark h6 {
-  color: #a1a1a1;
-}
-
-html#SLT-TheRockCycle body.dark a {
-  background-color: #5f5f5f;
-  border-color: #5f5f5f;
-  color: #a1a1a1;
-}
-
-html#SLT-TheRockCycle body:not(.default):not(.dark) {
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-html#SLT-TheRockCycle body:not(.default):not(.dark) h1,
-html#SLT-TheRockCycle body:not(.default):not(.dark) h2,
-html#SLT-TheRockCycle body:not(.default):not(.dark) h3 {
-  color: var(--text);
-  
-}
-
-html#SLT-TheRockCycle body:not(.default):not(.dark) a {
-  background-color: var(--border);
-  border-color: var(--border);
-  color: var(--text);
-}
-
-html#SLT-TheRockCycle body:not(.default):not(.dark) img {
-  filter: none;
-}
-
-html#SLT-TheRockCycle body:not(.default):not(.dark) #DigitalClock,
-html#SLT-TheRockCycle body:not(.default):not(.dark) #DigitalCalendar {
-  border-color: var(--border);
-}
-
-
-
-
-
-
-html#SLT-TheWaterCycle body.default {
-  background-color: #bcdbeb;
-  color: #56a2c9;
-}
-
-html#SLT-TheWaterCycle #DigitalClock,
-html#SLT-TheWaterCycle #DigitalCalendar {
-  border-color: #56a2c9;
-}
-
-html#SLT-TheWaterCycle body.default p,
-html#SLT-TheWaterCycle body.default h1,
-html#SLT-TheWaterCycle body.default h2,
-html#SLT-TheWaterCycle body.default h3,
-html#SLT-TheWaterCycle body.default h4,
-html#SLT-TheWaterCycle body.default h5,
-html#SLT-TheWaterCycle body.default h6 {
-  color: #56a2c9;
-}
-
-html#SLT-TheWaterCycle body.default a {
-  background-color: #7eb8d6;
-  border-color: #7eb8d6;
-  color: #56a2c9;
-}
-
-html#SLT-TheWaterCycle body.dark {
-  background-color: #2c769d;
-  color: #1b4961;
-}
-
-html#SLT-TheWaterCycle body.dark p,
-html#SLT-TheWaterCycle body.dark h1,
-html#SLT-TheWaterCycle body.dark h2,
-html#SLT-TheWaterCycle body.dark h3,
-html#SLT-TheWaterCycle body.dark h4,
-html#SLT-TheWaterCycle body.dark h5,
-html#SLT-TheWaterCycle body.dark h6 {
-  color: #1b4961;
-}
-
-html#SLT-TheWaterCycle body.dark a {
-  background-color: #3996c7;
-  border-color: #3996c7;
-  color: #1b4961;
-}
-
-html#SLT-TheWaterCycle body:not(.default):not(.dark) {
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-html#SLT-TheWaterCycle body:not(.default):not(.dark) h1,
-html#SLT-TheWaterCycle body:not(.default):not(.dark) h2,
-html#SLT-TheWaterCycle body:not(.default):not(.dark) h3 {
-  color: var(--text);
-  
-}
-
-html#SLT-TheWaterCycle body:not(.default):not(.dark) a {
-  background-color: var(--border);
-  border-color: var(--border);
-  color: var(--text);
-}
-
-html#SLT-TheRockCycle body:not(.default):not(.dark) img {
-  filter: none;
-}
-
-html#SLT-TheRockCycle body:not(.default):not(.dark) #DigitalClock,
-html#SLT-TheRockCycle body:not(.default):not(.dark) #DigitalCalendar {
-  border-color: var(--border);
-}
-
-
-
-
-
-
-
-html#SLT-TheSolarSystem body{
-  background-color: #000000;
-  color: #ffea5a;
-}
-
-html#SLT-TheSolarSystem p,
-html#SLT-TheSolarSystem h1,
-html#SLT-TheSolarSystem h2,
-html#SLT-TheSolarSystem h3,
-html#SLT-TheSolarSystem h4,
-html#SLT-TheSolarSystem h5,
-html#SLT-TheSolarSystem h6{
-  background-color: #000000;
-  color: #ffea5a;
-}
-html#SLT-TheSolarSystem #DigitalCalendar,
-html#SLT-TheSolarSystem #DigitalClock{
-border-color: #ffea5a;
-}
-html#SLT-TheSolarSystem img{
-filter: none;	
-}
-
-html#SLT-TheSolarSystem a{
-border-color: #272727;
-background-color: #272727;	
-}
-
-
-
-
-
-
-
-
-
-html#SLT-MilankovitchCycles body.default {
-  background-color: #b8e4b7;
-}
-
-
-html#SLT-MilankovitchCycles body.dark {
-  background-color: #3b9c39;
-}
-
-html#SLT-MilankovitchCycles body:not(.default):not(.dark) {
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-html#SLT-MilankovitchCycles body:not(.default):not(.dark) h1,
-html#SLT-MilankovitchCycles body:not(.default):not(.dark) h2,
-html#SLT-MilankovitchCycles body:not(.default):not(.dark) h3 {
-  color: var(--text);
-  
-}
-
-html#SLT-MilankovitchCycles body:not(.default):not(.dark) a {
-  background-color: var(--border);
-  border-color: var(--border);
-  color: var(--text);
-}
-
-html#SLT-MilankovitchCycles body:not(.default):not(.dark) img {
-  filter: none;
-}
-
-html#SLT-MilankovitchCycles body:not(.default):not(.dark) #DigitalClock,
-html#SLT-MilankovitchCycles body:not(.default):not(.dark) #DigitalCalendar {
-  border-color: var(--border);
-}
-
-
-html#SLT-USConstitution body, 
-html#SLT-USConstitution p, 
-html#SLT-USConstitution h1, 
-html#SLT-USConstitution h2, 
-html#SLT-USConstitution h3, 
-html#SLT-USConstitution h4, 
-html#SLT-USConstitution h5, 
-html#SLT-USConstitution h6,
-html#SLT-USConstitution div {
-	background-color: #faf4dc;
+#SLT-USConstitution body {
+	--bg: #faf4dc;
+	--text: #000000;
+	--border: #f4d597;
+	--DigitalClockBackground: #000000;
 	text-shadow: none;
-	color: black !important;
-	border-color: black !important;
-}
-
-html#SLT-USConstitution span {
-	font-weight: 600;
-}
-
-html#SLT-USConstitution body::before{
-	background: none;
 	animation: none;
 	
 }
 
-html#SLT-USConstitution #container {
+#SLT-USConstitution span {
+	font-weight: 600;
+}
+
+#SLT-USConstitution #container {
 	border: 2px solid var(--border);
 	width: 50vw;
 	padding: 25px;
@@ -431,17 +105,63 @@ html#SLT-USConstitution #container {
 	
 }
 
-html#SLT-USConstitution .containerSections p{
+#SLT-USConstitution .containerSections p{
 	border: 1px solid var(--border);
 	padding: 15px;
 	font-size: 15px;
 	line-height: 1.5;
 }
 
-html#SLT-USConstitution p {
-	text-align: left;
+#SLT-CLI body.default {
+	--bg: #000;
+	--text: #fff;
+	--border: #444;
+	--DigitalClockBackground: #fff;
 }
 
-html#SLT-Matrices math {
-	font-size: 55px;
+#SLT-CLI body.default p, 
+#SLT-CLI body.default h1,
+#SLT-CLI body.default h2,
+#SLT-CLI body.default h3, 
+#SLT-CLI body.default h4, 
+#SLT-CLI body.default select {
+	font: 1.3rem Inconsolata, monospace;
+}
+
+#SLT-CLI div.codeExample {
+	display: flex;
+	flex-direction: rows;
+	height: 400px;
+	border: 4px solid var(--border);
+	width: fit-content;
+	margin: auto;
+}
+
+
+#SLT-CLI div.codeExample div{
+	height: 100%;
+	width: 400px;
+	border: 1px solid var(--border);
+	padding: 15px;
+	overflow: scroll;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+#SLT-CLI body.default span.command {
+	color: blue;
+	text-shadow: 0px 0px 2px blue;
+	font-weight: bold;
+}
+
+#SLT-CLI body.default span.variable {
+	color: #fe9a07;
+	text-shadow: 0px 0px 3px #fe9a07;
+	font-weight: bold;
+}
+
+#SLT-CLI body.default span.at {
+	color: #f517dd;
+	text-shadow: 0px 0px 2px #f517dd;
+	font-weight: bold;
 }

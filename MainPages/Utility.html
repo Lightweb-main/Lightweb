@@ -17,6 +17,20 @@
 				border-color: var(--border);
 				background-color: var(--border);
 			}
+			#searchInput { 
+			width: 65%;
+			color: var(--text);
+			text-decoration: italic;
+		} 
+		
+		#searchInput::placeholder{
+			color: var(--text);
+			text-decoration: italic;
+		}
+		
+		.articles li{
+			margin-bottom: 35px;
+		}
 		</style>
 	</head>
 	
@@ -26,33 +40,36 @@
 		<h1>Utility</h1>
 		<h2 style="text-align: center;" class="articles">Pretty much where all the useful stuff is.</h2>
 		<input type="text" id="searchInput" placeholder="Search Utilities..." />
-		<ul id="search" id="SearchInputVacuum">
+		<ul id="search" id="SearchInputVacuum" class="articles">
 		<li>
-		<a href="../SubMainPages/CalculatorPage.html" class="articles">Calculators</a><br><br><br>
+		<a href="../SubMainPages/CalculatorPage.html" class="articles">Calculators</a>
 		</li>
 		<li>
-		<a href="../Utility/Character%20Bank.html" class="articles">Character Bank</a><br><br><br>
+		<a href="../Utility/Character%20Bank.html" class="articles">Character Bank</a>
 		</li>
 		<li>
-		<a href="../Utility/Color%20Code%20Generator.html" class="articles">Color Code Generator</a><br><br><br>
+		<a href="../Utility/Color%20Code%20Generator.html" class="articles">Color Code Generator</a>
 		</li>
 		<li>
-		<a href="../Utility/FlashcardGenerator.html" class="articles">Flashcard Generator</a><br><br><br>
+		<a href="../Utility/FlashcardGenerator.html" class="articles">Flashcard Generator</a>
 		</li>
 		<li>
-		<a href="../Utility/Notes.html" class="articles">Notes</a><br><br><br>
+		<a href="../Utility/Notes.html" class="articles">Notes</a>
 		</li>
 		<li>
-		<a href="../Utility/Notational%20&%20Encoding%20Translator.html" class="articles">Notational & Encoding Translator</a><br><br><br>
+		<a href="../Utility/Notational%20&%20Encoding%20Translator.html" class="articles">Notational & Encoding Translator</a>
 		</li>
 		<li>
-		<a href="../Utility/Text%20Formatter.html" class="articles">Text Formatter</a><br><br><br>
+		<a href="../Utility/Text%20Formatter.html" class="articles">Text Formatter</a>
 		</li>
 		<li>
-		<a href="../Utility/UnitConverter.html" class="articles">Unit Converter</a><br><br><br>
+		<a href="../Utility/Text%20File%20Converter.html" class="articles">Text File Converter</a>
 		</li>
 		<li>
-		<a href="../Utility/WeatherApp.html" class="articles">Weather App</a><br><br><br>
+		<a href="../Utility/UnitConverter.html" class="articles">Unit Converter</a>
+		</li>
+		<li>
+		<a href="../Utility/WeatherApp.html" class="articles">Weather App</a>
 		</li>
 		<li>
 		<a href="Lightweb%20MainPage.html">Exit</a>

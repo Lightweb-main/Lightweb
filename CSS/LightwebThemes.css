@@ -133,15 +133,6 @@ body.squidGameScreen{
 	--DigitalClockBackground:  #8C205C;
 }
 
-body.default {
-	--bg: #eceff1;
-	--text: #121212;
-	--border: #e9e5e5;
-	--tableborder: #000000;
-	--SearchArticlesColor: #fdfdfd;
-	--DigitalClockBackground: #000000;
-}
-
 :root {
   --bg: #eceff1;
   --text: #121212;

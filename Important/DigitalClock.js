@@ -114,8 +114,11 @@ if(path.includes("/index.html")){
 	directoryLevel = 2;
 }
 
+
 directoryLevelA = ("../").repeat(directoryLevel);
 
+
+console.log(directoryLevelA);
 
 
 document.head.appendChild(iconthingy);
@@ -389,17 +392,6 @@ function update() {
 
 	fullMilitaryTimeLS = localStorage.getItem('fMT');
 	
-	/* Note For Future Me: PLZ DELETE THIS after version v9.2.2*/
-	if(document.getElementById("message")){
-		if(frameCount % 100 == 0){
-			console.log(document.getElementById("message").style.color);
-			if(document.getElementById("message").style.color !== "rgb(255, 0, 0)"){
-				document.getElementById("message").style.color = "#ff0000";
-			} else {
-				document.getElementById("message").style.color = "#000000";
-			}
-		}
-	}
 	
 	if(document.body.classList.contains('chaosScreen')){
 		if(frameCount % 6 === 0){		
@@ -1209,34 +1201,9 @@ function snowflakeChristmasScreen(){
 			if(document.body.classList.contains("christmasScreen") && snowflakeAmount < 100){
 			if(localStorage.getItem("snowflakeToggle") === 'true'){
 			let snowflake = document.createElement("img");
-			if(window.location.pathname.includes("index.html")){
-				switch(Math.floor(Math.random() * 3) + 1){
-					case 1:
-						snowflake.src = "Images/snowflakeImg1.png";
-					case 2:
-						snowflake.src = "Images/snowflakeImg2.png";
-					case 3:
-						snowflake.src = "Images/snowflakeImg3.png";
-				}
-			} else if(window.location.pathname.includes("/Calculators/")){
-				switch(Math.floor(Math.random() * 3) + 1){
-					case 1:
-						snowflake.src = "../../Images/snowflakeImg1.png";
-					case 2:
-						snowflake.src = "../../Images/snowflakeImg2.png";
-					case 3:
-						snowflake.src = "../../Images/snowflakeImg3.png";
-				}
-			} else {
-				switch(Math.floor(Math.random() * 3) + 1){
-					case 1:
-						snowflake.src = "../Images/snowflake.img1.png";
-					case 2:
-						snowflake.src = "../Images/snowflake.img2.png";
-					case 3:
-						snowflake.src = "../Images/snowflake.img3.png";
-				}
-			}
+			const randomNumber = Math.floor(Math.random() * 3) + 1;
+			console.log(randomNumber);
+			snowflake.src = `${directoryLevelA}Images/Snowflake.img${randomNumber}.png`;
 			snowflake.id = `snowflake${snowflakeNum}`
 			snowflake.className = "snowflakeChristmasScreen";
 			snowflakeContainer.appendChild(snowflake);
@@ -1375,7 +1342,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				heading2BookMark.style.display = "block";
 				heading2BookMark.style.backgroundColor = "transparent";
 				heading2BookMark.style.border = "none";
-				heading2BookMark.style.fontSize = "20px";
+				heading2BookMark.style.fontSize = `20px` ;
 				heading2BookMark.style.marginBottom = "9px";
 				heading2BookMark.style.fontFamily = localStorage.getItem("lightwebTextFont");
 				heading2BookMark.style.textDecoration = "underline";
@@ -1557,7 +1524,13 @@ function setSize(toggle){
 		{lineHeight: "p, div:not(#DigitalClock):not(#DigitalCalendar), span, input, select, option, optgroup, textarea, h1, h2, h3, h4, h5, h6, label, example, math"}
 	]
 
-	const textSizeMultiplier = localStorage.getItem("lightwebTextSize");
+	let textSizeMultiplier = localStorage.getItem("lightwebTextSize");
+	
+	if(localStorage.getItem("DeviceType") == "Phone"){
+		textSizeMultiplier *= 0.5;
+	} else if(localStorage.getItem("DeviceType") == "Phone"){
+		textSizeMultiplier *= 0.9;
+	}
 
 	scales.forEach(group => {
 		document.querySelectorAll(group.elements).forEach(element => {

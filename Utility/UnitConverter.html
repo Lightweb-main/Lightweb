@@ -33,7 +33,7 @@
 <body>
   <h1>Lightweb: Unit Converter</h1>
 	<h2>Units are ordered in magnitude</h2>
-	<h2>Also if the non-scientific notation seems a little too accurate, look at the science notation version of the output (ex. 1 Exabit to Bits)
+	<h3 style="text-align: center;">Note: The scientific notation itself sometimes rounds so increase the decimal amount to see a more accurate calculation, however don't increase the decimal amount by too much as this could cause trailing numbers to become inaccurate.</h3>
   <h2>Length Unit Converter</h2>
  <div style="display: flex; align-items: center; flex-wrap: wrap;">
   <input type="number" id="inputValue1" placeholder="Enter value">
@@ -762,6 +762,80 @@
 	<option value="30">30</option> 
 	<option value="60">60</option> 
 </select>
+</div>
+<div>
+<h2>Fluid Volume Calculator</h2>
+	<div style="display: flex; align-items: center; flex-wrap: wrap;">
+  <input type="number" id="inputValue9" placeholder="Enter value">
+  <select id="fromUnit9">
+  <optgroup label="Recommended">
+	<option value="milliliter">Milliliter</option>
+	<option value="teaspoon">US Teaspoon</option>
+	<option value="centiliter">Centiliter</option>
+	<option value="tablespoon">US Tablespoon</option>
+	<option value="liter">Liter</option> 
+	<option value="gallon">Gallon</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
+  <option value="milliliter">Milliliter</option>
+  <option value="teaspoon">US Teaspoon</option>
+  <option value="centiliter">Centiliter</option>
+  <option value="tablespoon">US Tablespoon</option>
+  <option value="ounce">US Ounce</option>
+  <option value="gill">US Gill</option>
+  <option value="cup">US Cup</option>
+  <option value="pint">US Pint</option>
+  <option value="quart">US Quart</option>
+  <option value="liter">Liter</option> 
+  <option value="gallon">Gallon</option>
+  </optgroup>
+  </select>
+ <input id="result9" class="result" readonly>
+ <input id="resultSciNot9"class="result"  readonly>
+  <select id="toUnit9"> 
+  <optgroup label="Recommended">
+	<option value="milliliter">Milliliter</option>
+	<option value="teaspoon">US Teaspoon</option>
+	<option value="centiliter">Centiliter</option>
+	<option value="tablespoon">US Tablespoon</option>
+	<option value="liter">Liter</option> 
+	<option value="gallon">Gallon</option>
+  </optgroup>
+  <option disabled>────────────────</option>
+  <optgroup label="All">
+  <option value="milliliter">Milliliter</option>
+  <option value="teaspoon">US Teaspoon</option>
+  <option value="centiliter">Centiliter</option>
+  <option value="tablespoon">US Tablespoon</option>
+  <option value="ounce">US Ounce</option>
+  <option value="gill">US Gill</option>
+  <option value="cup">US Cup</option>
+  <option value="pint">US Pint</option>
+  <option value="quart">US Quart</option>
+  <option value="liter">Liter</option> 
+  <option value="gallon">Gallon</option>
+  </optgroup>
+  
+  </select>
+	 <select id="decimalAmount9">
+	<option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+	<option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option> 
+	<option value="9">9</option> 
+	<option value="10">10</option> 
+	<option value="15">15</option> 
+	<option value="20">20</option> 
+	<option value="30">30</option> 
+	<option value="60">60</option> 
+</select>
+</div>
 </div>
 <button onclick="exit()">Exit</button>
 

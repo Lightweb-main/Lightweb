@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lightweb: CSV to HTML Table Converter</title>
+	<link rel="stylesheet" href="CSVHTMLTable.css">
+</head>
+
+<body>
+	<h1>Lightweb: CSV to HTML Table Converter</h1>
+	<div id="selectMode">
+		<button id="button1">Text Input</button>
+		<button id="button2">.CSV File Input</button>
+	</div>
+	<div id="container">
+		<div id="div1">
+			<h2>Text Input</h2>
+			<textarea id="textInput"></textarea>
+			<button onClick="convert('text')">Convert</button>
+		</div>
+		<div id="div2" style="display: none;">
+			<h2>.CSV File Input</h2>
+			<input id="fileInput" type="file" accept=".csv"></input>
+			<button onClick="convert('file')">Convert</button>
+		</div>
+		<div style="width: fit-content; overflow-x: scroll; margin: 50px;">
+			<table id="CSVTable">
+				<thead>
+					<tr>
+					
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+	<br><br>
+	<button onClick="exit()">Exit</button>
+	
+	<script>
+		function exit(){ window.location = "../MainPages/Other.html"};
+	</script>
+	<script src="../Important/DigitalClock.js"></script>
+	<script src="CSVHTMLTable.js"></script>
+	</body>
+</html>

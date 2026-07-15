@@ -252,7 +252,7 @@ function scramble(){
 	randomInt2 = Math.floor(Math.random() * scribbleScrabble.length);
 	
 	let scrambledText1 = originalTextContents.replace(scribbleScrabble[randomInt], scribbleScrabble[randomInt2]); 
-	for(let i = 0; i < 7000; i++){
+	for(let i = 0; i < originalText.value.trim().length * 5; i++){
 	originalTextContents = localStorage.setItem("textModifierOriginalText", originalText.value);
 	
 	randomInt = Math.floor(Math.random() * scribbleScrabble.length);

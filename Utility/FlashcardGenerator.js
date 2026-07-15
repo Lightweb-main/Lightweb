@@ -5,6 +5,19 @@ let toggle = 1;
 let toggleA = 0;
 
 
+const randomQuestions = {
+	"Questions" : {
+		"What is the fourth planet in the Solar System?" : "Mars",
+		"What is the third planet in the Solar System?" : "Earth",
+		"What is the powerhouse of the cell?" : "Mitochondria",
+		"What is the tallest mountain in the world?" : "Mount Everest",
+		"What makes proteins in a cell?" : "Ribosomes",
+		"What is the first element in the Periodic Table?" : "Hydrogen (H)",
+		"What is Earth's gravity anywhere near the surface?" : "9.8 meters per seconds squared (9.8 m / s<sup>2</sup>)",
+	}
+}
+
+
 setInterval(update, 10);
 function update(){
 	flashcardGenerating.style.display = "none";
@@ -36,6 +49,8 @@ questionsDiv.innerHTML = "";
 
 for(let i = 1; i <= 3; i++){
 	
+	let entry = Object.entries(randomQuestions.Questions)[Math.floor(Math.random() * Object.entries(randomQuestions.Questions).length)];
+	
 	
 	const questionDiv = document.createElement("div");
 	questionDiv.id = "questionDiv" + i;
@@ -47,35 +62,35 @@ for(let i = 1; i <= 3; i++){
 	
 	
 	const questionDisplay = document.createElement("p");
-	questionDisplay.textContent = "What is the fourth planet in the solar system?"
+	questionDisplay.innerHTML = entry[0];
 	questionDisplay.id = `Question #${i}QuestionDisplay`;
 	questionDisplay.classList.add("questions");
 	questionDiv.appendChild(questionDisplay);
 	
 	const answerDisplay = document.createElement("p");
-	answerDisplay.textContent = "Mars"
+	answerDisplay.innerHTML = entry[1];
 	answerDisplay.id = `Question #${i}AnswerDisplay`;
 	answerDisplay.classList.add("answers");
 	questionDiv.appendChild(answerDisplay);
 	
 	const questionChangeInput = document.createElement("button");
-	questionChangeInput.textContent  = `Change Question #${i}`;
+	questionChangeInput.innerHTML  = `Change Question #${i}`;
 	
 	questionChangeInput.addEventListener("click", () => {
-		let newQuestion = prompt("Enter the new question: ", document.getElementById(`Question #${i}QuestionDisplay`).textContent)
+		let newQuestion = prompt("Enter the new question: ", document.getElementById(`Question #${i}QuestionDisplay`).innerHTML)
 		if(newQuestion !== null && newQuestion !== ""){
-			document.getElementById(`Question #${i}QuestionDisplay`).textContent = newQuestion;
+			document.getElementById(`Question #${i}QuestionDisplay`).innerHTML = newQuestion;
 			setArrays();
 		}
 	});
 	
 	const answerChangeInput = document.createElement("button");
-	answerChangeInput.textContent  = `Change Answer of Question #${i}`;
+	answerChangeInput.innerHTML  = `Change Answer of Question #${i}`;
 	
 	answerChangeInput.addEventListener("click", () => {
-		let newAnswer = prompt("Enter the new answer: ", document.getElementById(`Question #${i}AnswerDisplay`).textContent);
+		let newAnswer = prompt("Enter the new answer: ", document.getElementById(`Question #${i}AnswerDisplay`).innerHTML);
 		if(newAnswer !== null && newAnswer !== ""){
-			document.getElementById(`Question #${i}AnswerDisplay`).textContent = newAnswer;
+			document.getElementById(`Question #${i}AnswerDisplay`).innerHTML = newAnswer;
 			setArrays();
 		}
 	});
@@ -126,6 +141,10 @@ function downloadAsCSV(){
 
 async function importCSVFile(){
 	const csvFileInputValue = csvFileInput.files[0];
+	if(csvFileInput.files[0].type != "text/csv"){
+		alert("File must be a .csv (comma-spaced values) file.");
+		return;
+	}
 	const csvFileInputText = await csvFileInputValue.text();
 	
 	const csvFileRows = csvFileInputText.split("\n").map(text => text.split(","));
@@ -140,40 +159,40 @@ async function importCSVFile(){
 	questionDiv.classList.add("questionDiv");
 	
 	const questionIndexDisplay = document.createElement("h3");
-	questionIndexDisplay.textContent = `Question #${i}:`;
+	questionIndexDisplay.innerHTML = `Question #${i}:`;
 	questionDiv.appendChild(questionIndexDisplay);
 	
 	
 	const questionDisplay = document.createElement("p");
-	questionDisplay.textContent = question.replace(/"/g, "");
+	questionDisplay.innerHTML = question.replace(/"/g, "");
 	questionDisplay.id = `Question #${i}QuestionDisplay`;
 	questionDisplay.classList.add("questions");
 	questionDiv.appendChild(questionDisplay);
 	
 	const answerDisplay = document.createElement("p");
-	answerDisplay.textContent = answer.replace(/"/g, "");
+	answerDisplay.innerHTML = answer.replace(/"/g, "");
 	answerDisplay.id = `Question #${i}AnswerDisplay`;
 	answerDisplay.classList.add("answers");
 	questionDiv.appendChild(answerDisplay);
 	
 	const questionChangeInput = document.createElement("button");
-	questionChangeInput.textContent  = `Change Question #${i}`;
+	questionChangeInput.innerHTML  = `Change Question #${i}`;
 	
 	questionChangeInput.addEventListener("click", () => {
-		let newQuestion = prompt("Enter the new question: ", document.getElementById(`Question #${i}QuestionDisplay`).textContent)
+		let newQuestion = prompt("Enter the new question: ", document.getElementById(`Question #${i}QuestionDisplay`).innerHTML)
 		if(newQuestion !== null && newQuestion !== ""){
-			document.getElementById(`Question #${i}QuestionDisplay`).textContent = newQuestion;
+			document.getElementById(`Question #${i}QuestionDisplay`).innerHTML = newQuestion;
 			setArrays();
 		}
 	});
 	
 	const answerChangeInput = document.createElement("button");
-	answerChangeInput.textContent  = `Change Answer of Question #${i}`;
+	answerChangeInput.innerHTML  = `Change Answer of Question #${i}`;
 	
 	answerChangeInput.addEventListener("click", () => {
-		let newAnswer = prompt("Enter the new answer: ", document.getElementById(`Question #${i}AnswerDisplay`).textContent);
+		let newAnswer = prompt("Enter the new answer: ", document.getElementById(`Question #${i}AnswerDisplay`).innerHTML);
 		if(newAnswer !== null && newAnswer !== ""){
-			document.getElementById(`Question #${i}AnswerDisplay`).textContent = newAnswer;
+			document.getElementById(`Question #${i}AnswerDisplay`).innerHTML = newAnswer;
 			setArrays();
 		}
 	});
@@ -187,8 +206,6 @@ async function importCSVFile(){
 	
 	questionsDiv.appendChild(questionDiv);
 	}
-	console.log(questions);
-	console.log(answers);
 };
 
 clearBtn.addEventListener("click", () => {
@@ -205,42 +222,42 @@ generateQuestionsAmountButton.addEventListener("click", () => {
 	questionDiv.classList.add("questionDiv");
 	
 	const questionIndexDisplay = document.createElement("h3");
-	questionIndexDisplay.textContent = `Question #${i}:`;
+	questionIndexDisplay.innerHTML = `Question #${i}:`;
 	questionDiv.appendChild(questionIndexDisplay);
 	
 	
 	const questionDisplay = document.createElement("p");
-	questionDisplay.textContent = "What is the fourth planet in the solar system?"
+	questionDisplay.innerHTML = "What is the fourth planet in the solar system?"
 	questionDisplay.id = `Question #${i}QuestionDisplay`;
-	questions.push(questionDisplay.textContent);
+	questions.push(questionDisplay.innerHTML);
 	questionDisplay.classList.add("question");
 	questionDiv.appendChild(questionDisplay);
 	
 	const answerDisplay = document.createElement("p");
-	answerDisplay.textContent = "Mars"
+	answerDisplay.innerHTML = "Mars"
 	answerDisplay.id = `Question #${i}AnswerDisplay`;
-	answers.push(answerDisplay.textContent);
+	answers.push(answerDisplay.innerHTML);
 	answerDisplay.classList.add("answer");
 	questionDiv.appendChild(answerDisplay);
 	
 	const questionChangeInput = document.createElement("button");
-	questionChangeInput.textContent  = `Change Question #${i}`;
+	questionChangeInput.innerHTML  = `Change Question #${i}`;
 	
 	questionChangeInput.addEventListener("click", () => {
-		let newQuestion = prompt("Enter the new question: ", document.getElementById(`Question #${i}QuestionDisplay`).textContent)
+		let newQuestion = prompt("Enter the new question: ", document.getElementById(`Question #${i}QuestionDisplay`).innerHTML)
 		if(newQuestion !== null && newQuestion !== ""){
-			document.getElementById(`Question #${i}QuestionDisplay`).textContent = newQuestion;
+			document.getElementById(`Question #${i}QuestionDisplay`).innerHTML = newQuestion;
 			setArrays();
 		}
 	});
 	
 	const answerChangeInput = document.createElement("button");
-	answerChangeInput.textContent  = `Change Answer of Question #${i}`;
+	answerChangeInput.innerHTML  = `Change Answer of Question #${i}`;
 	
 	answerChangeInput.addEventListener("click", () => {
-		let newAnswer = prompt("Enter the new answer: ", document.getElementById(`Question #${i}AnswerDisplay`).textContent);
+		let newAnswer = prompt("Enter the new answer: ", document.getElementById(`Question #${i}AnswerDisplay`).innerHTML);
 		if(newAnswer !== null && newAnswer !== ""){
-			document.getElementById(`Question #${i}AnswerDisplay`).textContent = newAnswer;
+			document.getElementById(`Question #${i}AnswerDisplay`).innerHTML = newAnswer;
 			setArrays();
 		}
 	});
@@ -294,6 +311,4 @@ function setArrays(){
 		answers.push(answer.textContent);
 	});
 	
-	console.log(questions);
-	console.log(answers);
 }
