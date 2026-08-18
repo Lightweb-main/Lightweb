@@ -140,9 +140,9 @@ if (
 }
 
 if ( 
-  localStorage.getItem("loginVerification") === "false" && (
+  !localStorage.getItem("loginVerification") === "true" && (
   !path.includes('lightweb-main.github.io/Lightweb/') ||
-  path.includes('C:')
+   path.includes('C:')
   )
 ) {
     if (!path.includes("index.html")){
@@ -1685,7 +1685,7 @@ setTimeout( () => {
 	document.getElementById("tableOfContentsDiv").insertAdjacentElement("beforebegin", warningDiv);
 }, 100);
 
-/* document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
   if (event.key === "F12" || event.keyCode === 123) {
     event.preventDefault();
@@ -1700,7 +1700,3 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
-
-
-
-*/
