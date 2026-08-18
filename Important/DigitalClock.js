@@ -147,6 +147,7 @@ if (
 ) {
     if (!path.includes("index.html")){
 		alert("Session expired. Please log in again."); 
+		localStorage.setItem("loginVerification", "false");
 		window.location.href = `${directoryLevelA}index.html`;
 	}
 }
@@ -1700,3 +1701,7 @@ document.addEventListener('keydown', event => {
     event.preventDefault();
   }
 });
+
+
+
+*/
