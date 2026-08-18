@@ -153,6 +153,7 @@ const words = [
 	"hello",
 	"hairy",
 	"heart",
+	"habit",
 	"hobby",
 	"heath",
 	"hoist",
