@@ -161,6 +161,15 @@
 			</div>
 		</div>
 		
+		<div id="articleSettings" class="settingDiv">
+			<h2>Article Settings</h2>
+			<label>
+				<input type="checkbox" id="toggle-notes-checkbox">
+				Toggle Article Notes
+			</label>
+		</div>
+		
+		
 		<div id="otherSettings" class="settingDiv">
 			<h2>Other Settings</h2>
 			<h3>↓ For Darker Screen Types ↓</h3>
@@ -186,7 +195,7 @@
 		
 		<div id="exitSettingsDiv" class="settingDiv">
 			<a style="font-size: 30px; margin: 50px;" id="exitSettingsBtn" href="Lightweb%20MainPage.html">Back to Lightweb</a>
-			<a style="font-size: 30px; margin: 50px;" id="exitLightwebButton" href="../index.html">Exit Lightweb</a>
+			<a style="font-size: 30px; margin: 50px;" id="exitLightwebButton" onClick="localStorage.setItem('loginVerification', false)" href="../index.html">Exit Lightweb</a>
 		</div>
 		</div>
 			

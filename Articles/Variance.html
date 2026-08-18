@@ -9,61 +9,79 @@
 <p>
 Variance is the statistical measure of dispersion that quantifies the amount of spread or variability in a dataset. A high variance indicates that the values are widely spread out while a low variance indicates that the values are closely spread out from each other. Calculating the variance is very similar to finding the standard deviation…
 </p>
-
+<div class="note">
+	<p></p>
+	<p>The symbol <b>&Sigma;</b> (Uppercase Sigma) represents summation, meaning that the numerator of the formula is the summation of all the x values first subtracted by the mean, then squared.</p>
+	<p><b>&#x03BC;</b>: Represents the mean of the dataset (Population)</p>
+	<p>Variance is shown as <b>&sigma;</b><sup>2</sup> (Lowercase Sigma squared) in a population dataset, and <b>s</b><sup>2</sup> in a sample dataset.</p>
+	<p><i><b>n</b></i>: Represents the number of values in the dataset.</p>
+</div>
 <math>
-  <mrow>
-    <msup>
-          <mo>&sigma;</mo>
-		  <mn>2</mn>
-		  </msup>
-    <mo>=</mo>
+	<msup>
+		<mi>&sigma;</mi>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
 	<mfrac>
-	<mn>1</mn>
-	<mi>N</mi>
+		<mrow>
+			<mi>&Sigma;</mi>
+			<msup>
+				<mrow>
+					<mo>(</mo>
+					<msub>
+						<mi>x</mi>
+						<mi>i</mi>
+					</msub>
+					<mo>-</mo>
+					<mi>&#x03BC;</mi>
+					<mo>)</mo>
+				</mrow>
+				<mn>2</mn>
+		</mrow>
+		<mrow>
+			<mi>n</mi>
+		</mrow>	
 	</mfrac>
-      <mfrac>
-        <mrow>
-          <mo>&#x2211;</mo>
-          <mrow>
-          </mrow>
-          <mo>(</mo>
-          <msub><mi>x</mi><mi>i</mi></msub>
-          <mo>-</mo>
-          <mi>&#x03BC;</mi>
-          <msup><mo>)</mo><mn>2</mn></msup>
-        </mrow>
-      </mfrac>
-  </mrow>
-  </mrow>
-</math><br><br>
-<math>
-  <mrow>
-    <msup><mi>s</mi><mn>2</mn></msup>
-    <mo>=</mo>
-    <mfrac>
-      <mrow>
-        <mo>&#x2211;</mo>
-        <mrow>
-          <mi>i</mi>
-          <mo>=</mo>
-        </mrow>
-        <mo>(</mo>
-        <msub><mi>x</mi><mi>i</mi></msub>
-        <mo>-</mo>
-        <mover>
-          <mi>x</mi>
-          <mo>&#xAF;</mo>
-        </mover>
-        <msup><mo>)</mo><mn>2</mn></msup>
-      </mrow>
-      <mrow>
-        <mi>n</mi>
-        <mo>-</mo>
-        <mn>1</mn>
-      </mrow>
-    </mfrac>
-  </mrow>
 </math>
+<math>
+	<msup>
+		<mi>s</mi>
+		<mn>2</mn>
+	</msup>
+	<mo>=</mo>
+	<mfrac>
+		<mrow>
+			<munderover>
+				<mi>&#x2211;</mi>
+				<mrow>
+					<mi>i</mi>
+					<mo>=</mo>
+					<mn>0</mn>
+				</mrow>
+				<mrow>
+				</mrow>
+			</munderover>
+			<msup>
+				<mrow>
+					<mo>(</mo>
+					<msub>
+						<mi>x</mi>
+						<mi>i</mi>
+					</msub>
+					<mo>-</mo>
+					<mi>&#x03BC;</mi>
+					<mo>)</mo>
+				</mrow>
+				<mn>2</mn>
+		</mrow>
+		<mrow>
+			<mi>n</mi>
+			<mo>-</mo>
+			<mn>1</mn>
+		</mrow>	
+	</mfrac>
+</math>
+
 <h2>Variance of a Population</h2>
 <p>
 An example of finding the Variance of a population is…
@@ -134,7 +152,7 @@ Now we add up all the values…
 <p>
 The Variance of the dataset is 9.2.
 </p>
-
+<h2>Variance of a Sample Dataset</h2>
 <p>
 The variance of a sample is a little different from finding the variance of a population…
 </p>

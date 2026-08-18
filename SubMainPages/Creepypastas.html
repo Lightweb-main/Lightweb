@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			ul{
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+			}
+			#noCreepypastas{
+				display: none;
+				font-size: 45px;
+				font-weight: bold;
+				border: 10px solid black;
+				border-radius: 10px;
+				text-decoration: none;
+				border-color: var(--border);
+				background-color: var(--border);
+			}
+			.articles li{
+				margin-bottom: 35px;
+			}
+		</style>
+	</head>
+	
+	<body>	
+		<header>Official Lightweb Site</header>
+		<title>Lightweb: Creepypastas</title>
+		<h1>Creepypastas</h1>
+		<h2>Introduction</h2>
+		<p>
+			A creepypasta, a popular trend originating from 4chan, was a piece of media or text that was widely spread around the internet. The word "creepypasta" comes from "creepy" and "copypasta" which refers to content being <b>copi</b>ed and <b>paste</b>d widely around the internet.
+		</p>
+		<input type="text" id="searchInput" placeholder="Search Creepypastas..." />
+		<ul id="search"  class="articles">
+		<li>
+			<a href="../SubSections/Creepypastas/This%20Man.html">This Man</a>
+		</li>
+		<li>
+			<a href="../MainPages/Informational.html">Exit</a>
+		</li>
+		</ul>
+		<div id="noCreepypastas">There is nothing</div> 
+	<script>
+    const searchInput = document.getElementById('searchInput');
+    const listItems = document.querySelectorAll('#search li')
+ 
+
+    searchInput.addEventListener('input', function () {
+      const searchTerm = this.value;
+      let visibleCount = 0;
+
+      listItems.forEach((li) => {
+         const text = li.textContent;
+        const isVisible = text.includes(searchTerm);
+        li.style.display = isVisible ? '' : 'none';
+        if (isVisible) visibleCount++;
+      });
+
+      noCreepypastas.style.display = visibleCount === 0 ? 'block' : 'none';
+    });	
+  </script>
+
+
+
+     <script src="../Important/DigitalClock.js"></script>
+</body>
+</html>
+

@@ -18,7 +18,16 @@
 	font-weight: 800;
 	color: black;
 	text-shadow: none;
+	perspective: 1000px;
+	font-family: "Calibri";
+	transform: rotateY(-180deg);
 	
+}
+
+div.letter div.letterInnerDiv.boxFilled {
+	transition: transform 0.2s ease-in;
+	transform-style: preserve-3d;
+	transform: rotateY(-180deg);
 }
 
 .rows{
@@ -59,7 +68,7 @@ body{
 	text-align: center;
 }
 
-.boxFilled {
+div.letter {
 	border: 4px solid var(--border);
 }
 

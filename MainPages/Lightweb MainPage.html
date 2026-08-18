@@ -11,6 +11,16 @@
 				height: 45vh;
 				background-color: var(--bg);
 			}
+			
+			li {
+				margin-bottom: 1em;
+			}
+			
+			ul{
+				padding: 0px;
+				text-align: center;
+				list-style-type: none;
+			}
 		</style>
 	</head>
 	<body> <header>Official Lightweb Site</header>
@@ -19,15 +29,29 @@
 			<h3 id="factOfTheHour" style="text-align: center; font-weight: 400;">Looks like the fact of the hour wasn't here. :(</h3>
 		</div>
 		<br><br><br>
-		<div style="text-align: center;">
-			<a href="#" onclick="Link1(); return false;">Informational</a><br><br>
-			<a href="#" onclick="Link9(); return false;" class="MainPage">Lightwebs Background</a><br><br>
-			<a href="#" onclick="Link2(); return false;" class="MainPage">Games & Fun Stuff</a><br><br>
-			<a href="#" onclick="Link5(); return false;" class="MainPage">Simulations</a><br><br>
-			<a href="#" onclick="Link6(); return false;" class="MainPage">Settings</a><br><br>
-			<a href="#" onclick="Link7(); return false;" class="MainPage">Utility</a><br><br>
-			<a href="#" onclick="Link8(); return false;" class="MainPage">Other</a><br><br>
-		</div>
+		<ul>
+			<li>
+			<a href="#" onclick="Link1(); return false;" class="MainPage">Informational</a>
+			</li>
+			<li>
+			<a href="#" onclick="Link9(); return false;" class="MainPage">Lightwebs Background</a>
+			</li>
+			<li>
+			<a href="#" onclick="Link2(); return false;" class="MainPage">Games & Fun Stuff</a>
+			</li>
+			<li>
+			<a href="#" onclick="Link5(); return false;" class="MainPage">Simulations</a>
+			</li>
+			<li>
+			<a href="#" onclick="Link6(); return false;" class="MainPage">Settings</a>
+			</li>
+			<li>
+			<a href="#" onclick="Link7(); return false;" class="MainPage">Utility</a>
+			</li>
+			<li>
+			<a href="#" onclick="Link8(); return false;" class="MainPage">Other</a>
+			</li>
+		</ul>
 		<iframe id="History" src="../LightwebHistory/LightwebHistory.html"></iframe>
 		
 		
@@ -129,6 +153,7 @@
 	`Tesseracts are 4D hypercubes that cannot be physically assembled in the real world as a real shape.`,
 	`TicTacs are cool.`,
 	`<a href="https://www.youtube.com/watch?v=tPEE9ZwTmy0">Click here</a>`,
+	`1011001 1101111 1110101 100000 1101011 1101110 1101111 1110111 100000 1100010 1101001 1101110 1100001 1110010 1111001 101110`,
   ];
   
   const currentDay = new Date();

@@ -43,7 +43,13 @@
 	<header>Official Lightweb Site</header>
 		<title>Informational</title>
 		<h1>Informational</h1>
-		<h2 style="font-size: 16px; text-align: center;">Articles are ordered alphabetically (alternatively in length).</h2>
+		<h2>Sorting Type</h2>
+		<select id="sortingSetting">
+			<option value="alphabetical">Alphabetical</option>
+			<option value="alphabeticalLength">Alphabetical + Length (Legacy)</option>
+			<option value="length">Length</option>
+		</select>
+		<br><br>
 		<input type="text" style="font-family: times-new-roman;" id="searchInput" placeholder="Search Articles..." />
 		<ul id="SearchInputVacuum" class="articles">
 			<li>
@@ -78,6 +84,9 @@
 			</li>
 			<li>
 				<a href="../Articles/Binomial%20Theorem.html" class="articles">Binomial Theorem</a>
+			</li>
+			<li>
+				<a href="../SubMainPages/Creepypastas.html" class="articles">Creepypastas</a>	
 			</li>
 			<li>
 				<a href="../Articles/Confucianism.html" class="articles">Confucianism</a>	
@@ -356,9 +365,6 @@
 				<a href="../Articles/Tetration.html" class="articles">Tetration</a>
 			</li>
 			<li>
-				<a href="../Articles/This%20Man.html" class="articles">This Man</a>
-			</li>
-			<li>
 				<a href="../Articles/The%20Rock%20Cycle.html" class="articles">The Rock Cycle</a>
 			</li>
 			<li>
@@ -420,29 +426,9 @@
 			</li>
 		</ul>
 		<div id="noArticles" class="articles">No Articles in this corner</div>
-  <script>
-    const searchInput = document.getElementById('searchInput');
-    const listItems = document.querySelectorAll('#SearchInputVacuum li')
-    const noArticles = document.getElementById('noArticles');
-
-
-    searchInput.addEventListener('input', function () {
-      const searchTerm = this.value;
-      let visibleCount = 0;
-
-      listItems.forEach((li) => {
-         const text = li.textContent;
-        const isVisible = text.includes(searchTerm);
-        li.style.display = isVisible ? '' : 'none';
-        if (isVisible) visibleCount++;
-      });
-
-      noArticles.style.display = visibleCount === 0 ? 'block' : 'none';
-    });	
-  </script>
-     <script src="../Important/DigitalClock.js"></script>
-
-</body>
+		<script src="SearchInput.js"></script>
+		<script src="../Important/DigitalClock.js"></script>
+	</body>
 </html>
 
 

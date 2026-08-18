@@ -1,6 +1,3 @@
-const translateBtn = document.getElementById("translateBtn");
-const downloadTxt = document.getElementById("downloadTxt");
-
 const morseMap = {
 	"A" : ".-", "B" : "-...", "C" : "-.-.",
 	"D" : "-..", "E" : ".", "F" : "..-.",
@@ -35,9 +32,11 @@ const A1Z26Map = {
 	"Y" : "25", "Z" : "26"
 }
 
+
 const reverseMorseMap = Object.fromEntries(Object.entries(morseMap).map(([i, j]) => [j, i]));
 const reverseA1Z26Map = Object.fromEntries(Object.entries(A1Z26Map).map(([i, j]) => [j, i]));
 const reverseBrailleMap = Object.fromEntries(Object.entries(brailleMap).map(([i, j]) => [j, i]));
+
 
 
 translateBtn.addEventListener('click', function() {
@@ -79,7 +78,7 @@ function translate(){
 		   inputNum.value === "UTF-8" ||
 		   inputNum.value === "reverseBinary" ||
 		   inputNum.value === "A1Z26" ||
-		   inputNum.value === "braille" 
+		   inputNum.value === "braille"
 		  ){
 			  
 			let decimals;

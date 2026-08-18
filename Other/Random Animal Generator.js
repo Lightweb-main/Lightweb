@@ -3,13 +3,6 @@ const output2 = document.getElementById("output2");
 const output3 = document.getElementById("output3");
 
 
-
-
-
-
-
-
-
 let opening;
 let random;
 let discoverLocation;
@@ -23,14 +16,6 @@ let intrusiveSpecies;
 let discoveryAltitude;
 let movementType;
 let random2;
-
-
-
-
-
-
-
-
 
 const dominantHabitat = [
 	"land",
@@ -80,7 +65,7 @@ const discoveredLocation = [
 
 const section1Sentence = [
 	"In a study about how plants grow different under a change in sunlight, a new animal was unintentionally discovered.",
-	`During a study in ${discoverLocation}, a new animal has been discovered.`,
+	`During a study in ${discoveredLocation[Math.random(0, discoveredLocation.length)]}, a new animal has been discovered.`,
 	"A new animal has been discovered.",
 	"During a study of symbiosis, a new animal happened to appear unexpectingly.",
 	"During a study on how heredity can damage nature, a new animal was discovered."

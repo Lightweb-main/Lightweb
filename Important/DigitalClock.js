@@ -31,7 +31,6 @@
 	const lightwebSimulationsCSS = document.createElement("link");
 	const lightwebSpecialThemesCSS = document.createElement("link");
 	const lightwebThemesCSSLink = document.createElement("link");
-	const lightwebWikiCSS = document.createElement("link");
 	const linkText = document.createElement("h2");
 	const mainPageLink = document.createElement("a");
 	const militaryTimeSettings = document.getElementById("militaryTimeSettings");
@@ -40,6 +39,7 @@
 	const textSizeSelection = document.getElementById("textSizeSelection");
 	const textLineHeightSelection = document.getElementById("textLineHeightSelection");
 	const toggleAnalogBtn = document.getElementById('analog-screen-button');
+	const toggleArticleNotesCheckbox = document.getElementById('toggle-notes-checkbox');
 	const toggleChaosScreenBtn = document.getElementById('chaos-screen-button');
 	const toggleChristmasBtn = document.getElementById('christmas-screen-button');
 	const toggleChristmasScreen = document.getElementById("christmas-screen-button");
@@ -112,6 +112,9 @@ if(path.includes("/index.html")){
 	directoryLevel = 1;
 } else if(path.includes("/SubSections/")){
 	directoryLevel = 2;
+	if(path.includes("/SubArticles/")){
+		directoryLevel = 3;
+	}
 }
 
 
@@ -130,35 +133,22 @@ setInterval(update, 1);
 
 /* Login Check */
 
-if (isOnLightweb && isNotLoginPage && isSessionInvalid) {
-  alert("Session expired. Please log in again."); 
-}
-
 if (
-  localStorage.getItem("loginVerification") === null &&
-  path.includes('lightweb-main.github.io') &&
-  !path.endsWith(loginPageName)
+  localStorage.getItem("loginVerification") === null
 ) {
-  localStorage.getItem("loginVerification") = "false";
+  localStorage.setItem("loginVerification", "false");
 }
 
+/* Remember to change line 142 to !path.includes('lightweb-main.github.io/Lightweb/') */
 if ( 
-  localStorage.getItem("loginVerification") !== "true" &&
-  path.includes('lightweb-main.github.io') &&
-  !path.includes('file/C:') &&
-  !path.endsWith(loginPageName)
+  localStorage.getItem("loginVerification") == "false" &&
+  path.includes('lightweb-main.github.io/Lightweb/') &&
+  path.includes('C:')
 ) {
-    if (path.toLowerCase().includes('/lightweb/mainpages/') || 
-		path.toLowerCase().includes('/lightweb/articles/') || 
-		path.toLowerCase().includes('/lightweb/simulations/') || 
-		path.toLowerCase().includes('/lightweb/utility/') || 
-		path.toLowerCase().includes('/lightweb/noninformationalarticles/') || 
-		path.toLowerCase().includes('/lightweb/games%20funstuff/') || 
-		path.toLowerCase().includes('/lightweb/other/') || 
-		path.toLowerCase().includes('/lightweb/subsections/') || 
-		path.toLowerCase().includes('/lightweb/submainpages/')){
-    window.location.href = '../index.html';
-  }
+    if (!path.includes("index.html")){
+		alert("Session expired. Please log in again."); 
+		window.location.href = `${directoryLevelA}index.html`;
+	}
 }
 
 
@@ -218,6 +208,23 @@ if(path.includes("/Articles/")){
 		title.textContent = "Note #" + noteIndex;
 		e.prepend(title);
 	});
+} else if(path.includes("/SubArticles/")){
+	linkText.textContent = "Done? Here are other links.";
+	document.body.appendChild(linkText);
+		
+	mainPageLink.href = "../MainPages/Lightweb%20MainPage.html";
+	mainPageLink.textContent = "Back to Main Page";
+	document.body.appendChild(mainPageLink);
+		
+	document.body.appendChild(document.createElement("br"));
+	document.body.appendChild(document.createElement("br"));
+		
+	informationalPageLink.href = directoryLevelA + "SubMainPages/Creepypastas.html";
+	informationalPageLink.textContent = "Back to Creepypastas Main Page";
+	document.body.appendChild(informationalPageLink);
+	
+	articleTitle.textContent = document.querySelector("h1").textContent;
+	document.head.appendChild(articleTitle);
 }
 
 /* Insert Styles: yarrH Styles*/
@@ -261,12 +268,15 @@ if(lightwebHeader){
 	lightwebHeader.id = "LightwebHeader";
 }
 
-if(path.includes("/Articles/")){
+if(
+	path.includes("/Articles/") ||
+	path.includes("/SubArticles/")
+){
 	lightwebArticlesCSS.rel = "stylesheet";
-	lightwebArticlesCSS.href = "../CSS/LightwebArticles.css";
+	lightwebArticlesCSS.href = directoryLevelA + "CSS/LightwebArticles.css";
 	
 	lightwebSpecialThemesCSS.rel = "stylesheet";
-	lightwebSpecialThemesCSS.href = "../CSS/SpecialLightwebThemes.css";
+	lightwebSpecialThemesCSS.href = directoryLevelA + "CSS/SpecialLightwebThemes.css";
 	
 	document.head.appendChild(lightwebArticlesCSS);
 	document.head.appendChild(lightwebSpecialThemesCSS);
@@ -274,14 +284,9 @@ if(path.includes("/Articles/")){
 	
 } else if(path.includes("/Simulations/")){
 	lightwebSimulationsCSS.rel = "stylesheet";
-	lightwebSimulationsCSS.href = "../CSS/LightwebSimulations.css";
+	lightwebSimulationsCSS.href = directoryLevelA + "CSS/LightwebSimulations.css";
 	
 	document.head.appendChild(lightwebSimulationsCSS);
-} else if(path.includes("/Wikis/")){
-	lightwebWikiCSS.rel = "stylesheet";
-	lightwebWikiCSS.href = "../../CSS/LightwebWikis.css";
-	
-	document.head.appendChild(lightwebWikiCSS);
 }
 
 lightwebCSSLink.href = `${directoryLevelA}CSS/Lightweb.css`;
@@ -324,6 +329,8 @@ function clearLocalStorage(){
 	localStorage.setItem("theme", "default");
 	localStorage.setItem('timeType', '12-hour-clock');
 	localStorage.setItem('calendarType', 'defaultCalendar');
+	localStorage.setItem("loginVerification", false);
+	localStorage.setItem("toggleArticleNotes", true);
 	
 	
 	window.location.reload(true);
@@ -739,6 +746,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			  toggleCRTBlueScreenFlickeringCheckbox.checked = false;
 		  }
 	  }
+	  
+	  if(toggleDarkScreenFlashbangBtn){
+		  if(localStorage.getItem('darkScreenFlashbangSetting') === 'true'){
+			  toggleDarkScreenFlashbangBtn.checked = true;
+		  } else {
+			toggleDarkScreenFlashbangBtn.checked = false;
+		  }
+	  }
+	  
+	  if(toggleArticleNotesCheckbox){
+		  if(localStorage.getItem('toggleArticleNotes') === 'true'){
+			  toggleArticleNotesCheckbox.checked = true;
+		  } else {
+			toggleArticleNotesCheckbox.checked = false;
+		  }
+	  }
 
 	  if(document.body.classList.contains("fullMilitaryTime")){
 	    document.body.classList.add("fullMilitaryTime");
@@ -919,6 +942,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		}) 
 	}
 	
+	if(toggleArticleNotesCheckbox){
+		toggleArticleNotesCheckbox.addEventListener('click', () => {
+			if(localStorage.getItem('toggleArticleNotes') === 'true') {
+				localStorage.setItem('toggleArticleNotes', 'false');
+			} else {
+				localStorage.setItem('toggleArticleNotes', 'true');
+			}
+		}) 
+	}
 	
 	if(toggleDarkBtn){
 		toggleDarkBtn.addEventListener('click', () => {
@@ -1323,7 +1355,11 @@ window.addEventListener("DOMContentLoaded", () => {
 		tableOfContentsDiv.innerHTML += `<h2 style="font-family: ${localStorage.getItem("lightwebTextFont")}">${title.textContent}: Table of Contents</h2>`
 		}
 		tableOfContentsDiv.id = "tableOfContentsDiv";
-		if(title != null && window.location.pathname.includes("/Articles/")){
+		if(title != null && 
+		(
+			window.location.pathname.includes("/Articles/") ||
+			window.location.pathname.includes("/SubArticles/")
+		)){
 			title.insertAdjacentElement("afterend", tableOfContentsDiv);
 			let heading2Index = 1;
 			heading2s.forEach(heading => {
@@ -1342,7 +1378,6 @@ window.addEventListener("DOMContentLoaded", () => {
 				heading2BookMark.style.display = "block";
 				heading2BookMark.style.backgroundColor = "transparent";
 				heading2BookMark.style.border = "none";
-				heading2BookMark.style.fontSize = `20px` ;
 				heading2BookMark.style.marginBottom = "9px";
 				heading2BookMark.style.fontFamily = localStorage.getItem("lightwebTextFont");
 				heading2BookMark.style.textDecoration = "underline";
@@ -1370,6 +1405,8 @@ window.addEventListener("DOMContentLoaded", () => {
 						heading3BookMark.style.fontFamily = localStorage.getItem("lightwebTextFont");
 						heading3BookMark.style.marginBottom = "9px";
 						
+						
+						heading3BookMark.classList.add("TableOfContentH3");
 						tableOfContentsDiv.appendChild(heading3BookMark);
 						
 						let next2 = next.nextElementSibling;
@@ -1390,6 +1427,8 @@ window.addEventListener("DOMContentLoaded", () => {
 								heading4BookMark.style.fontFamily = localStorage.getItem("lightwebTextFont");
 								heading4BookMark.style.marginBottom = "9px";
 								
+								
+								heading4BookMark.classList.add("heading4BookMark");
 								tableOfContentsDiv.appendChild(heading4BookMark);
 								
 								let next3 = next2.nextElementSibling;
@@ -1411,6 +1450,7 @@ window.addEventListener("DOMContentLoaded", () => {
 										heading5BookMark.style.marginBottom = "9px";
 								
 								
+										heading5BookMark.classList.add("heading5BookMark");
 										tableOfContentsDiv.appendChild(heading5BookMark);
 										
 										let next4 = next3.nextElementSibling;
@@ -1433,6 +1473,7 @@ window.addEventListener("DOMContentLoaded", () => {
 												heading6BookMark.style.marginBottom = "7px";
 										
 										
+												heading6BookMark.classList.add("heading6BookMark");
 												tableOfContentsDiv.appendChild(heading6BookMark);
 										
 											}
@@ -1458,6 +1499,14 @@ window.addEventListener("DOMContentLoaded", () => {
 			});
 			
 		}
+		
+		document.querySelectorAll(".note").forEach(note => {
+			if(localStorage.getItem("toggleArticleNotes") === 'false'){
+				note.style.display = "none";
+			} else {
+				note.style.display = "block";
+			}
+		});
 	
 });
 
@@ -1480,7 +1529,13 @@ if(hyperlinkHoverColorSelection){
 }
 
 
-setInterval(setSize(1), 3000);
+const onDOMAdded = new MutationObserver(() => { setSize(); });
+
+onDOMAdded.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+
 function setSize(toggle){
 	
 	let deviceType = localStorage.getItem("DeviceType");
@@ -1493,8 +1548,8 @@ function setSize(toggle){
 		localStorage.setItem("lightwebLineHeight", textLineHeightSelection.value);
 	}
 	
-	const val = localStorage.getItem("lightwebTextSize").trim();
-	if(isNaN(val)){
+	const val = localStorage.getItem("lightwebTextSize");
+	if(isNaN(val) || val == null || val == undefined){
 		localStorage.setItem("lightwebTextSize", 1);
 	}
 	
@@ -1508,13 +1563,17 @@ function setSize(toggle){
 	}
 	
 	const scales = [
-		{ elements: "p, a.textLink ,span, input, select, option, optgroup, textarea, h5, label", size: 15 },
-		{ elements: "h6", size: 14 },
-		{ elements: "h4", size: 17 },
+		{ elements: "a.heading6BookMark", size: 11 },
+		{ elements: "a.heading5BookMark", size: 13 },
+		{ elements: "h6:not([class])", size: 14 },
+		{ elements: "p, a.textLink, a.articleLink, span, input, select, option, optgroup, textarea, h5:not([class]), a.heading4BookMark label", size: 15 },
+		{ elements: "h4:not([class]), a.TableOfContentH3, #warningDiv p", size: 17 },
 		{ elements: ".note .noteTitle", size: 18 },
-		{ elements: "h3", size: 20 },
-		{ elements: "h2, example", size: 25 },
+		{ elements: "h3:not([class]), body a.TableOfContentH2", size: 20 },
+		{ elements: "h2:not([class]), example, a:not([class])", size: 25 },
+		{ elements: "a.articles, a.MainPages", size: 30 },
 		{ elements: "math", size: 35 },
+		{ elements: "#exitSettingsBtn", size: 50 },
 		{ elements: "h1", size: 60 },
 		
 	]
@@ -1528,25 +1587,15 @@ function setSize(toggle){
 	
 	if(localStorage.getItem("DeviceType") == "Phone"){
 		textSizeMultiplier *= 0.5;
-	} else if(localStorage.getItem("DeviceType") == "Phone"){
+	} else if(localStorage.getItem("DeviceType") == "Laptop"){
 		textSizeMultiplier *= 0.9;
+	} else if(localStorage.getItem("DeviceType") == "PC"){
+		textSizeMultiplier *= 1.0;
 	}
 
 	scales.forEach(group => {
 		document.querySelectorAll(group.elements).forEach(element => {
 			element.style.fontSize = `${group.size * textSizeMultiplier}px`;
-		});
-		
-		document.querySelectorAll("a").forEach(hypli => {
-			if(hypli.classList.contains("articles")){
-				hypli.style.fontSize = `${25 * textSizeMultiplier}px`;
-			} else {
-				hypli.style.fontSize = `${30 * textSizeMultiplier}px`;
-			}
-			
-			if(hypli.id === "exitSettingsBtn"){
-				hypli.style.fontSize = `${50 * textSizeMultiplier}px`;
-			}
 		});
 	});
 	
@@ -1596,8 +1645,45 @@ customFontLinks.forEach(customFontLink => {
 	}
 });
 
+/* Warnings Insertion */
 
-
+const warningDiv = document.createElement("div");
+warningDiv.id = "warningDiv";
+warningDiv.style.cssText = `
+	border: 3px solid var(--border);
+	text-align: center;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	padding: 25px;
+`;
+if(document.querySelector("html").classList.contains("ALRT-LW")){
+	let text = document.createElement("p");
+	warningDiv.appendChild(text);
+	warningDiv.style.cssText += `
+		background-color: #dcf5f8;
+	`;
+	text.innerHTML = `<span style="font-weight: bold;">WARNING</span><br>Warning Type: Light Warning<br>Topic, Subjects, or references within this article may be slightly sensitive to some viewers. Feel free to exit this site if necessary.`;
+} else if(document.querySelector("html").classList.contains("ALRT-MW")){
+	let text = document.createElement("p");
+	warningDiv.appendChild(text);
+	warningDiv.style.cssText += `
+		background-color: #ffb567;
+	`;
+	text.innerHTML = `<span style="font-weight: bold;">WARNING</span><br>Warning Type: Moderate Warning<br>Topic, Subjects, or references within this article may be sensitive to viewers. Viewer's discretion is recommended if necessary.`;
+} else if(document.querySelector("html").classList.contains("ALRT-CW")){
+	let text = document.createElement("p");
+	warningDiv.appendChild(text);
+	warningDiv.style.cssText += `
+		background-color: #fd2b2b;
+	`;
+	text.innerHTML = `<span style="font-weight: bold;">WARNING</span><br>Warning Type: Considerable Warning<br>Topic, Subjects, or references within this article may be very sensitive to viewers. Viewer's discretion is advised. Immediately click off this part of Lightweb if you start feeling nauseous.`;
+}
+setTimeout( () => {
+	document.getElementById("tableOfContentsDiv").insertAdjacentElement("beforebegin", warningDiv);
+}, 100);
 
 /* document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
@@ -1615,7 +1701,6 @@ document.addEventListener('keydown', event => {
   }
 });
 
+
+
 */
-
-
-
