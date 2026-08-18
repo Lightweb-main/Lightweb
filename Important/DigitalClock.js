@@ -141,9 +141,10 @@ if (
 
 /* Remember to change line 142 to !path.includes('lightweb-main.github.io/Lightweb/') */
 if ( 
-  localStorage.getItem("loginVerification") == "false" &&
-  path.includes('lightweb-main.github.io/Lightweb/') &&
+  localStorage.getItem("loginVerification") == "false" && (
+  !path.includes('lightweb-main.github.io/Lightweb/') ||
   path.includes('C:')
+  )
 ) {
     if (!path.includes("index.html")){
 		alert("Session expired. Please log in again."); 
