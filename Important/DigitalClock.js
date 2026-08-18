@@ -139,9 +139,8 @@ if (
   localStorage.setItem("loginVerification", "false");
 }
 
-/* Remember to change line 142 to !path.includes('lightweb-main.github.io/Lightweb/') */
 if ( 
-  localStorage.getItem("loginVerification") == "false" && (
+  localStorage.getItem("loginVerification") === "false" && (
   !path.includes('lightweb-main.github.io/Lightweb/') ||
   path.includes('C:')
   )
