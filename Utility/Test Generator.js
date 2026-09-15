@@ -11,7 +11,6 @@ csvFileInput.addEventListener("change", async () => {
 		.split("\n")
 		.map(row => row.replace("\r", "").split(",").map(cell => cell.trim()));
 
-	rows.pop();
 	console.log("Rows: \n");
 	console.log(rows);
 	
