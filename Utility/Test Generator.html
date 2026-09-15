@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<style>
+			#QAContainer {
+				margin: 35px;
+				display: flex;
+				justify-content: center;
+				height: 50vh;
+				overflow-y: scroll;
+			}
+			#QADisplay {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				text-align: center;
+			}
+			.qDiv {
+				width: 30vw;
+				height: 15vh;
+				border: 3px solid var(--border);
+				border-radius: 20px;
+				padding: 19px;
+			}
+			
+			#testDiv {
+				padding: 25px;
+				line-height: 1;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>Test Generator</h1>
+		<label for="csvFileInput">Drag your .csv file here. Input will ignore headings on the 1st line.<br></label>
+		<input id="csvFileInput" type="file" accept=".csv">
+		<div id="QAContainer">
+			<div id="QADisplay">
+		
+			</div>
+		</div>
+		<div style="font-family: 'Arial', helvetica, san-serif" id="testDiv">
+		
+		</div>
+		<div id="pdfSettings">
+			<h2>Quiz Settings</h2>
+			<label for="testName">Test Name</label>
+			<input id="testName" value="Lightweb Custom Test"><br><br>
+			<label for="PDFWidth">PDF Width (mm)</label>
+			<input id="PDFWidth" min="1" value="210"><br><br>
+			<label for="PDFHeight">PDF Height (mm)</label>
+			<input id="PDFHeight" min="1" value="297"><br><br>
+			<label for="questionAmount">Question Amount</label>
+			<input id="questionAmount" value="10" min="1" max="1000"><br><br>
+			<p>You can change the font (and the size of text) of the PDF editing your default font family in the Settings.</p>
+		</div>
+		<br><br>
+		<button id="generateQuiz">Generate Quiz</button>
+		<button onClick="window.location.href = '../MainPages/Utility.html'; ">Exit</button>
+
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js"></script>
+
+		<script src="../Important/DigitalClock.js"></script>
+		<script src="Test%20Generator.js"></script>
+	</body>
+</html>

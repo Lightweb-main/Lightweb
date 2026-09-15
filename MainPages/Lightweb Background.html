@@ -6,10 +6,10 @@
 			.container {
 				display: flex;
 				flex-direction: columns;
-				gap: 5px;
-				width: 100vw;
+				width: fit-content;
 				height: fit-content;
 				border: 5px solid var(--border);
+				overflow-x: scroll;
 				padding: 15px;
 			}
 			.innerDivs {
@@ -40,6 +40,7 @@
 				<p>&emsp;q5.js: For Simulations (Articles)</p>
 				<p>&emsp;q5.play: For Simulations (Articles)</p>
 				<p>&emsp;Plotly.js: For Graphs</p>
+				<p>&emsp;html2pdf.js: For converting HTML to a PDF file.</p>
 			</div>
 			<div class="innerDivs" id="lightwebHistory">
 				<h2>Lightweb History</h2>
@@ -58,6 +59,23 @@
 				<p></p>
 				<p></p>
 				<p></p>
+				<p></p>
+			</div>
+			<div class="innerDivs">
+				<h2>Lightweb Warning System</h2>
+				<p>Some articles may have a warning at the beginning, right after the title. These can vary in severity and you should follow what they say.</p>
+				<h3 style="color: #bbbbff">Light Blue: Light Warning</h3>
+				<p style="color: #bbbbff">
+					Content within this article may be moderately sensitive to some viewers. Discretion is recommended if necessary.
+				</p>
+				<h3 style="color: #cccc00">Light Yellow: Modereate Warning</h3>
+				<p style="color: #cccc00">
+					Content within this article may be sensitive to viewers. Discretion is advised.
+				</p>
+				<h3 style="color: #990000;">Dark Red: Considerable Warning</h3>
+				<p style="color: #990000;">
+					Content within this article may be extremely sensitive to an extensive amount of viewers. Discretion is highly recommended if the content becomes too sensitive.
+				</p>
 			</div>
 		</div>
 		<br><br>
@@ -106,6 +124,15 @@
 						debugStatus.querySelectorAll("p")[6].textContent = `q5.play: Active`;
 					} else {
 						debugStatus.querySelectorAll("p")[6].textContent = `q5.play: Inactive / Error Detected`;
+					}
+			});
+			
+			fetch("https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js", { method: "HEAD" })
+				.then(cdn => {
+					if(cdn.ok){
+						debugStatus.querySelectorAll("p")[7].textContent = `html2pdf.js: Active`;
+					} else {
+						debugStatus.querySelectorAll("p")[7].textContent = `html2pdf.js: Inactive / Error Detected`;
 					}
 			});
 

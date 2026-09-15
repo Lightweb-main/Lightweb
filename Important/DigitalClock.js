@@ -209,11 +209,11 @@ if(path.includes("/Articles/")){
 		title.textContent = "Note #" + noteIndex;
 		e.prepend(title);
 	});
-} else if(path.includes("/SubArticles/")){
+} else if(path.includes("/SubArticles/Creepypastas/")){
 	linkText.textContent = "Done? Here are other links.";
 	document.body.appendChild(linkText);
 		
-	mainPageLink.href = "../MainPages/Lightweb%20MainPage.html";
+	mainPageLink.href = "../../../MainPages/Lightweb%20MainPage.html";
 	mainPageLink.textContent = "Back to Main Page";
 	document.body.appendChild(mainPageLink);
 		
@@ -222,6 +222,23 @@ if(path.includes("/Articles/")){
 		
 	informationalPageLink.href = directoryLevelA + "SubMainPages/Creepypastas.html";
 	informationalPageLink.textContent = "Back to Creepypastas Main Page";
+	document.body.appendChild(informationalPageLink);
+	
+	articleTitle.textContent = document.querySelector("h1").textContent;
+	document.head.appendChild(articleTitle);
+} else if(path.includes("/SubArticles/Mandarin/")){
+	linkText.textContent = "Done? Here are other links.";
+	document.body.appendChild(linkText);
+		
+	mainPageLink.href = "../../../MainPages/Lightweb%20MainPage.html";
+	mainPageLink.textContent = "Back to Main Page";
+	document.body.appendChild(mainPageLink);
+		
+	document.body.appendChild(document.createElement("br"));
+	document.body.appendChild(document.createElement("br"));
+		
+	informationalPageLink.href = directoryLevelA + "SubMainPages/Mandarin.html";
+	informationalPageLink.textContent = "Back to Mandarin Main Page";
 	document.body.appendChild(informationalPageLink);
 	
 	articleTitle.textContent = document.querySelector("h1").textContent;
@@ -1498,8 +1515,12 @@ window.addEventListener("DOMContentLoaded", () => {
 				}
 				heading2Index++;
 			});
-			
+			console.log(heading2s.length);
+			if(heading2s.length <= 1){
+				document.body.removeChild(document.getElementById("tableOfContentsDiv"));
+			}
 		}
+		
 		
 		document.querySelectorAll(".note").forEach(note => {
 			if(localStorage.getItem("toggleArticleNotes") === 'false'){
@@ -1605,7 +1626,6 @@ function setSize(toggle){
 			element.style.lineHeight = `${localStorage.getItem("lightwebLineHeight")}em`;
 		});
 	});
-	
 	allElementsAffected.forEach(group => {
 		document.querySelectorAll(group.font).forEach(element => {
 			element.style.fontFamily = localStorage.getItem("lightwebTextFont");
@@ -1617,7 +1637,6 @@ function setSize(toggle){
 			}
 		});
 	});
-	
 	
 	document.documentElement.style.setProperty("--hyperlinkHoverColor", localStorage.getItem("lightwebHyperlinkHoverColorSelection"));
 	setTimeout( () => {
@@ -1682,9 +1701,11 @@ if(document.querySelector("html").classList.contains("ALRT-LW")){
 	`;
 	text.innerHTML = `<span style="font-weight: bold;">WARNING</span><br>Warning Type: Considerable Warning<br>Topic, Subjects, or references within this article may be very sensitive to viewers. Viewer's discretion is advised. Immediately click off this part of Lightweb if you start feeling nauseous.`;
 }
-setTimeout( () => {
-	document.getElementById("tableOfContentsDiv").insertAdjacentElement("beforebegin", warningDiv);
-}, 100);
+if(["ALRT-CW", "ALRT-MW", "ALRT-CW"].some(war => {document.querySelector("html").classList.contains(war)} )){
+	setTimeout( () => {
+		document.querySelector("h1").insertAdjacentElement("beforeEnd", warningDiv);
+	}, 100);
+}
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {

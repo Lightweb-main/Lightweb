@@ -80,7 +80,6 @@
 
  
     <script>
-	localStorage.setItem('LoginVerification', 'false');
 	let timeIntervalA;
 	function checkPassword() {
   const passwordInput = document.querySelector("#password input");
@@ -165,22 +164,6 @@ function proceed1(){
 	  inputPassword.addEventListener("drop", (event) => {
 		event.preventDefault();
 	  });
-	  
-	  inputPassword.addEventListener("input", (event) => {	
-			if(event.inputType === "insertText"){
-				const now = Date.now();
-				if(/^[a-zA-Z0-9-]$/.test(event.data)){
-					if(now - timeSinceLastInput < 40){
-						inputPassword.value = "";
-						timeSinceLastInput = 0;
-						return;
-					}
-				timeSinceLastInput = now;
-				} else {
-					inputPassword.value = "";
-				}
-			}
-	});
 	
     </script>
   </body>

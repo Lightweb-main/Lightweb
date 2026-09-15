@@ -170,5 +170,25 @@ body img{
 	--bg: #ccffcc;
 	--text: #000;
 	font-family: "微軟正黑體", "Microsoft JhengHei",  Tahoma , Verdana , Arial , sans-serif;
+}
 
+#SLT-MLA body.default {
+	--bg: #fff;
+	--text: #000;
+	font-family: timesnewroman, serif;
+}
+
+#SLT-MLA body.default #MLADiv {
+
+}
+
+#SLT-MLA body.default p{
+	margin-left: 1in;
+	margin-top: -12pt;
+	margin-right: 1in;
+	margin-bottom: 20px !important;
+	font-size: 12pt !important;
+	text-indent: 0.5in !important;
+	line-height: 2;
+	display: block;
 }
